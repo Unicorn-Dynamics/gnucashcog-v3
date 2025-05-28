@@ -3654,6 +3654,17 @@ gnc_plugin_page_register_cmd_cut (GSimpleAction *simple,
 
     ENTER ("(action %p, page %p)", simple, page);
     priv = GNC_PLUGIN_PAGE_REGISTER_GET_PRIVATE (page);
+
+    GtkWidget *widget = gtk_window_get_focus(GTK_WINDOW (priv->gsr->window));
+    const char *name = gtk_widget_get_name(widget);
+    if (strcmp(name, "GnucashSheet") != 0)
+    {
+        gtk_editable_cut_clipboard( GTK_EDITABLE(widget));
+        LEAVE("Not cut from GnucashSheet");
+
+        return;
+    }
+
     gnucash_register_cut_clipboard (priv->gsr->reg);
     LEAVE ("");
 }
@@ -3671,6 +3682,17 @@ gnc_plugin_page_register_cmd_copy (GSimpleAction *simple,
 
     ENTER ("(action %p, page %p)", simple, page);
     priv = GNC_PLUGIN_PAGE_REGISTER_GET_PRIVATE (page);
+
+    GtkWidget *widget = gtk_window_get_focus(GTK_WINDOW (priv->gsr->window));
+    const char *name = gtk_widget_get_name(widget);
+    if (strcmp(name, "GnucashSheet") != 0)
+    {
+        gtk_editable_copy_clipboard( GTK_EDITABLE(widget));
+        LEAVE("Not copied from GnucashSheet");
+
+        return;
+    }
+
     gnucash_register_copy_clipboard (priv->gsr->reg);
     LEAVE ("");
 }
@@ -3688,6 +3710,17 @@ gnc_plugin_page_register_cmd_paste (GSimpleAction *simple,
 
     ENTER ("(action %p, page %p)", simple, page);
     priv = GNC_PLUGIN_PAGE_REGISTER_GET_PRIVATE (page);
+
+    GtkWidget *widget = gtk_window_get_focus(GTK_WINDOW (priv->gsr->window));
+    const char *name = gtk_widget_get_name(widget);
+    if (strcmp(name, "GnucashSheet") != 0)
+    {
+        gtk_editable_paste_clipboard( GTK_EDITABLE(widget));
+        LEAVE("Not pasted to GnucashSheet");
+
+        return;
+    }
+
     gnucash_register_paste_clipboard (priv->gsr->reg);
     LEAVE ("");
 }
