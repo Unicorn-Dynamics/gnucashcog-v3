@@ -390,6 +390,19 @@ void gnc_account_set_cognitive_type(Account *account, GncCognitiveAccountType co
  */
 GncCognitiveAccountType gnc_account_get_cognitive_type(const Account *account);
 
+/** Check if account has specific cognitive behavior
+ * @param account Account to check
+ * @param behavior Cognitive behavior to test for
+ * @return TRUE if account has the behavior, FALSE otherwise
+ */
+gboolean gnc_account_has_cognitive_behavior(const Account *account, GncCognitiveAccountType behavior);
+
+/** Enable adaptive learning behavior for cognitive account
+ * @param account Account to adapt
+ * @param transaction Transaction to learn from
+ */
+void gnc_account_adapt_cognitive_behavior(Account *account, const Transaction *transaction);
+
 /** @} */
 
 #ifdef __cplusplus
