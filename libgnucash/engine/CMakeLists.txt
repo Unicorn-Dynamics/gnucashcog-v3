@@ -55,6 +55,8 @@ set (engine_HEADERS
   gnc-aqbanking-templates.h
   gnc-budget.h
   gnc-cognitive-accounting.h
+  gnc-cognitive-scheme.h
+  gnc-cognitive-comms.h
   gnc-commodity.h
   gnc-commodity.hpp
   gnc-date.h
@@ -157,6 +159,8 @@ set (engine_SOURCES
   gnc-aqbanking-templates.cpp
   gnc-budget.cpp
   gnc-cognitive-accounting.cpp
+  gnc-cognitive-scheme.cpp
+  gnc-cognitive-comms.cpp
   gnc-commodity.cpp
   gnc-date.cpp
   gnc-datetime.cpp
@@ -235,6 +239,19 @@ target_sources(gnc-engine
 # Add dependency on iso-4217-currencies.c
 add_dependencies (gnc-engine iso-4217-c)
 
+# Add OpenCog include directories if available
+if (HAVE_OPENCOG_CORE)
+    target_include_directories(gnc-engine PRIVATE
+        $<$<BOOL:${HAVE_OPENCOG_COGUTIL}>:${OPENCOG_COGUTIL_INCLUDE_DIRS}>
+        $<$<BOOL:${HAVE_OPENCOG_ATOMSPACE}>:${OPENCOG_ATOMSPACE_INCLUDE_DIRS}>
+        $<$<BOOL:${HAVE_OPENCOG_COGSERVER}>:${OPENCOG_COGSERVER_INCLUDE_DIRS}>
+        $<$<BOOL:${HAVE_OPENCOG_ATTENTION}>:${OPENCOG_ATTENTION_INCLUDE_DIRS}>
+        $<$<BOOL:${HAVE_OPENCOG_ASMOSES}>:${OPENCOG_ASMOSES_INCLUDE_DIRS}>
+        $<$<BOOL:${HAVE_OPENCOG_URE}>:${OPENCOG_URE_INCLUDE_DIRS}>
+        $<$<BOOL:${HAVE_OPENCOG_PLN}>:${OPENCOG_PLN_INCLUDE_DIRS}>
+    )
+endif()
+
 target_link_libraries(gnc-engine
     gnc-core-utils
     ${Boost_DATE_TIME_LIBRARY}
@@ -244,6 +261,13 @@ target_link_libraries(gnc-engine
     ${GMODULE_LDFLAGS}
     PkgConfig::GLIB2
     ${GOBJECT_LDFLAGS}
+    $<$<BOOL:${HAVE_OPENCOG_COGUTIL}>:${OPENCOG_COGUTIL_LIBRARIES}>
+    $<$<BOOL:${HAVE_OPENCOG_ATOMSPACE}>:${OPENCOG_ATOMSPACE_LIBRARIES}>
+    $<$<BOOL:${HAVE_OPENCOG_COGSERVER}>:${OPENCOG_COGSERVER_LIBRARIES}>
+    $<$<BOOL:${HAVE_OPENCOG_ATTENTION}>:${OPENCOG_ATTENTION_LIBRARIES}>
+    $<$<BOOL:${HAVE_OPENCOG_ASMOSES}>:${OPENCOG_ASMOSES_LIBRARIES}>
+    $<$<BOOL:${HAVE_OPENCOG_URE}>:${OPENCOG_URE_LIBRARIES}>
+    $<$<BOOL:${HAVE_OPENCOG_PLN}>:${OPENCOG_PLN_LIBRARIES}>
     $<$<BOOL:${WIN32}>:bcrypt.lib>)
 
 target_compile_definitions (gnc-engine PRIVATE -DG_LOG_DOMAIN=\"gnc.engine\")
