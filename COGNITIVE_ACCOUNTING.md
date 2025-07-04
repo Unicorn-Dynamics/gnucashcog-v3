@@ -230,6 +230,94 @@ gnc_account_set_cognitive_type(account,
 GncCognitiveAccountType type = gnc_account_get_cognitive_type(account);
 ```
 
+#### Cognitive Account Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Traditional: create_account()
+    Traditional --> Adaptive: enable_learning()
+    Adaptive --> Predictive: sufficient_data()
+    Predictive --> Multimodal: complex_patterns()
+    Multimodal --> AttentionDriven: high_activity()
+    
+    AttentionDriven --> Predictive: attention_decay()
+    Predictive --> Adaptive: prediction_failure()
+    Adaptive --> Traditional: disable_features()
+    
+    state Traditional {
+        [*] --> BasicBookkeeping
+        BasicBookkeeping --> StandardReporting
+    }
+    
+    state Adaptive {
+        [*] --> PatternLearning
+        PatternLearning --> BehaviorAdjustment
+        BehaviorAdjustment --> PerformanceOptimization
+    }
+    
+    state Predictive {
+        [*] --> HistoricalAnalysis
+        HistoricalAnalysis --> ForecastGeneration
+        ForecastGeneration --> PredictionValidation
+    }
+    
+    state Multimodal {
+        [*] --> ComplexTransactions
+        ComplexTransactions --> CrossAccountAnalysis
+        CrossAccountAnalysis --> SystemIntegration
+    }
+    
+    state AttentionDriven {
+        [*] --> HighPriority
+        HighPriority --> ResourceAllocation
+        ResourceAllocation --> CognitiveProcessing
+    }
+```
+
+#### Cognitive Account Interaction Network
+
+```mermaid
+graph LR
+    subgraph "Account Types"
+        A[Traditional<br/>Accounts] --> B[Adaptive<br/>Accounts]
+        B --> C[Predictive<br/>Accounts]
+        C --> D[Multimodal<br/>Accounts]
+        D --> E[Attention-Driven<br/>Accounts]
+    end
+    
+    subgraph "Cognitive Processes"
+        F[Pattern Recognition] --> G[Learning Algorithms]
+        G --> H[Prediction Models]
+        H --> I[Attention Allocation]
+        I --> J[Optimization Engines]
+    end
+    
+    subgraph "System Integration"
+        K[AtomSpace<br/>Representation] --> L[PLN<br/>Reasoning]
+        L --> M[ECAN<br/>Attention]
+        M --> N[MOSES<br/>Evolution]
+        N --> O[URE<br/>Uncertainty]
+    end
+    
+    A --> F
+    B --> G
+    C --> H
+    D --> I
+    E --> J
+    
+    F --> K
+    G --> L
+    H --> M
+    I --> N
+    J --> O
+    
+    O --> A
+    
+    style A fill:#ffebee
+    style F fill:#e8eaf6
+    style K fill:#e0f2f1
+```
+
 ## Framework Integration
 
 ### Initialization
@@ -243,9 +331,77 @@ gboolean success = gnc_cognitive_accounting_init();
 gnc_cognitive_accounting_shutdown();
 ```
 
-### Component Interoperability
+## Component Interoperability
 
 The enhanced framework components achieve **neural-symbolic synergy** through sophisticated inter-module communication:
+
+### 🔄 **Cognitive Integration Flow**
+
+```mermaid
+graph TB
+    subgraph "Data Layer"
+        A[Account Hierarchy] --> B[Transaction Stream]
+        B --> C[Balance States]
+        C --> D[Financial Metrics]
+    end
+    
+    subgraph "Cognitive Transformation"
+        E[AtomSpace Mapping] --> F[Hypergraph Patterns]
+        F --> G[Truth Value Assignment]
+        G --> H[Attention Weighting]
+    end
+    
+    subgraph "Reasoning Layer"
+        I[PLN Validation] --> J[Uncertainty Quantification]
+        J --> K[Pattern Recognition]
+        K --> L[Strategy Evolution]
+    end
+    
+    subgraph "Feedback Loop"
+        M[Cognitive Insights] --> N[System Adaptation]
+        N --> O[Knowledge Update]
+        O --> P[Behavior Modification]
+    end
+    
+    D --> E
+    H --> I
+    L --> M
+    P --> A
+    
+    style E fill:#e3f2fd
+    style I fill:#f3e5f5
+    style M fill:#e8f5e8
+    style A fill:#fff3e0
+```
+
+### 🧠 **Inter-Module Communication**
+
+```mermaid
+sequenceDiagram
+    participant AS as AtomSpace
+    participant PLN as PLN Engine
+    participant ECAN as ECAN Controller
+    participant MOSES as MOSES Optimizer
+    participant URE as URE Reasoner
+    
+    AS->>PLN: ConceptNode(Account)
+    PLN->>AS: TruthValue(validation)
+    AS->>ECAN: Atom(attention_request)
+    ECAN->>AS: AttentionValue(STI/LTI)
+    AS->>MOSES: Pattern(optimization_target)
+    MOSES->>AS: Strategy(evolved_solution)
+    AS->>URE: Query(uncertainty_analysis)
+    URE->>AS: Prediction(confidence_interval)
+    
+    Note over AS,URE: Distributed Cognitive Processing
+    
+    PLN->>ECAN: ValidationConfidence
+    ECAN->>MOSES: AttentionPatterns
+    MOSES->>URE: OptimizedStrategies
+    URE->>PLN: UncertaintyFactors
+```
+
+### 🔗 **Integration Points**
 
 1. **AtomSpace ↔ PLN**: ConceptNodes and truth values participate in probabilistic logical reasoning
 2. **PLN ↔ ECAN**: Validation confidence influences STI/LTI attention allocation dynamics
