@@ -210,6 +210,10 @@ gnc_add_test(test-gnc-option "${test_gnc_option_SOURCES}"
 gnc_add_test(test-cognitive-accounting test-cognitive-accounting.cpp
   gtest_engine_INCLUDES gtest_old_engine_LIBS)
 
+# ko6ml primitives test
+gnc_add_test(test-ko6ml-primitives test-ko6ml-primitives.cpp
+  gtest_engine_INCLUDES gtest_old_engine_LIBS)
+
 # Tensor network test
 gnc_add_test(test-tensor-network test-tensor-network.cpp
   gtest_engine_INCLUDES gtest_old_engine_LIBS)
@@ -230,6 +234,7 @@ set(test_engine_SOURCES_DIST
         test-address.c
         test-business.c
         test-cognitive-accounting.cpp
+        test-ko6ml-primitives.cpp
         test-tensor-network.cpp
         test-commodities.cpp
         test-customer.c
