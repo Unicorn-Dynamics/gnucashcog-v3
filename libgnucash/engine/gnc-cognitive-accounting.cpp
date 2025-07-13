@@ -2156,6 +2156,291 @@ void gnc_ecan_mesh_shutdown(void)
 }
 
 /********************************************************************\
+ * Phase 2: Priority-Based Task Scheduling                         *
+\********************************************************************/
+
+/** Global task scheduler state */
+static struct {
+    GQueue *pending_tasks;              /**< Queue of pending tasks */
+    GHashTable *running_tasks;          /**< Map of task_id -> GncCognitiveTask */
+    gint max_concurrent_tasks;          /**< Maximum concurrent tasks */
+    gdouble scheduler_attention_pool;   /**< Attention pool for scheduling */
+    gdouble total_attention_allocated;  /**< Total attention currently allocated */
+    gboolean scheduler_initialized;     /**< Scheduler initialization state */
+    guint64 next_task_id;               /**< Next available task ID */
+    gint64 scheduler_start_time;        /**< Scheduler start timestamp */
+} g_task_scheduler = {0};
+
+gboolean gnc_ecan_scheduler_init(gint max_concurrent_tasks, gdouble scheduler_attention_pool)
+{
+    g_return_val_if_fail(max_concurrent_tasks > 0, FALSE);
+    g_return_val_if_fail(scheduler_attention_pool > 0.0, FALSE);
+    
+    if (g_task_scheduler.scheduler_initialized) {
+        g_warning("Task scheduler already initialized");
+        return FALSE;
+    }
+    
+    g_task_scheduler.pending_tasks = g_queue_new();
+    g_task_scheduler.running_tasks = g_hash_table_new_full(g_str_hash, g_str_equal, 
+                                                           g_free, (GDestroyNotify)g_free);
+    g_task_scheduler.max_concurrent_tasks = max_concurrent_tasks;
+    g_task_scheduler.scheduler_attention_pool = scheduler_attention_pool;
+    g_task_scheduler.total_attention_allocated = 0.0;
+    g_task_scheduler.scheduler_initialized = TRUE;
+    g_task_scheduler.next_task_id = 1;
+    g_task_scheduler.scheduler_start_time = g_get_real_time();
+    
+    g_message("Initialized attention-driven task scheduler: max_tasks=%d, attention_pool=%.1f",
+              max_concurrent_tasks, scheduler_attention_pool);
+    
+    return TRUE;
+}
+
+gchar* gnc_ecan_scheduler_submit_task(const gchar *task_type,
+                                      GncTaskPriority priority,
+                                      gdouble attention_requirement,
+                                      gpointer task_data,
+                                      GDestroyNotify data_destroy_func,
+                                      gint64 deadline)
+{
+    g_return_val_if_fail(task_type != nullptr, nullptr);
+    g_return_val_if_fail(attention_requirement > 0.0, nullptr);
+    
+    if (!g_task_scheduler.scheduler_initialized) {
+        g_warning("Task scheduler not initialized");
+        return nullptr;
+    }
+    
+    // Create new cognitive task
+    GncCognitiveTask *task = g_new0(GncCognitiveTask, 1);
+    task->task_id = g_strdup_printf("task_%lu", g_task_scheduler.next_task_id++);
+    task->task_type = g_strdup(task_type);
+    task->priority = priority;
+    task->attention_requirement = attention_requirement;
+    task->attention_allocated = 0.0;
+    task->creation_time = g_get_real_time();
+    task->deadline = deadline;
+    task->task_data = task_data;
+    task->data_destroy_func = data_destroy_func;
+    
+    // Insert task into priority queue (higher priority first)
+    gboolean inserted = FALSE;
+    GList *iter = g_queue_peek_head_link(g_task_scheduler.pending_tasks);
+    
+    while (iter) {
+        GncCognitiveTask *existing_task = (GncCognitiveTask*)iter->data;
+        if (task->priority > existing_task->priority) {
+            g_queue_insert_before(g_task_scheduler.pending_tasks, iter, task);
+            inserted = TRUE;
+            break;
+        }
+        iter = iter->next;
+    }
+    
+    if (!inserted) {
+        g_queue_push_tail(g_task_scheduler.pending_tasks, task);
+    }
+    
+    g_debug("Submitted cognitive task %s: type=%s, priority=%d, attention_req=%.2f",
+            task->task_id, task_type, priority, attention_requirement);
+    
+    return g_strdup(task->task_id);
+}
+
+gint gnc_ecan_scheduler_process_tasks(gdouble available_attention)
+{
+    g_return_val_if_fail(available_attention > 0.0, 0);
+    
+    if (!g_task_scheduler.scheduler_initialized) {
+        g_warning("Task scheduler not initialized");
+        return 0;
+    }
+    
+    gint tasks_processed = 0;
+    gint running_task_count = g_hash_table_size(g_task_scheduler.running_tasks);
+    gdouble remaining_attention = available_attention;
+    gint64 current_time = g_get_real_time();
+    
+    // Process pending tasks if we have capacity and attention
+    while (!g_queue_is_empty(g_task_scheduler.pending_tasks) && 
+           running_task_count < g_task_scheduler.max_concurrent_tasks &&
+           remaining_attention > 0.0) {
+        
+        GncCognitiveTask *task = (GncCognitiveTask*)g_queue_pop_head(g_task_scheduler.pending_tasks);
+        
+        // Check if task has expired deadline
+        if (task->deadline > 0 && current_time > task->deadline) {
+            g_warning("Task %s expired (deadline exceeded)", task->task_id);
+            if (task->data_destroy_func && task->task_data) {
+                task->data_destroy_func(task->task_data);
+            }
+            g_free(task->task_id);
+            g_free(task->task_type);
+            g_free(task);
+            continue;
+        }
+        
+        // Check if we have enough attention for this task
+        if (task->attention_requirement <= remaining_attention) {
+            // Allocate attention and start task
+            task->attention_allocated = task->attention_requirement;
+            remaining_attention -= task->attention_requirement;
+            g_task_scheduler.total_attention_allocated += task->attention_requirement;
+            
+            // Move task to running tasks
+            g_hash_table_insert(g_task_scheduler.running_tasks, 
+                               g_strdup(task->task_id), task);
+            
+            running_task_count++;
+            tasks_processed++;
+            
+            g_debug("Started cognitive task %s: allocated_attention=%.2f, remaining=%.2f",
+                    task->task_id, task->attention_allocated, remaining_attention);
+        } else {
+            // Not enough attention, put task back at head of queue
+            g_queue_push_head(g_task_scheduler.pending_tasks, task);
+            break;
+        }
+    }
+    
+    // Simulate task completion for running tasks (simplified for demo)
+    GHashTableIter iter;
+    gpointer key, value;
+    GList *completed_tasks = nullptr;
+    
+    g_hash_table_iter_init(&iter, g_task_scheduler.running_tasks);
+    while (g_hash_table_iter_next(&iter, &key, &value)) {
+        GncCognitiveTask *task = (GncCognitiveTask*)value;
+        
+        // Simple completion check: high priority tasks complete faster
+        gdouble completion_probability = 0.1 + (task->priority / 1000.0);
+        if (g_random_double() < completion_probability) {
+            completed_tasks = g_list_append(completed_tasks, g_strdup(task->task_id));
+        }
+    }
+    
+    // Remove completed tasks and free their attention
+    for (GList *node = completed_tasks; node; node = node->next) {
+        gchar *task_id = (gchar*)node->data;
+        GncCognitiveTask *task = (GncCognitiveTask*)g_hash_table_lookup(g_task_scheduler.running_tasks, task_id);
+        
+        if (task) {
+            g_task_scheduler.total_attention_allocated -= task->attention_allocated;
+            g_debug("Completed cognitive task %s: freed_attention=%.2f", 
+                    task_id, task->attention_allocated);
+            
+            g_hash_table_remove(g_task_scheduler.running_tasks, task_id);
+        }
+    }
+    
+    g_list_free_full(completed_tasks, g_free);
+    
+    return tasks_processed;
+}
+
+gboolean gnc_ecan_scheduler_cancel_task(const gchar *task_id)
+{
+    g_return_val_if_fail(task_id != nullptr, FALSE);
+    
+    if (!g_task_scheduler.scheduler_initialized) {
+        g_warning("Task scheduler not initialized");
+        return FALSE;
+    }
+    
+    // Check if task is running
+    GncCognitiveTask *running_task = (GncCognitiveTask*)g_hash_table_lookup(g_task_scheduler.running_tasks, task_id);
+    if (running_task) {
+        g_task_scheduler.total_attention_allocated -= running_task->attention_allocated;
+        g_hash_table_remove(g_task_scheduler.running_tasks, task_id);
+        g_debug("Cancelled running task %s: freed_attention=%.2f", 
+                task_id, running_task->attention_allocated);
+        return TRUE;
+    }
+    
+    // Check if task is pending
+    GList *iter = g_queue_peek_head_link(g_task_scheduler.pending_tasks);
+    while (iter) {
+        GncCognitiveTask *task = (GncCognitiveTask*)iter->data;
+        if (g_strcmp0(task->task_id, task_id) == 0) {
+            g_queue_delete_link(g_task_scheduler.pending_tasks, iter);
+            
+            if (task->data_destroy_func && task->task_data) {
+                task->data_destroy_func(task->task_data);
+            }
+            g_free(task->task_id);
+            g_free(task->task_type);
+            g_free(task);
+            
+            g_debug("Cancelled pending task %s", task_id);
+            return TRUE;
+        }
+        iter = iter->next;
+    }
+    
+    g_warning("Task %s not found for cancellation", task_id);
+    return FALSE;
+}
+
+void gnc_ecan_scheduler_get_stats(gint *pending_tasks,
+                                  gint *running_tasks,
+                                  gdouble *total_attention_allocated,
+                                  gdouble *scheduler_efficiency)
+{
+    if (!g_task_scheduler.scheduler_initialized) {
+        if (pending_tasks) *pending_tasks = 0;
+        if (running_tasks) *running_tasks = 0;
+        if (total_attention_allocated) *total_attention_allocated = 0.0;
+        if (scheduler_efficiency) *scheduler_efficiency = 0.0;
+        return;
+    }
+    
+    gint pending_count = g_queue_get_length(g_task_scheduler.pending_tasks);
+    gint running_count = g_hash_table_size(g_task_scheduler.running_tasks);
+    
+    if (pending_tasks) *pending_tasks = pending_count;
+    if (running_tasks) *running_tasks = running_count;
+    if (total_attention_allocated) *total_attention_allocated = g_task_scheduler.total_attention_allocated;
+    
+    if (scheduler_efficiency) {
+        gdouble efficiency = 0.0;
+        if (g_task_scheduler.scheduler_attention_pool > 0.0) {
+            efficiency = g_task_scheduler.total_attention_allocated / g_task_scheduler.scheduler_attention_pool;
+        }
+        *scheduler_efficiency = CLAMP(efficiency, 0.0, 1.0);
+    }
+}
+
+void gnc_ecan_scheduler_shutdown(void)
+{
+    if (!g_task_scheduler.scheduler_initialized) {
+        return;
+    }
+    
+    // Cancel all pending tasks
+    while (!g_queue_is_empty(g_task_scheduler.pending_tasks)) {
+        GncCognitiveTask *task = (GncCognitiveTask*)g_queue_pop_head(g_task_scheduler.pending_tasks);
+        if (task->data_destroy_func && task->task_data) {
+            task->data_destroy_func(task->task_data);
+        }
+        g_free(task->task_id);
+        g_free(task->task_type);
+        g_free(task);
+    }
+    
+    g_queue_free(g_task_scheduler.pending_tasks);
+    g_hash_table_destroy(g_task_scheduler.running_tasks);
+    
+    g_task_scheduler.scheduler_initialized = FALSE;
+    g_task_scheduler.max_concurrent_tasks = 0;
+    g_task_scheduler.scheduler_attention_pool = 0.0;
+    g_task_scheduler.total_attention_allocated = 0.0;
+    g_task_scheduler.next_task_id = 0;
+    
+    g_message("Task scheduler shutdown completed");
+}
+
+/********************************************************************\
  * MOSES Integration                                                 *
 \********************************************************************/
 
