@@ -653,6 +653,176 @@ void demonstrate_enhanced_cognitive_features()
     qof_book_destroy(book);
 }
 
+void demonstrate_phase2_ecan_enhancements()
+{
+    std::cout << "\n=== Phase 2: Enhanced ECAN Resource Kernel Demo ===\n";
+    
+    QofBook *book = qof_book_new();
+    Account *checking = xaccMallocAccount(book);
+    Account *savings = xaccMallocAccount(book);
+    Account *investment = xaccMallocAccount(book);
+    Account *expenses = xaccMallocAccount(book);
+    
+    xaccAccountSetName(checking, "High-Activity Checking");
+    xaccAccountSetName(savings, "Medium-Activity Savings");
+    xaccAccountSetName(investment, "Low-Activity Investment");
+    xaccAccountSetName(expenses, "Expense Account");
+    
+    xaccAccountSetType(checking, ACCT_TYPE_BANK);
+    xaccAccountSetType(savings, ACCT_TYPE_BANK);
+    xaccAccountSetType(investment, ACCT_TYPE_STOCK);
+    xaccAccountSetType(expenses, ACCT_TYPE_EXPENSE);
+    
+    Account* accounts[] = {checking, savings, investment, expenses};
+    gint n_accounts = 4;
+    
+    // Initialize Enhanced ECAN Economy
+    std::cout << "Initializing Phase 2 ECAN attention economy...\n";
+    if (gnc_ecan_init_attention_economy(1000.0, 500.0)) {
+        std::cout << "✓ ECAN economy initialized with STI pool=1000.0, LTI pool=500.0\n";
+    }
+    
+    // Simulate account activity for attention dynamics
+    std::cout << "\nSimulating account activity patterns...\n";
+    
+    // Create transactions to generate activity
+    for (int cycle = 0; cycle < 3; cycle++) {
+        std::cout << "--- Activity Cycle " << (cycle + 1) << " ---\n";
+        
+        // High activity for checking account
+        for (int i = 0; i < 5; i++) {
+            Transaction *txn = xaccMallocTransaction(book);
+            gnc_ecan_update_account_attention(checking, txn);
+        }
+        
+        // Medium activity for savings
+        for (int i = 0; i < 2; i++) {
+            Transaction *txn = xaccMallocTransaction(book);
+            gnc_ecan_update_account_attention(savings, txn);
+        }
+        
+        // Low activity for investment
+        Transaction *txn = xaccMallocTransaction(book);
+        gnc_ecan_update_account_attention(investment, txn);
+        
+        // Display attention parameters after activity
+        for (int i = 0; i < n_accounts; i++) {
+            GncAttentionParams params = gnc_ecan_get_attention_params(accounts[i]);
+            std::cout << "  " << xaccAccountGetName(accounts[i]) << ": "
+                      << "STI=" << std::fixed << std::setprecision(2) << params.sti
+                      << ", LTI=" << params.lti 
+                      << ", activity=" << params.activity_level << "\n";
+        }
+        
+        // Apply Phase 2 ECAN operations
+        std::cout << "\nApplying Phase 2 ECAN operations...\n";
+        
+        // Collect rent and redistribute
+        gdouble rent_collected = gnc_ecan_collect_rent_and_redistribute(accounts, n_accounts);
+        std::cout << "✓ Collected rent: " << rent_collected << "\n";
+        
+        // Pay activity wages
+        gnc_ecan_pay_activity_wages(accounts, n_accounts, 50.0);
+        std::cout << "✓ Distributed activity wages from pool of 50.0\n";
+        
+        // Apply attention decay
+        gnc_ecan_apply_attention_decay(accounts, n_accounts, 30.0); // 30 seconds
+        std::cout << "✓ Applied attention decay (30s cycle)\n";
+        
+        // Check for attention starvation
+        gint starved = gnc_ecan_prevent_attention_starvation(accounts, n_accounts);
+        if (starved > 0) {
+            std::cout << "⚠ Emergency allocation for " << starved << " starved accounts\n";
+        }
+        
+        // Test attention spreading
+        Account* connected[] = {savings, investment, expenses};
+        gnc_ecan_spread_attention(checking, connected, 3, 0.2); // 20% spreading rate
+        std::cout << "✓ Spread attention from checking to connected accounts\n";
+        
+        std::cout << "\n";
+    }
+    
+    // Get final system statistics
+    std::cout << "Final ECAN System Statistics:\n";
+    gdouble total_sti, total_lti, sti_funds, lti_funds;
+    gnc_ecan_get_system_stats(&total_sti, &total_lti, &sti_funds, &lti_funds);
+    
+    std::cout << "  Total STI in circulation: " << total_sti << "\n";
+    std::cout << "  Total LTI in circulation: " << total_lti << "\n";
+    std::cout << "  STI fund balance: " << sti_funds << "\n";
+    std::cout << "  LTI fund balance: " << lti_funds << "\n";
+    
+    std::cout << "\nFinal attention parameters:\n";
+    for (int i = 0; i < n_accounts; i++) {
+        GncAttentionParams params = gnc_ecan_get_attention_params(accounts[i]);
+        std::cout << "  " << xaccAccountGetName(accounts[i]) << ":\n";
+        std::cout << "    STI: " << params.sti << ", LTI: " << params.lti << ", VLTI: " << params.vlti << "\n";
+        std::cout << "    Activity: " << params.activity_level << ", Wages: " << params.wage << ", Rent: " << params.rent << "\n";
+        std::cout << "    Competition: " << params.competition_strength << ", Focus: " << params.focus_factor << "\n";
+    }
+    
+    qof_book_destroy(book);
+}
+
+void demonstrate_distributed_attention_mesh()
+{
+    std::cout << "\n=== Phase 2: Distributed Attention Mesh Demo ===\n";
+    
+    // Initialize attention mesh for distributed processing
+    std::cout << "Initializing distributed attention mesh...\n";
+    if (gnc_ecan_init_attention_mesh(4, 2000.0)) {
+        std::cout << "✓ Attention mesh initialized with 4 nodes, total attention: 2000.0\n";
+    }
+    
+    // Add nodes to the mesh
+    std::cout << "\nAdding nodes to attention mesh...\n";
+    gnc_ecan_mesh_add_node("memory_node", 600.0);
+    gnc_ecan_mesh_add_node("task_node", 500.0);
+    gnc_ecan_mesh_add_node("ai_node", 700.0);
+    gnc_ecan_mesh_add_node("autonomy_node", 400.0);
+    std::cout << "✓ Added 4 cognitive nodes to mesh\n";
+    
+    // Create connections between nodes
+    std::cout << "\nEstablishing mesh connections...\n";
+    gnc_ecan_mesh_connect_nodes("memory_node", "task_node", 0.8);
+    gnc_ecan_mesh_connect_nodes("task_node", "ai_node", 0.9);
+    gnc_ecan_mesh_connect_nodes("ai_node", "autonomy_node", 0.7);
+    gnc_ecan_mesh_connect_nodes("autonomy_node", "memory_node", 0.6);
+    std::cout << "✓ Established connections between cognitive nodes\n";
+    
+    // Test attention propagation
+    std::cout << "\nTesting attention propagation...\n";
+    gnc_ecan_mesh_propagate_attention("memory_node", 100.0, 2);
+    std::cout << "✓ Propagated 100.0 attention from memory_node (depth=2)\n";
+    
+    // Test mesh synchronization
+    std::cout << "\nSynchronizing mesh attention state...\n";
+    if (gnc_ecan_mesh_synchronize_attention(FALSE)) {
+        std::cout << "✓ Mesh attention synchronized successfully\n";
+    }
+    
+    // Test load balancing
+    std::cout << "\nTesting attention load balancing...\n";
+    gint transfers = gnc_ecan_mesh_balance_attention_load(0.7);
+    std::cout << "✓ Load balancing completed, " << transfers << " attention transfers\n";
+    
+    // Get mesh topology statistics
+    std::cout << "\nMesh Topology Statistics:\n";
+    gint total_nodes, total_connections;
+    gdouble avg_capacity, mesh_utilization;
+    gnc_ecan_mesh_get_topology_stats(&total_nodes, &total_connections, &avg_capacity, &mesh_utilization);
+    
+    std::cout << "  Total nodes: " << total_nodes << "\n";
+    std::cout << "  Total connections: " << total_connections << "\n";
+    std::cout << "  Average node capacity: " << avg_capacity << "\n";
+    std::cout << "  Mesh utilization: " << std::fixed << std::setprecision(1) << (mesh_utilization * 100) << "%\n";
+    
+    // Shutdown mesh
+    gnc_ecan_mesh_shutdown();
+    std::cout << "✓ Attention mesh shutdown completed\n";
+}
+
 int main(int argc, char **argv)
 {
     std::cout << "======================================================\n";
@@ -693,6 +863,18 @@ int main(int argc, char **argv)
         demonstrate_emergent_behavior();
         demonstrate_enhanced_ecan();
         demonstrate_enhanced_cognitive_features();  // New comprehensive demo
+        
+        // Phase 2: ECAN Attention Allocation & Resource Kernel demonstrations
+        demonstrate_phase2_ecan_enhancements();
+        demonstrate_distributed_attention_mesh();
+        
+        std::cout << "\n=== Phase 2: Enhanced ECAN Attention Allocation Complete ===\n";
+        std::cout << "✓ Enhanced ECAN resource kernel with STI/LTI economics\n";
+        std::cout << "✓ Attention spreading and activation propagation\n";
+        std::cout << "✓ Distributed mesh attention allocation\n";
+        std::cout << "✓ Resource competition and starvation prevention\n";
+        std::cout << "✓ Priority-based cognitive task scheduling framework\n";
+        std::cout << "✓ Real-time attention flow optimization\n";
         
         std::cout << "\n=== Enhanced Cognitive Accounting Framework Summary ===\n";
         std::cout << "✓ AtomSpace: OpenCog-style hypergraph with ConceptNodes and Links\n";

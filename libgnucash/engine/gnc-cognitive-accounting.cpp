@@ -28,49 +28,7 @@
 #include <vector>
 
 //<<<<<<< copilot/fix-1-3
-/** Enhanced OpenCog-style AtomSpace implementation for cognitive accounting */
-//=======
-// OpenCog integration headers (conditional compilation)
-#ifdef HAVE_OPENCOG_COGUTIL
-#include <opencog/util/Config.h>
-#include <opencog/util/Logger.h>
-#endif
-
-#ifdef HAVE_OPENCOG_ATOMSPACE
-#include <opencog/atomspace/AtomSpace.h>
-#include <opencog/atoms/base/Node.h>
-#include <opencog/atoms/base/Link.h>
-#include <opencog/atoms/truthvalue/TruthValue.h>
-#include <opencog/atoms/truthvalue/SimpleTruthValue.h>
-using namespace opencog;
-#endif
-
-#ifdef HAVE_OPENCOG_ATTENTION
-#include <opencog/attention/AttentionBank.h>
-#include <opencog/attention/AttentionValue.h>
-#endif
-
-#ifdef HAVE_OPENCOG_PLN
-#include <opencog/pln/PLNModule.h>
-#include <opencog/pln/BackwardChainer.h>
-#include <opencog/pln/ForwardChainer.h>
-#endif
-
-#ifdef HAVE_OPENCOG_URE
-#include <opencog/ure/Rule.h>
-#include <opencog/ure/UREModule.h>
-#endif
-
-#ifdef HAVE_OPENCOG_ASMOSES
-#include <opencog/asmoses/moses/main/moses_main.h>
-#endif
-
-#ifdef HAVE_OPENCOG_COGSERVER
-#include <opencog/cogserver/server/CogServer.h>
-#endif
-
-/** Cognitive AtomSpace implementation using OpenCog or simulation */
-//>>>>>>> stable
+/** Enhanced OpenCog-style AtomSpace implementation for cognitive accounting with Phase 2 ECAN */
 struct GncCognitiveAtomSpace {
 #ifdef HAVE_OPENCOG_ATOMSPACE
     // Real OpenCog AtomSpace integration
@@ -183,18 +141,35 @@ struct GncCognitiveAtomSpace {
         atom_types[handle] = type;
         atom_names[handle] = name;
         
-        // Initialize OpenCog-style attention parameters
+        // Enhanced Phase 2 ECAN attention parameter initialization
         GncAttentionParams params = {};
-        params.sti = 0.0;
-        params.sti_funds = 10.0;
-        params.lti = 0.0; 
-        params.lti_funds = 10.0;
+        params.sti = 10.0;
+        params.sti_funds = 0.0;
+        params.sti_decay_rate = 0.01;  // 1% STI decay rate
+        
+        params.lti = 5.0;
+        params.lti_funds = 0.0;
+        params.lti_decay_rate = 0.005; // 0.5% LTI decay rate
+        
         params.vlti = 0.0;
+        params.vlti_threshold = 100.0; // Threshold for VLTI promotion
+        
         params.confidence = 0.5;
         params.strength = 0.5;
         params.activity_level = 0.0;
         params.wage = 1.0;
         params.rent = 0.1;
+        params.wage_multiplier = 1.0;
+        
+        // Attention spreading parameters
+        params.spreading_rate = 0.1;      // 10% spreading rate
+        params.spreading_threshold = 20.0; // Minimum attention to spread
+        params.focus_factor = 1.0;        // Default focus factor
+        
+        // Resource competition parameters
+        params.competition_strength = 1.0;
+        params.starvation_threshold = 5.0; // Below this is considered starved
+        params.last_activity_time = g_get_real_time();
         
         // Legacy compatibility
         params.importance = 0.5;
@@ -1550,6 +1525,634 @@ void gnc_ecan_allocate_attention(Account **accounts, gint n_accounts)
             "sti_funds=%.1f, lti_funds=%.1f", 
             n_accounts, updated_total_sti, total_lti, total_activity,
             g_atomspace->total_sti_funds, g_atomspace->total_lti_funds);
+}
+
+/********************************************************************\
+ * Phase 2: Enhanced ECAN Resource Kernel Construction             *
+\********************************************************************/
+
+/** Global ECAN system state for Phase 2 */
+static struct {
+    gdouble total_sti_fund_pool;          /**< Total STI fund pool */
+    gdouble total_lti_fund_pool;          /**< Total LTI fund pool */
+    gdouble emergency_attention_reserve;  /**< Emergency attention reserve */
+    gdouble rent_collection_rate;         /**< Rate of rent collection */
+    gdouble wage_distribution_rate;       /**< Rate of wage distribution */
+    gboolean system_initialized;          /**< System initialization state */
+    gint64 last_economy_cycle;            /**< Last economy cycle timestamp */
+} g_ecan_economy = {0};
+
+gboolean gnc_ecan_init_attention_economy(gdouble total_sti_funds, gdouble total_lti_funds)
+{
+    g_return_val_if_fail(total_sti_funds > 0.0, FALSE);
+    g_return_val_if_fail(total_lti_funds > 0.0, FALSE);
+    
+    if (!g_atomspace) {
+        g_warning("Cognitive accounting not initialized");
+        return FALSE;
+    }
+    
+    g_ecan_economy.total_sti_fund_pool = total_sti_funds;
+    g_ecan_economy.total_lti_fund_pool = total_lti_funds;
+    g_ecan_economy.emergency_attention_reserve = total_sti_funds * 0.1; // 10% emergency reserve
+    g_ecan_economy.rent_collection_rate = 0.01; // 1% rent per cycle
+    g_ecan_economy.wage_distribution_rate = 0.05; // 5% wage distribution per cycle
+    g_ecan_economy.system_initialized = TRUE;
+    g_ecan_economy.last_economy_cycle = g_get_real_time();
+    
+    // Initialize AtomSpace fund pools
+    g_atomspace->total_sti_funds = total_sti_funds;
+    g_atomspace->total_lti_funds = total_lti_funds;
+    
+    g_message("Initialized ECAN attention economy: STI_pool=%.1f, LTI_pool=%.1f, emergency_reserve=%.1f",
+              total_sti_funds, total_lti_funds, g_ecan_economy.emergency_attention_reserve);
+    
+    return TRUE;
+}
+
+void gnc_ecan_spread_attention(const Account *source_account, 
+                               Account **connected_accounts, 
+                               gint n_connected,
+                               gdouble spreading_rate)
+{
+    g_return_if_fail(source_account != nullptr);
+    g_return_if_fail(connected_accounts != nullptr);
+    g_return_if_fail(n_connected > 0);
+    g_return_if_fail(spreading_rate >= 0.0 && spreading_rate <= 1.0);
+    
+    if (!g_atomspace || !g_ecan_economy.system_initialized) {
+        g_warning("ECAN attention economy not initialized");
+        return;
+    }
+    
+    // Get source account attention parameters
+    auto source_it = g_atomspace->account_atoms.find(source_account);
+    if (source_it == g_atomspace->account_atoms.end()) {
+        return;
+    }
+    
+    auto& source_params = g_atomspace->attention_params[source_it->second];
+    
+    // Calculate spreadable attention (only spread excess above threshold)
+    gdouble spreadable_sti = std::max(0.0, source_params.sti - source_params.spreading_threshold);
+    gdouble spreadable_lti = std::max(0.0, source_params.lti - (source_params.spreading_threshold * 0.5));
+    
+    if (spreadable_sti <= 0.0 && spreadable_lti <= 0.0) {
+        return; // Nothing to spread
+    }
+    
+    // Calculate spreading amounts
+    gdouble total_spread_sti = spreadable_sti * spreading_rate;
+    gdouble total_spread_lti = spreadable_lti * spreading_rate;
+    gdouble sti_per_neighbor = total_spread_sti / n_connected;
+    gdouble lti_per_neighbor = total_spread_lti / n_connected;
+    
+    // Spread attention to connected accounts
+    for (gint i = 0; i < n_connected; i++) {
+        auto neighbor_it = g_atomspace->account_atoms.find(connected_accounts[i]);
+        if (neighbor_it != g_atomspace->account_atoms.end()) {
+            auto& neighbor_params = g_atomspace->attention_params[neighbor_it->second];
+            
+            // Transfer attention with focus factor adjustment
+            gdouble transfer_sti = sti_per_neighbor * neighbor_params.focus_factor;
+            gdouble transfer_lti = lti_per_neighbor * neighbor_params.focus_factor;
+            
+            neighbor_params.sti += transfer_sti;
+            neighbor_params.lti += transfer_lti;
+            
+            // Update spreading timestamp
+            neighbor_params.last_activity_time = g_get_real_time();
+        }
+    }
+    
+    // Deduct spread attention from source
+    source_params.sti -= total_spread_sti;
+    source_params.lti -= total_spread_lti;
+    
+    g_debug("Spread attention from %s to %d neighbors: STI=%.3f, LTI=%.3f",
+            xaccAccountGetName(source_account), n_connected, total_spread_sti, total_spread_lti);
+}
+
+gdouble gnc_ecan_collect_rent_and_redistribute(Account **accounts, gint n_accounts)
+{
+    g_return_val_if_fail(accounts != nullptr, 0.0);
+    g_return_val_if_fail(n_accounts > 0, 0.0);
+    
+    if (!g_atomspace || !g_ecan_economy.system_initialized) {
+        g_warning("ECAN attention economy not initialized");
+        return 0.0;
+    }
+    
+    gdouble total_rent_collected = 0.0;
+    gint64 current_time = g_get_real_time();
+    
+    // Collect rent from all accounts
+    for (gint i = 0; i < n_accounts; i++) {
+        auto it = g_atomspace->account_atoms.find(accounts[i]);
+        if (it != g_atomspace->account_atoms.end()) {
+            auto& params = g_atomspace->attention_params[it->second];
+            
+            // Calculate rent based on current attention holdings and time since last collection
+            gdouble time_factor = (current_time - g_ecan_economy.last_economy_cycle) / 1000000.0; // Convert to seconds
+            gdouble sti_rent = params.sti * g_ecan_economy.rent_collection_rate * time_factor;
+            gdouble lti_rent = params.lti * g_ecan_economy.rent_collection_rate * 0.1 * time_factor; // LTI rent is lower
+            
+            // Collect rent only if account has sufficient attention
+            if (params.sti > sti_rent) {
+                params.sti -= sti_rent;
+                total_rent_collected += sti_rent;
+            }
+            if (params.lti > lti_rent) {
+                params.lti -= lti_rent;
+                total_rent_collected += lti_rent * 0.1; // LTI rent contributes less to pool
+            }
+        }
+    }
+    
+    // Redistribute collected rent to fund pools
+    g_atomspace->total_sti_funds += total_rent_collected * 0.8; // 80% to STI pool
+    g_atomspace->total_lti_funds += total_rent_collected * 0.2; // 20% to LTI pool
+    
+    g_ecan_economy.last_economy_cycle = current_time;
+    
+    g_debug("Collected and redistributed rent: total=%.3f, to_sti_pool=%.3f, to_lti_pool=%.3f",
+            total_rent_collected, total_rent_collected * 0.8, total_rent_collected * 0.2);
+    
+    return total_rent_collected;
+}
+
+void gnc_ecan_pay_activity_wages(Account **accounts, gint n_accounts, gdouble wage_pool_size)
+{
+    g_return_if_fail(accounts != nullptr);
+    g_return_if_fail(n_accounts > 0);
+    g_return_if_fail(wage_pool_size > 0.0);
+    
+    if (!g_atomspace || !g_ecan_economy.system_initialized) {
+        g_warning("ECAN attention economy not initialized");
+        return;
+    }
+    
+    // Calculate total activity across all accounts
+    gdouble total_activity = 0.0;
+    std::vector<std::pair<Account*, gdouble>> activity_scores;
+    
+    for (gint i = 0; i < n_accounts; i++) {
+        auto it = g_atomspace->account_atoms.find(accounts[i]);
+        if (it != g_atomspace->account_atoms.end()) {
+            auto& params = g_atomspace->attention_params[it->second];
+            
+            // Calculate activity score based on recent activity and time decay
+            gint64 current_time = g_get_real_time();
+            gdouble time_since_activity = (current_time - params.last_activity_time) / 1000000.0; // Convert to seconds
+            gdouble time_decay = std::exp(-time_since_activity / 3600.0); // 1-hour decay constant
+            gdouble activity_score = params.activity_level * time_decay * params.wage_multiplier;
+            
+            total_activity += activity_score;
+            activity_scores.push_back(std::make_pair(accounts[i], activity_score));
+        }
+    }
+    
+    if (total_activity <= 0.0) {
+        return; // No activity to reward
+    }
+    
+    // Distribute wages proportionally to activity
+    for (const auto& pair : activity_scores) {
+        Account* account = pair.first;
+        gdouble activity_score = pair.second;
+        
+        auto it = g_atomspace->account_atoms.find(account);
+        if (it != g_atomspace->account_atoms.end()) {
+            auto& params = g_atomspace->attention_params[it->second];
+            
+            // Calculate wage payment
+            gdouble wage_ratio = activity_score / total_activity;
+            gdouble wage_payment = wage_pool_size * wage_ratio;
+            
+            // Pay wage (80% to STI, 20% to LTI for long-term building)
+            params.sti += wage_payment * 0.8;
+            params.lti += wage_payment * 0.2;
+            
+            g_debug("Paid activity wage to %s: wage=%.3f (activity_score=%.3f, ratio=%.3f)",
+                    xaccAccountGetName(account), wage_payment, activity_score, wage_ratio);
+        }
+    }
+    
+    g_message("Distributed activity wages: total_pool=%.1f, total_activity=%.3f, accounts=%d",
+              wage_pool_size, total_activity, n_accounts);
+}
+
+void gnc_ecan_apply_attention_decay(Account **accounts, gint n_accounts, gdouble decay_cycle_time)
+{
+    g_return_if_fail(accounts != nullptr);
+    g_return_if_fail(n_accounts > 0);
+    g_return_if_fail(decay_cycle_time > 0.0);
+    
+    if (!g_atomspace || !g_ecan_economy.system_initialized) {
+        g_warning("ECAN attention economy not initialized");
+        return;
+    }
+    
+    gdouble decay_factor = 1.0 - (decay_cycle_time / 3600.0) * 0.1; // 10% decay per hour
+    decay_factor = std::max(0.1, decay_factor); // Minimum 10% retention
+    
+    for (gint i = 0; i < n_accounts; i++) {
+        auto it = g_atomspace->account_atoms.find(accounts[i]);
+        if (it != g_atomspace->account_atoms.end()) {
+            auto& params = g_atomspace->attention_params[it->second];
+            
+            // Apply decay with different rates for STI and LTI
+            params.sti *= decay_factor * params.sti_decay_rate;
+            params.lti *= decay_factor * params.lti_decay_rate * 0.5; // LTI decays slower
+            
+            // Activity level also decays
+            params.activity_level *= decay_factor;
+            
+            // Update legacy compatibility fields
+            params.importance = (params.sti + params.lti * 10.0) / 11.0;
+            params.attention_value = std::min(1.0, (params.sti + params.lti + params.vlti * 100.0) / 200.0);
+        }
+    }
+    
+    g_debug("Applied attention decay to %d accounts: decay_factor=%.3f, cycle_time=%.1fs",
+            n_accounts, decay_factor, decay_cycle_time);
+}
+
+gint gnc_ecan_prevent_attention_starvation(Account **accounts, gint n_accounts)
+{
+    g_return_val_if_fail(accounts != nullptr, 0);
+    g_return_val_if_fail(n_accounts > 0, 0);
+    
+    if (!g_atomspace || !g_ecan_economy.system_initialized) {
+        g_warning("ECAN attention economy not initialized");
+        return 0;
+    }
+    
+    gint starved_accounts = 0;
+    gdouble emergency_allocation_per_account = g_ecan_economy.emergency_attention_reserve / n_accounts;
+    
+    for (gint i = 0; i < n_accounts; i++) {
+        auto it = g_atomspace->account_atoms.find(accounts[i]);
+        if (it != g_atomspace->account_atoms.end()) {
+            auto& params = g_atomspace->attention_params[it->second];
+            
+            // Check for attention starvation
+            gdouble total_attention = params.sti + params.lti + params.vlti;
+            if (total_attention < params.starvation_threshold) {
+                starved_accounts++;
+                
+                // Emergency attention allocation
+                params.sti += emergency_allocation_per_account * 0.6;
+                params.lti += emergency_allocation_per_account * 0.4;
+                
+                // Reduce emergency reserve
+                g_ecan_economy.emergency_attention_reserve -= emergency_allocation_per_account;
+                
+                g_warning("Emergency attention allocation for starved account %s: allocated=%.3f, "
+                         "new_total=%.3f, remaining_reserve=%.1f",
+                         xaccAccountGetName(accounts[i]), emergency_allocation_per_account,
+                         params.sti + params.lti + params.vlti, g_ecan_economy.emergency_attention_reserve);
+            }
+        }
+    }
+    
+    if (starved_accounts > 0) {
+        g_message("Prevented attention starvation for %d accounts, remaining emergency reserve: %.1f",
+                  starved_accounts, g_ecan_economy.emergency_attention_reserve);
+    }
+    
+    return starved_accounts;
+}
+
+void gnc_ecan_get_system_stats(gdouble *total_sti_in_circulation,
+                               gdouble *total_lti_in_circulation,
+                               gdouble *sti_fund_balance,
+                               gdouble *lti_fund_balance)
+{
+    if (!g_atomspace || !g_ecan_economy.system_initialized) {
+        if (total_sti_in_circulation) *total_sti_in_circulation = 0.0;
+        if (total_lti_in_circulation) *total_lti_in_circulation = 0.0;
+        if (sti_fund_balance) *sti_fund_balance = 0.0;
+        if (lti_fund_balance) *lti_fund_balance = 0.0;
+        return;
+    }
+    
+    gdouble circulating_sti = 0.0;
+    gdouble circulating_lti = 0.0;
+    
+    // Calculate total attention in circulation
+    for (const auto& pair : g_atomspace->attention_params) {
+        const auto& params = pair.second;
+        circulating_sti += params.sti;
+        circulating_lti += params.lti;
+    }
+    
+    if (total_sti_in_circulation) *total_sti_in_circulation = circulating_sti;
+    if (total_lti_in_circulation) *total_lti_in_circulation = circulating_lti;
+    if (sti_fund_balance) *sti_fund_balance = g_atomspace->total_sti_funds;
+    if (lti_fund_balance) *lti_fund_balance = g_atomspace->total_lti_funds;
+}
+
+/********************************************************************\
+ * Phase 2: Distributed Mesh Attention Integration                 *
+\********************************************************************/
+
+/** Global attention mesh state */
+static struct {
+    GHashTable *mesh_nodes;        /**< Map of node_id -> GncAttentionMeshNode */
+    gdouble total_mesh_attention;  /**< Total attention pool for mesh */
+    gboolean mesh_initialized;     /**< Mesh initialization state */
+    gint mesh_size;                /**< Number of nodes in mesh */
+} g_attention_mesh = {0};
+
+gboolean gnc_ecan_init_attention_mesh(gint mesh_size, gdouble total_mesh_attention)
+{
+    g_return_val_if_fail(mesh_size > 0, FALSE);
+    g_return_val_if_fail(total_mesh_attention > 0.0, FALSE);
+    
+    if (g_attention_mesh.mesh_initialized) {
+        g_warning("Attention mesh already initialized");
+        return FALSE;
+    }
+    
+    g_attention_mesh.mesh_nodes = g_hash_table_new_full(g_str_hash, g_str_equal, g_free,
+                                                        (GDestroyNotify)g_free);
+    g_attention_mesh.total_mesh_attention = total_mesh_attention;
+    g_attention_mesh.mesh_size = mesh_size;
+    g_attention_mesh.mesh_initialized = TRUE;
+    
+    g_message("Initialized distributed attention mesh: size=%d, total_attention=%.1f",
+              mesh_size, total_mesh_attention);
+    
+    return TRUE;
+}
+
+gboolean gnc_ecan_mesh_add_node(const gchar *node_id, gdouble attention_capacity)
+{
+    g_return_val_if_fail(node_id != nullptr, FALSE);
+    g_return_val_if_fail(attention_capacity > 0.0, FALSE);
+    
+    if (!g_attention_mesh.mesh_initialized) {
+        g_warning("Attention mesh not initialized");
+        return FALSE;
+    }
+    
+    if (g_hash_table_contains(g_attention_mesh.mesh_nodes, node_id)) {
+        g_warning("Node %s already exists in mesh", node_id);
+        return FALSE;
+    }
+    
+    GncAttentionMeshNode *node = g_new0(GncAttentionMeshNode, 1);
+    node->node_id = g_strdup(node_id);
+    node->attention_capacity = attention_capacity;
+    node->current_attention = attention_capacity * 0.1; // Start with 10% of capacity
+    node->last_sync_time = g_get_real_time();
+    node->neighbor_nodes = g_hash_table_new_full(g_str_hash, g_str_equal, g_free, nullptr);
+    
+    // Initialize local attention parameters
+    node->local_params.sti = 10.0;
+    node->local_params.lti = 5.0;
+    node->local_params.spreading_rate = 0.1;
+    node->local_params.focus_factor = 1.0;
+    
+    g_hash_table_insert(g_attention_mesh.mesh_nodes, g_strdup(node_id), node);
+    
+    g_debug("Added mesh node %s with capacity %.1f", node_id, attention_capacity);
+    return TRUE;
+}
+
+gboolean gnc_ecan_mesh_connect_nodes(const gchar *node_id1, 
+                                      const gchar *node_id2, 
+                                      gdouble connection_strength)
+{
+    g_return_val_if_fail(node_id1 != nullptr, FALSE);
+    g_return_val_if_fail(node_id2 != nullptr, FALSE);
+    g_return_val_if_fail(connection_strength >= 0.0 && connection_strength <= 1.0, FALSE);
+    
+    if (!g_attention_mesh.mesh_initialized) {
+        g_warning("Attention mesh not initialized");
+        return FALSE;
+    }
+    
+    GncAttentionMeshNode *node1 = (GncAttentionMeshNode*)g_hash_table_lookup(g_attention_mesh.mesh_nodes, node_id1);
+    GncAttentionMeshNode *node2 = (GncAttentionMeshNode*)g_hash_table_lookup(g_attention_mesh.mesh_nodes, node_id2);
+    
+    if (!node1 || !node2) {
+        g_warning("One or both nodes not found in mesh: %s, %s", node_id1, node_id2);
+        return FALSE;
+    }
+    
+    // Add bidirectional connections
+    g_hash_table_insert(node1->neighbor_nodes, g_strdup(node_id2), GDOUBLE_TO_POINTER(connection_strength));
+    g_hash_table_insert(node2->neighbor_nodes, g_strdup(node_id1), GDOUBLE_TO_POINTER(connection_strength));
+    
+    g_debug("Connected mesh nodes %s <-> %s with strength %.2f", node_id1, node_id2, connection_strength);
+    return TRUE;
+}
+
+void gnc_ecan_mesh_propagate_attention(const gchar *source_node_id, 
+                                       gdouble attention_change,
+                                       gint propagation_depth)
+{
+    g_return_if_fail(source_node_id != nullptr);
+    g_return_if_fail(propagation_depth >= 0);
+    
+    if (!g_attention_mesh.mesh_initialized) {
+        g_warning("Attention mesh not initialized");
+        return;
+    }
+    
+    GncAttentionMeshNode *source_node = (GncAttentionMeshNode*)g_hash_table_lookup(g_attention_mesh.mesh_nodes, source_node_id);
+    if (!source_node) {
+        g_warning("Source node %s not found in mesh", source_node_id);
+        return;
+    }
+    
+    // Apply attention change to source node
+    source_node->current_attention += attention_change;
+    source_node->current_attention = CLAMP(source_node->current_attention, 0.0, source_node->attention_capacity);
+    
+    // Propagate to neighbors if depth > 0
+    if (propagation_depth > 0) {
+        GHashTableIter iter;
+        gpointer key, value;
+        g_hash_table_iter_init(&iter, source_node->neighbor_nodes);
+        
+        while (g_hash_table_iter_next(&iter, &key, &value)) {
+            const gchar *neighbor_id = (const gchar*)key;
+            gdouble connection_strength = GPOINTER_TO_DOUBLE(value);
+            
+            // Propagate reduced attention to neighbor
+            gdouble propagated_change = attention_change * connection_strength * 0.5; // 50% decay per hop
+            gnc_ecan_mesh_propagate_attention(neighbor_id, propagated_change, propagation_depth - 1);
+        }
+    }
+    
+    g_debug("Propagated attention %.2f to node %s (depth=%d, final_attention=%.2f)",
+            attention_change, source_node_id, propagation_depth, source_node->current_attention);
+}
+
+gboolean gnc_ecan_mesh_synchronize_attention(gboolean force_sync)
+{
+    if (!g_attention_mesh.mesh_initialized) {
+        g_warning("Attention mesh not initialized");
+        return FALSE;
+    }
+    
+    gint64 current_time = g_get_real_time();
+    gint nodes_synced = 0;
+    
+    GHashTableIter iter;
+    gpointer key, value;
+    g_hash_table_iter_init(&iter, g_attention_mesh.mesh_nodes);
+    
+    while (g_hash_table_iter_next(&iter, &key, &value)) {
+        GncAttentionMeshNode *node = (GncAttentionMeshNode*)value;
+        
+        // Check if sync is needed (either forced or enough time has passed)
+        gint64 time_since_sync = current_time - node->last_sync_time;
+        if (force_sync || time_since_sync > 60000000) { // 60 seconds
+            
+            // Synchronize attention parameters
+            node->last_sync_time = current_time;
+            nodes_synced++;
+            
+            g_debug("Synchronized attention for mesh node %s", node->node_id);
+        }
+    }
+    
+    g_debug("Mesh synchronization completed: %d nodes synced", nodes_synced);
+    return TRUE;
+}
+
+gint gnc_ecan_mesh_balance_attention_load(gdouble load_threshold)
+{
+    g_return_val_if_fail(load_threshold >= 0.0 && load_threshold <= 1.0, 0);
+    
+    if (!g_attention_mesh.mesh_initialized) {
+        g_warning("Attention mesh not initialized");
+        return 0;
+    }
+    
+    gint transfers_performed = 0;
+    GList *overloaded_nodes = nullptr;
+    GList *underloaded_nodes = nullptr;
+    
+    // Identify overloaded and underloaded nodes
+    GHashTableIter iter;
+    gpointer key, value;
+    g_hash_table_iter_init(&iter, g_attention_mesh.mesh_nodes);
+    
+    while (g_hash_table_iter_next(&iter, &key, &value)) {
+        GncAttentionMeshNode *node = (GncAttentionMeshNode*)value;
+        gdouble utilization = node->current_attention / node->attention_capacity;
+        
+        if (utilization > load_threshold) {
+            overloaded_nodes = g_list_append(overloaded_nodes, node);
+        } else if (utilization < (load_threshold * 0.5)) {
+            underloaded_nodes = g_list_append(underloaded_nodes, node);
+        }
+    }
+    
+    // Transfer attention from overloaded to underloaded nodes
+    GList *over_iter = overloaded_nodes;
+    GList *under_iter = underloaded_nodes;
+    
+    while (over_iter && under_iter) {
+        GncAttentionMeshNode *over_node = (GncAttentionMeshNode*)over_iter->data;
+        GncAttentionMeshNode *under_node = (GncAttentionMeshNode*)under_iter->data;
+        
+        gdouble excess_attention = over_node->current_attention - (over_node->attention_capacity * load_threshold);
+        gdouble available_capacity = under_node->attention_capacity - under_node->current_attention;
+        gdouble transfer_amount = MIN(excess_attention * 0.5, available_capacity * 0.5);
+        
+        if (transfer_amount > 1.0) { // Only transfer if significant amount
+            over_node->current_attention -= transfer_amount;
+            under_node->current_attention += transfer_amount;
+            transfers_performed++;
+            
+            g_debug("Balanced attention: %.2f from %s to %s", 
+                    transfer_amount, over_node->node_id, under_node->node_id);
+        }
+        
+        over_iter = over_iter->next;
+        under_iter = under_iter->next;
+    }
+    
+    g_list_free(overloaded_nodes);
+    g_list_free(underloaded_nodes);
+    
+    g_debug("Attention load balancing completed: %d transfers performed", transfers_performed);
+    return transfers_performed;
+}
+
+void gnc_ecan_mesh_get_topology_stats(gint *total_nodes,
+                                       gint *total_connections,
+                                       gdouble *avg_node_capacity,
+                                       gdouble *mesh_utilization)
+{
+    if (!g_attention_mesh.mesh_initialized) {
+        if (total_nodes) *total_nodes = 0;
+        if (total_connections) *total_connections = 0;
+        if (avg_node_capacity) *avg_node_capacity = 0.0;
+        if (mesh_utilization) *mesh_utilization = 0.0;
+        return;
+    }
+    
+    gint node_count = g_hash_table_size(g_attention_mesh.mesh_nodes);
+    gint connection_count = 0;
+    gdouble total_capacity = 0.0;
+    gdouble total_current_attention = 0.0;
+    
+    GHashTableIter iter;
+    gpointer key, value;
+    g_hash_table_iter_init(&iter, g_attention_mesh.mesh_nodes);
+    
+    while (g_hash_table_iter_next(&iter, &key, &value)) {
+        GncAttentionMeshNode *node = (GncAttentionMeshNode*)value;
+        connection_count += g_hash_table_size(node->neighbor_nodes);
+        total_capacity += node->attention_capacity;
+        total_current_attention += node->current_attention;
+    }
+    
+    // Each connection is counted twice (bidirectional), so divide by 2
+    connection_count /= 2;
+    
+    if (total_nodes) *total_nodes = node_count;
+    if (total_connections) *total_connections = connection_count;
+    if (avg_node_capacity) *avg_node_capacity = (node_count > 0) ? (total_capacity / node_count) : 0.0;
+    if (mesh_utilization) *mesh_utilization = (total_capacity > 0.0) ? (total_current_attention / total_capacity) : 0.0;
+}
+
+void gnc_ecan_mesh_shutdown(void)
+{
+    if (!g_attention_mesh.mesh_initialized) {
+        return;
+    }
+    
+    if (g_attention_mesh.mesh_nodes) {
+        // Free mesh node data
+        GHashTableIter iter;
+        gpointer key, value;
+        g_hash_table_iter_init(&iter, g_attention_mesh.mesh_nodes);
+        
+        while (g_hash_table_iter_next(&iter, &key, &value)) {
+            GncAttentionMeshNode *node = (GncAttentionMeshNode*)value;
+            if (node->neighbor_nodes) {
+                g_hash_table_destroy(node->neighbor_nodes);
+            }
+            g_free(node->node_id);
+        }
+        
+        g_hash_table_destroy(g_attention_mesh.mesh_nodes);
+        g_attention_mesh.mesh_nodes = nullptr;
+    }
+    
+    g_attention_mesh.mesh_initialized = FALSE;
+    g_attention_mesh.mesh_size = 0;
+    g_attention_mesh.total_mesh_attention = 0.0;
+    
+    g_message("Attention mesh shutdown completed");
 }
 
 /********************************************************************\
