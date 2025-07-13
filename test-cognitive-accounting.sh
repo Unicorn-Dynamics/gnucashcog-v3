@@ -73,10 +73,19 @@ echo ""
 echo "Performing basic syntax validation..."
 
 # Check for C++ syntax issues in header
-if cpp -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -Ilibgnucash/engine libgnucash/engine/gnc-cognitive-accounting.h > /dev/null 2>&1; then
-    echo "✓ Header syntax validation passed"
+if command -v pkg-config > /dev/null 2>&1; then
+    GLIB_CFLAGS=$(pkg-config --cflags glib-2.0 2>/dev/null)
+    if [ $? -eq 0 ]; then
+        if cpp $GLIB_CFLAGS -Ilibgnucash/engine libgnucash/engine/gnc-cognitive-accounting.h > /dev/null 2>&1; then
+            echo "✓ Header syntax validation passed"
+        else
+            echo "✗ Header syntax validation failed"
+        fi
+    else
+        echo "⚠ Skipping header syntax validation (glib-2.0 pkg-config not found)"
+    fi
 else
-    echo "✗ Header syntax validation failed"
+    echo "⚠ Skipping header syntax validation (pkg-config not available)"
 fi
 
 # Verify key function definitions exist
