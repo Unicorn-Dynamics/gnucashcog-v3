@@ -334,6 +334,10 @@ else()
     set(HAVE_GGML 0)
 endif()
 
+# Phase 3: Neural-Symbolic Synthesis via Custom ggml Kernels
+add_definitions(-DPHASE3_NEURAL_SYMBOLIC_SYNTHESIS)
+message(STATUS "Phase 3: Neural-Symbolic Synthesis via Custom ggml Kernels enabled")
+
 # Cogfluence Financial Clustering Integration
 # Note: This would typically be a separate library or module
 # For now, we'll include it as part of the cognitive framework
