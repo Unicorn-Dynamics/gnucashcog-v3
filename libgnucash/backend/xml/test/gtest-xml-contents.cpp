@@ -96,7 +96,7 @@ TEST_F(LoadFile, LoadAndVerifyKVP)
 
     // THE FOLLOWING TESTS BANK ACCOUNT
     const auto& bank_splitlist = xaccAccountGetSplits (bank_acct);
-    ASSERT_EQ (bank_splitlist.size(), static_cast<uint>(4));
+    ASSERT_EQ (bank_splitlist.size(), static_cast<uint32_t>(4));
 
     // first split is from a regular transaction
     auto bank_reg_split{bank_splitlist[0]};
@@ -168,7 +168,7 @@ TEST_F(LoadFile, LoadAndVerifyKVP)
     ASSERT_TRUE (AR_acct != nullptr);
 
     const auto& AR_splitlist{xaccAccountGetSplits (AR_acct)};
-    ASSERT_EQ (AR_splitlist.size(), static_cast<uint>(3));
+    ASSERT_EQ (AR_splitlist.size(), static_cast<uint32_t>(3));
 
     // 1st split is invoice posting txn
     auto inv_post_txn{xaccSplitGetParent(AR_splitlist[0])};
@@ -195,7 +195,7 @@ TEST_F(LoadFile, LoadAndVerifyKVP)
     ASSERT_TRUE (close_acct != nullptr);
 
     const auto& close_splitlist{xaccAccountGetSplits (close_acct)};
-    ASSERT_EQ (close_splitlist.size(), static_cast<uint>(1));
+    ASSERT_EQ (close_splitlist.size(), static_cast<uint32_t>(1));
 
     // 3rd split is a closing txn
     auto closing_txn{xaccSplitGetParent(close_splitlist[0])};

@@ -47,7 +47,10 @@ set(test_gnc_quotes_LIBS
         ${Boost_LOCALE_LIBRARY}
         ${Boost_PROPERTY_TREE_LIBRARY}
         ${Boost_SYSTEM_LIBRARY}
-        )
+        $<$<BOOL:${WIN32}>:${WINSOCK_LIB}>
+        $<$<BOOL:${WIN32}>:${WS2_LIB}>
+      )
+
 gnc_add_test(test-gnc-quotes "${test_gnc_quotes_SOURCES}" test_gnc_quotes_INCLUDES test_gnc_quotes_LIBS
         "GTEST_FILTER=-GncQuotesTest.online_wiggle")
 

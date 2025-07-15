@@ -204,8 +204,11 @@ if (WIN32)
   set(REGEX_LDFLAGS "-L${REGEX_LIB_PATH} -lregex")
   #set(LIBXSLT_INCLUDE_DIR ${CMAKE_PREFIX_PATH}/libxslt/include)
   #set(LIBXSLT_XSLTPROC_EXECUTABLE ${CMAKE_PREFIX_PATH}/libxslt/bin/xsltproc)
-#Prevent creating a console window on startup and harden the executable.
+  #Prevent creating a console window on startup and harden the executable.
   set(CMAKE_EXE_LINKER_FLAGS "-mwindows -Wl,--nxcompat -Wl,--dynamicbase")
+  #Find the winsock2 library
+  find_library(WINSOCK_LIB wsock32)
+  find_library(WS2_LIB ws2_32)
 endif()
 
 find_package(Threads REQUIRED)

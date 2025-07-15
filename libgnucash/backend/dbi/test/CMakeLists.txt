@@ -9,7 +9,16 @@ set(BACKEND_DBI_TEST_INCLUDE_DIRS
   ${CMAKE_SOURCE_DIR}/common/test-core
   ${LIBDBI_INCLUDE_PATH}
 )
-set(BACKEND_DBI_TEST_LIBS gnc-backend-sql gnc-engine gnc-test-engine test-core ${Boost_REGEX_LIBRARY} ${LIBDBI_LIBRARY})
+set(BACKEND_DBI_TEST_LIBS
+  gnc-backend-sql
+  gnc-engine
+  gnc-test-engine
+  test-core
+  ${Boost_REGEX_LIBRARY}
+  ${LIBDBI_LIBRARY}
+  $<$<BOOL:${WIN32}>:${WINSOCK_LIB}>
+  $<$<BOOL:${WIN32}>:${WS2_LIB}>
+)
 
 set(test_dbi_backend_SOURCES
   test-backend-dbi.cpp
@@ -26,7 +35,7 @@ set(test_dbi_backend_HEADERS test-dbi-business-stuff.h test-dbi-stuff.h)
 set_dist_list(test_dbi_backend_DIST ${test_dbi_backend_SOURCES} ${test_dbi_backend_HEADERS} test-dbi.xml CMakeLists.txt )
 
 # This test does not work on Win32
-if (WITH_SQL AND NOT WIN32)
+if (WITH_SQL)
   gnc_add_test(test-backend-dbi "${test_dbi_backend_SOURCES}"
     BACKEND_DBI_TEST_INCLUDE_DIRS BACKEND_DBI_TEST_LIBS
   )
