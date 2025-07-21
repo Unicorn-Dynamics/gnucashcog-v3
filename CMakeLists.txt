@@ -1229,6 +1229,33 @@ target_compile_definitions(meta-cognitive-demo PRIVATE
 )
 
 # ############################################################
+# Phase 6: Rigorous Testing, Documentation, and Cognitive Unification Demo
+# ############################################################
+
+# Phase 6 Comprehensive Demo
+add_executable(phase6-comprehensive-demo
+    phase6-comprehensive-demo.cpp
+)
+
+target_link_libraries(phase6-comprehensive-demo
+    gnc-engine
+    gnc-core-utils
+    PkgConfig::GLIB2
+    ${GOBJECT_LDFLAGS}
+    Threads::Threads
+)
+
+target_include_directories(phase6-comprehensive-demo PRIVATE
+    ${CMAKE_BINARY_DIR}/common # for config.h
+    ${CMAKE_SOURCE_DIR}/common # for platform.h
+    ${CMAKE_SOURCE_DIR}/libgnucash/engine
+)
+
+target_compile_definitions(phase6-comprehensive-demo PRIVATE 
+    -DG_LOG_DOMAIN=\"gnc.phase6\"
+)
+
+# ############################################################
 # Package creation rules
 
 if(UNIX)
