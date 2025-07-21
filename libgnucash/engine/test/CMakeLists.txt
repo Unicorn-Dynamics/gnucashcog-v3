@@ -218,6 +218,10 @@ gnc_add_test(test-tensor-network test-tensor-network.cpp
 gnc_add_test(test-meta-cognitive test-meta-cognitive.cpp
   gtest_engine_INCLUDES gtest_old_engine_LIBS)
 
+# Phase 6 comprehensive test
+gnc_add_test(test-phase6-comprehensive test-phase6-comprehensive.cpp
+  gtest_engine_INCLUDES gtest_old_engine_LIBS)
+
 set(test_engine_SOURCES_DIST
         gtest-gnc-euro.cpp
         gtest-gnc-int128.cpp
@@ -236,6 +240,7 @@ set(test_engine_SOURCES_DIST
         test-cognitive-accounting.cpp
         test-tensor-network.cpp
         test-meta-cognitive.cpp
+        test-phase6-comprehensive.cpp
         test-commodities.cpp
         test-customer.c
         test-employee.c
