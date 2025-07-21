@@ -58,6 +58,7 @@ set (engine_HEADERS
   gnc-cognitive-scheme.h
   gnc-cognitive-comms.h
   gnc-tensor-network.h
+  gnc-meta-cognitive.h
   gnc-cognitive-api.h
   gnc-cognitive-graphql.h
   gnc-commodity.h
@@ -165,6 +166,7 @@ set (engine_SOURCES
   gnc-cognitive-scheme.cpp
   gnc-cognitive-comms.cpp
   gnc-tensor-network.cpp
+  gnc-meta-cognitive.cpp
   gnc-cognitive-api.c
   gnc-cognitive-graphql.c
   gnc-commodity.cpp

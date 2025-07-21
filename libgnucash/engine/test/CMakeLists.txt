@@ -214,6 +214,10 @@ gnc_add_test(test-cognitive-accounting test-cognitive-accounting.cpp
 gnc_add_test(test-tensor-network test-tensor-network.cpp
   gtest_engine_INCLUDES gtest_old_engine_LIBS)
 
+# Meta-cognitive test
+gnc_add_test(test-meta-cognitive test-meta-cognitive.cpp
+  gtest_engine_INCLUDES gtest_old_engine_LIBS)
+
 set(test_engine_SOURCES_DIST
         gtest-gnc-euro.cpp
         gtest-gnc-int128.cpp
@@ -231,6 +235,7 @@ set(test_engine_SOURCES_DIST
         test-business.c
         test-cognitive-accounting.cpp
         test-tensor-network.cpp
+        test-meta-cognitive.cpp
         test-commodities.cpp
         test-customer.c
         test-employee.c
