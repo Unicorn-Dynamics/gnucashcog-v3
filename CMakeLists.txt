@@ -1172,6 +1172,33 @@ if (WIN32)
 endif()
 
 # ############################################################
+# Phase 1: Cognitive Primitives & Foundational Hypergraph Encoding Demo  
+# ############################################################
+
+# Phase 1 Cognitive Primitives Demo
+add_executable(phase1-cognitive-primitives-demo
+    phase1-cognitive-primitives-demo.cpp
+)
+
+target_link_libraries(phase1-cognitive-primitives-demo
+    gnc-engine
+    gnc-core-utils
+    PkgConfig::GLIB2
+    ${GOBJECT_LDFLAGS}
+    Threads::Threads
+)
+
+target_include_directories(phase1-cognitive-primitives-demo PRIVATE
+    ${CMAKE_BINARY_DIR}/common # for config.h
+    ${CMAKE_SOURCE_DIR}/common # for platform.h
+    ${CMAKE_SOURCE_DIR}/libgnucash/engine
+)
+
+target_compile_definitions(phase1-cognitive-primitives-demo PRIVATE 
+    -DG_LOG_DOMAIN=\"gnc.phase1\"
+)
+
+# ############################################################
 # Phase 4: Distributed Cognitive Mesh API & Embodiment Layer Demo
 # ############################################################
 
