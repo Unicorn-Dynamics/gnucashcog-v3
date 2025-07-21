@@ -58,6 +58,8 @@ set (engine_HEADERS
   gnc-cognitive-scheme.h
   gnc-cognitive-comms.h
   gnc-tensor-network.h
+  gnc-cognitive-api.h
+  gnc-cognitive-graphql.h
   gnc-commodity.h
   gnc-commodity.hpp
   gnc-date.h
@@ -163,6 +165,8 @@ set (engine_SOURCES
   gnc-cognitive-scheme.cpp
   gnc-cognitive-comms.cpp
   gnc-tensor-network.cpp
+  gnc-cognitive-api.c
+  gnc-cognitive-graphql.c
   gnc-commodity.cpp
   gnc-date.cpp
   gnc-datetime.cpp
@@ -263,6 +267,7 @@ target_link_libraries(gnc-engine
     ${GMODULE_LDFLAGS}
     PkgConfig::GLIB2
     ${GOBJECT_LDFLAGS}
+    $<$<BOOL:${HAVE_JSON_GLIB}>:${JSON_GLIB_LIBRARIES}>
     $<$<BOOL:${HAVE_OPENCOG_COGUTIL}>:${OPENCOG_COGUTIL_LIBRARIES}>
     $<$<BOOL:${HAVE_OPENCOG_ATOMSPACE}>:${OPENCOG_ATOMSPACE_LIBRARIES}>
     $<$<BOOL:${HAVE_OPENCOG_COGSERVER}>:${OPENCOG_COGSERVER_LIBRARIES}>

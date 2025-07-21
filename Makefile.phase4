@@ -1,0 +1,132 @@
+# Phase 4 API Minimal Build Makefile
+# For demonstration and testing of the Distributed Cognitive Mesh API
+
+CC = gcc
+CXX = g++
+CFLAGS = -Wall -Wextra -std=c11 $(shell pkg-config --cflags glib-2.0 json-glib-1.0)
+CXXFLAGS = -Wall -Wextra -std=c++11 $(shell pkg-config --cflags glib-2.0 json-glib-1.0)
+LDFLAGS = $(shell pkg-config --libs glib-2.0 json-glib-1.0) -pthread
+
+# Define minimal stubs
+DEFINES = -DGNC_MINIMAL_BUILD -DHAVE_JSON_GLIB
+
+# Minimal header dependencies
+INCLUDES = -I. -Ilibgnucash/engine
+
+# Core API sources (minimal stubs for dependencies)
+API_SOURCES = \
+	libgnucash/engine/gnc-cognitive-api.c \
+	libgnucash/engine/gnc-cognitive-graphql.c \
+	minimal-stubs.c
+
+# Demo application
+DEMO_SOURCES = phase4-api-demo-minimal.cpp
+
+all: phase4-api-demo-minimal
+
+minimal-stubs.c:
+	@echo "Creating minimal stubs for dependencies..."
+	@cat > minimal-stubs.c << 'EOF' 
+/* Minimal stubs for Phase 4 API demo */
+#include <glib.h>
+#include <string.h>
+#include <stdio.h>
+
+/* QOF stubs */
+typedef struct _QofBook QofBook;
+typedef struct _Account Account;
+typedef struct _Transaction Transaction;
+typedef struct _Split Split;
+typedef gint64 time64;
+typedef struct { gint64 num, gint64 denom; } gnc_numeric;
+
+QofBook* qof_book_new(void) { return g_malloc0(sizeof(QofBook)); }
+void qof_book_destroy(QofBook* book) { g_free(book); }
+Account* xaccMallocAccount(QofBook* book) { return g_malloc0(sizeof(Account)); }
+void xaccAccountSetName(Account* acc, const char* name) { }
+void xaccAccountSetType(Account* acc, int type) { }
+void gnc_account_append_child(Account* parent, Account* child) { }
+Account* gnc_account_create_root(QofBook* book) { return xaccMallocAccount(book); }
+Transaction* xaccMallocTransaction(QofBook* book) { return g_malloc0(sizeof(Transaction)); }
+void xaccTransBeginEdit(Transaction* txn) { }
+void xaccTransCommitEdit(Transaction* txn) { }
+Split* xaccMallocSplit(QofBook* book) { return g_malloc0(sizeof(Split)); }
+void xaccSplitSetAccount(Split* split, Account* acc) { }
+void xaccSplitSetAmount(Split* split, gnc_numeric amount) { }
+void xaccSplitSetParent(Split* split, Transaction* txn) { }
+gnc_numeric gnc_numeric_create(gint64 num, gint64 denom) { gnc_numeric result = {num, denom}; return result; }
+gchar* g_uuid_string_random(void) { return g_strdup_printf("uuid-%ld", g_get_real_time()); }
+
+/* Cognitive framework stubs */
+gboolean gnc_cognitive_accounting_init(void) { return TRUE; }
+void gnc_cognitive_accounting_shutdown(void) { }
+gboolean gnc_tensor_network_init(void) { return TRUE; }
+void gnc_tensor_network_shutdown(void) { }
+
+/* Account type enum stub */
+enum { ACCT_TYPE_BANK = 1, ACCT_TYPE_INCOME = 2 };
+EOF
+
+minimal-stubs.h:
+	@echo "Creating minimal header stubs..."
+	@cat > minimal-stubs.h << 'EOF' 
+/* Minimal headers for Phase 4 API demo */
+#ifndef MINIMAL_STUBS_H
+#define MINIMAL_STUBS_H
+
+#include <glib.h>
+
+/* Forward declarations */
+typedef struct _QofBook QofBook;
+typedef struct _Account Account;
+typedef struct _Transaction Transaction;  
+typedef struct _Split Split;
+typedef gint64 time64;
+typedef struct { gint64 num, gint64 denom; } gnc_numeric;
+
+/* Function declarations */
+QofBook* qof_book_new(void);
+void qof_book_destroy(QofBook* book);
+Account* xaccMallocAccount(QofBook* book);
+void xaccAccountSetName(Account* acc, const char* name);
+void xaccAccountSetType(Account* acc, int type);
+void gnc_account_append_child(Account* parent, Account* child);
+Account* gnc_account_create_root(QofBook* book);
+Transaction* xaccMallocTransaction(QofBook* book);
+void xaccTransBeginEdit(Transaction* txn);
+void xaccTransCommitEdit(Transaction* txn);
+Split* xaccMallocSplit(QofBook* book);
+void xaccSplitSetAccount(Split* split, Account* acc);
+void xaccSplitSetAmount(Split* split, gnc_numeric amount);
+void xaccSplitSetParent(Split* split, Transaction* txn);
+gnc_numeric gnc_numeric_create(gint64 num, gint64 denom);
+gchar* g_uuid_string_random(void);
+
+gboolean gnc_cognitive_accounting_init(void);
+void gnc_cognitive_accounting_shutdown(void);
+gboolean gnc_tensor_network_init(void);
+void gnc_tensor_network_shutdown(void);
+
+enum { ACCT_TYPE_BANK = 1, ACCT_TYPE_INCOME = 2 };
+
+#endif
+EOF
+
+phase4-api-demo-minimal.cpp: phase4-api-demo.cpp minimal-stubs.h
+	@echo "Creating minimal demo application..."
+	@cp phase4-api-demo.cpp phase4-api-demo-minimal.cpp
+	@echo '#include "minimal-stubs.h"' > temp_demo.cpp
+	@cat phase4-api-demo.cpp >> temp_demo.cpp
+	@mv temp_demo.cpp phase4-api-demo-minimal.cpp
+
+phase4-api-demo-minimal: $(API_SOURCES) $(DEMO_SOURCES) minimal-stubs.c minimal-stubs.h
+	$(CXX) $(CXXFLAGS) $(DEFINES) $(INCLUDES) -o $@ $(API_SOURCES) $(DEMO_SOURCES) $(LDFLAGS)
+
+test-api: phase4-api-demo-minimal
+	@echo "Running Phase 4 API Demo..."
+	@./phase4-api-demo-minimal
+
+clean:
+	rm -f phase4-api-demo-minimal minimal-stubs.c minimal-stubs.h phase4-api-demo-minimal.cpp
+
+.PHONY: all test-api clean

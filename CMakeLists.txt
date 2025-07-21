@@ -228,6 +228,17 @@ pkg_check_modules (GTHREAD REQUIRED gthread-2.0)
 pkg_check_modules (LIBXML2 REQUIRED libxml-2.0>=2.9.4)
 pkg_check_modules (LIBXSLT REQUIRED libxslt)
 
+# JSON-GLib for Phase 4 API support
+pkg_check_modules (JSON_GLIB json-glib-1.0>=1.0.0)
+if (JSON_GLIB_FOUND)
+    message(STATUS "Found JSON-GLib: ${JSON_GLIB_VERSION}")
+    set(HAVE_JSON_GLIB 1)
+    add_definitions(-DHAVE_JSON_GLIB)
+else()
+    message(WARNING "JSON-GLib not found - Phase 4 API features will use basic JSON support")
+    set(HAVE_JSON_GLIB 0)
+endif()
+
 # ############################################################
 # OpenCog Core Modules Integration
 # ############################################################
@@ -1159,6 +1170,37 @@ if (WIN32)
     FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
   )
 endif()
+
+# ############################################################
+# Phase 4: Distributed Cognitive Mesh API & Embodiment Layer Demo
+# ############################################################
+
+# Phase 4 API Demo
+add_executable(phase4-api-demo
+    phase4-api-demo.cpp
+)
+
+target_link_libraries(phase4-api-demo
+    gnc-engine
+    gnc-core-utils
+    PkgConfig::GLIB2
+    ${GOBJECT_LDFLAGS}
+    $<$<BOOL:${HAVE_JSON_GLIB}>:${JSON_GLIB_LIBRARIES}>
+    Threads::Threads
+)
+
+target_include_directories(phase4-api-demo PRIVATE
+    ${CMAKE_BINARY_DIR}/common # for config.h
+    ${CMAKE_SOURCE_DIR}/common # for platform.h
+    ${CMAKE_SOURCE_DIR}/libgnucash/engine
+    $<$<BOOL:${HAVE_JSON_GLIB}>:${JSON_GLIB_INCLUDE_DIRS}>
+)
+
+target_compile_definitions(phase4-api-demo PRIVATE 
+    -DG_LOG_DOMAIN=\"gnc.phase4\"
+    $<$<BOOL:${HAVE_JSON_GLIB}>:-DHAVE_JSON_GLIB>
+)
+
 # ############################################################
 # Package creation rules
 
