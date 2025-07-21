@@ -1202,6 +1202,33 @@ target_compile_definitions(phase4-api-demo PRIVATE
 )
 
 # ############################################################
+# Phase 5: Recursive Meta-Cognition & Evolutionary Optimization Demo
+# ############################################################
+
+# Meta-Cognitive Demo
+add_executable(meta-cognitive-demo
+    meta-cognitive-demo.cpp
+)
+
+target_link_libraries(meta-cognitive-demo
+    gnc-engine
+    gnc-core-utils
+    PkgConfig::GLIB2
+    ${GOBJECT_LDFLAGS}
+    Threads::Threads
+)
+
+target_include_directories(meta-cognitive-demo PRIVATE
+    ${CMAKE_BINARY_DIR}/common # for config.h
+    ${CMAKE_SOURCE_DIR}/common # for platform.h
+    ${CMAKE_SOURCE_DIR}/libgnucash/engine
+)
+
+target_compile_definitions(meta-cognitive-demo PRIVATE 
+    -DG_LOG_DOMAIN=\"gnc.metacognitive\"
+)
+
+# ############################################################
 # Package creation rules
 
 if(UNIX)
