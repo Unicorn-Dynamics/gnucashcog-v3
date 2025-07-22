@@ -210,6 +210,10 @@ gnc_add_test(test-gnc-option "${test_gnc_option_SOURCES}"
 gnc_add_test(test-cognitive-accounting test-cognitive-accounting.cpp
   gtest_engine_INCLUDES gtest_old_engine_LIBS)
 
+# Phase 1: Cognitive primitives test
+gnc_add_test(test-cognitive-primitives test-cognitive-primitives.cpp
+  gtest_engine_INCLUDES gtest_old_engine_LIBS)
+
 # Tensor network test
 gnc_add_test(test-tensor-network test-tensor-network.cpp
   gtest_engine_INCLUDES gtest_old_engine_LIBS)
@@ -238,6 +242,7 @@ set(test_engine_SOURCES_DIST
         test-address.c
         test-business.c
         test-cognitive-accounting.cpp
+        test-cognitive-primitives.cpp
         test-tensor-network.cpp
         test-meta-cognitive.cpp
         test-phase6-comprehensive.cpp

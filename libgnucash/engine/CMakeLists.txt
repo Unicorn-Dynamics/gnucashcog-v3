@@ -55,6 +55,7 @@ set (engine_HEADERS
   gnc-aqbanking-templates.h
   gnc-budget.h
   gnc-cognitive-accounting.h
+  gnc-cognitive-primitives.h
   gnc-cognitive-scheme.h
   gnc-cognitive-comms.h
   gnc-tensor-network.h
@@ -164,6 +165,7 @@ set (engine_SOURCES
   gnc-aqbanking-templates.cpp
   gnc-budget.cpp
   gnc-cognitive-accounting.cpp
+  gnc-cognitive-primitives.cpp
   gnc-cognitive-scheme.cpp
   gnc-cognitive-comms.cpp
   gnc-tensor-network.cpp

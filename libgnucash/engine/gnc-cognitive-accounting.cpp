@@ -14,6 +14,7 @@
  *********************************************************************/
 
 #include "gnc-cognitive-accounting.h"
+#include "gnc-cognitive-primitives.h"
 #include "gnc-cognitive-scheme.h"
 #include "gnc-cognitive-comms.h"
 #include "gnc-tensor-network.h"
@@ -370,6 +371,14 @@ gboolean gnc_cognitive_accounting_init(void)
         g_warning("Failed to initialize Scheme cognitive interface");
     }
     
+    // Initialize Phase 1: Cognitive primitives and foundational hypergraph encoding
+    if (!gnc_cognitive_primitives_init()) {
+        g_warning("Failed to initialize Phase 1 cognitive primitives");
+        return FALSE;
+    } else {
+        g_message("Phase 1: Cognitive Primitives & Foundational Hypergraph Encoding initialized");
+    }
+    
     // Initialize inter-module communication protocols
     if (!gnc_cognitive_comms_init()) {
         g_warning("Failed to initialize cognitive communication hub");
@@ -407,6 +416,9 @@ void gnc_cognitive_accounting_shutdown(void)
     
     // Shutdown communication protocols
     gnc_cognitive_comms_shutdown();
+    
+    // Shutdown Phase 1: Cognitive primitives
+    gnc_cognitive_primitives_shutdown();
     
     // Shutdown tensor network
     gnc_tensor_network_shutdown();
