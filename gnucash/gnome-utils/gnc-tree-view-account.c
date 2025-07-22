@@ -58,6 +58,7 @@
 static QofLogModule log_module = GNC_MOD_GUI;
 
 /** Declarations *********************************************************/
+static void gnc_tree_view_account_destroy (GtkWidget *widget);
 static void gnc_tree_view_account_finalize (GObject *object);
 static gboolean gnc_tree_view_search_compare (GtkTreeModel *model, gint column,
         const gchar *key, GtkTreeIter *iter, gpointer search_data);
@@ -129,10 +130,11 @@ G_DEFINE_TYPE(GncTreeViewAccount, gnc_tree_view_account, GNC_TYPE_TREE_VIEW)
 static void
 gnc_tree_view_account_class_init (GncTreeViewAccountClass *klass)
 {
-    GObjectClass *o_class;
-
+    GObjectClass *o_class = G_OBJECT_CLASS (klass);
+    GtkWidgetClass *w_class = GTK_WIDGET_CLASS (klass);
     /* GObject signals */
-    o_class = G_OBJECT_CLASS (klass);
+
+    w_class->destroy = gnc_tree_view_account_destroy;
     o_class->finalize = gnc_tree_view_account_finalize;
 
     gnc_hook_add_dangler(HOOK_CURRENCY_CHANGED,
@@ -165,6 +167,21 @@ gnc_tree_view_account_init (GncTreeViewAccount *view)
                            view);
 
     gnc_init_account_view_info(&view->avi);
+}
+
+static void
+gnc_tree_view_account_destroy (GtkWidget *widget)
+{
+
+    GtkTreeView *view = GTK_TREE_VIEW (widget);
+    if (view)
+    {
+        GtkTreeModel *model;
+        model = gtk_tree_view_get_model(view);
+        g_object_run_dispose (G_OBJECT (model));
+        gtk_tree_view_set_model(view, NULL);
+    }
+    GTK_WIDGET_CLASS(gnc_tree_view_account_parent_class)->destroy(widget);
 }
 
 static void
