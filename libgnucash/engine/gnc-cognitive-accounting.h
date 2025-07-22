@@ -390,20 +390,20 @@ typedef struct {
     GncAtomHandle payload_atom;   /**< Atom containing message payload */
     gdouble priority;             /**< Message priority for attention allocation */
     time64 timestamp;             /**< Message timestamp */
-} GncCognitiveMessage;
+} GncAccountCognitiveMessage;
 
 /** Send cognitive message between modules
  * @param message Cognitive message to send
  * @return TRUE on successful delivery, FALSE otherwise
  */
-gboolean gnc_send_cognitive_message(const GncCognitiveMessage* message);
+gboolean gnc_send_cognitive_message(const GncAccountCognitiveMessage* message);
 
 /** Register cognitive message handler for module
  * @param module_name Name of module to register for
  * @param handler_func Function to handle received messages
  * @return TRUE on successful registration, FALSE otherwise
  */
-typedef void (*GncCognitiveMessageHandler)(const GncCognitiveMessage* message);
+typedef void (*GncCognitiveMessageHandler)(const GncAccountCognitiveMessage* message);
 gboolean gnc_register_cognitive_message_handler(const char* module_name,
                                                GncCognitiveMessageHandler handler_func);
 
@@ -426,7 +426,7 @@ typedef struct {
  * @param params Parameters for emergence detection
  * @return Handle to atom representing detected emergent pattern
  */
-GncAtomHandle gnc_detect_emergent_patterns(Account** accounts, gint n_accounts,
+GncAtomHandle gnc_detect_account_emergent_patterns(Account** accounts, gint n_accounts,
                                           const GncEmergenceParams* params);
 
 /** Optimize attention allocation for distributed cognition
