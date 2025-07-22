@@ -14,9 +14,9 @@
  *********************************************************************/
 
 #include "gnc-cognitive-accounting.h"
-// #include "gnc-cognitive-primitives.h"
+#include "gnc-cognitive-primitives.h"
 #include "gnc-cognitive-scheme.h"
-// #include "gnc-cognitive-comms.h"
+#include "gnc-cognitive-comms.h"
 #include "gnc-tensor-network.h"
 #include "Account.h"
 #include "Split.h"
@@ -122,7 +122,7 @@ struct GncCognitiveAtomSpace {
     std::map<guint64, GncAttentionParams> attention_params;
     std::map<guint64, std::pair<gdouble, gdouble>> truth_values; // strength, confidence
     std::map<const Account*, guint64> account_atoms;
-    std::vector<GncCognitiveMessage> message_queue;
+    std::vector<GncAccountCognitiveMessage> message_queue;
     std::map<std::string, GncCognitiveMessageHandler> message_handlers;
     guint64 next_handle;
     
@@ -219,8 +219,9 @@ struct GncCognitiveAtomSpace {
 
 static std::unique_ptr<GncCognitiveAtomSpace> g_atomspace = nullptr;
 
-/* Cognitive account type storage using KVP */
-static const char* COGNITIVE_TYPE_KEY = "cognitive-accounting-type";
+/* Cognitive account type storage using KVP - for future implementation */
+// TODO: Implement KVP storage when proper KVP API is available
+// static const char* COGNITIVE_TYPE_KEY = "cognitive-accounting-type";
 
 /********************************************************************\
  * OpenCog-style AtomSpace Operations                                *
@@ -917,7 +918,7 @@ char* gnc_create_hypergraph_pattern_encoding(const Account *root_account)
  * Inter-Module Communication Protocols                             *
 \********************************************************************/
 
-gboolean gnc_send_cognitive_message(const GncCognitiveMessage* message)
+gboolean gnc_send_cognitive_message(const GncAccountCognitiveMessage* message)
 {
     g_return_val_if_fail(message != nullptr, FALSE);
     
@@ -974,7 +975,7 @@ gboolean gnc_register_cognitive_message_handler(const char* module_name,
  * Distributed Cognition and Emergent Behavior                      *
 \********************************************************************/
 
-GncAtomHandle gnc_detect_emergent_patterns(Account** accounts, gint n_accounts,
+GncAtomHandle gnc_detect_account_emergent_patterns(Account** accounts, gint n_accounts,
                                           const GncEmergenceParams* params)
 {
     g_return_val_if_fail(accounts != nullptr, 0);
@@ -2902,10 +2903,8 @@ void gnc_account_set_cognitive_type(Account *account, GncCognitiveAccountType co
 {
     g_return_if_fail(account != nullptr);
     
-    // Store cognitive type in account KVP
-    qof_instance_set_kvp(QOF_INSTANCE(account), 
-                        g_variant_new_uint32(cognitive_type),
-                        1, COGNITIVE_TYPE_KEY);
+    // TODO: Store cognitive type in account KVP when KVP API is available
+    // For now, we'll manage this in the AtomSpace only
     
     // Initialize cognitive behaviors based on type
     if (g_atomspace) {
@@ -2962,12 +2961,8 @@ GncCognitiveAccountType gnc_account_get_cognitive_type(const Account *account)
 {
     g_return_val_if_fail(account != nullptr, GNC_COGNITIVE_ACCT_TRADITIONAL);
     
-    // Retrieve cognitive type from account KVP
-    auto var = qof_instance_get_kvp(QOF_INSTANCE(account), 1, COGNITIVE_TYPE_KEY);
-    if (var && g_variant_is_of_type(var, G_VARIANT_TYPE_UINT32)) {
-        return static_cast<GncCognitiveAccountType>(g_variant_get_uint32(var));
-    }
-    
+    // TODO: Retrieve cognitive type from account KVP when KVP API is available
+    // For now, return traditional type as default
     return GNC_COGNITIVE_ACCT_TRADITIONAL;
 }
 
