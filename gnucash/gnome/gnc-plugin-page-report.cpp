@@ -1722,6 +1722,13 @@ gnc_plugin_page_report_save_cb (GSimpleAction *simple,
     check_func = scm_c_eval_string("gnc:is-custom-report-type");
     if (scm_is_true (scm_call_1 (check_func, priv->cur_report)))
     {
+        auto report_name_str{priv->cur_odb->lookup_string_option("General", "Report name")};
+        auto window{GTK_WINDOW(gnc_plugin_page_get_window (GNC_PLUGIN_PAGE(report)))};
+
+        if (!gnc_action_dialog (window, _("_Overwrite"), false, _("This will update and \
+overwrite the existing saved report named \"%s\"."), report_name_str.c_str()))
+            return;
+
         /* The current report is already based on a custom report.
          * Replace the existing one instead of adding a new one
          */
