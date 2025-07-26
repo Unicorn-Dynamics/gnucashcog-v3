@@ -39,6 +39,7 @@
 #include "qof.h"
 #include "Account.h"
 #include "Transaction.h"
+#include "gnc-cognitive-accounting.h"
 
 #ifdef __cplusplus
 extern "C" {
