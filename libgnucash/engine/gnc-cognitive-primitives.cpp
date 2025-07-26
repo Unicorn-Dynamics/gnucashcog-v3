@@ -69,6 +69,11 @@ gboolean gnc_cognitive_primitives_init(void)
     GncCognitivePrimitiveUnit *balance_primitive = gnc_cognitive_primitive_create(
         "BalancePrimitive", "FOUNDATIONAL", 0.7);
     
+    // Suppress unused variable warnings for foundational primitives  
+    (void)account_primitive;
+    (void)transaction_primitive;
+    (void)balance_primitive;
+    
     primitives_initialized = TRUE;
     
     std::cout << "✅ Cognitive primitives system initialized\n";
@@ -488,7 +493,7 @@ void gnc_cognitive_grammar_pattern_add_component(
     
     // Resize component array
     pattern->component_count++;
-    pattern->components = g_realloc(pattern->components, 
+    pattern->components = (GncCognitivePrimitive *)g_realloc(pattern->components, 
                                   sizeof(GncCognitivePrimitive) * pattern->component_count);
     pattern->components[pattern->component_count - 1] = component;
 }
@@ -630,7 +635,7 @@ GList* gnc_account_to_cognitive_primitives(Account *account, gboolean recursive)
     
     // Set account-specific properties
     gnc_cognitive_primitive_set_property(account_primitive, "account_type", 
-                                       xaccAccountTypeToString(xaccAccountGetType(account)));
+                                       xaccAccountTypeEnumAsString(xaccAccountGetType(account)));
     gnc_cognitive_primitive_set_property(account_primitive, "account_code", 
                                        xaccAccountGetCode(account));
     

@@ -1119,6 +1119,10 @@ GncAtomHandle gnc_optimize_distributed_attention(gdouble cognitive_load,
     gdouble sti_allocation_ratio = std::min(1.0, available_resources / (cognitive_load + 1.0));
     gdouble lti_allocation_ratio = std::min(1.0, (available_resources * 0.5) / (cognitive_load + 1.0));
     
+    // Suppress unused variable warnings for future implementation
+    (void)sti_allocation_ratio;
+    (void)lti_allocation_ratio;
+    
     // Distributed cognition load balancing
     gdouble current_sti_usage = 0.0;
     gdouble current_lti_usage = 0.0;
