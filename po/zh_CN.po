@@ -35,14 +35,15 @@
 # "Cheng R.Zhu" <zcr@users.noreply.hosted.weblate.org>, 2025.
 # fliukka <weblate@fliukka.net>, 2025.
 # DGDS <dagrinddontstop@users.noreply.hosted.weblate.org>, 2025.
+# aba2222 <ABCSSS2021@outlook.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.12\n"
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-06-22 12:27-0700\n"
-"PO-Revision-Date: 2025-07-21 07:02+0000\n"
-"Last-Translator: DGDS <dagrinddontstop@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2025-07-22 09:02+0000\n"
+"Last-Translator: aba2222 <ABCSSS2021@outlook.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/gnucash/gnucash/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -29010,11 +29011,11 @@ msgstr "导出报表(_R)"
 
 #: gnucash/ui/gnc-plugin-page-sx-list.ui:37
 msgid "_Save layout as default"
-msgstr ""
+msgstr "保存为默认布局(_S)"
 
 #: gnucash/ui/gnc-plugin-page-sx-list.ui:39
 msgid "Save current layout as default"
-msgstr ""
+msgstr "保存当前布局为默认"
 
 #: gnucash/ui/gnc-plugin-page-sx-list.ui:55
 #: gnucash/ui/gnc-plugin-page-sx-list.ui:155
@@ -29256,7 +29257,7 @@ msgstr "解析由Finance::Quote返回的结果失败。"
 #: libgnucash/app-utils/gnc-quotes.cpp:782
 #: libgnucash/app-utils/gnc-quotes.cpp:797
 msgid "Result:"
-msgstr ""
+msgstr "后果："
 
 #. Translators: This is the error message reported by the Online Quotes processing code.
 #: libgnucash/app-utils/gnc-quotes.cpp:792
@@ -29573,89 +29574,87 @@ msgstr "Alpha Vantage API 密钥"
 #: libgnucash/engine/gnc-commodity.cpp:192
 msgctxt "FQ Source"
 msgid "Amsterdam Euronext eXchange, NL"
-msgstr ""
+msgstr "荷兰阿姆斯特丹泛欧交易所"
 
 #: libgnucash/engine/gnc-commodity.cpp:193
 msgctxt "FQ Source"
 msgid "Association of Mutual Funds in India"
-msgstr ""
+msgstr "印度共同基金协会"
 
 #: libgnucash/engine/gnc-commodity.cpp:194
 msgctxt "FQ Source"
 msgid "Athens Exchange Group, GR"
-msgstr ""
+msgstr "雅典证券交易所"
 
 #: libgnucash/engine/gnc-commodity.cpp:195
 msgctxt "FQ Source"
 msgid "Australian Stock Exchange, AU"
-msgstr ""
+msgstr "澳洲证券交易所"
 
 #: libgnucash/engine/gnc-commodity.cpp:196
 msgctxt "FQ Source"
 msgid "Italian Stock Exchange, IT"
-msgstr ""
+msgstr "意大利证券交易所"
 
 #: libgnucash/engine/gnc-commodity.cpp:197
 msgctxt "FQ Source"
 msgid "BSE India, IN"
-msgstr ""
+msgstr "孟买证券交易所"
 
 #: libgnucash/engine/gnc-commodity.cpp:198
 msgctxt "FQ Source"
 msgid "Bucharest Stock Exchange, RO"
-msgstr ""
+msgstr "罗马尼亚布加勒斯特证券交易所"
 
 #: libgnucash/engine/gnc-commodity.cpp:199
 msgctxt "FQ Source"
 msgid "China Merchants Bank, CN"
-msgstr ""
+msgstr "中国招商银行"
 
 #: libgnucash/engine/gnc-commodity.cpp:200
 msgctxt "FQ Source"
 msgid "Colombo Stock Exchange, LK"
-msgstr ""
+msgstr "斯里兰卡科伦坡证券交易所"
 
 #: libgnucash/engine/gnc-commodity.cpp:201
 msgctxt "FQ Source"
 msgid "comdirect, DE"
-msgstr ""
+msgstr "德国Comdirect银行"
 
 #: libgnucash/engine/gnc-commodity.cpp:202
 msgctxt "FQ Source"
 msgid "Consors Bank, DE"
-msgstr ""
+msgstr "德国Consors银行"
 
 #: libgnucash/engine/gnc-commodity.cpp:203
-#, fuzzy
-#| msgid "Investments"
 msgctxt "FQ Source"
 msgid "Deka Investments, DE"
-msgstr "投资"
+msgstr "德国Deka投资公司"
 
 #: libgnucash/engine/gnc-commodity.cpp:204
 msgctxt "FQ Source"
 msgid "Financial Times Funds service, GB"
-msgstr ""
+msgstr "英国《金融时报》基金服务"
 
 #: libgnucash/engine/gnc-commodity.cpp:205
 msgctxt "FQ Source"
 msgid "Finanzpartner, DE"
-msgstr ""
+msgstr "德国Finanzpartner公司"
 
 #: libgnucash/engine/gnc-commodity.cpp:206
 msgctxt "FQ Source"
 msgid "FondsWeb, DE"
-msgstr ""
+msgstr "德国FondsWeb基金信息平台"
 
 #: libgnucash/engine/gnc-commodity.cpp:207
 msgctxt "FQ Source"
 msgid "GoldMoney precious metals"
-msgstr ""
+msgstr "GoldMoney贵金属投资服务"
 
 #: libgnucash/engine/gnc-commodity.cpp:208
 msgctxt "FQ Source"
 msgid "Google Web, US Stocks"
-msgstr ""
+msgstr "美国股票Google Web"
 
 #: libgnucash/engine/gnc-commodity.cpp:209
 msgctxt "FQ Source"
