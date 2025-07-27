@@ -42,8 +42,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-06-22 12:27-0700\n"
-"PO-Revision-Date: 2025-07-22 09:02+0000\n"
-"Last-Translator: aba2222 <ABCSSS2021@outlook.com>\n"
+"PO-Revision-Date: 2025-07-26 02:03+0000\n"
+"Last-Translator: DGDS <dagrinddontstop@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/gnucash/gnucash/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -744,8 +744,8 @@ msgid ""
 "lists, you can chat to them live on IRC! Join them on #gnucash at irc.gimp."
 "net"
 msgstr ""
-"你可以轻松与 GnuCash 开发者取得联系。除了各种邮件列表，你还可以使用 IRC 与他"
-"们即时聊天！连接至 irc.gimp.net 服务器，通过 #gnucash 频道加入他们。"
+"您可以轻松地与 GnuCash 开发者取得联系。除了各种邮件列表外，您还可以使用 IRC "
+"与他们实时聊天！连接至 irc.gimp.net 服务器，通过 #gnucash 频道加入他们。"
 
 #: doc/tip_of_the_day.list.c:15
 msgid ""
@@ -1684,7 +1684,7 @@ msgstr "%s的数量必须为正数。"
 #: gnucash/gnome/assistant-stock-transaction.cpp:1055
 #, c-format
 msgid "The %s amount has no associated account."
-msgstr "%s数量没有选定账户"
+msgstr "%s的金额没有关联的科目。"
 
 #. Translators: "N/A" here means that a commodity doesn't have a valid price.
 #: gnucash/gnome/assistant-stock-transaction.cpp:771
@@ -4725,7 +4725,7 @@ msgstr "粘贴交易(_P)"
 #: gnucash/ui/gnc-plugin-page-register.ui:574
 #: gnucash/ui/gnc-plugin-page-register.ui:722
 msgid "Dup_licate Transaction"
-msgstr "创建交易副本  (_L)"
+msgstr "_复制交易"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:268
 #: gnucash/gnome/gnc-split-reg.c:1507
@@ -24636,7 +24636,7 @@ msgstr "未找到价格"
 
 #: gnucash/report/reports/standard/investment-lots.scm:1230
 msgid "split"
-msgstr "子交易"
+msgstr "拆分"
 
 #: gnucash/report/reports/standard/investment-lots.scm:1351
 #, scheme-format
@@ -28796,15 +28796,13 @@ msgstr "移至指定日期的分录点。"
 #: gnucash/ui/gnc-plugin-page-register.ui:534
 #: gnucash/ui/gnc-plugin-page-register.ui:817
 msgid "S_plit Transaction"
-msgstr "交易分录(_P)"
+msgstr "分拆交易(_P)"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:285
 #: gnucash/ui/gnc-plugin-page-register.ui:424
 #: gnucash/ui/gnc-plugin-page-register.ui:536
-#, fuzzy
-#| msgid "Show all splits in the current transaction"
 msgid "Show all splits in the current transaction."
-msgstr "显示当前交易的所有分录"
+msgstr "显示当前交易中的所有拆分。"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:289
 #: gnucash/ui/gnc-plugin-page-register.ui:427
@@ -28815,10 +28813,8 @@ msgstr "编辑汇率(_X)"
 #: gnucash/ui/gnc-plugin-page-register.ui:291
 #: gnucash/ui/gnc-plugin-page-register.ui:429
 #: gnucash/ui/gnc-plugin-page-register.ui:541
-#, fuzzy
-#| msgid "Edit the exchange rate for the current transaction"
 msgid "Edit the exchange rate for the current transaction."
-msgstr "编辑当前交易事项的汇率"
+msgstr "编辑当前交易的汇率。"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:295
 #: gnucash/ui/gnc-plugin-page-register.ui:432
@@ -28831,13 +28827,10 @@ msgstr "计划(_D)…"
 #: gnucash/ui/gnc-plugin-page-register.ui:434
 #: gnucash/ui/gnc-plugin-page-register.ui:546
 #: gnucash/ui/gnc-plugin-page-register.ui:849
-#, fuzzy
-#| msgid ""
-#| "Create a Scheduled Transaction with the current transaction as a template"
 msgid ""
 "Create a Scheduled Transaction with the current transaction as a template or "
 "edit the Scheduled Transaction that current transaction was created by."
-msgstr "以当前交易为模板新建计划交易"
+msgstr "以当前交易为模板创建计划交易，或编辑当前交易创建的计划交易。"
 
 #. Translators: This is a menu item that will open a register tab for the
 #. account of the first other account in the current transaction's split list
@@ -28852,13 +28845,9 @@ msgstr "跳转(_J)"
 #: gnucash/ui/gnc-plugin-page-register.ui:306
 #: gnucash/ui/gnc-plugin-page-register.ui:439
 #: gnucash/ui/gnc-plugin-page-register.ui:551
-#, fuzzy
-#| msgid ""
-#| "Open a new register tab for the other account with focus on this "
-#| "transaction"
 msgid ""
 "Open a new register tab for the other account with focus on this transaction."
-msgstr "为其他科目打开一个新标签页，并聚焦于这个交易"
+msgstr "为其他科目打开一个新的登记标签，并重点关注这笔交易。"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:318
 msgid "All Transactions"
@@ -28873,41 +28862,31 @@ msgid "Account Report"
 msgstr "标签页报表"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:334
-#, fuzzy
-#| msgid "Open a register report for this Account"
 msgid "Open a register report for this Account."
-msgstr "为本科目打开一个账簿报表"
+msgstr "为本科目打开一份登记报告。"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:338
 msgid "Account Report - Single Transaction"
 msgstr "标签页报表 - 当前交易"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:340
-#, fuzzy
-#| msgid "Open a register report for the selected Transaction"
 msgid "Open a register report for the selected Transaction."
-msgstr "为选中的交易事项打开一个账簿报表"
+msgstr "打开所选交易的账簿报告。"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:359
 #: gnucash/ui/gnc-plugin-page-register.ui:471
-#, fuzzy
-#| msgid "Rename this page"
 msgid "Rename this page."
-msgstr "重命名该页"
+msgstr "重命名此页面。"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:478
 #: gnucash/ui/gnc-plugin-page-register.ui:615
-#, fuzzy
-#| msgid "Make a copy of the current split"
 msgid "Make a copy of the current split."
-msgstr "复制当前分录"
+msgstr "复制当前分拆。"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:483
 #: gnucash/ui/gnc-plugin-page-register.ui:620
-#, fuzzy
-#| msgid "Delete the current split"
 msgid "Delete the current split."
-msgstr "删除当前的分录"
+msgstr "删除当前分拆"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:804
 msgid "Move to the blank transaction in the register"
@@ -29187,10 +29166,8 @@ msgid "GncQuotes::Fetch called with no commodities."
 msgstr "调用GncQuotes::Fetch时无大宗商品。"
 
 #: libgnucash/app-utils/gnc-quotes.cpp:353
-#, fuzzy
-#| msgid "GncQuotes::Fetch called with no book."
 msgid "GncQuotes::Report called with no source."
-msgstr "调用GncQuotes::Fetch时无账簿。"
+msgstr "GncQuotes::报表调用时未指定来源。"
 
 #: libgnucash/app-utils/gnc-quotes.cpp:359
 msgid "There were no commodities for which to retrieve quotes."
@@ -29377,22 +29354,19 @@ msgid "No exchange rate available in SX [%s] for %s -> %s, value is zero."
 msgstr "SX[%s]中没有%s->%s的汇率，数值为零。"
 
 #: libgnucash/app-utils/gnc-ui-balances.cpp:369
-#, fuzzy, c-format
-#| msgid "%s balance is %s, subceeds limit of %s."
+#, c-format
 msgid "%s balance of %s is above the upper limit %s."
-msgstr "%s余额为%s，未超过限制%s。"
+msgstr "%s 的余额 %s 超过了上限 %s。"
 
 #: libgnucash/app-utils/gnc-ui-balances.cpp:370
-#, fuzzy, c-format
-#| msgid "%s balance is %s, subceeds limit of %s."
+#, c-format
 msgid "%s balance of %s is below the lower limit %s."
-msgstr "%s余额为%s，未超过限制%s。"
+msgstr "%s 的余额 %s 低于下限 %s。"
 
 #: libgnucash/app-utils/gnc-ui-balances.cpp:371
-#, fuzzy, c-format
-#| msgid "%s balance is %s, and should be zero."
+#, c-format
 msgid "%s balance of %s should be zero."
-msgstr "%s余额为%s，应该为0。"
+msgstr "%s 的余额 %s 应该为0。"
 
 #: libgnucash/app-utils/gnc-ui-util.cpp:472
 msgctxt "Reconciled flag 'not cleared'"
@@ -29565,11 +29539,9 @@ msgid ""
 msgstr "来自商品或贸易科目的实际损益没有被记录在其它地方。"
 
 #: libgnucash/engine/gnc-commodity.cpp:191
-#, fuzzy
-#| msgid "Alpha Vantage API key"
 msgctxt "FQ Source"
 msgid "Alphavantage"
-msgstr "Alpha Vantage API 密钥"
+msgstr "Alpha Vantage"
 
 #: libgnucash/engine/gnc-commodity.cpp:192
 msgctxt "FQ Source"
@@ -29659,168 +29631,162 @@ msgstr "美国股票Google Web"
 #: libgnucash/engine/gnc-commodity.cpp:209
 msgctxt "FQ Source"
 msgid "Market Watch"
-msgstr ""
+msgstr "市场观察"
 
 #: libgnucash/engine/gnc-commodity.cpp:210
 msgctxt "FQ Source"
 msgid "Morningstar, CH"
-msgstr ""
+msgstr "晨星公司，瑞士"
 
 #: libgnucash/engine/gnc-commodity.cpp:211
 msgctxt "FQ Source"
 msgid "Morningstar, GB"
-msgstr ""
+msgstr "晨星公司，英国"
 
 #: libgnucash/engine/gnc-commodity.cpp:212
 msgctxt "FQ Source"
 msgid "Morningstar, JP"
-msgstr ""
+msgstr "晨星公司，日本"
 
 #: libgnucash/engine/gnc-commodity.cpp:213
 msgctxt "FQ Source"
 msgid "Motley Fool"
-msgstr ""
+msgstr "彩衣傻瓜"
 
 #: libgnucash/engine/gnc-commodity.cpp:214
 msgctxt "FQ Source"
 msgid "New Zealand stock eXchange, NZ"
-msgstr ""
+msgstr "新西兰证券交易所，新西兰"
 
 #: libgnucash/engine/gnc-commodity.cpp:215
 msgctxt "FQ Source"
 msgid "NSE (National Stock Exchange), IN"
-msgstr ""
+msgstr "国家证券交易所，印度"
 
 #: libgnucash/engine/gnc-commodity.cpp:216
 msgctxt "FQ Source"
 msgid "OnVista, DE"
-msgstr ""
+msgstr "OnVista，德国"
 
 #: libgnucash/engine/gnc-commodity.cpp:217
 msgctxt "FQ Source"
 msgid "Paris Stock Exchange/Boursorama, FR"
-msgstr ""
+msgstr "巴黎证券交易所，法国"
 
 #: libgnucash/engine/gnc-commodity.cpp:218
 msgctxt "FQ Source"
 msgid "S-Investor, DE"
-msgstr ""
+msgstr "S-Investor，德国"
 
 #: libgnucash/engine/gnc-commodity.cpp:219
 msgctxt "FQ Source"
 msgid "Sharenet, ZA"
-msgstr ""
+msgstr "Sharenet, 南非"
 
 #: libgnucash/engine/gnc-commodity.cpp:220
-#, fuzzy
-#| msgid "Show Exchange Rates"
 msgctxt "FQ Source"
 msgid "SIX Swiss Exchange shares, CH"
-msgstr "显示汇率"
+msgstr "瑞士证券交易所股票，瑞士"
 
 #: libgnucash/engine/gnc-commodity.cpp:221
-#, fuzzy
-#| msgid "Stock"
 msgctxt "FQ Source"
 msgid "StockData"
-msgstr "股票"
+msgstr "股票数据"
 
 #: libgnucash/engine/gnc-commodity.cpp:222
 msgctxt "FQ Source"
 msgid "Stooq, PL"
-msgstr ""
+msgstr "Stooq，波兰"
 
 #: libgnucash/engine/gnc-commodity.cpp:223
 msgctxt "FQ Source"
 msgid "Tesouro Direto bonds, BR"
-msgstr ""
+msgstr "Tesouro Direto bonds，巴西"
 
 #: libgnucash/engine/gnc-commodity.cpp:224
 msgctxt "FQ Source"
 msgid "Toronto Stock eXchange, CA"
-msgstr ""
+msgstr "多伦多证券交易所，加拿大"
 
 #: libgnucash/engine/gnc-commodity.cpp:225
 msgctxt "FQ Source"
 msgid "Tradegate, DE"
-msgstr ""
+msgstr "Tradegate，德国"
 
 #: libgnucash/engine/gnc-commodity.cpp:226
 msgctxt "FQ Source"
 msgid "Treasury Direct bonds, US"
-msgstr ""
+msgstr "国库直接债券，美国"
 
 #: libgnucash/engine/gnc-commodity.cpp:227
 msgctxt "FQ Source"
 msgid "Twelve Data"
-msgstr ""
+msgstr "12项数据"
 
 #: libgnucash/engine/gnc-commodity.cpp:228
-#, fuzzy
-#| msgid "Investments"
 msgctxt "FQ Source"
 msgid "Union Investment, DE"
-msgstr "投资"
+msgstr "Union Investment，德国"
 
 #: libgnucash/engine/gnc-commodity.cpp:229
 msgctxt "FQ Source"
 msgid "US Govt. Thrift Savings Plan"
-msgstr ""
+msgstr "美国政府节俭储蓄计划"
 
 #: libgnucash/engine/gnc-commodity.cpp:230
 msgctxt "FQ Source"
 msgid "XETRA, DE"
-msgstr ""
+msgstr "XETRA，德国"
 
 #: libgnucash/engine/gnc-commodity.cpp:231
 msgctxt "FQ Source"
 msgid "Yahoo as JSON"
-msgstr ""
+msgstr "雅虎作为 JSON 格式"
 
 #: libgnucash/engine/gnc-commodity.cpp:232
 msgctxt "FQ Source"
 msgid "Yahoo Web"
-msgstr ""
+msgstr "雅虎网页"
 
 #: libgnucash/engine/gnc-commodity.cpp:233
 msgctxt "FQ Source"
 msgid "YH Finance (FinanceAPI)"
-msgstr ""
+msgstr "雅虎财经（FinanceAPI）"
 
 #: libgnucash/engine/gnc-commodity.cpp:239
 msgctxt "FQ Source"
 msgid "Canada (Alphavantage, TMX)"
-msgstr ""
+msgstr "加拿大（Alpha Vantage，TMX 集团）"
 
 #: libgnucash/engine/gnc-commodity.cpp:240
 msgctxt "FQ Source"
 msgid "Europe (ASEGR, Bourso, …)"
-msgstr ""
+msgstr "欧洲（ASEGR，Bourso......）"
 
 #: libgnucash/engine/gnc-commodity.cpp:241
 msgctxt "FQ Source"
 msgid "India (BSEIndia, NSEIndia)"
-msgstr ""
+msgstr "印度（孟买证券交易所，印度国家证券交易所）"
 
 #: libgnucash/engine/gnc-commodity.cpp:242
 msgctxt "FQ Source"
 msgid "Nasdaq (Alphavantage, FinanceAPI, …)"
-msgstr ""
+msgstr "纳斯达克（Alpha Vantage，FinanceAPI......)"
 
 #: libgnucash/engine/gnc-commodity.cpp:243
 msgctxt "FQ Source"
 msgid "NYSE (Alphavantage, FinanceAPI, …)"
-msgstr ""
+msgstr "纽约证券交易所（Alpha Vantage，FinanceAPI......)"
 
 #: libgnucash/engine/gnc-commodity.cpp:244
 msgctxt "FQ Source"
 msgid "U.K. Funds (FTfunds, MorningstarUK)"
-msgstr ""
+msgstr "英国基金（FTfunds，晨星公司英国）"
 
 #: libgnucash/engine/gnc-commodity.cpp:245
 msgctxt "FQ Source"
 msgid "USA (Alphavantage, FinanceAPI, …)"
-msgstr ""
+msgstr "美国（Alpha Vantage，FinanceAPI......)"
 
 #: libgnucash/engine/gnc-commodity.h:110
 msgctxt "Commodity Type"
@@ -30400,16 +30366,14 @@ msgid "Checking business splits in account %s: %u of %u"
 msgstr "检查账户%s中的业务拆分。%u的%u"
 
 #: libgnucash/engine/Scrub.cpp:146
-#, fuzzy, c-format
-#| msgid "Looking for orphans in account %s: %u of %u"
+#, c-format
 msgid "Looking for orphans in transaction: %u of %zu"
-msgstr "寻找账户中的孤儿%s。第%u号的%u"
+msgstr "正在查找交易中的无主记录：第 %u 条，共 %zu 条"
 
 #: libgnucash/engine/Scrub.cpp:357
-#, fuzzy, c-format
-#| msgid "Looking for imbalances in account %s: %u of %u"
+#, c-format
 msgid "Looking for imbalances in transaction date %s: %u of %zu"
-msgstr "寻找账户中的不平衡%s。%u的%u"
+msgstr "正在查找交易日期为 %s 的不平衡记录：第 %u 条，共 %zu 条"
 
 #: libgnucash/engine/Split.cpp:1645
 msgctxt ""
