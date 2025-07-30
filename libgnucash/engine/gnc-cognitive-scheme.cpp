@@ -32,7 +32,7 @@ using namespace opencog;
  * Scheme Evaluation and Hypergraph Pattern Encoding               *
 \********************************************************************/
 
-static gchar* cognitive_accounting_scheme_init = R"scheme(
+static const gchar* cognitive_accounting_scheme_init = R"scheme(
 ;; Enhanced GnuCash Cognitive Accounting Scheme Interface  
 ;; Neural-symbolic hypergraph pattern encoding for cognitive sensemaking
 
@@ -259,27 +259,6 @@ static gchar* cognitive_accounting_scheme_init = R"scheme(
 (format #t "Enhanced GnuCash Cognitive Accounting Scheme interface initialized~%")
 (format #t "Neural-symbolic hypergraph tapestry ready for sophisticated cognitive sensemaking~%")
 (format #t "Supported: PLN reasoning, ECAN dynamics, MOSES evolution, URE uncertainty, emergent insights~%")
-)scheme";
-  (format #t "Analyzing account ~a with neural-symbolic methods~%" account)
-  ;; This would combine neural and symbolic reasoning
-  (list 'analysis account))
-
-(define (emergent-cognitive-insight transactions)
-  "Discover emergent cognitive insights from transaction patterns"
-  (format #t "Seeking emergent insights from ~a transactions~%" (length transactions))
-  ;; This would use distributed cognition for insight generation
-  (list 'insight 'emergent transactions))
-
-;; Adaptive attention allocation patterns
-(define (adaptive-attention-pattern accounts)
-  "Create adaptive attention allocation patterns for account hierarchy"
-  (format #t "Creating adaptive attention patterns for ~a accounts~%" (length accounts))
-  ;; This would implement attention dynamics
-  accounts)
-
-;; Export cognitive accounting functions
-(format #t "GnuCash Cognitive Accounting Scheme interface initialized~%")
-(format #t "Neural-symbolic tapestry ready for accounting sensemaking~%")
 )scheme";
 
 gboolean gnc_cognitive_scheme_init(void)
