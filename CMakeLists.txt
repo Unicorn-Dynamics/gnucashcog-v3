@@ -19,6 +19,60 @@ project (gnucash
     VERSION 5.11
 )
 
+# Optimization and build acceleration options
+option(ENABLE_LTO "Enable Link Time Optimization (IPO) when supported by the toolchain" ON)
+option(ENABLE_CCACHE "Use ccache if available to accelerate incremental builds" ON)
+option(ENABLE_NATIVE_OPTIMIZATIONS "Enable -march=native/-mtune=native for local builds (not for packaging)" OFF)
+
+# Set a sensible default build type if none was specified
+if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  message(STATUS "No build type specified. Defaulting to RelWithDebInfo")
+  set(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE STRING "Build type" FORCE)
+  set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "RelWithDebInfo" "MinSizeRel")
+endif()
+
+# Prefer higher optimization for Release/RelWithDebInfo where appropriate
+if (CMAKE_C_COMPILER_ID MATCHES "Clang|GNU")
+  string(APPEND CMAKE_C_FLAGS_RELEASE " -O3")
+  string(APPEND CMAKE_C_FLAGS_RELWITHDEBINFO " -O3")
+endif()
+if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
+  string(APPEND CMAKE_CXX_FLAGS_RELEASE " -O3")
+  string(APPEND CMAKE_CXX_FLAGS_RELWITHDEBINFO " -O3")
+endif()
+
+# Enable IPO/LTO if supported by the toolchain
+if (ENABLE_LTO)
+  include(CheckIPOSupported)
+  check_ipo_supported(RESULT ipo_supported OUTPUT ipo_output)
+  if (ipo_supported)
+    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
+    message(STATUS "Interprocedural optimization (LTO) enabled")
+  else()
+    message(STATUS "IPO/LTO not supported: ${ipo_output}")
+  endif()
+endif()
+
+# Enable ccache if available
+if (ENABLE_CCACHE)
+  find_program(CCACHE_PROGRAM ccache)
+  if (CCACHE_PROGRAM)
+    message(STATUS "Using ccache: ${CCACHE_PROGRAM}")
+    set(CMAKE_C_COMPILER_LAUNCHER   "${CCACHE_PROGRAM}")
+    set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
+  endif()
+endif()
+
+# Optional native CPU tuning for local developer builds
+if (ENABLE_NATIVE_OPTIMIZATIONS AND NOT CMAKE_CROSSCOMPILING)
+  if (CMAKE_C_COMPILER_ID MATCHES "Clang|GNU")
+    add_compile_options($<$<COMPILE_LANGUAGE:C>:-march=native -mtune=native>)
+  endif()
+  if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
+    add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-march=native -mtune=native>)
+  endif()
+endif()
+
 enable_testing()
 
 set (PACKAGE_NAME GnuCash)
