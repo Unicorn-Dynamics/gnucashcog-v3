@@ -1002,6 +1002,24 @@
           (get-row-col sxml #f 6))))
     (test-end "subtotal table")
 
+    (test-begin "invoice-column")
+    (let* ((invoices (create-test-invoice-data))
+           (options (default-testing-options)))
+      (set-option! options "General" "Start Date" (cons 'absolute (gnc-dmy2time64 1 9 1980)))
+      (set-option! options "General" "End Date" (cons 'absolute (gnc-dmy2time64 7 9 1980)))
+      (set-option! options "Display" "Invoice" #t)
+      (set-option! options "Accounts" "Accounts"
+                   (list
+                    (gnc-account-lookup-by-full-name bank "Root.Asset.Bank")
+                    (gnc-account-lookup-by-full-name bank "Root.A/Receivable")
+                    (gnc-account-lookup-by-full-name bank "Root.A/Payable")
+                    (gnc-account-lookup-by-full-name bank "Root.Income")))
+      (let ((sxml (options->sxml options "show invoice")))
+        (test-equal "retrieve invoice IDs from trep"
+                    '("0003" "0004" "0006" "0007" "0001" "0002" "0005")
+                    (get-row-col sxml #f 5))))
+    (test-end "invoice-column")
+
     (test-begin "csv-export")
     (let ((options (default-testing-options)))
       (set-option! options "Accounts" "Accounts"
