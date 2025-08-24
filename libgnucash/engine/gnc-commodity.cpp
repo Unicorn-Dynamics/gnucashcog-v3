@@ -220,6 +220,7 @@ static QuoteSourceList single_quote_sources =
     { false, SOURCE_SINGLE, NC_("FQ Source", "SIX Swiss Exchange shares, CH"), "six" },
     { false, SOURCE_SINGLE, NC_("FQ Source", "StockData"), "stockdata" },
     { false, SOURCE_SINGLE, NC_("FQ Source", "Stooq, PL"), "stooq" },
+    { false, SOURCE_SINGLE, NC_("FQ Source", "Swiss Fund Data AG, CH"), "swissfunddata" },
     { false, SOURCE_SINGLE, NC_("FQ Source", "Tesouro Direto bonds, BR"), "tesouro_direto" },
     { false, SOURCE_SINGLE, NC_("FQ Source", "Toronto Stock eXchange, CA"), "tsx" },
     { false, SOURCE_SINGLE, NC_("FQ Source", "Tradegate, DE"), "tradegate" },
