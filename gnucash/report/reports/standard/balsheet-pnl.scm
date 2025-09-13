@@ -779,7 +779,8 @@ also show overall period profit & loss."))
          ;; missing price, say so.
          (get-exchange-rates-fn
           (lambda (accounts col-idx)
-            (let ((commodities (gnc:accounts-get-commodities accounts common-currency))
+            (let ((commodities (gnc:accounts-get-commodities-sorted
+                                accounts common-currency))
                   (cell (gnc:make-html-text)))
               (for-each
                (lambda (commodity)
