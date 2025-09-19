@@ -574,6 +574,11 @@ gnc_plugin_page_owner_tree_create_widget (GncPluginPage *plugin_page)
         state_section = "Employees Overview";
         style_label = "gnc-class-employees";
         break;
+    case GNC_OWNER_ORGANIZATION :
+        label = _("Organizations");
+        state_section = "Organizations Overview";
+        style_label = "gnc-class-organizations";
+        break;
     }
 
     // Set a secondary style context for this page so it can be easily manipulated with css
@@ -760,6 +765,11 @@ static void gnc_ui_owner_edit (GtkWindow *parent, GncOwner *owner)
         gnc_ui_employee_edit (parent, owner->owner.employee);
         break;
     }
+    case GNC_OWNER_ORGANIZATION :
+    {
+        /* TODO: Implement organization edit dialog if needed */
+        break;
+    }
     }
 }
 
@@ -867,6 +877,10 @@ build_aging_report (GncOwnerType owner_type)
         report_name = "gnc:receivables-report-create";
         report_title = _("Customer Listing");
         break;
+    }
+    case GNC_OWNER_ORGANIZATION :
+    {
+        return -1;
     }
     }
 
@@ -986,6 +1000,11 @@ gnc_plugin_page_owner_tree_cmd_new_owner (GSimpleAction *simple,
     case GNC_OWNER_EMPLOYEE :
     {
         gnc_ui_employee_new (parent, gnc_get_current_book ());
+        break;
+    }
+    case GNC_OWNER_ORGANIZATION :
+    {
+        /* TODO: Implement organization creation if needed */
         break;
     }
     }
@@ -1195,6 +1214,12 @@ gnc_plugin_page_owner_tree_cmd_new_invoice (GSimpleAction *simple,
     {
         gncOwnerInitEmployee(&current_owner,
                              gncOwnerGetEmployee(gnc_plugin_page_owner_tree_get_current_owner (plugin_page)));
+        break;
+    }
+    case GNC_OWNER_ORGANIZATION :
+    {
+        /* TODO: Add gncOwnerGetOrganization function if organizations need invoice support */
+        gncOwnerInitUndefined(&current_owner, NULL);
         break;
     }
     }
