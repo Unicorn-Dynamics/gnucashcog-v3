@@ -11,10 +11,10 @@
 # hanyang cheng <cinxiafortis@tutanota.de>, 2024.
 msgid ""
 msgstr ""
-"Project-Id-Version: GnuCash 5.12\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
-"enter_bug.cgi?product=GnuCash&component=Translations\n"
-"POT-Creation-Date: 2025-06-22 12:27-0700\n"
+"Project-Id-Version: GnuCash 5.13\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
+"product=GnuCash&component=Translations\n"
+"POT-Creation-Date: 2025-09-21 12:28-0700\n"
 "PO-Revision-Date: 2025-08-11 05:01+0000\n"
 "Last-Translator: Brian Hsu <brianhsu.hsu@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -30,7 +30,7 @@ msgstr ""
 #: gnucash/report/reports/example/daily-reports.scm:260
 #: gnucash/report/reports/standard/account-piecharts.scm:514
 #: gnucash/report/reports/standard/balance-forecast.scm:277
-#: gnucash/report/reports/standard/balsheet-pnl.scm:863
+#: gnucash/report/reports/standard/balsheet-pnl.scm:867
 #: gnucash/report/reports/standard/budget.scm:468
 #: gnucash/report/reports/standard/cashflow-barchart.scm:259
 #: gnucash/report/reports/standard/cash-flow.scm:183
@@ -1057,8 +1057,8 @@ msgstr ""
 
 #: gnucash/gnome/assistant-acct-period.c:594
 #: gnucash/gtkbuilder/dialog-fincalc.glade:650
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1201
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1206
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1205
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1210
 #: gnucash/report/reports/standard/budget-flow.scm:44
 msgid "Period"
 msgstr "期間"
@@ -1073,7 +1073,7 @@ msgid "Selected"
 msgstr "已選擇"
 
 #: gnucash/gnome/assistant-hierarchy.cpp:772
-#: gnucash/gnome-utils/gnc-tree-view-account.c:2337
+#: gnucash/gnome-utils/gnc-tree-view-account.c:2354
 msgid "Account Types"
 msgstr "科目類型"
 
@@ -1112,7 +1112,7 @@ msgid "No"
 msgstr "否"
 
 #: gnucash/gnome/assistant-hierarchy.cpp:1339
-#: gnucash/gnome-utils/gnc-tree-view-account.c:987
+#: gnucash/gnome-utils/gnc-tree-view-account.c:1004
 #: gnucash/gtkbuilder/dialog-account.glade:273
 #: gnucash/import-export/csv-exp/csv-tree-export.cpp:63
 msgid "Placeholder"
@@ -1120,7 +1120,7 @@ msgstr "佔位符號"
 
 #: gnucash/gnome/assistant-hierarchy.cpp:1356
 #: gnucash/gnome-utils/dialog-account.c:429
-#: gnucash/gnome-utils/gnc-tree-view-account.c:995
+#: gnucash/gnome-utils/gnc-tree-view-account.c:1012
 #: gnucash/gtkbuilder/dialog-account.glade:1945
 #: libgnucash/app-utils/gnc-ui-util.cpp:693
 msgid "Opening Balance"
@@ -1219,8 +1219,8 @@ msgstr "貸款償還選項：「%s」"
 #: gnucash/register/ledger-core/split-register-model.c:237
 #: gnucash/report/reports/standard/account-summary.scm:77
 #: gnucash/report/reports/standard/advanced-portfolio.scm:68
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1034
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1039
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1038
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1043
 #: gnucash/report/reports/standard/cashflow-barchart.scm:319
 #: gnucash/report/reports/standard/category-barchart.scm:646
 #: gnucash/report/reports/standard/category-barchart.scm:666
@@ -1232,14 +1232,14 @@ msgstr "貸款償還選項：「%s」"
 #: gnucash/report/reports/standard/invoice.scm:410
 #: gnucash/report/reports/standard/net-charts.scm:398
 #: gnucash/report/reports/standard/new-owner-report.scm:49
-#: gnucash/report/reports/standard/new-owner-report.scm:225
+#: gnucash/report/reports/standard/new-owner-report.scm:231
 #: gnucash/report/reports/standard/portfolio.scm:46
 #: gnucash/report/reports/standard/register.scm:129
 #: gnucash/report/reports/standard/register.scm:346
 #: gnucash/report/reports/support/receipt.eguile.scm:143
 #: gnucash/report/reports/support/taxinvoice.eguile.scm:268
 #: gnucash/report/trep-engine.scm:191 gnucash/report/trep-engine.scm:911
-#: gnucash/report/trep-engine.scm:1082 gnucash/report/trep-engine.scm:2231
+#: gnucash/report/trep-engine.scm:1101 gnucash/report/trep-engine.scm:2259
 msgid "Date"
 msgstr "日期"
 
@@ -1251,7 +1251,7 @@ msgstr "日期"
 #: gnucash/register/ledger-core/split-register.c:2610
 #: gnucash/register/ledger-core/split-register.c:2615
 #: gnucash/register/ledger-core/split-register.c:2626
-#: gnucash/report/reports/standard/new-owner-report.scm:282
+#: gnucash/report/reports/standard/new-owner-report.scm:292
 #: libgnucash/engine/Account.cpp:152 libgnucash/engine/Account.cpp:160
 #: libgnucash/engine/Account.cpp:181 libgnucash/engine/gncOwner.c:836
 #: libgnucash/engine/gncOwner.c:859
@@ -1303,12 +1303,12 @@ msgstr "加入價格時發生錯誤。"
 #: gnucash/report/reports/standard/cash-flow.scm:47
 #: gnucash/report/reports/standard/general-journal.scm:97
 #: gnucash/report/reports/standard/lot-viewer.scm:37
-#: gnucash/report/reports/standard/new-owner-report.scm:1098
+#: gnucash/report/reports/standard/new-owner-report.scm:1117
 #: gnucash/report/reports/standard/portfolio.scm:244
 #: gnucash/report/reports/standard/register.scm:142
 #: gnucash/report/reports/standard/register.scm:366
 #: gnucash/report/reports/standard/txn-columns.scm:36
-#: gnucash/report/trep-engine.scm:1154
+#: gnucash/report/trep-engine.scm:1182
 msgid "Account"
 msgstr "科目"
 
@@ -1330,8 +1330,8 @@ msgstr "代號"
 #: gnucash/report/reports/standard/general-ledger.scm:98
 #: gnucash/report/reports/standard/register.scm:145
 #: gnucash/report/reports/standard/register.scm:370
-#: gnucash/report/trep-engine.scm:926 gnucash/report/trep-engine.scm:1178
-#: gnucash/report/trep-engine.scm:2242
+#: gnucash/report/trep-engine.scm:926 gnucash/report/trep-engine.scm:1206
+#: gnucash/report/trep-engine.scm:2270
 msgid "Shares"
 msgstr "股數"
 
@@ -1691,7 +1691,7 @@ msgstr "存在以下警告："
 
 #: gnucash/gnome/assistant-stock-transaction.cpp:655
 #: gnucash/gnome/assistant-stock-transaction.cpp:716
-#: gnucash/report/reports/standard/balsheet-pnl.scm:800
+#: gnucash/report/reports/standard/balsheet-pnl.scm:804
 msgid "missing"
 msgstr "不明"
 
@@ -1852,8 +1852,8 @@ msgstr "請輸入在此次交易中您所增加或減少的股數。"
 #: gnucash/report/reports/standard/register.scm:139
 #: gnucash/report/reports/standard/register.scm:362
 #: gnucash/report/trep-engine.scm:263 gnucash/report/trep-engine.scm:942
-#: gnucash/report/trep-engine.scm:1143 gnucash/report/trep-engine.scm:1144
-#: gnucash/report/trep-engine.scm:2250
+#: gnucash/report/trep-engine.scm:1162 gnucash/report/trep-engine.scm:1163
+#: gnucash/report/trep-engine.scm:2278
 msgid "Memo"
 msgstr "備忘錄"
 
@@ -1864,7 +1864,7 @@ msgstr "備忘錄"
 #: gnucash/report/reports/standard/general-journal.scm:82
 #: gnucash/report/reports/standard/register.scm:336
 #: gnucash/report/reports/standard/trial-balance.scm:555
-#: gnucash/report/trep-engine.scm:1343 gnucash/report/trep-engine.scm:1447
+#: gnucash/report/trep-engine.scm:1371 gnucash/report/trep-engine.scm:1475
 #: libgnucash/engine/Account.cpp:165
 msgid "Debit"
 msgstr "借方"
@@ -1879,7 +1879,7 @@ msgstr "借方"
 #: gnucash/report/reports/standard/general-journal.scm:83
 #: gnucash/report/reports/standard/register.scm:338
 #: gnucash/report/reports/standard/trial-balance.scm:558
-#: gnucash/report/trep-engine.scm:1350 gnucash/report/trep-engine.scm:1454
+#: gnucash/report/trep-engine.scm:1378 gnucash/report/trep-engine.scm:1482
 #: libgnucash/engine/Account.cpp:185
 msgid "Credit"
 msgstr "貸方"
@@ -1925,7 +1925,7 @@ msgstr "憑證"
 #: gnucash/gnome/dialog-invoice.c:3767
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:397
 #: gnucash/gnome/gnc-plugin-page-register.cpp:407
-#: gnucash/gnome/gnc-plugin-page-report.cpp:1925
+#: gnucash/gnome/gnc-plugin-page-report.cpp:1932
 #: gnucash/gnome-search/dialog-search.c:1093
 #: gnucash/gtkbuilder/dialog-bi-import-gui.glade:167
 #: gnucash/gtkbuilder/dialog-invoice.glade:8
@@ -1939,7 +1939,9 @@ msgstr "憑證"
 #: gnucash/report/reports/standard/taxinvoice.scm:177
 #: gnucash/report/reports/support/receipt.eguile.scm:91
 #: gnucash/report/reports/support/taxinvoice.eguile.scm:106
-#: libgnucash/engine/Account.cpp:161 libgnucash/engine/gncInvoice.c:1095
+#: gnucash/report/trep-engine.scm:949 gnucash/report/trep-engine.scm:1173
+#: gnucash/report/trep-engine.scm:2279 libgnucash/engine/Account.cpp:161
+#: libgnucash/engine/gncInvoice.c:1095
 msgid "Invoice"
 msgstr "發票"
 
@@ -1951,7 +1953,7 @@ msgstr "發票"
 #: gnucash/import-export/import-pending-matches.cpp:189
 #: gnucash/report/reports/standard/register.scm:216
 #: gnucash/report/trep-engine.scm:275 gnucash/report/trep-engine.scm:306
-#: gnucash/report/trep-engine.scm:1000 libgnucash/engine/gncOwner.c:212
+#: gnucash/report/trep-engine.scm:1004 libgnucash/engine/gncOwner.c:212
 #: libgnucash/engine/Recurrence.cpp:502 libgnucash/engine/Recurrence.cpp:691
 msgid "None"
 msgstr "無"
@@ -2019,7 +2021,7 @@ msgstr "次月"
 #: gnucash/gnome/dialog-doclink.c:840 gnucash/gnome/dialog-doclink.c:884
 #: gnucash/gnome/gnc-plugin-page-owner-tree.cpp:552
 #: gnucash/gtkbuilder/dialog-price.glade:24
-#: gnucash/report/reports/standard/new-owner-report.scm:284
+#: gnucash/report/reports/standard/new-owner-report.scm:294
 msgid "Unknown"
 msgstr "未知"
 
@@ -2074,7 +2076,7 @@ msgstr "刪除商品？"
 #: gnucash/gnome/dialog-price-edit-db.cpp:214
 #: gnucash/gnome/dialog-price-editor.c:238 gnucash/gnome/dialog-tax-info.c:1188
 #: gnucash/gnome/gnc-plugin-budget.c:321
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1663
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1665
 #: gnucash/gnome/gnc-plugin-page-owner-tree.cpp:1061
 #: gnucash/gnome/gnc-plugin-page-register.cpp:1885
 #: gnucash/gnome/gnc-split-reg.c:939 gnucash/gnome/gnc-split-reg.c:977
@@ -2084,8 +2086,9 @@ msgstr "刪除商品？"
 #: gnucash/gnome-utils/dialog-options.cpp:114
 #: gnucash/gnome-utils/dialog-tax-table.c:667
 #: gnucash/gnome-utils/gnc-file.c:120 gnucash/gnome-utils/gnc-file.c:368
-#: gnucash/gnome-utils/gnc-file.c:666 gnucash/gnome-utils/gnc-gui-query.c:300
-#: gnucash/gnome-utils/gnc-gui-query.c:332
+#: gnucash/gnome-utils/gnc-file.c:666 gnucash/gnome-utils/gnc-gui-query.c:105
+#: gnucash/gnome-utils/gnc-gui-query.c:330
+#: gnucash/gnome-utils/gnc-gui-query.c:362
 #: gnucash/gnome-utils/gnc-main-window.cpp:1270
 #: gnucash/gnome-utils/gnc-main-window.cpp:1427
 #: gnucash/gtkbuilder/assistant-xml-encoding.glade:181
@@ -2157,7 +2160,7 @@ msgstr "刪除商品？"
 #: gnucash/import-export/aqb/dialog-ab.glade:1012
 #: gnucash/import-export/aqb/dialog-ab.glade:1675
 #: gnucash/import-export/csv-imp/assistant-csv-trans-import.cpp:2102
-#: gnucash/register/ledger-core/gncEntryLedger.c:921
+#: gnucash/register/ledger-core/gncEntryLedger.c:926
 #: gnucash/register/ledger-core/gncEntryLedgerControl.c:896
 #: gnucash/register/ledger-core/split-register-control.cpp:1588
 #: gnucash/ui/gnc-plugin-page-invoice.ui:141
@@ -2169,7 +2172,7 @@ msgstr "取消(_C)"
 
 #: gnucash/gnome/dialog-commodities.cpp:222
 #: gnucash/gnome/dialog-price-edit-db.cpp:215
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1664
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1666
 #: gnucash/gnome/gnc-plugin-page-owner-tree.cpp:1062
 #: gnucash/gtkbuilder/dialog-account.glade:396
 #: gnucash/gtkbuilder/dialog-billterms.glade:476
@@ -2332,9 +2335,9 @@ msgstr "選擇文件"
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5093
 #: gnucash/gnome-search/search-account.c:240
 #: gnucash/gnome-utils/dialog-account.c:845
-#: gnucash/gnome-utils/gnc-gui-query.c:297
-#: gnucash/gnome-utils/gnc-gui-query.c:331
-#: gnucash/gnome-utils/gnc-gui-query.c:417
+#: gnucash/gnome-utils/gnc-gui-query.c:327
+#: gnucash/gnome-utils/gnc-gui-query.c:361
+#: gnucash/gnome-utils/gnc-gui-query.c:447
 #: gnucash/gnome-utils/gnc-main-window.cpp:1428
 #: gnucash/gtkbuilder/assistant-xml-encoding.glade:196
 #: gnucash/gtkbuilder/dialog-account.glade:35
@@ -2467,7 +2470,7 @@ msgstr "交易文件連結"
 #: gnucash/gnome/dialog-lot-viewer.c:1001 gnucash/gnome/dialog-tax-info.c:1396
 #: gnucash/gnome/gnc-split-reg.c:672 gnucash/gnome/reconcile-view.c:441
 #: gnucash/gnome-utils/gnc-tree-model-budget.c:102
-#: gnucash/gnome-utils/gnc-tree-view-account.c:811
+#: gnucash/gnome-utils/gnc-tree-view-account.c:828
 #: gnucash/gtkbuilder/assistant-stock-transaction.glade:79
 #: gnucash/gtkbuilder/dialog-book-close.glade:164
 #: gnucash/gtkbuilder/dialog-choose-owner.glade:98
@@ -2494,12 +2497,12 @@ msgstr "交易文件連結"
 #: gnucash/report/reports/standard/invoice.scm:89
 #: gnucash/report/reports/standard/invoice.scm:414
 #: gnucash/report/reports/standard/new-owner-report.scm:53
-#: gnucash/report/reports/standard/new-owner-report.scm:228
+#: gnucash/report/reports/standard/new-owner-report.scm:234
 #: gnucash/report/reports/standard/register.scm:137
 #: gnucash/report/reports/standard/register.scm:358
 #: gnucash/report/reports/support/taxinvoice.eguile.scm:270
 #: gnucash/report/trep-engine.scm:238 gnucash/report/trep-engine.scm:917
-#: gnucash/report/trep-engine.scm:1132 gnucash/report/trep-engine.scm:2237
+#: gnucash/report/trep-engine.scm:1151 gnucash/report/trep-engine.scm:2265
 msgid "Description"
 msgstr "描述"
 
@@ -2616,7 +2619,7 @@ msgid "Place Holder"
 msgstr "佔位符號"
 
 #: gnucash/gnome/dialog-find-account.c:426
-#: gnucash/gnome-utils/gnc-tree-view-account.c:979
+#: gnucash/gnome-utils/gnc-tree-view-account.c:996
 #: gnucash/gtkbuilder/dialog-account.glade:323
 #: gnucash/import-export/csv-exp/csv-tree-export.cpp:63
 msgid "Hidden"
@@ -2660,7 +2663,7 @@ msgstr "結帳分錄"
 
 #: gnucash/gnome/dialog-find-transactions.c:118
 #: gnucash/gnome/gnc-plugin-page-register.cpp:403
-#: gnucash/gnome/window-reconcile.cpp:1453
+#: gnucash/gnome/window-reconcile.cpp:1468
 #: gnucash/import-export/csv-exp/csv-transactions-export.cpp:369
 #: gnucash/import-export/csv-exp/csv-transactions-export.cpp:394
 msgid "Reconcile"
@@ -2695,8 +2698,8 @@ msgstr "過帳日期"
 #: gnucash/report/reports/standard/general-ledger.scm:67
 #: gnucash/report/reports/standard/general-ledger.scm:88
 #: gnucash/report/trep-engine.scm:197 gnucash/report/trep-engine.scm:540
-#: gnucash/report/trep-engine.scm:912 gnucash/report/trep-engine.scm:1102
-#: gnucash/report/trep-engine.scm:2232
+#: gnucash/report/trep-engine.scm:912 gnucash/report/trep-engine.scm:1121
+#: gnucash/report/trep-engine.scm:2260
 msgid "Reconciled Date"
 msgstr "對帳日期"
 
@@ -2763,7 +2766,7 @@ msgstr "描述、筆記、備忘錄"
 
 #: gnucash/gnome/dialog-find-transactions.c:155
 #: gnucash/gnome/gnc-split-reg.c:678
-#: gnucash/gnome-utils/gnc-tree-view-account.c:959
+#: gnucash/gnome-utils/gnc-tree-view-account.c:976
 #: gnucash/gnome-utils/gnc-tree-view-owner.c:455
 #: gnucash/gtkbuilder/assistant-acct-period.glade:143
 #: gnucash/gtkbuilder/assistant-hierarchy.glade:420
@@ -2786,8 +2789,8 @@ msgstr "描述、筆記、備忘錄"
 #: gnucash/report/reports/standard/receipt.scm:38
 #: gnucash/report/reports/standard/taxinvoice.scm:69
 #: gnucash/report/trep-engine.scm:269 gnucash/report/trep-engine.scm:901
-#: gnucash/report/trep-engine.scm:918 gnucash/report/trep-engine.scm:1143
-#: gnucash/report/trep-engine.scm:2251
+#: gnucash/report/trep-engine.scm:918 gnucash/report/trep-engine.scm:1162
+#: gnucash/report/trep-engine.scm:2280
 msgid "Notes"
 msgstr "筆記"
 
@@ -2885,14 +2888,14 @@ msgstr "請選擇不同的報表模版，否則的話將會使用「可列印的
 #: gnucash/report/reports/standard/invoice.scm:446
 #: gnucash/report/reports/standard/new-aging.scm:112
 #: gnucash/report/reports/standard/new-owner-report.scm:50
-#: gnucash/report/reports/standard/new-owner-report.scm:937
+#: gnucash/report/reports/standard/new-owner-report.scm:956
 #: gnucash/report/reports/support/taxinvoice.eguile.scm:233
 msgid "Due Date"
 msgstr "到期日"
 
 #: gnucash/gnome/dialog-invoice.c:1039
 #: gnucash/report/reports/standard/new-aging.scm:113
-#: gnucash/report/reports/standard/new-owner-report.scm:938
+#: gnucash/report/reports/standard/new-owner-report.scm:957
 msgid "Post Date"
 msgstr "過帳日期"
 
@@ -2954,7 +2957,7 @@ msgid "PAID"
 msgstr "已付款"
 
 #: gnucash/gnome/dialog-invoice.c:2272
-#: gnucash/report/reports/standard/new-owner-report.scm:570
+#: gnucash/report/reports/standard/new-owner-report.scm:581
 msgid "UNPAID"
 msgstr "未支付"
 
@@ -3149,7 +3152,7 @@ msgstr "憑證筆記"
 
 #: gnucash/gnome/dialog-invoice.c:3657 gnucash/gnome/dialog-invoice.c:3817
 #: gnucash/gnome/dialog-lot-viewer.c:908 gnucash/gnome/dialog-tax-info.c:1234
-#: gnucash/gnome-utils/gnc-tree-view-account.c:794
+#: gnucash/gnome-utils/gnc-tree-view-account.c:811
 #: gnucash/gnome-utils/gnc-tree-view-owner.c:383
 #: gnucash/gnome-utils/gnc-tree-view-price.c:410
 #: gnucash/gtkbuilder/assistant-loan.glade:278
@@ -3161,17 +3164,17 @@ msgstr "憑證筆記"
 #: gnucash/gtkbuilder/dialog-payment.glade:284
 #: gnucash/gtkbuilder/dialog-tax-info.glade:129
 #: gnucash/import-export/csv-exp/csv-tree-export.cpp:60
-#: gnucash/import-export/csv-imp/csv-account-import.c:154
+#: gnucash/import-export/csv-imp/csv-account-import.c:168
 #: gnucash/register/ledger-core/split-register-model.c:371
 #: gnucash/report/reports/standard/account-summary.scm:379
 #: gnucash/report/reports/standard/new-owner-report.scm:52
-#: gnucash/report/reports/standard/new-owner-report.scm:227
+#: gnucash/report/reports/standard/new-owner-report.scm:233
 msgid "Type"
 msgstr "類型"
 
 #: gnucash/gnome/dialog-invoice.c:3659
 #: gnucash/register/ledger-core/split-register-model.c:318
-#: gnucash/report/reports/standard/new-owner-report.scm:808
+#: gnucash/report/reports/standard/new-owner-report.scm:821
 msgid "Paid"
 msgstr "已付款"
 
@@ -3200,8 +3203,8 @@ msgstr "開立日"
 #: gnucash/report/reports/standard/general-ledger.scm:89
 #: gnucash/report/reports/standard/register.scm:135
 #: gnucash/report/reports/standard/register.scm:354
-#: gnucash/report/trep-engine.scm:916 gnucash/report/trep-engine.scm:1116
-#: gnucash/report/trep-engine.scm:2236
+#: gnucash/report/trep-engine.scm:916 gnucash/report/trep-engine.scm:1135
+#: gnucash/report/trep-engine.scm:2264
 msgid "Num"
 msgstr "編號"
 
@@ -3240,12 +3243,12 @@ msgstr "尋找發票"
 #: gnucash/report/reports/standard/general-journal.scm:101
 #: gnucash/report/reports/standard/general-ledger.scm:81
 #: gnucash/report/reports/standard/general-ledger.scm:101
-#: gnucash/report/reports/standard/new-owner-report.scm:232
+#: gnucash/report/reports/standard/new-owner-report.scm:238
 #: gnucash/report/reports/standard/register.scm:382
 #: gnucash/report/reports/standard/register.scm:627
-#: gnucash/report/trep-engine.scm:231 gnucash/report/trep-engine.scm:975
-#: gnucash/report/trep-engine.scm:1333 gnucash/report/trep-engine.scm:1436
-#: gnucash/report/trep-engine.scm:2183 gnucash/report/trep-engine.scm:2203
+#: gnucash/report/trep-engine.scm:231 gnucash/report/trep-engine.scm:979
+#: gnucash/report/trep-engine.scm:1361 gnucash/report/trep-engine.scm:1464
+#: gnucash/report/trep-engine.scm:2211 gnucash/report/trep-engine.scm:2231
 msgid "Amount"
 msgstr "金額"
 
@@ -3354,15 +3357,15 @@ msgid "Title"
 msgstr "標題"
 
 #: gnucash/gnome/dialog-lot-viewer.c:941 gnucash/gnome/dialog-lot-viewer.c:1033
-#: gnucash/gnome-utils/gnc-tree-view-account.c:837
+#: gnucash/gnome-utils/gnc-tree-view-account.c:854
 #: gnucash/gnome-utils/gnc-tree-view-owner.c:439
 #: gnucash/gnome-utils/gnc-tree-view-owner.c:447
 #: gnucash/register/ledger-core/split-register-model.c:329
 #: gnucash/register/ledger-core/split-register-model.c:493
 #: gnucash/report/reports/standard/account-summary.scm:393
 #: gnucash/report/reports/standard/balance-forecast.scm:249
-#: gnucash/report/reports/standard/new-owner-report.scm:58
-#: gnucash/report/reports/standard/new-owner-report.scm:551
+#: gnucash/report/reports/standard/new-owner-report.scm:59
+#: gnucash/report/reports/standard/new-owner-report.scm:562
 #: gnucash/report/reports/standard/register.scm:163
 msgid "Balance"
 msgstr "結餘"
@@ -3458,8 +3461,8 @@ msgstr "尚未選擇此付款所屬的相關文件，這可能會導至未建立
 
 #: gnucash/gnome/dialog-payment.c:543 gnucash/gnome/dialog-payment.c:1368
 #: gnucash/report/reports/standard/new-aging.scm:177
-#: gnucash/report/reports/standard/new-owner-report.scm:305
-#: gnucash/report/reports/standard/new-owner-report.scm:699
+#: gnucash/report/reports/standard/new-owner-report.scm:315
+#: gnucash/report/reports/standard/new-owner-report.scm:710
 msgid "Pre-Payment"
 msgstr "預付款"
 
@@ -3479,7 +3482,7 @@ msgstr "轉帳跟過帳的科目採用不同的幣別，請設定匯率。"
 #: gnucash/register/ledger-core/split-register-model.c:300
 #: gnucash/report/reports/standard/customer-summary.scm:248
 #: gnucash/report/reports/standard/customer-summary.scm:281
-#: gnucash/report/reports/standard/new-owner-report.scm:89
+#: gnucash/report/reports/standard/new-owner-report.scm:90
 #: libgnucash/engine/gncOwner.c:216
 msgid "Customer"
 msgstr "客戶"
@@ -3490,7 +3493,7 @@ msgstr "客戶"
 #: gnucash/gtkbuilder/dialog-payment.glade:44
 #: gnucash/gtkbuilder/dialog-vendor.glade:469
 #: gnucash/register/ledger-core/split-register-model.c:302
-#: gnucash/report/reports/standard/new-owner-report.scm:104
+#: gnucash/report/reports/standard/new-owner-report.scm:105
 #: libgnucash/engine/gncOwner.c:220
 msgid "Vendor"
 msgstr "供應商"
@@ -3499,7 +3502,7 @@ msgstr "供應商"
 #: gnucash/gnome-search/dialog-search.c:1085
 #: gnucash/gtkbuilder/dialog-employee.glade:504
 #: gnucash/gtkbuilder/dialog-payment.glade:48
-#: gnucash/report/reports/standard/new-owner-report.scm:94
+#: gnucash/report/reports/standard/new-owner-report.scm:95
 #: libgnucash/engine/gncOwner.c:222
 msgid "Employee"
 msgstr "員工"
@@ -3517,7 +3520,7 @@ msgstr ""
 #: gnucash/gnome/dialog-payment.c:1593
 #: gnucash/gnome/gnc-plugin-page-register.cpp:3298
 #: gnucash/gnome-search/search-reconciled.c:216
-#: gnucash/gnome-utils/gnc-tree-view-account.c:858
+#: gnucash/gnome-utils/gnc-tree-view-account.c:875
 #: gnucash/report/trep-engine.scm:158
 msgid "Cleared"
 msgstr "已結清"
@@ -3525,7 +3528,7 @@ msgstr "已結清"
 #: gnucash/gnome/dialog-payment.c:1595
 #: gnucash/gnome/gnc-plugin-page-register.cpp:3300
 #: gnucash/gnome-search/search-reconciled.c:219
-#: gnucash/gnome-utils/gnc-tree-view-account.c:872
+#: gnucash/gnome-utils/gnc-tree-view-account.c:889
 #: gnucash/import-export/csv-imp/gnc-imp-props-tx.cpp:73
 #: gnucash/import-export/import-match-picker.cpp:357
 #: gnucash/report/trep-engine.scm:159
@@ -3680,7 +3683,7 @@ msgid "user"
 msgstr "使用者"
 
 #: gnucash/gnome/dialog-print-check.c:1635
-#: gnucash/gnome/dialog-print-check.c:2653
+#: gnucash/gnome/dialog-print-check.c:2652
 #: gnucash/gtkbuilder/assistant-csv-export.glade:178
 #: gnucash/gtkbuilder/assistant-csv-price-import.glade:381
 #: gnucash/gtkbuilder/assistant-csv-trans-import.glade:370
@@ -3691,7 +3694,7 @@ msgstr "使用者"
 msgid "Custom"
 msgstr "客製化"
 
-#: gnucash/gnome/dialog-print-check.c:2645
+#: gnucash/gnome/dialog-print-check.c:2644
 #: gnucash/gtkbuilder/dialog-preferences.glade:3544
 #: gnucash/gtkbuilder/dialog-print-check.glade:261
 #: gnucash/report/reports/standard/investment-lots.scm:197
@@ -3712,7 +3715,7 @@ msgstr "內容"
 
 #: gnucash/gnome/dialog-report-column-view.cpp:383
 #: gnucash/report/reports/standard/customer-summary.scm:251
-#: gnucash/report/reports/standard/new-owner-report.scm:1031
+#: gnucash/report/reports/standard/new-owner-report.scm:1050
 msgid "Report"
 msgstr "報表"
 
@@ -4007,10 +4010,10 @@ msgstr "尋找供應商"
 #: gnucash/import-export/qif-imp/qif-dialog-utils.scm:103
 #: gnucash/register/ledger-core/split-register.c:2657
 #: gnucash/report/reports/standard/advanced-portfolio.scm:1062
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1212
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1216
 #: gnucash/report/reports/standard/net-charts.scm:332
 #: gnucash/report/reports/standard/net-charts.scm:401
-#: gnucash/report/report-utilities.scm:209 libgnucash/engine/Account.cpp:178
+#: gnucash/report/report-utilities.scm:210 libgnucash/engine/Account.cpp:178
 #: libgnucash/engine/Account.cpp:4296
 msgid "Income"
 msgstr "收入"
@@ -4020,7 +4023,7 @@ msgstr "收入"
 #: gnucash/import-export/qif-imp/qif-dialog-utils.scm:122
 #: gnucash/report/reports/standard/budget-income-statement.scm:492
 #: gnucash/report/reports/standard/income-statement.scm:469
-#: gnucash/report/report-utilities.scm:210
+#: gnucash/report/report-utilities.scm:211
 msgid "Expenses"
 msgstr "支出"
 
@@ -4037,8 +4040,8 @@ msgstr "轉帳"
 msgid "Remaining to Budget"
 msgstr "剩餘預算"
 
-#: gnucash/gnome/gnc-budget-view.c:1598 gnucash/gnome/window-reconcile.cpp:1175
-#: gnucash/gnome-utils/gnc-tree-view-account.c:906
+#: gnucash/gnome/gnc-budget-view.c:1598 gnucash/gnome/window-reconcile.cpp:1190
+#: gnucash/gnome-utils/gnc-tree-view-account.c:923
 #: gnucash/report/html-acct-table.scm:789
 #: gnucash/report/reports/locale-specific/de_DE/taxtxf.scm:279
 #: gnucash/report/reports/standard/advanced-portfolio.scm:1027
@@ -4052,10 +4055,10 @@ msgstr "剩餘預算"
 #: gnucash/report/reports/standard/invoice.scm:442
 #: gnucash/report/reports/standard/new-aging.scm:183
 #: gnucash/report/reports/standard/new-aging.scm:304
-#: gnucash/report/reports/standard/new-owner-report.scm:311
+#: gnucash/report/reports/standard/new-owner-report.scm:321
 #: gnucash/report/reports/standard/portfolio.scm:269
 #: gnucash/report/reports/support/balsheet-eg.eguile.scm:113
-#: gnucash/report/trep-engine.scm:2081
+#: gnucash/report/trep-engine.scm:2109
 msgid "Total"
 msgstr "總計"
 
@@ -4145,7 +4148,7 @@ msgstr "「檢查和修復」正在執行中，您確定要中斷嗎？"
 msgid "Accounts"
 msgstr "科目"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1303
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1305
 #, c-format
 msgid ""
 "Account %s does not have the same currency as the one you're moving "
@@ -4155,26 +4158,26 @@ msgstr ""
 "「%s」科目和您想要轉自的科目使用不同的貨幣。\n"
 "您確定要這樣做嗎？"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1311
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1313
 msgid "_Pick another account"
 msgstr "選擇另一個科目(_P)"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1312
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1314
 msgid "_Do it anyway"
 msgstr "不管，總之繼續(_D)"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1395
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1538
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1397
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1540
 #: gnucash/gnome/gnc-plugin-page-owner-tree.cpp:1044
 msgid "(no name)"
 msgstr "(未命名)"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1407
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1409
 #, c-format
 msgid "Deleting account %s"
 msgstr "刪除科目 %s"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1527
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1529
 msgid ""
 "The list below shows objects which make use of the account which you want to "
 "delete.\n"
@@ -4186,7 +4189,7 @@ msgstr ""
 "在您刪除科目前，您必須刪除這些東西，或編輯這些相目，\n"
 "讓他們使用別的科目"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1541
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1543
 #, c-format
 msgid ""
 "The account \"%s\" has more than one subaccount.\n"
@@ -4197,39 +4200,39 @@ msgstr ""
 "\n"
 "删除該科目前請先删除所有的子科目或將其移至別處。"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1602
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1604
 #, c-format
 msgid "The account %s will be deleted."
 msgstr "科目 %s 將被刪除。"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1611
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1613
 #, c-format
 msgid "All transactions in this account will be moved to the account %s."
 msgstr "所有這個科目的交易，都將被移到科目 %s 當中。"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1618
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1620
 msgid "All transactions in this account will be deleted."
 msgstr "在這個科目中所有的交易將會被刪除。"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1627
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1629
 #, c-format
 msgid "Its sub-account will be moved to the account %s."
 msgstr "這個科目的所有子科目將會移到科目 %s。"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1633
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1635
 msgid "Its subaccount will be deleted."
 msgstr "這個科目的所有子科目將會被刪除。"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1637
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1639
 #, c-format
 msgid "All sub-account transactions will be moved to the account %s."
 msgstr "所有子科目的交易將會移到科目 %s。"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1644
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1646
 msgid "All sub-account transactions will be deleted."
 msgstr "所有子科目的交易將會被刪除。"
 
-#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1650
+#: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1652
 msgid "Are you sure you want to do this?"
 msgstr "您確定要這麼作嗎？"
 
@@ -5230,8 +5233,19 @@ msgstr "您不能儲存此檔案。"
 msgid "The file %s already exists. Are you sure you want to overwrite it?"
 msgstr "檔案 %s 已存在。您確定要覆蓋它？"
 
-#: gnucash/gnome/gnc-plugin-page-report.cpp:1786
-#: gnucash/gnome/gnc-plugin-page-report.cpp:1812
+#: gnucash/gnome/gnc-plugin-page-report.cpp:1728
+#, fuzzy
+#| msgid "Overview"
+msgid "_Overwrite"
+msgstr "概觀"
+
+#: gnucash/gnome/gnc-plugin-page-report.cpp:1728
+#, c-format
+msgid "This will update and overwrite the existing saved report named \"%s\"."
+msgstr ""
+
+#: gnucash/gnome/gnc-plugin-page-report.cpp:1793
+#: gnucash/gnome/gnc-plugin-page-report.cpp:1819
 #: gnucash/gnucash-commands.cpp:184 gnucash/gnucash-commands.cpp:214
 msgid ""
 "This report must be upgraded to return a document object with export-string "
@@ -5239,21 +5253,21 @@ msgid ""
 msgstr ""
 "這份報表需要升級，以回傳一個具有 export-string 或 export-error 的文件物件。"
 
-#: gnucash/gnome/gnc-plugin-page-report.cpp:1823
+#: gnucash/gnome/gnc-plugin-page-report.cpp:1830
 #, c-format
 msgid "Could not open the file %s. The error is: %s"
 msgstr "無法開啟檔案 %s，錯誤：%s"
 
-#: gnucash/gnome/gnc-plugin-page-report.cpp:1868
+#: gnucash/gnome/gnc-plugin-page-report.cpp:1875
 msgid "GnuCash-Report"
 msgstr "GnuCash-報表"
 
-#: gnucash/gnome/gnc-plugin-page-report.cpp:1917
+#: gnucash/gnome/gnc-plugin-page-report.cpp:1924
 #: gnucash/report/reports/standard/invoice.scm:877
 msgid "Printable Invoice"
 msgstr "可列印的發票"
 
-#: gnucash/gnome/gnc-plugin-page-report.cpp:1918
+#: gnucash/gnome/gnc-plugin-page-report.cpp:1925
 #: gnucash/report/reports/standard/taxinvoice.scm:301
 #: gnucash/report/reports/standard/taxinvoice.scm:303
 #: gnucash/report/reports/standard/taxinvoice.scm:315
@@ -5261,12 +5275,12 @@ msgstr "可列印的發票"
 msgid "Tax Invoice"
 msgstr "稅務發票"
 
-#: gnucash/gnome/gnc-plugin-page-report.cpp:1919
+#: gnucash/gnome/gnc-plugin-page-report.cpp:1926
 #: gnucash/report/reports/standard/invoice.scm:887
 msgid "Easy Invoice"
 msgstr "簡單發票"
 
-#: gnucash/gnome/gnc-plugin-page-report.cpp:1920
+#: gnucash/gnome/gnc-plugin-page-report.cpp:1927
 #: gnucash/report/reports/standard/invoice.scm:897
 msgid "Fancy Invoice"
 msgstr "精美的發票"
@@ -5339,7 +5353,7 @@ msgstr "標準順序"
 msgid "Date of Entry"
 msgstr "登錄資料的日期"
 
-#: gnucash/gnome/gnc-split-reg.c:660 gnucash/gnome/window-reconcile.cpp:2051
+#: gnucash/gnome/gnc-split-reg.c:660 gnucash/gnome/window-reconcile.cpp:2066
 msgid "Statement Date"
 msgstr "結帳日期"
 
@@ -5689,7 +5703,8 @@ msgstr "您尚未選擇所有者"
 #: gnucash/gtkbuilder/dialog-invoice.glade:500
 #: gnucash/gtkbuilder/dialog-invoice.glade:1051
 #: gnucash/gtkbuilder/dialog-invoice.glade:1192
-#: gnucash/report/reports/standard/new-owner-report.scm:99
+#: gnucash/report/reports/standard/new-owner-report.scm:56
+#: gnucash/report/reports/standard/new-owner-report.scm:100
 #: libgnucash/engine/gncOwner.c:218
 msgid "Job"
 msgstr "工作"
@@ -5729,7 +5744,7 @@ msgid "Cleared Transactions"
 msgstr "已結清的交易"
 
 #. Translators: %d is the number of days in the future
-#: gnucash/gnome/window-reconcile.cpp:383
+#: gnucash/gnome/window-reconcile.cpp:395
 #, c-format
 msgid "Statement Date is %d day after today."
 msgid_plural "Statement Date is %d days after today."
@@ -5737,70 +5752,70 @@ msgstr[0] "結帳日期比今天晚 %d 天。"
 msgstr[1] "結帳日期比今天晚 %d 天。"
 
 #. Translators: %d is the number of days in the future
-#: gnucash/gnome/window-reconcile.cpp:390
+#: gnucash/gnome/window-reconcile.cpp:402
 #, c-format
 msgid "The statement date you have chosen is %d day in the future."
 msgid_plural "The statement date you have chosen is %d days in the future."
 msgstr[0] "您選則的結帳日期，比今天的日期晚 %d 天。"
 msgstr[1] "您選則的結帳日期，比今天的日期晚 %d 天。"
 
-#: gnucash/gnome/window-reconcile.cpp:395
+#: gnucash/gnome/window-reconcile.cpp:407
 msgid ""
 "This may cause issues for future reconciliation actions on this account. "
 "Please double-check this is the date you intended."
 msgstr ""
 "這可能會造成未來對帳此科目時有問題，請再次確認這個日期是您想選擇的日期。"
 
-#: gnucash/gnome/window-reconcile.cpp:484
+#: gnucash/gnome/window-reconcile.cpp:496
 msgid "Interest Payment"
 msgstr "利息付款"
 
-#: gnucash/gnome/window-reconcile.cpp:487
+#: gnucash/gnome/window-reconcile.cpp:499
 msgid "Interest Charge"
 msgstr "利息收費"
 
-#: gnucash/gnome/window-reconcile.cpp:495
+#: gnucash/gnome/window-reconcile.cpp:507
 #: gnucash/gtkbuilder/dialog-vendor.glade:630
 #: gnucash/gtkbuilder/dialog-vendor.glade:652
 msgid "Payment Information"
 msgstr "付款資訊"
 
-#: gnucash/gnome/window-reconcile.cpp:505
+#: gnucash/gnome/window-reconcile.cpp:517
 #: gnucash/gtkbuilder/assistant-loan.glade:574
 #: gnucash/gtkbuilder/assistant-loan.glade:775
 msgid "Payment From"
 msgstr "付款自"
 
-#: gnucash/gnome/window-reconcile.cpp:511
-#: gnucash/gnome/window-reconcile.cpp:521
+#: gnucash/gnome/window-reconcile.cpp:523
+#: gnucash/gnome/window-reconcile.cpp:533
 msgid "Reconcile Account"
 msgstr "對帳科目"
 
-#: gnucash/gnome/window-reconcile.cpp:526
+#: gnucash/gnome/window-reconcile.cpp:538
 #: gnucash/gtkbuilder/assistant-loan.glade:827
 msgid "Payment To"
 msgstr "付款至"
 
-#: gnucash/gnome/window-reconcile.cpp:787
+#: gnucash/gnome/window-reconcile.cpp:802
 #: gnucash/gtkbuilder/window-reconcile.glade:215
 msgid "Enter _Interest Payment…"
 msgstr "輸入利息付款(_I)…"
 
-#: gnucash/gnome/window-reconcile.cpp:789
+#: gnucash/gnome/window-reconcile.cpp:804
 msgid "Enter _Interest Charge…"
 msgstr "輸入利息收費(_I)…"
 
-#: gnucash/gnome/window-reconcile.cpp:1398
+#: gnucash/gnome/window-reconcile.cpp:1413
 msgid "Are you sure you want to delete the selected transaction?"
 msgstr "您確定要刪除選擇的交易？"
 
-#: gnucash/gnome/window-reconcile.cpp:1949
+#: gnucash/gnome/window-reconcile.cpp:1964
 msgid ""
 "WARNING! Account contains splits whose reconcile date is after statement "
 "date. Reconciliation may be difficult."
 msgstr "警告！此科目含有對帳日比結帳日晚的分割。對帳可能會很困難。"
 
-#: gnucash/gnome/window-reconcile.cpp:1953
+#: gnucash/gnome/window-reconcile.cpp:1968
 msgid ""
 "This account has splits whose Reconciled Date is after this reconciliation "
 "statement date. These splits may make reconciliation difficult. If this is "
@@ -5810,35 +5825,35 @@ msgstr ""
 "此科目含有對帳日期比結帳日期晚的分割，這些分割可能會造成對帳的困難。如果是這"
 "樣，您可以使用「尋找交易」來找到他們，取消對帳並重新對帳。"
 
-#: gnucash/gnome/window-reconcile.cpp:2061
+#: gnucash/gnome/window-reconcile.cpp:2076
 #: gnucash/gtkbuilder/window-reconcile.glade:106
 msgid "Starting Balance"
 msgstr "期初餘額"
 
-#: gnucash/gnome/window-reconcile.cpp:2071
+#: gnucash/gnome/window-reconcile.cpp:2086
 msgid "Ending Balance"
 msgstr "結束結餘"
 
-#: gnucash/gnome/window-reconcile.cpp:2081
+#: gnucash/gnome/window-reconcile.cpp:2096
 msgid "Reconciled Balance"
 msgstr "已對帳的結餘"
 
-#: gnucash/gnome/window-reconcile.cpp:2091
+#: gnucash/gnome/window-reconcile.cpp:2106
 #: gnucash/report/reports/standard/cash-flow.scm:305
 msgid "Difference"
 msgstr "差額"
 
-#: gnucash/gnome/window-reconcile.cpp:2204
+#: gnucash/gnome/window-reconcile.cpp:2219
 msgid ""
 "You have made changes to this reconcile window. Are you sure you want to "
 "cancel?"
 msgstr "您已經在此對帳視窗中做過變更。您確定要取消？"
 
-#: gnucash/gnome/window-reconcile.cpp:2314
+#: gnucash/gnome/window-reconcile.cpp:2329
 msgid "The account is not balanced. Are you sure you want to finish?"
 msgstr "此科目尚未結算。您確定要結束？"
 
-#: gnucash/gnome/window-reconcile.cpp:2374
+#: gnucash/gnome/window-reconcile.cpp:2389
 msgid "Do you want to postpone this reconciliation and finish it later?"
 msgstr "您想要推遲此次對帳，留到稍後才完成？"
 
@@ -6042,9 +6057,9 @@ msgid "You need to enter some search text."
 msgstr "您需要輸入要搜尋的文字。"
 
 #: gnucash/gnome-search/search-string.c:191
-#: gnucash/import-export/bi-import/dialog-bi-import.c:136
-#: gnucash/import-export/csv-imp/csv-account-import.c:113
-#: gnucash/import-export/customer-import/dialog-customer-import.c:102
+#: gnucash/import-export/bi-import/dialog-bi-import.c:137
+#: gnucash/import-export/csv-imp/csv-account-import.c:127
+#: gnucash/import-export/customer-import/dialog-customer-import.c:103
 #, c-format
 msgid ""
 "Error in regular expression '%s':\n"
@@ -6700,7 +6715,7 @@ msgid "Show the income and expense accounts"
 msgstr "顯示收入與支出科目"
 
 #: gnucash/gnome-utils/dialog-transfer.cpp:673
-#: gnucash/report/trep-engine.scm:2432 gnucash/report/trep-engine.scm:2438
+#: gnucash/report/trep-engine.scm:2461 gnucash/report/trep-engine.scm:2467
 msgid "Error"
 msgstr "錯誤"
 
@@ -7526,9 +7541,10 @@ msgstr "個人及小企業的會計軟體。"
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Barlos Lee: 2010; Brian Hsu: 2021, 2023; Chao-Hsiung Liao: 2003Kuang-che Wu: "
-"2007, 2011-2013; Newson Parker: 2023Ricky From Hong Kong: 2024; cjh: 2021; "
-"hanyang cheng: 2024toddchou: 2024"
+"Barlos Lee: 2010; Brian Hsu: 2021, 2023, 2025; Chao-Hsiung Liao: 2003"
+"Kuang-che Wu: 2007, 2011-2013; Newson Parker: 2023"
+"Ricky From Hong Kong: 2024; cjh: 2021; hanyang cheng: 2024"
+"toddchou: 2024"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."
@@ -7663,11 +7679,11 @@ msgstr "載入中…"
 msgid "never"
 msgstr "永不"
 
-#: gnucash/gnome-utils/gnc-tree-model-account.c:721
+#: gnucash/gnome-utils/gnc-tree-model-account.c:724
 msgid "New top level account"
 msgstr "新增頂端層級科目"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:788
+#: gnucash/gnome-utils/gnc-tree-view-account.c:805
 #: gnucash/gtkbuilder/assistant-csv-trans-import.glade:983
 #: gnucash/import-export/csv-exp/csv-transactions-export.cpp:365
 #: gnucash/import-export/csv-exp/csv-transactions-export.cpp:389
@@ -7676,157 +7692,157 @@ msgstr "新增頂端層級科目"
 #: gnucash/report/reports/standard/general-ledger.scm:72
 #: gnucash/report/reports/standard/general-ledger.scm:92
 #: gnucash/report/reports/standard/trial-balance.scm:561
-#: gnucash/report/trep-engine.scm:179 gnucash/report/trep-engine.scm:950
-#: gnucash/report/trep-engine.scm:2238
+#: gnucash/report/trep-engine.scm:179 gnucash/report/trep-engine.scm:954
+#: gnucash/report/trep-engine.scm:2266
 msgid "Account Name"
 msgstr "科目名稱"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:799
+#: gnucash/gnome-utils/gnc-tree-view-account.c:816
 #: gnucash/gtkbuilder/dialog-price.glade:580
 msgid "Commodity"
 msgstr "商品"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:805
+#: gnucash/gnome-utils/gnc-tree-view-account.c:822
 #: gnucash/import-export/csv-exp/csv-tree-export.cpp:61
 #: gnucash/report/reports/standard/account-summary.scm:114
 #: gnucash/report/reports/standard/account-summary.scm:378
 #: gnucash/report/reports/standard/general-ledger.scm:74
 #: gnucash/report/reports/standard/general-ledger.scm:94
 #: gnucash/report/trep-engine.scm:185 gnucash/report/trep-engine.scm:921
-#: gnucash/report/trep-engine.scm:2252
+#: gnucash/report/trep-engine.scm:2281
 msgid "Account Code"
 msgstr "科目代碼"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:817
+#: gnucash/gnome-utils/gnc-tree-view-account.c:834
 msgid "Last Num"
 msgstr "最後編號"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:823
+#: gnucash/gnome-utils/gnc-tree-view-account.c:840
 msgid "Present"
 msgstr "目前"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:830
+#: gnucash/gnome-utils/gnc-tree-view-account.c:847
 msgid "Present (Report)"
 msgstr "目前 (報表)"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:844
+#: gnucash/gnome-utils/gnc-tree-view-account.c:861
 msgid "Balance (Report)"
 msgstr "結算 (報表)"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:851
+#: gnucash/gnome-utils/gnc-tree-view-account.c:868
 msgid "Balance (Period)"
 msgstr "結算 (會計期間)"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:865
+#: gnucash/gnome-utils/gnc-tree-view-account.c:882
 msgid "Cleared (Report)"
 msgstr "已結清 (報表)"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:879
+#: gnucash/gnome-utils/gnc-tree-view-account.c:896
 msgid "Reconciled (Report)"
 msgstr "已對帳 (報表)"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:886
+#: gnucash/gnome-utils/gnc-tree-view-account.c:903
 msgid "Last Reconcile Date"
 msgstr "上次對帳日期"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:892
+#: gnucash/gnome-utils/gnc-tree-view-account.c:909
 msgid "Future Minimum"
 msgstr "未來最小值"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:899
+#: gnucash/gnome-utils/gnc-tree-view-account.c:916
 msgid "Future Minimum (Report)"
 msgstr "未來最小值 (報表)"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:913
+#: gnucash/gnome-utils/gnc-tree-view-account.c:930
 msgid "Total (Report)"
 msgstr "總計 (報表)"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:920
+#: gnucash/gnome-utils/gnc-tree-view-account.c:937
 msgid "Total (Period)"
 msgstr "總計 (會計期間)"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:929
+#: gnucash/gnome-utils/gnc-tree-view-account.c:946
 msgctxt "Column header for 'Color'"
 msgid "C"
 msgstr "顏色"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:937
-#: gnucash/gnome-utils/gnc-tree-view-account.c:940
+#: gnucash/gnome-utils/gnc-tree-view-account.c:954
+#: gnucash/gnome-utils/gnc-tree-view-account.c:957
 #: gnucash/gtkbuilder/dialog-preferences.glade:816
 #: gnucash/import-export/csv-exp/csv-tree-export.cpp:61
 msgid "Account Color"
 msgstr "科目顏色"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:944
+#: gnucash/gnome-utils/gnc-tree-view-account.c:961
 msgctxt "Column header for 'Balance Limit'"
 msgid "L"
 msgstr "L"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:953
-#: gnucash/gnome-utils/gnc-tree-view-account.c:956
+#: gnucash/gnome-utils/gnc-tree-view-account.c:970
+#: gnucash/gnome-utils/gnc-tree-view-account.c:973
 #: gnucash/gtkbuilder/dialog-account.glade:1705
 msgid "Balance Limit"
 msgstr "結餘限制"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:966
+#: gnucash/gnome-utils/gnc-tree-view-account.c:983
 #: gnucash/import-export/csv-exp/csv-tree-export.cpp:63
 msgid "Tax Info"
 msgstr "稅務資訊"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:980
+#: gnucash/gnome-utils/gnc-tree-view-account.c:997
 msgctxt "Column header for 'Hidden'"
 msgid "H"
 msgstr "隱藏"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:988
+#: gnucash/gnome-utils/gnc-tree-view-account.c:1005
 msgctxt "Column header for 'Placeholder'"
 msgid "P"
 msgstr "佔位"
 
-#: gnucash/gnome-utils/gnc-tree-view-account.c:996
+#: gnucash/gnome-utils/gnc-tree-view-account.c:1013
 msgctxt "Column header for 'Opening Balance'"
 msgid "O"
 msgstr "期初餘額"
 
 #. Translators: %s is a currency mnemonic.
-#: gnucash/gnome-utils/gnc-tree-view-account.c:1788
+#: gnucash/gnome-utils/gnc-tree-view-account.c:1805
 #, c-format
 msgid "Present (%s)"
 msgstr "目前 (%s)"
 
 #. Translators: %s is a currency mnemonic.
-#: gnucash/gnome-utils/gnc-tree-view-account.c:1791
+#: gnucash/gnome-utils/gnc-tree-view-account.c:1808
 #: gnucash/gnome-utils/gnc-tree-view-owner.c:897
 #, c-format
 msgid "Balance (%s)"
 msgstr "結算 (%s)"
 
 #. Translators: %s is a currency mnemonic.
-#: gnucash/gnome-utils/gnc-tree-view-account.c:1794
+#: gnucash/gnome-utils/gnc-tree-view-account.c:1811
 #, c-format
 msgid "Cleared (%s)"
 msgstr "已結清 (%s)"
 
 #. Translators: %s is a currency mnemonic.
-#: gnucash/gnome-utils/gnc-tree-view-account.c:1797
+#: gnucash/gnome-utils/gnc-tree-view-account.c:1814
 #, c-format
 msgid "Reconciled (%s)"
 msgstr "已對帳 (%s)"
 
 #. Translators: %s is a currency mnemonic.
-#: gnucash/gnome-utils/gnc-tree-view-account.c:1800
+#: gnucash/gnome-utils/gnc-tree-view-account.c:1817
 #, c-format
 msgid "Future Minimum (%s)"
 msgstr "未來最小值 (%s)"
 
 #. Translators: %s is a currency mnemonic.
-#: gnucash/gnome-utils/gnc-tree-view-account.c:1803
+#: gnucash/gnome-utils/gnc-tree-view-account.c:1820
 #, c-format
 msgid "Total (%s)"
 msgstr "總計 (%s)"
 
 #. Translators: The %s is the name of the plugin page
-#: gnucash/gnome-utils/gnc-tree-view-account.c:2298
+#: gnucash/gnome-utils/gnc-tree-view-account.c:2315
 #, c-format
 msgid "Filter %s by..."
 msgstr "過濾 %s 依..."
@@ -7979,12 +7995,12 @@ msgstr "證券"
 #: gnucash/report/reports/standard/invoice.scm:426
 #: gnucash/report/reports/standard/portfolio.scm:248
 #: gnucash/report/reports/standard/price-scatter.scm:40
-#: gnucash/report/reports/standard/price-scatter.scm:286
-#: gnucash/report/reports/standard/price-scatter.scm:300
+#: gnucash/report/reports/standard/price-scatter.scm:285
+#: gnucash/report/reports/standard/price-scatter.scm:299
 #: gnucash/report/reports/standard/register.scm:149
 #: gnucash/report/reports/standard/register.scm:378
-#: gnucash/report/trep-engine.scm:928 gnucash/report/trep-engine.scm:1202
-#: gnucash/report/trep-engine.scm:2243
+#: gnucash/report/trep-engine.scm:928 gnucash/report/trep-engine.scm:1230
+#: gnucash/report/trep-engine.scm:2271
 msgid "Price"
 msgstr "價格"
 
@@ -10858,7 +10874,7 @@ msgstr "選擇全部(_A)"
 
 #: gnucash/gtkbuilder/assistant-csv-export.glade:412
 #: gnucash/gtkbuilder/assistant-loan.glade:1208
-#: gnucash/report/reports/standard/new-owner-report.scm:1131
+#: gnucash/report/reports/standard/new-owner-report.scm:1150
 msgid "Date Range"
 msgstr "日期範圍"
 
@@ -12433,9 +12449,9 @@ msgstr ""
 #: gnucash/gtkbuilder/assistant-stock-transaction.glade:492
 #: gnucash/gtkbuilder/assistant-stock-transaction.glade:537
 #: gnucash/register/ledger-core/gncEntryLedgerLoad.c:130
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:530
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:1090
-#: gnucash/report/report-utilities.scm:202 libgnucash/engine/Account.cpp:4289
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:535
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:1095
+#: gnucash/report/report-utilities.scm:203 libgnucash/engine/Account.cpp:4289
 msgid "Cash"
 msgstr "現金"
 
@@ -14474,7 +14490,7 @@ msgstr "訂單資訊"
 #: gnucash/gtkbuilder/dialog-order.glade:272
 #: gnucash/gtkbuilder/dialog-order.glade:630
 #: gnucash/report/reports/standard/new-owner-report.scm:51
-#: gnucash/report/reports/standard/new-owner-report.scm:226
+#: gnucash/report/reports/standard/new-owner-report.scm:232
 msgid "Reference"
 msgstr "參照"
 
@@ -14531,7 +14547,7 @@ msgstr ""
 "一張尚未付款的發票。"
 
 #: gnucash/gtkbuilder/dialog-payment.glade:469
-#: gnucash/report/reports/standard/new-owner-report.scm:282
+#: gnucash/report/reports/standard/new-owner-report.scm:292
 msgid "Refund"
 msgstr "退款"
 
@@ -16897,7 +16913,7 @@ msgstr "預算週期"
 
 #: gnucash/gtkbuilder/gnc-plugin-page-budget.glade:620
 #: gnucash/report/reports/standard/general-ledger.scm:126
-#: gnucash/report/trep-engine.scm:91 gnucash/report/trep-engine.scm:2281
+#: gnucash/report/trep-engine.scm:91 gnucash/report/trep-engine.scm:2310
 msgid "Show Account Code"
 msgstr "顯示科目代碼"
 
@@ -17996,7 +18012,7 @@ msgid "Unspecified"
 msgstr "未指定的"
 
 #: gnucash/import-export/aqb/gnc-ab-utils.c:478
-#: gnucash/report/report-utilities.scm:201 libgnucash/engine/Account.cpp:4288
+#: gnucash/report/report-utilities.scm:202 libgnucash/engine/Account.cpp:4288
 msgid "Bank"
 msgstr "銀行"
 
@@ -18269,116 +18285,116 @@ msgstr ""
 "此設定指定了當匯入 SWIFT MT942 檔案時所使用的資料格式。AqBanking 函式庫提供了"
 "您可以在此選擇的各式匯入格式（被稱為「profile」）。"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:297
+#: gnucash/import-export/bi-import/dialog-bi-import.c:304
 #, c-format
 msgid "Validation…\n"
 msgstr "驗證中…\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:327
+#: gnucash/import-export/bi-import/dialog-bi-import.c:334
 #, c-format
 msgid "Row %d: no invoice ID in first row of import file.\n"
 msgstr "第 %d 行：匯入檔案的第一行查無發票 ID。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:335
+#: gnucash/import-export/bi-import/dialog-bi-import.c:342
 #, c-format
 msgid "Row %d, invoice %s/%u: owner not set.\n"
 msgstr "第 %d 行，發票 %s/%u: 未設定所有者。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:347
+#: gnucash/import-export/bi-import/dialog-bi-import.c:354
 #, c-format
 msgid "Row %d, invoice %s/%u: vendor %s does not exist.\n"
 msgstr "第 %d 行，發票 %s/%u: 供應商 %s 不存在。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:359
+#: gnucash/import-export/bi-import/dialog-bi-import.c:366
 #, c-format
 msgid "Row %d, invoice %s/%u: customer %s does not exist.\n"
 msgstr "第 %d 行，發票 %s/%u: 客戶 %s 不存在。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:372
+#: gnucash/import-export/bi-import/dialog-bi-import.c:379
 #, c-format
 msgid "Row %d, invoice %s/%u: %s is not a valid posting date.\n"
 msgstr "第 %d 行，發票 %s/%u: %s 不是有效的過帳日期。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:380
+#: gnucash/import-export/bi-import/dialog-bi-import.c:387
 #, c-format
 msgid "Row %d, invoice %s/%u: %s is not a valid due date.\n"
 msgstr "第 %d 行，發票 %s/%u: %s 不是有效的截止日期。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:404
-#: gnucash/import-export/bi-import/dialog-bi-import.c:475
+#: gnucash/import-export/bi-import/dialog-bi-import.c:411
+#: gnucash/import-export/bi-import/dialog-bi-import.c:482
 #, c-format
 msgid "Row %d, invoice %s/%u: account %s does not exist.\n"
 msgstr "第 %d 行，發票 %s/%u: 科目 %s 不存在。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:416
+#: gnucash/import-export/bi-import/dialog-bi-import.c:423
 #, c-format
 msgid "Row %d, invoice %s/%u: account %s is not of type Accounts Payable.\n"
 msgstr "第 %d 行，發票 %s/%u: %s 不是應付帳款科目。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:426
+#: gnucash/import-export/bi-import/dialog-bi-import.c:433
 #, c-format
 msgid "Row %d, invoice %s/%u: account %s is not of type Accounts Receivable.\n"
 msgstr "第 %d 行，發票 %s/%u: %s 不是應收帳款科目。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:464
+#: gnucash/import-export/bi-import/dialog-bi-import.c:471
 #, c-format
 msgid "Row %d, invoice %s/%u: price not set.\n"
 msgstr "第 %d 行，發票 %s/%u: 未設定價格。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:533
+#: gnucash/import-export/bi-import/dialog-bi-import.c:540
 #, c-format
 msgid "Error(s) in invoice %s, all rows of this invoice ignored.\n"
 msgstr "發票 %s 有誤，忽略此發票中所有項目。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:539
+#: gnucash/import-export/bi-import/dialog-bi-import.c:546
 #, c-format
 msgid "Error(s) in invoice without id, all rows of this invoice ignored.\n"
 msgstr "無 ID 的發票有誤，忽略此發票中所有項目。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:645
+#: gnucash/import-export/bi-import/dialog-bi-import.c:652
 msgid "Processing…"
 msgstr "處理中…"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:714
+#: gnucash/import-export/bi-import/dialog-bi-import.c:721
 #, c-format
 msgid "Invoice %s created.\n"
 msgstr "已建立發票 %s。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:729
+#: gnucash/import-export/bi-import/dialog-bi-import.c:736
 msgid "Do you want to update existing bills/invoices?"
 msgstr "您要更新現存的帳單 / 發票嗎？"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:737
+#: gnucash/import-export/bi-import/dialog-bi-import.c:744
 #, c-format
 msgid "Invoice %s not updated because it already exists.\n"
 msgstr "「未」更新發票 %s，該發票已存在。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:752
+#: gnucash/import-export/bi-import/dialog-bi-import.c:759
 #, c-format
 msgid "Invoice %s not updated because it is already posted.\n"
 msgstr "由於該發票已過帳，未更新發票 %s。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:765
+#: gnucash/import-export/bi-import/dialog-bi-import.c:772
 #, c-format
 msgid "Invoice %s updated.\n"
 msgstr "已更新發票 %s。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:881
+#: gnucash/import-export/bi-import/dialog-bi-import.c:888
 #, c-format
 msgid "Invoice %s posted.\n"
 msgstr "已過帳發票 %s。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:886
+#: gnucash/import-export/bi-import/dialog-bi-import.c:893
 #, c-format
 msgid "Invoice %s NOT posted because currencies don't match.\n"
 msgstr "「未」過帳發票 %s，貨幣不符合。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:892
+#: gnucash/import-export/bi-import/dialog-bi-import.c:899
 #, c-format
 msgid "Invoice %s NOT posted because it requires currency conversion.\n"
 msgstr "「未」過帳發票 %s，需要進行貨幣轉換。\n"
 
-#: gnucash/import-export/bi-import/dialog-bi-import.c:916
+#: gnucash/import-export/bi-import/dialog-bi-import.c:923
 #, c-format
 msgid "Nothing to process.\n"
 msgstr "沒有東西需要處理。\n"
@@ -18606,7 +18622,7 @@ msgstr "成功匯出檔案！\n"
 #: gnucash/import-export/csv-exp/csv-transactions-export.cpp:135
 #: gnucash/import-export/import-main-matcher.cpp:1901
 #: gnucash/report/reports/standard/register.scm:217
-#: libgnucash/engine/Split.cpp:1612 libgnucash/engine/Split.cpp:1629
+#: libgnucash/engine/Split.cpp:1610 libgnucash/engine/Split.cpp:1627
 msgid "-- Split Transaction --"
 msgstr "-- 分割交易 --"
 
@@ -18870,17 +18886,17 @@ msgstr "在資料列上選兩下進行變更，或按下「套用」匯入"
 msgid "The transactions were imported from file '{1}'."
 msgstr "此交易是自檔案 {1} 匯入。"
 
-#: gnucash/import-export/csv-imp/csv-account-import.c:253
+#: gnucash/import-export/csv-imp/csv-account-import.c:267
 #, c-format
 msgid "Row %u, path to account %s not found, added as top level\n"
 msgstr "第 %u 行，查無 %s 的科目錄徑，新增為頂端層級科目。\n"
 
-#: gnucash/import-export/csv-imp/csv-account-import.c:305
+#: gnucash/import-export/csv-imp/csv-account-import.c:319
 #, c-format
 msgid "Row %u, commodity %s / %s not found\n"
 msgstr "第 %u 行，查無 %s / %s 商品。\n"
 
-#: gnucash/import-export/csv-imp/csv-account-import.c:314
+#: gnucash/import-export/csv-imp/csv-account-import.c:328
 #, c-format
 msgid "Row %u, account %s not in %s\n"
 msgstr "第 %u 行，科目 %s 不在 %s 中\n"
@@ -19798,7 +19814,7 @@ msgstr "資本利得 (短期)"
 #: gnucash/import-export/qif-imp/qif-dialog-utils.scm:113
 #: gnucash/register/ledger-core/split-register.c:2641
 #: gnucash/report/reports/standard/balance-sheet.scm:468
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1052
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1056
 #: gnucash/report/reports/standard/budget-balance-sheet.scm:685
 #: libgnucash/app-utils/gnc-ui-util.cpp:637 libgnucash/engine/Account.cpp:4298
 msgid "Equity"
@@ -19807,8 +19823,8 @@ msgstr "財產淨值"
 #: gnucash/import-export/qif-imp/qif-dialog-utils.scm:110
 #: gnucash/import-export/qif-imp/qif-dialog-utils.scm:114
 #: gnucash/report/reports/standard/balance-sheet.scm:475
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1061
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1076
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1065
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1080
 #: gnucash/report/reports/support/balsheet-eg.eguile.scm:189
 #: libgnucash/app-utils/gnc-ui-util.cpp:554
 msgid "Retained Earnings"
@@ -20058,18 +20074,18 @@ msgstr "專案"
 msgid "Material"
 msgstr "材料"
 
-#: gnucash/register/ledger-core/gncEntryLedger.c:905
+#: gnucash/register/ledger-core/gncEntryLedger.c:910
 #: gnucash/register/ledger-core/gncEntryLedgerControl.c:875
 msgid "Save the current entry?"
 msgstr "儲存目前的項目？"
 
-#: gnucash/register/ledger-core/gncEntryLedger.c:907
+#: gnucash/register/ledger-core/gncEntryLedger.c:912
 msgid ""
 "The current transaction has been changed. Would you like to record the "
 "changes before duplicating this entry, or cancel the duplication?"
 msgstr "目前的交易已經變更。您想要在複製前先記錄它的變更還是要取消複製？"
 
-#: gnucash/register/ledger-core/gncEntryLedger.c:922
+#: gnucash/register/ledger-core/gncEntryLedger.c:927
 #: gnucash/register/ledger-core/gncEntryLedgerControl.c:897
 #: gnucash/register/ledger-core/split-register.c:494
 msgid "_Record"
@@ -20216,8 +20232,8 @@ msgid ">"
 msgstr ">"
 
 #: gnucash/register/ledger-core/gncEntryLedgerLoad.c:133
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:532
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:1092
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:537
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:1097
 #: gnucash/register/ledger-core/split-register.c:2568
 #: libgnucash/engine/Account.cpp:158 libgnucash/engine/Account.cpp:172
 msgid "Charge"
@@ -20269,119 +20285,119 @@ msgstr "小計"
 msgid "Billable?"
 msgstr "可計費？"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:548
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:553
 msgid ""
 "Enter the income/expense account for the Entry, or choose one from the list"
 msgstr "輸入此項目的收入/支出科目，或從清單中選擇一個"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:561
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:566
 msgid "Enter the type of Entry"
 msgstr "輸入項目的類別"
 
 #. Translators: This is a date format, see i.e.
 #. https://www.gnu.org/software/libc/manual/html_node/Formatting-Calendar-Time.html
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:577
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:582
 #: gnucash/register/ledger-core/split-register-model.c:1006
 msgid "%A %d %B %Y"
 msgstr "%Y %B %d (%A)"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:587
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:592
 msgid "Enter the Entry Description"
 msgstr "輸入項目描述"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:603
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:608
 msgid "Enter the Discount Amount"
 msgstr "輸入折扣總額"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:606
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:611
 msgid "Enter the Discount Percent"
 msgstr "輸入折扣百分比"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:609
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:614
 msgid "Enter the Discount … unknown type"
 msgstr "輸入折扣 … 未知的類型"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:627
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:632
 msgid "Discount Type: Monetary Value"
 msgstr "折扣類型：貨幣數值"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:630
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:635
 msgid "Discount Type: Percent"
 msgstr "折扣類型：百分比"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:633
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:638
 msgid "Select the Discount Type"
 msgstr "選擇折扣類型"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:650
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:655
 msgid "Tax computed after discount is applied"
 msgstr "在套用折扣後計算稅金"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:653
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:658
 msgid "Discount and tax both applied on pretax value"
 msgstr "折扣和稅金都以未稅價格計算"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:656
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:661
 msgid "Discount computed after tax is applied"
 msgstr "以稅後價格計算折扣"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:659
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:664
 msgid "Select how to compute the Discount and Taxes"
 msgstr "選擇要如何計算折扣與稅金"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:672
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:677
 msgid "Enter the unit-Price for this Entry"
 msgstr "輸入此項目的單位價格"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:684
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:689
 msgid "Enter the Quantity of units for this Entry"
 msgstr "編輯此項目的單位數量"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:696
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:701
 msgid "Enter the Tax Table to apply to this entry"
 msgstr "輸入要套用到這個項目的稅金表格"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:705
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:710
 msgid "Is this entry taxable?"
 msgstr "此項目已含稅？"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:714
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:719
 msgid "Is the tax already included in the price of this entry?"
 msgstr "稅金是否已經包含在這個項目的價格中？"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:732
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:737
 msgid "Is this entry invoiced?"
 msgstr "此項目是否已開發票？"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:738
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:743
 msgid "Is this entry credited?"
 msgstr "此項目是否已開貸項通知單？"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:742
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:747
 msgid "Include this entry on this invoice?"
 msgstr "是否在此發票中包含此項目？"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:746
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:751
 msgid "Include this entry on this credit note?"
 msgstr "是否在此貸項通知單中包含此項目？"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:749
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:754
 msgid "Unknown EntryLedger Type"
 msgstr "未知的項目分類帳類型"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:762
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:767
 msgid "The subtotal value of this entry"
 msgstr "這個項目的小計值"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:774
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:779
 msgid "The total tax of this entry "
 msgstr "這個項目的總稅金 "
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:783
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:788
 msgid "Is this entry billable to a customer or job?"
 msgstr "這個項目對客戶或工作是否可開帳單？"
 
-#: gnucash/register/ledger-core/gncEntryLedgerModel.c:792
+#: gnucash/register/ledger-core/gncEntryLedgerModel.c:797
 msgid "How did you pay for this item?"
 msgstr "您要如何支付此項目的款項？"
 
@@ -20683,10 +20699,10 @@ msgstr "交易的描述"
 #. Translators: 'L' is short for Linked Document
 #: gnucash/register/ledger-core/split-register-layout.c:705
 #: gnucash/register/ledger-core/split-register-model.c:343
-#: gnucash/report/reports/standard/new-owner-report.scm:209
-#: gnucash/report/reports/standard/new-owner-report.scm:800
-#: gnucash/report/reports/standard/new-owner-report.scm:840
-#: gnucash/report/trep-engine.scm:1198 gnucash/report/trep-engine.scm:1199
+#: gnucash/report/reports/standard/new-owner-report.scm:215
+#: gnucash/report/reports/standard/new-owner-report.scm:813
+#: gnucash/report/reports/standard/new-owner-report.scm:854
+#: gnucash/report/trep-engine.scm:1226 gnucash/report/trep-engine.scm:1227
 msgctxt "Column header for 'Document Link'"
 msgid "L"
 msgstr "L"
@@ -20969,7 +20985,7 @@ msgstr "列表"
 msgid "Template file \"~a\" can not be read"
 msgstr "範本檔「~a」無法讀取"
 
-#: gnucash/report/html-chart.scm:475
+#: gnucash/report/html-chart.scm:479
 msgid "Load"
 msgstr "載入"
 
@@ -21070,7 +21086,7 @@ msgstr "編輯報表選項"
 
 #: gnucash/report/html-utilities.scm:312
 #: gnucash/report/reports/standard/balsheet-pnl.scm:143
-#: gnucash/report/reports/standard/new-owner-report.scm:925
+#: gnucash/report/reports/standard/new-owner-report.scm:944
 msgid "Disabled"
 msgstr "禁用"
 
@@ -21087,7 +21103,7 @@ msgid "This report requires accounts to be selected in the report options."
 msgstr "這個報表需要在選項中有選定的科目。"
 
 #: gnucash/report/html-utilities.scm:379
-#: gnucash/report/reports/standard/price-scatter.scm:250
+#: gnucash/report/reports/standard/price-scatter.scm:249
 msgid "No data"
 msgstr "無資料"
 
@@ -21283,8 +21299,8 @@ msgstr "不顯示母科目的結餘。"
 
 #: gnucash/report/options-utilities.scm:217
 #: gnucash/report/reports/standard/account-summary.scm:112
-#: gnucash/report/trep-engine.scm:931 gnucash/report/trep-engine.scm:1368
-#: gnucash/report/trep-engine.scm:1473
+#: gnucash/report/trep-engine.scm:931 gnucash/report/trep-engine.scm:1396
+#: gnucash/report/trep-engine.scm:1501
 msgid "Account Balance"
 msgstr "科目結餘"
 
@@ -21565,7 +21581,7 @@ msgstr "要產生的圖形種類。"
 
 #: gnucash/report/reports/example/average-balance.scm:116
 #: gnucash/report/reports/example/average-balance.scm:136
-#: gnucash/report/trep-engine.scm:2082 libgnucash/engine/policy.cpp:59
+#: gnucash/report/trep-engine.scm:2110 libgnucash/engine/policy.cpp:59
 msgid "Average"
 msgstr "平均"
 
@@ -22250,7 +22266,7 @@ msgstr "支出科目"
 #: gnucash/report/reports/standard/budget-balance-sheet.scm:619
 #: gnucash/report/reports/standard/net-charts.scm:332
 #: gnucash/report/reports/standard/net-charts.scm:402
-#: gnucash/report/report-utilities.scm:204
+#: gnucash/report/report-utilities.scm:205
 msgid "Assets"
 msgstr "資產"
 
@@ -22259,7 +22275,7 @@ msgstr "資產"
 #: gnucash/report/reports/standard/budget-balance-sheet.scm:654
 #: gnucash/report/reports/standard/net-charts.scm:353
 #: gnucash/report/reports/standard/net-charts.scm:402
-#: gnucash/report/report-utilities.scm:205
+#: gnucash/report/report-utilities.scm:206
 msgid "Liabilities"
 msgstr "負債"
 
@@ -22963,8 +22979,8 @@ msgid "Trading Losses"
 msgstr "交易虧損"
 
 #: gnucash/report/reports/standard/balance-sheet.scm:485
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1056
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1071
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1060
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1075
 #: gnucash/report/reports/standard/budget-balance-sheet.scm:725
 #: gnucash/report/reports/standard/trial-balance.scm:697
 msgid "Unrealized Gains"
@@ -23255,41 +23271,41 @@ msgstr "如果以多欄顯示各期間的獲利 / 虧損，則同時顯示整體
 msgid "Always"
 msgstr "總是"
 
-#: gnucash/report/reports/standard/balsheet-pnl.scm:437
-#: gnucash/report/reports/standard/balsheet-pnl.scm:595
+#: gnucash/report/reports/standard/balsheet-pnl.scm:440
+#: gnucash/report/reports/standard/balsheet-pnl.scm:598
 #: gnucash/report/reports/standard/txn-columns.scm:185
-#: gnucash/report/trep-engine.scm:1737
+#: gnucash/report/trep-engine.scm:1765
 msgid "Total For "
 msgstr "小計 "
 
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1045
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1049
 #: libgnucash/engine/Account.cpp:4290
 msgid "Asset"
 msgstr "資產"
 
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1048
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1052
 #: libgnucash/engine/Account.cpp:4292
 msgid "Liability"
 msgstr "負債"
 
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1066
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1070
 msgid "Liability and Equity"
 msgstr "負債 / 淨值"
 
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1084
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1227
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1088
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1231
 msgid "Exchange Rates"
 msgstr "匯率"
 
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1094
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1098
 msgid "Barchart"
 msgstr "長條圖"
 
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1157
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1161
 msgid " to "
 msgstr " 到 "
 
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1216
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1220
 #: gnucash/report/reports/standard/customer-summary.scm:110
 #: gnucash/report/reports/standard/customer-summary.scm:286
 #: gnucash/report/reports/standard/net-charts.scm:353
@@ -23299,16 +23315,16 @@ msgstr " 到 "
 msgid "Expense"
 msgstr "支出"
 
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1220
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1224
 #: gnucash/report/reports/standard/trial-balance.scm:823
 msgid "Net Income"
 msgstr "淨收入"
 
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1253
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1257
 msgid "Balance Sheet (Multicolumn)"
 msgstr "資產負債表 (多欄)"
 
-#: gnucash/report/reports/standard/balsheet-pnl.scm:1254
+#: gnucash/report/reports/standard/balsheet-pnl.scm:1258
 msgid "Income Statement (Multicolumn)"
 msgstr "損益表 (多欄)"
 
@@ -23974,8 +23990,8 @@ msgstr "~a 到 ~a 的結餘"
 #: gnucash/report/reports/standard/category-barchart.scm:654
 #: gnucash/report/reports/standard/category-barchart.scm:674
 #: gnucash/report/reports/standard/investment-lots.scm:132
-#: gnucash/report/trep-engine.scm:77 gnucash/report/trep-engine.scm:1799
-#: gnucash/report/trep-engine.scm:2067
+#: gnucash/report/trep-engine.scm:77 gnucash/report/trep-engine.scm:1827
+#: gnucash/report/trep-engine.scm:2095
 msgid "Grand Total"
 msgstr "總和"
 
@@ -24165,7 +24181,7 @@ msgstr "資本減少"
 #: gnucash/report/reports/standard/general-ledger.scm:68
 #: gnucash/report/reports/standard/register.scm:134
 #: gnucash/report/reports/standard/register.scm:351
-#: gnucash/report/trep-engine.scm:915 gnucash/report/trep-engine.scm:2235
+#: gnucash/report/trep-engine.scm:915 gnucash/report/trep-engine.scm:2263
 msgid "Num/Action"
 msgstr "號碼/動作"
 
@@ -24173,7 +24189,7 @@ msgstr "號碼/動作"
 #: gnucash/report/reports/standard/general-ledger.scm:82
 #: gnucash/report/reports/standard/general-ledger.scm:102
 #: gnucash/report/reports/standard/register.scm:394
-#: gnucash/report/trep-engine.scm:1361 gnucash/report/trep-engine.scm:1466
+#: gnucash/report/trep-engine.scm:1389 gnucash/report/trep-engine.scm:1494
 msgid "Running Balance"
 msgstr "逐筆結計餘額"
 
@@ -24195,42 +24211,42 @@ msgid "Sorting"
 msgstr "排序"
 
 #: gnucash/report/reports/standard/general-ledger.scm:69
-#: gnucash/report/trep-engine.scm:936 gnucash/report/trep-engine.scm:2260
+#: gnucash/report/trep-engine.scm:936 gnucash/report/trep-engine.scm:2289
 msgid "Trans Number"
 msgstr "交易號碼"
 
 #: gnucash/report/reports/standard/general-ledger.scm:73
 #: gnucash/report/reports/standard/general-ledger.scm:93
 #: gnucash/report/trep-engine.scm:873 gnucash/report/trep-engine.scm:920
-#: gnucash/report/trep-engine.scm:2249
+#: gnucash/report/trep-engine.scm:2277
 msgid "Use Full Account Name"
 msgstr "使用科目全名"
 
 #: gnucash/report/reports/standard/general-ledger.scm:75
 #: gnucash/report/reports/standard/general-ledger.scm:95
 #: gnucash/report/trep-engine.scm:219 gnucash/report/trep-engine.scm:877
-#: gnucash/report/trep-engine.scm:958 gnucash/report/trep-engine.scm:2241
+#: gnucash/report/trep-engine.scm:962 gnucash/report/trep-engine.scm:2269
 msgid "Other Account Name"
 msgstr "其他科目名稱"
 
 #: gnucash/report/reports/standard/general-ledger.scm:76
 #: gnucash/report/reports/standard/general-ledger.scm:96
 #: gnucash/report/trep-engine.scm:893 gnucash/report/trep-engine.scm:923
-#: gnucash/report/trep-engine.scm:2258
+#: gnucash/report/trep-engine.scm:2287
 msgid "Use Full Other Account Name"
 msgstr "使用完整的其他科目名稱"
 
 #: gnucash/report/reports/standard/general-ledger.scm:77
 #: gnucash/report/reports/standard/general-ledger.scm:97
 #: gnucash/report/trep-engine.scm:225 gnucash/report/trep-engine.scm:897
-#: gnucash/report/trep-engine.scm:924 gnucash/report/trep-engine.scm:2255
+#: gnucash/report/trep-engine.scm:924 gnucash/report/trep-engine.scm:2284
 msgid "Other Account Code"
 msgstr "其他科目代碼"
 
 #: gnucash/report/reports/standard/general-ledger.scm:84
 #: gnucash/report/reports/standard/general-ledger.scm:104
-#: gnucash/report/trep-engine.scm:881 gnucash/report/trep-engine.scm:991
-#: gnucash/report/trep-engine.scm:2184
+#: gnucash/report/trep-engine.scm:881 gnucash/report/trep-engine.scm:995
+#: gnucash/report/trep-engine.scm:2212
 msgid "Sign Reverses"
 msgstr "改變正負號"
 
@@ -24245,7 +24261,7 @@ msgid "Primary Key"
 msgstr "排序主鍵"
 
 #: gnucash/report/reports/standard/general-ledger.scm:125
-#: gnucash/report/trep-engine.scm:90 gnucash/report/trep-engine.scm:2283
+#: gnucash/report/trep-engine.scm:90 gnucash/report/trep-engine.scm:2312
 msgid "Show Full Account Name"
 msgstr "顯示完整的科目名稱"
 
@@ -25051,18 +25067,19 @@ msgstr "圖片的位置"
 #: gnucash/report/reports/standard/invoice.scm:434
 #: gnucash/report/reports/standard/invoice.scm:438
 #: gnucash/report/reports/standard/invoice.scm:442
-#: gnucash/report/reports/standard/new-owner-report.scm:875
-#: gnucash/report/reports/standard/new-owner-report.scm:879
-#: gnucash/report/reports/standard/new-owner-report.scm:883
-#: gnucash/report/reports/standard/new-owner-report.scm:887
-#: gnucash/report/reports/standard/new-owner-report.scm:891
-#: gnucash/report/reports/standard/new-owner-report.scm:895
-#: gnucash/report/reports/standard/new-owner-report.scm:899
-#: gnucash/report/reports/standard/new-owner-report.scm:903
-#: gnucash/report/reports/standard/new-owner-report.scm:907
-#: gnucash/report/reports/standard/new-owner-report.scm:911
-#: gnucash/report/reports/standard/new-owner-report.scm:915
+#: gnucash/report/reports/standard/new-owner-report.scm:889
+#: gnucash/report/reports/standard/new-owner-report.scm:893
+#: gnucash/report/reports/standard/new-owner-report.scm:897
+#: gnucash/report/reports/standard/new-owner-report.scm:901
+#: gnucash/report/reports/standard/new-owner-report.scm:906
+#: gnucash/report/reports/standard/new-owner-report.scm:910
+#: gnucash/report/reports/standard/new-owner-report.scm:914
+#: gnucash/report/reports/standard/new-owner-report.scm:918
+#: gnucash/report/reports/standard/new-owner-report.scm:922
+#: gnucash/report/reports/standard/new-owner-report.scm:926
 #: gnucash/report/reports/standard/new-owner-report.scm:930
+#: gnucash/report/reports/standard/new-owner-report.scm:934
+#: gnucash/report/reports/standard/new-owner-report.scm:949
 msgid "Display Columns"
 msgstr "顯示欄"
 
@@ -25487,7 +25504,7 @@ msgid "Show all vendors/customers even if they have a zero balance."
 msgstr "顯示所有供應商 / 客戶，即便他們的結餘為零。"
 
 #: gnucash/report/reports/standard/new-aging.scm:109
-#: gnucash/report/reports/standard/new-owner-report.scm:935
+#: gnucash/report/reports/standard/new-owner-report.scm:954
 msgid "Leading date."
 msgstr "交付週期。"
 
@@ -25502,32 +25519,32 @@ msgid "N"
 msgstr "否"
 
 #: gnucash/report/reports/standard/new-aging.scm:178
-#: gnucash/report/reports/standard/new-owner-report.scm:306
+#: gnucash/report/reports/standard/new-owner-report.scm:316
 msgid "Current"
 msgstr "現在"
 
 #: gnucash/report/reports/standard/new-aging.scm:179
-#: gnucash/report/reports/standard/new-owner-report.scm:307
+#: gnucash/report/reports/standard/new-owner-report.scm:317
 msgid "0-30 days"
 msgstr "0-30 天"
 
 #: gnucash/report/reports/standard/new-aging.scm:180
-#: gnucash/report/reports/standard/new-owner-report.scm:308
+#: gnucash/report/reports/standard/new-owner-report.scm:318
 msgid "31-60 days"
 msgstr "31-60 天"
 
 #: gnucash/report/reports/standard/new-aging.scm:181
-#: gnucash/report/reports/standard/new-owner-report.scm:309
+#: gnucash/report/reports/standard/new-owner-report.scm:319
 msgid "61-90 days"
 msgstr "61-90 天"
 
 #: gnucash/report/reports/standard/new-aging.scm:182
-#: gnucash/report/reports/standard/new-owner-report.scm:310
+#: gnucash/report/reports/standard/new-owner-report.scm:320
 msgid "91+ days"
 msgstr "91+ 天"
 
 #: gnucash/report/reports/standard/new-aging.scm:321
-#: gnucash/report/reports/standard/new-owner-report.scm:533
+#: gnucash/report/reports/standard/new-owner-report.scm:544
 msgid "Please note some transactions were not processed"
 msgstr "請注意有些交易沒有被處理"
 
@@ -25564,199 +25581,205 @@ msgstr "應收帳款帳齡"
 msgid "Sale"
 msgstr "銷售"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:56
-#: gnucash/report/report-utilities.scm:203
+#: gnucash/report/reports/standard/new-owner-report.scm:57
+#: gnucash/report/report-utilities.scm:204
 msgid "Credits"
 msgstr "貸方"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:57
+#: gnucash/report/reports/standard/new-owner-report.scm:58
 msgid "Debits"
 msgstr "借方"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:59
+#: gnucash/report/reports/standard/new-owner-report.scm:60
 msgid "Document Links"
 msgstr "文件連結"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:60
+#: gnucash/report/reports/standard/new-owner-report.scm:61
 msgid "Transaction Links"
 msgstr "交易連結"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:90
+#: gnucash/report/reports/standard/new-owner-report.scm:91
 msgid "No valid customer selected."
 msgstr "未選取有效的客戶。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:91
+#: gnucash/report/reports/standard/new-owner-report.scm:92
 msgid "This report requires a customer to be selected."
 msgstr "這個報表需要有選定的客戶。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:95
+#: gnucash/report/reports/standard/new-owner-report.scm:96
 msgid "No valid employee selected."
 msgstr "未選取有效的員工。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:96
+#: gnucash/report/reports/standard/new-owner-report.scm:97
 msgid "This report requires a employee to be selected."
 msgstr "這個報表需要有選定的員工。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:100
+#: gnucash/report/reports/standard/new-owner-report.scm:101
 msgid "No valid job selected."
 msgstr "未選取有效的工作。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:101
+#: gnucash/report/reports/standard/new-owner-report.scm:102
 msgid "This report requires a job to be selected."
 msgstr "這個報表需要有選定的工作。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:105
+#: gnucash/report/reports/standard/new-owner-report.scm:106
 msgid "No valid vendor selected."
 msgstr "未選取有效的供應商。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:106
+#: gnucash/report/reports/standard/new-owner-report.scm:107
 msgid "This report requires a vendor to be selected."
 msgstr "這個報表需要有選定的供應商。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:230
+#: gnucash/report/reports/standard/new-owner-report.scm:236
 msgid "Partial Amount"
 msgstr "剩餘金額"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:283
-#: gnucash/report/trep-engine.scm:927 gnucash/report/trep-engine.scm:2244
+#: gnucash/report/reports/standard/new-owner-report.scm:293
+#: gnucash/report/trep-engine.scm:927 gnucash/report/trep-engine.scm:2272
 msgid "Link"
 msgstr "連結"
 
 #. Translators: ~a History refers to main details table in owner
 #. report. ~a will be replaced with Customer, Vendor or Employee.
-#: gnucash/report/reports/standard/new-owner-report.scm:333
+#: gnucash/report/reports/standard/new-owner-report.scm:343
 #, scheme-format
 msgid "~a History"
 msgstr "~a 歷史"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:335
+#: gnucash/report/reports/standard/new-owner-report.scm:345
 msgid "Linked Details"
 msgstr "相關詳情"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:492
+#: gnucash/report/reports/standard/new-owner-report.scm:503
 msgid "Period Totals"
 msgstr "期間總額"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:505
+#: gnucash/report/reports/standard/new-owner-report.scm:516
 msgid ""
 "* Amounts denoted thus are derived from, and do not match the transaction."
 msgstr "這些金額所表示的是由推算得出，與交易不匹配。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:517
+#: gnucash/report/reports/standard/new-owner-report.scm:528
 msgid "Total Credit"
 msgstr "總計貸"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:518
+#: gnucash/report/reports/standard/new-owner-report.scm:529
 msgid "Total Due"
 msgstr "總計到期"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:863
+#: gnucash/report/reports/standard/new-owner-report.scm:877
 msgid "The company for this report."
 msgstr "此報表的公司。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:876
-#: gnucash/report/reports/standard/new-owner-report.scm:880
+#: gnucash/report/reports/standard/new-owner-report.scm:890
+#: gnucash/report/reports/standard/new-owner-report.scm:894
 msgid "Display the transaction date?"
 msgstr "是否顯示交易日期？"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:884
+#: gnucash/report/reports/standard/new-owner-report.scm:898
 msgid "Display the transaction reference?"
 msgstr "是否顯示交易參照？"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:888
+#: gnucash/report/reports/standard/new-owner-report.scm:902
 msgid "Display the transaction type?"
 msgstr "是否顯示交易類型？"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:892
+#: gnucash/report/reports/standard/new-owner-report.scm:907
+#, fuzzy
+#| msgid "Display the action?"
+msgid "Display the associated job?"
+msgstr "是否顯示動作？"
+
+#: gnucash/report/reports/standard/new-owner-report.scm:911
 msgid "Display the transaction description?"
 msgstr "是否顯示交易描述？"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:896
+#: gnucash/report/reports/standard/new-owner-report.scm:915
 msgid "Display the sale amount column?"
 msgstr "是否顯示銷售額欄位？"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:900
+#: gnucash/report/reports/standard/new-owner-report.scm:919
 msgid "Display the tax column?"
 msgstr "是否顯示稅額欄位？"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:904
+#: gnucash/report/reports/standard/new-owner-report.scm:923
 msgid "Display the period debits column?"
 msgstr "顯示期間的借方欄？"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:908
+#: gnucash/report/reports/standard/new-owner-report.scm:927
 msgid "Display the period credits column?"
 msgstr "顯示期間的貸方欄？"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:912
+#: gnucash/report/reports/standard/new-owner-report.scm:931
 #: gnucash/report/reports/standard/register.scm:395
 msgid "Display a running balance?"
 msgstr "顯示逐筆結計的餘額？"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:919
+#: gnucash/report/reports/standard/new-owner-report.scm:938
 msgid "Show linked transactions"
 msgstr "顯示連結的交易"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:920
+#: gnucash/report/reports/standard/new-owner-report.scm:939
 msgid "Linked transactions are hidden."
 msgstr "連結的交易已被隱藏。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:921
+#: gnucash/report/reports/standard/new-owner-report.scm:940
 msgid "Invoices show if paid, payments show invoice numbers."
 msgstr "發票顯示是否已付款；付款顯示發票號碼。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:922
+#: gnucash/report/reports/standard/new-owner-report.scm:941
 msgid ""
 "Invoices show list of payments, payments show list of invoices and amounts."
 msgstr "發票顯示付款列表，付款顯示發票列表及金額。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:926
+#: gnucash/report/reports/standard/new-owner-report.scm:945
 msgid "Simple"
 msgstr "簡單"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:927
+#: gnucash/report/reports/standard/new-owner-report.scm:946
 msgid "Detailed"
 msgstr "詳細"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:931
+#: gnucash/report/reports/standard/new-owner-report.scm:950
 msgid "Display document link?"
 msgstr "顯示文件連結？"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:1046
+#: gnucash/report/reports/standard/new-owner-report.scm:1065
 msgid "No valid account found"
 msgstr "找不到有效的科目"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:1047
+#: gnucash/report/reports/standard/new-owner-report.scm:1066
 msgid "This report requires a valid AP/AR account to be available."
 msgstr "這個報表需要有有效的應收 / 應付科目才能使用。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:1070
+#: gnucash/report/reports/standard/new-owner-report.scm:1089
 msgid "No transactions found."
 msgstr "找不到交易。"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:1071
+#: gnucash/report/reports/standard/new-owner-report.scm:1090
 #: gnucash/report/trep-engine.scm:141
 msgid "No matching transactions found"
 msgstr "找不到相符的交易"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:1166
+#: gnucash/report/reports/standard/new-owner-report.scm:1185
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:104
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:164
 msgid "Customer Report"
 msgstr "客戶報表"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:1175
+#: gnucash/report/reports/standard/new-owner-report.scm:1194
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:119
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:198
 msgid "Vendor Report"
 msgstr "供應商報表"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:1184
+#: gnucash/report/reports/standard/new-owner-report.scm:1203
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:134
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:232
 msgid "Employee Report"
 msgstr "員工報表"
 
-#: gnucash/report/reports/standard/new-owner-report.scm:1193
+#: gnucash/report/reports/standard/new-owner-report.scm:1212
 msgid "Job Report"
 msgstr "工作報表"
 
@@ -25816,38 +25839,38 @@ msgstr "季"
 msgid "Half Years"
 msgstr "半年"
 
-#: gnucash/report/reports/standard/price-scatter.scm:212
+#: gnucash/report/reports/standard/price-scatter.scm:211
 msgid "Identical commodities"
 msgstr "完全相同的商品"
 
-#: gnucash/report/reports/standard/price-scatter.scm:213
+#: gnucash/report/reports/standard/price-scatter.scm:212
 msgid ""
 "Your selected commodity and the currency of the report are identical. It "
 "doesn't make sense to show prices for identical commodities."
 msgstr "您選擇的商品與報表的貨幣是完全相同的。顯示同樣商品的價格是沒意義的。"
 
-#: gnucash/report/reports/standard/price-scatter.scm:251
+#: gnucash/report/reports/standard/price-scatter.scm:250
 msgid ""
 "There is no price information available for the selected commodities in the "
 "selected time period."
 msgstr "所選定的商品在指定的時間週期中並沒有可用的價格資訊。"
 
-#: gnucash/report/reports/standard/price-scatter.scm:256
+#: gnucash/report/reports/standard/price-scatter.scm:255
 msgid "Only one price"
 msgstr "只有一個價格"
 
-#: gnucash/report/reports/standard/price-scatter.scm:257
+#: gnucash/report/reports/standard/price-scatter.scm:256
 msgid ""
 "There was only one single price found for the selected commodities in the "
 "selected time period. This doesn't give a useful plot."
 msgstr ""
 "所選定的商品在指定的時間週期中僅能找到一個價格。這並不能成為一張有用的圖。"
 
-#: gnucash/report/reports/standard/price-scatter.scm:263
+#: gnucash/report/reports/standard/price-scatter.scm:262
 msgid "All Prices equal"
 msgstr "所有價格均等"
 
-#: gnucash/report/reports/standard/price-scatter.scm:264
+#: gnucash/report/reports/standard/price-scatter.scm:263
 msgid ""
 "All the prices found are equal. This would result in a plot with one "
 "straight line. Unfortunately, the plotting tool can't handle that."
@@ -25855,11 +25878,11 @@ msgstr ""
 "所有找到的價格都相等。這會產生一個只有一條直線的圖。很不幸地，繪圖工具不能處"
 "理這種情況。"
 
-#: gnucash/report/reports/standard/price-scatter.scm:270
+#: gnucash/report/reports/standard/price-scatter.scm:269
 msgid "All Prices at the same date"
 msgstr "所有價格的日期相同"
 
-#: gnucash/report/reports/standard/price-scatter.scm:271
+#: gnucash/report/reports/standard/price-scatter.scm:270
 msgid ""
 "All the prices found are from the same date. This would result in a plot "
 "with one straight line. Unfortunately, the plotting tool can't handle that."
@@ -25867,7 +25890,7 @@ msgstr ""
 "所有找到的價格日期都相同。這會產生只有一條直線的圖。很不幸地，繪圖工具不能處"
 "理這種情況。"
 
-#: gnucash/report/reports/standard/price-scatter.scm:303
+#: gnucash/report/reports/standard/price-scatter.scm:302
 msgid "Price Scatterplot"
 msgstr "價格散佈圖"
 
@@ -26056,7 +26079,7 @@ msgstr "對帳報表"
 
 #: gnucash/report/reports/standard/register.scm:147
 #: gnucash/report/reports/standard/register.scm:374
-#: libgnucash/engine/gnc-lot.cpp:791
+#: libgnucash/engine/gnc-lot.cpp:776
 msgid "Lot"
 msgstr "批次"
 
@@ -26109,17 +26132,17 @@ msgid "Display the shares price?"
 msgstr "顯示股份價格？"
 
 #: gnucash/report/reports/standard/register.scm:383
-#: gnucash/report/trep-engine.scm:976
+#: gnucash/report/trep-engine.scm:980
 msgid "Display the amount?"
 msgstr "是否顯示總額？"
 
 #: gnucash/report/reports/standard/register.scm:386
-#: gnucash/report/trep-engine.scm:980
+#: gnucash/report/trep-engine.scm:984
 msgid "Single Column"
 msgstr "單欄顯示"
 
 #: gnucash/report/reports/standard/register.scm:387
-#: gnucash/report/trep-engine.scm:981
+#: gnucash/report/trep-engine.scm:985
 msgid "Two Columns"
 msgstr "雙欄顯示"
 
@@ -26546,7 +26569,7 @@ msgid "Equity Accounts"
 msgstr "淨值科目"
 
 #: gnucash/report/reports/support/balsheet-eg.eguile.scm:182
-#: gnucash/report/report-utilities.scm:218
+#: gnucash/report/report-utilities.scm:219
 msgid "Trading Accounts"
 msgstr "交易科目"
 
@@ -26592,57 +26615,57 @@ msgstr "網頁"
 msgid "Invoice Date"
 msgstr "發票日期"
 
-#: gnucash/report/report-utilities.scm:206
+#: gnucash/report/report-utilities.scm:207
 msgid "Stocks"
 msgstr "股票"
 
-#: gnucash/report/report-utilities.scm:207
+#: gnucash/report/report-utilities.scm:208
 msgid "Mutual Funds"
 msgstr "共同基金"
 
-#: gnucash/report/report-utilities.scm:208
+#: gnucash/report/report-utilities.scm:209
 msgid "Currencies"
 msgstr "貨幣"
 
-#: gnucash/report/report-utilities.scm:211
+#: gnucash/report/report-utilities.scm:212
 msgid "Equities"
 msgstr "資產淨值"
 
-#: gnucash/report/report-utilities.scm:212
+#: gnucash/report/report-utilities.scm:213
 msgid "Checking"
 msgstr "支票"
 
-#: gnucash/report/report-utilities.scm:213
+#: gnucash/report/report-utilities.scm:214
 msgid "Savings"
 msgstr "儲蓄"
 
-#: gnucash/report/report-utilities.scm:214
+#: gnucash/report/report-utilities.scm:215
 msgid "Money Market"
 msgstr "金融市場"
 
-#: gnucash/report/report-utilities.scm:215
+#: gnucash/report/report-utilities.scm:216
 msgid "Accounts Receivable"
 msgstr "科目應收"
 
-#: gnucash/report/report-utilities.scm:216
+#: gnucash/report/report-utilities.scm:217
 msgid "Accounts Payable"
 msgstr "科目應付"
 
-#: gnucash/report/report-utilities.scm:217
+#: gnucash/report/report-utilities.scm:218
 msgid "Credit Lines"
 msgstr "信用額度"
 
-#: gnucash/report/report-utilities.scm:611
+#: gnucash/report/report-utilities.scm:623
 #, scheme-format
 msgid "Building '~a' report …"
 msgstr "建立「~a」的報表…"
 
-#: gnucash/report/report-utilities.scm:617
+#: gnucash/report/report-utilities.scm:629
 #, scheme-format
 msgid "Rendering '~a' report …"
 msgstr "繪出「~a」的報表…"
 
-#: gnucash/report/report-utilities.scm:619
+#: gnucash/report/report-utilities.scm:631
 msgid "Untitled"
 msgstr "無標題"
 
@@ -26690,7 +26713,7 @@ msgstr "公司或團體名稱。"
 
 #: gnucash/report/stylesheets/footer.scm:68
 #: gnucash/report/stylesheets/head-or-tail.scm:85
-#: gnucash/report/stylesheets/plain.scm:50 gnucash/report/trep-engine.scm:987
+#: gnucash/report/stylesheets/plain.scm:50 gnucash/report/trep-engine.scm:991
 msgid "Enable Links"
 msgstr "啟動鏈結"
 
@@ -27051,7 +27074,7 @@ msgstr "小計表格"
 msgid "Running Totals"
 msgstr "逐筆結計"
 
-#: gnucash/report/trep-engine.scm:92 gnucash/report/trep-engine.scm:2285
+#: gnucash/report/trep-engine.scm:92 gnucash/report/trep-engine.scm:2314
 msgid "Show Account Description"
 msgstr "顯示科目描述"
 
@@ -27198,7 +27221,7 @@ msgid "Specify date to filter by…"
 msgstr "指定過濾日期的方式…"
 
 #: gnucash/report/trep-engine.scm:541 gnucash/report/trep-engine.scm:913
-#: gnucash/report/trep-engine.scm:1093 gnucash/report/trep-engine.scm:2233
+#: gnucash/report/trep-engine.scm:1112 gnucash/report/trep-engine.scm:2261
 msgid "Date Entered"
 msgstr "輸入的日期"
 
@@ -27390,61 +27413,67 @@ msgstr "在底部顯示總計？"
 msgid "Display the trans number?"
 msgstr "顯示交易號碼？"
 
-#: gnucash/report/trep-engine.scm:951
+#: gnucash/report/trep-engine.scm:950
+#, fuzzy
+#| msgid "Display the invoice notes?"
+msgid "Display invoice details"
+msgstr "是否顯示發票備註？"
+
+#: gnucash/report/trep-engine.scm:955
 msgid "Display the account name?"
 msgstr "顯示科目名稱？"
 
-#: gnucash/report/trep-engine.scm:959
+#: gnucash/report/trep-engine.scm:963
 msgid ""
 "Display the other account name? If this is a split transaction, this "
 "parameter is guessed."
 msgstr "顯示其他科目名稱？(如果這是分割交易，此參數會被預測)。"
 
-#: gnucash/report/trep-engine.scm:966
+#: gnucash/report/trep-engine.scm:970
 msgid "Amount of detail to display per transaction."
 msgstr "每筆交易要顯示的細節數量。"
 
-#: gnucash/report/trep-engine.scm:968
+#: gnucash/report/trep-engine.scm:972
 msgid "One split per line"
 msgstr "一行一個分割"
 
-#: gnucash/report/trep-engine.scm:969
+#: gnucash/report/trep-engine.scm:973
 msgid "One transaction per line"
 msgstr "一行一筆交易"
 
-#: gnucash/report/trep-engine.scm:979
+#: gnucash/report/trep-engine.scm:983
 msgid "Hide"
 msgstr "隱藏"
 
-#: gnucash/report/trep-engine.scm:988
+#: gnucash/report/trep-engine.scm:992
 msgid "Enable hyperlinks in amounts."
 msgstr "在金額上使用超連結。"
 
-#: gnucash/report/trep-engine.scm:992
+#: gnucash/report/trep-engine.scm:996
 msgid "Reverse amount display for certain account types."
 msgstr "反轉某些科目類型的金額顯示。"
 
-#: gnucash/report/trep-engine.scm:998
+#: gnucash/report/trep-engine.scm:1002
 msgid "Display running totals as per report sort order?"
 msgstr "是否按照報表的排序順序顯示逐筆結計？"
 
-#: gnucash/report/trep-engine.scm:1001
+#: gnucash/report/trep-engine.scm:1005
 msgid "Grand Total and Subtotals"
 msgstr "總計與小計"
 
-#: gnucash/report/trep-engine.scm:1002
+#: gnucash/report/trep-engine.scm:1006
 msgid "Grand Total Only"
 msgstr "僅顯示總計"
 
-#: gnucash/report/trep-engine.scm:1003
+#: gnucash/report/trep-engine.scm:1007
 msgid "Subtotals Only"
 msgstr "僅顯示小計"
 
-#: gnucash/report/trep-engine.scm:1115
+#: gnucash/report/trep-engine.scm:1134
 msgid "Num/T-Num"
 msgstr "號碼/交易號碼"
 
-#: gnucash/report/trep-engine.scm:1165
+#: gnucash/report/trep-engine.scm:1193
 msgid "Transfer from/to"
 msgstr "轉帳 從/到"
 
@@ -27452,7 +27481,7 @@ msgstr "轉帳 從/到"
 #. For translation to be consistent, make sure it follows the same
 #. pattern as for these other strings: “Running Totals”,
 #. "Secondary Subtotal” and "Running Primary Subtotal"
-#: gnucash/report/trep-engine.scm:1383 gnucash/report/trep-engine.scm:1484
+#: gnucash/report/trep-engine.scm:1411 gnucash/report/trep-engine.scm:1512
 msgid "Running Secondary Subtotal"
 msgstr "逐筆結計次要小計"
 
@@ -27460,14 +27489,14 @@ msgstr "逐筆結計次要小計"
 #. For translation to be consistent, make sure it follows the same
 #. pattern as for these other strings: “Running Totals” and
 #. “Primary Subtotal”
-#: gnucash/report/trep-engine.scm:1399 gnucash/report/trep-engine.scm:1497
+#: gnucash/report/trep-engine.scm:1427 gnucash/report/trep-engine.scm:1525
 msgid "Running Primary Subtotal"
 msgstr "逐筆結計主要小計"
 
 #. Translators: "Running Subtotal" is a shorter version of
 #. "Running Primary Subtotal" used when a running primary subtotal
 #. is displayed without a secondary subtotal.
-#: gnucash/report/trep-engine.scm:1403 gnucash/report/trep-engine.scm:1498
+#: gnucash/report/trep-engine.scm:1431 gnucash/report/trep-engine.scm:1526
 msgid "Running Subtotal"
 msgstr "逐筆結計小計"
 
@@ -27475,7 +27504,7 @@ msgstr "逐筆結計小計"
 #. For translation to be consistent, make sure it follows the same
 #. pattern as for these other strings: “Running Totals” and
 #. "Grand Total”
-#: gnucash/report/trep-engine.scm:1420 gnucash/report/trep-engine.scm:1512
+#: gnucash/report/trep-engine.scm:1448 gnucash/report/trep-engine.scm:1540
 msgid "Running Grand Total"
 msgstr "逐筆結計總計"
 
@@ -27483,26 +27512,26 @@ msgstr "逐筆結計總計"
 #. "Running Grand Total" used when the running grand total is
 #. displayed without subtotals. To be consistent, also consider
 #. how the plural form "Running Totals" is translated.
-#: gnucash/report/trep-engine.scm:1425 gnucash/report/trep-engine.scm:1513
+#: gnucash/report/trep-engine.scm:1453 gnucash/report/trep-engine.scm:1541
 msgid "Running Total"
 msgstr "逐筆結計"
 
 #. Translators: Balance b/f stands for "Balance
 #. brought forward".
-#: gnucash/report/trep-engine.scm:1571
+#: gnucash/report/trep-engine.scm:1599
 msgid "Balance b/f"
 msgstr "餘額承前"
 
-#: gnucash/report/trep-engine.scm:1748
+#: gnucash/report/trep-engine.scm:1776
 msgid "Split Transaction"
 msgstr "分割交易"
 
-#: gnucash/report/trep-engine.scm:2001
+#: gnucash/report/trep-engine.scm:2029
 msgid "CSV disabled for double column amounts"
 msgstr "CSV 不支援雙欄金額"
 
 #. Translators: Both ~a's are dates
-#: gnucash/report/trep-engine.scm:2547
+#: gnucash/report/trep-engine.scm:2576
 #, scheme-format
 msgid "From ~a to ~a"
 msgstr "從 ~a 到 ~a"
@@ -30061,92 +30090,97 @@ msgstr ""
 
 #: libgnucash/engine/gnc-commodity.cpp:223
 msgctxt "FQ Source"
-msgid "Tesouro Direto bonds, BR"
+msgid "Swiss Fund Data AG, CH"
 msgstr ""
 
 #: libgnucash/engine/gnc-commodity.cpp:224
 msgctxt "FQ Source"
-msgid "Toronto Stock eXchange, CA"
+msgid "Tesouro Direto bonds, BR"
 msgstr ""
 
 #: libgnucash/engine/gnc-commodity.cpp:225
 msgctxt "FQ Source"
-msgid "Tradegate, DE"
+msgid "Toronto Stock eXchange, CA"
 msgstr ""
 
 #: libgnucash/engine/gnc-commodity.cpp:226
 msgctxt "FQ Source"
-msgid "Treasury Direct bonds, US"
+msgid "Tradegate, DE"
 msgstr ""
 
 #: libgnucash/engine/gnc-commodity.cpp:227
 msgctxt "FQ Source"
-msgid "Twelve Data"
+msgid "Treasury Direct bonds, US"
 msgstr ""
 
 #: libgnucash/engine/gnc-commodity.cpp:228
+msgctxt "FQ Source"
+msgid "Twelve Data"
+msgstr ""
+
+#: libgnucash/engine/gnc-commodity.cpp:229
 #, fuzzy
 #| msgid "Investments"
 msgctxt "FQ Source"
 msgid "Union Investment, DE"
 msgstr "投資"
 
-#: libgnucash/engine/gnc-commodity.cpp:229
+#: libgnucash/engine/gnc-commodity.cpp:230
 msgctxt "FQ Source"
 msgid "US Govt. Thrift Savings Plan"
 msgstr ""
 
-#: libgnucash/engine/gnc-commodity.cpp:230
+#: libgnucash/engine/gnc-commodity.cpp:231
 msgctxt "FQ Source"
 msgid "XETRA, DE"
 msgstr ""
 
-#: libgnucash/engine/gnc-commodity.cpp:231
+#: libgnucash/engine/gnc-commodity.cpp:232
 msgctxt "FQ Source"
 msgid "Yahoo as JSON"
 msgstr ""
 
-#: libgnucash/engine/gnc-commodity.cpp:232
+#: libgnucash/engine/gnc-commodity.cpp:233
 msgctxt "FQ Source"
 msgid "Yahoo Web"
 msgstr ""
 
-#: libgnucash/engine/gnc-commodity.cpp:233
+#: libgnucash/engine/gnc-commodity.cpp:234
 msgctxt "FQ Source"
 msgid "YH Finance (FinanceAPI)"
 msgstr ""
 
-#: libgnucash/engine/gnc-commodity.cpp:239
+#: libgnucash/engine/gnc-commodity.cpp:240
 msgctxt "FQ Source"
 msgid "Canada (Alphavantage, TMX)"
 msgstr ""
 
-#: libgnucash/engine/gnc-commodity.cpp:240
+#: libgnucash/engine/gnc-commodity.cpp:241
 msgctxt "FQ Source"
 msgid "Europe (ASEGR, Bourso, …)"
 msgstr ""
 
-#: libgnucash/engine/gnc-commodity.cpp:241
+#: libgnucash/engine/gnc-commodity.cpp:242
 msgctxt "FQ Source"
 msgid "India (BSEIndia, NSEIndia)"
 msgstr ""
 
-#: libgnucash/engine/gnc-commodity.cpp:242
+#: libgnucash/engine/gnc-commodity.cpp:243
 msgctxt "FQ Source"
 msgid "Nasdaq (Alphavantage, FinanceAPI, …)"
 msgstr ""
 
-#: libgnucash/engine/gnc-commodity.cpp:243
+#: libgnucash/engine/gnc-commodity.cpp:244
 msgctxt "FQ Source"
 msgid "NYSE (Alphavantage, FinanceAPI, …)"
 msgstr ""
 
-#: libgnucash/engine/gnc-commodity.cpp:244
+#: libgnucash/engine/gnc-commodity.cpp:245
 msgctxt "FQ Source"
 msgid "U.K. Funds (FTfunds, MorningstarUK)"
 msgstr ""
 
-#: libgnucash/engine/gnc-commodity.cpp:245
+#: libgnucash/engine/gnc-commodity.cpp:246
 msgctxt "FQ Source"
 msgid "USA (Alphavantage, FinanceAPI, …)"
 msgstr ""
@@ -30744,17 +30778,17 @@ msgstr "檢查無主交易：%u / %u"
 msgid "Looking for imbalances in transaction date %s: %u of %zu"
 msgstr "檢查交易日期 %s 中的失衡：%u / %u"
 
-#: libgnucash/engine/Split.cpp:1645
+#: libgnucash/engine/Split.cpp:1643
 msgctxt ""
 "Displayed account code of the other account in a multi-split transaction"
 msgid "Split"
 msgstr "分割"
 
-#: libgnucash/engine/Transaction.cpp:2661
+#: libgnucash/engine/Transaction.cpp:2554
 msgid "Voided transaction"
 msgstr "無效的交易"
 
-#: libgnucash/engine/Transaction.cpp:2674
+#: libgnucash/engine/Transaction.cpp:2561
 msgid "Transaction Voided"
 msgstr "交易已無效"
 
