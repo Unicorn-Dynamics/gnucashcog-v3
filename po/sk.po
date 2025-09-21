@@ -16,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-06-22 12:27-0700\n"
-"PO-Revision-Date: 2025-08-02 18:02+0000\n"
+"PO-Revision-Date: 2025-09-07 06:01+0000\n"
 "Last-Translator: Warder <ciksa@seznam.cz>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "sk/>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "X-Poedit-Language: Slovak\n"
 "X-Poedit-Country: SLOVAKIA\n"
@@ -1863,7 +1863,7 @@ msgstr "Celkové debety %s nie sú v rovnováhe s celkovými kreditmi %s."
 
 #: gnucash/gnome/assistant-stock-transaction.cpp:1922
 msgid "Ne_w Balance"
-msgstr "Nový zostatok"
+msgstr "No_vý Zostatok"
 
 #: gnucash/gnome/assistant-stock-transaction.cpp:1922
 #: gnucash/gtkbuilder/assistant-stock-split.glade:129
@@ -1910,7 +1910,7 @@ msgstr "Zadajte počet akcií, ktoré ste získali alebo stratili v transakcii."
 #: gnucash/report/trep-engine.scm:1143 gnucash/report/trep-engine.scm:1144
 #: gnucash/report/trep-engine.scm:2250
 msgid "Memo"
-msgstr "Memo"
+msgstr "Poznámka"
 
 #: gnucash/gnome/assistant-stock-transaction.cpp:2339
 #: gnucash/gnome/gnc-plugin-page-register.cpp:3462
@@ -2070,7 +2070,7 @@ msgstr "Dni"
 #: gnucash/gtkbuilder/dialog-billterms.glade:370
 #: gnucash/gtkbuilder/dialog-billterms.glade:769
 msgid "Proximo"
-msgstr "Proximo"
+msgstr "Ďalej"
 
 #: gnucash/gnome/dialog-billterms.c:538 gnucash/gnome/dialog-doclink.c:587
 #: gnucash/gnome/dialog-doclink.c:840 gnucash/gnome/dialog-doclink.c:884
@@ -4500,7 +4500,7 @@ msgstr "Vložiť platbu pre majiteľa tejto faktúry"
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:273
 #: gnucash/ui/gnc-plugin-page-invoice.ui:207
 msgid "_Company Report"
-msgstr "Správa spoločnosti"
+msgstr "_Správa spoločnosti"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:198
 msgid "Open a customer report window for the owner of this invoice"
@@ -6986,7 +6986,7 @@ msgstr "Nepripomínaj mi to počas tohto _sedenia."
 
 #: gnucash/gnome-utils/gnc-account-sel.c:521
 msgid "Hide _Placeholder Accounts"
-msgstr "Skryť zástupné účty"
+msgstr "Skryť_zástupné účty"
 
 #: gnucash/gnome-utils/gnc-account-sel.c:523
 msgid "Hide _Hidden Accounts"
@@ -13285,7 +13285,7 @@ msgstr "Filtrovať podľa…"
 #: gnucash/gtkbuilder/dialog-account.glade:906
 #: gnucash/gtkbuilder/gnc-plugin-page-register.glade:498
 msgid "Clear _All"
-msgstr "Vymazať všetko"
+msgstr "Vymazať _všetko"
 
 #: gnucash/gtkbuilder/dialog-account.glade:922
 msgid "_Default"
@@ -15028,7 +15028,7 @@ msgstr "Spoločnosť spojená s touto platbou."
 
 #: gnucash/gtkbuilder/dialog-payment.glade:169
 msgid "Partner"
-msgstr "Partner"
+msgstr "Spoločník"
 
 #: gnucash/gtkbuilder/dialog-payment.glade:207
 msgid "Post To"
@@ -15693,7 +15693,7 @@ msgstr "Automaticky zobraziť zoznam účtov alebo úkon počas vkladania."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2550
 msgid "Tab order in_cludes Transfer on Memorised Transactions"
-msgstr "Poradie tabulátora zahŕňa prenos uložených transakcií"
+msgstr "Poradie tabulátora za_hŕňa prenos uložených transakcií"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2556
 msgid "Move to Transfer field when memorised transaction auto filled."
@@ -15710,7 +15710,7 @@ msgstr "Akcia skoku transakcie, keď existuje viac ako dve rozdelenia."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2593
 msgid "Do _nothing"
-msgstr "Nerobiť nič"
+msgstr "Ne_robiť nič"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2599
 msgid "Do nothing."
@@ -15727,7 +15727,7 @@ msgstr "Na určenie druhého účtu použite prvé rozdelenie s najväčšou hod
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2632
 msgid "Go to the first split with the _smallest value"
-msgstr "Prejsť na prvé rozdelenie s najmenšou hodnotou"
+msgstr "Prejsť na prvé rozdelenie s _najmenšou hodnotou"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2638
 msgid ""
@@ -16160,7 +16160,7 @@ msgstr "Ponechať poslednú dostupnú cenu pre opciu"
 
 #: gnucash/gtkbuilder/dialog-price.glade:668
 msgid "Include _Fetched online prices"
-msgstr "Zahrnúť ceny získané online"
+msgstr "Zahrnúť ceny _získané online"
 
 #: gnucash/gtkbuilder/dialog-price.glade:672
 msgid "If activated, prices added by Finance::Quote will be included."
@@ -18787,7 +18787,7 @@ msgstr "_Online úkony"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:18
 msgid "Get _Balance"
-msgstr "Získať zosta_tok"
+msgstr "Získať _zostatok"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:20
 #: gnucash/ui/gnc-plugin-basic-commands.ui:86
@@ -25230,7 +25230,7 @@ msgstr "Splatná daň"
 
 #: gnucash/report/reports/standard/income-gst-statement.scm:122
 msgid "Display the tax payable (tax on sales - tax on purchases)"
-msgstr "Zobraziť splatnú daň (daň z predaja - daň z nákupu)"
+msgstr "Zobraziť splatnú daň (daň z predaja - daň z nákupov)"
 
 #: gnucash/report/reports/standard/income-gst-statement.scm:136
 msgid "Purchases"
@@ -30263,7 +30263,7 @@ msgstr "_Otvoriť účet"
 #: gnucash/ui/gnc-reconcile-window.ui:129
 msgctxt "reconcile menu"
 msgid "_Balance"
-msgstr "Zostatok"
+msgstr "_Zostatok"
 
 #: gnucash/ui/gnc-reconcile-window.ui:68 gnucash/ui/gnc-reconcile-window.ui:106
 msgid "_Reconcile Selection"
@@ -30509,7 +30509,7 @@ msgstr "posledné: "
 #: libgnucash/app-utils/gnc-quotes.cpp:864
 msgctxt "Finance::Quote"
 msgid "nav: "
-msgstr "nav: "
+msgstr "navigácia: "
 
 #. Translators: The quote is neither a last trade nor an NAV.
 #: libgnucash/app-utils/gnc-quotes.cpp:866
