@@ -7740,7 +7740,7 @@ msgstr "- GnuCash वैयक्तिक आणि ल्हान व्य�
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Rahul Borade: 2014"
+"Rahul Borade: 2014\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

@@ -7824,7 +7824,7 @@ msgstr ""
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Chandrakant Dhutadmal: 2014"
+"Chandrakant Dhutadmal: 2014\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

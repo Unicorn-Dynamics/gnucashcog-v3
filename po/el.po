@@ -7957,7 +7957,7 @@ msgstr ""
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Gnucash: 2"
+"Gnucash: 2\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

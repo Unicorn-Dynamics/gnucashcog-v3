@@ -45,9 +45,9 @@ while (<$INFILE>) {
             my $dates = join(", ", sort(@{$translators{$translator}}));
             push @translator_list, "$translator: $dates";
         }
-        my $translators_str = join("; ", @translator_list);
+        my $translators_str = join("\\n ", @translator_list);
         if (defined $translators_str) {
-            print $OUTFILE "\"$_\"\n" for map substr($_, 0, 72), $translators_str =~ m[(.{1,72})(?:; |$)]g;
+            print $OUTFILE "\"$_\\n\"\n" for map substr($_, 0, 72), $translators_str =~ m[(.{1,72})(?:\\n |$)]g;
             print $OUTFILE "\n";
         }
     }

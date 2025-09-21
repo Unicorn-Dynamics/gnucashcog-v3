@@ -8050,7 +8050,7 @@ msgstr ""
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Francisco Serrador: 2022"
+"Francisco Serrador: 2022\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

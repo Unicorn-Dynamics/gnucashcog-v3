@@ -7872,7 +7872,7 @@ msgstr ""
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Rosi Dimova: 2010, 2011"
+"Rosi Dimova: 2010, 2011\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

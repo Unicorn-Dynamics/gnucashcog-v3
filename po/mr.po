@@ -7770,7 +7770,7 @@ msgstr "- GnuCash वैयक्तिक व लहान व्यवसा�
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Chandrakant Dhutadmal: 2014; Hemant More: 2022; Rahul Shirke: 2023"
+"Chandrakant Dhutadmal: 2014\n Hemant More: 2022\n Rahul Shirke: 2023\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

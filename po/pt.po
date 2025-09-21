@@ -7754,7 +7754,7 @@ msgstr "Contabilidade de finanças pessoais e micro empresas."
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Copyright: 2020"
+"Copyright: 2020\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

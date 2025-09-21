@@ -7862,10 +7862,10 @@ msgstr "Bogføring for personlige og små virksomheder."
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Allan Olsen: 2025; Claus Hindsgaul: 2001"
-"Joe Hansen: 2009, 2010, 2012, 2013, 2014, 2015, 2016, 2018"
-"Johnny Ernst Nielsen: 2001; Keld Simonsen: 2000-2002"
-"Kenneth Christiansen: 2000; Ole Laursen: 2001"
+"Allan Olsen: 2025\n Claus Hindsgaul: 2001\n"
+"Joe Hansen: 2009, 2010, 2012, 2013, 2014, 2015, 2016, 2018\n"
+"Johnny Ernst Nielsen: 2001\n Keld Simonsen: 2000-2002\n"
+"Kenneth Christiansen: 2000\n Ole Laursen: 2001\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

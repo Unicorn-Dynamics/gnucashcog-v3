@@ -7827,7 +7827,7 @@ msgstr "- GnuCash ज़ॊती तॊ सुमाल बिज़नस फ�
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Neha Aphale: 2014"
+"Neha Aphale: 2014\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

@@ -7807,10 +7807,10 @@ msgstr "Rachunkowość finansów osobistych i małych firm."
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"154pinkchairs: 2022; Adithya K: 2021; Henio Szewczyk: 2021"
-"Jacek Baszkiewicz: 2024; Kaligula: 2022, 2023, 2024"
-"Maciej Błędkowski: 2021; Rcvrvugyvgvb: 2024; WaldiS: 2022"
-"gnu-ewm: 2022, 2023; vim: 2023; наб: 2024"
+"154pinkchairs: 2022\n Adithya K: 2021\n Henio Szewczyk: 2021\n"
+"Jacek Baszkiewicz: 2024\n Kaligula: 2022, 2023, 2024\n"
+"Maciej Błędkowski: 2021\n Rcvrvugyvgvb: 2024\n WaldiS: 2022\n"
+"gnu-ewm: 2022, 2023\n vim: 2023\n наб: 2024\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

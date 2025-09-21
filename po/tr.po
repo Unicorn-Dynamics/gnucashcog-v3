@@ -7785,9 +7785,9 @@ msgstr "- GnuCash kişisel ve küçük işletme finansmanı yönetimi"
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Bora: 2021, 2022; Bora Atıcı: 2023, 2024, 2025"
-"Emin Tufan Çetin: 2018; Mesutcan Kurt: 2017; Oğuz Ersen: 2021"
-"udo pton: 2021; Ömer Faruk Çakmak: 2021"
+"Bora: 2021, 2022\n Bora Atıcı: 2023, 2024, 2025\n"
+"Emin Tufan Çetin: 2018\n Mesutcan Kurt: 2017\n Oğuz Ersen: 2021\n"
+"udo pton: 2021\n Ömer Faruk Çakmak: 2021\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

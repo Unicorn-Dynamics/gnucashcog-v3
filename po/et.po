@@ -7240,7 +7240,7 @@ msgstr ""
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Priit Jõerüüt: 2025; Rauno Ots: 2023; Siim Sellis: 2020"
+"Priit Jõerüüt: 2025\n Rauno Ots: 2023\n Siim Sellis: 2020\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

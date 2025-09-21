@@ -7912,8 +7912,8 @@ msgstr "– GnuCash asmeninių ir smulkaus verslo finansų valdymas"
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Aurimas Fišeras: 2011, 2012, 2013; Kornelijus Tvarijanavičius: 2021"
-"Mantas Kriaučiūnas: 2011; Tadas Masiulionis: 2009, 2023"
+"Aurimas Fišeras: 2011, 2012, 2013\n Kornelijus Tvarijanavičius: 2021\n"
+"Mantas Kriaučiūnas: 2011\n Tadas Masiulionis: 2009, 2023\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

@@ -7830,8 +7830,8 @@ msgstr "- GnuCash ذاتی اور چھوٹے کاروبار کے فائنانس 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Abdul Quddos: 2022; Adil Ishaq: 2024, 2024; Atiur Rahman Khan: 2014"
-"Frank H. Ellenberger: 2021"
+"Abdul Quddos: 2022\n Adil Ishaq: 2024, 2024\n Atiur Rahman Khan: 2014\n"
+"Frank H. Ellenberger: 2021\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

@@ -7807,7 +7807,7 @@ msgstr "- GnuCash निजि आरो फिसा फालांगि र�
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Adithya K: 2021; Ritu Panwar: 2014"
+"Adithya K: 2021\n Ritu Panwar: 2014\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

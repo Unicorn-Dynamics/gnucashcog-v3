@@ -7591,8 +7591,8 @@ msgstr "חשבונאות לאנשים פרטיים ועסקים קטנים."
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Avi Markovitz: 2020, 2021, 2022, 2023, 2024"
-"Yaron Shahrabani: 2020, 2021, 2022, 2023, 2024"
+"Avi Markovitz: 2020, 2021, 2022, 2023, 2024\n"
+"Yaron Shahrabani: 2020, 2021, 2022, 2023, 2024\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

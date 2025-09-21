@@ -7865,11 +7865,11 @@ msgstr "- جنوكاش للإدارة المالية الشخصية والتجا
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Abdorhman Ayman: 2019; Abdulla Alhosani: 2024"
-"Abdulsalam Alshilash: 2025; Aziz2013: 2013; BL: 2023"
-"ButterflyOfFire: 2022; Ebrahim Nasser: 2025; MOHTARIF_TEC: 2016"
-"Sherif ElGamal: 2022; Usama Khalil: 2025; ashalash: 2013, 2017"
-"ashalash1409: 2013; khadiramd: 2013; ltai0001: 2022"
+"Abdorhman Ayman: 2019\n Abdulla Alhosani: 2024\n"
+"Abdulsalam Alshilash: 2025\n Aziz2013: 2013\n BL: 2023\n"
+"ButterflyOfFire: 2022\n Ebrahim Nasser: 2025\n MOHTARIF_TEC: 2016\n"
+"Sherif ElGamal: 2022\n Usama Khalil: 2025\n ashalash: 2013, 2017\n"
+"ashalash1409: 2013\n khadiramd: 2013\n ltai0001: 2022\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

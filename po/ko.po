@@ -7567,7 +7567,7 @@ msgstr "개인 및 소기업 금융에 대한 회계입니다."
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
 msgstr ""
-"Minjae Isaac Kwon: 2022; Taehun Yun: 2022; 이정희: 2022"
+"Minjae Isaac Kwon: 2022\n Taehun Yun: 2022\n 이정희: 2022\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."
