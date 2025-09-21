@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-06-22 12:27-0700\n"
-"PO-Revision-Date: 2025-08-21 02:02+0000\n"
+"PO-Revision-Date: 2025-09-21 17:02+0000\n"
 "Last-Translator: Szia Tomi <sziatomi01@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/hu/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: bindings/guile/date-utilities.scm:173
 #: gnucash/report/reports/example/daily-reports.scm:260
@@ -910,9 +910,9 @@ msgid ""
 "The full path is displayed in the status bar."
 msgstr ""
 "Ha tudni szeretné, hogy a legutóbbi GnuCash fájljai mely könyvtárakban "
-"vannak tárolva, vigye az egérmutatót a fájlmenü egyik számozott "
-"bejegyzésére.\n"
-"(Fájl –> Legutóbb használt lista).\n"
+"vannak tárolva, vigye az egérmutatót a fájlmenü egyik számozott bejegyzésére."
+"\n"
+"(Fájl –> legutóbbi fájlok listája).\n"
 "A teljes elérési út megjelenik az állapotsorban."
 
 #: doc/tip_of_the_day.list.c:24
@@ -1010,9 +1010,11 @@ msgid ""
 "GnuCash will automatically complete the remainder of the transaction as it "
 "was last entered."
 msgstr ""
-"A gyorskitöltő megkönnyíti a gyakori tranzakciók bevitelét. Ha beírja egy "
-"gyakori tranzakció leírásának első betűit, majd megnyomja a Tab billentyűt, "
-"a GnuCash kiegészíti a tranzakció maradékát az utolsó bevitel szerint."
+"Az automatikus kitöltés vagy más néven gyorskitöltés (a tabulátor billentyű "
+"megnyomása) megkönnyíti a gyakori tranzakciók bevitelét. Amikor beírja egy "
+"gyakori tranzakció leírásának első betűjét vagy betűit, majd megnyomja a Tab "
+"billentyűt, a GnuCash automatikusan kitölti a tranzakció többi részét a "
+"legutóbbi bevitel szerint."
 
 #: doc/tip_of_the_day.list.c:65
 msgid ""
@@ -4028,7 +4030,7 @@ msgstr "Adjon meg egy érvényes befejezési dátumot."
 
 #: gnucash/gnome/dialog-sx-editor.c:548
 msgid "There must be some number of occurrences."
-msgstr "Az előfordulás számát meg kell adni."
+msgstr "Meg kell adni az ismétlések számát."
 
 #: gnucash/gnome/dialog-sx-editor.c:556
 #, c-format
@@ -4036,8 +4038,8 @@ msgid ""
 "The number of remaining occurrences (%d) is greater than the number of total "
 "occurrences (%d)."
 msgstr ""
-"A hátralévő előfordulások száma (%d) nagyobb, mint az összes előfordulás "
-"száma (%d)."
+"A hátralevő ismétlések száma (%d) nagyobb, mint az összes ismétlés száma "
+"(%d)."
 
 #: gnucash/gnome/dialog-sx-editor.c:585
 msgid ""
@@ -4182,7 +4184,7 @@ msgstr[0] ""
 #: gnucash/gnome/dialog-sx-since-last-run.c:1266
 msgid "Highlight a date first to sort by occurrence date."
 msgstr ""
-"Először jelöljön ki egy dátumot az előfordulási dátum szerinti rendezéshez."
+"Először jelöljön ki egy dátumot az ütemezés dátuma szerinti rendezéshez."
 
 #: gnucash/gnome/dialog-sx-since-last-run.c:1267
 msgid "Highlight a schedule first to sort by schedule name."
@@ -7441,8 +7443,9 @@ msgid ""
 "virus software is preventing this action."
 msgstr ""
 "A GnuCash nem tudott írni a %s adatbázisba. Lehet, hogy az adatbázis csak "
-"olvasható fájlrendszeren van, esetleg nem rendelkezik írási jogosultsággal a "
-"könyvtárhoz, vagy a vírusirtó program megakadályozza ezt a műveletet."
+"olvasható fájlrendszeren van, esetleg Ön nem rendelkezik írási "
+"jogosultsággal a könyvtárhoz, vagy a vírusirtó program megakadályozza ezt a "
+"műveletet."
 
 #: gnucash/gnome-utils/gnc-file.c:387
 #, c-format
@@ -7659,10 +7662,10 @@ msgid ""
 "action. If you proceed you may not be able to save any changes. What would "
 "you like to do?"
 msgstr ""
-"Lehet, hogy az adatbázis csak olvasható fájlrendszeren van, esetleg nincs "
-"írási jogosultsága a könyvtárhoz, vagy a vírusirtó program megakadályozza "
-"ezt a műveletet. Ha folytatja, előfordulhat, hogy nem tudja elmenteni a "
-"változtatásokat. Mit szeretne tenni?"
+"Lehet, hogy az adatbázis csak olvasható fájlrendszeren van, esetleg Önnek "
+"nincs írási jogosultsága a könyvtárhoz, vagy a vírusirtó program "
+"megakadályozza ezt a műveletet. Ha folytatja, előfordulhat, hogy nem tudja "
+"elmenteni a változtatásokat. Mit szeretne tenni?"
 
 #: gnucash/gnome-utils/gnc-file.c:908
 #: gnucash/gtkbuilder/dialog-file-access.glade:98
@@ -8306,7 +8309,7 @@ msgstr "Fax"
 
 #: gnucash/gnome-utils/gnc-tree-view-owner.c:434
 msgid "E-mail"
-msgstr "Email"
+msgstr "E-mail"
 
 #: gnucash/gnome-utils/gnc-tree-view-owner.c:460
 #: gnucash/gtkbuilder/dialog-customer.glade:156
@@ -9512,7 +9515,7 @@ msgid ""
 "statement date, regardless of previous reconciliations."
 msgstr ""
 "Ha aktiválva van, az egyeztetési párbeszédablak megnyitásakor, tekintet "
-"nélkül a korábbi egyeztetésekre, mindig a mai dátumot használja "
+"nélkül a korábbi egyeztetésekre, mindig az aznapi dátumot használja "
 "számlakivonat-dátumként."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:17
@@ -9555,29 +9558,31 @@ msgstr ""
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:32
 msgid "Set the sort column in the \"since last run\" dialog."
 msgstr ""
-"A rendezési oszlop beállítása a „Legutóbbi futás óta” párbeszédpanelen."
+"A rendezési oszlop beállítása a „A legutóbbi futás óta” párbeszédpanelen."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:33
 msgid "This settings sets the sort column in the \"since last run\" dialog."
 msgstr ""
-"Ezzel a rendezési oszlopot állíthatja be a „Legutóbbi futás óta” "
+"Ezzel a rendezési oszlopot állíthatja be a „A legutóbbi futás óta” "
 "párbeszédpanelen."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:37
 msgid "Set the sort direction in the \"since last run\" dialog."
-msgstr "A rendezési irány beállítása a „Legutóbbi futás óta” párbeszédpanelen."
+msgstr ""
+"A rendezési irány beállítása a „A legutóbbi futás óta” párbeszédpanelen."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:38
 msgid "This settings sets the sort direction in the \"since last run\" dialog."
 msgstr ""
-"Ezzel a rendezési irányt állíthatja be a „Legutóbbi futás óta” "
+"Ezzel a rendezési irányt állíthatja be a „A legutóbbi futás óta” "
 "párbeszédpanelen."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:42
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:43
 msgid "The depth used in the tree to sort in the \"since last run\" dialog."
 msgstr ""
-"A rendezési fában használt mélység a „Legutóbbi futás óta” párbeszédpanelen."
+"A rendezési fában használt mélység a „A legutóbbi futás óta” "
+"párbeszédpanelen."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:49
 msgid "Set the \"auto create\" flag by default"
@@ -9598,7 +9603,7 @@ msgstr ""
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:54
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:55
 msgid "How many days in advance to notify the user."
-msgstr "Hány nappal előtte figyelmeztessen."
+msgstr "Hány nappal előtte értesítsen."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:59
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:60
@@ -9706,10 +9711,10 @@ msgid ""
 "is closed. The sizes and locations of content windows will be remembered "
 "when you quit GnuCash. Otherwise the sizes will not be saved."
 msgstr ""
-"Ha aktiv, minden dialógus ablak helye és mérete mentésre kerül a "
+"Aktiválva minden párbeszédablak helye és mérete mentésre kerül a "
 "bezárásakor. A tartalomablakok méretei és helyei szintén mentésre kerülnek "
-"GnuCash programból történő kilépéskor. Máskülönben a méretek nem lesznek "
-"elmentve."
+"GnuCash programból történő kilépéskor. Ellenkező esetben a méretek nem "
+"lesznek elmentve."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:20
 msgid "Character to use as separator between account names"
@@ -9756,7 +9761,7 @@ msgid ""
 "time that feature is started. Otherwise no extra explanation is shown."
 msgstr ""
 "Ha aktiválva van, a GnuCash az automatikus mentés első indításakor "
-"megjeleníti a funkció magyarázatát. Ellenkező esetben nem jelenik meg "
+"megjeleníti a funkció magyarázatát. Ellenkező esetben nem jelenik meg a "
 "magyarázat."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:40
@@ -9927,7 +9932,7 @@ msgstr ""
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:105
 #: gnucash/gtkbuilder/dialog-preferences.glade:694
 msgid "Sign reverse balances on income and expense accounts."
-msgstr "Bevételi és költségszámlák egyenlegének megjelölése visszafelé."
+msgstr "Bevétel- és költségszámlák egyenlegének megjelölése visszafelé."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:110
 msgid "Use account colors in the account hierarchy"
@@ -10250,7 +10255,7 @@ msgstr ""
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:247
 msgid "Color the register using a gnucash specific color theme"
-msgstr "A regiszter színezése egy GnuCash specifikus színtéma segítségével"
+msgstr "A regiszter színezése a GnuCash specifikus színtéma segítségével"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:248
 msgid ""
@@ -10260,6 +10265,12 @@ msgid ""
 "css file to be stored in the gnucash used config directory. More information "
 "can be found in the gnucash FAQ."
 msgstr ""
+"Ha engedélyezve van, a regiszter a GnuCash saját színtémáját (zöld/sárga) "
+"fogja használni. Ellenkező esetben a rendszer színtémáját fogja használni. "
+"Függetlenül ettől a beállítástól, a felhasználó bármikor felülírhatja a "
+"színtémát egy saját gnucash css fájl segítségével, amelyet a GnuCash által "
+"használt konfigurációs könyvtárban kell elhelyezni. További információk "
+"találhatók a GnuCash „Gyakran Ismételt Kérdések” között."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:252
 msgid "\"Enter\" key moves to bottom of register"
@@ -10276,11 +10287,13 @@ msgstr ""
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:257
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:258
 msgid "Automatically raise the list of accounts or actions during input"
-msgstr "Bevitel során automatikusan jön fel a számlák vagy műveletek listája"
+msgstr "Bevitelkor automatikusan feljön a számlák vagy műveletek listája"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:262
 msgid "Move to Transfer field when memorised transaction auto filled"
 msgstr ""
+"A kurzor az átutalás mezőbe lép egy gyakori (megjegyzett) tranzakcióval "
+"történő automatikus kitöltés után"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:263
 msgid ""
@@ -10288,6 +10301,9 @@ msgid ""
 "cursor will move to the Transfer field. If not active then it skips to the "
 "value field."
 msgstr ""
+"Ha aktiválva van, akkor egy gyakori (megjegyzett) tranzakcióval történő "
+"automatikus kitöltés (Tab billentyű) után a kurzor az átutalás mezőbe lép. "
+"Ellenkező esetben az érték mezőbe lép."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:267
 msgid "\"Jump\" behaviour when there are multiple splits"
@@ -12553,7 +12569,7 @@ msgstr ""
 
 #: gnucash/gtkbuilder/assistant-qif-import.glade:655
 msgid "Income and Expense categories"
-msgstr "Bevételi és költségkategóriák"
+msgstr "Bevétel- és költségkategóriák"
 
 #: gnucash/gtkbuilder/assistant-qif-import.glade:757
 msgid "Match QIF categories with GnuCash accounts"
@@ -12634,7 +12650,7 @@ msgstr ""
 
 #: gnucash/gtkbuilder/assistant-qif-import.glade:1008
 msgid "Enter Information about…"
-msgstr ""
+msgstr "Adja meg az információkat…"
 
 #: gnucash/gtkbuilder/assistant-qif-import.glade:1034
 msgid "All fields must be complete to continue…"
@@ -14378,7 +14394,7 @@ msgstr "Kétheti"
 #: gnucash/report/reports/standard/category-barchart.scm:121
 #: gnucash/report/trep-engine.scm:318 libgnucash/engine/Recurrence.cpp:622
 msgid "Weekly"
-msgstr "Hetente"
+msgstr "Heti"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:39
 #: gnucash/gtkbuilder/dialog-fincalc.glade:80
@@ -15718,16 +15734,17 @@ msgstr "Listák _automatikus megnyitása"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2538
 msgid "Automatically raise the list of accounts or actions during input."
-msgstr ""
-"Bevitelkor automatikusan nyíljon meg a számlák vagy a műveletek listája."
+msgstr "Bevitelkor automatikusan feljön a számlák vagy műveletek listája."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2550
 msgid "Tab order in_cludes Transfer on Memorised Transactions"
-msgstr ""
+msgstr "A Tab billentyű kezdeményezi a gyakori tranzakciók át_utalását"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2556
 msgid "Move to Transfer field when memorised transaction auto filled."
 msgstr ""
+"A kurzor az átutalás mezőbe lép egy gyakori (megjegyzett) tranzakcióval "
+"történő automatikus kitöltés után."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2581
 msgid "<b>Jump action for multiple splits</b>"
@@ -16583,7 +16600,7 @@ msgstr ""
 #: gnucash/report/reports/standard/category-barchart.scm:122
 #: gnucash/report/trep-engine.scm:312 libgnucash/engine/Recurrence.cpp:744
 msgid "Daily"
-msgstr "Naponta"
+msgstr "Napi"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:129
 msgid "Bi-Weekly"
@@ -16613,7 +16630,7 @@ msgstr "Előfordulások száma"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:508
 msgid "<b>Since Last Run</b>"
-msgstr "<b>Legutóbbi futás óta</b>"
+msgstr "<b>A legutóbbi futás óta</b>"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:531
 msgid "<b>Transaction Editor Defaults</b>"
@@ -16636,7 +16653,7 @@ msgid ""
 "Show the notification window for the \"since last run\" process when a file "
 "is opened."
 msgstr ""
-"A „legutóbbi futás óta” folyamat értesítési ablakának megjelenítése egy fájl "
+"„A legutóbbi futás óta” folyamat értesítési ablakának megjelenítése egy fájl "
 "megnyitásakor."
 
 #: gnucash/gtkbuilder/dialog-sx.glade:575
@@ -16683,8 +16700,8 @@ msgid ""
 "Set 'Review created transactions' as the default in the \"since last run\" "
 "dialog."
 msgstr ""
-"A „Létrehozott tranzakciók felülvizsgálata” legyen az alapértelmezett a "
-"„Legutóbbi futás óta” párbeszédpanelen."
+"A „Létrehozott tranzakciók felülvizsgálata” legyen alapértelmezett „A "
+"legutóbbi futás óta” párbeszédpanelen."
 
 #: gnucash/gtkbuilder/dialog-sx.glade:788
 msgid "Edit Scheduled Transaction"
@@ -16716,7 +16733,7 @@ msgstr "<b>Előfordulások</b>"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:1174
 msgid "Last Occurred: "
-msgstr "Utolsó előfordulás: "
+msgstr "A legutóbbi ütemezés: "
 
 #: gnucash/gtkbuilder/dialog-sx.glade:1208
 msgid "Repeats:"
@@ -16733,7 +16750,7 @@ msgstr "Megadott számú ismétlődésig"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:1278
 msgid "occurrences"
-msgstr "előfordulás"
+msgstr "ismétlés"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:1290
 msgid "remaining"
@@ -16749,7 +16766,7 @@ msgstr "Tranzakciósablon"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:1476
 msgid "Since Last Run…"
-msgstr "Legutóbbi futás óta…"
+msgstr "A legutóbbi futás óta…"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:1593
 msgid "_Review created transactions"
@@ -17211,19 +17228,19 @@ msgstr "Félhavi"
 #: gnucash/gtkbuilder/gnc-frequency.glade:417
 #: gnucash/gtkbuilder/gnc-frequency.glade:559
 msgid "No change"
-msgstr "Nincs változás"
+msgstr "nincs változás"
 
 #: gnucash/gtkbuilder/gnc-frequency.glade:194
 #: gnucash/gtkbuilder/gnc-frequency.glade:420
 #: gnucash/gtkbuilder/gnc-frequency.glade:562
 msgid "Use previous weekday"
-msgstr "Az előző munkanapon"
+msgstr "az előző munkanapon"
 
 #: gnucash/gtkbuilder/gnc-frequency.glade:197
 #: gnucash/gtkbuilder/gnc-frequency.glade:423
 #: gnucash/gtkbuilder/gnc-frequency.glade:565
 msgid "Use next weekday"
-msgstr "A következő munkanapon"
+msgstr "a következő munkanapon"
 
 #: gnucash/gtkbuilder/gnc-frequency.glade:325
 msgid "1st Mon"
@@ -17418,7 +17435,7 @@ msgstr "Az első napja"
 #: gnucash/gtkbuilder/gnc-frequency.glade:1188
 #: gnucash/gtkbuilder/gnc-frequency.glade:1358
 msgid "except on weekends"
-msgstr "Ha hétvégére esik"
+msgstr "Ha hétvégére esik akkor"
 
 #: gnucash/gtkbuilder/gnc-frequency.glade:1155
 msgid "then on the"
@@ -17659,7 +17676,7 @@ msgstr "Rendezés a rögzítés dátuma szerint."
 
 #: gnucash/gtkbuilder/gnc-plugin-page-register.glade:915
 msgid "S_tatement Date"
-msgstr "Bankszámlakivona_t dátuma"
+msgstr "Számlakivona_t dátuma"
 
 #: gnucash/gtkbuilder/gnc-plugin-page-register.glade:919
 msgid ""
@@ -19206,7 +19223,7 @@ msgstr ""
 "a „%s” fájlba.\n"
 "\n"
 "A Vissza gombbal visszatérhet az előző oldalakra, a Mégsem gombbal pedig "
-"megszakíthatja az importálást.\n"
+"megszakíthatja az exportálást.\n"
 
 #. Translators: %s is the file name and %u the number of accounts.
 #: gnucash/import-export/csv-exp/assistant-csv-export.c:114
@@ -19222,7 +19239,7 @@ msgstr ""
 "fájlba, összesen %u számláról.\n"
 "\n"
 "A Vissza gombbal visszatérhet az előző oldalakra, a Mégsem gombbal pedig "
-"megszakíthatja az importálást.\n"
+"megszakíthatja az exportálást.\n"
 
 #. Translators: %s is the file name.
 #: gnucash/import-export/csv-exp/assistant-csv-export.c:120
@@ -19238,7 +19255,7 @@ msgstr ""
 "fájlba.\n"
 "\n"
 "A Vissza gombbal visszatérhet az előző oldalakra, a Mégsem gombbal pedig "
-"megszakíthatja az importálást.\n"
+"megszakíthatja az exportálást.\n"
 
 #: gnucash/import-export/csv-exp/assistant-csv-export.c:759
 msgid ""
@@ -19265,7 +19282,7 @@ msgstr "-- Felosztott tranzakció --"
 
 #: gnucash/import-export/csv-exp/csv-transactions-export.cpp:368
 msgid "Full Category Path"
-msgstr ""
+msgstr "Teljes kategória elérési út"
 
 #: gnucash/import-export/csv-exp/csv-transactions-export.cpp:370
 #: gnucash/import-export/csv-exp/csv-transactions-export.cpp:390
@@ -19754,7 +19771,7 @@ msgstr "Egy pénznem oszlop érvénytelen pénznemszimbólumot tartalmaz."
 #: gnucash/import-export/csv-imp/gnc-imp-props-tx.cpp:630
 #, c++-format
 msgid "{1}: {2}"
-msgstr ""
+msgstr "{1}: {2}"
 
 #: gnucash/import-export/csv-imp/gnc-imp-props-price.cpp:279
 msgid "No date column."
@@ -21266,7 +21283,7 @@ msgstr "Új_rakiegyenlítés"
 #: gnucash/register/ledger-core/split-register-control.cpp:1357
 #: gnucash/register/ledger-core/split-register-control.cpp:1370
 msgid "This register does not support editing exchange rates."
-msgstr ""
+msgstr "Ez a regiszter nem támogatja az árfolyamok szerkesztését."
 
 #: gnucash/register/ledger-core/split-register-control.cpp:1396
 msgid "You need to select a split in order to modify its exchange rate."
@@ -21508,11 +21525,15 @@ msgid ""
 "Enter a transaction reference, such as an invoice or check number, common to "
 "all entry lines (splits)"
 msgstr ""
+"Adjon meg egy tranzakció-hivatkozást, például számla- vagy csekkszámot, "
+"amely minden beviteli sorra (felosztásra) vonatkozik"
 
 #: gnucash/register/ledger-core/split-register-model.c:1100
 msgid ""
 "Enter a transaction reference that will be common to all entry lines (splits)"
 msgstr ""
+"Adjon meg egy tranzakció-hivatkozást, amely minden beviteli sorra "
+"(felosztásra) vonatkozik"
 
 #: gnucash/register/ledger-core/split-register-model.c:1136
 msgid "Enter the name of the Customer"
@@ -26717,7 +26738,7 @@ msgstr "Kedvezmény összege"
 #: gnucash/report/reports/standard/taxinvoice.scm:106
 #: gnucash/report/reports/standard/taxinvoice.scm:191
 msgid "Tax Rate"
-msgstr "Adó mértéke"
+msgstr "Adókulcs"
 
 #: gnucash/report/reports/standard/receipt.scm:61
 #: gnucash/report/reports/standard/receipt.scm:132
@@ -26949,9 +26970,8 @@ msgid "column: Date"
 msgstr "Határidő"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:74
-#, fuzzy
 msgid "column: Tax Rate"
-msgstr "Adó mértéke"
+msgstr "oszlop: Adókulcs"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:75
 msgid "column: Units"
@@ -28785,7 +28805,7 @@ msgstr "Ütemezett-tranzakció-szerke_sztő"
 
 #: gnucash/ui/gnc-plugin-basic-commands.ui:89
 msgid "Since _Last Run…"
-msgstr "_Legutóbbi futás óta…"
+msgstr "A _legutóbbi futás óta…"
 
 #: gnucash/ui/gnc-plugin-basic-commands.ui:91
 msgid "Create Scheduled Transactions since the last time run"
