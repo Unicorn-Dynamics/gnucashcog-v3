@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
 "product=GnuCash&component=Translations\n"
-"POT-Creation-Date: 2025-09-21 12:28-0700\n"
+"POT-Creation-Date: 2025-09-22 11:57-0700\n"
 "PO-Revision-Date: 2025-08-05 09:01+0000\n"
 "Last-Translator: Максим Горпиніч <gorpinicmaksim0@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gnucash/"
@@ -7831,21 +7831,29 @@ msgstr "Версія"
 msgid "Build ID"
 msgstr "Ід. збирання"
 
-#: gnucash/gnome-utils/gnc-main-window.cpp:5357
+#: gnucash/gnome-utils/gnc-main-window.cpp:5356
 msgid "Accounting for personal and small business finance."
 msgstr "Облік особистих фінансів та коштів малого бізнесу."
 
-#. Translators: the following string will be shown in Help->About->Credits
-#. Enter your name or that of your team and an email contact for feedback.
-#. The string can have multiple rows, so you can also add a list of
-#. contributors.
+#. Translators: the following string will be shown in
+#. * Help->About->Credits It's intended to be generated
+#. * automatically before each release so there's
+#. * usually no need to modify it, but if you do be
+#. * sure to include a newline (\\n) after each credit
+#. * so that it displays one per line.
+#.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-msgid "translator-credits"
+#, fuzzy
+#| msgid "translator-credits"
+msgid "translator-credits\n"
 msgstr ""
-"Artem: 2022\n Dan: 2023\n Maksym Kobieliev: 2013\n"
+"Artem: 2022\n"
+" Dan: 2023\n"
+" Maksym Kobieliev: 2013\n"
 "Maxim V. Dziumanenko: 2007\n"
 "Yuri Chornoivan: 2011, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025\n"
-"Yuri Syrota: 2000\n Максим Горпиніч: 2024, 2025, 2025\n"
+"Yuri Syrota: 2000\n"
+" Максим Горпиніч: 2024, 2025, 2025\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

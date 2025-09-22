@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
 "product=GnuCash&component=Translations\n"
-"POT-Creation-Date: 2025-09-21 12:28-0700\n"
+"POT-Creation-Date: 2025-09-22 11:57-0700\n"
 "PO-Revision-Date: 2025-05-05 14:01+0000\n"
 "Last-Translator: BlueRains <lu@schoevaars.eu>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gnucash/gnucash/nl/"
@@ -7816,22 +7816,34 @@ msgstr "Versie"
 msgid "Build ID"
 msgstr "BouwID"
 
-#: gnucash/gnome-utils/gnc-main-window.cpp:5357
+#: gnucash/gnome-utils/gnc-main-window.cpp:5356
 msgid "Accounting for personal and small business finance."
 msgstr "Boekhoudsoftware voor thuis en voor kleine ondernemingen."
 
-#. Translators: the following string will be shown in Help->About->Credits
-#. Enter your name or that of your team and an email contact for feedback.
-#. The string can have multiple rows, so you can also add a list of
-#. contributors.
+#. Translators: the following string will be shown in
+#. * Help->About->Credits It's intended to be generated
+#. * automatically before each release so there's
+#. * usually no need to modify it, but if you do be
+#. * sure to include a newline (\\n) after each credit
+#. * so that it displays one per line.
+#.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-msgid "translator-credits"
+#, fuzzy
+#| msgid "translator-credits"
+msgid "translator-credits\n"
 msgstr ""
-"Benno Schulenberg: 2007, 2010\n BlueRains: 2025\n Erwin Poeze: 2009\n"
-"Frank H. Ellenberger: 2022\n Geert Janssens: 2020, 2021, 2021\n"
-"Hendrik-Jan Heins: 2003\n Jan Willem Harmanny: 2002\n"
-"Jeroen ten Berge: 2004\n Leo Moons: 2025\n Mark Haanen: 2009-2017\n"
-"Rene Lambers: 2023\n Stephan Paternotte: 2023, 2024, 2025\n"
+"Benno Schulenberg: 2007, 2010\n"
+" BlueRains: 2025\n"
+" Erwin Poeze: 2009\n"
+"Frank H. Ellenberger: 2022\n"
+" Geert Janssens: 2020, 2021, 2021\n"
+"Hendrik-Jan Heins: 2003\n"
+" Jan Willem Harmanny: 2002\n"
+"Jeroen ten Berge: 2004\n"
+" Leo Moons: 2025\n"
+" Mark Haanen: 2009-2017\n"
+"Rene Lambers: 2023\n"
+" Stephan Paternotte: 2023, 2024, 2025\n"
 "Tom van Braeckel: 2010\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369

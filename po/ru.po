@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
 "product=GnuCash&component=Translations\n"
-"POT-Creation-Date: 2025-09-21 12:28-0700\n"
+"POT-Creation-Date: 2025-09-22 11:57-0700\n"
 "PO-Revision-Date: 2025-09-08 22:02+0000\n"
 "Last-Translator: Yurt Page <yurtpage+weblate@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/gnucash/gnucash/"
@@ -7798,23 +7798,39 @@ msgstr "Версия"
 msgid "Build ID"
 msgstr "№ сборки"
 
-#: gnucash/gnome-utils/gnc-main-window.cpp:5357
+#: gnucash/gnome-utils/gnc-main-window.cpp:5356
 msgid "Accounting for personal and small business finance."
 msgstr "Управление финансами для частных лиц и малого бизнеса."
 
-#. Translators: the following string will be shown in Help->About->Credits
-#. Enter your name or that of your team and an email contact for feedback.
-#. The string can have multiple rows, so you can also add a list of
-#. contributors.
+#. Translators: the following string will be shown in
+#. * Help->About->Credits It's intended to be generated
+#. * automatically before each release so there's
+#. * usually no need to modify it, but if you do be
+#. * sure to include a newline (\\n) after each credit
+#. * so that it displays one per line.
+#.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-msgid "translator-credits"
+#, fuzzy
+#| msgid "translator-credits"
+msgid "translator-credits\n"
 msgstr ""
-"Artem: 2021\n Dmitriy Mangul: 2017, 2018\n Dmitry Pavlov: 2014\n"
-"Nikita Samoilov: 2022\n Sergey Belyashov: 2009, 2011\n Val Saven: 2021\n"
-"Valek Filippov: 2000\n Vik: 2022\n Vin: 2023\n"
-"Vitaly Lipatov: 2002, 2003, 2004\n Vladimir Turbaevsky: 2006\n"
-"Xangel2Net: 2023\n ashed: 2017\n gfbdrgng: 2024, 2025\n hades: 2023\n"
-"hitmman: 2024\n МАН69К: 2022\n"
+"Artem: 2021\n"
+" Dmitriy Mangul: 2017, 2018\n"
+" Dmitry Pavlov: 2014\n"
+"Nikita Samoilov: 2022\n"
+" Sergey Belyashov: 2009, 2011\n"
+" Val Saven: 2021\n"
+"Valek Filippov: 2000\n"
+" Vik: 2022\n"
+" Vin: 2023\n"
+"Vitaly Lipatov: 2002, 2003, 2004\n"
+" Vladimir Turbaevsky: 2006\n"
+"Xangel2Net: 2023\n"
+" ashed: 2017\n"
+" gfbdrgng: 2024, 2025\n"
+" hades: 2023\n"
+"hitmman: 2024\n"
+" МАН69К: 2022\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

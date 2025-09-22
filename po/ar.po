@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
 "product=GnuCash&component=Translations\n"
-"POT-Creation-Date: 2025-09-21 12:28-0700\n"
+"POT-Creation-Date: 2025-09-22 11:57-0700\n"
 "PO-Revision-Date: 2025-06-02 17:06+0000\n"
 "Last-Translator: Ebrahim Nasser <ebranas314@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/gnucash/gnucash/"
@@ -7853,23 +7853,37 @@ msgstr ""
 msgid "Build ID"
 msgstr ""
 
-#: gnucash/gnome-utils/gnc-main-window.cpp:5357
+#: gnucash/gnome-utils/gnc-main-window.cpp:5356
 #, fuzzy
 msgid "Accounting for personal and small business finance."
 msgstr "- جنوكاش للإدارة المالية الشخصية والتجارية الصغيرة "
 
-#. Translators: the following string will be shown in Help->About->Credits
-#. Enter your name or that of your team and an email contact for feedback.
-#. The string can have multiple rows, so you can also add a list of
-#. contributors.
+#. Translators: the following string will be shown in
+#. * Help->About->Credits It's intended to be generated
+#. * automatically before each release so there's
+#. * usually no need to modify it, but if you do be
+#. * sure to include a newline (\\n) after each credit
+#. * so that it displays one per line.
+#.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-msgid "translator-credits"
+#, fuzzy
+#| msgid "translator-credits"
+msgid "translator-credits\n"
 msgstr ""
-"Abdorhman Ayman: 2019\n Abdulla Alhosani: 2024\n"
-"Abdulsalam Alshilash: 2025\n Aziz2013: 2013\n BL: 2023\n"
-"ButterflyOfFire: 2022\n Ebrahim Nasser: 2025\n MOHTARIF_TEC: 2016\n"
-"Sherif ElGamal: 2022\n Usama Khalil: 2025\n ashalash: 2013, 2017\n"
-"ashalash1409: 2013\n khadiramd: 2013\n ltai0001: 2022\n"
+"Abdorhman Ayman: 2019\n"
+" Abdulla Alhosani: 2024\n"
+"Abdulsalam Alshilash: 2025\n"
+" Aziz2013: 2013\n"
+" BL: 2023\n"
+"ButterflyOfFire: 2022\n"
+" Ebrahim Nasser: 2025\n"
+" MOHTARIF_TEC: 2016\n"
+"Sherif ElGamal: 2022\n"
+" Usama Khalil: 2025\n"
+" ashalash: 2013, 2017\n"
+"ashalash1409: 2013\n"
+" khadiramd: 2013\n"
+" ltai0001: 2022\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

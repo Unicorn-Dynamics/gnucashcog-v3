@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
 "product=GnuCash&component=Translations\n"
-"POT-Creation-Date: 2025-09-21 12:28-0700\n"
+"POT-Creation-Date: 2025-09-22 11:57-0700\n"
 "PO-Revision-Date: 2025-04-16 05:42+0000\n"
 "Last-Translator: Bora Atıcı <boratici.acc@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gnucash/gnucash/"
@@ -7773,21 +7773,30 @@ msgstr "Sürüm"
 msgid "Build ID"
 msgstr "İnşa Kimliği"
 
-#: gnucash/gnome-utils/gnc-main-window.cpp:5357
+#: gnucash/gnome-utils/gnc-main-window.cpp:5356
 #, fuzzy
 msgid "Accounting for personal and small business finance."
 msgstr "- GnuCash kişisel ve küçük işletme finansmanı yönetimi"
 
-#. Translators: the following string will be shown in Help->About->Credits
-#. Enter your name or that of your team and an email contact for feedback.
-#. The string can have multiple rows, so you can also add a list of
-#. contributors.
+#. Translators: the following string will be shown in
+#. * Help->About->Credits It's intended to be generated
+#. * automatically before each release so there's
+#. * usually no need to modify it, but if you do be
+#. * sure to include a newline (\\n) after each credit
+#. * so that it displays one per line.
+#.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-msgid "translator-credits"
+#, fuzzy
+#| msgid "translator-credits"
+msgid "translator-credits\n"
 msgstr ""
-"Bora: 2021, 2022\n Bora Atıcı: 2023, 2024, 2025\n"
-"Emin Tufan Çetin: 2018\n Mesutcan Kurt: 2017\n Oğuz Ersen: 2021\n"
-"udo pton: 2021\n Ömer Faruk Çakmak: 2021\n"
+"Bora: 2021, 2022\n"
+" Bora Atıcı: 2023, 2024, 2025\n"
+"Emin Tufan Çetin: 2018\n"
+" Mesutcan Kurt: 2017\n"
+" Oğuz Ersen: 2021\n"
+"udo pton: 2021\n"
+" Ömer Faruk Çakmak: 2021\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

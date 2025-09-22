@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
 "product=GnuCash&component=Translations\n"
-"POT-Creation-Date: 2025-09-21 12:28-0700\n"
+"POT-Creation-Date: 2025-09-22 11:57-0700\n"
 "PO-Revision-Date: 2025-03-06 09:45+0000\n"
 "Last-Translator: Magnus Røkke <mrokke@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gnucash/"
@@ -7767,21 +7767,32 @@ msgstr "Versjon"
 msgid "Build ID"
 msgstr "Build ID"
 
-#: gnucash/gnome-utils/gnc-main-window.cpp:5357
+#: gnucash/gnome-utils/gnc-main-window.cpp:5356
 msgid "Accounting for personal and small business finance."
 msgstr "Regnskap for privat- og småbedriftsøkonomi."
 
-#. Translators: the following string will be shown in Help->About->Credits
-#. Enter your name or that of your team and an email contact for feedback.
-#. The string can have multiple rows, so you can also add a list of
-#. contributors.
+#. Translators: the following string will be shown in
+#. * Help->About->Credits It's intended to be generated
+#. * automatically before each release so there's
+#. * usually no need to modify it, but if you do be
+#. * sure to include a newline (\\n) after each credit
+#. * so that it displays one per line.
+#.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-msgid "translator-credits"
+#, fuzzy
+#| msgid "translator-credits"
+msgid "translator-credits\n"
 msgstr ""
-"Allan Nordhøy: 2020, 2021, 2022, 2024\n John Erling Blad: 2018, 2020\n"
-"Kjartan Maraas: 2000\n Magnus Røkke: 2025\n Morten Cools: 2024\n"
-"Petter Reinholdtsen: 2022, 2023\n Rune Osnes: 2023\n"
-"Sigve Indregard: 2006\n Tor Berg: 2024\n Tor Harald Thorland: 2005-2006\n"
+"Allan Nordhøy: 2020, 2021, 2022, 2024\n"
+" John Erling Blad: 2018, 2020\n"
+"Kjartan Maraas: 2000\n"
+" Magnus Røkke: 2025\n"
+" Morten Cools: 2024\n"
+"Petter Reinholdtsen: 2022, 2023\n"
+" Rune Osnes: 2023\n"
+"Sigve Indregard: 2006\n"
+" Tor Berg: 2024\n"
+" Tor Harald Thorland: 2005-2006\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

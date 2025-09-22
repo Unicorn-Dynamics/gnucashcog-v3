@@ -5351,19 +5351,19 @@ gnc_main_window_cmd_help_about (GSimpleAction *simple,
                                       ? gnc_quote_source_fq_version ()
                                       : "-");
     GtkDialog *dialog = GTK_DIALOG (gtk_about_dialog_new ());
-    g_object_set (G_OBJECT (dialog),
-                  "authors", authors,
-                  "documenters", documenters,
-                  "comments", _("Accounting for personal and small business finance."),
-                  "copyright", copyright,
-                  "license", license,
-                  "logo", logo,
-                  "name", "GnuCash",
-                  /* Translators: the following string will be shown in Help->About->Credits
-                     Enter your name or that of your team and an email contact for feedback.
-                     The string can have multiple rows, so you can also add a list of
-                     contributors. */
-                  "translator-credits", _("translator-credits"),
+    g_object_set(G_OBJECT(dialog), "authors", authors, "documenters",
+                 documenters, "comments",
+                 _("Accounting for personal and small business finance."),
+                 "copyright", copyright, "license", license, "logo", logo,
+                 "name", "GnuCash",
+                 /* Translators: the following string will be shown in
+                  * Help->About->Credits It's intended to be generated
+                  * automatically before each release so there's
+                  * usually no need to modify it, but if you do be
+                  * sure to include a newline (\\n) after each credit
+                  * so that it displays one per line.
+                  */
+                  "translator-credits", _("translator-credits\n"),
                   "version", version,
                   "website", PACKAGE_URL,
                   "website-label", _("Visit the GnuCash website."),

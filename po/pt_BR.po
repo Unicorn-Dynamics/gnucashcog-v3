@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
 "product=GnuCash&component=Translations\n"
-"POT-Creation-Date: 2025-09-21 12:28-0700\n"
+"POT-Creation-Date: 2025-09-22 11:57-0700\n"
 "PO-Revision-Date: 2025-09-10 06:03+0000\n"
 "Last-Translator: Leandro Conca <lluccia@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -7796,24 +7796,37 @@ msgstr "Versão"
 msgid "Build ID"
 msgstr "ID da compilação"
 
-#: gnucash/gnome-utils/gnc-main-window.cpp:5357
+#: gnucash/gnome-utils/gnc-main-window.cpp:5356
 msgid "Accounting for personal and small business finance."
 msgstr "Contabilidade de finanças pessoais e para pequenas empresas."
 
-#. Translators: the following string will be shown in Help->About->Credits
-#. Enter your name or that of your team and an email contact for feedback.
-#. The string can have multiple rows, so you can also add a list of
-#. contributors.
+#. Translators: the following string will be shown in
+#. * Help->About->Credits It's intended to be generated
+#. * automatically before each release so there's
+#. * usually no need to modify it, but if you do be
+#. * sure to include a newline (\\n) after each credit
+#. * so that it displays one per line.
+#.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-msgid "translator-credits"
+#, fuzzy
+#| msgid "translator-credits"
+msgid "translator-credits\n"
 msgstr ""
-"Carlos Cleber Pereira Cassol: 2007\n Daniel Conrado: 2024\n"
-"Dorneles Treméa: 2011\n Fábio Rodrigues Ribeiro: 2021\n"
-"Goedson Teixeira Paixão: 2007\n Jon Lapham: 2003,2004\n"
-"Jose Carlos Nascimento: 2001\n Jose Delvani: 2024\n"
-"José Lemos Neto: 2021\n LL Magical: 2020\n Leandro Conca: 2025\n"
-"Leonardo Ferreira Fontenelle: 2007\n Leslie H. Watter: 2007\n"
-"Miguel Rozsas: 2014\n Wellington Terumi Uemura: 2021, 2022, 2023, 2024\n"
+"Carlos Cleber Pereira Cassol: 2007\n"
+" Daniel Conrado: 2024\n"
+"Dorneles Treméa: 2011\n"
+" Fábio Rodrigues Ribeiro: 2021\n"
+"Goedson Teixeira Paixão: 2007\n"
+" Jon Lapham: 2003,2004\n"
+"Jose Carlos Nascimento: 2001\n"
+" Jose Delvani: 2024\n"
+"José Lemos Neto: 2021\n"
+" LL Magical: 2020\n"
+" Leandro Conca: 2025\n"
+"Leonardo Ferreira Fontenelle: 2007\n"
+" Leslie H. Watter: 2007\n"
+"Miguel Rozsas: 2014\n"
+" Wellington Terumi Uemura: 2021, 2022, 2023, 2024\n"
 "leyakid803: 2025\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369

@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
 "product=GnuCash&component=Translations\n"
-"POT-Creation-Date: 2025-09-21 12:28-0700\n"
+"POT-Creation-Date: 2025-09-22 11:57-0700\n"
 "PO-Revision-Date: 2024-05-31 22:09+0000\n"
 "Last-Translator: Kaligula <kaligula.dev@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gnucash/gnucash/"
@@ -7796,21 +7796,33 @@ msgstr "Wersja"
 msgid "Build ID"
 msgstr "ID kompilacji"
 
-#: gnucash/gnome-utils/gnc-main-window.cpp:5357
+#: gnucash/gnome-utils/gnc-main-window.cpp:5356
 msgid "Accounting for personal and small business finance."
 msgstr "Rachunkowość finansów osobistych i małych firm."
 
-#. Translators: the following string will be shown in Help->About->Credits
-#. Enter your name or that of your team and an email contact for feedback.
-#. The string can have multiple rows, so you can also add a list of
-#. contributors.
+#. Translators: the following string will be shown in
+#. * Help->About->Credits It's intended to be generated
+#. * automatically before each release so there's
+#. * usually no need to modify it, but if you do be
+#. * sure to include a newline (\\n) after each credit
+#. * so that it displays one per line.
+#.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-msgid "translator-credits"
+#, fuzzy
+#| msgid "translator-credits"
+msgid "translator-credits\n"
 msgstr ""
-"154pinkchairs: 2022\n Adithya K: 2021\n Henio Szewczyk: 2021\n"
-"Jacek Baszkiewicz: 2024\n Kaligula: 2022, 2023, 2024\n"
-"Maciej Błędkowski: 2021\n Rcvrvugyvgvb: 2024\n WaldiS: 2022\n"
-"gnu-ewm: 2022, 2023\n vim: 2023\n наб: 2024\n"
+"154pinkchairs: 2022\n"
+" Adithya K: 2021\n"
+" Henio Szewczyk: 2021\n"
+"Jacek Baszkiewicz: 2024\n"
+" Kaligula: 2022, 2023, 2024\n"
+"Maciej Błędkowski: 2021\n"
+" Rcvrvugyvgvb: 2024\n"
+" WaldiS: 2022\n"
+"gnu-ewm: 2022, 2023\n"
+" vim: 2023\n"
+" наб: 2024\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."
