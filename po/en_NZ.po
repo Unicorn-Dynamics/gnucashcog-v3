@@ -7729,15 +7729,11 @@ msgstr "Accounting for personal and small business finance."
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Adithya K: 2021\n"
-" Mike Evans: 2010, 2013\n"
-" Neil Williams: 2006\n"
-"Nigel Titley: 2002 - 2007\n"
-" Simon Arlott: 2022, 2023, 2024, 2024, 2025\n"
+"Adithya K: 2021.\n Mike Evans: 2010, 2013.\n Neil Williams: 2006.\n"
+"Nigel Titley: 2002 - 2007.\n"
+"Simon Arlott: 2022, 2023, 2024, 2024., 2025.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

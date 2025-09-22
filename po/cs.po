@@ -7848,14 +7848,10 @@ msgstr "Účetnictví pro osobní a malofiremní finance."
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Kryštof Černý: 2023\n"
-" Miloslav Trmac: 2002, 2003, 2004, 2007\n"
-"Petr Pisar: 2012\n"
-" Tomáš Václavík: 2022\n"
+"Kryštof Černý: 2023.\n Miloslav Trmac: 2002, 2003, 2004, 2007.\n"
+"Petr Pisar: 2012.\n Tomáš Václavík: 2022.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

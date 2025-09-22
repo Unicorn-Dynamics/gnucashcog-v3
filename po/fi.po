@@ -7359,17 +7359,11 @@ msgstr "Kirjanpito henkilökohtaiseen tai pienen yrityksen talouteen."
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Jiri Grönroos: 2021\n"
-" Jyri-Petteri Paloposki: 2021\n"
-"Marko Kohtala: 2020, 2023\n"
-" Ricky Tigg: 2025\n"
-" Sampo Harjula: 2022\n"
-"Tuomo Hartikainen: 2017\n"
-" Tuomo Kohvakka: 2008\n"
+"Jiri Grönroos: 2021.\n Jyri-Petteri Paloposki: 2021.\n"
+"Marko Kohtala: 2020, 2023.\n Ricky Tigg: 2025.\n Sampo Harjula: 2022.\n"
+"Tuomo Hartikainen: 2017.\n Tuomo Kohvakka: 2008.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

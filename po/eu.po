@@ -7978,12 +7978,10 @@ msgstr ""
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Enrique Ayesta Perojo: 2022\n"
-"Hizkuntza Politikarako Sailburuordetza: 2005\n"
+"Enrique Ayesta Perojo: 2022.\n"
+"Hizkuntza Politikarako Sailburuordetza: 2005.\n"
 "Mikel Olasagasti Uranga,: 2005\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369

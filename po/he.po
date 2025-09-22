@@ -7592,12 +7592,10 @@ msgstr "חשבונאות לאנשים פרטיים ועסקים קטנים."
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Avi Markovitz: 2020, 2021, 2022, 2023, 2024\n"
-"Yaron Shahrabani: 2020, 2021, 2022, 2023, 2024\n"
+"Avi Markovitz: 2020, 2021, 2022, 2023, 2024.\n"
+"Yaron Shahrabani: 2020, 2021, 2022, 2023, 2024.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

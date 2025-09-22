@@ -7958,10 +7958,9 @@ msgstr ""
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
-msgstr "Gnucash: 2\n"
+msgstr ""
+"Gnucash: 1.6\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

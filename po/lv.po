@@ -7821,12 +7821,9 @@ msgstr "— GnuCash personīgo un mazā biznesa finanšu pārvaldība"
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Valdis Vītoliņš, 2017\n"
-"Rihards Priedītis, 2010"
+"Rihards Priedītis: 2010\n Valdis Vītoliņš: 2017.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

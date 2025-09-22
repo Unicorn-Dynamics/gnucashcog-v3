@@ -7926,17 +7926,11 @@ msgstr "Contabilità delle finanze personali e per piccole imprese."
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Alessandro Seveso: 2000\n"
-" Cristian Marchi: 2008, 2009, 2010\n"
-"J. Lavoie: 2020\n"
-" Lorenzo Cappelletti: 2002 2003, 2003-2005\n"
-"Marco: 2023\n"
-" Nathan Hadley: 2024\n"
-" Simone Zinanni: 2008\n"
+"Alessandro Seveso: 2000\n Cristian Marchi: 2008, 2009, 2010\n"
+"J. Lavoie: 2020\n Lorenzo Cappelletti: 2002 2003, 2003-2005.\n"
+"Marco: 2023.\n Nathan Hadley: 2024.\n Simone Zinanni: 2008\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

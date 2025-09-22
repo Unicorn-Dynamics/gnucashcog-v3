@@ -7828,10 +7828,9 @@ msgstr "- GnuCash ज़ॊती तॊ सुमाल बिज़नस फ�
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
-msgstr "Neha Aphale: 2014\n"
+msgstr ""
+"Neha Aphale: 2014.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

@@ -7831,14 +7831,10 @@ msgstr "- GnuCash ذاتی اور چھوٹے کاروبار کے فائنانس 
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Abdul Quddos: 2022\n"
-" Adil Ishaq: 2024, 2024\n"
-" Atiur Rahman Khan: 2014\n"
-"Frank H. Ellenberger: 2021\n"
+"Abdul Quddos: 2022.\n Adil Ishaq: 2024., 2024.\n"
+"Atiur Rahman Khan: 2014.\n Frank H. Ellenberger: 2021.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

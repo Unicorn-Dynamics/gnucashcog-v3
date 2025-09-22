@@ -7903,16 +7903,12 @@ msgstr "Pénzügyi-számviteli program magánszemélyeknek és kisvállalkozáso
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Geza Kiss: 2023\n"
-" Kornel Tako: 2007\n"
-" Kárász Attila: 2022, 2023\n"
-"Szia Tomi: 2022, 2023, 2024, 2025\n"
-" mocsa: 2022, 2023, 2024, 2025\n"
-"ovari: 2022, 2023\n"
+"Geza Kiss: 2023.\n HOSSZÚ Péter: 2001-2003.\n Kornel Tako: 2007.\n"
+"Kárász Attila: 2022, 2023.\n SULYOK Péter: 2003-2006.\n"
+"Szia Tomi: 2022, 2023, 2024, 2025.\n mocsa: 2022, 2023, 2024, 2025.\n"
+"ovari: 2022, 2023.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

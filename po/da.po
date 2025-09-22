@@ -7863,17 +7863,12 @@ msgstr "Bogføring for personlige og små virksomheder."
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Allan Olsen: 2025\n"
-" Claus Hindsgaul: 2001\n"
-"Joe Hansen: 2009, 2010, 2012, 2013, 2014, 2015, 2016, 2018\n"
-"Johnny Ernst Nielsen: 2001\n"
-" Keld Simonsen: 2000-2002\n"
-"Kenneth Christiansen: 2000\n"
-" Ole Laursen: 2001\n"
+"Allan Olsen: 2025.\n Claus Hindsgaul: 2001.\n"
+"Joe Hansen: 2009, 2010, 2012, 2013, 2014, 2015, 2016, 2018.\n"
+"Johnny Ernst Nielsen: 2001.\n Keld Simonsen: 2000-2002.\n"
+"Kenneth Christiansen: 2000.\n Ole Laursen: 2001.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

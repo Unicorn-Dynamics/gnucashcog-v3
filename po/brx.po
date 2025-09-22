@@ -7808,12 +7808,9 @@ msgstr "- GnuCash निजि आरो फिसा फालांगि र�
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Adithya K: 2021\n"
-" Ritu Panwar: 2014\n"
+"Adithya K: 2021.\n Ritu Panwar: 2014.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

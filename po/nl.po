@@ -7828,23 +7828,14 @@ msgstr "Boekhoudsoftware voor thuis en voor kleine ondernemingen."
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Benno Schulenberg: 2007, 2010\n"
-" BlueRains: 2025\n"
-" Erwin Poeze: 2009\n"
-"Frank H. Ellenberger: 2022\n"
-" Geert Janssens: 2020, 2021, 2021\n"
-"Hendrik-Jan Heins: 2003\n"
-" Jan Willem Harmanny: 2002\n"
-"Jeroen ten Berge: 2004\n"
-" Leo Moons: 2025\n"
-" Mark Haanen: 2009-2017\n"
-"Rene Lambers: 2023\n"
-" Stephan Paternotte: 2023, 2024, 2025\n"
-"Tom van Braeckel: 2010\n"
+"Benno Schulenberg: 2007, 2010.\n BlueRains: 2025.\n Erwin Poeze: 2009.\n"
+"Frank H. Ellenberger: 2022.\n Geert Janssens: 2020, 2021., 2021.\n"
+"Hendrik-Jan Heins: 2003.\n Jan Willem Harmanny: 2002.\n"
+"Jeroen ten Berge: 2004.\n Leo Moons: 2025.\n Mark Haanen: 2009-2017.\n"
+"Rene Lambers: 2023.\n Stephan Paternotte: 2023, 2024, 2025.\n"
+"Tom van Braeckel: 2010.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

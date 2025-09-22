@@ -7823,14 +7823,10 @@ msgstr "حسابداری برای امور مالی شخصی و کسب و کار
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Hamidreza Jafari: 2018, 2019\n"
-" Hedayat Vatankhah: 2017\n"
-"Mehrdad Vosoughi: 2025\n"
-" Seyed Ali Akbar Najafia: 2012, 2013\n"
+"Hamidreza Jafari: 2018, 2019.\n Hedayat Vatankhah: 2017.\n"
+"Mehrdad Vosoughi: 2025.\n Seyed Ali Akbar Najafia: 2012, 2013.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

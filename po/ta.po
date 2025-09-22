@@ -7690,10 +7690,9 @@ msgstr "தனிப்பட்ட மற்றும் சிறு வணி
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
-msgstr "Shanmugam R.: 2014\n"
+msgstr ""
+"John Ralls: 2025.\n Shanmugam R.: 2014.\n தமிழ்நேரம்: 2024, 2025.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

@@ -7961,24 +7961,16 @@ msgstr "Contabilidad financiara personal y pequeños negocios."
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Adolfo Jayme Barrientos: 2021\n"
-" Carlos Manrique Enguita: 2021\n"
-"Cow: 2022\n"
-" Deleted User: 2025\n"
-" Eduardo Malaspina: 2022\n"
-"Eneko Lacunza: 2003, 2004, 2006, 2008\n"
-" Francisco: 2023\n"
-"Francisco Serrador: 2021, 2022, 2023, 2024, 2025\n"
-" Guille: 2021\n"
-"Guille Lopez: 2022, 2023, 2024, 2025\n"
-"Jaime Marquínez Ferrándiz: 2021, 2022, 2023, 2025\n"
-"Javier F. Serrador: 2018, 2021\n"
-" Luis D. Lafaurie: 2022\n"
-"gallegonovato: 2023, 2024\n"
+"Adolfo Jayme Barrientos: 2021.\n Carlos Manrique Enguita: 2021.\n"
+"Cow: 2022.\n Deleted User: 2025.\n Eduardo Malaspina: 2022.\n"
+"Eneko Lacunza: 2003, 2004, 2006, 2008.\n Francisco: 2023.\n"
+"Francisco Serrador: 2021, 2022, 2023, 2024, 2025.\n Guille: 2021.\n"
+"Guille Lopez: 2022, 2023, 2024, 2025.\n"
+"Jaime Marquínez Ferrándiz: 2021, 2022., 2023, 2025.\n"
+"Javier F. Serrador: 2018, 2021.\n Juan Manuel García Molina: 2000.\n"
+"Luis D. Lafaurie: 2022.\n Raúl Miró: 2001.\n gallegonovato: 2023, 2024.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

@@ -7810,27 +7810,14 @@ msgstr "Управление финансами для частных лиц и 
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Artem: 2021\n"
-" Dmitriy Mangul: 2017, 2018\n"
-" Dmitry Pavlov: 2014\n"
-"Nikita Samoilov: 2022\n"
-" Sergey Belyashov: 2009, 2011\n"
-" Val Saven: 2021\n"
-"Valek Filippov: 2000\n"
-" Vik: 2022\n"
-" Vin: 2023\n"
-"Vitaly Lipatov: 2002, 2003, 2004\n"
-" Vladimir Turbaevsky: 2006\n"
-"Xangel2Net: 2023\n"
-" ashed: 2017\n"
-" gfbdrgng: 2024, 2025\n"
-" hades: 2023\n"
-"hitmman: 2024\n"
-" МАН69К: 2022\n"
+"Artem: 2021.\n Dmitriy Mangul: 2017, 2018\n Dmitry Pavlov: 2014.\n"
+"Nikita Samoilov: 2022.\n Sergey Belyashov: 2009, 2011.\n"
+"Val Saven: 2021.\n Valek Filippov: 2000.\n Vik: 2022.\n Vin: 2023.\n"
+"Vitaly Lipatov: 2002, 2003, 2004.\n Vladimir Turbaevsky: 2006.\n"
+"Xangel2Net: 2023.\n ashed: 2017\n gfbdrgng: 2024, 2025.\n hades: 2023.\n"
+"hitmman: 2024.\n МАН69К: 2022.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

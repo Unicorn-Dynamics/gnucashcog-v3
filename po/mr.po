@@ -7771,13 +7771,9 @@ msgstr "- GnuCash वैयक्तिक व लहान व्यवसा�
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Chandrakant Dhutadmal: 2014\n"
-" Hemant More: 2022\n"
-" Rahul Shirke: 2023\n"
+"Chandrakant Dhutadmal: 2014.\n Hemant More: 2022.\n Rahul Shirke: 2023.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

@@ -7853,13 +7853,9 @@ msgstr ""
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
-"\n"
-"http://prevod.org — превод на српски језик."
+"Мирослав Николић: 2015—2017.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

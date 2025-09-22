@@ -7785,18 +7785,11 @@ msgstr "Program akuntansi untuk mengelola keuangan personal dan usaha kecil."
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Andika Triwidada: 2023\n"
-" Azhar Pusparadhian: 2022\n"
-"Ferdinand Tampubolon: 2021\n"
-" Reza Almanda: 2021\n"
-" Sarekashi: 2022\n"
-"Sucipto: 2023\n"
-" Syahmin Sukhairi: 2021\n"
-" Triyan W. Nugroho: 2020\n"
+"Andika Triwidada: 2023.\n Azhar Pusparadhian: 2022.\n"
+"Ferdinand Tampubolon: 2021.\n Reza Almanda: 2021.\n Sarekashi: 2022.\n"
+"Sucipto: 2023.\n Syahmin Sukhairi: 2021.\n Triyan W. Nugroho: 2020.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

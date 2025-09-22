@@ -7507,12 +7507,9 @@ msgstr ""
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Vasif İsmayıloğlu MD, 2001\n"
-"Language-Team: Azerbaijani <linuxaz@azerimail.net>"
+"Vasif İsmayıloğlu MD: 2001.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."

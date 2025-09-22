@@ -1,12 +1,13 @@
 use strict;
 use warnings;
 use utf8;
+use open ':std', ':encoding(UTF-8)';
 use Data::Dumper;
 
 my $start = 0;
 my $credits = 0;
-my $extract_re = qr{^# ([-[:alpha:]\d_., ]+)(?: [(<].*[)>])*,? ([-\d, ]+).?$};
-my $credits_re = qr(^msgid "translator-credits"$);
+my $extract_re = qr{^# ([-—\w., ]+)(?: [(<].*[)>])*,? ([-—\d., ]+).?$};
+my $credits_re = qr(^msgid "translator-credits\\n"$);
 my %translators = ();
 my $infile = shift;
 my $outfile = $infile . ".new";
@@ -20,7 +21,6 @@ while (<$INFILE>) {
 
     if ($start == 1) {
         my $input = $_;
-        utf8::decode($input);
         $input =~ $extract_re;
         unless ($1) {
             print $OUTFILE $_;
@@ -28,7 +28,6 @@ while (<$INFILE>) {
             next;
         }
         my $name = $1;
-        utf8::encode($name);
         if (exists ($translators{$name})) {
             push @{$translators{$name}}, split(", ", $2);
         } else {

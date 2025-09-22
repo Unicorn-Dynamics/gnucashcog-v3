@@ -7752,16 +7752,13 @@ msgstr "Bokföring för privat bruk och småföretag."
 #. * so that it displays one per line.
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
-#, fuzzy
-#| msgid "translator-credits"
 msgid "translator-credits\n"
 msgstr ""
-"Arve Eriksson: 2021, 2022, 2023, 2024, 2025\n"
-" Christian Rose: 2001, 2002\n"
-"Erik Johansson: 2014, 2016\n"
-" Jonas Norling: 2004, 2006\n"
-"Luna Jernberg: 2022, 2023\n"
-" bittin1ddc447d824349b2: 2023, 2024\n"
+"Arve Eriksson: 2021, 2022, 2023, 2024, 2025.\n"
+"Christian Rose: 2001, 2002.\n Dennis Björklund: 2000.\n"
+"Erik Johansson: 2014, 2016.\n Jonas Norling: 2004, 2006.\n"
+"Luna Jernberg: 2022, 2023.\n Martin Norbäck: 2001.\n"
+"bittin1ddc447d824349b2: 2023, 2024.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."
