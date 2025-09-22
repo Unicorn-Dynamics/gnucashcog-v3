@@ -54,7 +54,7 @@
   (let* ((account-alist (create-test-data))
          (options (gnc:make-report-options uuid))
          (gbp-bank (assoc-ref account-alist "GBP Bank"))
-6         (usd-bank (assoc-ref account-alist "Bank"))
+         (usd-bank (assoc-ref account-alist "Bank"))
          (expense (assoc-ref account-alist "Expenses"))
          (equity (assoc-ref account-alist "Equity"))
          (income (assoc-ref account-alist "Income"))

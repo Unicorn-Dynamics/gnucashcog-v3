@@ -625,7 +625,8 @@ if (MINGW)
 endif()
 
 if (APPLE)
-  execute_process(COMMAND clang --print-file-name=libclang_rt.asan_osx_dynamic.dylib
+  set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-gnu-folding-constant")
+   execute_process(COMMAND clang --print-file-name=libclang_rt.asan_osx_dynamic.dylib
     OUTPUT_VARIABLE ASAN_DYNAMIC_LIB
     OUTPUT_STRIP_TRAILING_WHITESPACE)
   set(ASAN_DYNAMIC_LIB_ENV "DYLD_INSERT_LIBRARIES=${ASAN_DYNAMIC_LIB}")
