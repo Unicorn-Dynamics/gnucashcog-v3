@@ -8,10 +8,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-21 12:28-0700\n"
-"PO-Revision-Date: 2025-06-23 04:03+0000\n"
+"PO-Revision-Date: 2025-09-22 07:03+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/pt/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 
 #: bindings/guile/date-utilities.scm:173
@@ -5366,15 +5366,13 @@ msgid "The file %s already exists. Are you sure you want to overwrite it?"
 msgstr "O ficheiro %s já existe. Deseja realmente sobrescrevê-lo?"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1728
-#, fuzzy
-#| msgid "Overview"
 msgid "_Overwrite"
-msgstr "Visão geral"
+msgstr "S_obrescrever"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1728
 #, c-format
 msgid "This will update and overwrite the existing saved report named \"%s\"."
-msgstr ""
+msgstr "Isto actualiza e sobrescreve o relatório \"%s\" gravado."
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1793
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1819
@@ -7753,8 +7751,7 @@ msgstr "Contabilidade de finanças pessoais e micro empresas."
 #. contributors.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits"
-msgstr ""
-"Copyright: 2020\n"
+msgstr "Pedro Albuquerque <pmra@protonmail.com> 2025"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."
@@ -26597,10 +26594,8 @@ msgid "Display the transaction type?"
 msgstr "Mostrar o tipo da transacção?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:907
-#, fuzzy
-#| msgid "Display the action?"
 msgid "Display the associated job?"
-msgstr "Mostrar a acção?"
+msgstr "Mostrar a tarefa associada?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:911
 msgid "Display the transaction description?"
@@ -28379,10 +28374,8 @@ msgid "Display the trans number?"
 msgstr "Mostrar o nº de transacção?"
 
 #: gnucash/report/trep-engine.scm:950
-#, fuzzy
-#| msgid "Display the invoice notes?"
 msgid "Display invoice details"
-msgstr "Mostrar as notas da factura?"
+msgstr "Mostrar detalhes da factura"
 
 #: gnucash/report/trep-engine.scm:955
 msgid "Display the account name?"
@@ -30996,7 +30989,7 @@ msgstr "Stooq, PL"
 #: libgnucash/engine/gnc-commodity.cpp:223
 msgctxt "FQ Source"
 msgid "Swiss Fund Data AG, CH"
-msgstr ""
+msgstr "Swiss Fund Data AG, CH"
 
 #: libgnucash/engine/gnc-commodity.cpp:224
 msgctxt "FQ Source"
