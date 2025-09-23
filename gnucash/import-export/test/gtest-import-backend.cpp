@@ -324,3 +324,13 @@ TEST_F(ImportBackendBayesTest, CreateTransInfo)
     // delete transaction info
     gnc_import_TransInfo_delete(trans_info);
 };
+
+TEST_F(ImportBackendBayesTest, gen_probability_pixbuf_test)
+{
+    auto settings = gnc_import_Settings_new();
+    GObject parent;
+    auto pixbuf = gen_probability_pixbuf(8, settings, (GtkWidget*)&parent);
+    EXPECT_NE(pixbuf, nullptr);
+    g_object_unref(pixbuf);
+    g_free(settings);
+}

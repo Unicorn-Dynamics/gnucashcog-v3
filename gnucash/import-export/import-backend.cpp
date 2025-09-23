@@ -362,7 +362,8 @@ GdkPixbuf* gen_probability_pixbuf(gint score_original, GNCImportSettings *settin
     constexpr gint width_each_bar = 7;
     constexpr gint width_first_bar = 1;
     constexpr gint num_colors = 5;
-    gchar * xpm[2 + num_colors + height];
+    constexpr size_t xpm_size = 2 + num_colors + height;
+    gchar * xpm[xpm_size];
 
     g_assert(settings);
     g_assert(widget);
@@ -398,10 +399,26 @@ GdkPixbuf* gen_probability_pixbuf(gint score_original, GNCImportSettings *settin
                 strcat(xpm[num_colors+1+i], "byyyyb ");
         }
     }
+    GError *err = nullptr;
+    std::string xpm_str = "/* XPM */\nstatic char * XFACE[] = {\n";
 
-    auto retval = gdk_pixbuf_new_from_xpm_data((const gchar **)xpm);
-    for (int i = 0; i <= num_colors + height; i++)
+    for (int i = 0; i < xpm_size - 1; i++)
+    {
+       xpm_str += "\"";
+        xpm_str += xpm[i];
+        xpm_str += "\",\n";
         g_free(xpm[i]);
+    }
+    xpm_str += "};";
+
+    auto gstream = g_memory_input_stream_new_from_data(xpm_str.c_str(), -1,
+                                                       nullptr);
+    auto retval =
+        gdk_pixbuf_new_from_stream(G_INPUT_STREAM(gstream), nullptr, &err);
+    g_object_unref(gstream);
+
+    if (!retval && err)
+        PERR("Failed to create pixbuf from XPM data: %s", err->message);
 
     return retval;
 }
