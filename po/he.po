@@ -3,15 +3,15 @@
 # Copyright (C) 2008 - 2020 by the respective translator
 # Avi Markovitz <avi.markovitz@gmail.com, 2019 - 2020
 # Ori Hoch <ori@uumpa.com>, 2008 http://www.uumpa.com/gnucash-he/
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2020, 2021, 2022, 2023, 2024.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2020, 2021, 2022, 2023, 2024, 2025.
 # Avi Markovitz <avi.markovitz@gmail.com>, 2020, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
-"POT-Creation-Date: 2025-09-22 11:57-0700\n"
-"PO-Revision-Date: 2024-12-17 15:00+0000\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
+"POT-Creation-Date: 2025-09-21 12:28-0700\n"
+"PO-Revision-Date: 2025-09-22 21:02+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "he/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.9.2-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Poedit-Basepath: .\n"
 
 #: bindings/guile/date-utilities.scm:173
@@ -5265,10 +5265,8 @@ msgid "The file %s already exists. Are you sure you want to overwrite it?"
 msgstr "הקובץ %s כבר קיים. האם לדרוס אותו?"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1728
-#, fuzzy
-#| msgid "Overview"
 msgid "_Overwrite"
-msgstr "סקירה"
+msgstr "_שכתוב"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1728
 #, c-format
@@ -26024,10 +26022,8 @@ msgid "Display the transaction type?"
 msgstr "הצגת סוג תנועה?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:907
-#, fuzzy
-#| msgid "Display the action?"
 msgid "Display the associated job?"
-msgstr "הצגת פעולה?"
+msgstr "להציג את המשימה המשויכת?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:911
 msgid "Display the transaction description?"
