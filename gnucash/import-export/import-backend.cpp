@@ -46,6 +46,7 @@
 #include "gnc-ui-util.h"
 
 #include <algorithm>
+#include <string>
 
 #define GNCIMPORT_DESC    "desc"
 #define GNCIMPORT_MEMO    "memo"
@@ -402,7 +403,7 @@ GdkPixbuf* gen_probability_pixbuf(gint score_original, GNCImportSettings *settin
     GError *err = nullptr;
     std::string xpm_str = "/* XPM */\nstatic char * XFACE[] = {\n";
 
-    for (int i = 0; i < xpm_size - 1; i++)
+    for (auto i = 0UL; i < xpm_size - 1; i++)
     {
        xpm_str += "\"";
         xpm_str += xpm[i];
