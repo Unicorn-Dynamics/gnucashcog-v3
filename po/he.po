@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-21 12:28-0700\n"
-"PO-Revision-Date: 2025-09-22 21:02+0000\n"
+"PO-Revision-Date: 2025-09-24 13:02+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "he/>\n"
@@ -15342,10 +15342,8 @@ msgid "Do _nothing"
 msgstr ""
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2599
-#, fuzzy
-#| msgid "Do not show"
 msgid "Do nothing."
-msgstr "לא להציג"
+msgstr "לא לעשות כלום."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2612
 msgid "Go to the first split with the _largest value"
@@ -27754,22 +27752,19 @@ msgid "Display the trans number?"
 msgstr "הצגת סימוכין העברה?"
 
 #: gnucash/report/trep-engine.scm:950
-#, fuzzy
-#| msgid "Display the invoice notes?"
 msgid "Display invoice details"
-msgstr "הצגת הערות חשבונית?"
+msgstr "הצגת פרטי חשבונית"
 
 #: gnucash/report/trep-engine.scm:955
 msgid "Display the account name?"
-msgstr "הצגת שם החשבון?"
+msgstr "להציג את שם החשבון?"
 
 #: gnucash/report/trep-engine.scm:963
-#, fuzzy
 msgid ""
 "Display the other account name? If this is a split transaction, this "
 "parameter is guessed."
 msgstr ""
-"הצגת שם החשבון הנגדי? (אם זוהי תנועה המכילה פיצולים, יתבצע ניחוש מאפיין)."
+"להציג את שם החשבון הנגדי? (אם זוהי תנועה המכילה פיצולים, יתבצע ניחוש מאפיין)."
 
 #: gnucash/report/trep-engine.scm:970
 msgid "Amount of detail to display per transaction."
