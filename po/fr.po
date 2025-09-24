@@ -44,10 +44,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-22 11:57-0700\n"
-"PO-Revision-Date: 2025-07-13 17:01+0000\n"
+"PO-Revision-Date: 2025-09-23 20:02+0000\n"
 "Last-Translator: Frédéric Mergey <fmergey@yahoo.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "fr/>\n"
@@ -56,7 +56,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: bindings/guile/date-utilities.scm:173
 #: gnucash/report/reports/example/daily-reports.scm:260
@@ -31363,28 +31363,26 @@ msgstr "Afficher le numéro de la transaction ?"
 
 # messages-i18n.c:96
 #: gnucash/report/trep-engine.scm:950
-#, fuzzy
-#| msgid "Display the invoice notes?"
 msgid "Display invoice details"
-msgstr "Afficher les notes de la facture ?"
+msgstr "Afficher les détails de la facture"
 
 # messages-i18n.c:96
 #: gnucash/report/trep-engine.scm:955
 msgid "Display the account name?"
-msgstr "Afficher le nom du compte ?"
+msgstr "Afficher le nom du compte ?"
 
 #: gnucash/report/trep-engine.scm:963
 msgid ""
 "Display the other account name? If this is a split transaction, this "
 "parameter is guessed."
 msgstr ""
-"Afficher le nom de l'autre compte ? Si c'est une transaction répartie, ce "
+"Afficher le nom de l'autre compte ? Si c'est une transaction répartie, ce "
 "paramètre est deviné."
 
 # messages-i18n.c:95
 #: gnucash/report/trep-engine.scm:970
 msgid "Amount of detail to display per transaction."
-msgstr "Les détails du compte à afficher par transaction."
+msgstr "Niveau de détail à afficher par transaction."
 
 #: gnucash/report/trep-engine.scm:972
 msgid "One split per line"
@@ -31406,11 +31404,11 @@ msgstr "Activer les liens hypertextes pour les montants."
 # po/guile_strings.txt:98
 #: gnucash/report/trep-engine.scm:996
 msgid "Reverse amount display for certain account types."
-msgstr "Inverser l'affichage des montants pour certains types de compte."
+msgstr "Affichage inversé du montant pour certains types de comptes."
 
 #: gnucash/report/trep-engine.scm:1002
 msgid "Display running totals as per report sort order?"
-msgstr "Afficher les totaux cumulés en fonction de l'ordre de tri du rapport ?"
+msgstr "Afficher les totaux cumulés selon l'ordre de tri du rapport ?"
 
 # messages-i18n.c:312
 #: gnucash/report/trep-engine.scm:1005
@@ -31522,7 +31520,7 @@ msgstr "_Copier"
 #: gnucash/ui/gnc-embedded-register-window.ui:18
 #: gnucash/ui/gnc-main-window.ui:111
 msgid "Copy the current selection to clipboard"
-msgstr "Copie la selection courante dans le presse-papiers"
+msgstr "Copier la sélection actuelle dans le presse-papiers"
 
 # messages-i18n.c:267 po/guile_strings.txt:6
 #: gnucash/ui/gnc-embedded-register-window.ui:21
