@@ -3,14 +3,15 @@
 # Chandrakant Dhutadmal <cpdhutadmal@yahoo.com>, 2014.
 # Hemant More <hemantrmore@tutanota.com>, 2022.
 # Rahul Shirke <sabretou@gmail.com>, 2023.
+# Hemant More <foil-pastor-omen@duck.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-22 11:57-0700\n"
-"PO-Revision-Date: 2023-06-01 04:46+0000\n"
-"Last-Translator: Rahul Shirke <sabretou@gmail.com>\n"
+"PO-Revision-Date: 2025-09-23 17:01+0000\n"
+"Last-Translator: Hemant More <foil-pastor-omen@duck.com>\n"
 "Language-Team: Marathi <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "mr/>\n"
 "Language: mr\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: bindings/guile/date-utilities.scm:173
 #: gnucash/report/reports/example/daily-reports.scm:260
@@ -34,7 +35,7 @@ msgstr ""
 #: gnucash/report/reports/standard/price-scatter.scm:186
 #, scheme-format
 msgid "~a to ~a"
-msgstr ""
+msgstr "~a ते ~a"
 
 #: bindings/guile/date-utilities.scm:519
 #, scheme-format
@@ -52,7 +53,7 @@ msgstr "या वर्षाची सुरूवात"
 #: bindings/guile/date-utilities.scm:718
 #: libgnucash/engine/gnc-option-date.cpp:265
 msgid "First day of the current calendar year."
-msgstr "सध्याच्या दैनंदिनी वर्षाचा पहिला दिवस."
+msgstr "चालू दिनदर्शिका वर्षाचा पहिला दिवस."
 
 #: bindings/guile/date-utilities.scm:722
 #: gnucash/gnome-utils/gnc-period-select.c:86
