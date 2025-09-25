@@ -219,7 +219,7 @@ if (BUILDING_FROM_VCS)
   target_compile_definitions(gnc-gnome-utils PRIVATE -DGNC_VCS=\"git\")
 endif()
 
-if (MAC_INTEGRATION)
+if (APPLE)
   target_compile_options(gnc-gnome-utils PRIVATE ${OSX_EXTRA_COMPILE_FLAGS})
   target_link_libraries(gnc-gnome-utils ${OSX_EXTRA_LIBRARIES})
 endif()
