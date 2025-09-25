@@ -216,6 +216,13 @@ if (WIN32)
   find_library(WS2_LIB ws2_32)
 endif()
 
+if (APPLE)
+  # Prefer libraries in the PREFIX over Apple-provided frameworks:
+  if (NOT DEFINED CMAKE_FIND_FRAMEWORK)
+    set(CMAKE_FIND_FRAMEWORK LAST)
+  endif()
+endif()
+
 find_package(Threads REQUIRED)
 find_package(PkgConfig REQUIRED)
 
@@ -528,6 +535,14 @@ if (WITH_PYTHON)
   set (PYTHON_MIN_VERSION 3.8.0)
   if (NOT DEFINED Python3_FIND_UNVERSIONED_NAMES)
     set (Python3_FIND_UNVERSIONED_NAMES FIRST)
+  endif()
+  if (NOT DEFINED Python3_FIND_VIRTUALENV)
+    # Don't prefer virtualenv python3: Prefer the one that's first on $PATH
+    set(Python3_FIND_VIRTUALENV STANDARD)
+  endif()
+  if (APPLE)
+    # The macOS SDK-provided Python framework lacks SQLite3 support
+    set(Python3_FIND_FRAMEWORK NEVER)
   endif()
   find_package (Python3 ${PYTHON_MIN_VERSION} COMPONENTS Interpreter Development)
   if (NOT Python3_FOUND)
