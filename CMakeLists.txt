@@ -21,7 +21,7 @@ if (POLICY CMP0177)
 endif()
 
 project (gnucash
-    VERSION 5.12
+    VERSION 5.13
 )
 
 enable_testing()
@@ -754,6 +754,7 @@ set(gnucash_DOCS
     ChangeLog.2021
     ChangeLog.2022
     ChangeLog.2023
+    ChangeLog.2024
     DOCUMENTERS
     HACKING
     LICENSE
@@ -911,7 +912,7 @@ add_subdirectory(cmake)
 
 if (BUILDING_FROM_VCS)
     add_custom_target(ChangeLog ALL
-        COMMAND ${GIT_EXECUTABLE} log --format=\"%ad %aN %n%n%x09* %s%d%n\" --date=short --since=2023-01-01 > ${CMAKE_BINARY_DIR}/ChangeLog
+        COMMAND ${GIT_EXECUTABLE} log --format=\"%ad %aN %n%n%x09* %s%d%n\" --date=short --since=2025-01-01 > ${CMAKE_BINARY_DIR}/ChangeLog
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
     install(FILES ${CMAKE_BINARY_DIR}/ChangeLog DESTINATION ${CMAKE_INSTALL_DOCDIR})
