@@ -61,6 +61,7 @@
 (export gnc:html-chart-set-axes-display!)
 (export gnc:html-chart-set-custom-y-axis-ticks?!)
 (export gnc:html-chart-clear-data-series!)
+(export gnc:html-chart-set-x-axis-type!)
 (export gnc:html-chart-set-x-axis-label!)
 (export gnc:html-chart-set-stacking?!)
 (export gnc:html-chart-set-grid?!)
@@ -286,6 +287,9 @@
   (gnc:html-chart-set! chart '(options scales xAxes (0) display) display?)
   (gnc:html-chart-set! chart '(options scales yAxes (0) display) display?))
 
+(define (gnc:html-chart-set-x-axis-type! chart type)
+  (gnc:html-chart-set! chart '(options scales xAxes (0) type) type))
+
 ;; e.g.:
 ;; (gnc:html-chart-add-data-series! chart "label" list-of-numbers color
 ;;  'fill #t
@@ -456,7 +460,7 @@ document.getElementById(chartid).onclick = function(evt) {
          ;; clashing on multi-column reports
          (id (symbol->string (gensym "chart"))))
 
-    (push (gnc:html-js-include "chartjs/Chart.bundle.min.js"))
+    (push (gnc:html-js-include "chartjs-2/Chart.bundle.min.js"))
 
     ;; the following hidden h3 is used to query style and copy onto chartjs
     (push "<h3 style='display:none'></h3>")

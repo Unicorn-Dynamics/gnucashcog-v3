@@ -361,6 +361,9 @@ also show overall period profit & loss."))
                              (gnc:make-html-table-cell/size
                               1 (if disable-account-indent? 1 (- maxindent indent))
                               label)))
+           ;; ensure the account name cell doesn't wrap
+           (_ (gnc:html-table-cell-set-style! account-cell "text-cell"
+                                              'attribute '("style" "white-space:nowrap;")))
            (row (append
                  (if disable-account-indent?
                      '()
@@ -776,7 +779,8 @@ also show overall period profit & loss."))
          ;; missing price, say so.
          (get-exchange-rates-fn
           (lambda (accounts col-idx)
-            (let ((commodities (gnc:accounts-get-commodities accounts common-currency))
+            (let ((commodities (gnc:accounts-get-commodities-sorted
+                                accounts common-currency))
                   (cell (gnc:make-html-text)))
               (for-each
                (lambda (commodity)

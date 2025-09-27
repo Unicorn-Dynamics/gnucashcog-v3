@@ -770,6 +770,8 @@ gnc_plugin_page_account_tree_destroy_widget (GncPluginPage *plugin_page)
 // Save account filter state information to account section
     gnc_tree_view_account_save_filter (GNC_TREE_VIEW_ACCOUNT(priv->tree_view), &priv->fd,
        gnc_state_get_current(), gnc_tree_view_get_state_section (GNC_TREE_VIEW(priv->tree_view)));
+    g_object_unref(G_OBJECT(priv->tree_view));
+    priv->tree_view = NULL;
 
     // Destroy the filter override hash table
     g_hash_table_destroy(priv->fd.filter_override);
@@ -780,10 +782,10 @@ gnc_plugin_page_account_tree_destroy_widget (GncPluginPage *plugin_page)
     // Remove the page focus idle function if present
     g_idle_remove_by_data (plugin_page);
 
-    if (priv->widget)
+    if (priv->tree_view)
     {
-        g_object_unref(G_OBJECT(priv->widget));
-        priv->widget = NULL;
+        gtk_widget_destroy(GTK_WIDGET(priv->tree_view));
+        priv->tree_view = NULL;
     }
 
     if (priv->component_id)

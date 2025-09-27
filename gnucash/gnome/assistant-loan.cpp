@@ -2393,7 +2393,7 @@ std::string to_str_with_prec (const gdouble val)
 #endif
 }
 
-static constexpr std::tuple<double, double>
+static std::tuple<double, double>
 periods_per_year( LoanAssistantData *ldd)
 {
     double ppy = 0.0, periods = 1.0;

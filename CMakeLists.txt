@@ -14,6 +14,11 @@ endif()
 if (POLICY CMP0167)
   cmake_policy(SET CMP0167 OLD)
 endif()
+# CMake 3.31+ Use normalization rules on install DESTINATION
+# command. We shouldn't be impacted so allow the new behavior.
+if (POLICY CMP0177)
+  cmake_policy(SET CMP0177 NEW)
+endif()
 
 project (gnucash
     VERSION 5.12
@@ -204,8 +209,18 @@ if (WIN32)
   set(REGEX_LDFLAGS "-L${REGEX_LIB_PATH} -lregex")
   #set(LIBXSLT_INCLUDE_DIR ${CMAKE_PREFIX_PATH}/libxslt/include)
   #set(LIBXSLT_XSLTPROC_EXECUTABLE ${CMAKE_PREFIX_PATH}/libxslt/bin/xsltproc)
-#Prevent creating a console window on startup and harden the executable.
+  #Prevent creating a console window on startup and harden the executable.
   set(CMAKE_EXE_LINKER_FLAGS "-mwindows -Wl,--nxcompat -Wl,--dynamicbase")
+  #Find the winsock2 library
+  find_library(WINSOCK_LIB wsock32)
+  find_library(WS2_LIB ws2_32)
+endif()
+
+if (APPLE)
+  # Prefer libraries in the PREFIX over Apple-provided frameworks:
+  if (NOT DEFINED CMAKE_FIND_FRAMEWORK)
+    set(CMAKE_FIND_FRAMEWORK LAST)
+  endif()
 endif()
 
 find_package(Threads REQUIRED)
@@ -521,6 +536,14 @@ if (WITH_PYTHON)
   if (NOT DEFINED Python3_FIND_UNVERSIONED_NAMES)
     set (Python3_FIND_UNVERSIONED_NAMES FIRST)
   endif()
+  if (NOT DEFINED Python3_FIND_VIRTUALENV)
+    # Don't prefer virtualenv python3: Prefer the one that's first on $PATH
+    set(Python3_FIND_VIRTUALENV STANDARD)
+  endif()
+  if (APPLE)
+    # The macOS SDK-provided Python framework lacks SQLite3 support
+    set(Python3_FIND_FRAMEWORK NEVER)
+  endif()
   find_package (Python3 ${PYTHON_MIN_VERSION} COMPONENTS Interpreter Development)
   if (NOT Python3_FOUND)
     message(SEND_ERROR "Python support enabled, but Python3 interpreter and/or libaries not found.")
@@ -617,7 +640,8 @@ if (MINGW)
 endif()
 
 if (APPLE)
-  execute_process(COMMAND clang --print-file-name=libclang_rt.asan_osx_dynamic.dylib
+  set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-gnu-folding-constant")
+   execute_process(COMMAND clang --print-file-name=libclang_rt.asan_osx_dynamic.dylib
     OUTPUT_VARIABLE ASAN_DYNAMIC_LIB
     OUTPUT_STRIP_TRAILING_WHITESPACE)
   set(ASAN_DYNAMIC_LIB_ENV "DYLD_INSERT_LIBRARIES=${ASAN_DYNAMIC_LIB}")

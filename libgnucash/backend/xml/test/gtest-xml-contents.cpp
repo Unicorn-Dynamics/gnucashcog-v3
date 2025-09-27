@@ -30,6 +30,7 @@
 #include <gnc-prefs.h>
 #include <Account.hpp>
 #include <gnc-datetime.hpp>
+#include <gnc-uri-utils.h>
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wcpp"
@@ -62,8 +63,11 @@ static QofBook*
 session_load (QofSession* session, const char* filename)
 {
     if (!session || !filename) return nullptr;
+    auto url = gnc_uri_normalize_uri (filename, FALSE);
 
-    qof_session_begin (session, filename, SESSION_READ_ONLY);
+    qof_session_begin (session, url, SESSION_READ_ONLY);
+    g_free (url);
+
     if (qof_session_get_error(session) != 0)
     {
         std::cerr << "Session begin failed: " << qof_session_get_error_message(session);
@@ -96,7 +100,7 @@ TEST_F(LoadFile, LoadAndVerifyKVP)
 
     // THE FOLLOWING TESTS BANK ACCOUNT
     const auto& bank_splitlist = xaccAccountGetSplits (bank_acct);
-    ASSERT_EQ (bank_splitlist.size(), static_cast<uint>(4));
+    ASSERT_EQ (bank_splitlist.size(), static_cast<uint32_t>(4));
 
     // first split is from a regular transaction
     auto bank_reg_split{bank_splitlist[0]};
@@ -107,6 +111,10 @@ TEST_F(LoadFile, LoadAndVerifyKVP)
     EXPECT_STREQ (xaccTransGetDocLink (bank_reg_txn), "https://www.gnucash.org/");
     EXPECT_TRUE (gnc_numeric_equal (xaccSplitGetAmount (bank_reg_split), gnc_numeric_create (200, 1)));
     EXPECT_TRUE (gnc_numeric_equal (xaccSplitGetValue (bank_reg_split), gnc_numeric_create (200, 1)));
+    auto gdate = xaccTransGetDatePostedGDate (bank_reg_txn);
+    EXPECT_EQ (g_date_get_day (&gdate), static_cast<unsigned>(1));
+    EXPECT_EQ (g_date_get_month (&gdate), static_cast<unsigned>(1));
+    EXPECT_EQ (g_date_get_year (&gdate), static_cast<unsigned>(2025));
     EXPECT_EQ (GncDateTime(xaccTransGetDate(bank_reg_txn)).format_iso8601(), "2025-01-01 10:59:00");
     EXPECT_EQ (xaccTransGetTxnType (bank_reg_txn), TXN_TYPE_NONE);
     EXPECT_FALSE (xaccTransGetIsClosingTxn (bank_reg_txn));
@@ -120,6 +128,10 @@ TEST_F(LoadFile, LoadAndVerifyKVP)
     EXPECT_STREQ (xaccTransGetNum (bank_pmt_txn), "pmt-num");
     EXPECT_STREQ (xaccTransGetDocLink (bank_pmt_txn), nullptr);
     EXPECT_EQ (GncDateTime(xaccTransGetDate(bank_pmt_txn)).format_iso8601(), "2025-02-12 10:59:00");
+    gdate = xaccTransGetDatePostedGDate (bank_pmt_txn);
+    EXPECT_EQ (g_date_get_day (&gdate), static_cast<unsigned>(12));
+    EXPECT_EQ (g_date_get_month (&gdate), static_cast<unsigned>(2));
+    EXPECT_EQ (g_date_get_year (&gdate), static_cast<unsigned>(2025));
     EXPECT_EQ (xaccTransGetTxnType (bank_pmt_txn), TXN_TYPE_PAYMENT);
     EXPECT_TRUE (gnc_numeric_equal (xaccSplitGetAmount (bank_pmt_split), gnc_numeric_create (194, 100)));
     EXPECT_TRUE (gnc_numeric_equal (xaccSplitGetValue (bank_pmt_split), gnc_numeric_create (194, 100)));
@@ -160,7 +172,7 @@ TEST_F(LoadFile, LoadAndVerifyKVP)
     ASSERT_TRUE (AR_acct != nullptr);
 
     const auto& AR_splitlist{xaccAccountGetSplits (AR_acct)};
-    ASSERT_EQ (AR_splitlist.size(), static_cast<uint>(3));
+    ASSERT_EQ (AR_splitlist.size(), static_cast<uint32_t>(3));
 
     // 1st split is invoice posting txn
     auto inv_post_txn{xaccSplitGetParent(AR_splitlist[0])};
@@ -187,7 +199,7 @@ TEST_F(LoadFile, LoadAndVerifyKVP)
     ASSERT_TRUE (close_acct != nullptr);
 
     const auto& close_splitlist{xaccAccountGetSplits (close_acct)};
-    ASSERT_EQ (close_splitlist.size(), static_cast<uint>(1));
+    ASSERT_EQ (close_splitlist.size(), static_cast<uint32_t>(1));
 
     // 3rd split is a closing txn
     auto closing_txn{xaccSplitGetParent(close_splitlist[0])};
