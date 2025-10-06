@@ -767,11 +767,9 @@ gnc_plugin_page_account_tree_destroy_widget (GncPluginPage *plugin_page)
     gnc_prefs_remove_cb_by_func(GNC_PREFS_GROUP_ACCT_SUMMARY, GNC_PREF_END_PERIOD,
                                 (gpointer)accounting_period_changed_cb, page);
 
-// Save account filter state information to account section
+    // Save account filter state information to account section
     gnc_tree_view_account_save_filter (GNC_TREE_VIEW_ACCOUNT(priv->tree_view), &priv->fd,
        gnc_state_get_current(), gnc_tree_view_get_state_section (GNC_TREE_VIEW(priv->tree_view)));
-    g_object_unref(G_OBJECT(priv->tree_view));
-    priv->tree_view = NULL;
 
     // Destroy the filter override hash table
     g_hash_table_destroy(priv->fd.filter_override);
