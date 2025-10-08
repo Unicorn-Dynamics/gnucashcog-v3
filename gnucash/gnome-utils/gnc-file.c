@@ -1714,6 +1714,7 @@ gnc_file_do_save_as (GtkWindow *parent, const char* filename)
     {
         /* Yay! Save was successful, we can dump the old session */
         qof_event_suspend();
+        gnc_gui_component_reset_session (session, new_session);
         gnc_clear_current_session();
         gnc_set_current_session( new_session );
         qof_event_resume();
