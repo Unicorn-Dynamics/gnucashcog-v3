@@ -199,10 +199,16 @@ gnc_tree_model_account_init (GncTreeModelAccount *model)
 static void
 gnc_tree_model_account_finalize (GObject *object)
 {
+    GncTreeModelAccount *model;
+
     g_return_if_fail (object != NULL);
     g_return_if_fail (GNC_IS_TREE_MODEL_ACCOUNT(object));
 
     ENTER("model %p", object);
+
+    model = GNC_TREE_MODEL_ACCOUNT(object);
+
+    model->book = NULL;
 
     G_OBJECT_CLASS(gnc_tree_model_account_parent_class)->finalize (object);
     LEAVE(" ");
@@ -236,9 +242,7 @@ gnc_tree_model_account_dispose (GObject *object)
                                  gnc_tree_model_account_update_color,
                                  model);
 
-    model->book = NULL;
     model->root = NULL;
-
     G_OBJECT_CLASS(gnc_tree_model_account_parent_class)->dispose (object);
     LEAVE(" ");
 }
@@ -425,12 +429,6 @@ gnc_tree_model_account_get_iter (GtkTreeModel *tree_model,
     }
 
     model = GNC_TREE_MODEL_ACCOUNT(tree_model);
-
-    if (!model->root)
-    {
-        LEAVE("No root account");
-        return FALSE;
-    }
 
     if (gtk_tree_path_get_depth (path) <= 0)
     {
@@ -1412,7 +1410,7 @@ gnc_tree_model_account_event_handler (QofInstance *entity,
     Account *account, *parent;
 
     g_return_if_fail (model);    /* Required */
-    g_return_if_fail (model->root); /* Either disposed or not initialized. */
+
     if (!GNC_IS_ACCOUNT(entity))
         return;
 

@@ -780,10 +780,10 @@ gnc_plugin_page_account_tree_destroy_widget (GncPluginPage *plugin_page)
     // Remove the page focus idle function if present
     g_idle_remove_by_data (plugin_page);
 
-    if (priv->tree_view)
+    if (priv->widget)
     {
-        gtk_widget_destroy(GTK_WIDGET(priv->tree_view));
-        priv->tree_view = NULL;
+        g_object_unref(G_OBJECT(priv->widget));
+        priv->widget = NULL;
     }
 
     if (priv->component_id)
@@ -792,6 +792,7 @@ gnc_plugin_page_account_tree_destroy_widget (GncPluginPage *plugin_page)
         priv->component_id = 0;
     }
 
+    priv->tree_view = NULL;
     LEAVE("widget destroyed");
 }
 
