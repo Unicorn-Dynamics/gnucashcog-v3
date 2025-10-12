@@ -590,11 +590,11 @@ on_matcher_ok_clicked (GtkButton *button, GNCImportMainMatcher *info)
 
     gnc_gen_trans_list_delete (info);
 
-    /* Allow GUI refresh again. */
-    gnc_resume_gui_refresh ();
-
     /* DEBUG ("End") */
     g_list_free_full (accounts_modified, (GDestroyNotify)xaccAccountCommitEdit);
+
+    /* Allow GUI refresh again upon commit completion. */
+    gnc_resume_gui_refresh ();
 }
 
 void
