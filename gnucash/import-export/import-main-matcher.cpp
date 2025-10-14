@@ -41,6 +41,8 @@
 #include <memory>
 #include <algorithm>
 #include <vector>
+#include <unordered_map>
+#include <string>
 
 #include "import-main-matcher.h"
 
@@ -63,6 +65,8 @@
 
 #define GNC_PREFS_GROUP "dialogs.import.generic.transaction-list"
 #define IMPORT_MAIN_MATCHER_CM_CLASS "transaction-matcher-dialog"
+
+using StrStrMap = std::unordered_map<std::string,std::string>;
 
 struct _main_matcher_info
 {
@@ -96,6 +100,7 @@ struct _main_matcher_info
     GHashTable *memo_hash;
 
     GList *new_strings;
+    StrStrMap colormap;
 };
 
 enum downloaded_cols
@@ -242,6 +247,7 @@ gnc_gen_trans_list_delete (GNCImportMainMatcher *info)
     g_hash_table_destroy (info->desc_hash);
     g_hash_table_destroy (info->notes_hash);
     g_hash_table_destroy (info->memo_hash);
+    info->colormap.~StrStrMap();
 
     g_list_free_full (info->new_strings, (GDestroyNotify)g_free);
 
@@ -1737,6 +1743,7 @@ gnc_gen_trans_common_setup (GNCImportMainMatcher *info,
     info->memo_hash = g_hash_table_new (g_str_hash, g_str_equal);
     info->new_strings = NULL;
     info->transaction_processed_cb = NULL;
+    new (&info->colormap) StrStrMap();
 
     /* Connect the signals */
     gtk_builder_connect_signals_full (builder, gnc_builder_connect_full_func, info);
@@ -1861,18 +1868,22 @@ gnc_gen_trans_list_run (GNCImportMainMatcher *info)
 }
 
 static const gchar*
-get_required_color (const gchar *class_name)
+get_required_color (StrStrMap& cache, const gchar *class_name)
 {
-    GdkRGBA color;
-    GtkWidget *label = gtk_label_new ("Color");
-    GtkStyleContext *context = gtk_widget_get_style_context (GTK_WIDGET(label));
-    gtk_style_context_add_class (context, class_name);
-    gnc_style_context_get_background_color (context, GTK_STATE_FLAG_NORMAL, &color);
-    static gchar *strbuf = NULL;
-    if (strbuf)
-        g_free (strbuf);
-    strbuf = gdk_rgba_to_string (&color);
-    return strbuf;
+    auto& rv = cache[class_name];
+    if (rv.empty())
+    {
+        GdkRGBA color;
+        GtkWidget *label = gtk_label_new ("Color");
+        GtkStyleContext *context = gtk_widget_get_style_context (GTK_WIDGET(label));
+        gtk_style_context_add_class (context, class_name);
+        gnc_style_context_get_background_color (context, GTK_STATE_FLAG_NORMAL, &color);
+        gchar* col_str = gdk_rgba_to_string (&color);
+        rv = col_str;
+        g_free (col_str);
+        gtk_widget_destroy (label);
+    }
+    return rv.c_str();
 }
 
 static void
@@ -2010,7 +2021,7 @@ refresh_model_row (GNCImportMainMatcher *gui,
         if (gnc_import_TransInfo_is_balanced (info))
         {
             ro_text = _("New, already balanced");
-            color = get_required_color (int_not_required_class);
+            color = get_required_color (gui->colormap, int_not_required_class);
         }
         else
         {
@@ -2025,7 +2036,7 @@ refresh_model_row (GNCImportMainMatcher *gui,
                     GNCPrintAmountInfo pinfo = gnc_commodity_print_info (
                         xaccAccountGetCommodity (dest_acc), true);
                     imbalance = g_strdup (xaccPrintAmount (bal_amt, pinfo));
-                    color = get_required_color (int_not_required_class);
+                    color = get_required_color (gui->colormap, int_not_required_class);
                     if (gnc_import_TransInfo_get_destacc_selected_manually (info))
                     {
                         text =
@@ -2049,7 +2060,7 @@ refresh_model_row (GNCImportMainMatcher *gui,
                         xaccTransGetCurrency (gnc_import_TransInfo_get_trans (info)), true);
                     gnc_numeric bal_val = gnc_import_TransInfo_get_dest_value (info);
                     imbalance = g_strdup (xaccPrintAmount (bal_val, pinfo));
-                    color = get_required_color (int_required_class);
+                    color = get_required_color (gui->colormap, int_required_class);
                     text =
                     /* Translators: %s is the amount to be transferred. */
                     g_strdup_printf (_("New, UNBALANCED (need price to transfer %s to acct %s)!"),
@@ -2065,7 +2076,7 @@ refresh_model_row (GNCImportMainMatcher *gui,
                     xaccTransGetCurrency (gnc_import_TransInfo_get_trans (info)), true);
                 gnc_numeric bal_val = gnc_import_TransInfo_get_dest_value (info);
                 imbalance = g_strdup (xaccPrintAmount (bal_val, pinfo));
-                color = get_required_color (int_prob_required_class);
+                color = get_required_color (gui->colormap, int_prob_required_class);
                 text =
                     /* Translators: %s is the amount to be transferred. */
                     g_strdup_printf (_("New, UNBALANCED (need acct to transfer %s)!"),
@@ -2083,7 +2094,7 @@ refresh_model_row (GNCImportMainMatcher *gui,
             if (sel_match)
             {
                 gchar *full_names = get_peer_acct_names (sel_match->split);
-                color = get_required_color (int_not_required_class);
+                color = get_required_color (gui->colormap, int_not_required_class);
                 if (gnc_import_TransInfo_get_match_selected_manually (info))
                 {
                     text = g_strdup_printf (_("Reconcile (manual) match to %s"),
@@ -2099,7 +2110,7 @@ refresh_model_row (GNCImportMainMatcher *gui,
             }
             else
             {
-                color = get_required_color (int_required_class);
+                color = get_required_color (gui->colormap, int_required_class);
                 ro_text = _("Match missing!");
                 show_pixbuf = false;
                 remove_child_row (model, iter);
@@ -2112,7 +2123,7 @@ refresh_model_row (GNCImportMainMatcher *gui,
             if (sel_match)
             {
                 gchar *full_names = get_peer_acct_names (sel_match->split);
-                color = get_required_color (int_not_required_class);
+                color = get_required_color (gui->colormap, int_not_required_class);
                 if (gnc_import_TransInfo_get_match_selected_manually (info))
                 {
                     text = g_strdup_printf (_("Update and reconcile (manual) match to %s"),
@@ -2128,7 +2139,7 @@ refresh_model_row (GNCImportMainMatcher *gui,
             }
             else
             {
-                color = get_required_color (int_required_class);
+                color = get_required_color (gui->colormap, int_required_class);
                 ro_text = _("Match missing!");
                 show_pixbuf = false;
                 remove_child_row (model, iter);
@@ -2136,7 +2147,7 @@ refresh_model_row (GNCImportMainMatcher *gui,
         }
         break;
     case GNCImport_SKIP:
-        color = get_required_color (int_required_class);
+        color = get_required_color (gui->colormap, int_required_class);
         ro_text = _("Do not import (no action selected)");
         show_pixbuf = false;
         remove_child_row (model, iter);
