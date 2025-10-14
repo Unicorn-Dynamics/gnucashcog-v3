@@ -6,7 +6,7 @@ add_subdirectory(test)
 ### libgnc-core-utils
 set (core_utils_SOURCES
   binreloc.c
-  gnc-prefs.c
+  gnc-prefs.cpp
   gnc-environment.c
   gnc-filepath-utils.cpp
   gnc-gkeyfile-utils.c
