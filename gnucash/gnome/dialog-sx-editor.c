@@ -1128,6 +1128,30 @@ sxed_delete_event (GtkWidget *widget, GdkEvent *event, gpointer ud)
     return FALSE;
 }
 
+static gboolean
+focus_idle_callback(gpointer user_data)
+{
+    GNCLedgerDisplay  *ledger_display = (GNCLedgerDisplay  *)user_data;
+
+    if (ledger_display)
+        gnc_ledger_display_refresh(ledger_display);
+
+    return FALSE;
+}
+
+static void
+on_notebook_switch_page(GtkNotebook *notebook, GtkWidget *page,
+                        guint page_num, gpointer user_data)
+{
+    GtkWidget *current_page = gtk_notebook_get_nth_page(notebook, page_num);
+    if (current_page && page_num == 2)
+    {
+        GncSxEditorDialog *sxed = (GncSxEditorDialog *)user_data;
+
+        // Wait until Gtk is idle to refresh the display.
+        g_idle_add (focus_idle_callback, sxed->ledger);
+    }
+}
 
 /*************************************
  * Create the Schedule Editor Dialog *
@@ -1238,6 +1262,9 @@ gnc_ui_scheduled_xaction_editor_dialog_create (GtkWindow *parent,
                       G_CALLBACK (sxed_delete_event), sxed);
     g_signal_connect (sxed->dialog, "destroy",
                       G_CALLBACK (scheduledxaction_editor_dialog_destroy),
+                      sxed);
+    g_signal_connect (sxed->notebook, "switch-page",
+                      G_CALLBACK(on_notebook_switch_page),
                       sxed);
 
     for (i = 0; widgets[i].name; i++)
