@@ -21,6 +21,8 @@
  * Boston, MA  02110-1301,  USA       gnu@gnu.org
  */
 
+#include <string>
+
 #include <stdlib.h>
 #include <glib.h>
 #include <config.h>
@@ -28,7 +30,7 @@
 #include "gnc-prefs-p.h"
 #include "gnc-version.h"
 
-static gchar *namespace_regexp    = NULL;
+static std::string namespace_regexp;
 static gboolean is_debugging      = FALSE;
 static gboolean extras_enabled    = FALSE;
 static gboolean use_compression   = TRUE; // This is also the default in the prefs backend
@@ -46,17 +48,14 @@ PrefsBackend *prefsbackend = NULL;
 const gchar *
 gnc_prefs_get_namespace_regexp(void)
 {
-    return namespace_regexp;
+    return namespace_regexp.c_str();
 }
 
 void
 gnc_prefs_set_namespace_regexp(const gchar *str)
 {
-    if (namespace_regexp)
-        g_free(namespace_regexp);
-
     if (str)
-        namespace_regexp = g_strdup(str);
+        namespace_regexp = str;
 }
 
 gboolean
