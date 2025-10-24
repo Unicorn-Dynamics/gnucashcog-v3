@@ -12,10 +12,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-22 11:57-0700\n"
-"PO-Revision-Date: 2025-09-21 17:02+0000\n"
+"PO-Revision-Date: 2025-10-12 16:07+0000\n"
 "Last-Translator: Szia Tomi <sziatomi01@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/hu/>\n"
@@ -4086,15 +4086,19 @@ msgstr "A felosztásban egy számla érvénytelen"
 #, c-format
 msgid "Split with memo %s has an unparsable Credit Formula."
 msgstr ""
+"%s feljegyzéssel rendelkező felosztás értelmezhetetlen jóváírási képletet "
+"tartalmaz."
 
 #: gnucash/gnome/dialog-sx-editor.c:754 gnucash/gnome/dialog-sx-editor.c:770
 msgid "Unparsable Formula in Split"
-msgstr ""
+msgstr "Értelmezhetetlen képlet a felosztásban"
 
 #: gnucash/gnome/dialog-sx-editor.c:767
 #, c-format
 msgid "Split with memo %s has an unparsable Debit Formula."
 msgstr ""
+"%s feljegyzéssel rendelkező felosztás értelmezhetetlen terhelési képletet "
+"tartalmaz."
 
 #: gnucash/gnome/dialog-sx-editor.c:874
 #: gnucash/gnome/dialog-sx-from-trans.cpp:261
@@ -4102,7 +4106,7 @@ msgid ""
 "The Scheduled Transaction Editor cannot automatically balance this "
 "transaction. Should it still be entered?"
 msgstr ""
-"Az ütemezett-tranzakció szerkesztő nem tudja automatikusan kiegyenlíteni a "
+"Az ütemezett-tranzakció-szerkesztő nem tudja automatikusan kiegyenlíteni a "
 "tranzakciót. Mindenképpen folytatja?"
 
 #: gnucash/gnome/dialog-sx-editor.c:1408
@@ -4114,7 +4118,8 @@ msgid ""
 "The current template transaction has been changed. Would you like to record "
 "the changes?"
 msgstr ""
-"A jelenlegi tranzakciósablon megváltozott. Kívánja rögzíteni a változásokat?"
+"A jelenlegi tranzakciósablon megváltozott. Kívánja rögzíteni a "
+"változtatásokat?"
 
 #: gnucash/gnome/dialog-sx-editor.c:1847
 #: gnucash/gnome/gnc-plugin-page-sx-list.cpp:234
@@ -5563,15 +5568,13 @@ msgid "The file %s already exists. Are you sure you want to overwrite it?"
 msgstr "%s fájl már létezik. Biztos, hogy felül akarja írni?"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1728
-#, fuzzy
-#| msgid "Overview"
 msgid "_Overwrite"
-msgstr "Áttekintés"
+msgstr "_Felülírás"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1728
 #, c-format
 msgid "This will update and overwrite the existing saved report named \"%s\"."
-msgstr ""
+msgstr "Ez frissíti és felülírja a meglévő, „%s” nevű mentett jelentést."
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1793
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1819
@@ -5580,6 +5583,8 @@ msgid ""
 "This report must be upgraded to return a document object with export-string "
 "or export-error."
 msgstr ""
+"Ezt a jelentést frissíteni kell, hogy egy dokumentumobjektumot adjon vissza "
+"exportálási karakterlánccal vagy exportálási hibával."
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1830
 #, c-format
@@ -7651,6 +7656,10 @@ msgid ""
 "longer depends on the Reverse Balanced Accounts preference. Please review "
 "the budgets and amend signs if necessary."
 msgstr ""
+"Ez a könyv költségvetéseket tartalmaz. A költségvetési összegek belső "
+"megjelenítése már nem függ a fordított egyenlegű számlák beállításaitól. "
+"Kérjük, ellenőrizze a költségvetéseket, és szükség esetén módosítsa az "
+"előjeleket."
 
 # msgid_plural "The following %d bills are due:"
 #: gnucash/gnome-utils/gnc-file.c:754
@@ -7735,11 +7744,13 @@ msgstr ""
 "helyre menteni?"
 
 #: gnucash/gnome-utils/gnc-file.c:1739
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Reverting will discard all unsaved changes to %s. Are you sure you want to "
 "proceed?"
-msgstr "%s fájl már létezik. Biztos, hogy felül akarja írni?"
+msgstr ""
+"A visszaállítás %s fájlban minden nem mentett módosítást elvet. Biztosan "
+"folytatni szeretné?"
 
 #: gnucash/gnome-utils/gnc-file.c:1747
 #: gnucash/gnome-utils/gnc-main-window.cpp:1232
@@ -7751,33 +7762,29 @@ msgid "View…"
 msgstr "Nézet…"
 
 #: gnucash/gnome-utils/gnc-gnome-utils.c:69
-#, fuzzy
 msgid "GnuCash could not find the files of the help documentation."
-msgstr "GnuCash nem tudta zárolni %s fájlt."
+msgstr "A GnuCash nem találja a súgó dokumentáció fájljait."
 
 #: gnucash/gnome-utils/gnc-gnome-utils.c:71
 msgid ""
 "This is likely because the \"gnucash-docs\" package is not properly "
 "installed."
 msgstr ""
-"Valószínűleg azért, mert a \"gnucash-docs\" csomag nincs megfelelően "
-"telepítve."
+"Valószínűleg azért, mert a „gnucash-docs” csomag nincs megfelelően telepítve."
 
 #. Translators: URI of missing help files
 #: gnucash/gnome-utils/gnc-gnome-utils.c:73
-#, fuzzy
 msgid "Expected location"
-msgstr "Rendelés-információ"
+msgstr "A súgó dokumentáció helye (útvonala)"
 
 #: gnucash/gnome-utils/gnc-gnome-utils.c:387
 #: gnucash/gnome-utils/gnc-gnome-utils.c:427
-#, fuzzy
 msgid "GnuCash could not find the linked document."
-msgstr "GnuCash nem tudta zárolni %s fájlt."
+msgstr "A GnuCash nem találja a kapcsolódó dokumentumot."
 
 #: gnucash/gnome-utils/gnc-gnome-utils.c:457
 msgid "GnuCash could not open the linked document:"
-msgstr "A GnuCash nem tudta megnyitni a hivatkozott dokumentumot:"
+msgstr "A GnuCash nem tudta megnyitni a kapcsolódó dokumentumot:"
 
 #. Translators: %s is a path to a database or any other url,
 #. like mysql://user@server.somewhere/somedb, https://www.somequotes.com/thequotes
@@ -7905,10 +7912,14 @@ msgstr "Pénzügyi-számviteli program magánszemélyeknek és kisvállalkozáso
 #: gnucash/gnome-utils/gnc-main-window.cpp:5366
 msgid "translator-credits\n"
 msgstr ""
-"Geza Kiss: 2023.\n HOSSZÚ Péter: 2001-2003.\n Kornel Tako: 2007.\n"
-"Kárász Attila: 2022, 2023.\n SULYOK Péter: 2003-2006.\n"
-"Szia Tomi: 2022, 2023, 2024, 2025.\n mocsa: 2022, 2023, 2024, 2025.\n"
-"ovari: 2022, 2023.\n"
+"SziaTomi (2022 ->)\n"
+"Molnár Csaba (2022-2023)\n"
+"ovari (2022-2023)\n"
+"Kiss Géza: 2023\n"
+"Kárász Attila (2022)\n"
+"Tako Kornel (2007)\n"
+"Sulyok Péter (2003-2006)\n"
+"Hosszú Péter (2001-2003)\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5369
 msgid "Visit the GnuCash website."
@@ -9806,7 +9817,7 @@ msgid ""
 "closed."
 msgstr ""
 "Ha be van jelölve, a változtatások mentése bezáráskor ablak csak korlátozott "
-"ideig fog válaszra várni. Ha a felhasználó nem válaszol, a változtatások "
+"ideig fog a válaszra várni. Ha a felhasználó nem válaszol, a változtatások "
 "mentésre kerülnek és az ablak bezárul."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:50
@@ -9892,7 +9903,7 @@ msgstr ""
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:80
 #: gnucash/gtkbuilder/dialog-preferences.glade:1761
 msgid "Delete old log/backup files after this many days (0 = never)."
-msgstr "Régi naplók és biztonsági mentések törlése ennyi nap után (0 = soha)."
+msgstr "A régi naplók és biztonsági mentések törlése ennyi nap után (0 = soha)."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:85
 #: gnucash/gtkbuilder/dialog-preferences.glade:1779
@@ -9914,7 +9925,7 @@ msgstr ""
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:95
 #: gnucash/gtkbuilder/dialog-preferences.glade:656
 msgid "Don't sign reverse any accounts."
-msgstr "Ne legyen megjelölés visszafelé."
+msgstr "Egyetlen számla egyenlege se legyen fordított előjelű."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:96
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:101
@@ -9941,13 +9952,13 @@ msgid ""
 "Sign reverse balances on the following: Credit Card, Payable, Liability, "
 "Equity, and Income."
 msgstr ""
-"Egyenlegek megjelölése viszafelé a következőkre: hitelkártya, fizetendő, "
+"Fordított előjelű egyenlegek a következőkre: hitelkártya, fizetendő, "
 "kötelezettség, saját tőke és bevételi számlák."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:105
 #: gnucash/gtkbuilder/dialog-preferences.glade:694
 msgid "Sign reverse balances on income and expense accounts."
-msgstr "Bevétel- és költségszámlák egyenlegének megjelölése visszafelé."
+msgstr "A bevétel- és költségszámlák egyenlege fordított előjelű legyen."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:110
 msgid "Use account colors in the account hierarchy"
@@ -15181,7 +15192,7 @@ msgid ""
 "window\n"
 "Press 'Close' to return to the preference window\n"
 msgstr ""
-"Kattintson a visszaállítás gombra az eredeti számlanek közti elválasztójel "
+"Kattintson a visszaállítás gombra az eredeti számlanevek közti elválasztójel "
 "használatához és a beállítások ablakának bezárásához.\n"
 "Kattintson a bezárás gombra a beállítások ablakába való visszalépéshez.\n"
 
@@ -15204,15 +15215,15 @@ msgstr "Főösszeg megjelenítése minden számlán az alapértelmezett pénznem
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:357
 msgid "Include _non-currency totals"
-msgstr "_Nem pénznem összegek feltüntetése"
+msgstr "_Nem pénznemű összegek feltüntetése"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:363
 msgid ""
 "If checked, non-currency commodities will be shown in the summary bar. If "
 "clear, only currencies will be shown."
 msgstr ""
-"Bejelölve a nem pénzügyi javak az összegzés sorban jelennek meg. Különben "
-"csak pénznemek jelennek meg."
+"Bejelölve a nem pénznemű áruk (pl. értékpapírok) megjelennek az "
+"összegzősorban. Ellenkező esetben csak a pénzneműek jelennek meg."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:405
 msgid "_Relative"
@@ -15288,7 +15299,7 @@ msgstr "_Bevétel és költség"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:710
 msgid "<b>Reverse Balanced Accounts</b>"
-msgstr "<b>Fordított kiegyenlített számlák</b>"
+msgstr "<b>Fordított egyenlegű számlák</b>"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:743
 msgid "<b>Default Currency</b>"
@@ -15314,7 +15325,7 @@ msgstr "A számlaszín legyen a háttér"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:834
 msgid "Show the Account Color as Account Name Background."
-msgstr "A számlanév háttere a számlaszín legyen."
+msgstr "A számlaszín legyen a számlanév háttere."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:856
 msgid "Show the Account Color on tabs"
@@ -15527,7 +15538,7 @@ msgstr "Korlátlan ideig"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:1812
 msgid "Time to _wait for answer"
-msgstr "Várakozás vá_laszra"
+msgstr "Várakozás a vá_laszra"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:1849
 msgid "seconds"
@@ -20765,8 +20776,8 @@ msgid ""
 "The current transaction has been changed. Would you like to record the "
 "changes before duplicating this entry, or cancel the duplication?"
 msgstr ""
-"A jelenlegi tranzakció megváltozott. Kívánja menteni a változásokat, mielőtt "
-"létrehozza a másolatot, vagy megszakítja a duplikálást?"
+"A jelenlegi tranzakció megváltozott. Kívánja menteni a változtatásokat, "
+"mielőtt létrehozza a másolatot, vagy megszakítja a duplikálást?"
 
 #: gnucash/register/ledger-core/gncEntryLedger.c:927
 #: gnucash/register/ledger-core/gncEntryLedgerControl.c:897
@@ -21104,7 +21115,7 @@ msgid ""
 "The current transaction has been changed. Would you like to record the "
 "changes before duplicating the transaction, or cancel the duplication?"
 msgstr ""
-"A jelenlegi tranzakció megváltozott. Menti a változásokat, mielőtt "
+"A jelenlegi tranzakció megváltozott. Menti a változtatásokat, mielőtt "
 "duplikálja vagy megszakítja a tranzakciót?"
 
 #: gnucash/register/ledger-core/split-register.c:535
@@ -26475,10 +26486,8 @@ msgid "Display the transaction type?"
 msgstr "Tranzakciótípus megjelenítése?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:907
-#, fuzzy
-#| msgid "Display the action?"
 msgid "Display the associated job?"
-msgstr "Művelet megjelenítése?"
+msgstr "Kapcsolódó megbízás megjelenítése?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:911
 msgid "Display the transaction description?"
@@ -28238,10 +28247,8 @@ msgid "Display the trans number?"
 msgstr "Csekkszám megjelenítése?"
 
 #: gnucash/report/trep-engine.scm:950
-#, fuzzy
-#| msgid "Display the invoice notes?"
 msgid "Display invoice details"
-msgstr "Kimenőszámla megjegyzéseinek megjelenítése?"
+msgstr "Kimenőszámla részletes megjelenítése"
 
 #: gnucash/report/trep-engine.scm:955
 msgid "Display the account name?"
@@ -30849,7 +30856,7 @@ msgstr "Stooq, PL (lengyel tőzsde)"
 #: libgnucash/engine/gnc-commodity.cpp:223
 msgctxt "FQ Source"
 msgid "Swiss Fund Data AG, CH"
-msgstr ""
+msgstr "Swiss Fund Data AG, CH (svájci alapok adatai)"
 
 #: libgnucash/engine/gnc-commodity.cpp:224
 msgctxt "FQ Source"

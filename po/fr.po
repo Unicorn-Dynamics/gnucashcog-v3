@@ -47,7 +47,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-22 11:57-0700\n"
-"PO-Revision-Date: 2025-09-23 20:02+0000\n"
+"PO-Revision-Date: 2025-10-05 22:02+0000\n"
 "Last-Translator: Frédéric Mergey <fmergey@yahoo.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "fr/>\n"
@@ -5918,15 +5918,14 @@ msgstr "Le fichier %s existe déjà. Voulez-vous l'écraser ?"
 
 # src/gnome/glade-gnc-dialogs.c:979
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1728
-#, fuzzy
-#| msgid "Overview"
 msgid "_Overwrite"
-msgstr "Vue d'ensemble"
+msgstr "_Remplacer"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1728
 #, c-format
 msgid "This will update and overwrite the existing saved report named \"%s\"."
 msgstr ""
+"Cela mettra à jour et écrasera le rapport enregistré existant nommé \" %s \"."
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1793
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1819
@@ -22102,16 +22101,13 @@ msgstr "U+C"
 
 # messages-i18n.c:77
 #: gnucash/import-export/import-main-matcher.cpp:1610
-#, fuzzy
-#| msgid ""
-#| "Select \"U+C\" to update a matching transaction and mark it as cleared "
-#| "(c)."
 msgid ""
 "Update + Clear Transaction\n"
 "Update existing transaction with the imported data and mark it as cleared"
 msgstr ""
-"Sélectionner \"U+R\" pour mettre à jour et pointer (p) une transaction "
-"correspondante."
+"Mettre à jour + pointer la transaction\n"
+"Mettre à jour la transaction existante avec les données importées et la "
+"marquer comme pointée."
 
 #: gnucash/import-export/import-main-matcher.cpp:1612
 msgctxt "Column header for 'Clearing transaction'"
@@ -29357,10 +29353,8 @@ msgstr "Afficher le type de transaction ?"
 
 # messages-i18n.c:96
 #: gnucash/report/reports/standard/new-owner-report.scm:907
-#, fuzzy
-#| msgid "Display the action?"
 msgid "Display the associated job?"
-msgstr "Afficher l'action ?"
+msgstr "Afficher l'action associée ?"
 
 # po/guile_strings.txt:219
 #: gnucash/report/reports/standard/new-owner-report.scm:911
