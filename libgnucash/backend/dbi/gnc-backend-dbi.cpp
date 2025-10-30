@@ -1096,7 +1096,10 @@ gnc_module_init_backend_dbi (void)
     {
 #if HAVE_LIBDBI_R
         if (dbi_instance)
-            return;
+        {
+            dbi_shutdown_r (dbi_instance);
+            dbi_instance = nullptr;
+        }
 #endif
         gchar *libdir = gnc_path_get_libdir ();
         gchar *dir = g_build_filename (libdir, "dbd", nullptr);
