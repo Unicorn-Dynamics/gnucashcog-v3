@@ -1829,9 +1829,9 @@ xaccTransOrder_num_action (const Transaction *ta, const char *actna,
     const char *da, *db;
     int retval;
 
-    if ( ta && !tb ) return -1;
-    if ( !ta && tb ) return +1;
-    if ( !ta && !tb ) return 0;
+    if (ta == tb) return 0;
+    if (!tb) return -1;
+    if (!ta) return +1;
 
     if (ta->date_posted != tb->date_posted)
         return (ta->date_posted > tb->date_posted) - (ta->date_posted < tb->date_posted);
