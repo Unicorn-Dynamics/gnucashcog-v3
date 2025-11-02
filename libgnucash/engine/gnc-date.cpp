@@ -1230,20 +1230,17 @@ GDate time64_to_gdate (time64 t)
 
 GDate* gnc_g_date_new_today ()
 {
-    GncDate gncd;
-    auto ymd = gncd.year_month_day();
-    auto month = static_cast<GDateMonth>(ymd.month);
-    auto result = g_date_new_dmy (ymd.day, month, ymd.year);
-    g_assert(g_date_valid (result));
-    return result;
+    GDate* rv = g_date_new ();
+    gnc_gdate_set_today (rv);
+    return rv;
 }
 
 void
 gnc_gdate_set_today (GDate* gd)
 {
-    GDate *today = gnc_g_date_new_today ();
-    g_date_set_julian (gd, g_date_get_julian (today));
-    g_date_free (today);
+    g_return_if_fail (gd != nullptr);
+    auto ymd = GncDate().year_month_day();
+    g_date_set_dmy (gd, ymd.day, static_cast<GDateMonth>(ymd.month), ymd.year);
 }
 
 void
