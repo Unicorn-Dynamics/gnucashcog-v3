@@ -2359,9 +2359,9 @@ xaccAccountOrder (const Account *aa, const Account *ab)
     const char *da, *db;
     int ta, tb, result;
 
-    if ( aa && !ab ) return -1;
-    if ( !aa && ab ) return +1;
-    if ( !aa && !ab ) return 0;
+    if (aa == ab) return 0;
+    if (!ab) return -1;
+    if (!aa) return +1;
 
     priv_aa = GET_PRIVATE(aa);
     priv_ab = GET_PRIVATE(ab);
