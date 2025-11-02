@@ -168,7 +168,7 @@ SplitsVec gnc_get_match_commodity_splits (AccountVec accounts, bool use_end_date
             { gnc_account_foreach_split_until_date (acc, end_date, maybe_accumulate); };
     else
         scan_account = [maybe_accumulate](auto acc)
-            { gnc_account_foreach_split (acc, maybe_accumulate, false); };
+            { gnc_account_foreach_split (acc, maybe_accumulate); };
 
     std::for_each (accounts.begin(), accounts.end(), scan_account);
     if (sort)

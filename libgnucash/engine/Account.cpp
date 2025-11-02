@@ -1137,17 +1137,13 @@ xaccInitAccount (Account * acc, QofBook *book)
 \********************************************************************/
 
 void
-gnc_account_foreach_split (const Account *acc, std::function<void(Split*)> func,
-                           bool reverse)
+gnc_account_foreach_split (const Account *acc, std::function<void(Split*)> func)
 {
     if (!GNC_IS_ACCOUNT (acc))
         return;
 
     auto& splits{GET_PRIVATE(acc)->splits};
-    if (reverse)
-        std::for_each(splits.rbegin(), splits.rend(), func);
-    else
-        std::for_each(splits.begin(), splits.end(), func);
+    std::for_each (splits.begin(), splits.end(), func);
 }
 
 void
@@ -5012,7 +5008,7 @@ void
 gnc_account_tree_begin_staged_transaction_traversals (Account *account)
 {
     auto do_one_account = [](auto acc)
-    { gnc_account_foreach_split (acc, [](auto s){ s->parent->marker = 0; }, false); };
+    { gnc_account_foreach_split (acc, [](auto s){ s->parent->marker = 0; }); };
     gnc_account_foreach_descendant (account, do_one_account);
 }
 

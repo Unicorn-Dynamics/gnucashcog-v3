@@ -98,7 +98,7 @@ get_all_transactions (Account *account, bool descendants)
 {
     TransSet set;
     auto add_transactions = [&set](auto a)
-    { gnc_account_foreach_split (a, [&set](auto s){ set.insert (xaccSplitGetParent (s)); }, false); };
+    { gnc_account_foreach_split (a, [&set](auto s){ set.insert (xaccSplitGetParent (s)); }); };
     add_transactions (account);
     if (descendants)
         gnc_account_foreach_descendant (account, add_transactions);
