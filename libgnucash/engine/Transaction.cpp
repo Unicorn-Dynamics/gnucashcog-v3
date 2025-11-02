@@ -1968,18 +1968,18 @@ xaccTransSetDateEnteredSecs (Transaction *trans, time64 secs)
 void
 xaccTransSetDate (Transaction *trans, int day, int mon, int year)
 {
-    GDate *date;
     if (!trans) return;
-    date = g_date_new_dmy(day, static_cast<GDateMonth>(mon), year);
-    if (!g_date_valid(date))
+    GDate date;
+    g_date_clear (&date, 1);
+    if (g_date_valid_dmy (day, static_cast<GDateMonth>(mon), year))
+        g_date_set_dmy (&date, day, static_cast<GDateMonth>(mon), year);
+    else
     {
         PWARN("Attempted to set invalid date %d-%d-%d; set today's date instead.",
               year, mon, day);
-        g_free(date);
-        date = gnc_g_date_new_today();
+        gnc_gdate_set_today (&date);
     }
-    xaccTransSetDatePostedGDate(trans, *date);
-    g_free(date);
+    xaccTransSetDatePostedGDate(trans, date);
 }
 
 void
