@@ -1211,7 +1211,9 @@ gnc_file_open (GtkWindow *parent)
     else
         default_dir = gnc_get_default_directory(GNC_PREFS_GROUP_OPEN_SAVE);
 
-    newfile = gnc_file_dialog (parent, _("Open"), NULL, default_dir, GNC_FILE_DIALOG_OPEN);
+    newfile = gnc_file_dialog (parent, _("Open"),
+                               gnc_file_chooser_get_datafile_filters(),
+                               default_dir, GNC_FILE_DIALOG_OPEN);
     g_free ( last );
     g_free ( default_dir );
 
@@ -1264,9 +1266,9 @@ gnc_file_export (GtkWindow *parent)
     else
         default_dir = gnc_get_default_directory(GNC_PREFS_GROUP_EXPORT);
 
-    filename = gnc_file_dialog (parent,
-                                _("Save"), NULL, default_dir,
-                                GNC_FILE_DIALOG_SAVE);
+    filename = gnc_file_dialog (parent, _("Save"),
+                                gnc_file_chooser_get_datafile_filters(),
+                                default_dir, GNC_FILE_DIALOG_SAVE);
     g_free ( last );
     g_free ( default_dir );
     if (!filename) return;
@@ -1536,9 +1538,9 @@ gnc_file_save_as (GtkWindow *parent)
     else
         default_dir = gnc_get_default_directory(GNC_PREFS_GROUP_OPEN_SAVE);
 
-    filename = gnc_file_dialog (parent,
-                                _("Save"), NULL, default_dir,
-                                GNC_FILE_DIALOG_SAVE);
+    filename = gnc_file_dialog (parent, _("Save"),
+                                gnc_file_chooser_get_datafile_filters(),
+                                default_dir, GNC_FILE_DIALOG_SAVE);
     g_free ( last );
     g_free ( default_dir );
     if (!filename) return;
