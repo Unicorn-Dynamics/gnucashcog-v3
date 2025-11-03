@@ -21,6 +21,7 @@
 
 #include <config.h>
 
+#include <stdbool.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <errno.h>
@@ -62,6 +63,58 @@ static QofLogModule log_module = GNC_MOD_GUI;
 
 static GNCShutdownCB shutdown_cb = NULL;
 static gint save_in_progress = 0;
+
+typedef bool (*CharToBool)(const char*);
+
+static bool datafile_filter (const GtkFileFilterInfo* info, CharToBool checker)
+{
+    return info && info->filename && checker (info->filename);
+}
+
+GList*
+gnc_file_chooser_get_datafile_filters ()
+{
+    /* Translators: *.gnucash.*.gnucash, *.xac.*.xac are file patterns
+       and must not be translated*/
+    const char* datafiles = N_("Datafiles only (*.gnucash, *.xac)");
+    const char* backups = N_("Backups only (*.gnucash.*.gnucash, *.xac.*.xac)");
+    GList* rv = NULL;
+
+    GtkFileFilter *filter = gtk_file_filter_new ();
+    gtk_file_filter_set_name (filter, _(datafiles));
+    gtk_file_filter_add_custom (filter, GTK_FILE_FILTER_FILENAME,
+                                (GtkFileFilterFunc)datafile_filter,
+                                gnc_filename_is_datafile, NULL);
+    rv = g_list_prepend (rv, filter);
+
+    filter = gtk_file_filter_new ();
+    gtk_file_filter_set_name (filter, _(backups));
+    gtk_file_filter_add_custom (filter, GTK_FILE_FILTER_FILENAME,
+                                (GtkFileFilterFunc)datafile_filter,
+                                gnc_filename_is_backup, NULL);
+    rv = g_list_prepend (rv, filter);
+
+    return g_list_reverse (rv);
+}
+
+void
+gnc_file_chooser_add_filters (GtkFileChooser* file_box, GList *filters)
+{
+    g_return_if_fail (GTK_IS_WIDGET (file_box));
+    if (filters == NULL) return;
+
+    for (GList* node = filters; node; node = node->next)
+        gtk_file_chooser_add_filter (file_box, GTK_FILE_FILTER (node->data));
+
+    GtkFileFilter* all_filter = gtk_file_filter_new();
+    gtk_file_filter_set_name (all_filter, _("All files"));
+    gtk_file_filter_add_pattern (all_filter, "*");
+    gtk_file_chooser_add_filter (file_box, all_filter);
+
+    /* preselect the first filter */
+    gtk_file_chooser_set_filter (file_box, filters->data);
+    g_list_free (filters);
+}
 
 // gnc_file_dialog_int is used both by gnc_file_dialog and gnc_file_dialog_multi
 static GSList *
@@ -135,29 +188,7 @@ gnc_file_dialog_int (GtkWindow *parent,
     gtk_window_set_modal(GTK_WINDOW(file_box), TRUE);
 
     if (filters != NULL)
-    {
-        GList* filter;
-        GtkFileFilter* all_filter = gtk_file_filter_new();
-
-        for (filter = filters; filter; filter = filter->next)
-        {
-            g_return_val_if_fail(GTK_IS_FILE_FILTER(filter->data), NULL);
-            gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (file_box),
-                                         GTK_FILE_FILTER (filter->data));
-        }
-
-        gtk_file_filter_set_name (all_filter, _("All files"));
-        gtk_file_filter_add_pattern (all_filter, "*");
-        gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (file_box), all_filter);
-
-        /* Note: You cannot set a file filter and preselect a file name.
-         * The latter wins, and the filter ends up disabled.  Since we are
-         * only setting the starting directory for the chooser dialog,
-         * everything works as expected. */
-        gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (file_box),
-                                     GTK_FILE_FILTER (filters->data));
-        g_list_free (filters);
-    }
+        gnc_file_chooser_add_filters (GTK_FILE_CHOOSER (file_box), filters);
 
     response = gtk_dialog_run(GTK_DIALOG(file_box));
 
