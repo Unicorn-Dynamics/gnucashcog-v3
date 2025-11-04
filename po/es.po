@@ -8,7 +8,7 @@
 # Carlos Manrique Enguita <UO258425@uniovi.es>, 2021.
 # Jaime Marquínez Ferrándiz <weblate@jregistros.fastmail.net>, 2021, 2022.
 # Guille <willelopz+weblate@gmail.com>, 2021.
-# Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2021.
+# Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2021, 2025.
 # Francisco Serrador <fserrador@gmail.com>, 2021, 2022, 2023, 2024, 2025.
 # Cow <javier.fserrador@gmail.com>, 2022.
 # Eduardo Malaspina <vaio0@swismail.com>, 2022.
@@ -88,8 +88,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-22 11:57-0700\n"
-"PO-Revision-Date: 2025-10-30 17:02+0000\n"
-"Last-Translator: Jesús Martínez <weblate@jandemor.com>\n"
+"PO-Revision-Date: 2025-11-04 19:51+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "es/>\n"
 "Language: es\n"
@@ -24471,15 +24471,15 @@ msgstr "Seleccionar esta opción habilita el reportar en doble columna."
 
 #: gnucash/report/reports/standard/balsheet-pnl.scm:65
 msgid "Disable amount indenting"
-msgstr "Deshabilitar indentación de cantidades"
+msgstr "Desactivar sangrado de cantidades"
 
 #: gnucash/report/reports/standard/balsheet-pnl.scm:66
 msgid ""
 "Selecting this option will disable amount indenting, and condense amounts "
 "into a single column."
 msgstr ""
-"Seleccionar esta opción deshabilitará la indentación de cantidades, y "
-"condensará las cantidades en una única columna."
+"Seleccionar esta opción desactivará el sangrado de cantidades y condensará "
+"las cantidades en una única columna."
 
 #: gnucash/report/reports/standard/balsheet-pnl.scm:68
 #: gnucash/report/trep-engine.scm:107
@@ -24493,7 +24493,7 @@ msgstr "Agregar resumen de opciones."
 
 #: gnucash/report/reports/standard/balsheet-pnl.scm:71
 msgid "Account full name instead of indenting"
-msgstr "Nombre completo de cuenta en lugar de indentación"
+msgstr "Nombre completo de cuenta en lugar de sangrado"
 
 #: gnucash/report/reports/standard/balsheet-pnl.scm:72
 msgid ""
