@@ -16,14 +16,15 @@
 # Rene Lambers <jbh.lambers@gmail.com>, 2023.
 # Leo Moons <Leo.Moons@proximus.be>, 2025.
 # BlueRains <lu@schoevaars.eu>, 2025.
+# Ceaus <github@pohw.nl>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-22 11:57-0700\n"
-"PO-Revision-Date: 2025-05-05 14:01+0000\n"
-"Last-Translator: BlueRains <lu@schoevaars.eu>\n"
+"PO-Revision-Date: 2025-10-24 10:54+0000\n"
+"Last-Translator: Ceaus <github@pohw.nl>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gnucash/gnucash/nl/"
 ">\n"
 "Language: nl\n"
@@ -31,9 +32,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
-"X-Bugs: Report translation errors to https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"X-Generator: Weblate 5.14.1-dev\n"
+"X-Bugs: Report translation errors to https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 
 #: bindings/guile/date-utilities.scm:173
 #: gnucash/report/reports/example/daily-reports.scm:260
@@ -98,7 +99,7 @@ msgstr "Eerste dag van het vorige kalenderjaar."
 #: gnucash/gnome-utils/gnc-period-select.c:87
 #: libgnucash/engine/gnc-option-date.cpp:288
 msgid "End of previous year"
-msgstr "Einde van voortgaande jaar"
+msgstr "Einde van vorig jaar"
 
 #: bindings/guile/date-utilities.scm:739
 #: libgnucash/engine/gnc-option-date.cpp:289
