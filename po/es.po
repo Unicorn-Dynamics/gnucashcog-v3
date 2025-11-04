@@ -18,6 +18,7 @@
 # Jaime Marquínez Ferrándiz <jaime.marquinez.ferrandiz@fastmail.net>, 2023, 2025.
 # Francisco <fhiegom@outlook.es>, 2023.
 # Deleted User <noreply+48943@weblate.org>, 2025.
+# Jesús Martínez <weblate@jandemor.com>, 2025.
 #
 #
 # ###############################################################################
@@ -88,7 +89,7 @@ msgstr ""
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-22 11:57-0700\n"
 "PO-Revision-Date: 2025-10-30 17:02+0000\n"
-"Last-Translator: Deleted User <noreply+48943@weblate.org>\n"
+"Last-Translator: Jesús Martínez <weblate@jandemor.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "es/>\n"
 "Language: es\n"
@@ -23805,7 +23806,7 @@ msgstr "Muestra unas anotaciones de cuenta."
 #: gnucash/report/reports/standard/income-statement.scm:101
 #: gnucash/report/reports/standard/trial-balance.scm:122
 msgid "Commodities"
-msgstr "Accións"
+msgstr "Materias primas"
 
 #: gnucash/report/reports/standard/account-summary.scm:126
 #: gnucash/report/reports/standard/balance-sheet.scm:132
@@ -27268,7 +27269,7 @@ msgstr "Semestres"
 
 #: gnucash/report/reports/standard/price-scatter.scm:211
 msgid "Identical commodities"
-msgstr "Accións idénticas"
+msgstr "Materias primas idénticas"
 
 #: gnucash/report/reports/standard/price-scatter.scm:212
 msgid ""
