@@ -54,6 +54,27 @@ set(test_gnc_quotes_LIBS
 gnc_add_test(test-gnc-quotes "${test_gnc_quotes_SOURCES}" test_gnc_quotes_INCLUDES test_gnc_quotes_LIBS
         "GTEST_FILTER=-GncQuotesTest.online_wiggle")
 
+
+set(test_autoclear_SOURCES
+  test-autoclear.cpp
+)
+
+set(test_autoclear_INCLUDE_DIRS
+  ${CMAKE_BINARY_DIR}/common
+  ${CMAKE_SOURCE_DIR}/libgnucash/engine
+)
+
+set(test_autoclear_LIBS
+  gnc-engine
+  gnc-gnome-utils
+  gtest
+)
+
+gnc_add_test(test-autoclear "${test_autoclear_SOURCES}"
+    test_autoclear_INCLUDE_DIRS
+    test_autoclear_LIBS
+)
+
 set(GUILE_DEPENDS
   scm-test-engine
   scm-app-utils
@@ -71,4 +92,5 @@ set_dist_list(test_app_utils_DIST
   test-sx.cpp
   ${test_app_utils_scheme_SOURCES}
   ${test_app_utils_SOURCES}
+  ${test_autoclear_SOURCES}
 )

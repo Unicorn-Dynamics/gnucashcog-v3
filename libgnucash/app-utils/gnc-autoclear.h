@@ -26,7 +26,6 @@
 
 #include <glib.h>
 #include <stdint.h>
-#include <gtk/gtk.h>
 #include <Account.h>
 
 #ifdef __cplusplus
@@ -35,18 +34,18 @@ extern "C" {
 
 /** Account splits are analysed; attempts to find a unique combination
  *  of uncleared splits which would set cleared balance to
- *  toclear_value. If this is not possible, *errmsg will be error
- *  message. errmsg must be a pointer to a gchar. If it is set, it
- *  must be freed by the caller.
+ *  toclear_value. If this is not possible, GError will be error
+ *  message.
+ * @param account: account whose unreconciled splits must be assessed.
+ * @param toclear_value: gnc_numeric target cleared balance
+ * @param end_date: latest date for splits to be assesed
+ * @param error:    a GError* to collect error conditions
+ * @param max_seconds: timeout limit. 0 or less will disable timeout monitor.
  */
-GList * gnc_account_get_autoclear_splits (Account *account, gnc_numeric toclear_value,
-                                          gchar **errmsg);
-
-/* same as above, but returns TRUE if successful, and FALSE if
-   unsuccessful and sets GError appropriately */
-gboolean gnc_autoclear_get_splits (Account *account, gnc_numeric toclear_value,
-                                   time64 end_date,
-                                   GList **splits, GError **error, GtkLabel *label);
+GList * gnc_account_get_autoclear_splits (Account *account,
+                                          gnc_numeric toclear_value,
+                                          time64 end_date, GError **error,
+                                          double max_seconds);
 
 #ifdef __cplusplus
 }

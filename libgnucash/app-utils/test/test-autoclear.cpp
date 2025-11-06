@@ -102,11 +102,81 @@ TestCase ambiguousTestCase = {
         { "Memo 03", -10, false },
     },
     .tests = {
-        { -10, "Cannot uniquely clear splits. Found multiple possibilities." },
-        { -20, "Cannot uniquely clear splits. Found multiple possibilities." },
+        { -10, "The selected amount cannot be cleared." },
+        { -20, "The selected amount cannot be cleared." },
 
         // -30 can be cleared by returning all three -10 splits
         { -30, nullptr },
+    },
+};
+
+
+TestCase sequentialTestCase1 =
+{
+    .splits = {
+        { "Memo 01", 2, false },
+        { "Memo 02", 3, false },
+        { "Memo 03", 5, false },
+    },
+    .tests = {
+        { 1, "The selected amount cannot be cleared." },
+        { 4, "The selected amount cannot be cleared." },
+        { 5, "The selected amount cannot be cleared." },
+        { 6, "The selected amount cannot be cleared." },
+        { 9, "The selected amount cannot be cleared." },
+        { 11, "The selected amount cannot be cleared." },
+        { 12, "The selected amount cannot be cleared." },
+        { 2, nullptr },
+        { 7, nullptr },
+        { 10, nullptr },
+    },
+};
+
+TestCase sequentialTestCase2 =
+{
+    .splits = {
+        { "Memo 01", 2, false },
+        { "Memo 02", 3, false },
+        { "Memo 03", 5, false },
+    },
+    .tests = {
+        { 3, nullptr },
+        { 8, nullptr },
+        { 10, nullptr },
+    },
+};
+
+
+TestCase sequentialTestCase3 =
+{
+    .splits = {
+        { "Memo 01", 2, false },
+        { "Memo 02", 3, false },
+        { "Memo 03", 5, false },
+        { "Memo 04", 5, false },
+    },
+    .tests = {
+        { 5, "The selected amount cannot be cleared." },
+        { 7, "The selected amount cannot be cleared." },
+        { 10, "The selected amount cannot be cleared." },
+        { 2, nullptr },
+        { 12, nullptr },
+        { 15, nullptr },
+    },
+};
+
+TestCase sequentialTestCase4 =
+{
+    .splits = {
+        { "Memo 01", 2, false },
+        { "Memo 02", 3, false },
+        { "Memo 03", 5, false },
+        { "Memo 04", 5, false },
+    },
+    .tests = {
+        { 3, nullptr },
+        { 13, nullptr },
+        { 15, nullptr },
     },
 };
 
@@ -122,6 +192,7 @@ public:
         m_account(xaccMallocAccount(m_book.get())),
         m_testCase(*GetParam())
     {
+        std::cout << "\n\ncreating new account with splits";
         xaccAccountSetName(m_account, "Test Account");
         xaccAccountBeginEdit(m_account);
         for (auto &d : m_testCase.splits) {
@@ -130,19 +201,28 @@ public:
             xaccSplitSetAmount(split, gnc_numeric_create(d.amount, DENOM));
             xaccSplitSetReconcile(split, d.cleared ? CREC : NREC);
             xaccSplitSetAccount(split, m_account);
+            std::cout << ' ' << d.amount;
 
             gnc_account_insert_split(m_account, split);
         }
         xaccAccountCommitEdit(m_account);
+        std::cout << std::endl;
     }
 };
 
 TEST_P(AutoClearTest, DoesAutoClear) {
     for (auto &t : m_testCase.tests) {
         gnc_numeric amount_to_clear = gnc_numeric_create(t.amount, DENOM);
-        char *err;
+        GError *error = nullptr;
 
-        GList *splits_to_clear = gnc_account_get_autoclear_splits(m_account, amount_to_clear, &err);
+        GList *splits_to_clear = gnc_account_get_autoclear_splits
+            (m_account, amount_to_clear, INT64_MAX, &error, 0);
+
+        auto err = error ? error->message : nullptr;
+
+        std::cout << "testing clearing " << t.amount
+                  << " should be [" << std::string (err ? err : "ok") << ']'
+                  << std::endl;
 
         // Actually clear splits
         for (GList *node = splits_to_clear; node; node = node->next) {
@@ -152,13 +232,14 @@ TEST_P(AutoClearTest, DoesAutoClear) {
 
         g_list_free (splits_to_clear);
 
-        ASSERT_STREQ(err, t.expectedErr);
+        EXPECT_STREQ(err, t.expectedErr);
         if (t.expectedErr == NULL) {
             gnc_numeric c = xaccAccountGetClearedBalance(m_account);
-            ASSERT_EQ(c.num, t.amount);
-            ASSERT_EQ(c.denom, DENOM);
+            EXPECT_EQ(c.num, t.amount);
+            EXPECT_EQ(c.denom, DENOM);
         }
-        g_free (err);
+        if (error)
+            g_error_free (error);
     }
 }
 
@@ -175,6 +256,10 @@ INSTANTIATE_TEST_SUITE_P(
     AutoClearTest,
     ::testing::Values(
         &easyTestCase,
+        &sequentialTestCase1,
+        &sequentialTestCase2,
+        &sequentialTestCase3,
+        &sequentialTestCase4,
         &ambiguousTestCase
     )
 );
