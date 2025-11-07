@@ -1604,15 +1604,8 @@ gnc_get_export_filename (SCM choice, GtkWindow *parent)
     filepath = gnc_file_dialog (parent, title, nullptr, default_dir,
                                 GNC_FILE_DIALOG_EXPORT);
 
-    g_free (type);
-    g_free (title);
-    g_free (default_dir);
-
-    if (!filepath)
-        return nullptr;
-
     /* Try to test for extension on file name, add if missing */
-    if (strchr (filepath, '.') == nullptr)
+    if (filepath && strchr (filepath, '.') == nullptr)
     {
         char* extension = g_ascii_strdown (type, -1);
         char* newpath = g_strdup_printf ("%s.%s", filepath, extension);
@@ -1620,6 +1613,13 @@ gnc_get_export_filename (SCM choice, GtkWindow *parent)
         g_free (filepath);
         filepath = newpath;
     }
+
+    g_free (type);
+    g_free (title);
+    g_free (default_dir);
+
+    if (!filepath)
+        return nullptr;
 
     default_dir = g_path_get_dirname(filepath);
     gnc_set_default_directory (GNC_PREFS_GROUP_REPORT, default_dir);
