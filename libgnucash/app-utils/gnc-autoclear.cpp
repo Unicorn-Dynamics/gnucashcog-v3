@@ -69,6 +69,8 @@ struct RuntimeMonitor
 struct SplitInfo
 {
     int64_t m_amount;
+    int64_t m_rem_pos;
+    int64_t m_rem_neg;
     Split* m_split;
 };
 
@@ -111,8 +113,11 @@ subset_sum (SplitInfoVec::const_iterator iter,
             SplitInfoVec& path, Solution& solution,
             int64_t target, RuntimeMonitor& monitor)
 {
-    DEBUG ("this=%" PRId64" target=%" PRId64 " path=%s",
-           iter == end ? 0 : iter->m_amount, target, path_to_str (path));
+    DEBUG ("this=%" PRId64" target=%" PRId64 " rem_pos=%" PRId64
+           " rem_neg=%" PRId64 " path=%s",
+           iter == end ? 0 : iter->m_amount, target,
+           iter == end ? 0 : iter->m_rem_pos,
+           iter == end ? 0 : iter->m_rem_neg, path_to_str (path));
 
     if (target == 0)
     {
@@ -136,6 +141,13 @@ subset_sum (SplitInfoVec::const_iterator iter,
     {
         DEBUG ("ABORT: timeout");
         solution.abort = true;
+        return;
+    }
+
+    if (target < iter->m_rem_neg || target > iter->m_rem_pos)
+    {
+        DEBUG ("PRUNE target=%" PRId64 " rem_pos=%" PRId64" rem_neg=%" PRId64,
+               target, iter->m_rem_pos, iter->m_rem_neg);
         return;
     }
 
@@ -177,7 +189,7 @@ gnc_account_get_autoclear_splits (Account *account, gnc_numeric toclear_value,
         else if (amt == 0)
             DEBUG ("skipping zero-amount split %p", split);
         else
-            splits.push_back ({amt, split});
+            splits.push_back ({amt, 0, 0, split});
     }
 
     static GQuark autoclear_quark = g_quark_from_static_string ("autoclear");
@@ -187,6 +199,24 @@ gnc_account_get_autoclear_splits (Account *account, gnc_numeric toclear_value,
                      "Account is already at Auto-Clear Balance.");
         return nullptr;
     }
+
+    // sort splits in descending absolute amount
+    std::sort (splits.begin(), splits.end(),
+               [](const SplitInfo& a, const SplitInfo& b)
+               {
+                   int64_t aa = std::llabs(a.m_amount);
+                   int64_t bb = std::llabs(b.m_amount);
+                   return (aa == bb) ? a.m_amount > b.m_amount : aa > bb;
+               });
+
+    // for each split, precompute sums of remaining pos or neg amounts
+    int64_t rem_pos{0}, rem_neg{0};
+    std::for_each (splits.rbegin(), splits.rend(),
+                   [&rem_pos, &rem_neg](SplitInfo& s)
+                   {
+                       s.m_rem_pos = rem_pos += std::max<int64_t>(s.m_amount, 0);
+                       s.m_rem_neg = rem_neg += std::min<int64_t>(s.m_amount, 0);
+                   });
 
     RuntimeMonitor monitor{max_seconds};
     Solution solution;
