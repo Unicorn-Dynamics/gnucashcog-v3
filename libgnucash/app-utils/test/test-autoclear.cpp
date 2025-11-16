@@ -180,6 +180,72 @@ TestCase sequentialTestCase4 =
     },
 };
 
+TestCase slowTestCase =
+{
+    .splits = {
+        { "Memo 01", 1, false },
+        { "Memo 02", 2, false },
+        { "Memo 03", 4, false },
+        { "Memo 03", 8, false },
+        { "Memo 03", 16, false },
+        { "Memo 03", 32, false },
+        { "Memo 03", 64, false },
+        { "Memo 03", 128, false },
+        { "Memo 03", 256, false },
+        { "Memo 03", 512, false },
+        { "Memo 03", 1024, false },
+        { "Memo 03", 2048, false },
+        { "Memo 03", 4096, false },
+        { "Memo 03", 8192, false },
+        { "Memo 03", 16384, false },
+        { "Memo 03", 32768, false },
+        { "Memo 03", 65536, false },
+        { "Memo 03", 131072, false },
+        { "Memo 03", 262144, false },
+        { "Memo 03", 524288, false },
+        { "Memo 03", 1048576, false },
+    },
+    .tests = {
+        { 6000000, "The selected amount cannot be cleared." },
+        { 5000000, "The selected amount cannot be cleared." },
+        { 4000000, "The selected amount cannot be cleared." },
+        { 3000000, "The selected amount cannot be cleared." },
+        { 2000000, nullptr },
+    },
+};
+
+TestCase mixedSignsTestCase =
+{
+    .splits = {
+
+        { "memo 01", 30000 },
+        { "memo 01", -20000 },
+        { "memo 01", 10000 },
+        { "memo 01", 500 },
+        { "memo 01", -400 },
+        { "memo 01", 300 }
+    },
+    .tests = {
+        { 30300, nullptr },
+    },
+};
+
+TestCase testwithzerosTestCase =
+{
+    .splits = {
+        { "memo 01", 10000 },
+        { "memo 01", 0 },
+        { "memo 01", 10000 },
+        { "memo 01", 5000 },
+    },
+    .tests = {
+        { 19999, "The selected amount cannot be cleared." },
+        { 20001, "The selected amount cannot be cleared." },
+        { 20000, nullptr },
+    },
+};
+
+
 class AutoClearTest : public ::testing::TestWithParam<TestCase *> {
 protected:
     std::shared_ptr<QofBook> m_book;
@@ -260,6 +326,9 @@ INSTANTIATE_TEST_SUITE_P(
         &sequentialTestCase2,
         &sequentialTestCase3,
         &sequentialTestCase4,
+        &slowTestCase,
+        &mixedSignsTestCase,
+        &testwithzerosTestCase,
         &ambiguousTestCase
     )
 );
