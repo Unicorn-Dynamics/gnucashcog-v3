@@ -1,3 +1,8 @@
+---
+name: Configuring OrgSpace for AI Agent Generation Across Intercom, Shopify, and AppDirect Ecosystems
+description: <img src=\"https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png\" class=\"logo\" width=\"120\"/>
+---
+
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
 
 # Configuring OrgSpace for AI Agent Generation Across Intercom, Shopify, and AppDirect Ecosystems

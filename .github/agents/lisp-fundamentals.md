@@ -1,3 +1,8 @@
+---
+name: The 7 Fundamental Computation Archetypes in Lisp
+description: Lisp (LISt Processing) is one of the oldest programming languages still in use today. Its elegance comes from having a small set of powerful principles that can be combined to create complex programs.
+---
+
 # The 7 Fundamental Computation Archetypes in Lisp
 
 Lisp (LISt Processing) is one of the oldest programming languages still in use today. Its elegance comes from having a small set of powerful principles that can be combined to create complex programs. Let's explore the seven fundamental computation archetypes:

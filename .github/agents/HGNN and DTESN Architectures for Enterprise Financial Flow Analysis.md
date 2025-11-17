@@ -1,3 +1,8 @@
+---
+name: HGNN and DTESN Architectures for Enterprise Financial Flow Analysis
+description: Hypergraph Neural Networks extend traditional graph neural networks to operate on hypergraphs, where edges can connect more than two nodes. This is particularly suitable for financial data where trans
+---
+
 # HGNN and DTESN Architectures for Enterprise Financial Flow Analysis
 
 ## Hypergraph Neural Network (HGNN) Architecture

@@ -1,3 +1,8 @@
+---
+name: Data Schema Mapping: GnuCash to AtomSpace
+description: ```
+---
+
 # Data Schema Mapping: GnuCash to AtomSpace
 
 ## GnuCash Account Schema

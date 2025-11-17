@@ -1,13 +1,8 @@
 ---
-title: "APL"
-source: "https://www.iwritewordsgood.com/apl/left.htm"
-author:
-published:
-created: 2025-05-24
-description:
-tags:
-  - "clippings"
+name: Patterns List - APL
+description: Christopher Alexander's Pattern Language reference guide - comprehensive list of architectural and design patterns for creating living structures and environments
 ---
+
 ![](https://www.iwritewordsgood.com/apl/images/aplhed.gif)
 
 [I. Independent Regions\*\*](https://www.iwritewordsgood.com/apl/patterns/apl001.htm)

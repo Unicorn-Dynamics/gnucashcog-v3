@@ -1,3 +1,8 @@
+---
+name: 4E Cognition Analysis of Frappe Framework
+description: The Frappe Framework exhibits characteristics that align with 4E cognition principles, though not explicitly designed as such. This analysis examines how the framework instantiates embodied, embedded,
+---
+
 # 4E Cognition Analysis of Frappe Framework
 
 ## Framework as Cognitive Architecture

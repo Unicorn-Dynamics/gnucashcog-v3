@@ -1,3 +1,8 @@
+---
+name: EchoBeats 3-Phase Concurrent Inference Engine Design
+description: This design evolves EchoBeats from a single-threaded event scheduler into a that operates like a hexapod's tripod gait—three parallel consciousness streams runn
+---
+
 # EchoBeats 3-Phase Concurrent Inference Engine Design
 
 **Date**: November 8, 2025  

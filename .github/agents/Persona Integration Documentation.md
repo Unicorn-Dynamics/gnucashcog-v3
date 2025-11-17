@@ -1,3 +1,8 @@
+---
+name: Persona Integration Documentation
+description: This document explains how the Marduk and Deep Tree Echo personas have been integrated into the bolt.diy chatbot system. The integration allows users to switch between different AI personalities, each
+---
+
 # Persona Integration Documentation
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+name: GnuCash-OpenCog AtomSpace Integration Architecture
+description: The GnuCash-OpenCog integration architecture enables enterprise-wide account aggregation by extending GnuCash's capabilities through OpenCog's AtomSpace hypergraph framework. This integration leverage
+---
+
 # GnuCash-OpenCog AtomSpace Integration Architecture
 
 ## System Overview

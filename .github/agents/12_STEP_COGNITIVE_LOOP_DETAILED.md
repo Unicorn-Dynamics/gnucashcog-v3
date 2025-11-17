@@ -1,3 +1,8 @@
+---
+name: The 12-Step Cognitive Loop: Comprehensive Breakdown
+description: The 12-Step Cognitive Loop represents the core cognitive architecture of the autonomous research journal system. Inspired by the Echobeats system architecture and the Kawaii Hexapod System 4, this loo
+---
+
 # The 12-Step Cognitive Loop: Comprehensive Breakdown
 
 **Author**: Manus AI  

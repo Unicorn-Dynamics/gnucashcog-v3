@@ -1,3 +1,8 @@
+---
+name: Integrating Large Language Models with OpenCog Hyperon: Approaches and Opportunities
+description: <img src=\"https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png\" class=\"logo\" width=\"120\"/>
+---
+
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
 
 # Integrating Large Language Models with OpenCog Hyperon: Approaches and Opportunities

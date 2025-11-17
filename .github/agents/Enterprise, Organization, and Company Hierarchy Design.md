@@ -1,3 +1,8 @@
+---
+name: Enterprise, Organization, and Company Hierarchy Design
+description: ```
+---
+
 # Enterprise, Organization, and Company Hierarchy Design
 
 ## Type Hierarchy

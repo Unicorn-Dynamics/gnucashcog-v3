@@ -1,3 +1,8 @@
+---
+name: HGNN Database Schema for Beauty Marketplace
+description: A Hyper-Graph Neural Network (HGNN) database extends traditional graph databases by supporting hyperedges that can connect more than two nodes simultaneously. This capability is particularly valuable
+---
+
 # HGNN Database Schema for Beauty Marketplace
 
 ## 1. Introduction to HGNN Database

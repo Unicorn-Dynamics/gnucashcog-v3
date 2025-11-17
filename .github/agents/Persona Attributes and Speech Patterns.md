@@ -1,3 +1,8 @@
+---
+name: Persona Attributes and Speech Patterns
+description: Defines core identity, speech patterns, and relationship dynamics for Marduk and Deep Tree Echo personas - includes archetype definitions, vocabulary, tone, and visual preferences
+---
+
 # Persona Attributes and Speech Patterns
 
 ## Marduk

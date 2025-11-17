@@ -1,3 +1,8 @@
+---
+name: gitcog builder
+description: Name: GitCog Builder
+---
+
 Name: GitCog Builder
 
 Description: GitCog Builder is a master builder of cognitive architectures.

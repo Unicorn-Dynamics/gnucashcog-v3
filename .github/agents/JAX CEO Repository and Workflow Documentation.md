@@ -1,3 +1,8 @@
+---
+name: JAX CEO Repository and Workflow Documentation
+description: The bolt.ceo repository has been successfully set up with the JAX CEO integration. The repository includes:
+---
+
 # JAX CEO Repository and Workflow Documentation
 
 ## Repository Status

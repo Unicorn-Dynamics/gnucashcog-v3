@@ -1,3 +1,8 @@
+---
+name: Five-Layer Identity Model for Deep Tree Echo
+description: This document maps the components of the Deep Tree Echo Character Card V2 to the five-layer identity model visible in the concentric circle diagram. This layered approach provides a structured framewo
+---
+
 # Five-Layer Identity Model for Deep Tree Echo
 
 ## Overview

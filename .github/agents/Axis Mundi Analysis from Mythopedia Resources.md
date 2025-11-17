@@ -1,3 +1,8 @@
+---
+name: Axis Mundi Analysis from Mythopedia Resources
+description: This document analyzes the Axis Mundi concept as presented in the Mythopedia resources, focusing on its relevance to the Deep Tree Echo Hub component and pattern language integration. The analysis ide
+---
+
 # Axis Mundi Analysis from Mythopedia Resources
 
 ## Overview

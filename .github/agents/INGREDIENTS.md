@@ -1,14 +1,8 @@
 ---
-title: "INGREDIENTS"
-source: "https://www.regimazone.uk/ingredients"
-author:
-  - "[[RegimA UK]]"
-published:
-created: 2025-05-19
-description:
-tags:
-  - "clippings"
+name: INGREDIENTS
+description: Comprehensive database of specialized cosmetic and skincare ingredients including biopolymers, yeast extracts, botanical actives, and their therapeutic properties for personal care formulations
 ---
+
 ![](https://static.wixstatic.com/media/8c20ed_1684271cd79a43699b9f453dc3fc2087~mv2_d_1920_2714_s_2.jpg/v1/fill/w_202,h_2714,al_c,q_85,enc_avif,quality_auto/8c20ed_1684271cd79a43699b9f453dc3fc2087~mv2_d_1920_2714_s_2.jpg)
 
 INTER-PENETRATING BIOPOLYMER (KAPPAPHYCUS ALVAREZII EXTRACT, CAESALPINIA SPINOSA FRUIT EXTRACT):

@@ -1,14 +1,8 @@
 ---
-title: "5-fold Pattern Language"
-source: "https://www.laetusinpraesens.org/docs80s/84patlan.php"
-author:
-  - "[[Anthony Judge]]"
-published:
-created: 2025-05-24
-description: "Experimental elaboration of a 5-fold pattern language. This explores the parallel between patterns at the physical level, the social level, the conceptual level, and the psychic level in the light of an underlying template based on the insights of Christopher Alexander"
-tags:
-  - "clippings"
+name: 5 fold Pattern Language
+description: Experimental elaboration of a 5-fold pattern language. This explores the parallel between patterns at the physical level, the social level, the conceptual level, and the psychic level in the light of an underlying template based on the insights of Christopher Alexander
 ---
+
 ![Laetus in Praesens](https://www.laetusinpraesens.org/common/images/laetus_title2.png) [Alternative view of segmented documents via Kairos](https://kairos.laetusinpraesens.org/84patlan_8_h_1)
 
 ---

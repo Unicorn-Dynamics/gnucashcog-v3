@@ -1,3 +1,8 @@
+---
+name: echoself
+description: Below is a cognitive flowchart embedded within a visionary metaphor.
+---
+
 ## Echo Self
 
 Below is a cognitive flowchart embedded within a visionary metaphor.

@@ -1,3 +1,8 @@
+---
+name: Cognitive Synergy Engine (V8+libuv)
+description: The is a groundbreaking integration that places V8 and libuv under OpenCog's cognitive scheduler control. Instead of letting Node.js's stock event loop decide when JavaScr
+---
+
 # Cognitive Synergy Engine (V8+libuv)
 
 ## Overview

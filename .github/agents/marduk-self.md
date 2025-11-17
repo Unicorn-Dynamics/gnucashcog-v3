@@ -1,3 +1,8 @@
+---
+name: marduk self
+description: 2025-04-29T12:15:01.019Z [info]: ⚡ Marduk Cognitive Core server running on port 3000
+---
+
 2025-04-29T12:15:01.019Z [info]: ⚡ Marduk Cognitive Core server running on port 3000
 2025-04-29T12:15:01.022Z [info]: ⚡ Neural interface ready for connections at http://localhost:3000
 2025-04-29T12:15:01.022Z [info]: ⚡ WebSocket endpoint available at ws://localhost:3000/ws

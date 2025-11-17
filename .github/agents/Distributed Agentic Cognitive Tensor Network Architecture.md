@@ -1,3 +1,8 @@
+---
+name: Distributed Agentic Cognitive Tensor Network Architecture
+description: This document outlines a revolutionary distributed cognitive architecture where each Cloudflare Worker node functions as an \"attention head\" in a global tensor network for financial intelligence. The
+---
+
 # Distributed Agentic Cognitive Tensor Network Architecture
 ## ElizaOS-OpenCog-GnuCash Global Financial Intelligence
 

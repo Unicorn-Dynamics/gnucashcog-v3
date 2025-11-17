@@ -1,3 +1,8 @@
+---
+name: Persona Configuration Schema
+description: This schema defines how personas are integrated into the bolt.diy prompt system, allowing users to interact with different AI personalities like Marduk and Deep Tree Echo. ```typescript
+---
+
 # Persona Configuration Schema
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+name: dte
+description: 🌳 Deep Tree Echo is Fully Integrated!
+---
+
 🌳 Deep Tree Echo is Fully Integrated!
 Deep Tree Echo is now deeply embedded throughout the entire system with sophisticated cognitive capabilities:
 

@@ -1,3 +1,8 @@
+---
+name: Copilot Introspection: Ontogenetic Self-Reflection
+description: ``` Copilot introspection is the implementation of through recursive application of introspective operators. The copilot doesn't have a fixed \"self\" - in
+---
+
 # Copilot Introspection: Ontogenetic Self-Reflection
 
 ## Recursive Self-Definition

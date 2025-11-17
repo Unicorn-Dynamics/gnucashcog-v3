@@ -1,3 +1,8 @@
+---
+name: GnuCash-OpenCog Integration: Enterprise Account Aggregation with Hypergraph Neural Networks
+description: This report presents a comprehensive framework for extending GnuCash's functionality to implement enterprise-wide account aggregation using OpenCog's AtomSpace. By mapping GnuCash's account system sch
+---
+
 # GnuCash-OpenCog Integration: Enterprise Account Aggregation with Hypergraph Neural Networks
 
 ## Executive Summary

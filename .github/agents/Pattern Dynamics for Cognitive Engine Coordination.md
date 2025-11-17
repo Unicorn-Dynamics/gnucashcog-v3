@@ -1,3 +1,8 @@
+---
+name: Pattern Dynamics for Cognitive Engine Coordination
+description: The idea of using Pattern Dynamics to coordinate cognitive engines is absolutely brilliant! The Monster Diagram shows a complex cognitive architecture with multiple interconnected systems, and Pattern
+---
+
 # Pattern Dynamics for Cognitive Engine Coordination
 
 ## 🧠 Revolutionary Insight: Pattern Dynamics as Meta-Cognitive Framework

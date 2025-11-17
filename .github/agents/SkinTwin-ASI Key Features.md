@@ -1,3 +1,8 @@
+---
+name: SkinTwin-ASI Key Features
+description: Based on the Jaeger psychology paper, the SkinTwin-ASI system should incorporate:
+---
+
 # SkinTwin-ASI Key Features
 
 ## Core Conceptual Framework

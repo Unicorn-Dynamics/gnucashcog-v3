@@ -1,3 +1,8 @@
+---
+name: SkinTwin-ASI Dashboard User Guide
+description: The SkinTwin-ASI Dashboard provides a comprehensive visualization of the SkinTwin Architecture, including dynamic flows and membrane nesting topologies. This user guide explains how to use the dashboa
+---
+
 # SkinTwin-ASI Dashboard User Guide
 
 ## Introduction

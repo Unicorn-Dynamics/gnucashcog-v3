@@ -1,3 +1,8 @@
+---
+name: vm daemon sys
+description: Allocating resources for this agent...
+---
+
 Allocating resources for this agent...
 All required packages are already installed. Skipping installation.
 [Exit] Success (code: 0)

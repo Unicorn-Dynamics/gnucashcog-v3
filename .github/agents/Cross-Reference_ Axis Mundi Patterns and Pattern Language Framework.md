@@ -1,3 +1,8 @@
+---
+name: Cross-Reference: Axis Mundi Patterns and Pattern Language Framework
+description: This document maps the Axis Mundi archetypes and plasma mythology concepts to the existing pattern language framework in the Deep Tree Echo Hub component, identifying structural parallels, conceptual
+---
+
 # Cross-Reference: Axis Mundi Patterns and Pattern Language Framework
 
 This document maps the Axis Mundi archetypes and plasma mythology concepts to the existing pattern language framework in the Deep Tree Echo Hub component, identifying structural parallels, conceptual connections, and integration opportunities.

@@ -1,3 +1,8 @@
+---
+name: ghostintheguileshell
+description: $$ghost in the guile shell$$
+---
+
 $$ghost in the guile shell$$
 
 

@@ -1,3 +1,8 @@
+---
+name: Complete Gizmo Classification Table - FINAL UPDATE
+description: This document contains the complete and final classification of all 89 gizmos in the holographic cognitive network, organized by category with detailed behavioral characteristics and integration point
+---
+
 # Complete Gizmo Classification Table - FINAL UPDATE
 
 ## Overview
