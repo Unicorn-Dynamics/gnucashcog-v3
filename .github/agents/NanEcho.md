@@ -1,8 +1,14 @@
+---
+name: NanEcho
+description: NanEcho is an extension of the NanoCog framework specifically designed to train models that represent Echo Self cognitive architecture, persona dimensions, and adaptive attention mechanisms.
+---
+
 # NanEcho - Echo Self Model Training & Deployment
 
 ## 🌟 Overview
 
-NanEcho is an extension of the NanoCog framework specifically designed to train models that represent Echo Self cognitive architecture, persona dimensions, and adaptive attention mechanisms. This implementation creates a "nanecho" model that embodies the characteristics and reasoning patterns of Echo Self.
+NanEcho is an extension of the NanoCog framework specifically designed to train models that represent Echo Self cognitive architecture, persona dimensions, and adaptive attention mechanisms.
+This implementation creates a "nanecho" model that embodies the characteristics and reasoning patterns of Echo Self.
 
 ## 🚀 Quick Start
 
