@@ -83,6 +83,7 @@ struct _RecnWindow
 
     GtkBuilder *builder;         /* The builder object */
     GSimpleActionGroup *simple_action_group; /* The action group for the window */
+    GtkAccelGroup *accel_group;
 
     GncPluginPage *page;
 
@@ -1899,10 +1900,10 @@ recnWindowWithBalance (GtkWidget *parent, Account *account, gnc_numeric new_endi
         GtkToolbar *tool_bar;
         GMenuModel *menu_model;
         GtkWidget *menu_bar;
-        GtkAccelGroup *accel_group = gtk_accel_group_new ();
         const gchar *ui = GNUCASH_RESOURCE_PREFIX "/gnc-reconcile-window.ui";
         GError *error = NULL;
 
+        recnData->accel_group = gtk_accel_group_new ();
         recnData->builder = gtk_builder_new ();
 
         gtk_builder_add_from_resource (recnData->builder, ui, &error);
@@ -1938,10 +1939,10 @@ recnWindowWithBalance (GtkWidget *parent, Account *account, gnc_numeric new_endi
 
         gtk_container_add (GTK_CONTAINER(vbox), GTK_WIDGET(tool_bar));
 
-        gtk_window_add_accel_group (GTK_WINDOW(recnData->window), accel_group);
+        gtk_window_add_accel_group (GTK_WINDOW(recnData->window), recnData->accel_group);
 
         // need to add the accelerator keys
-        gnc_add_accelerator_keys_for_menu (menu_bar, menu_model, accel_group);
+        gnc_add_accelerator_keys_for_menu (menu_bar, menu_model, recnData->accel_group);
 
 #ifdef MAC_INTEGRATION
         gtkosx_application_sync_menubar (theApp);
@@ -2228,6 +2229,12 @@ recn_destroy_cb (GtkWidget *w, gpointer data)
 
     if (recnData->delete_refresh)
         gnc_resume_gui_refresh ();
+
+    if (recnData->builder)
+        g_object_unref(recnData->builder);
+
+    if (recnData->accel_group)
+        g_object_unref(recnData->accel_group);
 
     //Disable the actions, the handlers try to access recnData
     for (gint i = 0; i < num_actions; i++)

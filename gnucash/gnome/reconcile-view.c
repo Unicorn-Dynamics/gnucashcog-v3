@@ -784,7 +784,7 @@ gnc_reconcile_view_finalize (GObject *object)
 {
     GNCReconcileView *view = GNC_RECONCILE_VIEW(object);
 
-    g_list_free (view->column_list);
+    g_list_free_full (view->column_list, g_object_unref);
     if (view->reconciled != NULL)
     {
         g_hash_table_destroy (view->reconciled);
