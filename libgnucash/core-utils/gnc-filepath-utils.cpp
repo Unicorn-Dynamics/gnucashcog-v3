@@ -1313,8 +1313,8 @@ gnc_list_all_paths ()
         gnc_filepath_init ();
 
     return {
-        { "GNC_USERDATA_DIR", gnc_userdata_home_str.c_str(), true},
-        { "GNC_USERCONFIG_DIR", gnc_userconfig_home_str.c_str(), true },
+        { "GNC_DATA_HOME", gnc_userdata_home_str.c_str(), true},
+        { "GNC_CONFIG_HOME", gnc_userconfig_home_str.c_str(), true },
         { "GNC_BIN", g_getenv ("GNC_BIN"), false },
         { "GNC_LIB", g_getenv ("GNC_LIB"), false },
         { "GNC_CONF", g_getenv ("GNC_CONF"), false },
