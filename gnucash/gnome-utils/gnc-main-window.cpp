@@ -5295,6 +5295,7 @@ add_about_paths (GtkDialog *dialog)
     {
         gchar *env_name = g_strconcat (ep.env_name, ":", NULL);
         GtkWidget *label = gtk_label_new (env_name);
+        gtk_label_set_selectable (GTK_LABEL (label), TRUE);
         const gchar *uri = gnc_uri_create_uri ("file", NULL, 0, NULL, NULL, ep.env_path);
         gchar *display_uri = gnc_doclink_get_unescaped_just_uri (uri);
         GtkWidget *widget = gtk_link_button_new_with_label (uri, display_uri);
