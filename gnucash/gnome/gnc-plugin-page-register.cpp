@@ -1509,6 +1509,10 @@ gnc_plugin_page_register_destroy_widget (GncPluginPage* plugin_page)
     qof_query_destroy (priv->filter_query);
 
     gtk_widget_hide (priv->widget);
+
+    if (GTK_IS_WIDGET(priv->gsr))
+        gtk_widget_destroy(GTK_WIDGET(priv->gsr));
+
     gnc_ledger_display_close (priv->ledger);
     priv->ledger = NULL;
     LEAVE (" ");
