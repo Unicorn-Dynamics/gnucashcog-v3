@@ -43,8 +43,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-22 11:57-0700\n"
-"PO-Revision-Date: 2025-10-10 09:45+0000\n"
-"Last-Translator: SIB <shawndu0820@gmail.com>\n"
+"PO-Revision-Date: 2025-11-19 20:54+0000\n"
+"Last-Translator: DGDS <dagrinddontstop@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/gnucash/gnucash/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -52,7 +52,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 
 #: bindings/guile/date-utilities.scm:173
@@ -261,31 +261,31 @@ msgstr "公司名称"
 
 #: bindings/guile/options.scm:390 libgnucash/engine/gnc-optiondb.cpp:1304
 msgid "Company Address"
-msgstr "地址"
+msgstr "公司地址"
 
 #: bindings/guile/options.scm:391 libgnucash/engine/gnc-optiondb.cpp:1327
 msgid "Company ID"
-msgstr "统一社会信用代码"
+msgstr "公司 ID"
 
 #: bindings/guile/options.scm:392 libgnucash/engine/gnc-optiondb.cpp:1312
 msgid "Company Phone Number"
-msgstr "电话"
+msgstr "公司电话号码"
 
 #: bindings/guile/options.scm:393 libgnucash/engine/gnc-optiondb.cpp:1316
 msgid "Company Fax Number"
-msgstr "传真"
+msgstr "公司传真号码"
 
 #: bindings/guile/options.scm:394 libgnucash/engine/gnc-optiondb.cpp:1324
 msgid "Company Website URL"
-msgstr "官网"
+msgstr "公司网站网址"
 
 #: bindings/guile/options.scm:395 libgnucash/engine/gnc-optiondb.cpp:1320
 msgid "Company Email Address"
-msgstr "邮箱"
+msgstr "公司电子邮箱地址"
 
 #: bindings/guile/options.scm:396 libgnucash/engine/gnc-optiondb.cpp:1308
 msgid "Company Contact Person"
-msgstr "法人"
+msgstr "公司联系人"
 
 #: bindings/guile/options.scm:397
 #: gnucash/gtkbuilder/dialog-preferences.glade:1021
@@ -311,7 +311,7 @@ msgstr "税号"
 
 #: borrowed/goffice/go-charmap-sel.c:70
 msgid "Arabic"
-msgstr "阿拉伯语"
+msgstr "阿拉伯文"
 
 #: borrowed/goffice/go-charmap-sel.c:71
 msgid "Baltic"
@@ -357,7 +357,7 @@ msgstr "土耳其语"
 #: borrowed/goffice/go-charmap-sel.c:81
 #: gnucash/gnome-utils/assistant-xml-encoding.c:224
 msgid "Unicode"
-msgstr "Unicode(统一码)"
+msgstr "统一码"
 
 #: borrowed/goffice/go-charmap-sel.c:82
 msgid "Vietnamese"
