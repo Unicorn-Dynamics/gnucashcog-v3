@@ -6,14 +6,15 @@
 # BL <ghostzeko@gmail.com>, 2023.
 # Abdulsalam Alshilash <ashalash@msn.com>, 2025.
 # Usama Khalil <usamafoad@gmail.com>, 2025.
+# Tgol Mgol <tgolmgol@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.6\n"
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2024-06-22 06:24+0200\n"
-"PO-Revision-Date: 2025-05-21 12:02+0000\n"
-"Last-Translator: Usama Khalil <usamafoad@gmail.com>\n"
+"PO-Revision-Date: 2025-11-21 14:52+0000\n"
+"Last-Translator: Tgol Mgol <tgolmgol@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/gnucash/glossary/"
 "ar/>\n"
 "Language: ar\n"
@@ -22,11 +23,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #. "English Definition (Dear translators: This file will never be visible to normal users! It should only serve as a tool for translators. E.g. matching terms from this file are displayed in Weblate's Translation pages of other GnuCash components like the program.)"
 msgid "Term"
-msgstr ""
+msgstr "مصطلح"
 
 #. "Opening and closing quote symbols and optionally their key combos like [altgr]+[Y]/[X]. Define the preferred style of quotation, see https://en.wikipedia.org/wiki/Quotation_mark#Summary_table"
 msgid "\"\""
@@ -472,7 +473,7 @@ msgstr "فائدة"
 
 #. "A list of goods sold or services provided together with the prices charged; see also: a bill. In Gnucash, an 'invoice' is a statement that we sent out (to a customer), whereas a 'bill' is one that we received (from a vendor)."
 msgid "invoice"
-msgstr "فاتورة عميل"
+msgstr "فاتورة"
 
 #. "In business accounting: Jobs are a mechanism by which you can group multiple invoices or bills that belong to the same customer or vendor. The job describes a (larger) piece of work or a task undertaken on order, for which one or many invoices or bills will be issued."
 msgid "job"

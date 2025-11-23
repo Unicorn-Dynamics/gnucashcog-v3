@@ -16,14 +16,15 @@
 # Abdulsalam Alshilash <ashalash@msn.com>, 2025.
 # Usama Khalil <usamafoad@gmail.com>, 2025.
 # Ebrahim Nasser <ebranas314@gmail.com>, 2025.
+# Tgol Mgol <tgolmgol@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-22 11:57-0700\n"
-"PO-Revision-Date: 2025-06-02 17:06+0000\n"
-"Last-Translator: Ebrahim Nasser <ebranas314@gmail.com>\n"
+"PO-Revision-Date: 2025-11-21 14:52+0000\n"
+"Last-Translator: Tgol Mgol <tgolmgol@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "ar/>\n"
 "Language: ar\n"
@@ -32,7 +33,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 
 #: bindings/guile/date-utilities.scm:173
@@ -300,7 +301,7 @@ msgstr "العربية"
 
 #: borrowed/goffice/go-charmap-sel.c:71
 msgid "Baltic"
-msgstr ""
+msgstr "البلطيق"
 
 #: borrowed/goffice/go-charmap-sel.c:72
 msgid "Central European"
@@ -398,152 +399,147 @@ msgstr "البلطيقية (ISO-8859-13)"
 
 #: borrowed/goffice/go-charmap-sel.c:125
 msgid "Baltic (ISO-8859-4)"
-msgstr "البلطيقة (ISO-8859-4)"
+msgstr "البلطيقية (ISO-8859-4)"
 
 #: borrowed/goffice/go-charmap-sel.c:126
 msgid "Baltic (Windows-1257)"
-msgstr ""
+msgstr "البلطيقية (Windows-1257)"
 
 #: borrowed/goffice/go-charmap-sel.c:127
-#, fuzzy
 msgid "Celtic (ISO-8859-14)"
-msgstr "إيزو-8859-14 (سلتيك)"
+msgstr "سلتيك (ISO-8859-14)"
 
 #: borrowed/goffice/go-charmap-sel.c:128
 msgid "Central European (IBM-852)"
-msgstr ""
+msgstr "أوروبا الوسطى (IBM-852)"
 
 #: borrowed/goffice/go-charmap-sel.c:130
 msgid "Central European (ISO-8859-2)"
-msgstr ""
+msgstr "أوروبا الوسطى (ISO-8859-2)"
 
 #: borrowed/goffice/go-charmap-sel.c:132
 msgid "Central European (MacCE)"
-msgstr ""
+msgstr "أوروبا الوسطى (MacCE)"
 
 #: borrowed/goffice/go-charmap-sel.c:134
 msgid "Central European (Windows-1250)"
-msgstr ""
+msgstr "أوروبا الوسطى (Windows-1250)"
 
 #: borrowed/goffice/go-charmap-sel.c:136
 msgid "Chinese Simplified (GB18030)"
-msgstr ""
+msgstr "صيني مبسّط (GB18030)"
 
 #: borrowed/goffice/go-charmap-sel.c:137
 msgid "Chinese Simplified (GB2312)"
-msgstr ""
+msgstr "صيني مبسّط (GB2312)"
 
 #: borrowed/goffice/go-charmap-sel.c:138
 msgid "Chinese Simplified (GBK)"
-msgstr ""
+msgstr "صيني مبسّط (GBK)"
 
 #: borrowed/goffice/go-charmap-sel.c:139
 msgid "Chinese Simplified (HZ)"
-msgstr ""
+msgstr "صيني مبسّط (HZ)"
 
 #: borrowed/goffice/go-charmap-sel.c:140
 msgid "Chinese Simplified (Windows-936)"
-msgstr ""
+msgstr "صيني مبسّط (Windows-936)"
 
 #: borrowed/goffice/go-charmap-sel.c:142
 msgid "Chinese Traditional (Big5)"
-msgstr ""
+msgstr "صيني تقليدي (Big5)"
 
 #: borrowed/goffice/go-charmap-sel.c:143
 msgid "Chinese Traditional (Big5-HKSCS)"
-msgstr ""
+msgstr "صيني تقليدي (Big5-HKSCS)"
 
 #: borrowed/goffice/go-charmap-sel.c:145
 msgid "Chinese Traditional (EUC-TW)"
-msgstr ""
+msgstr "صيني تقليدي (EUC-TW)"
 
 #: borrowed/goffice/go-charmap-sel.c:147
 msgid "Croatian (MacCroatian)"
-msgstr ""
+msgstr "كرواتي (MacCroatian)"
 
 #: borrowed/goffice/go-charmap-sel.c:149
-#, fuzzy
 msgid "Cyrillic (IBM-855)"
-msgstr "السيريلية"
+msgstr "السيريلية (IBM-855)"
 
 #: borrowed/goffice/go-charmap-sel.c:150
 msgid "Cyrillic (ISO-8859-5)"
-msgstr ""
+msgstr "السيريلية (ISO-8859-5)"
 
 #: borrowed/goffice/go-charmap-sel.c:152
 msgid "Cyrillic (ISO-IR-111)"
-msgstr ""
+msgstr "السيريلية (ISO-IR-111)"
 
 #: borrowed/goffice/go-charmap-sel.c:154
-#, fuzzy
 msgid "Cyrillic (KOI8-R)"
-msgstr "السيريلية"
+msgstr "السيريلية (KOI8-R)"
 
 #: borrowed/goffice/go-charmap-sel.c:155
 msgid "Cyrillic (MacCyrillic)"
-msgstr ""
+msgstr "السيريلية (MacCyrillic)"
 
 #: borrowed/goffice/go-charmap-sel.c:157
 msgid "Cyrillic (Windows-1251)"
-msgstr ""
+msgstr "السيريلية (Windows-1251)"
 
 #: borrowed/goffice/go-charmap-sel.c:159
 msgid "Russian (CP-866)"
-msgstr ""
+msgstr "الروسية (CP-866)"
 
 #: borrowed/goffice/go-charmap-sel.c:160
 msgid "Ukrainian (KOI8-U)"
-msgstr ""
+msgstr "الاوكرانية (KOI8-U)"
 
 #: borrowed/goffice/go-charmap-sel.c:161
-#, fuzzy
 msgid "Ukrainian (MacUkrainian)"
-msgstr "KOI8-U (الأوكراني)"
+msgstr "الاوكرانية (MacUkrainian)"
 
 #: borrowed/goffice/go-charmap-sel.c:163
 msgid "English (ASCII)"
-msgstr ""
+msgstr "الانجليزية (ASCII)"
 
 #: borrowed/goffice/go-charmap-sel.c:165
 msgid "Farsi (MacFarsi)"
-msgstr ""
+msgstr "الفارسية (MacFarsi)"
 
 #: borrowed/goffice/go-charmap-sel.c:166
 msgid "Georgian (GEOSTD8)"
-msgstr ""
+msgstr "الجورجية (GEOSTD8)"
 
 #: borrowed/goffice/go-charmap-sel.c:167
-#, fuzzy
 msgid "Greek (ISO-8859-7)"
-msgstr "إيزو-8859-7 (اليونانية)"
+msgstr "اليونانية (ISO-8859-7)"
 
 #: borrowed/goffice/go-charmap-sel.c:168
 msgid "Greek (MacGreek)"
-msgstr ""
+msgstr "اليونانية (MacGreek)"
 
 #: borrowed/goffice/go-charmap-sel.c:169
 msgid "Greek (Windows-1253)"
-msgstr ""
+msgstr "اليونانية (Windows-1253)"
 
 #: borrowed/goffice/go-charmap-sel.c:170
 msgid "Gujarati (MacGujarati)"
-msgstr ""
+msgstr "الكجراتية (MacGujarati)"
 
 #: borrowed/goffice/go-charmap-sel.c:172
 msgid "Gurmukhi (MacGurmukhi)"
-msgstr ""
+msgstr "الغورموخي (MacGurmukhi)"
 
 #: borrowed/goffice/go-charmap-sel.c:174
 msgid "Hebrew (IBM-862)"
-msgstr ""
+msgstr "العبرية (IBM-862)"
 
 #: borrowed/goffice/go-charmap-sel.c:175
 msgid "Hebrew (ISO-8859-8-E)"
-msgstr ""
+msgstr "العبرية (ISO-8859-8-E)"
 
 #: borrowed/goffice/go-charmap-sel.c:177
 msgid "Hebrew (ISO-8859-8-I)"
-msgstr ""
+msgstr "العبرية (ISO-8859-I)"
 
 #: borrowed/goffice/go-charmap-sel.c:179
 msgid "Hebrew (MacHebrew)"
@@ -1382,7 +1378,7 @@ msgstr "الرمز"
 #: gnucash/report/trep-engine.scm:926 gnucash/report/trep-engine.scm:1206
 #: gnucash/report/trep-engine.scm:2270
 msgid "Shares"
-msgstr "سهم"
+msgstr "أسهم"
 
 #: gnucash/gnome/assistant-stock-split.c:787
 msgid "You don't have any stock accounts with balances!"
@@ -3609,7 +3605,7 @@ msgstr ""
 #: gnucash/gnome-utils/gnc-tree-view-account.c:875
 #: gnucash/report/trep-engine.scm:158
 msgid "Cleared"
-msgstr "مسح"
+msgstr "منجز"
 
 #: gnucash/gnome/dialog-payment.c:1595
 #: gnucash/gnome/gnc-plugin-page-register.cpp:3300
@@ -21481,11 +21477,11 @@ msgstr "راتب"
 
 #: gnucash/register/ledger-core/split-register.c:2654
 msgid "LTCG"
-msgstr "أربا"
+msgstr "أرباح رأسمال طويلة الامد"
 
 #: gnucash/register/ledger-core/split-register.c:2656
 msgid "STCG"
-msgstr "أرقا"
+msgstr "أرباح رأسمال قصيرة الأمد"
 
 #: gnucash/register/ledger-core/split-register.c:2659
 msgid "Dist"
@@ -30589,7 +30585,7 @@ msgstr "إلغاء المعاملة الحالية"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:184
 msgid "_Void Transaction"
-msgstr ""
+msgstr "عملية ملغاة"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:186
 #, fuzzy
