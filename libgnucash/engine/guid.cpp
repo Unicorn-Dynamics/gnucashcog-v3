@@ -203,8 +203,8 @@ string_to_guid (const char * str, GncGUID * guid)
 gboolean
 guid_equal (const GncGUID *guid_1, const GncGUID *guid_2)
 {
-    if (!guid_1 || !guid_2)
-        return !guid_1 && !guid_2;
+    if (guid_1 == guid_2) return true;
+    if (!guid_1 || !guid_2) return false;
     gnc::GUID temp1 {*guid_1};
     gnc::GUID temp2 {*guid_2};
     return temp1 == temp2;
@@ -213,8 +213,9 @@ guid_equal (const GncGUID *guid_1, const GncGUID *guid_2)
 gint
 guid_compare (const GncGUID *guid_1, const GncGUID *guid_2)
 {
-    if (!guid_1 || !guid_2)
-        return !guid_1 && !guid_2;
+    if (guid_1 == guid_2) return 0;
+    if (!guid_1) return -1;
+    if (!guid_2) return 1;
     gnc::GUID temp1 {*guid_1};
     gnc::GUID temp2 {*guid_2};
     if (temp1 < temp2)
