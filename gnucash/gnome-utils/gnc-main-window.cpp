@@ -5419,6 +5419,19 @@ create_url_text_tag (GtkDialog *dialog,
 }
 
 static void
+add_textview_css_class (GtkTextView *textview)
+{
+    GdkRGBA color;
+    GtkStyleContext *stylectxt = gtk_widget_get_style_context (GTK_WIDGET(textview));
+    gtk_style_context_get_color (stylectxt, GTK_STATE_FLAG_NORMAL, &color);
+
+    if (gnc_is_dark_theme (&color))
+        gtk_style_context_add_class (stylectxt, "gnc-class-textview-dark");
+    else
+        gtk_style_context_add_class (stylectxt, "gnc-class-textview");
+}
+
+static void
 add_about_paths (GtkDialog *dialog)
 {
     GtkWidget *page_vbox = gnc_get_dialog_widget_from_id (dialog, "page_vbox");
@@ -5440,6 +5453,8 @@ add_about_paths (GtkDialog *dialog)
 
     GdkRGBA link_color = get_link_color ();
     gint max_text_width = get_max_text_width (GTK_TEXT_VIEW(textview), ep_vec);
+
+    add_textview_css_class (GTK_TEXT_VIEW(textview));
 
     gtk_text_view_set_left_margin (GTK_TEXT_VIEW(textview), DEFAULT_MARGIN);
     gtk_text_view_set_right_margin (GTK_TEXT_VIEW(textview), DEFAULT_MARGIN);
