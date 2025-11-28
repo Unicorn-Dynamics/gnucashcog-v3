@@ -87,6 +87,41 @@ GncGUID * guid_convert_create (gnc::GUID const &);
 static gnc::GUID s_null_guid {boost::uuids::uuid { {0}}};
 static GncGUID * s_null_gncguid {guid_convert_create (s_null_guid)};
 
+static inline int
+char_to_num (unsigned char c) noexcept
+{
+    unsigned int digit = c - '0';
+    unsigned int alpha = (c | 0x20) - 'a';
+    return digit <= 9 ? digit : alpha <= 6 ? alpha + 10 : -1;
+}
+
+static inline bool
+fast_string_to_guid (const char* s, uint8_t* out) noexcept
+{
+    if (strnlen (s, GUID_ENCODING_LENGTH + 1) != GUID_ENCODING_LENGTH) return false;
+    bool all_ok = true;
+    for (int i = 0; i < GUID_DATA_SIZE; i++)
+    {
+        int hi = char_to_num (*s++);
+        int lo = char_to_num (*s++);
+        all_ok &= (hi >= 0 && lo >= 0);
+        out[i] = (unsigned char)((hi << 4) | lo);
+    }
+    return all_ok;
+}
+
+static inline void
+fast_guid_to_string (const uint8_t* src, char* dest) noexcept
+{
+    static constexpr char hex[] = "0123456789abcdef";
+    for (size_t i = 0; i < 16; i++)
+    {
+        uint8_t b = src[i];
+        *dest++ = hex[b >> 4];
+        *dest++ = hex[b & 0x0F];
+    }
+}
+
 /* Memory management routines ***************************************/
 
 /**
@@ -164,29 +199,27 @@ gchar *
 guid_to_string (const GncGUID * guid)
 {
     if (!guid) return nullptr;
-    gnc::GUID temp {*guid};
-    auto temp_str = temp.to_string ();
-    return g_strdup (temp_str.c_str ());
+    char* buffer = g_new (char, GUID_ENCODING_LENGTH + 1);
+    guid_to_string_buff (guid, buffer);
+    return buffer;
 }
 
 gchar *
 guid_to_string_buff (const GncGUID * guid, gchar *str)
 {
     if (!str || !guid) return nullptr;
-
-    gnc::GUID temp {*guid};
-    auto val = temp.to_string ();
-    /*We need to be sure to copy the terminating null character.
-     * The standard guarantees that std::basic_string::c_str ()
-     * returns with a terminating null character, too.*/
-    std::copy (val.c_str (), val.c_str () + val.size () + 1, str);
-    return str + val.size ();
+    fast_guid_to_string (guid->reserved, str);
+    str[GUID_ENCODING_LENGTH] = '\0';
+    return str;
 }
 
 gboolean
 string_to_guid (const char * str, GncGUID * guid)
 {
     if (!guid || !str || !*str) return false;
+
+    if (fast_string_to_guid (str, guid->reserved))
+        return true;
 
     try
     {
@@ -323,12 +356,10 @@ GUID::null_guid () noexcept
 std::string
 GUID::to_string () const noexcept
 {
-    auto const & val = boost::uuids::to_string (implementation);
-    std::string ret;
-    std::for_each (val.begin (), val.end (), [&ret] (char a) {
-        if (a != '-') ret.push_back (a);
-    });
-    return ret;
+    std::string out;
+    out.resize (implementation.size() * 2);
+    fast_guid_to_string (implementation.data, out.data());
+    return out;
 }
 
 GUID
@@ -336,6 +367,14 @@ GUID::from_string (const char* str)
 {
     if (!str)
         throw guid_syntax_exception {};
+
+    uint8_t bytes[16];
+    if (fast_string_to_guid(str, bytes))
+    {
+        boost::uuids::uuid u;
+        std::memcpy(u.data, bytes, 16);
+        return GUID{u};
+    }
     try
     {
         static boost::uuids::string_generator strgen;
@@ -350,6 +389,9 @@ GUID::from_string (const char* str)
 bool
 GUID::is_valid_guid (const char* str)
 {
+    uint8_t bytes[16];
+    if (fast_string_to_guid(str, bytes))
+        return true;
     try
     {
         static boost::uuids::string_generator strgen;
