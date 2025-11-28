@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-22 11:57-0700\n"
-"PO-Revision-Date: 2025-10-12 16:07+0000\n"
+"PO-Revision-Date: 2025-11-23 00:51+0000\n"
 "Last-Translator: Szia Tomi <sziatomi01@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/hu/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #: bindings/guile/date-utilities.scm:173
 #: gnucash/report/reports/example/daily-reports.scm:260
@@ -6440,6 +6440,24 @@ msgid ""
 "Press \"Next\" now to select the correct character encoding for your data "
 "file.\n"
 msgstr ""
+"\n"
+"A betölteni kívánt fájl egy régebbi GnuCash verzióból származik. A régebbi "
+"verziók fájlformátumában hiányzott a használt karakterkódolás részletes "
+"specifikációja. Ez azt jelenti, hogy az adatfájlban szereplő szöveg "
+"többféleképpen is értelmezhető. Ez a többértelműség automatikusan nem "
+"oldható meg, de az új GnuCash 2.0.0 fájlformátum tartalmazni fogja az összes "
+"szükséges specifikációt, így nem kell újra végigcsinálnia ezt a lépést.\n"
+"\n"
+"A GnuCash megpróbálja kitalálni az adatfájl megfelelő karakterkódolását. A "
+"következő oldalon a GnuCash megmutatja az így kapott szövegeket. "
+"Ellenőrizze, hogy a szavak a vártnak megfelelően jelennek-e meg. Ha minden "
+"rendben van, akkor egyszerűen nyomja meg a „Következő” gombot. Ha azonban a "
+"szavak nem várt karaktereket tartalmaznak, akkor válasszon másik "
+"karakterkódolást, hogy más eredményt lásson. Lehet, hogy a karakterkódolások "
+"listáját szerkesztenie kell a megfelelő gombra kattintva.\n"
+"\n"
+"Nyomja meg most a „Következő” gombot az adatfájl megfelelő "
+"karakterkódolásának kiválasztásához.\n"
 
 #: gnucash/gnome-utils/assistant-xml-encoding.c:198
 msgid "Ambiguous character encoding"
@@ -8406,12 +8424,12 @@ msgstr "%s, összesen:"
 #: gnucash/gnome-utils/window-main-summarybar.c:312
 #, c-format
 msgid "%s, Non Currency Commodities Total:"
-msgstr ""
+msgstr "Nem pénzügyi eszközök összesen (%s):"
 
 #: gnucash/gnome-utils/window-main-summarybar.c:315
 #, c-format
 msgid "%s, Grand Total:"
-msgstr "%s, főösszeg:"
+msgstr "Főösszeg (%s):"
 
 #: gnucash/gnome-utils/window-main-summarybar.c:319
 #, c-format
@@ -8428,7 +8446,7 @@ msgstr "Nyereség:"
 
 #: gnucash/gnucash-cli.cpp:94
 msgid "Price Quotes Retrieval Options"
-msgstr ""
+msgstr "Árfolyam-lekérdezési beállítások"
 
 #: gnucash/gnucash-cli.cpp:97
 msgid ""
@@ -8444,24 +8462,40 @@ msgid ""
 "or more symbols, the first of which is the currency in which exchange rates "
 "for the rest will be quoted.\n"
 msgstr ""
+"Árfolyam-lekérdezésekkel kapcsolatos parancsok végrehajtása. A következő "
+"parancsok támogatottak.\n"
+"\n"
+"  info: \tMegjeleníti a Finance::Quote verzióját és a nyilvános "
+"árfolyamforrásokat.\n"
+"   get: \tLetölti az összes deviza és részvény aktuális árfolyamát a "
+"megadott GnuCash adatfájlba.\n"
+"  dump: \tLetölti a megadott névtéren található megadott pénznemek vagy "
+"részvények aktuális árfolyamát, és az eredményeket kiírja a konzolra..\n"
+"        \tEzt egy forrás és egy vagy több szimbólum kell kövesse, kivéve, ha "
+"a forrás „currency”, amely esetben két vagy több szimbólumnak kell "
+"következni, amelyek közül az első az a pénznem, amelyben a többi árfolyamát "
+"megadják.\n"
 
 #: gnucash/gnucash-cli.cpp:103
-#, fuzzy
 msgid ""
 "Regular expression determining which namespace commodities will be retrieved "
 "for when using the get command"
 msgstr ""
-"Regular expression determining which namespace commodities will be retrieved"
+"Szabályos kifejezés, amely meghatározza, hogy a get parancs használatakor "
+"melyik névtér árucikkei lesznek lekérve"
 
 #: gnucash/gnucash-cli.cpp:105
 msgid ""
 "When using the dump command list all of the parameters Finance::Quote "
 "returns for the symbol instead of the ones that Gnucash requires."
 msgstr ""
+"A dump parancs használatakor a Finance::Quote által a szimbólumra "
+"visszaadott összes paraméter felsorolásra kerül, ez legtöbbször több, mint "
+"amennyire a GnuCash-nak szüksége van."
 
 #: gnucash/gnucash-cli.cpp:110
 msgid "Report Generation Options"
-msgstr "Jelentéskészítés beállításai"
+msgstr "Jelentéskészítési beállítások"
 
 #: gnucash/gnucash-cli.cpp:113
 msgid ""
@@ -8472,22 +8506,29 @@ msgid ""
 "be specified to describe some saved options.\n"
 "  run: \tRun the named report in the given GnuCash datafile.\n"
 msgstr ""
+"Jelentésekkel kapcsolatos parancsok végrehajtása. A következő parancsok "
+"támogatottak.\n"
+"\n"
+"  list: \tFelsorolja az elérhető jelentéseket.\n"
+"  show: \tIsmerteti a megnevezett jelentésben módosított beállításokat. "
+"Megadhat egy adatfájlt néhány mentett beállításhoz.\n"
+"  run: \tFuttatja a megnevezett jelentést a megadott GnuCash adatfájlban.\n"
 
 #: gnucash/gnucash-cli.cpp:119
 msgid "Name of the report to run\n"
-msgstr "A futtatandó riport neve\n"
+msgstr "A futtatandó jelentés neve\n"
 
 #: gnucash/gnucash-cli.cpp:121
 msgid "Specify export type\n"
-msgstr "Válasszon import típust\n"
+msgstr "Exportálási típus megadása\n"
 
 #: gnucash/gnucash-cli.cpp:123
 msgid "Output file for report\n"
-msgstr "Kimenti fájl a riporthoz\n"
+msgstr "Kimenti fájl a jelentéshez\n"
 
 #: gnucash/gnucash-cli.cpp:147 gnucash/gnucash-cli.cpp:182
 msgid "Missing data file parameter"
-msgstr ""
+msgstr "Hiányzó adatfájl-paraméter"
 
 #: gnucash/gnucash-cli.cpp:160
 msgid "Not enough information for quotes dump"
@@ -8496,16 +8537,16 @@ msgstr "Kevés az információ az árfolyamok kiírásához"
 #: gnucash/gnucash-cli.cpp:170
 #, c++-format
 msgid "Unknown quotes command '{1}'"
-msgstr ""
+msgstr "Ismeretlen árfolyam-lekérdezési parancs „{1}”"
 
 #: gnucash/gnucash-cli.cpp:206
 msgid "Missing --name parameter"
-msgstr ""
+msgstr "Hiányzó névparaméter (--name)"
 
 #: gnucash/gnucash-cli.cpp:214
 #, c++-format
 msgid "Unknown report command '{1}'"
-msgstr ""
+msgstr "Ismeretlen jelentésfuttatási parancs „{1}”"
 
 #: gnucash/gnucash-cli.cpp:220
 msgid "Missing command or option"
@@ -8515,15 +8556,15 @@ msgstr "Hiányzó parancs vagy beállítás"
 #: gnucash/gnucash.cpp:179
 #, c++-format
 msgid "Found Finance::Quote version {1}."
-msgstr ""
+msgstr "A talált Finance::Quote verziószáma {1}."
 
 #: gnucash/gnucash-commands.cpp:318
 msgid "Finance::Quote sources:\n"
-msgstr ""
+msgstr "Nyilvános árfolyam-lekérdezési források:\n"
 
 #: gnucash/gnucash-commands.cpp:376 gnucash/gnucash-commands.cpp:400
 msgid "Price retrieval failed: "
-msgstr ""
+msgstr "Az árfolyam lekérése nem sikerült: "
 
 #: gnucash/gnucash-core-app.cpp:77
 msgid "This is a development version. It may or may not work."
@@ -11062,15 +11103,15 @@ msgstr "Főösszeg megjelenítése minden számlán az alapértelmezett pénznem
 
 #: gnucash/gschemas/org.gnucash.GnuCash.window.pages.account.tree.gschema.xml.in:10
 msgid "Show non currency commodities"
-msgstr "Nem pénzjavak megjelenítése"
+msgstr "A nem pénzügyi eszközök megjelenítése"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.window.pages.account.tree.gschema.xml.in:11
 msgid ""
 "If active, non currency commodities (stocks) will be shown. Otherwise they "
 "will be hidden."
 msgstr ""
-"Aktiválva a nem pénzügyi eszközök (részvények) megjelennek. Különben rejtve "
-"maradnak."
+"Aktiválva a nem pénzügyi eszközök (pl. részvények) megjelennek. Különben "
+"rejtve maradnak."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.window.pages.account.tree.gschema.xml.in:15
 msgid "Use relative profit/loss starting date"
@@ -13176,7 +13217,7 @@ msgstr "<b>Kimenő számlák</b>"
 
 #: gnucash/gtkbuilder/business-prefs.glade:125
 msgid "Not_ify when due"
-msgstr "_Értesítés az esedékes számlákról"
+msgstr "Értesítés az esedé_kes számlákról"
 
 #: gnucash/gtkbuilder/business-prefs.glade:131
 #: gnucash/gtkbuilder/business-prefs.glade:208
@@ -13185,15 +13226,15 @@ msgstr "Megjeleníti az esedékes számlák listáját a program indításakor."
 
 #: gnucash/gtkbuilder/business-prefs.glade:143
 msgid "_Tax included"
-msgstr "Adóval együ_tt (Bruttó)"
+msgstr "Adót _tartalmaz (Bruttó)"
 
 #: gnucash/gtkbuilder/business-prefs.glade:149
 msgid ""
 "Whether tax is included by default in entries on Bills. This setting is "
 "inherited by new customers and vendors."
 msgstr ""
-"Alapértelmezésként szerepeljen-e adó, a bejövő számlákban. E beállítást az "
-"új ügyfelek és beszállítók öröklik."
+"Alapértelmezésként szerepeljen-e adó, a számlákban. E beállítást az új "
+"ügyfelek és beszállítók öröklik."
 
 #. See the tooltip "At post time…" for details.
 #: gnucash/gtkbuilder/business-prefs.glade:161
@@ -13206,25 +13247,24 @@ msgstr "<b>Bejövőszámlák</b>"
 
 #: gnucash/gtkbuilder/business-prefs.glade:202
 msgid "_Notify when due"
-msgstr "_Értesítés az esedékes számlákról"
+msgstr "Értesítés az ese_dékes számlákról"
 
 #: gnucash/gtkbuilder/business-prefs.glade:220
 msgid "Ta_x included"
-msgstr "Ad_ót tartalmaz"
+msgstr "Adót tartalmaz (_Bruttó)"
 
 #: gnucash/gtkbuilder/business-prefs.glade:226
 msgid ""
 "Whether tax is included by default in entries on Invoices. This setting is "
 "inherited by new customers and vendors."
 msgstr ""
-"Alapértelmezésként szerepeljen-e adó, a kimenő számlákban. E beállítást az "
-"új ügyfelek és beszállítók öröklik."
+"Alapértelmezésként szerepeljen-e adó, a számlákban. E beállítást az új "
+"ügyfelek és beszállítók öröklik."
 
 #. See the tooltip "At post time…" for details.
 #: gnucash/gtkbuilder/business-prefs.glade:238
-#, fuzzy
 msgid "Pro_cess payments on posting"
-msgstr "Fizetés lebonyolítása"
+msgstr "Kifizetések fe_ldolgozása könyveléskor"
 
 #: gnucash/gtkbuilder/business-prefs.glade:258
 msgid "Days in ad_vance"
@@ -13281,11 +13321,12 @@ msgid ""
 "If any account has an existing color it will not be replaced unless the "
 "following is ticked."
 msgstr ""
+"Ha bármelyik számlának van már színe, akkor az nem lesz kicserélve, hacsak "
+"nincs bejelölve a következő lehetőség."
 
 #: gnucash/gtkbuilder/dialog-account.glade:233
-#, fuzzy
 msgid "Replace any existing account colors"
-msgstr "%s számla törlése"
+msgstr "Cserélje ki a meglévő számlák színeit"
 
 #: gnucash/gtkbuilder/dialog-account.glade:362
 msgid "Delete Account"
@@ -16603,7 +16644,7 @@ msgstr "Csak aktív adatok keresése"
 msgid ""
 "Choose whether to search all your data or only that marked as \"active\"."
 msgstr ""
-"Az összes adat között keressen, vagy csak az 'aktív'-ként megjelöltek között."
+"Az összes adat között keressen, vagy csak az aktívként megjelöltek között."
 
 #: gnucash/gtkbuilder/dialog-search.glade:417
 msgid "Type of search"
@@ -16669,11 +16710,11 @@ msgstr "Futtatás adatfájl megnyitásako_r"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:545
 msgid "Run the \"since last run\" process when a file is opened."
-msgstr "Lefuttatja a „legutóbbi futás óta” folyamatot egy fájl megnyitásakor."
+msgstr "Lefuttatja „A legutóbbi futás óta” folyamatot egy fájl megnyitásakor."
 
 #: gnucash/gtkbuilder/dialog-sx.glade:558
 msgid "_Show notification window"
-msgstr "_Mutassa az értesítési ablakot"
+msgstr "_Megjeleníti az értesítési ablakot"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:562
 msgid ""
@@ -16752,7 +16793,7 @@ msgstr "Amennyiben a felosztásoknak nincsenek változóik"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:1103
 msgid "Notify me when created"
-msgstr "Értesítés létrehozáskor"
+msgstr "Értesítsen a létrehozáskor"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:1151
 msgid "<b>Occurrences</b>"
@@ -18649,12 +18690,11 @@ msgstr ""
 
 #: gnucash/import-export/aqb/gnc-ab-transfer.c:207
 msgid "Online Banking Bank-Internal Transfer"
-msgstr "Online HBCI bankon belüli átutalás"
+msgstr "Bankon belüli internetbanki átutalás"
 
 #: gnucash/import-export/aqb/gnc-ab-transfer.c:212
-#, fuzzy
 msgid "Online Banking European (SEPA) Transfer"
-msgstr "Online HBCI bankon belüli átutalás"
+msgstr "Internetbanki európai (SEPA) átutalás"
 
 #: gnucash/import-export/aqb/gnc-ab-transfer.c:218
 #, fuzzy
@@ -18818,7 +18858,7 @@ msgstr "Számla_egyenleg lekérése"
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:20
 #: gnucash/ui/gnc-plugin-basic-commands.ui:86
 msgid "The list of Scheduled Transactions"
-msgstr "Ütemezett tranzakciók listája"
+msgstr "Az ütemezett tranzakciók listája"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:23
 msgid "Get _Transactions…"
@@ -18826,32 +18866,30 @@ msgstr "_Tranzakciók lekérése…"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:25
 msgid "Get the transactions online through Online Banking"
-msgstr "Számlatranzakciók internetbanki lekérése"
+msgstr ""
+"A számla tranzakcióinak lekérése internetbanki szolgáltatások segítségével"
 
 #. Translators: https://en.wikipedia.org/wiki/Single_Euro_Payments_Area
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:31
-#, fuzzy
 msgid "Issue _SEPA Transaction…"
-msgstr "_Tranzakció intézése…"
+msgstr "_SEPA tranzakció…"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:33
-#, fuzzy
 msgid ""
 "Issue a new international European (SEPA) transaction online through Online "
 "Banking"
-msgstr "Új belső tranzakció intézése Online Banking-gel"
+msgstr "Új SEPA tranzakció végrehajtása internetbanki szolgáltatáson keresztül"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:36
-#, fuzzy
 msgid "Issue SEPA I_nternal Transaction…"
-msgstr "_Tranzakció intézése…"
+msgstr "SEPA _belső tranzakció végrehajtása…"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:38
-#, fuzzy
 msgid ""
 "Issue a new internal European (SEPA) transaction online through Online "
 "Banking"
-msgstr "Új belső tranzakció intézése Online Banking-gel"
+msgstr ""
+"Új európán belüli (SEPA) tranzakció internetbanki szolgáltatáson keresztül"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:41
 #, fuzzy
@@ -18883,7 +18921,7 @@ msgstr "Az Online Banking naplóablak megjelenítése"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:63
 msgid "_Online Banking Setup…"
-msgstr "_Online Banking beállítása…"
+msgstr "Az _internetes bankolás beállítása…"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:65
 msgid ""
@@ -27053,9 +27091,8 @@ msgid "Show Job name"
 msgstr "Megbízás"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:86
-#, fuzzy
 msgid "Show Job number"
-msgstr "Megbízásszám"
+msgstr "Megbízásszám megjelenítése"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:87
 #, fuzzy
@@ -27125,7 +27162,7 @@ msgstr "Megbízás nevének megjelenítése?"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:142
 msgid "Invoice Job number?"
-msgstr ""
+msgstr "Kimenőszámla megbízásszáma?"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:144
 msgid "Show net price?"
