@@ -74,6 +74,13 @@ TEST (GncGUID, from_string)
     guid = gnc::GUID::create_random ();
     std::string bogus {"Have a great big roast beef sandwich, if you please!"};
     EXPECT_THROW (gnc::GUID::from_string (bogus), gnc::guid_syntax_exception);
+
+    std::string test1 {"0123456789abcdef0123456789abcdef"};
+    auto guid1 = gnc::GUID::from_string (test1);
+    EXPECT_EQ (test1, guid1.to_string());
+
+    std::string test2 {"0123456789abcdef0123456789abcdeg"};
+    EXPECT_THROW (gnc::GUID::from_string (test2), gnc::guid_syntax_exception);
 }
 
 TEST (GncGUID, round_trip)

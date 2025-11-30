@@ -92,7 +92,7 @@ char_to_num (unsigned char c) noexcept
 {
     unsigned int digit = c - '0';
     unsigned int alpha = (c | 0x20) - 'a';
-    return digit <= 9 ? digit : alpha <= 6 ? alpha + 10 : -1;
+    return digit <= 9 ? digit : alpha <= 5 ? alpha + 10 : -1;
 }
 
 static inline bool
