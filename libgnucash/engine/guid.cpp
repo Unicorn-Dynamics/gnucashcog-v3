@@ -368,13 +368,8 @@ GUID::from_string (const char* str)
     if (!str)
         throw guid_syntax_exception {};
 
-    uint8_t bytes[16];
-    if (fast_string_to_guid(str, bytes))
-    {
-        boost::uuids::uuid u;
-        std::memcpy(u.data, bytes, 16);
-        return GUID{u};
-    }
+    if (boost::uuids::uuid u; fast_string_to_guid(str, u.data))
+        return u;
     try
     {
         static boost::uuids::string_generator strgen;
