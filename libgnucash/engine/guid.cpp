@@ -105,7 +105,7 @@ fast_string_to_guid (const char* s, uint8_t* out) noexcept
         int hi = char_to_num (*s++);
         int lo = char_to_num (*s++);
         all_ok &= (hi >= 0 && lo >= 0);
-        out[i] = (unsigned char)((hi << 4) | lo);
+        out[i] = (unsigned char)(((unsigned)hi << 4) | (unsigned)lo);
     }
     return all_ok;
 }
