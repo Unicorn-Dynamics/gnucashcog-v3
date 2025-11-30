@@ -73,17 +73,7 @@ TEST (GncGUID, from_string)
 
     guid = gnc::GUID::create_random ();
     std::string bogus {"Have a great big roast beef sandwich, if you please!"};
-    bool fail = false;
-    try
-    {
-        gnc::GUID::from_string (bogus);
-    }
-    catch (gnc::guid_syntax_exception const &)
-    {
-        fail = true;
-    }
-
-    EXPECT_TRUE (fail) << "Parsing the bogus string should throw";
+    EXPECT_THROW (gnc::GUID::from_string (bogus), gnc::guid_syntax_exception);
 }
 
 TEST (GncGUID, round_trip)
