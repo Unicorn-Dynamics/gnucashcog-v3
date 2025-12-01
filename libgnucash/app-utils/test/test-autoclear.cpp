@@ -102,8 +102,8 @@ TestCase ambiguousTestCase = {
         { "Memo 03", -10, false },
     },
     .tests = {
-        { -10, "The selected amount cannot be cleared." },
-        { -20, "The selected amount cannot be cleared." },
+        { -10, "Cannot uniquely clear splits. Found multiple possibilities." },
+        { -20, "Cannot uniquely clear splits. Found multiple possibilities." },
 
         // -30 can be cleared by returning all three -10 splits
         { -30, nullptr },
@@ -121,7 +121,7 @@ TestCase sequentialTestCase1 =
     .tests = {
         { 1, "The selected amount cannot be cleared." },
         { 4, "The selected amount cannot be cleared." },
-        { 5, "The selected amount cannot be cleared." },
+        { 5, "Cannot uniquely clear splits. Found multiple possibilities." },
         { 6, "The selected amount cannot be cleared." },
         { 9, "The selected amount cannot be cleared." },
         { 11, "The selected amount cannot be cleared." },
@@ -156,9 +156,9 @@ TestCase sequentialTestCase3 =
         { "Memo 04", 5, false },
     },
     .tests = {
-        { 5, "The selected amount cannot be cleared." },
-        { 7, "The selected amount cannot be cleared." },
-        { 10, "The selected amount cannot be cleared." },
+        { 5, "Cannot uniquely clear splits. Found multiple possibilities." },
+        { 7, "Cannot uniquely clear splits. Found multiple possibilities." },
+        { 10, "Cannot uniquely clear splits. Found multiple possibilities." },
         { 2, nullptr },
         { 12, nullptr },
         { 15, nullptr },

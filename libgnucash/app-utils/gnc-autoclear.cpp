@@ -79,7 +79,7 @@ using SplitVec = std::vector<Split*>;
 
 struct Solution
 {
-    bool abort = false;
+    std::optional<const char*> abort;
     SplitVec splits;
 };
 
@@ -124,7 +124,7 @@ subset_sum (SplitInfoVec::const_iterator iter,
         DEBUG ("SOLUTION FOUND: %s%s", path_to_str (path),
                solution.splits.empty() ? "" : " ABORT: AMBIGUOUS");
         if (!solution.splits.empty())
-            solution.abort = true;
+            solution.abort = "Cannot uniquely clear splits. Found multiple possibilities.";
         else
         {
             solution.splits.resize (path.size());
@@ -140,7 +140,7 @@ subset_sum (SplitInfoVec::const_iterator iter,
     if (monitor.should_abort())
     {
         DEBUG ("ABORT: timeout");
-        solution.abort = true;
+        solution.abort = "Auto-clear exceeds allocated time";
         return;
     }
 
@@ -227,10 +227,15 @@ gnc_account_get_autoclear_splits (Account *account, gnc_numeric toclear_value,
 
     DEBUG ("finished subset_sum in %f seconds", monitor.get_elapsed());
 
-    if (solution.splits.empty() || solution.abort)
+    if (solution.splits.empty())
     {
         g_set_error (error, autoclear_quark, 1, "%s",
                      "The selected amount cannot be cleared.");
+        return nullptr;
+    }
+    else if (solution.abort)
+    {
+        g_set_error (error, autoclear_quark, 1, "%s", *solution.abort);
         return nullptr;
     }
 
