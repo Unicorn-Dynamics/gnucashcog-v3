@@ -236,11 +236,7 @@ string_to_guid (const char * str, GncGUID * guid)
 gboolean
 guid_equal (const GncGUID *guid_1, const GncGUID *guid_2)
 {
-    if (guid_1 == guid_2) return true;
-    if (!guid_1 || !guid_2) return false;
-    gnc::GUID temp1 {*guid_1};
-    gnc::GUID temp2 {*guid_2};
-    return temp1 == temp2;
+    return guid_compare (guid_1, guid_2) == 0;
 }
 
 gint
@@ -249,15 +245,12 @@ guid_compare (const GncGUID *guid_1, const GncGUID *guid_2)
     if (guid_1 == guid_2) return 0;
     if (!guid_1) return -1;
     if (!guid_2) return 1;
-    gnc::GUID temp1 {*guid_1};
-    gnc::GUID temp2 {*guid_2};
-    if (temp1 < temp2)
-        return -1;
-    if (temp1 == temp2)
-        return 0;
-    return 1;
+    return std::memcmp (guid_1->reserved, guid_2->reserved, GUID_DATA_SIZE);
 }
 
+// returns a 32-bit hash from 32-byte guid. since guid are generated
+// randomly, this is not expected to cause hash collisions. use memcpy
+// to avoid alignment issues; memcpy likely to be optimised away.
 guint
 guid_hash_to_guint (gconstpointer ptr)
 {
@@ -266,15 +259,10 @@ guid_hash_to_guint (gconstpointer ptr)
         PERR ("received nullptr guid pointer.");
         return 0;
     }
-    GncGUID const & guid = * reinterpret_cast <GncGUID const *> (ptr);
-    gnc::GUID const & temp {guid};
-
-    guint hash {0};
-    std::for_each (temp.begin (), temp.end (), [&hash] (unsigned char a) {
-        hash <<=4;
-        hash |= a;
-    });
-    return hash;
+    const GncGUID* g = static_cast<const GncGUID*>(ptr);
+    guint rv;
+    memcpy (&rv, &g->reserved[12], sizeof (guint));
+    return rv;
 }
 
 gint
