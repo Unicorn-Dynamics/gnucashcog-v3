@@ -35,6 +35,15 @@
 
 static QofLogModule log_module = GNC_MOD_IO;
 
+const char*
+dom_node_to_text (xmlNodePtr node) noexcept
+{
+    if (node && node->children && node->children->type == XML_TEXT_NODE
+        && !node->children->next)
+        return reinterpret_cast<const char*>(node->children->content);
+    return nullptr;
+}
+
 std::optional<GncGUID>
 dom_tree_to_guid (xmlNodePtr node)
 {

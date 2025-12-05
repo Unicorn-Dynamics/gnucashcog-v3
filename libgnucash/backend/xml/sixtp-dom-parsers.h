@@ -45,6 +45,7 @@ gboolean dom_tree_valid_time64 (time64 ts, const xmlChar* name);
 GDate* dom_tree_to_gdate (xmlNodePtr node);
 gnc_numeric dom_tree_to_gnc_numeric (xmlNodePtr node);
 gchar* dom_tree_to_text (xmlNodePtr tree);
+const char* dom_node_to_text (xmlNodePtr node) noexcept;
 gboolean string_to_binary (const gchar* str,  void** v, guint64* data_len);
 gboolean dom_tree_create_instance_slots (xmlNodePtr node, QofInstance* inst);
 
