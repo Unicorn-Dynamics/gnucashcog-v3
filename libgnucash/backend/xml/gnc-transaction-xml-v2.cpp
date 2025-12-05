@@ -203,6 +203,12 @@ static inline gboolean
 set_spl_string (xmlNodePtr node, Split* spl,
                 void (*func) (Split* spl, const char* txt))
 {
+    if (auto txt = dom_node_to_text (node))
+    {
+        func (spl, txt);
+        return TRUE;
+    }
+
     gchar* tmp = dom_tree_to_text (node);
     g_return_val_if_fail (tmp, FALSE);
 
@@ -251,6 +257,13 @@ static gboolean
 spl_reconciled_state_handler (xmlNodePtr node, gpointer data)
 {
     struct split_pdata* pdata = static_cast<decltype (pdata)> (data);
+
+    if (auto txt = dom_node_to_text (node))
+    {
+        xaccSplitSetReconcile (pdata->split, txt[0]);
+        return TRUE;
+    }
+
     gchar* tmp = dom_tree_to_text (node);
     g_return_val_if_fail (tmp, FALSE);
 
@@ -399,6 +412,12 @@ static inline gboolean
 set_tran_string (xmlNodePtr node, Transaction* trn,
                  void (*func) (Transaction* trn, const char* txt))
 {
+    if (auto txt = dom_node_to_text (node))
+    {
+        func (trn, txt);
+        return TRUE;
+    }
+
     gchar* tmp;
 
     tmp = dom_tree_to_text (node);

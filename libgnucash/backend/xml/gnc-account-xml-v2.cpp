@@ -175,6 +175,12 @@ static inline gboolean
 set_string (xmlNodePtr node, Account* act,
             void (*func) (Account* act, const gchar* txt))
 {
+    if (auto txt = dom_node_to_text (node))
+    {
+        func (act,txt);
+        return TRUE;
+    }
+
     gchar* txt = dom_tree_to_text (node);
     g_return_val_if_fail (txt, FALSE);
 
