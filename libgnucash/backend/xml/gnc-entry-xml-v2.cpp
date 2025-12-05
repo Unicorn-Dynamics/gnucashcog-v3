@@ -270,13 +270,11 @@ static inline gboolean
 set_account (xmlNodePtr node, struct entry_pdata* pdata,
              void (*func) (GncEntry* entry, Account* acc))
 {
-    GncGUID* guid;
     Account* acc;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    acc = xaccAccountLookup (guid, pdata->book);
-    guid_free (guid);
+    acc = xaccAccountLookup (&*guid, pdata->book);
     g_return_val_if_fail (acc, FALSE);
 
     if (func)
@@ -290,24 +288,22 @@ static inline gboolean
 set_taxtable (xmlNodePtr node, struct entry_pdata* pdata,
               void (*func) (GncEntry* entry, GncTaxTable* taxtable))
 {
-    GncGUID* guid;
     GncTaxTable* taxtable;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    taxtable = gncTaxTableLookup (pdata->book, guid);
+    taxtable = gncTaxTableLookup (pdata->book, &*guid);
     if (!taxtable)
     {
         taxtable = gncTaxTableCreate (pdata->book);
         gncTaxTableBeginEdit (taxtable);
-        gncTaxTableSetGUID (taxtable, guid);
+        gncTaxTableSetGUID (taxtable, &*guid);
         gncTaxTableCommitEdit (taxtable);
     }
     else
         gncTaxTableDecRef (taxtable);
 
     func (pdata->entry, taxtable);
-    guid_free (guid);
     return TRUE;
 }
 
@@ -315,12 +311,11 @@ static gboolean
 entry_guid_handler (xmlNodePtr node, gpointer entry_pdata)
 {
     struct entry_pdata* pdata = static_cast<decltype (pdata)> (entry_pdata);
-    GncGUID* guid;
     GncEntry* entry;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    entry = gncEntryLookup (pdata->book, guid);
+    entry = gncEntryLookup (pdata->book, &*guid);
     if (entry)
     {
         gncEntryDestroy (pdata->entry);
@@ -329,10 +324,8 @@ entry_guid_handler (xmlNodePtr node, gpointer entry_pdata)
     }
     else
     {
-        gncEntrySetGUID (pdata->entry, guid);
+        gncEntrySetGUID (pdata->entry, &*guid);
     }
-
-    guid_free (guid);
 
     return TRUE;
 }
@@ -555,24 +548,22 @@ static gboolean
 entry_order_handler (xmlNodePtr node, gpointer entry_pdata)
 {
     struct entry_pdata* pdata = static_cast<decltype (pdata)> (entry_pdata);
-    GncGUID* guid;
     GncOrder* order;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    order = gncOrderLookup (pdata->book, guid);
+    order = gncOrderLookup (pdata->book, &*guid);
     if (!order)
     {
         order = gncOrderCreate (pdata->book);
         gncOrderBeginEdit (order);
-        gncOrderSetGUID (order, guid);
+        gncOrderSetGUID (order, &*guid);
         gncOrderCommitEdit (order);
     }
     gncOrderBeginEdit (order);
     gncOrderAddEntry (order, pdata->entry);
     gncOrderCommitEdit (order);
 
-    guid_free (guid);
     return TRUE;
 }
 
@@ -580,24 +571,22 @@ static gboolean
 entry_invoice_handler (xmlNodePtr node, gpointer entry_pdata)
 {
     struct entry_pdata* pdata = static_cast<decltype (pdata)> (entry_pdata);
-    GncGUID* guid;
     GncInvoice* invoice;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    invoice = gncInvoiceLookup (pdata->book, guid);
+    invoice = gncInvoiceLookup (pdata->book, &*guid);
     if (!invoice)
     {
         invoice = gncInvoiceCreate (pdata->book);
         gncInvoiceBeginEdit (invoice);
-        gncInvoiceSetGUID (invoice, guid);
+        gncInvoiceSetGUID (invoice, &*guid);
         gncInvoiceCommitEdit (invoice);
     }
     gncInvoiceBeginEdit (invoice);
     gncInvoiceAddEntry (invoice, pdata->entry);
     gncInvoiceCommitEdit (invoice);
 
-    guid_free (guid);
     return TRUE;
 }
 
@@ -605,24 +594,22 @@ static gboolean
 entry_bill_handler (xmlNodePtr node, gpointer entry_pdata)
 {
     struct entry_pdata* pdata = static_cast<decltype (pdata)> (entry_pdata);
-    GncGUID* guid;
     GncInvoice* invoice;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    invoice = gncInvoiceLookup (pdata->book, guid);
+    invoice = gncInvoiceLookup (pdata->book, &*guid);
     if (!invoice)
     {
         invoice = gncInvoiceCreate (pdata->book);
         gncInvoiceBeginEdit (invoice);
-        gncInvoiceSetGUID (invoice, guid);
+        gncInvoiceSetGUID (invoice, &*guid);
         gncInvoiceCommitEdit (invoice);
     }
     gncInvoiceBeginEdit (invoice);
     gncBillAddEntry (invoice, pdata->entry);
     gncInvoiceCommitEdit (invoice);
 
-    guid_free (guid);
     return TRUE;
 }
 

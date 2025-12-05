@@ -35,12 +35,12 @@
 
 static QofLogModule log_module = GNC_MOD_IO;
 
-GncGUID*
+std::optional<GncGUID>
 dom_tree_to_guid (xmlNodePtr node)
 {
     if (!node->properties)
     {
-        return NULL;
+        return {};
     }
 
     if (strcmp ((char*) node->properties->name, "type") != 0)
@@ -48,7 +48,7 @@ dom_tree_to_guid (xmlNodePtr node)
         PERR ("Unknown attribute for id tag: %s",
               node->properties->name ?
               (char*) node->properties->name : "(null)");
-        return NULL;
+        return {};
     }
 
     {
@@ -59,11 +59,11 @@ dom_tree_to_guid (xmlNodePtr node)
         /* handle new and guid the same for the moment */
         if ((g_strcmp0 ("guid", type) == 0) || (g_strcmp0 ("new", type) == 0))
         {
-            auto gid = guid_new ();
+            GncGUID gid;
             char* guid_str;
 
             guid_str = (char*)xmlNodeGetContent (node->xmlChildrenNode);
-            string_to_guid (guid_str, gid);
+            string_to_guid (guid_str, &gid);
             xmlFree (guid_str);
             xmlFree (type);
             return gid;
@@ -75,7 +75,7 @@ dom_tree_to_guid (xmlNodePtr node)
                   node->properties->name ?
                   (char*) node->properties->name : "(null)");
             xmlFree (type);
-            return NULL;
+            return {};
         }
     }
 }
@@ -195,13 +195,12 @@ dom_tree_to_string_kvp_value (xmlNodePtr node)
 static KvpValue*
 dom_tree_to_guid_kvp_value (xmlNodePtr node)
 {
-    GncGUID* daguid;
     KvpValue* ret = NULL;
 
-    daguid = dom_tree_to_guid (node);
+    auto daguid = dom_tree_to_guid (node);
     if (daguid)
     {
-        ret = new KvpValue {daguid};
+        ret = new KvpValue {guid_copy (&*daguid)};
     }
 
     return ret;

@@ -100,12 +100,9 @@ set_string (xmlNodePtr node, GncBudget* bgt,
 static gboolean
 budget_id_handler (xmlNodePtr node, gpointer bgt)
 {
-    GncGUID* guid;
-
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    qof_instance_set_guid (QOF_INSTANCE (bgt), guid);
-    guid_free (guid);
+    qof_instance_set_guid (QOF_INSTANCE (bgt), &*guid);
     return TRUE;
 }
 

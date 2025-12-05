@@ -126,12 +126,11 @@ static gboolean
 job_guid_handler (xmlNodePtr node, gpointer job_pdata)
 {
     struct job_pdata* pdata = static_cast<decltype (pdata)> (job_pdata);
-    GncGUID* guid;
     GncJob* job;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    job = gncJobLookup (pdata->book, guid);
+    job = gncJobLookup (pdata->book, &*guid);
     if (job)
     {
         gncJobDestroy (pdata->job);
@@ -140,10 +139,8 @@ job_guid_handler (xmlNodePtr node, gpointer job_pdata)
     }
     else
     {
-        gncJobSetGUID (pdata->job, guid);
+        gncJobSetGUID (pdata->job, &*guid);
     }
-
-    guid_free (guid);
 
     return TRUE;
 }

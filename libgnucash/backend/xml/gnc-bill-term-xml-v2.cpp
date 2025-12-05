@@ -257,20 +257,18 @@ static gboolean
 set_parent_child (xmlNodePtr node, struct billterm_pdata* pdata,
                   void (*func) (GncBillTerm*, GncBillTerm*))
 {
-    GncGUID* guid;
     GncBillTerm* term;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    term = gncBillTermLookup (pdata->book, guid);
+    term = gncBillTermLookup (pdata->book, &*guid);
     if (!term)
     {
         term = gncBillTermCreate (pdata->book);
         gncBillTermBeginEdit (term);
-        gncBillTermSetGUID (term, guid);
+        gncBillTermSetGUID (term, &*guid);
         gncBillTermCommitEdit (term);
     }
-    guid_free (guid);
     g_return_val_if_fail (term, FALSE);
     func (pdata->term, term);
 
@@ -292,12 +290,11 @@ static gboolean
 billterm_guid_handler (xmlNodePtr node, gpointer billterm_pdata)
 {
     struct billterm_pdata* pdata = static_cast<decltype (pdata)> (billterm_pdata);
-    GncGUID* guid;
     GncBillTerm* term;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    term = gncBillTermLookup (pdata->book, guid);
+    term = gncBillTermLookup (pdata->book, &*guid);
     if (term)
     {
         gncBillTermDestroy (pdata->term);
@@ -306,10 +303,8 @@ billterm_guid_handler (xmlNodePtr node, gpointer billterm_pdata)
     }
     else
     {
-        gncBillTermSetGUID (pdata->term, guid);
+        gncBillTermSetGUID (pdata->term, &*guid);
     }
-
-    guid_free (guid);
 
     return TRUE;
 }

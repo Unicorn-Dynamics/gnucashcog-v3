@@ -210,11 +210,10 @@ sx_id_handler (xmlNodePtr node, gpointer sx_pdata)
 {
     struct sx_pdata* pdata = static_cast<decltype (pdata)> (sx_pdata);
     SchedXaction* sx = pdata->sx;
-    GncGUID*        tmp = dom_tree_to_guid (node);
+    auto tmp = dom_tree_to_guid (node);
 
     g_return_val_if_fail (tmp, FALSE);
-    xaccSchedXactionSetGUID (sx, tmp);
-    guid_free (tmp);
+    xaccSchedXactionSetGUID (sx, &*tmp);
 
     return TRUE;
 }
@@ -584,7 +583,7 @@ sx_templ_acct_handler (xmlNodePtr node, gpointer sx_pdata)
 {
     struct sx_pdata* pdata = static_cast<decltype (pdata)> (sx_pdata);
     SchedXaction* sx = pdata->sx;
-    GncGUID* templ_acct_guid = dom_tree_to_guid (node);
+    auto templ_acct_guid = dom_tree_to_guid (node);
     Account* account;
 
     if (!templ_acct_guid)
@@ -592,9 +591,8 @@ sx_templ_acct_handler (xmlNodePtr node, gpointer sx_pdata)
         return FALSE;
     }
 
-    account = xaccAccountLookup (templ_acct_guid, pdata->book);
+    account = xaccAccountLookup (&*templ_acct_guid, pdata->book);
     sx_set_template_account (sx, account);
-    guid_free (templ_acct_guid);
 
     return TRUE;
 }

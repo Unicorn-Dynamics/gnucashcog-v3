@@ -141,12 +141,11 @@ static gboolean
 order_guid_handler (xmlNodePtr node, gpointer order_pdata)
 {
     struct order_pdata* pdata = static_cast<decltype (pdata)> (order_pdata);
-    GncGUID* guid;
     GncOrder* order;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    order = gncOrderLookup (pdata->book, guid);
+    order = gncOrderLookup (pdata->book, &*guid);
     if (order)
     {
         gncOrderDestroy (pdata->order);
@@ -155,10 +154,8 @@ order_guid_handler (xmlNodePtr node, gpointer order_pdata)
     }
     else
     {
-        gncOrderSetGUID (pdata->order, guid);
+        gncOrderSetGUID (pdata->order, &*guid);
     }
-
-    guid_free (guid);
 
     return TRUE;
 }

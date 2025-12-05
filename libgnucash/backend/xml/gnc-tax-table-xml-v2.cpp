@@ -146,13 +146,11 @@ static gboolean
 ttentry_acct_handler (xmlNodePtr node, gpointer ttentry_pdata)
 {
     struct ttentry_pdata* pdata = static_cast<decltype (pdata)> (ttentry_pdata);
-    GncGUID* guid;
     Account* acc;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    acc = xaccAccountLookup (guid, pdata->book);
-    guid_free (guid);
+    acc = xaccAccountLookup (&*guid, pdata->book);
     g_return_val_if_fail (acc, FALSE);
 
     gncTaxTableEntrySetAccount (pdata->ttentry, acc);
@@ -230,12 +228,11 @@ static gboolean
 set_parent_child (xmlNodePtr node, struct taxtable_pdata* pdata,
                   void (*func) (GncTaxTable*, GncTaxTable*))
 {
-    GncGUID* guid;
     GncTaxTable* table;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    table = gncTaxTableLookup (pdata->book, guid);
+    table = gncTaxTableLookup (pdata->book, &*guid);
 
     /* Ignore pointers to self */
     if (table == pdata->table)
@@ -248,10 +245,9 @@ set_parent_child (xmlNodePtr node, struct taxtable_pdata* pdata,
     {
         table = gncTaxTableCreate (pdata->book);
         gncTaxTableBeginEdit (table);
-        gncTaxTableSetGUID (table, guid);
+        gncTaxTableSetGUID (table, &*guid);
         gncTaxTableCommitEdit (table);
     }
-    guid_free (guid);
     g_return_val_if_fail (table, FALSE);
     func (pdata->table, table);
 
@@ -262,12 +258,11 @@ static gboolean
 taxtable_guid_handler (xmlNodePtr node, gpointer taxtable_pdata)
 {
     struct taxtable_pdata* pdata = static_cast<decltype (pdata)> (taxtable_pdata);
-    GncGUID* guid;
     GncTaxTable* table;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    table = gncTaxTableLookup (pdata->book, guid);
+    table = gncTaxTableLookup (pdata->book, &*guid);
     if (table)
     {
         gncTaxTableDestroy (pdata->table);
@@ -276,10 +271,8 @@ taxtable_guid_handler (xmlNodePtr node, gpointer taxtable_pdata)
     }
     else
     {
-        gncTaxTableSetGUID (pdata->table, guid);
+        gncTaxTableSetGUID (pdata->table, &*guid);
     }
-
-    guid_free (guid);
 
     return TRUE;
 }

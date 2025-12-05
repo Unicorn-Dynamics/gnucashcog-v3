@@ -196,23 +196,19 @@ equals_node_val_vs_boolean (xmlNodePtr node, gboolean val)
 gboolean
 equals_node_val_vs_guid (xmlNodePtr node, const GncGUID* id)
 {
-    GncGUID* cmpid;
-
     g_return_val_if_fail (node, FALSE);
     g_return_val_if_fail (id, FALSE);
 
-    cmpid = dom_tree_to_guid (node);
+    auto cmpid = dom_tree_to_guid (node);
 
     g_return_val_if_fail (cmpid, FALSE);
 
-    if (guid_compare (cmpid, id) == 0)
+    if (guid_compare (&*cmpid, id) == 0)
     {
-        guid_free (cmpid);
         return TRUE;
     }
     else
     {
-        guid_free (cmpid);
         return FALSE;
     }
 }

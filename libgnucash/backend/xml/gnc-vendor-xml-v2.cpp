@@ -170,12 +170,11 @@ static gboolean
 vendor_guid_handler (xmlNodePtr node, gpointer vendor_pdata)
 {
     struct vendor_pdata* pdata = static_cast<decltype (pdata)> (vendor_pdata);
-    GncGUID* guid;
     GncVendor* vendor;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    vendor = gncVendorLookup (pdata->book, guid);
+    vendor = gncVendorLookup (pdata->book, &*guid);
     if (vendor)
     {
         gncVendorDestroy (pdata->vendor);
@@ -184,10 +183,8 @@ vendor_guid_handler (xmlNodePtr node, gpointer vendor_pdata)
     }
     else
     {
-        gncVendorSetGUID (pdata->vendor, guid);
+        gncVendorSetGUID (pdata->vendor, &*guid);
     }
-
-    guid_free (guid);
 
     return TRUE;
 }
@@ -212,14 +209,12 @@ static gboolean
 vendor_terms_handler (xmlNodePtr node, gpointer vendor_pdata)
 {
     struct vendor_pdata* pdata = static_cast<decltype (pdata)> (vendor_pdata);
-    GncGUID* guid;
     GncBillTerm* term;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    term = gnc_billterm_xml_find_or_create (pdata->book, guid);
+    term = gnc_billterm_xml_find_or_create (pdata->book, &*guid);
     g_assert (term);
-    guid_free (guid);
     gncVendorSetTerms (pdata->vendor, term);
 
     return TRUE;
@@ -278,24 +273,22 @@ static gboolean
 vendor_taxtable_handler (xmlNodePtr node, gpointer vendor_pdata)
 {
     struct vendor_pdata* pdata = static_cast<decltype (pdata)> (vendor_pdata);
-    GncGUID* guid;
     GncTaxTable* taxtable;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    taxtable = gncTaxTableLookup (pdata->book, guid);
+    taxtable = gncTaxTableLookup (pdata->book, &*guid);
     if (!taxtable)
     {
         taxtable = gncTaxTableCreate (pdata->book);
         gncTaxTableBeginEdit (taxtable);
-        gncTaxTableSetGUID (taxtable, guid);
+        gncTaxTableSetGUID (taxtable, &*guid);
         gncTaxTableCommitEdit (taxtable);
     }
     else
         gncTaxTableDecRef (taxtable);
 
     gncVendorSetTaxTable (pdata->vendor, taxtable);
-    guid_free (guid);
     return TRUE;
 }
 

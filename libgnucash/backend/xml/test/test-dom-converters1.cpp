@@ -219,7 +219,6 @@ test_dom_tree_to_guid (void)
     for (i = 0; i < 20; i++)
     {
         GncGUID* test_guid1;
-        GncGUID* test_guid2;
         xmlNodePtr test_node;
 
         test_guid1 = get_random_guid ();
@@ -230,14 +229,13 @@ test_dom_tree_to_guid (void)
                           "conversion to dom tree failed");
         }
 
-        test_guid2 = dom_tree_to_guid (test_node);
+        auto test_guid2 = dom_tree_to_guid (test_node);
 
-        do_test (guid_equal (test_guid1, test_guid2),
+        do_test (guid_equal (test_guid1, &*test_guid2),
                  "dom_tree_to_guid");
 
         xmlFreeNode (test_node);
         guid_free (test_guid1);
-        guid_free (test_guid2);
     }
 }
 

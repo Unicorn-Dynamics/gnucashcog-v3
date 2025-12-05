@@ -28,10 +28,11 @@
 #include "gnc-commodity.h"
 #include "qof.h"
 #include "gnc-budget.h"
+#include <optional>
 
 #include "gnc-xml-helper.h"
 
-GncGUID* dom_tree_to_guid (xmlNodePtr node);
+std::optional<GncGUID> dom_tree_to_guid (xmlNodePtr node);
 
 gnc_commodity* dom_tree_to_commodity_ref (xmlNodePtr node, QofBook* book);
 gnc_commodity* dom_tree_to_commodity_ref_no_engine (xmlNodePtr node, QofBook*);

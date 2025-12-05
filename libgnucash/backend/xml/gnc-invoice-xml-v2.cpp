@@ -194,12 +194,11 @@ static gboolean
 invoice_guid_handler (xmlNodePtr node, gpointer invoice_pdata)
 {
     struct invoice_pdata* pdata = static_cast<decltype (pdata)> (invoice_pdata);
-    GncGUID* guid;
     GncInvoice* invoice;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    invoice = gncInvoiceLookup (pdata->book, guid);
+    invoice = gncInvoiceLookup (pdata->book, &*guid);
     if (invoice)
     {
         gncInvoiceDestroy (pdata->invoice);
@@ -208,10 +207,8 @@ invoice_guid_handler (xmlNodePtr node, gpointer invoice_pdata)
     }
     else
     {
-        gncInvoiceSetGUID (pdata->invoice, guid);
+        gncInvoiceSetGUID (pdata->invoice, &*guid);
     }
-
-    guid_free (guid);
 
     return TRUE;
 }
@@ -286,14 +283,12 @@ static gboolean
 invoice_terms_handler (xmlNodePtr node, gpointer invoice_pdata)
 {
     struct invoice_pdata* pdata = static_cast<decltype (pdata)> (invoice_pdata);
-    GncGUID* guid;
     GncBillTerm* term;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    term = gnc_billterm_xml_find_or_create (pdata->book, guid);
+    term = gnc_billterm_xml_find_or_create (pdata->book, &*guid);
     g_assert (term);
-    guid_free (guid);
     gncInvoiceSetTerms (pdata->invoice, term);
 
     return TRUE;
@@ -303,13 +298,11 @@ static gboolean
 invoice_posttxn_handler (xmlNodePtr node, gpointer invoice_pdata)
 {
     struct invoice_pdata* pdata = static_cast<decltype (pdata)> (invoice_pdata);
-    GncGUID* guid;
     Transaction* txn;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    txn = xaccTransLookup (guid, pdata->book);
-    guid_free (guid);
+    txn = xaccTransLookup (&*guid, pdata->book);
     g_return_val_if_fail (txn, FALSE);
 
     gncInvoiceSetPostedTxn (pdata->invoice, txn);
@@ -320,13 +313,11 @@ static gboolean
 invoice_postlot_handler (xmlNodePtr node, gpointer invoice_pdata)
 {
     struct invoice_pdata* pdata = static_cast<decltype (pdata)> (invoice_pdata);
-    GncGUID* guid;
     GNCLot* lot;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    lot = gnc_lot_lookup (guid, pdata->book);
-    guid_free (guid);
+    lot = gnc_lot_lookup (&*guid, pdata->book);
     g_return_val_if_fail (lot, FALSE);
 
     gncInvoiceSetPostedLot (pdata->invoice, lot);
@@ -337,13 +328,11 @@ static gboolean
 invoice_postacc_handler (xmlNodePtr node, gpointer invoice_pdata)
 {
     struct invoice_pdata* pdata = static_cast<decltype (pdata)> (invoice_pdata);
-    GncGUID* guid;
     Account* acc;
 
-    guid = dom_tree_to_guid (node);
+    auto guid = dom_tree_to_guid (node);
     g_return_val_if_fail (guid, FALSE);
-    acc = xaccAccountLookup (guid, pdata->book);
-    guid_free (guid);
+    acc = xaccAccountLookup (&*guid, pdata->book);
     g_return_val_if_fail (acc, FALSE);
 
     gncInvoiceSetPostedAcc (pdata->invoice, acc);
