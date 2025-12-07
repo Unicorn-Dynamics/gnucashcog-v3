@@ -641,9 +641,14 @@ failure:
     return NULL;
 }
 
+struct CommodityRef
+{
+    std::string space;
+    std::string id;
+};
 
-gnc_commodity*
-dom_tree_to_commodity_ref_no_engine (xmlNodePtr node, QofBook* book)
+static std::optional<CommodityRef>
+parse_commodity_ref (xmlNodePtr node, QofBook* book)
 {
     /* Turn something like this
 
@@ -655,13 +660,13 @@ dom_tree_to_commodity_ref_no_engine (xmlNodePtr node, QofBook* book)
        into a gnc_commodity*, returning NULL on failure.  Both sub-nodes
        are required, though for now, order is irrelevant. */
 
-    gnc_commodity* c = NULL;
+    CommodityRef rv;
     gchar* space_str = NULL;
     gchar* id_str = NULL;
     xmlNodePtr n;
 
-    if (!node) return NULL;
-    if (!node->xmlChildrenNode) return NULL;
+    if (!node) return {};
+    if (!node->xmlChildrenNode) return {};
 
     for (n = node->xmlChildrenNode; n; n = n->next)
     {
@@ -675,12 +680,12 @@ dom_tree_to_commodity_ref_no_engine (xmlNodePtr node, QofBook* book)
             {
                 if (space_str)
                 {
-                    return NULL;
+                    return {};
                 }
                 else
                 {
                     gchar* content = dom_tree_to_text (n);
-                    if (!content) return NULL;
+                    if (!content) return {};
                     space_str = content;
                 }
             }
@@ -688,57 +693,63 @@ dom_tree_to_commodity_ref_no_engine (xmlNodePtr node, QofBook* book)
             {
                 if (id_str)
                 {
-                    return NULL;
+                    return {};
                 }
                 else
                 {
                     gchar* content = dom_tree_to_text (n);
-                    if (!content) return NULL;
+                    if (!content) return {};
                     id_str = content;
                 }
             }
             break;
         default:
             PERR ("unexpected sub-node.");
-            return NULL;
+            return {};
             break;
         }
     }
-    if (! (space_str && id_str))
-    {
-        c = NULL;
-    }
-    else
+    if (space_str && id_str)
     {
         g_strstrip (space_str);
         g_strstrip (id_str);
-        c = gnc_commodity_new (book, NULL, space_str, id_str, NULL, 0);
+        rv = {space_str, id_str};
     }
 
     g_free (space_str);
     g_free (id_str);
 
-    return c;
+    return rv;
+}
+
+gnc_commodity*
+dom_tree_to_commodity_ref_no_engine (xmlNodePtr node, QofBook* book)
+{
+    auto ref = parse_commodity_ref (node, book);
+
+    if (!ref)
+        return nullptr;
+
+    return gnc_commodity_new (book, nullptr, ref->space.c_str(), ref->id.c_str(),
+                              nullptr, 0);
 }
 
 gnc_commodity*
 dom_tree_to_commodity_ref (xmlNodePtr node, QofBook* book)
 {
-    gnc_commodity* daref;
     gnc_commodity* ret;
     gnc_commodity_table* table;
 
-    daref = dom_tree_to_commodity_ref_no_engine (node, book);
+    auto ref = parse_commodity_ref (node, book);
+
+    if (!ref)
+        return nullptr;
 
     table = gnc_commodity_table_get_table (book);
 
     g_return_val_if_fail (table != NULL, NULL);
 
-    ret =  gnc_commodity_table_lookup (table,
-                                       gnc_commodity_get_namespace (daref),
-                                       gnc_commodity_get_mnemonic (daref));
-
-    gnc_commodity_destroy (daref);
+    ret =  gnc_commodity_table_lookup (table, ref->space.c_str(), ref->id.c_str());
 
     g_return_val_if_fail (ret != NULL, NULL);
 
