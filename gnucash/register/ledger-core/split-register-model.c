@@ -437,6 +437,9 @@ gnc_split_register_get_tcredit_label (VirtualLocation virt_loc,
     SplitRegister* reg = user_data;
     SRInfo* info = gnc_split_register_get_info (reg);
 
+    if (reg->is_template)
+        return "";
+
     if (info->tcredit_str)
         return info->tcredit_str;
 
@@ -462,6 +465,9 @@ gnc_split_register_get_tdebit_label (VirtualLocation virt_loc,
     SplitRegister* reg = user_data;
     SRInfo* info = gnc_split_register_get_info (reg);
 
+    if (reg->is_template)
+        return "";
+
     if (info->tdebit_str)
         return info->tdebit_str;
 
@@ -483,6 +489,11 @@ static const char*
 gnc_split_register_get_tshares_label (VirtualLocation virt_loc,
                                       gpointer user_data)
 {
+    SplitRegister* reg = user_data;
+
+    if (reg->is_template)
+        return "";
+
     return _ ("Tot Shares");
 }
 
@@ -490,6 +501,11 @@ static const char*
 gnc_split_register_get_tbalance_label (VirtualLocation virt_loc,
                                        gpointer user_data)
 {
+    SplitRegister* reg = user_data;
+
+    if (reg->is_template)
+        return "";
+
     return _ ("Balance");
 }
 
