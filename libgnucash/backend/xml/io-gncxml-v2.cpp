@@ -395,7 +395,7 @@ gnc_counter_end_handler (gpointer data_for_children,
     {
         auto strval = dom_tree_to_text (tree);
         PERR ("string_to_gint64 failed with input: %s",
-              strval ? strval : "(null)");
+              strval ? strval->c_str() : "(null)");
         ret = FALSE;
     }
     else if (g_strcmp0 (type, "transaction") == 0)

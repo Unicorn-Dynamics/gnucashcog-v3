@@ -116,25 +116,21 @@ equals_node_val_vs_split_internal (xmlNodePtr node, Split* spl)
         }
         else if (g_strcmp0 ((char*)mark->name, "split:memo") == 0)
         {
-            char* memo = dom_tree_to_text (mark);
+            auto memo = dom_tree_to_text (mark);
 
-            if (g_strcmp0 (memo, xaccSplitGetMemo (spl)) != 0)
+            if (g_strcmp0 (memo->c_str(), xaccSplitGetMemo (spl)) != 0)
             {
-                g_free (memo);
                 return "memos differ";
             }
-            g_free (memo);
         }
         else if (g_strcmp0 ((char*)mark->name, "split:reconciled-state") == 0)
         {
-            char* rs = dom_tree_to_text (mark);
+            auto rs = dom_tree_to_text (mark);
 
-            if (rs[0] != xaccSplitGetReconcile (spl))
+            if (!rs || rs->front() != xaccSplitGetReconcile (spl))
             {
-                g_free (rs);
                 return "states differ";
             }
-            g_free (rs);
         }
         else if (g_strcmp0 ((char*)mark->name, "split:value") == 0)
         {

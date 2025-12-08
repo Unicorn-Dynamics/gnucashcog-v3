@@ -142,26 +142,22 @@ check_dom_tree_version (xmlNodePtr node,  const char* verstr)
 gboolean
 equals_node_val_vs_string (xmlNodePtr node, const gchar* str)
 {
-    gchar* cmp1;
-
     g_return_val_if_fail (node, FALSE);
     g_return_val_if_fail (str, FALSE);
 
-    cmp1 = dom_tree_to_text (node);
+    auto cmp1 = dom_tree_to_text (node);
 
     if (!cmp1)
     {
         return FALSE;
     }
-    else if (g_strcmp0 (cmp1, str) == 0)
+    else if (g_strcmp0 (cmp1->c_str(), str) == 0)
     {
-        g_free (cmp1);
         return TRUE;
     }
     else
     {
-        printf ("Differing types: node:`%s' vs string:`%s'\n", cmp1, str);
-        g_free (cmp1);
+        printf ("Differing types: node:`%s' vs string:`%s'\n", cmp1->c_str(), str);
         return FALSE;
     }
 }
@@ -169,20 +165,16 @@ equals_node_val_vs_string (xmlNodePtr node, const gchar* str)
 gboolean
 equals_node_val_vs_int (xmlNodePtr node, gint64 val)
 {
-    gchar* text;
     gint64 test_val;
 
     g_return_val_if_fail (node, FALSE);
 
-    text = dom_tree_to_text (node);
+    auto text = dom_tree_to_text (node);
 
-    if (!string_to_gint64 (text, &test_val))
+    if (!text || !string_to_gint64 (*text, &test_val))
     {
-        g_free (text);
         return FALSE;
     }
-
-    g_free (text);
 
     return val == test_val;
 }

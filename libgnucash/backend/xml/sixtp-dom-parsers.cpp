@@ -320,19 +320,19 @@ dom_tree_to_kvp_frame_given (xmlNodePtr node, KvpFrame* frame)
         if (g_strcmp0 ((char*)mark->name, "slot") == 0)
         {
             xmlNodePtr mark2;
-            gchar* key = NULL;
+            const gchar* key = NULL;
+            std::optional<std::string> maybe_key;
             KvpValue* val = NULL;
-            bool must_free{false};
 
             for (mark2 = mark->xmlChildrenNode; mark2; mark2 = mark2->next)
             {
                 if (g_strcmp0 ((char*)mark2->name, "slot:key") == 0)
                 {
-                    key = const_cast<char*>(dom_node_to_text (mark2));
+                    key = dom_node_to_text (mark2);
                     if (!key)
                     {
-                        key = dom_tree_to_text (mark2);
-                        must_free = true;
+                        maybe_key = dom_tree_to_text (mark2);
+                        key = maybe_key ? maybe_key->c_str() : nullptr;
                     }
                 }
                 else if (g_strcmp0 ((char*)mark2->name, "slot:value") == 0)
@@ -357,8 +357,6 @@ dom_tree_to_kvp_frame_given (xmlNodePtr node, KvpFrame* frame)
                 {
                     /* FIXME: should put some error here */
                 }
-                if (must_free)
-                    g_free (key);
             }
         }
     }
@@ -388,7 +386,7 @@ dom_tree_create_instance_slots (xmlNodePtr node, QofInstance* inst)
     return dom_tree_to_kvp_frame_given (node, frame);
 }
 
-gchar*
+std::optional<std::string>
 dom_tree_to_text (xmlNodePtr tree)
 {
     /* Expect *only* text and comment sibling nodes in the given tree --
@@ -400,29 +398,29 @@ dom_tree_to_text (xmlNodePtr tree)
        Ignores comment nodes and collapse text nodes into one string.
        Returns NULL if expectations are unsatisfied.
     */
-    gchar* result;
+    std::string rv;
     gchar* temp;
 
-    g_return_val_if_fail (tree, NULL);
+    g_return_val_if_fail (tree, std::nullopt);
 
     /* no nodes means it's an empty string text */
     if (!tree->xmlChildrenNode)
     {
         DEBUG ("No children");
-        return g_strdup ("");
+        return "";
     }
 
     temp = (char*)xmlNodeListGetString (NULL, tree->xmlChildrenNode, TRUE);
     if (!temp)
     {
         DEBUG ("Null string");
-        return NULL;
+        return std::nullopt;
     }
 
     DEBUG ("node string [%s]", (temp == NULL ? "(null)" : temp));
-    result = g_strdup (temp);
+    rv = temp;
     xmlFree (temp);
-    return result;
+    return rv;
 }
 
 gnc_numeric
