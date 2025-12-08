@@ -585,12 +585,12 @@ dom_tree_to_gdate (xmlNodePtr node)
 
        into a GDate.  If the xml is invalid, returns NULL. */
 
-    GDate* ret;
+    GDate ret;
     gboolean seen_date = FALSE;
     xmlNodePtr n;
 
     /* creates an invalid date */
-    ret = g_date_new ();
+    g_date_clear (&ret, 1);
 
     for (n = node->xmlChildrenNode; n; n = n->next)
     {
@@ -604,7 +604,7 @@ dom_tree_to_gdate (xmlNodePtr node)
             {
                 if (seen_date)
                 {
-                    goto failure;
+                    return NULL;
                 }
                 else
                 {
@@ -612,42 +612,38 @@ dom_tree_to_gdate (xmlNodePtr node)
                     gint year, month, day;
                     if (!content)
                     {
-                        goto failure;
+                        return NULL;
                     }
 
                     if (sscanf (content, "%d-%d-%d", &year, &month, &day) != 3)
                     {
                         g_free (content);
-                        goto failure;
+                        return NULL;
                     }
                     g_free (content);
                     seen_date = TRUE;
-                    g_date_set_dmy (ret, day, static_cast<GDateMonth> (month),
-                                    year);
-                    if (!g_date_valid (ret))
+                    g_date_set_dmy (&ret, day, static_cast<GDateMonth> (month), year);
+                    if (!g_date_valid (&ret))
                     {
                         PWARN ("invalid date");
-                        goto failure;
+                        return NULL;
                     }
                 }
             }
             break;
         default:
             PERR ("unexpected sub-node.");
-            goto failure;
+            return NULL;
         }
     }
 
     if (!seen_date)
     {
         PWARN ("no gdate node found.");
-        goto failure;
+        return NULL;
     }
 
-    return ret;
-failure:
-    g_date_free (ret);
-    return NULL;
+    return g_date_copy (&ret);
 }
 
 struct CommodityRef
