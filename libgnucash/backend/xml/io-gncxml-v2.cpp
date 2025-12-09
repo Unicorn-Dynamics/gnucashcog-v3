@@ -369,7 +369,6 @@ gnc_counter_end_handler (gpointer data_for_children,
                          gpointer parent_data, gpointer global_data,
                          gpointer* result, const gchar* tag)
 {
-    char* strval;
     gint64 val;
     char* type;
     xmlNodePtr tree = (xmlNodePtr)data_for_children;
@@ -392,9 +391,9 @@ gnc_counter_end_handler (gpointer data_for_children,
      * This is invalid xml because the namespace isn't declared in the
      * tag itself. This should be changed to 'type' at some point. */
     type = (char*)xmlGetProp (tree, BAD_CAST "cd:type");
-    strval = dom_tree_to_text (tree);
-    if (!string_to_gint64 (strval, &val))
+    if (!apply_xmlnode_text<bool> ([&val](auto txt){ return string_to_gint64 (txt, &val);}, tree))
     {
+        auto strval = dom_tree_to_text (tree);
         PERR ("string_to_gint64 failed with input: %s",
               strval ? strval : "(null)");
         ret = FALSE;
@@ -449,7 +448,6 @@ gnc_counter_end_handler (gpointer data_for_children,
         }
     }
 
-    g_free (strval);
     xmlFree (type);
     xmlFreeNode (tree);
     return ret;

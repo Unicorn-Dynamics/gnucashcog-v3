@@ -115,19 +115,6 @@ struct order_pdata
 };
 
 static inline gboolean
-set_string (xmlNodePtr node, GncOrder* order,
-            void (*func) (GncOrder* order, const char* txt))
-{
-    char* txt = dom_tree_to_text (node);
-    g_return_val_if_fail (txt, FALSE);
-
-    func (order, txt);
-
-    g_free (txt);
-    return TRUE;
-}
-
-static inline gboolean
 set_time64 (xmlNodePtr node, GncOrder* order,
               void (*func) (GncOrder* order, time64 tt))
 {
@@ -165,7 +152,7 @@ order_id_handler (xmlNodePtr node, gpointer order_pdata)
 {
     struct order_pdata* pdata = static_cast<decltype (pdata)> (order_pdata);
 
-    return set_string (node, pdata->order, gncOrderSetID);
+    return apply_xmlnode_text (gncOrderSetID, pdata->order, node);
 }
 
 static gboolean
@@ -203,7 +190,7 @@ order_notes_handler (xmlNodePtr node, gpointer order_pdata)
 {
     struct order_pdata* pdata = static_cast<decltype (pdata)> (order_pdata);
 
-    return set_string (node, pdata->order, gncOrderSetNotes);
+    return apply_xmlnode_text (gncOrderSetNotes, pdata->order, node);
 }
 
 static gboolean
@@ -211,7 +198,7 @@ order_reference_handler (xmlNodePtr node, gpointer order_pdata)
 {
     struct order_pdata* pdata = static_cast<decltype (pdata)> (order_pdata);
 
-    return set_string (node, pdata->order, gncOrderSetReference);
+    return apply_xmlnode_text (gncOrderSetReference, pdata->order, node);
 }
 
 static gboolean

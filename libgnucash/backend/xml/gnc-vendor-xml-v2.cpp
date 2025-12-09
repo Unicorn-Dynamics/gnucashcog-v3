@@ -131,20 +131,6 @@ struct vendor_pdata
 };
 
 static gboolean
-set_string (xmlNodePtr node, GncVendor* vendor,
-            void (*func) (GncVendor* vendor, const char* txt))
-{
-    char* txt = dom_tree_to_text (node);
-    g_return_val_if_fail (txt, FALSE);
-
-    func (vendor, txt);
-
-    g_free (txt);
-
-    return TRUE;
-}
-
-static gboolean
 set_boolean (xmlNodePtr node, GncVendor* vendor,
              void (*func) (GncVendor* vendor, gboolean b))
 {
@@ -163,7 +149,7 @@ vendor_name_handler (xmlNodePtr node, gpointer vendor_pdata)
 {
     struct vendor_pdata* pdata = static_cast<decltype (pdata)> (vendor_pdata);
 
-    return set_string (node, pdata->vendor, gncVendorSetName);
+    return apply_xmlnode_text (gncVendorSetName, pdata->vendor, node);
 }
 
 static gboolean
@@ -194,7 +180,7 @@ vendor_id_handler (xmlNodePtr node, gpointer vendor_pdata)
 {
     struct vendor_pdata* pdata = static_cast<decltype (pdata)> (vendor_pdata);
 
-    return set_string (node, pdata->vendor, gncVendorSetID);
+    return apply_xmlnode_text (gncVendorSetID, pdata->vendor, node);
 }
 
 static gboolean
@@ -202,7 +188,7 @@ vendor_notes_handler (xmlNodePtr node, gpointer vendor_pdata)
 {
     struct vendor_pdata* pdata = static_cast<decltype (pdata)> (vendor_pdata);
 
-    return set_string (node, pdata->vendor, gncVendorSetNotes);
+    return apply_xmlnode_text (gncVendorSetNotes, pdata->vendor, node);
 }
 
 static gboolean
@@ -232,20 +218,13 @@ static gboolean
 vendor_taxincluded_handler (xmlNodePtr node, gpointer vendor_pdata)
 {
     struct vendor_pdata* pdata = static_cast<decltype (pdata)> (vendor_pdata);
-    GncTaxIncluded type;
-    char* str;
-    gboolean ret;
-
-    str = dom_tree_to_text (node);
-    g_return_val_if_fail (str, FALSE);
-
-    ret = gncTaxIncludedStringToType (str, &type);
-    g_free (str);
-
-    if (ret)
-        gncVendorSetTaxIncluded (pdata->vendor, type);
-
-    return ret;
+    auto set_taxincluded = [](GncVendor* vendor, const char* str)
+    {
+        GncTaxIncluded type;
+        if (gncTaxIncludedStringToType (str, &type))
+            gncVendorSetTaxIncluded (vendor, type);
+    };
+    return apply_xmlnode_text (set_taxincluded, pdata->vendor, node);
 }
 
 static gboolean

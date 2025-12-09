@@ -34,6 +34,8 @@
 
 std::optional<GncGUID> dom_tree_to_guid (xmlNodePtr node);
 
+std::string gnc_strstrip (std::string_view sv);
+
 gnc_commodity* dom_tree_to_commodity_ref (xmlNodePtr node, QofBook* book);
 gnc_commodity* dom_tree_to_commodity_ref_no_engine (xmlNodePtr node, QofBook*);
 

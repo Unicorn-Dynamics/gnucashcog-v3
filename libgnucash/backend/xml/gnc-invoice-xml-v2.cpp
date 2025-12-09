@@ -167,18 +167,6 @@ struct invoice_pdata
     QofBook* book;
 };
 
-static inline gboolean
-set_string (xmlNodePtr node, GncInvoice* invoice,
-            void (*func) (GncInvoice* invoice, const char* txt))
-{
-    char* txt = dom_tree_to_text (node);
-    g_return_val_if_fail (txt, FALSE);
-
-    func (invoice, txt);
-
-    g_free (txt);
-    return TRUE;
-}
 
 static inline gboolean
 set_time64 (xmlNodePtr node, GncInvoice* invoice,
@@ -218,7 +206,7 @@ invoice_id_handler (xmlNodePtr node, gpointer invoice_pdata)
 {
     struct invoice_pdata* pdata = static_cast<decltype (pdata)> (invoice_pdata);
 
-    return set_string (node, pdata->invoice, gncInvoiceSetID);
+    return apply_xmlnode_text (gncInvoiceSetID, pdata->invoice, node);
 }
 
 static gboolean
@@ -254,7 +242,7 @@ invoice_billing_id_handler (xmlNodePtr node, gpointer invoice_pdata)
 {
     struct invoice_pdata* pdata = static_cast<decltype (pdata)> (invoice_pdata);
 
-    return set_string (node, pdata->invoice, gncInvoiceSetBillingID);
+    return apply_xmlnode_text (gncInvoiceSetBillingID, pdata->invoice, node);
 }
 
 static gboolean
@@ -262,7 +250,7 @@ invoice_notes_handler (xmlNodePtr node, gpointer invoice_pdata)
 {
     struct invoice_pdata* pdata = static_cast<decltype (pdata)> (invoice_pdata);
 
-    return set_string (node, pdata->invoice, gncInvoiceSetNotes);
+    return apply_xmlnode_text (gncInvoiceSetNotes, pdata->invoice, node);
 }
 
 static gboolean

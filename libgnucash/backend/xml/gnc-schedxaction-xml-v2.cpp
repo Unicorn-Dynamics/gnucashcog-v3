@@ -223,52 +223,40 @@ gboolean
 sx_name_handler (xmlNodePtr node, gpointer sx_pdata)
 {
     struct sx_pdata* pdata = static_cast<decltype (pdata)> (sx_pdata);
-    SchedXaction* sx = pdata->sx;
-    gchar* tmp = dom_tree_to_text (node);
-    DEBUG ("sx named [%s]", tmp);
-    g_return_val_if_fail (tmp, FALSE);
-    xaccSchedXactionSetName (sx, tmp);
-    g_free (tmp);
-    return TRUE;
+    return apply_xmlnode_text (xaccSchedXactionSetName, pdata->sx, node);
 }
 
 static gboolean
 sx_enabled_handler (xmlNodePtr node, gpointer sx_pdata)
 {
     struct sx_pdata* pdata = static_cast<decltype (pdata)> (sx_pdata);
-    SchedXaction* sx = pdata->sx;
-    gchar* tmp = dom_tree_to_text (node);
-
-    sx->enabled = (g_strcmp0 (tmp, "y") == 0 ? TRUE : FALSE);
-    g_free (tmp);
-
-    return TRUE;
+    auto set_enabled = [](SchedXaction* sx, const char* txt)
+    {
+        sx->enabled = !g_strcmp0 (txt, "y");
+    };
+    return apply_xmlnode_text (set_enabled, pdata->sx, node);
 }
 
 static gboolean
 sx_autoCreate_handler (xmlNodePtr node, gpointer sx_pdata)
 {
     struct sx_pdata* pdata = static_cast<decltype (pdata)> (sx_pdata);
-    SchedXaction* sx = pdata->sx;
-    gchar* tmp = dom_tree_to_text (node);
-
-    sx->autoCreateOption = (g_strcmp0 (tmp, "y") == 0 ? TRUE : FALSE);
-    g_free (tmp);
-
-    return TRUE;
+    auto set_autocreate = [](SchedXaction* sx, const char* txt)
+    {
+        sx->autoCreateOption = !g_strcmp0 (txt, "y");
+    };
+    return apply_xmlnode_text (set_autocreate, pdata->sx, node);
 }
 
 static gboolean
 sx_notify_handler (xmlNodePtr node, gpointer sx_pdata)
 {
     struct sx_pdata* pdata = static_cast<decltype (pdata)> (sx_pdata);
-    SchedXaction* sx = pdata->sx;
-    gchar* tmp = dom_tree_to_text (node);
-
-    sx->autoCreateNotify = (g_strcmp0 (tmp, "y") == 0 ? TRUE : FALSE);
-    g_free (tmp);
-
-    return TRUE;
+    auto set_notify = [](SchedXaction* sx, const char* txt)
+    {
+        sx->autoCreateNotify = !g_strcmp0 (txt, "y");
+    };
+    return apply_xmlnode_text (set_notify, pdata->sx, node);
 }
 
 static gboolean

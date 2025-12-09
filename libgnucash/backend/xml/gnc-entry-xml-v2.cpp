@@ -225,18 +225,6 @@ struct entry_pdata
 };
 
 static inline gboolean
-set_string (xmlNodePtr node, GncEntry* entry,
-            void (*func) (GncEntry* entry, const char* txt))
-{
-    char* txt = dom_tree_to_text (node);
-    g_return_val_if_fail (txt, FALSE);
-
-    func (entry, txt);
-    g_free (txt);
-    return TRUE;
-}
-
-static inline gboolean
 set_time64 (xmlNodePtr node, GncEntry* entry,
               void (*func) (GncEntry* entry, time64 ts))
 {
@@ -349,7 +337,7 @@ entry_description_handler (xmlNodePtr node, gpointer entry_pdata)
 {
     struct entry_pdata* pdata = static_cast<decltype (pdata)> (entry_pdata);
 
-    return set_string (node, pdata->entry, gncEntrySetDescription);
+    return apply_xmlnode_text (gncEntrySetDescription, pdata->entry, node);
 }
 
 static gboolean
@@ -357,7 +345,7 @@ entry_action_handler (xmlNodePtr node, gpointer entry_pdata)
 {
     struct entry_pdata* pdata = static_cast<decltype (pdata)> (entry_pdata);
 
-    return set_string (node, pdata->entry, gncEntrySetAction);
+    return apply_xmlnode_text (gncEntrySetAction, pdata->entry, node);
 }
 
 static gboolean
@@ -365,7 +353,7 @@ entry_notes_handler (xmlNodePtr node, gpointer entry_pdata)
 {
     struct entry_pdata* pdata = static_cast<decltype (pdata)> (entry_pdata);
 
-    return set_string (node, pdata->entry, gncEntrySetNotes);
+    return apply_xmlnode_text (gncEntrySetNotes, pdata->entry, node);
 }
 
 static gboolean
@@ -405,40 +393,30 @@ static gboolean
 entry_idisctype_handler (xmlNodePtr node, gpointer entry_pdata)
 {
     struct entry_pdata* pdata = static_cast<decltype (pdata)> (entry_pdata);
-    GncAmountType type;
-    char* str;
-    gboolean ret;
-
-    str = dom_tree_to_text (node);
-    g_return_val_if_fail (str, FALSE);
-
-    ret = gncAmountStringToType (str, &type);
-    g_free (str);
-
-    if (ret)
-        gncEntrySetInvDiscountType (pdata->entry, type);
-
-    return ret;
+    auto entry = pdata->entry;
+    auto set_discount_type = [entry](auto str)
+    {
+        GncAmountType type;
+        if (!gncAmountStringToType (str, &type)) return false;
+        gncEntrySetInvDiscountType (entry, type);
+        return true;
+    };
+    return apply_xmlnode_text (set_discount_type, node, FALSE);
 }
 
 static gboolean
 entry_idischow_handler (xmlNodePtr node, gpointer entry_pdata)
 {
     struct entry_pdata* pdata = static_cast<decltype (pdata)> (entry_pdata);
-    GncDiscountHow how;
-    char* str;
-    gboolean ret;
-
-    str = dom_tree_to_text (node);
-    g_return_val_if_fail (str, FALSE);
-
-    ret = gncEntryDiscountStringToHow (str, &how);
-    g_free (str);
-
-    if (ret)
-        gncEntrySetInvDiscountHow (pdata->entry, how);
-
-    return ret;
+    auto entry = pdata->entry;
+    auto set_discount_how = [entry](auto str)
+    {
+        GncDiscountHow how;
+        if (!gncEntryDiscountStringToHow (str, &how)) return false;
+        gncEntrySetInvDiscountHow (entry, how);
+        return true;
+    };
+    return apply_xmlnode_text (set_discount_how, node, FALSE);
 }
 
 static gboolean
@@ -526,20 +504,15 @@ static gboolean
 entry_billpayment_handler (xmlNodePtr node, gpointer entry_pdata)
 {
     struct entry_pdata* pdata = static_cast<decltype (pdata)> (entry_pdata);
-    GncEntryPaymentType type;
-    char* str;
-    gboolean ret;
-
-    str = dom_tree_to_text (node);
-    g_return_val_if_fail (str, FALSE);
-
-    ret = gncEntryPaymentStringToType (str, &type);
-    g_free (str);
-
-    if (ret)
-        gncEntrySetBillPayment (pdata->entry, type);
-
-    return ret;
+    auto entry = pdata->entry;
+    auto set_billpayment = [entry](auto str)
+    {
+        GncEntryPaymentType type;
+        if (!gncEntryPaymentStringToType (str, &type)) return false;
+        gncEntrySetBillPayment (entry, type);
+        return true;
+    };
+    return apply_xmlnode_text (set_billpayment, node, FALSE);
 }
 
 /* The rest of the stuff */

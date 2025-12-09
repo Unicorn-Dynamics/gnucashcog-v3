@@ -200,26 +200,6 @@ struct split_pdata
 };
 
 static inline gboolean
-set_spl_string (xmlNodePtr node, Split* spl,
-                void (*func) (Split* spl, const char* txt))
-{
-    if (auto txt = dom_node_to_text (node))
-    {
-        func (spl, txt);
-        return TRUE;
-    }
-
-    gchar* tmp = dom_tree_to_text (node);
-    g_return_val_if_fail (tmp, FALSE);
-
-    func (spl, tmp);
-
-    g_free (tmp);
-
-    return TRUE;
-}
-
-static inline gboolean
 set_spl_gnc_num (xmlNodePtr node, Split* spl,
                  void (*func) (Split* spl, gnc_numeric gn))
 {
@@ -243,35 +223,25 @@ static gboolean
 spl_memo_handler (xmlNodePtr node, gpointer data)
 {
     struct split_pdata* pdata = static_cast<decltype (pdata)> (data);
-    return set_spl_string (node, pdata->split, xaccSplitSetMemo);
+    return apply_xmlnode_text (xaccSplitSetMemo, pdata->split, node);
 }
 
 static gboolean
 spl_action_handler (xmlNodePtr node, gpointer data)
 {
     struct split_pdata* pdata = static_cast<decltype (pdata)> (data);
-    return set_spl_string (node, pdata->split, xaccSplitSetAction);
+    return apply_xmlnode_text (xaccSplitSetAction, pdata->split, node);
 }
 
 static gboolean
 spl_reconciled_state_handler (xmlNodePtr node, gpointer data)
 {
     struct split_pdata* pdata = static_cast<decltype (pdata)> (data);
-
-    if (auto txt = dom_node_to_text (node))
+    auto set_reconciled = [](Split* s, const char *txt)
     {
-        xaccSplitSetReconcile (pdata->split, txt[0]);
-        return TRUE;
-    }
-
-    gchar* tmp = dom_tree_to_text (node);
-    g_return_val_if_fail (tmp, FALSE);
-
-    xaccSplitSetReconcile (pdata->split, tmp[0]);
-
-    g_free (tmp);
-
-    return TRUE;
+        xaccSplitSetReconcile(s, txt[0]);
+    };
+    return apply_xmlnode_text (set_reconciled, pdata->split, node);
 }
 
 static gboolean
@@ -408,29 +378,6 @@ struct trans_pdata
     QofBook* book;
 };
 
-static inline gboolean
-set_tran_string (xmlNodePtr node, Transaction* trn,
-                 void (*func) (Transaction* trn, const char* txt))
-{
-    if (auto txt = dom_node_to_text (node))
-    {
-        func (trn, txt);
-        return TRUE;
-    }
-
-    gchar* tmp;
-
-    tmp = dom_tree_to_text (node);
-
-    g_return_val_if_fail (tmp, FALSE);
-
-    func (trn, tmp);
-
-    g_free (tmp);
-
-    return TRUE;
-}
-
 static gboolean
 set_tran_time64 (xmlNodePtr node, Transaction * trn,
         void (*func) (Transaction *, time64))
@@ -474,7 +421,7 @@ trn_num_handler (xmlNodePtr node, gpointer trans_pdata)
     struct trans_pdata* pdata = static_cast<decltype (pdata)> (trans_pdata);
     Transaction* trn = pdata->trans;
 
-    return set_tran_string (node, trn, xaccTransSetNum);
+    return apply_xmlnode_text (xaccTransSetNum, trn, node);
 }
 
 static gboolean
@@ -501,7 +448,7 @@ trn_description_handler (xmlNodePtr node, gpointer trans_pdata)
     struct trans_pdata* pdata = static_cast<decltype (pdata)> (trans_pdata);
     Transaction* trn = pdata->trans;
 
-    return set_tran_string (node, trn, xaccTransSetDescription);
+    return apply_xmlnode_text (xaccTransSetDescription, trn, node);
 }
 
 static gboolean

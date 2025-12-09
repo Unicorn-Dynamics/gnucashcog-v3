@@ -145,19 +145,6 @@ struct customer_pdata
     QofBook* book;
 };
 
-static gboolean
-set_string (xmlNodePtr node, GncCustomer* cust,
-            void (*func) (GncCustomer* cust, const char* txt))
-{
-    char* txt = dom_tree_to_text (node);
-    g_return_val_if_fail (txt, FALSE);
-
-    func (cust, txt);
-
-    g_free (txt);
-
-    return TRUE;
-}
 
 static gboolean
 set_boolean (xmlNodePtr node, GncCustomer* cust,
@@ -178,7 +165,7 @@ customer_name_handler (xmlNodePtr node, gpointer cust_pdata)
 {
     struct customer_pdata* pdata = static_cast<decltype (pdata)> (cust_pdata);
 
-    return set_string (node, pdata->customer, gncCustomerSetName);
+    return apply_xmlnode_text (gncCustomerSetName, pdata->customer, node);
 }
 
 static gboolean
@@ -209,7 +196,7 @@ customer_id_handler (xmlNodePtr node, gpointer cust_pdata)
 {
     struct customer_pdata* pdata = static_cast<decltype (pdata)> (cust_pdata);
 
-    return set_string (node, pdata->customer, gncCustomerSetID);
+    return apply_xmlnode_text (gncCustomerSetID, pdata->customer, node);
 }
 
 static gboolean
@@ -217,7 +204,7 @@ customer_notes_handler (xmlNodePtr node, gpointer cust_pdata)
 {
     struct customer_pdata* pdata = static_cast<decltype (pdata)> (cust_pdata);
 
-    return set_string (node, pdata->customer, gncCustomerSetNotes);
+    return apply_xmlnode_text (gncCustomerSetNotes, pdata->customer, node);
 }
 
 static gboolean
@@ -257,20 +244,13 @@ static gboolean
 customer_taxincluded_handler (xmlNodePtr node, gpointer cust_pdata)
 {
     struct customer_pdata* pdata = static_cast<decltype (pdata)> (cust_pdata);
-    GncTaxIncluded type;
-    char* str;
-    gboolean ret;
-
-    str = dom_tree_to_text (node);
-    g_return_val_if_fail (str, FALSE);
-
-    ret = gncTaxIncludedStringToType (str, &type);
-    g_free (str);
-
-    if (ret)
-        gncCustomerSetTaxIncluded (pdata->customer, type);
-
-    return ret;
+    auto set_tax_included = [](GncCustomer* cust, const char *str)
+    {
+        GncTaxIncluded type;
+        if (gncTaxIncludedStringToType (str, &type))
+            gncCustomerSetTaxIncluded (cust, type);
+    };
+    return apply_xmlnode_text (set_tax_included, pdata->customer, node);
 }
 
 static gboolean

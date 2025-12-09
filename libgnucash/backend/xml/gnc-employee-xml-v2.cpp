@@ -130,25 +130,11 @@ struct employee_pdata
 };
 
 static gboolean
-set_string (xmlNodePtr node, GncEmployee* employee,
-            void (*func) (GncEmployee* employee, const char* txt))
-{
-    char* txt = dom_tree_to_text (node);
-    g_return_val_if_fail (txt, FALSE);
-
-    func (employee, txt);
-
-    g_free (txt);
-
-    return TRUE;
-}
-
-static gboolean
 employee_username_handler (xmlNodePtr node, gpointer employee_pdata)
 {
     struct employee_pdata* pdata = static_cast<decltype (pdata)> (employee_pdata);
 
-    return set_string (node, pdata->employee, gncEmployeeSetUsername);
+    return apply_xmlnode_text (gncEmployeeSetUsername, pdata->employee, node);
 }
 
 static gboolean
@@ -181,7 +167,7 @@ employee_id_handler (xmlNodePtr node, gpointer employee_pdata)
 {
     struct employee_pdata* pdata = static_cast<decltype (pdata)> (employee_pdata);
 
-    return set_string (node, pdata->employee, gncEmployeeSetID);
+    return apply_xmlnode_text (gncEmployeeSetID, pdata->employee, node);
 }
 
 static gboolean
@@ -189,7 +175,7 @@ employee_language_handler (xmlNodePtr node, gpointer employee_pdata)
 {
     struct employee_pdata* pdata = static_cast<decltype (pdata)> (employee_pdata);
 
-    return set_string (node, pdata->employee, gncEmployeeSetLanguage);
+    return apply_xmlnode_text (gncEmployeeSetLanguage, pdata->employee, node);
 }
 
 static gboolean
@@ -197,7 +183,7 @@ employee_acl_handler (xmlNodePtr node, gpointer employee_pdata)
 {
     struct employee_pdata* pdata = static_cast<decltype (pdata)> (employee_pdata);
 
-    return set_string (node, pdata->employee, gncEmployeeSetAcl);
+    return apply_xmlnode_text (gncEmployeeSetAcl, pdata->employee, node);
 }
 
 static gboolean
