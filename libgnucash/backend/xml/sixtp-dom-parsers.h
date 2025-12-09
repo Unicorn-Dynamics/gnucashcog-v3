@@ -71,6 +71,40 @@ struct dom_tree_handler
     int gotten;
 };
 
+template <typename T, typename F,
+          std::enable_if_t<std::is_invocable_r_v<void, F, const char*>, int> = 0>
+inline T
+apply_xmlnode_text (F&& f, xmlNodePtr node, T default_val = T{})
+{
+    if (!node)
+        return default_val;
+
+    if (auto txt = dom_node_to_text(node))
+        return f(txt);
+
+    if (auto txt = dom_tree_to_text(node))
+    {
+        auto rv = f(txt);
+        g_free(txt);
+        return rv;
+    }
+
+    return default_val;
+}
+
+template <typename Obj, typename F,
+          std::enable_if_t<std::is_invocable_r_v<void, F, Obj*, const char*>, int> = 0>
+inline bool
+apply_xmlnode_text (F&& f, Obj* obj, xmlNodePtr node)
+{
+    auto set_str = [&](auto txt)
+    {
+        f (obj, txt);
+        return true;
+    };
+    return apply_xmlnode_text<bool> (set_str, node, false);
+}
+
 gboolean dom_tree_generic_parse (xmlNodePtr node,
                                  struct dom_tree_handler* handlers,
                                  gpointer data);
