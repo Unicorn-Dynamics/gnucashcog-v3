@@ -5329,6 +5329,8 @@ textview_url_activate (GtkTextTag *tag,
 
     if ((event->type == GDK_BUTTON_RELEASE) &&
         (event_button->button == 1) &&
+        !gtk_text_buffer_get_has_selection (gtk_text_view_get_buffer
+                                            (GTK_TEXT_VIEW (object))) &&
         (event_button->y > DEFAULT_MARGIN))
     {
         gchar *link = (gchar*)g_object_get_data (G_OBJECT(tag), "link");
