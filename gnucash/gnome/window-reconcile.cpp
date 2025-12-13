@@ -44,7 +44,6 @@
 #include "dialog-transfer.h"
 #include "dialog-utils.h"
 #include "gnc-amount-edit.h"
-#include "gnc-autoclear.h"
 #include "gnc-component-manager.h"
 #include "gnc-date.h"
 #include "gnc-date-edit.h"
@@ -1721,39 +1720,6 @@ close_handler (gpointer user_data)
     gtk_widget_destroy (recnData->window);
 }
 
-static void
-offer_autoclear (GtkWindow* window, Account* account, gnc_numeric new_ending,
-                 time64 statement_date)
-{
-    g_return_if_fail (window && account);
-
-#define MAX_AUTOCLEAR_SECONDS 1
-
-    GError* error = nullptr;
-    GList* splits_to_clear = gnc_account_get_autoclear_splits
-        (account, new_ending, statement_date, &error, MAX_AUTOCLEAR_SECONDS);
-
-    if (error)
-    {
-        PWARN ("cannot autoclear: %s", error->message);
-        g_error_free (error);
-        return;
-    }
-
-    const char* autoclear = N_("Found %u splits up to %s which will clear "
-                               "to %s. Do you want to auto-clear?");
-    guint num_splits = g_list_length (splits_to_clear);
-    GNCPrintAmountInfo pinfo = gnc_account_print_info (account, true);
-    const char *balance_str = xaccPrintAmount (new_ending, pinfo);
-    char *date_str = qof_print_date (statement_date);
-
-    if (gnc_action_dialog (window, _("Auto-clear"), false, _(autoclear),
-                           num_splits, date_str, balance_str))
-        g_list_foreach (splits_to_clear, (GFunc)xaccSplitSetReconcile,
-                        (gpointer)CREC);
-    g_free (date_str);
-    g_list_free (splits_to_clear);
-}
 
 /********************************************************************\
  * recnWindow                                                       *
@@ -1793,8 +1759,6 @@ recnWindow (GtkWidget *parent, Account *account)
     if (!startRecnWindow (parent, account, &new_ending, &statement_date,
             enable_subaccounts))
         return NULL;
-
-    offer_autoclear (GTK_WINDOW (parent), account, new_ending, statement_date);
 
     return recnWindowWithBalance (parent, account, new_ending, statement_date);
 }
