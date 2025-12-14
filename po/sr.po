@@ -2,21 +2,24 @@
 # Copyright © 2017 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnucash package.
 # Мирослав Николић <miroslavnikolic@rocketmail.com>, 2015—2017.
+# Marko Bojović <bojovicmarko@outlook.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-22 11:57-0700\n"
-"PO-Revision-Date: 2017-11-05 08:54+0200\n"
-"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
-"Language-Team: Serbian <(nothing)>\n"
+"PO-Revision-Date: 2025-12-07 21:00+0000\n"
+"Last-Translator: Marko Bojović <bojovicmarko@outlook.com>\n"
+"Language-Team: Serbian <https://hosted.weblate.org/projects/gnucash/gnucash/"
+"sr/>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.15-dev\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 
 #: bindings/guile/date-utilities.scm:173
@@ -9279,7 +9282,7 @@ msgstr ""
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.import.generic.gschema.xml.in:15
 msgid "Use bayesian matching"
-msgstr "Користите бајесово поређење"
+msgstr "Користите бејзово поређење"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.import.generic.gschema.xml.in:16
 msgid ""
@@ -9287,7 +9290,7 @@ msgid ""
 "existing transactions. Otherwise a less sophisticated rule-based matching "
 "mechanism will be used."
 msgstr ""
-"Укључује бајесово поређење када пореди увезену трансакцију са постојећим "
+"Укључује бејзовог поређење када пореди увезену трансакцију са постојећим "
 "трансакцијама. У супротном користиће се механизам поређења на основу мање "
 "осетљивих правила."
 
@@ -15835,13 +15838,13 @@ msgstr "Праг _приказа поређења"
 #. Preferences->Online Banking:Generic
 #: gnucash/gtkbuilder/dialog-preferences.glade:2256
 msgid "Use _bayesian matching"
-msgstr "Користи _бајесово поређење"
+msgstr "Користи _бејзово поређење"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2262
 msgid ""
 "Use bayesian algorithms to match new transactions with existing accounts."
 msgstr ""
-"Користиће бајесове алгоритме за поређење нових трансакција са постојећим "
+"Користиће бејзов алгоритме за поређење нових трансакција са постојећим "
 "налозима."
 
 #. Preferences->Online Banking:Generic

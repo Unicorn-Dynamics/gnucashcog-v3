@@ -32,6 +32,7 @@
 # "Frank H. Ellenberger" <frank.h.ellenberger@gmail.com>, 2024.
 # Alois Levermann <alois@levermann.xyz>, 2025.
 # Thomas Kriegel <thomasMapper@bin-wieder-da.de>, 2025.
+# Franko <web.90947@t.sc-ha.net>, 2025.
 #
 # Konventionen/Tastenkürzel:
 # »Zitate«: [altgr]+[Y]/[X]
@@ -43,8 +44,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-22 11:57-0700\n"
-"PO-Revision-Date: 2025-09-24 20:02+0000\n"
-"Last-Translator: Christian Wehling <christian.wehling@web.de>\n"
+"PO-Revision-Date: 2025-11-30 19:00+0000\n"
+"Last-Translator: Franko <web.90947@t.sc-ha.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "de/>\n"
 "Language: de\n"
@@ -52,7 +53,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #: bindings/guile/date-utilities.scm:173
 #: gnucash/report/reports/example/daily-reports.scm:260
@@ -21997,11 +21998,11 @@ msgstr "Anzahl Anteile gesamt"
 
 #: gnucash/register/ledger-core/split-register-model.c:507
 msgid "Debit Formula"
-msgstr "Haben-Formel"
+msgstr "Soll-Formel"
 
 #: gnucash/register/ledger-core/split-register-model.c:514
 msgid "Credit Formula"
-msgstr "Soll-Formel"
+msgstr "Haben-Formel"
 
 #: gnucash/register/ledger-core/split-register-model.c:536
 #, c-format
@@ -22176,12 +22177,11 @@ msgstr "Buchung _ändern"
 
 #: gnucash/register/ledger-core/split-register-model.c:2351
 msgid "Enter debit formula for real transaction"
-msgstr ""
-"Geben Sie die Formel zur Haben-Berechnung der tatsächlichen Buchung ein"
+msgstr "Geben Sie die Formel zur Soll-Berechnung der tatsächlichen Buchung ein"
 
 #: gnucash/register/ledger-core/split-register-model.c:2387
 msgid "Enter credit formula for real transaction"
-msgstr "Geben Sie die Formel zur Soll-Berechnung der tatsächlichen Buchung ein"
+msgstr "Geben Sie die Formel zur Haben-Berechnung der tatsächlichen Buchung ein"
 
 #: gnucash/register/register-gnome/completioncell-gnome.c:76
 msgid "Don't autocomplete"
