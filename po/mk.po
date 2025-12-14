@@ -5,14 +5,15 @@
 #
 # Vesna Micajkova <vmicajkova@institutpraktikum.mk>, 2022, 2023, 2024.
 # Bojan Topalovski <3dcncinfo@gmail.com>, 2024.
+# acemk <ace.dimitrievski@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.13\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-22 11:57-0700\n"
-"PO-Revision-Date: 2024-08-21 09:45+0000\n"
-"Last-Translator: Vesna Micajkova <vmicajkova@institutpraktikum.mk>\n"
+"PO-Revision-Date: 2025-12-03 11:11+0000\n"
+"Last-Translator: acemk <ace.dimitrievski@gmail.com>\n"
 "Language-Team: Macedonian <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/mk/>\n"
 "Language: mk\n"
@@ -20,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==1 || n%10==1 ? 0 : 1;\n"
-"X-Generator: Weblate 5.7\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #: bindings/guile/date-utilities.scm:173
 #: gnucash/report/reports/example/daily-reports.scm:260
@@ -714,19 +715,14 @@ msgstr ""
 "gnucash.org/wiki/Mailing_Lists"
 
 #: doc/tip_of_the_day.list.c:11
-#, fuzzy
-#| msgid ""
-#| "The GnuCash developers are easy to contact. As well as several mailing "
-#| "lists, you can chat to them live on IRC! Join them on #gnucash at irc."
-#| "gnome.org"
 msgid ""
 "The GnuCash developers are easy to contact. As well as several mailing "
 "lists, you can chat to them live on IRC! Join them on #gnucash at irc.gimp."
 "net"
 msgstr ""
 "Лесно е да се воспостави контакт со GnuCash девелоперите. Покрај преку e-"
-"mail листите достапни се и за live chat. Придружете им се на #gnucash at irc."
-"gnome.org"
+"mail листите достапни се и за live chat. Придружете им се на #gnucash at "
+"irc.gimp.net"
 
 #: doc/tip_of_the_day.list.c:15
 msgid ""
@@ -748,8 +744,9 @@ msgid ""
 "The full path is displayed in the status bar."
 msgstr ""
 "Ако сакате да знаете во кој директориум се сочувани вашите скорешни GnuCash "
-"датотеки, погледнете под елеметот ДАТОТЕКА од главното мени.\n"
-"Таму е забележена целата патека на датотеките."
+"датотеки,  задржете го курсорот над еден од записите во менито за историја.\n"
+"(Датотека[->Список на најскоро користени]).\n"
+"Целосната патека е прикажана во статусната лента."
 
 #: doc/tip_of_the_day.list.c:24
 msgid ""
@@ -890,7 +887,7 @@ msgid ""
 "To switch between multiple tabs in the main window, press Control+Page Up/"
 "Down."
 msgstr ""
-"За да се префрлате помеѓу повеќе јазичиња во главниот прозорец, притиснете "
+"За да се префрлате помеѓу повеќе табови во главниот прозорец, притиснете "
 "Control+Page Up/Down."
 
 #: doc/tip_of_the_day.list.c:82
@@ -1552,9 +1549,9 @@ msgstr ""
 "акциите со делител, додека вкупната монетарна вредност на вкупната "
 "инвестиција се одржува константна. \n"
 "\n"
-"Ако поделбата резултира со готовина наместо преостанатите единици, снимете "
-"ја продажбата со помош на Асистентот за трансакции на акции прво, а потоа "
-"запишете го делењето."
+"Ако поделбата резултира со готовина наместо преостанатите единици, прво "
+"снимете ја продажбата со помош на Асистентот за трансакции на акции, а потоа "
+"запишете ја поделбата."
 
 #. Translators: this is a stock transaction describing a reverse split
 #. Translators: this is a stock transaction describing a
@@ -1607,8 +1604,8 @@ msgstr ""
 "Купете назад акции за покривање на кратки позиции и регистрирајте капитална "
 "добивка/загуба. \n"
 "\n"
-"Ако не можете да ги пресметате капиталните добивки, можете да внесете износ "
-"на застапник и да го поправите во трансакцијата подоцна."
+"Ако не можете да ги пресметате капиталните добивки, можете да внесете "
+"привремен износ и подоцна да го поправите во трансакцијата."
 
 #. Translators: this is a stock transaction describing
 #. dividends retrieved from holder when shorting stock
@@ -2119,16 +2116,12 @@ msgstr ""
 "добавувачот подолу."
 
 #: gnucash/gnome/dialog-commodities.cpp:183
-#, fuzzy
-#| msgid ""
-#| "That commodity is currently used by at least one of your accounts. You "
-#| "may not delete it."
 msgid ""
 "This commodity is currently used by the following accounts. You may not "
 "delete it.\n"
 msgstr ""
-"Оваа стока тековно е користена од барем една од вашите сметки. Не може да ја "
-"избришете."
+"Оваа стока тековно е користена од следниве вашите сметки. Не може да ја "
+"избришете.\n"
 
 #: gnucash/gnome/dialog-commodities.cpp:201
 msgid ""
@@ -4063,7 +4056,7 @@ msgstr "сега"
 #: gnucash/import-export/csv-exp/assistant-csv-export.c:401
 #, c-format
 msgid "Accounts Selected: %d"
-msgstr ""
+msgstr "Избрани сметки: %d"
 
 #: gnucash/gnome/dialog-tax-info.c:1184
 #: gnucash/gtkbuilder/dialog-tax-info.glade:89
@@ -5271,19 +5264,23 @@ msgstr "Одете на Датум"
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5060
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5089
 msgid "Unable to jump to other account"
-msgstr ""
+msgstr "Не може да се премине на другата сметка"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5063
 msgid ""
 "This transaction involves more than one other account. Select a specific "
 "split to jump to that account."
 msgstr ""
+"Оваа трансакција вклучува повеќе од една друга сметка. Изберете специфична "
+"поделба за да прејдете на таа сметка."
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5092
 msgid ""
 "This transaction only involves the current account so there is no other "
 "account to jump to."
 msgstr ""
+"Оваа трансакција ја вклучува само тековната сметка, така што нема друга "
+"сметка на која може да се премине."
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5246
 #, c-format
@@ -5395,12 +5392,13 @@ msgstr ""
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1728
 msgid "_Overwrite"
-msgstr ""
+msgstr "_Пребриши"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1728
 #, c-format
 msgid "This will update and overwrite the existing saved report named \"%s\"."
 msgstr ""
+"Ова ќе го ажурира и пребрише постоечкиот зачуван извештај со име \"%s\"."
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1793
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1819
@@ -5581,51 +5579,58 @@ msgstr ""
 
 #: gnucash/gnome/gnc-split-reg.c:978
 msgid "_Cut Transaction"
-msgstr ""
+msgstr "_Исечи трансакција"
 
 #: gnucash/gnome/gnc-split-reg.c:1122
 msgid "Cannot modify or delete this transaction."
-msgstr ""
+msgstr "Не може да се измени или избрише оваа трансакција."
 
 #: gnucash/gnome/gnc-split-reg.c:1136
 msgid ""
 "The date of this transaction is older than the \"Read-Only Threshold\" set "
 "for this book. This setting can be changed in File->Properties->Accounts."
 msgstr ""
+"Датумот на оваа трансакција е постар од „Прагот за само-читање“ поставен за "
+"оваа книга. Оваа поставка може да се промени во Датотека->Својства->Сметки."
 
 #: gnucash/gnome/gnc-split-reg.c:1172
 msgid "Remove the splits from this transaction?"
-msgstr ""
+msgstr "Оотстрани ги поделбите од оваа трансакција?"
 
 #: gnucash/gnome/gnc-split-reg.c:1173
 msgid ""
 "This transaction contains reconciled splits. Modifying it is not a good idea "
 "because that will cause your reconciled balance to be off."
 msgstr ""
+"Оваа трансакција содржи усогласени поделби. Нејзиното модифицирање не е "
+"добра идеја бидејќи тоа ќе предизвика вашето усогласено салдо да биде "
+"неправилно."
 
 #. Translators: This is the confirmation button in a warning dialog
 #: gnucash/gnome/gnc-split-reg.c:1202
 msgid "_Remove Splits"
-msgstr ""
+msgstr "_Отстрани ги поделбите"
 
 #: gnucash/gnome/gnc-split-reg.c:1263
 msgid "Change a Transaction Linked Document"
-msgstr ""
+msgstr "Промена на документ поврзан со трансакција"
 
 #: gnucash/gnome/gnc-split-reg.c:1403
 #, c-format
 msgid "Delete the split '%s' from the transaction '%s'?"
-msgstr ""
+msgstr "Iизбрише ја поделбата „%s“ од трансакцијата „%s“?"
 
 #: gnucash/gnome/gnc-split-reg.c:1404
 msgid ""
 "You would be deleting a reconciled split! This is not a good idea as it will "
 "cause your reconciled balance to be off."
 msgstr ""
+"Ќе избришете усогласена поделба! Ова не е добра идеја бидејќи ќе предизвика "
+"вашето усогласено салдо да биде несоодветно."
 
 #: gnucash/gnome/gnc-split-reg.c:1407
 msgid "You cannot delete this split."
-msgstr ""
+msgstr "Не можете да го избришете оваа поделба."
 
 #: gnucash/gnome/gnc-split-reg.c:1408
 msgid ""
@@ -5634,16 +5639,23 @@ msgid ""
 "from this window, or you may navigate to a register that shows another side "
 "of this same transaction and delete the split from that register."
 msgstr ""
+"Ова е поделбата што ја врзува оваа трансакција со регистарот. Не можете да "
+"ја избришете од овој прозорец на регистарот. Можете да ја избришете целата "
+"трансакција од овој прозорец или можете да отидете до регистар што ја "
+"прикажува другата страна од истата трансакција и да ја избришете поделбата "
+"од тој регистар."
 
 #: gnucash/gnome/gnc-split-reg.c:1483
 msgid "Delete the current transaction?"
-msgstr ""
+msgstr "Избриши ја тековната трансакција?"
 
 #: gnucash/gnome/gnc-split-reg.c:1484
 msgid ""
 "You would be deleting a transaction with reconciled splits! This is not a "
 "good idea as it will cause your reconciled balance to be off."
 msgstr ""
+"Ќе избришете трансакција со усогласени поделби! Ова не е добра идеја бидејќи "
+"ќе предизвика вашето усогласено салдо да биде неправилно."
 
 #: gnucash/gnome/gnc-split-reg.c:1679
 #, c-format
@@ -5655,18 +5667,24 @@ msgid ""
 "Select OK to temporarily clear filter and proceed,\n"
 "otherwise the last active cell will be selected."
 msgstr ""
+"Целата поделба моментално е скриена во овој регистар.\n"
+"\n"
+"%s\n"
+"\n"
+"Избери ВО РЕД за привремено да го избришете филтерот и продолжете,\n"
+"инаку последната активна ќелија ќе биде селектирана."
 
 #: gnucash/gnome/gnc-split-reg.c:1819
 msgid "Balancing entry from reconciliation"
-msgstr ""
+msgstr "Балансирање на влезот од усогласувањето"
 
 #: gnucash/gnome/gnc-split-reg.c:2309
 msgid "Present:"
-msgstr ""
+msgstr "Тековно:"
 
 #: gnucash/gnome/gnc-split-reg.c:2310
 msgid "Future:"
-msgstr ""
+msgstr "Идно:"
 
 #: gnucash/gnome/gnc-split-reg.c:2311
 msgid "Cleared:"
@@ -5674,32 +5692,32 @@ msgstr ""
 
 #: gnucash/gnome/gnc-split-reg.c:2312
 msgid "Reconciled:"
-msgstr ""
+msgstr "Усогласено:"
 
 #: gnucash/gnome/gnc-split-reg.c:2313
 msgid "Projected Minimum:"
-msgstr ""
+msgstr "Проектиран минимум:"
 
 #: gnucash/gnome/gnc-split-reg.c:2317
 msgid "Shares:"
-msgstr ""
+msgstr "Акции:"
 
 #: gnucash/gnome/gnc-split-reg.c:2318
 msgid "Current Value:"
-msgstr ""
+msgstr "Тековна Вредност:"
 
 #: gnucash/gnome/gnc-split-reg.c:2324
 msgid "Sort By:"
-msgstr ""
+msgstr "Сортирај По:"
 
 #: gnucash/gnome/gnc-split-reg.c:2400
 msgid "This account register is read-only."
-msgstr ""
+msgstr "Овој регистар на сметки е само за читање."
 
 #: gnucash/gnome/gnc-split-reg.c:2401
 #, c-format
 msgid "The '%s' account register is read-only."
-msgstr ""
+msgstr "Регистарот на сметката '%s' е само за читање."
 
 #: gnucash/gnome/gnc-split-reg.c:2460
 msgid ""
@@ -5707,6 +5725,10 @@ msgid ""
 "have mismatched commodities or currencies.\n"
 "You need to open each account individually to edit transactions."
 msgstr ""
+"Трансакциите на оваа сметка не може да се менуваат бидејќи нејзините "
+"подсметки имаат несовпаѓачки стоки или валути.\n"
+"Треба да ја отворите секоја сметка поединечно за да ги промените "
+"трансакциите."
 
 #: gnucash/gnome/gnc-split-reg.c:2475
 msgid ""
@@ -5714,6 +5736,9 @@ msgid ""
 "If you want to edit transactions in this register, please open the account "
 "options and turn off the placeholder checkbox."
 msgstr ""
+"Трансакциите на оваа сметка не може да се менуваат.\n"
+"Ако сакате да промените трансакции во овој регистар, отворете ги опциите за "
+"сметката и исклучете го полето за избор на местодржач."
 
 #: gnucash/gnome/gnc-split-reg.c:2482
 msgid ""
@@ -10273,10 +10298,8 @@ msgstr ""
 
 #: gnucash/gschemas/org.gnucash.GnuCash.warnings.gschema.xml.in:129
 #: gnucash/gschemas/org.gnucash.GnuCash.warnings.gschema.xml.in:262
-#, fuzzy
-#| msgid "Print checks from multiple accounts?"
 msgid "Jump when there are multiple other accounts"
-msgstr "Испечати чекови од повеќе сметки?"
+msgstr "Премини кога има повеќе други сметки"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.warnings.gschema.xml.in:130
 #: gnucash/gschemas/org.gnucash.GnuCash.warnings.gschema.xml.in:263
@@ -12464,11 +12487,9 @@ msgid "<b>Initial Balance Transfer</b>"
 msgstr ""
 
 #: gnucash/gtkbuilder/dialog-account.glade:1837
-#, fuzzy
-#| msgid "Balance"
 msgctxt "field label"
 msgid "_Balance"
-msgstr "Биланс"
+msgstr "_Биланс"
 
 #: gnucash/gtkbuilder/dialog-account.glade:1862
 msgid "_Use equity 'Opening Balances' account"
@@ -18486,10 +18507,8 @@ msgid "A"
 msgstr ""
 
 #: gnucash/import-export/import-main-matcher.cpp:1605
-#, fuzzy
-#| msgid "_Paste Transaction"
 msgid "Add as a new transaction"
-msgstr "_Залепи трансакција"
+msgstr "Додади нова трансакција"
 
 #: gnucash/import-export/import-main-matcher.cpp:1607
 msgctxt "Column header for 'Updating plus Clearing transaction'"
@@ -23930,7 +23949,7 @@ msgstr ""
 
 #: gnucash/report/reports/standard/investment-lots.scm:1230
 msgid "split"
-msgstr ""
+msgstr "поделба"
 
 #: gnucash/report/reports/standard/investment-lots.scm:1351
 #, scheme-format
@@ -26736,10 +26755,8 @@ msgid "_Actions"
 msgstr ""
 
 #: gnucash/ui/gnc-main-window.ui:344
-#, fuzzy
-#| msgid "Retained Earnings"
 msgid "Reset _Warnings…"
-msgstr "Задржана добивка"
+msgstr "Ресетирај _Предупредувања…"
 
 #: gnucash/ui/gnc-main-window.ui:346
 msgid "Reset the state of all warning messages so they will be shown again"
@@ -27972,7 +27989,7 @@ msgstr ""
 
 #: gnucash/ui/gnc-plugin-page-register.ui:184
 msgid "_Void Transaction"
-msgstr ""
+msgstr "_Анулирана Трансакција"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:186
 msgid "Void the current transaction."
@@ -28317,11 +28334,9 @@ msgstr ""
 
 #: gnucash/ui/gnc-reconcile-window.ui:58 gnucash/ui/gnc-reconcile-window.ui:98
 #: gnucash/ui/gnc-reconcile-window.ui:129
-#, fuzzy
-#| msgid "Balance"
 msgctxt "reconcile menu"
 msgid "_Balance"
-msgstr "Биланс"
+msgstr "_Биланс"
 
 #: gnucash/ui/gnc-reconcile-window.ui:68 gnucash/ui/gnc-reconcile-window.ui:106
 msgid "_Reconcile Selection"
@@ -28949,12 +28964,9 @@ msgid "SIX Swiss Exchange shares, CH"
 msgstr ""
 
 #: libgnucash/engine/gnc-commodity.cpp:221
-#, fuzzy
-#| msgctxt "Stock Assistant: Page name"
-#| msgid "Stock"
 msgctxt "FQ Source"
 msgid "StockData"
-msgstr "Акции"
+msgstr "ПодатоциЗаАкции"
 
 #: libgnucash/engine/gnc-commodity.cpp:222
 msgctxt "FQ Source"
