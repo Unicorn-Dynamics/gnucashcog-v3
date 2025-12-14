@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-09-22 11:57-0700\n"
-"PO-Revision-Date: 2025-11-23 00:51+0000\n"
+"PO-Revision-Date: 2025-12-14 18:39+0000\n"
 "Last-Translator: Szia Tomi <sziatomi01@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/hu/>\n"
@@ -972,11 +972,9 @@ msgid ""
 msgstr ""
 "Minden tranzakcióhoz tartozik egy megjegyzések mező ahol hasznos "
 "információkat tárolhat.\n"
-"\n"
-"Láthatóvá tételéhez\n"
-"a nézet menüben jelölje be a kétsoros lehetőséget,\n"
-"vagy a GnuCash beállítások ablakában a regiszter-alapbeállítások lapon "
-"jelölje be a kétsoros nézet lehetőséget."
+"Láthatóvá tételéhez a nézet menüben jelölje be a kétsoros lehetőséget, vagy "
+"a GnuCash beállítások ablakában a regiszter-alapbeállítások lapon jelölje be "
+"a kétsoros nézet lehetőséget."
 
 #: doc/tip_of_the_day.list.c:50
 msgid ""
@@ -3133,7 +3131,7 @@ msgstr ""
 #: gnucash/gnome/dialog-invoice.c:924
 msgid "Choose a different report template or Printable Invoice will be used"
 msgstr ""
-"Válasszon ki egy másik jelentéssablont, vagy nyomtatható kimenőszámla lesz "
+"Válasszon ki egy másik jelentéssablont, vagy nyomtatható számla lesz "
 "használva"
 
 #: gnucash/gnome/dialog-invoice.c:1038 gnucash/gnome/dialog-invoice.c:3573
@@ -4599,7 +4597,7 @@ msgstr "Kimenőszámla _nyomtatása"
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:190
 #: gnucash/ui/gnc-plugin-page-invoice.ui:289
 msgid "Make a printable invoice"
-msgstr "Nyomtatható kimenőszámla készítése"
+msgstr "Nyomtatható számla készítése"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:191
 #: gnucash/ui/gnc-plugin-page-invoice.ui:367
@@ -5425,6 +5423,8 @@ msgstr "%s szűrése…"
 #, c-format
 msgid "%s %s from %s, posted %s, amount %s"
 msgstr ""
+"számlatípus: %s, számlaszám: %s, tulajdonos neve: %s, könyvelés dátuma: %s, "
+"összeg: %s"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:4689
 msgid "Several documents are linked with this transaction. Please choose one:"
@@ -5598,7 +5598,7 @@ msgstr "GnuCash jelentés"
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1924
 #: gnucash/report/reports/standard/invoice.scm:877
 msgid "Printable Invoice"
-msgstr "Nyomtatható kimenőszámla"
+msgstr "Nyomtatható számla"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1925
 #: gnucash/report/reports/standard/taxinvoice.scm:301
@@ -5606,17 +5606,17 @@ msgstr "Nyomtatható kimenőszámla"
 #: gnucash/report/reports/standard/taxinvoice.scm:315
 #: gnucash/report/reports/support/taxinvoice.eguile.scm:423
 msgid "Tax Invoice"
-msgstr "Kimenőszámla adóadatokkal"
+msgstr "Számla adóadatokkal"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1926
 #: gnucash/report/reports/standard/invoice.scm:887
 msgid "Easy Invoice"
-msgstr "Egyszerűsített kimenőszámla"
+msgstr "Egyszerűsített számla"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1927
 #: gnucash/report/reports/standard/invoice.scm:897
 msgid "Fancy Invoice"
-msgstr "Különleges kimenőszámla"
+msgstr "Díszes számla"
 
 #: gnucash/gnome/gnc-plugin-page-sx-list.cpp:399
 #: gnucash/ui/gnc-plugin-page-sx-list.ui:53
@@ -7207,17 +7207,17 @@ msgstr "Új…"
 #: gnucash/register/register-core/pricecell.c:161
 #, c-format
 msgid "An error occurred while processing '%s' at position %d"
-msgstr "\"%s\" feldolgozása során hiba lépett fel %d. karakternél"
+msgstr "„%s” feldolgozása során hiba lépett fel a következő pozíciónál: %d."
 
 #: gnucash/gnome-utils/gnc-amount-edit.c:459
 #, c-format
 msgid "An error occurred while processing '%s'"
-msgstr "\"%s\" feldolgozása során hiba lépett fel"
+msgstr "„%s” feldolgozása során hiba lépett fel"
 
 #: gnucash/gnome-utils/gnc-autoclear.c:151
 #, c-format
 msgid "Account is already at Auto-Clear Balance."
-msgstr ""
+msgstr "A számla automatikusan kiegyenlített (elszámolt)."
 
 #: gnucash/gnome-utils/gnc-autoclear.c:157
 #, c-format
@@ -8410,11 +8410,11 @@ msgstr "Eng."
 
 #: gnucash/gnome-utils/gnc-tree-view-sx-list.c:134
 msgid "Last Occur"
-msgstr "Utolsó előfordulás"
+msgstr "A legutóbbi"
 
 #: gnucash/gnome-utils/gnc-tree-view-sx-list.c:139
 msgid "Next Occur"
-msgstr "Következő előfordulás"
+msgstr "A következő"
 
 #: gnucash/gnome-utils/window-main-summarybar.c:309
 #, c-format
@@ -13285,29 +13285,26 @@ msgid "_Days in advance"
 msgstr "Ennyi _nappal előtte"
 
 #: gnucash/gtkbuilder/dialog-account.glade:7
-#, fuzzy
 msgid "Cascade Account Values"
-msgstr "Számla színe"
+msgstr "Számlatulajdonságok öröklődése"
 
 #: gnucash/gtkbuilder/dialog-account.glade:70
-#, fuzzy
 msgid "Enable Cascading Account Color"
-msgstr "Számla színe"
+msgstr "Számlaszín öröklődése az alszámlákban"
 
 #: gnucash/gtkbuilder/dialog-account.glade:105
-#, fuzzy
 msgid "Enable Cascading Account Placeholder"
-msgstr "Számla színe"
+msgstr "Helyőrző (töltelék) beállítások öröklődése az alszámlákban"
 
 #: gnucash/gtkbuilder/dialog-account.glade:130
-#, fuzzy
 msgid "Enable Cascading Account Hidden"
-msgstr "Include trading accounts total"
+msgstr "Rejtett tulajdonság öröklődése az alszámlákban"
 
 #: gnucash/gtkbuilder/dialog-account.glade:152
-#, fuzzy
 msgid "Enable the sections to Cascade"
-msgstr "Hasonlítandó számlák kiválasztása"
+msgstr ""
+"Válassza ki azokat a tulajdonságokat, melyeket a főszámlából az alszámlákba "
+"szeretne átörökíteni"
 
 #: gnucash/gtkbuilder/dialog-account.glade:200
 #: gnucash/gtkbuilder/dialog-account.glade:1329
@@ -14597,11 +14594,11 @@ msgstr ""
 
 #: gnucash/gtkbuilder/dialog-imap-editor.glade:35
 msgid "Import Map Editor"
-msgstr "Importálásimegfeleltetés-szerkesztő"
+msgstr "Importálási hozzárendelés szerkesztése"
 
 #: gnucash/gtkbuilder/dialog-imap-editor.glade:52
 msgid "_Remove Invalid Mappings"
-msgstr ""
+msgstr "Érvénytelen hozzárendelések _eltávolítása"
 
 #: gnucash/gtkbuilder/dialog-imap-editor.glade:106
 msgid "<b>What type of information to display?</b>"
@@ -16393,9 +16390,8 @@ msgstr ""
 #: gnucash/ui/gnc-plugin-page-invoice.ui:6
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:6
 #: gnucash/ui/gnc-plugin-page-sx-list.ui:6
-#, fuzzy
 msgid "_Print"
-msgstr "Nyomtatás"
+msgstr "_Nyomtatás"
 
 #: gnucash/gtkbuilder/dialog-print-check.glade:384
 msgid "Check _format"
@@ -16694,7 +16690,7 @@ msgstr "Végtelen"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:362
 msgid "Number of Occurrences"
-msgstr "Előfordulások száma"
+msgstr "Ütemezések száma"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:508
 msgid "<b>Since Last Run</b>"
@@ -16797,11 +16793,11 @@ msgstr "Értesítsen a létrehozáskor"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:1151
 msgid "<b>Occurrences</b>"
-msgstr "<b>Előfordulások</b>"
+msgstr "<b>Ütemezések</b>"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:1174
 msgid "Last Occurred: "
-msgstr "A legutóbbi ütemezés: "
+msgstr "A legutóbbi ekkor történt: "
 
 #: gnucash/gtkbuilder/dialog-sx.glade:1208
 msgid "Repeats:"
@@ -17428,7 +17424,7 @@ msgstr "Nem ütemezett"
 
 #: gnucash/gtkbuilder/gnc-frequency.glade:673
 msgid "Select occurrence date above."
-msgstr "Válassza ki fent az esemény dátumát."
+msgstr "Válassza ki fent az ütemezés dátumát."
 
 #: gnucash/gtkbuilder/gnc-frequency.glade:710
 msgctxt "Daily"
@@ -17821,7 +17817,7 @@ msgstr "Érvénytelenítés oka"
 
 #: gnucash/gtkbuilder/gnc-recurrence.glade:12
 msgid "day(s)"
-msgstr ""
+msgstr "nap"
 
 #: gnucash/gtkbuilder/gnc-recurrence.glade:15
 msgid "week(s)"
@@ -17833,7 +17829,7 @@ msgstr "hónap"
 
 #: gnucash/gtkbuilder/gnc-recurrence.glade:21
 msgid "year(s)"
-msgstr ""
+msgstr "év"
 
 #: gnucash/gtkbuilder/gnc-recurrence.glade:50
 msgid "Every "
@@ -17868,16 +17864,16 @@ msgid ""
 "Match the \"day of week\" and \"week of month\"? (for example, the \"second "
 "Tuesday\" of every month)"
 msgstr ""
-"Egyezik a \"hét napja\" és a \"hónap hete\"? (például minden hónap \"második "
-"keddje\")"
+"Egyezik a „hét napja” és a „hónap hete”? (például minden hónap „második "
+"keddje”)"
 
 #: gnucash/gtkbuilder/gnc-tree-view-owner.glade:62
 msgid "Only show _active owners"
-msgstr ""
+msgstr "Csak az _aktív tulajdonosok megjelenítése"
 
 #: gnucash/gtkbuilder/gnc-tree-view-owner.glade:79
 msgid "Show _zero balance owners"
-msgstr ""
+msgstr "A _nulla egyenlegű tulajdonosok megjelenítése"
 
 #: gnucash/gtkbuilder/window-autoclear.glade:71
 msgid "About Auto-Clear"
@@ -17933,7 +17929,7 @@ msgstr "Számlakivonat _dátuma"
 
 #: gnucash/gtkbuilder/window-reconcile.glade:128
 msgid "Include _subaccounts"
-msgstr "Al_számlák hozzávétele"
+msgstr "_Alszámlák bevonása"
 
 #: gnucash/gtkbuilder/window-reconcile.glade:132
 msgid ""
@@ -17970,8 +17966,8 @@ msgid ""
 "Network HTTP access is disabled. You can enable it in the Network section of "
 "the Preferences dialog."
 msgstr ""
-"A hálózati HTTP hozzáférés tiltott. Engedélyezheti a beállítások dialógus "
-"hálózatok szakaszában."
+"A hálózati HTTP hozzáférés tiltott. Engedélyezheti a beállítások "
+"párbeszédablak hálózatok szakaszában."
 
 #: gnucash/html/gnc-html-webkit1.c:911 gnucash/html/gnc-html-webkit2.c:862
 #, c-format
@@ -17987,11 +17983,11 @@ msgstr "Exportálás PDF fájlba"
 #: gnucash/import-export/aqb/assistant-ab-initial.c:481
 #, c-format
 msgid "Bank code %s (%s), Account %s (%s)"
-msgstr ""
+msgstr "Bankkód: %s (%s), számla: %s (%s)"
 
 #: gnucash/import-export/aqb/assistant-ab-initial.c:773
 msgid "Online Banking Account Name"
-msgstr ""
+msgstr "Internetbanki számla neve"
 
 #: gnucash/import-export/aqb/assistant-ab-initial.c:778
 msgid "GnuCash Account Name"
@@ -18005,13 +18001,15 @@ msgstr "Új?"
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:8
 msgid "AqBanking Initial Assistant"
-msgstr ""
+msgstr "AqBanking (internetbanki) beállítási segéd"
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:27
 msgid ""
 "This assistant helps you setting up your Online Banking connection with your "
 "bank."
 msgstr ""
+"A segéd végigvezeti Önt a bankjával történő internetbanki kapcsolat "
+"beállításán."
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:39
 msgid ""
@@ -18032,6 +18030,25 @@ msgid ""
 "your bank (\"Ini-Letter\").\n"
 " * PayPal: registered email address, password, API signature;"
 msgstr ""
+"Az internetbanki szolgáltatások igénybevételének feltételei az egyes "
+"támogatott AqBanking háttérrendszerek között eltérőek, de általában a "
+"következőkre van szükség:\n"
+" * Bankjának internetbanki hozzáférést kell biztosítania Önnek. A hozzáférés "
+"megszerzésének módjáról tájékozódjon a bank honlapján vagy az "
+"ügyfélszolgálatánál.\n"
+"A banknak meg kell adnia Önnek:\n"
+" * A szerverükön történő azonosításához szükséges felhasználói azonosítóját, "
+"amely gyakran az alapszámlájának a száma;\n"
+" * Az internetbanki szerverük URL-címét;\n"
+" * Bizonyos esetekben a bankfiókja száma (routing number) is hasznos lehet a "
+"segédben;\n"
+"A hitelesítési módszerek a háttérrendszertől és a választott módszertől "
+"függően változnak:\n"
+" * FinTS PIN/TAN: Egyes módszerekhez speciális eszközökre van szükség, "
+"például kártyaolvasóra vagy mobiltelefonra;\n"
+" * FinTS HBCI: Az aszimmetrikus kulcsok nyilvános részeit ki kell cserélnie "
+"a bankjával („Ini-Letter”).\n"
+" * PayPal: regisztrált e-mail cím, jelszó, API aláírás;"
 
 #. See https://wiki.gnucash.org/wiki/AqBanking for the used terminology and replace the link, if a localized version exists.
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:65
@@ -18039,6 +18056,8 @@ msgid ""
 "See <a href=\"https://wiki.gnucash.org/wiki/AqBanking\">https://wiki.gnucash."
 "org/wiki/AqBanking</a> for more details"
 msgstr ""
+"További információkat itt talál: <a href=\"https://wiki.gnucash.org/wiki/"
+"AqBanking\">https://wiki.gnucash.org/wiki/AqBanking</a>"
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:78
 msgid ""
@@ -18047,16 +18066,22 @@ msgid ""
 "Online Banking, because sometimes the bank does not give you correct "
 "feedback when a transfer is rejected."
 msgstr ""
+"Megjegyzés: SEMMILYEN GARANCIA NINCS. Egyes bankok rosszul működő "
+"internetbanki szervert üzemeltetnek. Ne támaszkodjon az időkritikus "
+"átutalásoknál internetbanki szolgáltatásokra, mert előfordulhat, hogy a bank "
+"nem ad megfelelő visszajelzést, ha egy átutalást elutasít."
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:89
 msgid "Initial Online Banking Setup"
-msgstr "Online Banking kezdő beállítása"
+msgstr "Internetbanki kezdő beállítás"
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:111
 msgid ""
 "The Setup of your Online Banking connection is handled by the external "
 "program \"AqBanking Setup\"."
 msgstr ""
+"Az internetbanki kapcsolat beállítását az „AqBanking Setup” külső program "
+"végzi."
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:125
 msgid ""
@@ -18064,12 +18089,18 @@ msgid ""
 "* It ignores GnuCash's preferences like \"Close log window when finished\".\n"
 "* To report issues read"
 msgstr ""
+"Ez azt jelenti, hogy:\n"
+"* Figyelmen kívül hagyja a GnuCash beállításait, mint például a „Naplóablak "
+"bezárása befejezésekor”.\n"
+"* A hibák jelentéséhez olvassa el ezt"
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:141
 msgid ""
 "<a href=\"https://aquamaniac.de/rdm/projects/aqbanking/wiki/Bugreports/"
 "\">https://aquamaniac.de/rdm/projects/aqbanking/wiki/Bugreports/</a>"
 msgstr ""
+"<a href=\"https://aquamaniac.de/rdm/projects/aqbanking/wiki/Bugreports/\">"
+"https://aquamaniac.de/rdm/projects/aqbanking/wiki/Bugreports/</a>"
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:157
 msgid ""
@@ -18077,18 +18108,17 @@ msgid ""
 "\n"
 "Please press the button below to start it."
 msgstr ""
+"A folytatáshoz legalább egy kapcsolatot be kell állítania.\n"
+"\n"
+"Kérjük, nyomja meg az alábbi gombot az elindításához."
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:170
-#, fuzzy
-#| msgid "_Start AqBanking Wizard"
 msgid "_Start AqBanking Setup"
-msgstr "_Start AqBanking Wizard"
+msgstr "AqBanking beállítás _indítása"
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:186
-#, fuzzy
-#| msgid "Initial Online Banking Setup"
 msgid "Start Online Banking Setup"
-msgstr "Online Banking kezdő beállítása"
+msgstr "Internetbanki beállítás indítása"
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:204
 msgid ""
@@ -18096,15 +18126,18 @@ msgid ""
 "match it to a GnuCash account or select incorrect matches and click \"Delete "
 "selected matches\". Click \"Next\" when all desired accounts are matching."
 msgstr ""
+"Kattintson duplán az internetbanki számla sorára, hogy hozzárendelje azt egy "
+"GnuCash számlához, vagy válassza ki a hibás hozzárendeléseket, és kattintson "
+"a „Kiválasztott hozzárendelések törlése” gombra. Kattintson a „Tovább” "
+"gombra, ha minden kívánt számla hozzárendelésre került."
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:242
 msgid "_Delete selected matches"
-msgstr "A kiválasztott összerendelések _törlése"
+msgstr "Kiválasztott hozzárendelések _törlése"
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:265
-#, fuzzy
 msgid "Match Online accounts with GnuCash accounts"
-msgstr "Online Banking és GnuCash számlák összevetése"
+msgstr "Internetbanki számlák hozzárendelése GnuCash számlákhoz"
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:280
 msgid ""
@@ -18116,26 +18149,27 @@ msgid ""
 "\n"
 "Press \"Apply\" now."
 msgstr ""
-"Online Banking számlák beállítása, ami egyezik egy GnuCash számlákkal, "
-"befejeződött. Most már végrehajthat Online Banking akciókat azokon a "
-"számlákon.\n"
+"Az internetbanki számlák beállítása és ezeknek a megfelelő GnuCash "
+"számlákhoz hozzárendelése befejeződött. Most már végre tud hajtani internet "
+"banki műveleteket ezeken a számlákon (Műveletek -> Internetbanki műveletek)"
+".\n"
 "\n"
-"Ha akar újabb Bankot, Felhasználót vagy Számlát felvenni, bármikor újra "
-"elindíthatja ezt a programot.\n"
+"Bármikor újra elindíthatja ezt a segédet, ha egy újabb bankot, felhasználót "
+"vagy számlát szeretne felvenni.\n"
 "\n"
-"Kattintson az \"Alkalmazás\" -ra."
+"Kattintson az „Alkalmaz” gombra."
 
 #: gnucash/import-export/aqb/assistant-ab-initial.glade:296
 msgid "Online Banking Setup Finished"
-msgstr "Online Banking beállítása kész"
+msgstr "Az internetbanki beállítás kész"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:8
 msgid "Online Banking Connection Window"
-msgstr "Online Banking kapcsolat ablak"
+msgstr "Az internetbanki kapcsolat ablaka"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:26
 msgid "_Abort"
-msgstr "_Névjegy"
+msgstr "_Megszakítás"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:82
 #: gnucash/import-export/aqb/dialog-ab.glade:148
@@ -18160,11 +18194,11 @@ msgstr "Bezárás, amikor _vége"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:287
 msgid "Get Transactions Online"
-msgstr "Online tranzakciók lehívása"
+msgstr "Internetbanki tranzakciók lekérése"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:349
 msgid "Date range of transactions to retrieve:"
-msgstr "Időintervallum tranzakciók lehívásához:"
+msgstr "A lekérendő tranzakciók dátumtartománya:"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:369
 #: gnucash/report/reports/locale-specific/de_DE/taxtxf.scm:145
@@ -18176,15 +18210,15 @@ msgstr "Feladó"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:390
 msgid "_Earliest possible date"
-msgstr "L_ehetséges legkorábbi dátum"
+msgstr "Lehetséges leg_korábbi dátum"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:407
 msgid "_Last retrieval date"
-msgstr "_Legutolsó lehívás dátuma"
+msgstr "_Legutolsó lekérdezési dátum"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:424
 msgid "E_nter date:"
-msgstr "Dátum meg_adása:"
+msgstr "Dátum mega_dása:"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:474
 #: gnucash/report/reports/locale-specific/de_DE/taxtxf.scm:145
@@ -18201,15 +18235,15 @@ msgstr "Dátum meg_adása:"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:512
 msgid "No_w"
-msgstr ""
+msgstr "_Most"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:569
 msgid "Enter Password"
-msgstr "Adja meg a jelszót"
+msgstr "Jelszó megadása"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:630
 msgid "Enter your password"
-msgstr "Jelszó bevitele"
+msgstr "Adja meg a jelszót"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:649
 msgid "Bar_width"
@@ -18230,6 +18264,8 @@ msgid ""
 "Setting the delay time, with small values the flicker graphic is repeated "
 "faster."
 msgstr ""
+"A beállított késleltetési idő csökkentésével a villogó grafika gyorsabban "
+"ismétlődik."
 
 #. TAN generator with flicker interface common in DE only
 #: gnucash/import-export/aqb/dialog-ab.glade:751
@@ -18237,6 +18273,9 @@ msgid ""
 "Hold the TAN generator in front of the animated graphic. The markings "
 "(triangles) on the graphic must match those on the TAN generator."
 msgstr ""
+"Tartsa a TAN-generátort a mozgó grafika elé. A villogó kijelző feletti "
+"jelöléseknek (háromszögek) meg kell egyezniük a TAN-generátoron található "
+"jelölésekkel."
 
 #: gnucash/import-export/aqb/dialog-ab.glade:796
 msgid "Con_firm Password"
@@ -18260,9 +18299,8 @@ msgid "Name for new template"
 msgstr "Új sablon neve"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:939
-#, fuzzy
 msgid "_Name of the new template"
-msgstr "Új sablon neve"
+msgstr "Az új sablon _neve"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:953
 msgid "Enter a unique name for the new template."
@@ -18270,7 +18308,7 @@ msgstr "Adjon egyedi nevet az új sablonnak."
 
 #: gnucash/import-export/aqb/dialog-ab.glade:983
 msgid "Online Transaction"
-msgstr "Online tranzakció"
+msgstr "Internetbanki tranzakció"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:998
 msgid "Execute _later (unimpl.)"
@@ -18282,53 +18320,48 @@ msgstr "Végrehajtás _most"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1035
 msgid "Execute this online transaction now"
-msgstr "Online tranzakció végrehajtása most"
+msgstr "Internetbanki tranzakció végrehajtása most"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1062
 msgid "Enter an Online Transaction"
-msgstr "Online tranzakció bevitele"
+msgstr "Internetbanki tranzakció bevitele"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1099
-#, fuzzy
 msgid "Recipient Account _Number"
-msgstr "Kedvezményezett számla száma"
+msgstr "Kedvezményezett számla_száma"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1128
-#, fuzzy
 msgid "Recipient _Bank Code"
-msgstr "Kedvezményezett Bankkódja"
+msgstr "Kedvezményezett _bankkódja"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1158
-#, fuzzy
 msgid "_Recipient Name"
-msgstr "Kedvezményezett neve"
+msgstr "_Kedvezményezett neve"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1174
 #: gnucash/import-export/aqb/dialog-ab.glade:1274
 msgid "at Bank"
-msgstr "Banknál"
+msgstr "a banknál"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1187
 msgid "(filled in automatically)"
 msgstr "(automatikus kitöltés)"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1216
-#, fuzzy
 msgid "Payment _Purpose (only for recipient)"
-msgstr "Fizetés célja (csak a kedvezményezettnek)"
+msgstr "Fizetés _célja (csak a kedvezményezettnek)"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1232
 msgid "Payment Purpose continued"
-msgstr "Fizetés célja folytatása"
+msgstr "Fizetés céljának folytatása"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1246
-#, fuzzy
 msgid "_Originator Name"
-msgstr "Megbízó neve"
+msgstr "Kezde_ményező neve"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1298
 msgid "Originator Account Number"
-msgstr "Megbízó számla száma"
+msgstr "Kezdeményező számla száma"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1322
 msgid "Bank Code"
@@ -18336,20 +18369,19 @@ msgstr "Bankkód"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1483
 msgid "_Add current"
-msgstr "Folyószámla _hozzáadása"
+msgstr "Jelenlegi _hozzáadása"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1489
 msgid "Add the current online transaction as a new transaction template"
-msgstr "A jelenlegi online-tranzakció felvétele sablonként"
+msgstr "A jelenlegi internetbanki tranzakció hozzáadása új tranzakciósablonként"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1501
-#, fuzzy
 msgid "_Up"
-msgstr "Fel"
+msgstr "_Felfelé"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1507
 msgid "Move the selected transaction template one row up"
-msgstr "A kiválasztott tranzakciósablonok mozgatása egy sort fel"
+msgstr "A kiválasztott tranzakciósablon egy sorral felfelé mozgatása"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1519
 msgid "_Down"
@@ -18357,16 +18389,15 @@ msgstr "_Lefelé"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1525
 msgid "Move the selected transaction template one row down"
-msgstr "A kiválasztott tranzakciósablonok mozgatása egy sort le"
+msgstr "A kiválasztott tranzakciósablon egy sorral lefelé mozgatása"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1537
-#, fuzzy
 msgid "_Sort"
-msgstr "Rendezés"
+msgstr "_Rendezés"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1543
 msgid "Sort the list of transaction templates alphabetically"
-msgstr "Tranzakciósablonok listájának ábécébe rendezése"
+msgstr "Tranzakciósablonok listájának ábécé sorrendbe rendezése"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1555
 msgid "D_elete"
@@ -18382,7 +18413,7 @@ msgstr "_Sablonok"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1661
 msgid "Select File Import Format and Template"
-msgstr ""
+msgstr "Importálási fájlformátum és sablon kiválasztása"
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1730
 msgid ""
@@ -18390,6 +18421,10 @@ msgid ""
 "profile list contains specializations and is populated according to which "
 "format you select in this list."
 msgstr ""
+"Ez a lista tartalmazza azokat a fájlformátumokat, amelyeket az AQBanking "
+"importálni tud. A jobb oldali profil lista testreszabott sablonokat "
+"tartalmaz, és attól függően töltődik be, hogy melyik formátumot választja ki "
+"ebben a listában."
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1733
 msgid "File Format"
@@ -18400,6 +18435,9 @@ msgid ""
 "This lists one or more specialization templates that adjust the import for "
 "different banks' uses of fields in the selected import format."
 msgstr ""
+"Ez a lista egy vagy több testreszabott sablont sorol fel, amelyek a "
+"kiválasztott importálási formátumban a mezők különböző banki "
+"felhasználásaihoz igazítják az importálást."
 
 #: gnucash/import-export/aqb/dialog-ab.glade:1787
 msgid "Profiles"
@@ -18420,8 +18458,8 @@ msgid ""
 "If active, the window will be closed automatically when you finish the HBCI/"
 "AqBanking import process. Otherwise it will stay open."
 msgstr ""
-"Aktiválva az ablak magától bezárul a HBCI/AqBanking import folyamat "
-"végeztével. Különben nyitva marad."
+"Ha aktív, az ablak automatikusan bezárul, amikor befejezi a HBCI/AqBanking "
+"importálási folyamatot. Ellenkező esetben nyitva marad."
 
 #: gnucash/import-export/aqb/dialog-ab-pref.glade:52
 msgid "Remember the _PIN in memory"
@@ -18434,8 +18472,9 @@ msgid ""
 "during a session. Otherwise it will have to be entered again each time "
 "during a session when it is needed."
 msgstr ""
-"Aktiválva a HBCI/AqBanking PIN megmarad a memóriában a bankolás végéig. "
-"Különben minden egyes alkalommal be kell gépelni amikor szükség van rá."
+"Ha aktív, a HBCI/AqBanking műveletekhez szükséges PIN-kód a munkamenet alatt "
+"a memóriában marad. Ellenkező esetben a munkamenet során minden alkalommal "
+"újra be kell írni, amikor szükség van rá."
 
 #: gnucash/import-export/aqb/dialog-ab-pref.glade:70
 msgid "_Verbose debug messages"
@@ -18445,7 +18484,8 @@ msgstr "B_őbeszédű hibakereső üzenetek"
 #: gnucash/import-export/aqb/gschemas/org.gnucash.GnuCash.dialogs.import.hbci.gschema.xml.in:31
 msgid "Enables verbose debug messages for HBCI/AqBanking Online Banking."
 msgstr ""
-"Bőbeszédű hibaüzenetek aktiválása a HBCI/AqBanking internetes bankoláshoz."
+"Engedélyezi a részletes hibakeresési üzeneteket a HBCI/AqBanking internetes "
+"bankoláshoz."
 
 #: gnucash/import-export/aqb/dialog-ab-pref.glade:88
 msgid "Use Non-SWIFT _transaction text"
@@ -18479,38 +18519,32 @@ msgstr "(ismeretlen)"
 #. from the import-export/hbci
 #. subdirectory.
 #: gnucash/import-export/aqb/dialog-ab-trans.c:362
-#, fuzzy
 msgid "Enter a SEPA Online Transfer"
-msgstr "Online tranzakció bevitele"
+msgstr "Internetbanki SEPA átutalás megadása"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:364
 #: gnucash/import-export/aqb/dialog-ab-trans.c:379
-#, fuzzy
 msgid "Recipient IBAN (International Account Number)"
-msgstr "Kedvezményezett számla száma"
+msgstr "Kedvezményezett IBAN (nemzetközi bankszámlaszám)"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:366
 #: gnucash/import-export/aqb/dialog-ab-trans.c:381
-#, fuzzy
 msgid "Recipient BIC (Bank Code)"
-msgstr "Kedvezményezett Bankkódja"
+msgstr "Kedvezményezett BIC (bankkód)"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:369
 #: gnucash/import-export/aqb/dialog-ab-trans.c:384
-#, fuzzy
 msgid "Originator IBAN (International Account Number)"
-msgstr "Kedvezményezett számla száma"
+msgstr "Kezdeményező IBAN (nemzetközi bankszámlaszám)"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:371
 #: gnucash/import-export/aqb/dialog-ab-trans.c:386
-#, fuzzy
 msgid "Originator BIC (Bank Code)"
-msgstr "Kedvezményezett Bankkódja"
+msgstr "Kezdeményező BIC (bankkód)"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:377
-#, fuzzy
 msgid "Enter a SEPA Internal Transfer"
-msgstr "Online tranzakció bevitele"
+msgstr "SEPA belső átutalás megadása"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:398
 msgid "Target Accounts"
@@ -18518,31 +18552,31 @@ msgstr "Célszámla"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:409
 msgid "Enter a SEPA Online Direct Debit Note"
-msgstr ""
+msgstr "Internetbanki SEPA közvetlen beszedési megbízás megadása"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:412
 msgid "Debited Account Owner"
-msgstr "Terhelt számla tulajdonosa"
+msgstr "A terhelt számla tulajdonosa"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:414
 msgid "Debited IBAN (International Account Number)"
-msgstr "Terhelt IBAN szám (nemzetközi számlaszám)"
+msgstr "A terhelt IBAN (nemzetközi számlaszám)"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:416
 msgid "Debited BIC (Bank Code)"
-msgstr "Terhelt BIC kód (SWIFT bankazonosító)"
+msgstr "A terhelt BIC (SWIFT bankazonosító)"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:419
 msgid "Credited Account Owner"
-msgstr "Jóváírt számla tulajdonosa"
+msgstr "A jóváírt számla tulajdonosa"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:421
 msgid "Credited IBAN (International Account Number)"
-msgstr "Jóváírt IBAN szám (nemzetközi számlaszám)"
+msgstr "A jóváírt IBAN (nemzetközi számlaszám)"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:423
 msgid "Credited BIC (Bank Code)"
-msgstr "Jóváírt BIC kód (SWIFT bankazonosító)"
+msgstr "A jóváírt BIC (SWIFT bankazonosító)"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:504
 #, c-format
@@ -18550,7 +18584,7 @@ msgid ""
 "The internal check of the destination IBAN '%s' failed. This means the "
 "account number might contain an error."
 msgstr ""
-"A célszámla belső ellenőrzése a megadott '%s' IBAN számmal sikertelen. Ez "
+"A célszámla belső ellenőrzése a megadott „%s” IBAN számmal sikertelen. Ez "
 "azt jelenti, hogy a számlaszám hibás lehet."
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:559
@@ -18562,30 +18596,35 @@ msgid ""
 "execute the command line program \"aqhbci-tool\" for your account, as "
 "follows: aqhbci-tool4 getaccsepa -b %s -a %s"
 msgstr ""
+"Helyi bankszámlája nem tartalmaz SEPA-számlaadatokat. Sajnáljuk, de ebben a "
+"verzióban egy további lépés szükséges, amely még nem került közvetlenül "
+"beépítésre a GnuCash programba. Kérjük, futtassa az „aqhbci-tool” "
+"parancssori programot a számlájához a következők szerint: aqhbci-tool4 "
+"getaccsepa -b %s -a %s"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:574
 msgid ""
 "You did not enter a recipient name. A recipient name is required for an "
 "online transfer.\n"
 msgstr ""
-"Nem adta meg a címzett nevét. Az online átutaláshoz szükséges a címzett "
-"neve.\n"
+"Nem adta meg a kedvezményezett nevét. Az internetbanki átutaláshoz szükséges "
+"a kedvezményezett neve.\n"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:594
 msgid ""
 "You did not enter a recipient account. A recipient account is required for "
 "an online transfer.\n"
 msgstr ""
-"Nem adta meg a címzett számláját. Az online átutaláshoz szükséges a címzett "
-"számlája.\n"
+"Nem adta meg a kedvezményezett számláját. Az internetbanki átutaláshoz "
+"szükséges a kedvezményezett számlája.\n"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:610
 msgid ""
 "You did not enter a recipient bank. A recipient bank is required for an "
 "online transfer.\n"
 msgstr ""
-"Nem adta meg a címzett bankját. Az online átutaláshoz szükséges a címzett "
-"bankja.\n"
+"Nem adta meg a kedvezményezett bankját. Az internetbanki átutaláshoz "
+"szükséges a kedvezményezett bankja.\n"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:628
 msgid ""
@@ -18594,35 +18633,38 @@ msgid ""
 "settings. This does not result in a valid online transfer job."
 msgstr ""
 "Az összeg nulla, vagy az összeg mező nem értelmezhető helyesen. Talán "
-"összekeverte a tizedespontot és a vesszőt. Ez nem eredményez érvényes online "
-"átutalást."
+"összekeverte a tizedespontot és a vesszőt. Ez nem eredményez érvényes "
+"internetbanki átutalást."
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:645
 msgid ""
 "You did not enter any transaction purpose. A purpose is required for an "
 "online transfer.\n"
 msgstr ""
-"Nem adta meg tranzakció célját. Egy cél szükséges az online átutaláshoz.\n"
+"Nem adta meg tranzakció célját. Az internetbanki átutaláshoz szükséges a cél "
+"megadása .\n"
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:1028
 msgid ""
 "A template with the given name already exists. Please enter another name."
-msgstr ""
+msgstr "A megadott névvel már létezik sablon. Adjon meg egy másik nevet."
 
 #: gnucash/import-export/aqb/dialog-ab-trans.c:1164
 #, c-format
 msgid "Do you really want to delete the template with the name \"%s\"?"
-msgstr "Biztosan törölni kívánja a kiválasztott \"%s\" nevű sablont?"
+msgstr "Biztos, hogy törölni kívánja a kiválasztott „%s” nevű sablont?"
 
 #: gnucash/import-export/aqb/gnc-ab-getbalance.c:73
 #: gnucash/import-export/aqb/gnc-ab-gettrans.c:124
 #: gnucash/import-export/aqb/gnc-ab-transfer.c:104
 msgid "No valid online banking account assigned."
-msgstr ""
+msgstr "Nincs érvényes internetbanki számla hozzárendelve."
 
 #: gnucash/import-export/aqb/gnc-ab-getbalance.c:82
 msgid "Online action \"Get Balance\" not available for this account."
 msgstr ""
+"A „Számlaegyenleg lekérése” internetbanki művelet nem érhető el ehhez a "
+"számlához."
 
 #: gnucash/import-export/aqb/gnc-ab-getbalance.c:116
 #, c-format
@@ -18631,10 +18673,15 @@ msgid ""
 "\n"
 "Status: %s"
 msgstr ""
+"Hiba a feladat végrehajtása közben.\n"
+"\n"
+"Állapot: %s"
 
 #: gnucash/import-export/aqb/gnc-ab-gettrans.c:142
 msgid "Online action \"Get Transactions\" not available for this account."
-msgstr "Online action \"Get Transactions\"nem elérhető ehhez a számlához."
+msgstr ""
+"A „Tranzakciók lekérése...” internetbanki művelet nem érhető el ehhez a "
+"számlához."
 
 #: gnucash/import-export/aqb/gnc-ab-gettrans.c:194
 #, c-format
@@ -18643,26 +18690,28 @@ msgid ""
 "\n"
 "Status: %s (%d)"
 msgstr ""
+"Hiba a feladat végrehajtása közben.\n"
+"\n"
+"Állapot: %s (%d)"
 
 #: gnucash/import-export/aqb/gnc-ab-gettrans.c:212
 msgid ""
 "The Online Banking import returned no transactions for the selected time "
 "period."
-msgstr ""
-"Az Online Banking-importálás nem jelzett tranzakciót a kiválasztott "
-"időszakra."
+msgstr "Nem találhatók tranzakciók a kiválasztott időszakban."
 
 #: gnucash/import-export/aqb/gnc-ab-transfer.c:60
 msgid ""
 "You have changed the list of online transfer templates, but you cancelled "
 "the transfer dialog. Do you nevertheless want to store the changes?"
 msgstr ""
-"Ön megváltoztatta az online átutalássablonok listáját, de elvetette az "
-"átutalás dialógust. Akarja ennek ellenére rögzíteni a változtatásokat?"
+"Módosította az internetbanki tranzakciósablonok listáját, de megszakította "
+"az átutalási párbeszédablakot. Ennek ellenére szeretné elmenteni a "
+"változtatásokat?"
 
 #: gnucash/import-export/aqb/gnc-ab-transfer.c:116
 msgid "No reference accounts found."
-msgstr ""
+msgstr "Nem található referencia számla."
 
 #: gnucash/import-export/aqb/gnc-ab-transfer.c:181
 msgid ""
@@ -18675,39 +18724,38 @@ msgid ""
 "\n"
 "Do you want to enter the job again?"
 msgstr ""
-"A Modul hibát talált a feladat előkészítésekor. Nem lehetséges a feladat "
-"végrehajtása.\n"
+"A háttérrendszer hibát talált a feladat előkészítésekor. Nem lehetséges a "
+"feladat végrehajtása.\n"
 "\n"
-"Legvalószínűbb, hogy a bank nem támogatja a kiválasztott feladatot, vagy a "
-"HBCI számlán nincs engedélyezve a feladat végrehajtása. További "
-"hibaüzenetettalálhat a konzol-naplóban.\n"
+"Valószínűleg a bank nem támogatja a kiválasztott feladatot, vagy a HBCI "
+"számlán nincs engedélyezve a feladat végrehajtása. További hibaüzeneteket "
+"talál a konzolnaplóban.\n"
 "\n"
-"Újra végre akarja hajtani a feladatot?"
+"Szeretné újra megadni a feladatot?"
 
 #: gnucash/import-export/aqb/gnc-ab-transfer.c:202
 msgid "Online Banking Direct Debit Note"
-msgstr ""
+msgstr "Internetbanki beszedési megbízás"
 
 #: gnucash/import-export/aqb/gnc-ab-transfer.c:207
 msgid "Online Banking Bank-Internal Transfer"
-msgstr "Bankon belüli internetbanki átutalás"
+msgstr "Internetbanki, bankon belüli átutalási megbízás"
 
 #: gnucash/import-export/aqb/gnc-ab-transfer.c:212
 msgid "Online Banking European (SEPA) Transfer"
-msgstr "Internetbanki európai (SEPA) átutalás"
+msgstr "Internetbanki, európai (SEPA) átutalási megbízás"
 
 #: gnucash/import-export/aqb/gnc-ab-transfer.c:218
-#, fuzzy
 msgid "Online Banking European (SEPA) Internal Transfer"
-msgstr "Online HBCI bankon belüli átutalás"
+msgstr "Internetbanki, európai (SEPA) bankon belüli átutalási megbízás"
 
 #: gnucash/import-export/aqb/gnc-ab-transfer.c:224
 msgid "Online Banking European (SEPA) Debit Note"
-msgstr ""
+msgstr "Internetbanki, európai SEPA beszedési megbízás"
 
 #: gnucash/import-export/aqb/gnc-ab-transfer.c:230
 msgid "Online Banking Transaction"
-msgstr "Online Banking tranzakció"
+msgstr "Internetbanki tranzakció"
 
 #: gnucash/import-export/aqb/gnc-ab-transfer.c:291
 msgid ""
@@ -18716,6 +18764,10 @@ msgid ""
 "\n"
 "Do you want to enter the job again?"
 msgstr ""
+"Hiba történt a feladat végrehajtása közben. Kérjük, ellenőrizze a "
+"naplóablakot a pontos hibaüzenetért.\n"
+"\n"
+"Szeretné újra megadni a feladatot?"
 
 #: gnucash/import-export/aqb/gnc-ab-utils.c:433
 #: gnucash/import-export/qif-imp/qif-dialog-utils.scm:127
@@ -18728,7 +18780,6 @@ msgid "Bank"
 msgstr "Bank"
 
 #: gnucash/import-export/aqb/gnc-ab-utils.c:725
-#, fuzzy
 msgid ""
 "The backend found an error during the preparation of the job. It is not "
 "possible to execute this job.\n"
@@ -18739,32 +18790,38 @@ msgid ""
 "\n"
 "Do you want to enter the job again?"
 msgstr ""
-"A Modul hibát talált a feladat előkészítésekor. Nem lehetséges a feladat "
-"végrehajtása.\n"
+"A háttérrendszer hibát talált a feladat előkészítésekor. Nem lehetséges a "
+"feladat végrehajtása.\n"
 "\n"
-"Legvalószínűbb, hogy a bank nem támogatja a kiválasztott feladatot, vagy a "
-"HBCI számlán nincs engedélyezve a feladat végrehajtása. További "
-"hibaüzenetettalálhat a konzol-naplóban.\n"
+"Valószínűleg a bank nem támogatja a kiválasztott feladatot, vagy a HBCI "
+"számlán nincs engedélyezve a feladat végrehajtása. További hibaüzeneteket "
+"talál a konzolnaplóban.\n"
 "\n"
-"Újra végre akarja hajtani a feladatot?"
+"Szeretné újra megadni a feladatot?"
 
 #: gnucash/import-export/aqb/gnc-ab-utils.c:819
 msgid ""
 "The bank has sent transaction information in its response.\n"
 "Do you want to import it?"
 msgstr ""
+"A bank a válaszában elküldte a tranzakciók információit (számlaforgalmat).\n"
+"Szeretné importálni?"
 
 #: gnucash/import-export/aqb/gnc-ab-utils.c:846
 msgid ""
 "No Online Banking account found for this gnucash account. These transactions "
 "will not be executed by Online Banking."
 msgstr ""
+"Nem található olyan internetbanki számla, amely ehhez a GnuCash-számlához "
+"tartozik. A tranzakciók nem kerülnek elküldésre internetbanki megbízásként."
 
 #: gnucash/import-export/aqb/gnc-ab-utils.c:913
 msgid ""
 "The bank has sent balance information in its response.\n"
 "Do you want to import it?"
 msgstr ""
+"A bank egyenleginformációt küldött a válaszában.\n"
+"Szeretné importálni?"
 
 #. Translators: Strings from this file are needed only in
 #. countries that have one of aqbanking's Online Banking
@@ -18783,12 +18840,12 @@ msgid ""
 "(AqBanking or HBCI) Setup. After that, try again to download the Online "
 "Banking Balance."
 msgstr ""
-"A letöltött Online Banking egyenleg nulla volt.\n"
+"A letöltött internetbanki egyenleg nulla volt.\n"
 "\n"
-"Vagy ez a helyes egyenleg, vagy a bank nem támogatja az egyenleg-letöltést "
-"ebben az Online Banking változatban. A következőkben más verziószámú Online "
-"Banking-tkell választania a(z) beállításban (AqBanking vagy HBCI). Azután "
-"próbálja meg újra letölteni az Online Banking egyenleget."
+"Vagy ez a helyes egyenleg, vagy a bank nem támogatja az egyenlegletöltést az "
+"internetbanki modul jelenlegi változatában. Ha így van, akkor más "
+"verziószámú modult kell választania az internetbank (AqBanking vagy HBCI) "
+"beállításánál. Utána próbálja meg újra letölteni az internetbanki egyenleget."
 
 #: gnucash/import-export/aqb/gnc-ab-utils.c:1023
 #, c-format
@@ -18796,11 +18853,13 @@ msgid ""
 "Result of Online Banking job:\n"
 "Account booked balance is %s"
 msgstr ""
+"Az internetbanki lekérdezés eredménye:\n"
+"a számla könyvelt egyenlege %s"
 
 #: gnucash/import-export/aqb/gnc-ab-utils.c:1029
 #, c-format
 msgid "For your information: This account also has a noted balance of %s\n"
-msgstr "Tájékoztatásul: e számlának a jegyzett egyenlege %s\n"
+msgstr "Tájékoztatásul: a számla egyenlege %s\n"
 
 #: gnucash/import-export/aqb/gnc-ab-utils.c:1036
 msgid ""
@@ -18811,19 +18870,19 @@ msgstr ""
 
 #: gnucash/import-export/aqb/gnc-ab-utils.c:1051
 msgid "Reconcile account now?"
-msgstr "Most egyezteti a számlát?"
+msgstr "Most szeretné egyeztetni a számlát?"
 
 #: gnucash/import-export/aqb/gnc-ab-utils.c:1127
 msgid "The bank has sent a message in its response."
-msgstr ""
+msgstr "A bank egy üzenetet küldött a válaszában."
 
 #: gnucash/import-export/aqb/gnc-ab-utils.c:1128
 msgid "Subject:"
-msgstr ""
+msgstr "Tárgy:"
 
 #: gnucash/import-export/aqb/gnc-file-aqb-import.c:78
 msgid "Select a file to import"
-msgstr "Importálandó fájl kiválasztása"
+msgstr "Válassza ki az importálni kívánt fájlt"
 
 #: gnucash/import-export/aqb/gnc-gwen-gui.c:1093
 #, c-format
@@ -18837,7 +18896,7 @@ msgstr ""
 #: gnucash/import-export/aqb/gnc-gwen-gui.c:1638
 msgid ""
 "The Online Banking job is still running; are you sure you want to cancel?"
-msgstr "Az internetbanki feladat még fut. Biztosan megszakítja?"
+msgstr "Az internetbanki feladat még fut. Biztos, hogy megszakítja?"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:6
 msgid "Import using AQBanking"
@@ -18866,8 +18925,7 @@ msgstr "_Tranzakciók lekérése…"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:25
 msgid "Get the transactions online through Online Banking"
-msgstr ""
-"A számla tranzakcióinak lekérése internetbanki szolgáltatások segítségével"
+msgstr "A számla tranzakcióinak lekérése internetbanki szolgáltatáson keresztül"
 
 #. Translators: https://en.wikipedia.org/wiki/Single_Euro_Payments_Area
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:31
@@ -18878,46 +18936,49 @@ msgstr "_SEPA tranzakció…"
 msgid ""
 "Issue a new international European (SEPA) transaction online through Online "
 "Banking"
-msgstr "Új SEPA tranzakció végrehajtása internetbanki szolgáltatáson keresztül"
+msgstr ""
+"Új SEPA tranzakció kezdeményezése internetbanki szolgáltatáson keresztül"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:36
 msgid "Issue SEPA I_nternal Transaction…"
-msgstr "SEPA _belső tranzakció végrehajtása…"
+msgstr "SEPA _belső tranzakció…"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:38
 msgid ""
 "Issue a new internal European (SEPA) transaction online through Online "
 "Banking"
 msgstr ""
-"Új európán belüli (SEPA) tranzakció internetbanki szolgáltatáson keresztül"
+"Új európán belüli (SEPA) tranzakció kezdeményezése internetbanki "
+"szolgáltatáson keresztül"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:41
-#, fuzzy
 msgid "_Internal Transaction…"
-msgstr "B_első tranzakció…"
+msgstr "_Belső tranzakció…"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:43
 msgid "Issue a new bank-internal transaction online through Online Banking"
-msgstr "Új belső tranzakció intézése Online Banking-gel"
+msgstr ""
+"Új belső tranzakció kezdeményezése internetbanki szolgáltatáson keresztül"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:46
-#, fuzzy
 msgid "Issue SEPA Direct _Debit…"
-msgstr "_Direkt jóváírás…"
+msgstr "SEPA közvetlen beszedés…"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:48
 msgid ""
 "Issue a new international European (SEPA) direct debit note online through "
 "Online Banking"
 msgstr ""
+"Új nemzetközi európai (SEPA) közvetlen beszedési megbízás kezdeményezése "
+"internetbanki szolgáltatáson keresztül."
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:53
 msgid "Show _log window"
-msgstr "Mutassa a _jelentés ablakot"
+msgstr "Mutassa a _naplóablakot"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:55
 msgid "Show the online banking log window"
-msgstr "Az Online Banking naplóablak megjelenítése"
+msgstr "Az internetbanki naplóablak megjelenítése"
 
 #: gnucash/import-export/aqb/gnc-plugin-aqbanking.ui:63
 msgid "_Online Banking Setup…"
@@ -18928,6 +18989,8 @@ msgid ""
 "Initial setup of Online Banking access (HBCI, or OFX DirectConnect, using "
 "AqBanking)"
 msgstr ""
+"Internetbanki hozzáférés beállítása "
+"(HBCI vagy OFX DirectConnect az AqBanking használatával)"
 
 #: gnucash/import-export/aqb/gschemas/org.gnucash.GnuCash.dialogs.import.hbci.gschema.xml.in:15
 msgid "Close window when finished"
@@ -18939,15 +19002,15 @@ msgstr "PIN-kód megőrzése a memóriában"
 
 #: gnucash/import-export/aqb/gschemas/org.gnucash.GnuCash.dialogs.import.hbci.gschema.xml.in:25
 msgid "Put the transaction text in front of the purpose of a transaction."
-msgstr ""
+msgstr "Tegye a tranzakciószöveget a tranzakció célja elé."
 
 #: gnucash/import-export/aqb/gschemas/org.gnucash.GnuCash.dialogs.import.hbci.gschema.xml.in:30
 msgid "Verbose HBCI debug messages"
-msgstr "HBCI bőbeszédű hibakereső üzenetek"
+msgstr "Részletes HBCI hibakereső üzenetek"
 
 #: gnucash/import-export/aqb/gschemas/org.gnucash.GnuCash.dialogs.import.hbci.gschema.xml.in:35
 msgid "DTAUS import data format"
-msgstr ""
+msgstr "DTAUS importálás adatformátuma"
 
 #: gnucash/import-export/aqb/gschemas/org.gnucash.GnuCash.dialogs.import.hbci.gschema.xml.in:36
 msgid ""
@@ -18955,10 +19018,13 @@ msgid ""
 "AqBanking library offers various import formats (called \"profiles\") of "
 "which you can choose one here."
 msgstr ""
+"Ez a beállítás határozza meg az adatformátumot DTAUS fájlok importálásakor. "
+"Az AqBanking könyvtár különböző importálási formátumokat (ún. profilokat) "
+"kínál, amelyek közül itt választhat egyet."
 
 #: gnucash/import-export/aqb/gschemas/org.gnucash.GnuCash.dialogs.import.hbci.gschema.xml.in:40
 msgid "CSV import data format"
-msgstr "CSV import fájl formátum"
+msgstr "CSV importálás adatformátuma"
 
 #: gnucash/import-export/aqb/gschemas/org.gnucash.GnuCash.dialogs.import.hbci.gschema.xml.in:41
 msgid ""
@@ -18966,10 +19032,13 @@ msgid ""
 "AqBanking library offers various import formats (called \"profiles\") of "
 "which you can choose one here."
 msgstr ""
+"Ez a beállítás határozza meg az adatformátumot CSV fájlok importálásakor. Az "
+"AqBanking könyvtár különböző importálási formátumokat (ún. profilokat) "
+"kínál, amelyek közül itt választhat egyet."
 
 #: gnucash/import-export/aqb/gschemas/org.gnucash.GnuCash.dialogs.import.hbci.gschema.xml.in:45
 msgid "SWIFT MT940 import data format"
-msgstr ""
+msgstr "SWIFT MT940 importálás adatformátuma"
 
 #: gnucash/import-export/aqb/gschemas/org.gnucash.GnuCash.dialogs.import.hbci.gschema.xml.in:46
 msgid ""
@@ -18977,10 +19046,13 @@ msgid ""
 "AqBanking library offers various import formats (called \"profiles\") of "
 "which you can choose one here."
 msgstr ""
+"Ez a beállítás határozza meg az adatformátumot a SWIFT MT940 fájlok "
+"importálásakor. Az AqBanking könyvtár különböző importálási formátumokat "
+"(ún. profilokat) kínál, amelyek közül itt választhat egyet."
 
 #: gnucash/import-export/aqb/gschemas/org.gnucash.GnuCash.dialogs.import.hbci.gschema.xml.in:50
 msgid "SWIFT MT942 import data format"
-msgstr ""
+msgstr "SWIFT MT942 importálás adatformátuma"
 
 #: gnucash/import-export/aqb/gschemas/org.gnucash.GnuCash.dialogs.import.hbci.gschema.xml.in:51
 msgid ""
@@ -18988,6 +19060,9 @@ msgid ""
 "AqBanking library offers various import formats (called \"profiles\") of "
 "which you can choose one here."
 msgstr ""
+"Ez a beállítás határozza meg az adatformátumot a SWIFT MT942 fájlok "
+"importálásakor. Az AqBanking könyvtár különböző importálási formátumokat "
+"(ún. profilokat) kínál, amelyek közül itt választhat egyet."
 
 #: gnucash/import-export/bi-import/dialog-bi-import.c:304
 #, c-format
@@ -18998,6 +19073,8 @@ msgstr "Érvényesítés…\n"
 #, c-format
 msgid "Row %d: no invoice ID in first row of import file.\n"
 msgstr ""
+"%d. sor: nincs számlaszám vagy számlaazonosító az importálandó fájl első "
+"sorában.\n"
 
 #: gnucash/import-export/bi-import/dialog-bi-import.c:342
 #, c-format
@@ -26940,13 +27017,13 @@ msgid "The title of the report."
 msgstr "A jelentés címe."
 
 #: gnucash/report/reports/standard/register.scm:343
+#, fuzzy
 msgid "Register Report"
 msgstr "Folyószámla-könyv jelentés"
 
 #: gnucash/report/reports/standard/register.scm:352
-#, fuzzy
 msgid "Display the check number/action?"
-msgstr "Csekkszám megjelenítése?"
+msgstr "Csekkszám/művelet megjelenítése?"
 
 #: gnucash/report/reports/standard/register.scm:355
 #: gnucash/report/trep-engine.scm:915 gnucash/report/trep-engine.scm:916
@@ -26969,7 +27046,7 @@ msgstr "Részvények számának megjelenítése?"
 
 #: gnucash/report/reports/standard/register.scm:375
 msgid "Display the name of lot the shares are in?"
-msgstr ""
+msgstr "Legyen megjelenítve a részvények tételének a neve?"
 
 #: gnucash/report/reports/standard/register.scm:379
 #: gnucash/report/trep-engine.scm:928
@@ -26983,19 +27060,17 @@ msgstr "Összeg megjelenítése?"
 
 #: gnucash/report/reports/standard/register.scm:386
 #: gnucash/report/trep-engine.scm:984
-#, fuzzy
 msgid "Single Column"
-msgstr "Egyoszlopos ábrázolás"
+msgstr "Egyoszlopos"
 
 #: gnucash/report/reports/standard/register.scm:387
 #: gnucash/report/trep-engine.scm:985
-#, fuzzy
 msgid "Two Columns"
-msgstr "Kétoszlopos ábrázolás"
+msgstr "Kétoszlopos"
 
 #: gnucash/report/reports/standard/register.scm:391
 msgid "Display the value in transaction currency?"
-msgstr ""
+msgstr "Az érték a tranzakció pénznemében legyen megjelenítve?"
 
 #: gnucash/report/reports/standard/register.scm:399
 msgid "Display the totals?"
@@ -27030,95 +27105,88 @@ msgid "n/a"
 msgstr "n/a"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:71
-#, fuzzy
 msgid "Elements"
-msgstr "Befektetések"
+msgstr "Elemek"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:73
-#, fuzzy
 msgid "column: Date"
-msgstr "Határidő"
+msgstr "oszlop: dátum"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:74
 msgid "column: Tax Rate"
-msgstr "oszlop: Adókulcs"
+msgstr "oszlop: adókulcs"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:75
 msgid "column: Units"
-msgstr "oszlop: Egység"
+msgstr "oszlop: egység"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:76
 msgid "row: Address"
-msgstr "sor: Cím"
+msgstr "sor: cím"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:77
 msgid "row: Contact"
-msgstr "sor: Kapcsolattartási cím"
+msgstr "sor: kapcsolattartási cím"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:78
 msgid "row: Invoice Number"
-msgstr "sor: Kimenőszámla száma"
+msgstr "sor: számlaszám"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:79
 msgid "row: Company Name"
-msgstr "sor: Cég neve"
+msgstr "sor: cég neve"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:80
 msgid "Invoice number text"
-msgstr "Kimenőszámla számának szövege"
+msgstr "Számlaszámszöveg"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:81
 msgid "To text"
-msgstr ""
+msgstr "Szövegesen"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:82
 msgid "Ref text"
-msgstr ""
+msgstr "Ref. szöveg"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:83
-#, fuzzy
 msgid "Job Name text"
-msgstr "Megbízás"
+msgstr "Megbízás neve"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:84
-#, fuzzy
 msgid "Job Number text"
-msgstr "Megbízásszám"
+msgstr "Megbízás száma"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:85
-#, fuzzy
 msgid "Show Job name"
-msgstr "Megbízás"
+msgstr "Megbízás nevének megjelenítése"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:86
 msgid "Show Job number"
 msgstr "Megbízásszám megjelenítése"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:87
-#, fuzzy
 msgid "Show net price"
-msgstr "Árak feltüntetése"
+msgstr "Nettó ár megjelenítése"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:88
-#, fuzzy
 msgid "Invoice number next to title"
-msgstr "Számlaszám formátuma"
+msgstr "Számlaszám a cím mellett"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:89
 msgid "table-border-collapse"
-msgstr ""
+msgstr "táblázatok kereteinek összevonása"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:90
 msgid "table-header-border-color"
-msgstr ""
+msgstr "táblázatfejléc keretének színe"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:91
 msgid "table-cell-border-color"
-msgstr ""
+msgstr "táblázatcella keretének színe"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:92
 msgid "Embedded CSS"
-msgstr ""
+msgstr "Beágyazott CSS"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:98
 msgid "Logo filename"
@@ -27170,7 +27238,7 @@ msgstr "Nettó ár megjelenítése?"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:163
 msgid "Name of a file containing a logo to be used on the report."
-msgstr ""
+msgstr "A jelentésben használni kívánt logót tartalmazó fájl neve."
 
 #: gnucash/report/reports/standard/taxinvoice.scm:166
 msgid ""
@@ -27178,6 +27246,9 @@ msgid ""
 "the logo at its natural width. The height of the logo will be scaled "
 "accordingly."
 msgstr ""
+"A logó szélessége CSS formátumban, pl. 10% vagy 32px. Ha üresen hagyja, a "
+"logó eredeti szélességében jelenik meg. A logó magassága ennek megfelelően "
+"lesz méretezve."
 
 #: gnucash/report/reports/standard/taxinvoice.scm:168
 msgid "Border-collapse?"
@@ -28544,7 +28615,7 @@ msgstr "_Fájl"
 
 #: gnucash/ui/gnc-main-window.ui:40
 msgid "Pa_ge Setup"
-msgstr "La_p beállítás"
+msgstr "Nyomtatási _oldal beállítása"
 
 #: gnucash/ui/gnc-main-window.ui:43
 msgid "Specify the page size and orientation for printing"
@@ -30058,7 +30129,7 @@ msgstr "Számlajelentés"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:334
 msgid "Open a register report for this Account."
-msgstr ""
+msgstr "Regiszterjelentés megnyitása ehhez a számlához."
 
 #: gnucash/ui/gnc-plugin-page-register.ui:338
 msgid "Account Report - Single Transaction"
@@ -30066,7 +30137,7 @@ msgstr "Számlajelentés - Egyetlen tranzakció"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:340
 msgid "Open a register report for the selected Transaction."
-msgstr ""
+msgstr "Regiszterjelentés megnyitása a kiválasztott a tranzcióhoz."
 
 #: gnucash/ui/gnc-plugin-page-register.ui:359
 #: gnucash/ui/gnc-plugin-page-register.ui:471
@@ -30188,11 +30259,11 @@ msgstr "_Jelentés exportálása"
 
 #: gnucash/ui/gnc-plugin-page-sx-list.ui:37
 msgid "_Save layout as default"
-msgstr ""
+msgstr "Az elrendezés _mentése alapértelmezettként"
 
 #: gnucash/ui/gnc-plugin-page-sx-list.ui:39
 msgid "Save current layout as default"
-msgstr ""
+msgstr "A jelenlegi elrendezés mentése alapértelmezettként"
 
 #: gnucash/ui/gnc-plugin-page-sx-list.ui:55
 #: gnucash/ui/gnc-plugin-page-sx-list.ui:155
