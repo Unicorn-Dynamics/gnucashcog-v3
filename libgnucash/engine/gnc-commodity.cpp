@@ -226,6 +226,7 @@ static QuoteSourceList single_quote_sources =
     { false, SOURCE_SINGLE, NC_("FQ Source", "Treasury Direct bonds, US"), "treasurydirect" },
     { false, SOURCE_SINGLE, NC_("FQ Source", "Twelve Data"), "twelvedata" },
     { false, SOURCE_SINGLE, NC_("FQ Source", "Union Investment, DE"), "unionfunds" },
+    { false, SOURCE_SINGLE, NC_("FQ Source", "US Savings Bonds, US"), "usbonds" },
     { false, SOURCE_SINGLE, NC_("FQ Source", "US Govt. Thrift Savings Plan"), "tsp" },
     { false, SOURCE_SINGLE, NC_("FQ Source", "XETRA, DE"), "xetra" },
     { false, SOURCE_SINGLE, NC_("FQ Source", "Yahoo as JSON"), "yahoo_json" },
