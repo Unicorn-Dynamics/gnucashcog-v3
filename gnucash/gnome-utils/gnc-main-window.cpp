@@ -5287,7 +5287,9 @@ textview_motion_notify_cb (GtkWidget *textview,
                            GdkEventMotion *event,
                            gpointer user_data)
 {
-    if (event->state & GDK_BUTTON1_MASK)
+    if ((event->state & GDK_BUTTON1_MASK) ||
+         gtk_text_buffer_get_has_selection (gtk_text_view_get_buffer
+                                           (GTK_TEXT_VIEW(textview))))
         return false;
 
     GtkTextIter iter;
