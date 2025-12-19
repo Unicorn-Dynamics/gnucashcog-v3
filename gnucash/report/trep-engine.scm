@@ -138,6 +138,10 @@
 (define def:primary-subtotal-style "primary-subheading")
 (define def:secondary-subtotal-style "secondary-subheading")
 
+(define (option-ref opts section name)
+  (let ((opt (gnc:lookup-option opts section name)))
+    (and opt (gnc:option-value opt))))
+
 (define NO-MATCHING-TRANS-HEADER (G_ "No matching transactions found"))
 (define NO-MATCHING-TRANS-TEXT (G_ "No transactions were found that \
 match the time interval and account selection specified \
@@ -1062,6 +1066,17 @@ be excluded from periodic reporting.")
 
   (let* ((work-to-do (length splits))
          (table (gnc:make-html-table))
+         (subtotals-only? (option-ref options pagename-sorting optname-show-subtotals-only))
+         (sec-subtotal?   (option-ref options pagename-sorting optname-sec-subtotal))
+         (subtotal-label (lambda (str level)
+                           (let ((show-prefix? (not (and subtotals-only?
+                                                         (case level
+                                                           ((secondary) sec-subtotal?)
+                                                           ((primary) (not sec-subtotal?))
+                                                           (else #f))))))
+                             (if show-prefix?
+                                 (string-append (G_ "Total For ") str)
+                                 str))))
          (account-types-to-reverse
           (keylist-get-info sign-reverse-list
                             (report-uses? 'reversed-signs)
@@ -1613,7 +1628,9 @@ be excluded from periodic reporting.")
             (gnc:html-make-empty-cells left-indent)
             (if (report-uses? 'export-table)
                 (cons
-                 (gnc:make-html-table-cell/markup "total-label-cell" data)
+                 (gnc:make-html-table-cell/markup
+                  (if (summary-style? level) "total-label-cell" "text-cell")
+                  data)
                  (gnc:html-make-empty-cells
                   (+ right-indent width-left-columns -1)))
                 (list
@@ -1660,6 +1677,14 @@ be excluded from periodic reporting.")
       (and (pair? calculated-cells)
            (assq-ref (car calculated-cells) 'merge-dual-column?)))
 
+    (define (summary-style? level)
+      (let ((detail-level
+             (cond ((not (report-uses? 'subtotals-only)) 'transactions)
+                   ((report-uses? 'secondary-key/renderer-fn) 'secondary)
+                   ((report-uses? 'primary-key/renderer-fn) 'primary)
+                   (else 'grand))))
+        (not (eq? level detail-level))))
+
     (define (add-subtotal-row subtotal-string subtotal-collectors
                               subtotal-style level row col)
       (let* ((left-indent (case level
@@ -1681,14 +1706,17 @@ be excluded from periodic reporting.")
                   (gnc-commodity-equal commodity (gnc:gnc-monetary-commodity mon)))
                 list-of-monetary))
 
-        (define (first-column string)
-          (if (report-uses? 'export-table)
-              (cons
-               (gnc:make-html-table-cell/markup "total-label-cell" string)
-               (gnc:html-make-empty-cells (+ right-indent width-left-columns -1)))
-              (list
-               (gnc:make-html-table-cell/size/markup
-                1 (+ right-indent width-left-columns) "total-label-cell" string))))
+        (define (first-column string level)
+          (let ((cell-class (if (summary-style? level)
+                                "total-label-cell"
+                                "text-cell")))
+            (if (report-uses? 'export-table)
+                (cons
+                 (gnc:make-html-table-cell/markup cell-class string)
+                 (gnc:html-make-empty-cells (+ right-indent width-left-columns -1)))
+                (list
+                 (gnc:make-html-table-cell/size/markup
+                  1 (+ right-indent width-left-columns) cell-class string)))))
 
         (define (data-columns commodity)
           (let loop ((merging? #f)
@@ -1716,8 +1744,11 @@ be excluded from periodic reporting.")
                    (merging?
                     (let* ((sum (and (or last-column this-column)
                                      (- (or last-column 0) (or this-column 0))))
+                           (cell-class (if (summary-style? level)
+                                           "total-number-cell"
+                                           "number-cell"))
                            (sum-table-cell (and sum (gnc:make-html-table-cell/markup
-                                                     "total-number-cell"
+                                                     cell-class
                                                      (gnc:make-gnc-monetary
                                                       commodity (abs sum)))))
                            (debit-col (and sum (positive? sum) sum-table-cell))
@@ -1735,7 +1766,10 @@ be excluded from periodic reporting.")
                           (cdr columns)
                           (cdr merge-list)
                           (cons (gnc:make-html-table-cell/markup
-                                 "total-number-cell" mon)
+                                 (if (summary-style? level)
+                                     "total-number-cell"
+                                     "number-cell")
+                                 mon)
                                 result))))))))
 
         (define (get-commodity-grid-amount commodity)
@@ -1758,11 +1792,9 @@ be excluded from periodic reporting.")
              table subtotal-style
              (append
               (gnc:html-make-empty-cells left-indent)
-              (first-column first-column-string)
+              (first-column first-column-string level)
               (data-columns (car list-of-commodities))))
             (loop "" (cdr list-of-commodities))))))
-
-    (define (total-string str) (string-append (G_ "Total For ") str))
 
     ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ;; renderers
@@ -1958,8 +1990,8 @@ be excluded from periodic reporting.")
                        (not (equal? (primary-subtotal-comparator current)
                                     (primary-subtotal-comparator next)))))
               (when secondary-subtotal-comparator
-                (add-subtotal-row (total-string
-                                   (render-summary current 'secondary #f))
+                (add-subtotal-row (subtotal-label
+                                   (render-summary current 'secondary #f) 'secondary)
                                   secondary-subtotal-collectors
                                   def:secondary-subtotal-style
                                   'secondary
@@ -1971,8 +2003,8 @@ be excluded from periodic reporting.")
                  (lambda (coll)
                    (coll 'reset #f #f))
                  secondary-subtotal-collectors))
-              (add-subtotal-row (total-string
-                                 (render-summary current 'primary #f))
+              (add-subtotal-row (subtotal-label
+                                 (render-summary current 'primary #f) 'primary)
                                 primary-subtotal-collectors
                                 def:primary-subtotal-style
                                 'primary
@@ -2000,8 +2032,8 @@ be excluded from periodic reporting.")
                          (or (not next)
                              (not (equal? (secondary-subtotal-comparator current)
                                           (secondary-subtotal-comparator next)))))
-                (add-subtotal-row (total-string
-                                   (render-summary current 'secondary #f))
+                (add-subtotal-row (subtotal-label
+                                   (render-summary current 'secondary #f) 'secondary)
                                   secondary-subtotal-collectors
                                   def:secondary-subtotal-style
                                   'secondary
