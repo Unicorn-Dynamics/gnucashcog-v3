@@ -5,10 +5,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.14\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2025-08-26 20:02+0000\n"
+"PO-Revision-Date: 2025-12-20 18:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "hr/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #: bindings/guile/date-utilities.scm:173
 #: gnucash/report/reports/example/daily-reports.scm:260
@@ -1518,15 +1518,6 @@ msgid "Stock split"
 msgstr "Podjela dionice"
 
 #: gnucash/gnome/assistant-stock-transaction.cpp:271
-#, fuzzy
-#| msgid ""
-#| "Company issues additional units, thereby reducing the stock price by a "
-#| "divisor , while keeping the total monetary value of the overall "
-#| "investment constant. \n"
-#| "\n"
-#| "If the split results in a cash in lieu for remainder units, please record "
-#| "the sale using the Stock Transaction Assistant first, then record the "
-#| "split."
 msgid ""
 "Company issues additional units, thereby reducing the stock price by a "
 "divisor, while keeping the total monetary value of the overall investment "
@@ -1665,15 +1656,6 @@ msgid ""
 msgstr ""
 
 #: gnucash/gnome/assistant-stock-transaction.cpp:397
-#, fuzzy
-#| msgid ""
-#| "Company issues additional units, thereby reducing the stock price by a "
-#| "divisor, while keeping the total monetary value of the overall investment "
-#| "constant. \n"
-#| "\n"
-#| "If the split results in a cash in lieu for remainder units, please record "
-#| "the cover buy using the Stock Transaction Assistant first, then record "
-#| "the split."
 msgid ""
 "Company issues additional units, thereby reducing the stock price by a "
 "divisor, while keeping the total monetary value of the overall investment "
@@ -2703,7 +2685,7 @@ msgstr "Zaključni unosi"
 #: gnucash/import-export/csv-exp/csv-transactions-export.cpp:369
 #: gnucash/import-export/csv-exp/csv-transactions-export.cpp:394
 msgid "Reconcile"
-msgstr "Usklađivanje"
+msgstr "Uskladi"
 
 #: gnucash/gnome/dialog-find-transactions.c:120
 msgid "Share Price"
@@ -5204,10 +5186,8 @@ msgstr "Prijeđi na datum"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5097
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5126
-#, fuzzy
-#| msgid "_Jump to the other account"
 msgid "Unable to jump to other account"
-msgstr "_Prijeđi na drugi konto"
+msgstr "Neuspio prijelaz na drugi konto"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5100
 msgid ""
@@ -5249,10 +5229,8 @@ msgid "Save Config As…"
 msgstr "Spremi konfiguraciju kao …"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:243
-#, fuzzy
-#| msgid "Export as P_DF…"
 msgid "Export as PDF"
-msgstr "Izvezi kao P_DF …"
+msgstr "Izvezi kao PDF"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:377
 #: gnucash/gnome/gnc-plugin-page-report.cpp:378
@@ -5331,10 +5309,8 @@ msgid "The file %s already exists. Are you sure you want to overwrite it?"
 msgstr "Datoteka „%s“ već postoji. Sigurno je želiš prepisati?"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1732
-#, fuzzy
-#| msgid "Overview"
 msgid "_Overwrite"
-msgstr "Pregled"
+msgstr "_Prepiši"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1732
 #, c-format
@@ -7667,10 +7643,8 @@ msgid ""
 msgstr "Dosegnut je maksimalni broj unosa. Daljnji unosi se neće dodati."
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5501
-#, fuzzy
-#| msgid "(user modifiable)"
 msgid "(User modifiable)"
-msgstr "(korisnik može promijeniti)"
+msgstr "(korisnički promijenjivo)"
 
 #. Translators: %s will be replaced with the current year
 #: gnucash/gnome-utils/gnc-main-window.cpp:5528
@@ -7701,7 +7675,7 @@ msgstr "Računovodstveni program, namijenjen pojedincima i malim poduzećima."
 #.
 #: gnucash/gnome-utils/gnc-main-window.cpp:5558
 msgid "translator-credits\n"
-msgstr "Milo Ivir: 2019., 2020, 2021, 2022, 2023, 2024, 2025.\n"
+msgstr "Milo Ivir <mail@milotype.de>: 2019. – 2025.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5561
 msgid "Visit the GnuCash website."
@@ -10213,14 +10187,6 @@ msgstr "Sakrij podjele u svim transakcijama."
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:298
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:303
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:308
-#, fuzzy
-#| msgid ""
-#| "This field specifies the default view style when opening a new register "
-#| "window. Possible values are \"ledger\", \"auto-ledger\" and \"journal\". "
-#| "The \"ledger\" setting says to show each transaction on one or two lines. "
-#| "The \"auto-ledger\" setting does the same, but also expands only the "
-#| "current transaction to show all splits. The \"journal\" setting shows all "
-#| "transactions in expanded form."
 msgid ""
 "This field specifies the default view style when opening a new register "
 "window. Possible values are \"Basic ledger\", \"Auto-split ledger\" and "
@@ -10230,12 +10196,14 @@ msgid ""
 "the current transaction to show all splits. The \"Transaction journal\" "
 "setting shows all transactions in expanded form."
 msgstr ""
-"Ovo polje navodi standardni stil prikaza prilikom otvaranja prozora novog "
-"registra. Moguće vrijednosti su „Glavna knjiga“, „Podjela aktivne "
-"transakcije“ i „Dnevnik“. „Glavna knjiga“ pokazuje svaku transakciju u "
-"jednom ili u dva retka. „Podjela aktivne transakcije“ radi isto, ali uz to "
-"rasklapa samo trenutačnu transakciju za prikaz svih njenih stavaka. „Dnevnik "
-"transakcija“ prikazuje sve transakcije rasklopljeno."
+"Ovo polje određuje zadani stil prikaza pri otvaranju novog prozora registra. "
+"Moguće vrijednosti su „Osnovna glavna knjiga”, „Automatski podijeljena "
+"glavna knjiga” i „Dnevnik transakcija”. Postavka „Osnovna glavna knjiga” "
+"prikazuje svaku transakciju u jednom ili dva retka, ovisno o tome je li "
+"uključena opcija dvorednog prikaza. Postavka „Automatski podijeljena glavna "
+"knjiga” radi isto, ali dodatno proširuje samo trenutačnu transakciju kako bi "
+"se prikazale sve njezine stavke. Postavka „Dnevnik transakcija” prikazuje "
+"sve transakcije u proširenom obliku."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:302
 #: gnucash/gtkbuilder/dialog-preferences.glade:3007
@@ -10840,10 +10808,8 @@ msgstr ""
 
 #: gnucash/gschemas/org.gnucash.GnuCash.warnings.gschema.xml.in:129
 #: gnucash/gschemas/org.gnucash.GnuCash.warnings.gschema.xml.in:262
-#, fuzzy
-#| msgid "_Jump to the other account"
 msgid "Jump when there are multiple other accounts"
-msgstr "_Prijeđi na drugi konto"
+msgstr "Prijeđi kada postoji više drugih računa"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.warnings.gschema.xml.in:130
 #: gnucash/gschemas/org.gnucash.GnuCash.warnings.gschema.xml.in:263
@@ -10855,23 +10821,17 @@ msgstr ""
 
 #: gnucash/gschemas/org.gnucash.GnuCash.warnings.gschema.xml.in:134
 #: gnucash/gschemas/org.gnucash.GnuCash.warnings.gschema.xml.in:267
-#, fuzzy
-#| msgid "_Jump to the other account"
 msgid "Jump when there are no other accounts"
-msgstr "_Prijeđi na drugi konto"
+msgstr "Prijeđi kada nema drugih računa"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.warnings.gschema.xml.in:135
 #: gnucash/gschemas/org.gnucash.GnuCash.warnings.gschema.xml.in:268
-#, fuzzy
-#| msgid ""
-#| "This dialog is presented when you attempt to duplicate a modified "
-#| "transaction. The changed data must be saved or the duplication canceled."
 msgid ""
 "This dialog is presented when you are unable to jump on a transaction "
 "because it only has splits for the current account."
 msgstr ""
-"Ovaj se dijalog prikazuje kad pokušaš duplicirati promijenjenu transakciju. "
-"Spremi promijenjene podatke ili prekini dupliciranje."
+"Ovaj se dijalog prikazuje kada ne možeš prijeći na transakciju jer ona ima "
+"stavke samo za trenutačni račun."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.window.pages.account.tree.gschema.xml.in:5
 #: gnucash/gschemas/org.gnucash.GnuCash.window.pages.account.tree.gschema.xml.in:6
@@ -11412,10 +11372,8 @@ msgstr ""
 
 #: gnucash/gtkbuilder/assistant-csv-price-import.glade:193
 #: gnucash/gtkbuilder/assistant-csv-trans-import.glade:183
-#, fuzzy
-#| msgid "<b>Load and Save Settings</b>"
 msgid "Load and Save Settings"
-msgstr "<b>Učitaj i spremi postavke</b>"
+msgstr "Učitaj i spremi postavke"
 
 #: gnucash/gtkbuilder/assistant-csv-price-import.glade:228
 #: gnucash/gtkbuilder/assistant-csv-trans-import.glade:217
@@ -11525,16 +11483,12 @@ msgstr ""
 
 #: gnucash/gtkbuilder/assistant-csv-price-import.glade:787
 #: gnucash/gtkbuilder/assistant-csv-trans-import.glade:790
-#, fuzzy
-#| msgid "<b>Miscellaneous</b>"
 msgid "Miscellaneous"
-msgstr "<b>Razno</b>"
+msgstr "Razno"
 
 #: gnucash/gtkbuilder/assistant-csv-price-import.glade:850
-#, fuzzy
-#| msgid "<b>Commodity From</b>"
 msgid "Commodity From"
-msgstr "<b>Roba iz</b>"
+msgstr "Roba iz"
 
 #: gnucash/gtkbuilder/assistant-csv-price-import.glade:898
 #: gnucash/import-export/csv-imp/gnc-imp-props-price.cpp:56
@@ -11557,16 +11511,12 @@ msgid "Import Preview"
 msgstr "Uvezi pregled"
 
 #: gnucash/gtkbuilder/assistant-csv-price-import.glade:1026
-#, fuzzy
-#| msgid ""
-#| "<b>Press \"Apply\" to add the Prices.\n"
-#| "\"Cancel\" to abort.</b>"
 msgid ""
 "Press \"Apply\" to add the Prices.\n"
 "\"Cancel\" to abort."
 msgstr ""
-"<b>Pritisni „Primijeni” za dodavanje cijena.\n"
-"„Prekini” za prekid.</b>"
+"Pritisni „Primijeni” za dodavanje cijena.\n"
+"„Prekini” za prekid."
 
 #: gnucash/gtkbuilder/assistant-csv-price-import.glade:1044
 msgid "Import Prices Now"
@@ -11577,33 +11527,6 @@ msgid "CSV Transaction Import"
 msgstr "Uvoz CSV transakcije"
 
 #: gnucash/gtkbuilder/assistant-csv-trans-import.glade:44
-#, fuzzy
-#| msgid ""
-#| "This assistant will help you import a delimited file containing a list of "
-#| "transactions. It supports both token separated files (such as comma "
-#| "separated or semi-colon separated) and fixed width data.\n"
-#| "\n"
-#| "For a successful import three columns have to be available in the import "
-#| "data:\n"
-#| "• a Date column\n"
-#| "• a Description column\n"
-#| "• a Deposit or Withdrawal column\n"
-#| "\n"
-#| "If there is no Account data available, a base account can be selected to "
-#| "which all data will be imported.\n"
-#| "\n"
-#| "Apart from a choice of delimiter, there are several options to tweak the "
-#| "importer. For example a number of lines can be skipped at the start or "
-#| "the end of the data, as well as odd rows. Several date and number formats "
-#| "are supported. The file encoding can be defined.\n"
-#| "\n"
-#| "The importer can handle files where transactions are split over multiple "
-#| "lines, with each line representing one split.\n"
-#| "\n"
-#| "Lastly, for repeated imports the preview page has buttons to Load and "
-#| "Save the settings. You can save your adjusted settings to reuse them on "
-#| "later imports. After loading your settings you can also tweak them again "
-#| "for similar imports and save them under another name."
 msgid ""
 "This assistant will help you import a delimited file containing a list of "
 "transactions. It supports both token separated files (such as comma "
@@ -11641,7 +11564,7 @@ msgstr ""
 "Za uspješan uvoz potrebna su tri stupca u uvoznoj datoteci:\n"
 "• stupac datuma\n"
 "• stupac opisa\n"
-"• stupac uplate ili isplate\n"
+"• stupac iznosa ili iznosa (negiran)\n"
 "\n"
 "Ako ne postoje podaci o kontu, odabrat će se osnovni konto u koji će se "
 "uvesti svi podaci.\n"
@@ -11652,7 +11575,7 @@ msgstr ""
 "koristiti razne formate za datum i vrijeme. Može se odrediti i kodiranje.\n"
 "\n"
 "Uvoznik podržava datoteke s transakcijama, čije se stavke prostiru preko "
-"više redaka, pri čemu svaki radak prikazuje jednu stavku.\n"
+"više redaka, pri čemu svaki redak prikazuje jednu stavku.\n"
 "\n"
 "I na kraju, za ponavljanje uvoza, pregled stranice ima gumbe za učitavanje i "
 "spremanje postavaka. Prilagođene postavke možeš spremiti za ponovnu upotrebu "
@@ -11747,28 +11670,6 @@ msgid "Match Import and GnuCash accounts"
 msgstr "Usporedi uvoz i GnuCash konta"
 
 #: gnucash/gtkbuilder/assistant-csv-trans-import.glade:1072
-#, fuzzy
-#| msgid ""
-#| "If you click \"Next\" Gnucash will perform a number of checks.\n"
-#| "\n"
-#| "If one of those <i>checks fails</i> you'll be automatically redirected to "
-#| "the preview page to try and correct.\n"
-#| "\n"
-#| "On the following page you will be able to associate each transaction to a "
-#| "category.\n"
-#| "\n"
-#| "If this is your <i>initial import into a new file</i>, you will first see "
-#| "a dialog for setting book options, since these can affect how imported "
-#| "data are converted to GnuCash transactions. If this is an existing file, "
-#| "the dialog will not be shown.\n"
-#| "\n"
-#| "If this is the <i>first time importing</i>, you will find that all lines "
-#| "may need to be associated. On subsequent imports, the importer will try "
-#| "to associate the transactions based on previous imports.\n"
-#| "\n"
-#| "The confidence of a correct association is displayed as a colored bar.\n"
-#| "\n"
-#| "More information can be displayed by using the help button."
 msgid ""
 "If you click \"Next\" Gnucash will perform a number of checks.\n"
 "\n"
@@ -11793,23 +11694,23 @@ msgid ""
 msgstr ""
 "Ako pritisneš „Dalje”, GnuCash će izvršiti razne provjere.\n"
 "\n"
-"Ako jedna od tih <i>provjera ne uspije</i>, program će te automatski "
-"preusmjeriti na stranicu za pregled, gdje greške možeš pokušati ispraviti.\n"
+"Ako jedna od tih „provjera ne uspije”, program će te automatski preusmjeriti "
+"na stranicu za pregled, gdje greške možeš pokušati ispraviti.\n"
 "\n"
 "Na sljedećoj stranici ćeš moći povezati svaku transakciju s jednom "
 "kategorijom.\n"
 "\n"
-"Ako je ovo tvoj <i>prvi uvoz u datoteku</i>, najprije češ vidjeti dijalog za "
+"Ako je ovo tvoj „prvi uvoz u datoteku”, najprije češ vidjeti dijalog za "
 "postavljanje opcija knjige, jer ove utječu na način uvoza podataka u GnuCash "
 "transakcije. Ako se radi o postojećoj datoteci, dijalog se neće prikazati.\n"
 "\n"
-"Ako je ovo <i>prvi uvoz</i>, primijetit ćeš, da se svi redci možda moraju "
+"Ako je ovo „prvi uvoz”, primijetit ćeš, da se svi redci možda moraju "
 "povezati. Prilikom sljedećih uvoza će uvoznik pokušati povezati transakcije "
 "na osnovi prijašnjih uvoza.\n"
 "\n"
 "Pouzdanost ispravnog povezivanja se prikazuje obojenom trakom.\n"
 "\n"
-"Daljnje informacije možeš naći pomoću gumba za pomoć."
+"Daljnje informacije možeš pronaći pomoću gumba za pomoć."
 
 #: gnucash/gtkbuilder/assistant-csv-trans-import.glade:1097
 msgid "Transaction Information"
@@ -11862,20 +11763,16 @@ msgstr ""
 "koristiti GnuCash. Svaka odabrana kategorija stvorit će nekoliko računa."
 
 #: gnucash/gtkbuilder/assistant-hierarchy.glade:162
-#, fuzzy
-#| msgid "<b>Categories</b>"
 msgid "Categories"
-msgstr "<b>Kategorije</b>"
+msgstr "Kategorije"
 
 #: gnucash/gtkbuilder/assistant-hierarchy.glade:275
 msgid "C_lear All"
 msgstr "Ukloni _sve"
 
 #: gnucash/gtkbuilder/assistant-hierarchy.glade:313
-#, fuzzy
-#| msgid "<b>Category Description</b>"
 msgid "Category Description"
-msgstr "<b>Opis kategorije</b>"
+msgstr "Opis kategorije"
 
 #. %s is an account template
 #: gnucash/gtkbuilder/assistant-hierarchy.glade:382
@@ -11908,22 +11805,6 @@ msgid "Choose accounts to create"
 msgstr "Odaberi konta koje želiš stvoriti"
 
 #: gnucash/gtkbuilder/assistant-hierarchy.glade:536
-#, fuzzy
-#| msgid ""
-#| "If you would like to change an account's name, click on the row "
-#| "containing the account, then click on the account name and change it.\n"
-#| "\n"
-#| "Some accounts are marked as \"Placeholder\". Placeholder accounts are "
-#| "used to create a hierarchy of accounts and normally do not have "
-#| "transactions or opening balances. If you would like an account to be a "
-#| "placeholder account, click the checkbox for that account.\n"
-#| "\n"
-#| "If you would like an account to have an opening balance, click on the row "
-#| "containing the account, then click on the opening balance field and enter "
-#| "the starting balance.\n"
-#| "\n"
-#| "<b>Note:</b> all accounts except Equity and placeholder accounts may have "
-#| "an opening balance."
 msgid ""
 "If you would like to change an account's name, click on the row containing "
 "the account, then click on the account name and change it.\n"
@@ -11946,16 +11827,11 @@ msgstr ""
 "odgovarajuću potvrdu za taj konto.\n"
 "\n"
 "Ako želiš da konto sadržava početni saldo, pritisni redak željenog konto, "
-"zatim pritisni polje za početni saldo i upiši početni saldo.\n"
-"\n"
-"<b>Napomena:</b> sva konta, osim konta kapitala i rezervirana konta, mogu "
-"imati početni saldo."
+"zatim pritisni polje za početni saldo i upiši početni saldo."
 
 #: gnucash/gtkbuilder/assistant-hierarchy.glade:559
-#, fuzzy
-#| msgid "Note"
 msgid "Note:"
-msgstr "Napomena"
+msgstr "Napomena:"
 
 #: gnucash/gtkbuilder/assistant-hierarchy.glade:577
 msgid ""
@@ -12034,10 +11910,8 @@ msgstr "EKS (kvartalno ukamaćivanje)"
 
 # EKS = efektivna kamatna stopa
 #: gnucash/gtkbuilder/assistant-loan.glade:61
-#, fuzzy
-#| msgid "APR (Compounded Annually)"
 msgid "APR (Compounded Semi-annually)"
-msgstr "EKS (godišnje ukamaćivanje)"
+msgstr "EKS (polugodišnje ukamaćivanje)"
 
 # EKS = efektivna kamatna stopa
 #: gnucash/gtkbuilder/assistant-loan.glade:64
@@ -12126,10 +12000,6 @@ msgid "Loan Account"
 msgstr "Konto kredita"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:222
-#, fuzzy
-#| msgid ""
-#| "Enter the number of months still to be paid off. This determines both the "
-#| "remaining principle and the duration of the scheduled transaction."
 msgid ""
 "Enter the number of months still to be paid off. This determines both the "
 "remaining principal and the duration of the scheduled transaction."
@@ -12242,10 +12112,6 @@ msgid "Loan Payment"
 msgstr "Plaćanje kredita"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:1084
-#, fuzzy
-#| msgid ""
-#| "Review the details below and if correct press \"Apply\"\" to create the "
-#| "schedule."
 msgid ""
 "Review the details below and if correct press \"Apply\" to create the "
 "schedule."
@@ -12825,16 +12691,12 @@ msgid "Cash in lieu"
 msgstr "Novac u zamjenu"
 
 #: gnucash/gtkbuilder/assistant-stock-split.glade:346
-#, fuzzy
-#| msgid "Income Account"
 msgid "_Income Account"
-msgstr "Konto prihoda"
+msgstr "Konto _prihoda"
 
 #: gnucash/gtkbuilder/assistant-stock-split.glade:362
-#, fuzzy
-#| msgid "Assets Accounts"
 msgid "A_sset Account"
-msgstr "Konta imovine"
+msgstr "_Konta imovine"
 
 #. Dialog title for the remains of a stock split
 #: gnucash/gtkbuilder/assistant-stock-split.glade:409
@@ -13030,22 +12892,16 @@ msgid "Edit the list of encodings"
 msgstr "Uredi popis kodiranja"
 
 #: gnucash/gtkbuilder/assistant-xml-encoding.glade:239
-#, fuzzy
-#| msgid "<b>S_ystem input encodings</b>"
 msgid "S_ystem input encodings"
-msgstr "<b>_Sustavsko kodiranje za unos</b>"
+msgstr "_Sustavsko kodiranje unosa"
 
 #: gnucash/gtkbuilder/assistant-xml-encoding.glade:328
-#, fuzzy
-#| msgid "<b>_Custom encoding</b>"
 msgid "_Custom encoding"
-msgstr "<b>_Prilagođeno kodiranje</b>"
+msgstr "_Prilagođeno kodiranje"
 
 #: gnucash/gtkbuilder/assistant-xml-encoding.glade:414
-#, fuzzy
-#| msgid "<b>_Selected encodings</b>"
 msgid "_Selected encodings"
-msgstr "<b>_Odabrano kodiranje</b>"
+msgstr "_Odabrano kodiranje"
 
 #: gnucash/gtkbuilder/business-prefs.glade:22
 #: gnucash/gtkbuilder/dialog-account-picker.glade:8
@@ -13123,10 +12979,8 @@ msgstr ""
 "dijalogu uknjiženja."
 
 #: gnucash/gtkbuilder/business-prefs.glade:115
-#, fuzzy
-#| msgid "_Invoices"
 msgid "Invoices"
-msgstr "_Izlazni računi"
+msgstr "Izlazni računi"
 
 #: gnucash/gtkbuilder/business-prefs.glade:128
 msgid "Not_ify when due"
@@ -13156,10 +13010,8 @@ msgid "_Process payments on posting"
 msgstr "Obradi _plaćanja prilikom knjiženja"
 
 #: gnucash/gtkbuilder/business-prefs.glade:195
-#, fuzzy
-#| msgid "Bill"
 msgid "Bills"
-msgstr "Ulazni račun"
+msgstr "Ulazni računi"
 
 #: gnucash/gtkbuilder/business-prefs.glade:208
 msgid "_Notify when due"
@@ -13246,10 +13098,8 @@ msgid "Delete Account"
 msgstr "Izbriši konto"
 
 #: gnucash/gtkbuilder/dialog-account.glade:447
-#, fuzzy
-#| msgid "<b>Sub-accounts</b>"
 msgid "Sub-accounts"
-msgstr "<b>Podkonta</b>"
+msgstr "Podkonta"
 
 #: gnucash/gtkbuilder/dialog-account.glade:472
 msgid "This account has a sub-account. What would you like to do with it?"
@@ -13285,10 +13135,8 @@ msgstr ""
 "Ovaj konto sadržava transakcije samo-za-čitanje, koje ne mogu biti izbrisane."
 
 #: gnucash/gtkbuilder/dialog-account.glade:677
-#, fuzzy
-#| msgid "<b>Sub-account Transactions</b>"
 msgid "Sub-account Transactions"
-msgstr "<b>Transakcije podkonta</b>"
+msgstr "Transakcije u podkontima"
 
 #: gnucash/gtkbuilder/dialog-account.glade:736
 msgid ""
@@ -13314,10 +13162,8 @@ msgstr "Filtriraj po …"
 
 #: gnucash/gtkbuilder/dialog-account.glade:912
 #: gnucash/gtkbuilder/gnc-plugin-page-register.glade:498
-#, fuzzy
-#| msgid "Clear All"
 msgid "Clear _All"
-msgstr "Ukloni sve"
+msgstr "Iz_briši sve"
 
 #: gnucash/gtkbuilder/dialog-account.glade:928
 msgid "_Default"
@@ -13544,16 +13390,12 @@ msgid "More Properties"
 msgstr "Više svojstava"
 
 #: gnucash/gtkbuilder/dialog-account.glade:1787
-#, fuzzy
-#| msgid "<b>Balance Information</b>"
 msgid "Balance Information"
-msgstr "<b>Podaci salda</b>"
+msgstr "Podaci salda"
 
 #: gnucash/gtkbuilder/dialog-account.glade:1804
-#, fuzzy
-#| msgid "<b>Initial Balance Transfer</b>"
 msgid "Initial Balance Transfer"
-msgstr "<b>Prijenos početnog salda</b>"
+msgstr "Prijenos početnog salda"
 
 #: gnucash/gtkbuilder/dialog-account.glade:1849
 msgctxt "field label"
@@ -13818,10 +13660,8 @@ msgstr "Stvori novi uvjet računa"
 #: gnucash/gtkbuilder/dialog-billterms.glade:546
 #: gnucash/gtkbuilder/dialog-billterms.glade:847
 #: gnucash/gtkbuilder/dialog-billterms.glade:1096
-#, fuzzy
-#| msgid "<b>Term Definition</b>"
 msgid "Term Definition"
-msgstr "<b>Definicija uvjeta</b>"
+msgstr "Definicija uvjeta"
 
 #: gnucash/gtkbuilder/dialog-billterms.glade:577
 #: gnucash/gtkbuilder/dialog-billterms.glade:915
@@ -13879,10 +13719,8 @@ msgid "The internal name of the Billing Term."
 msgstr "Interno ime uvjeta plaćanja."
 
 #: gnucash/gtkbuilder/dialog-billterms.glade:1078
-#, fuzzy
-#| msgid "Billing Terms"
 msgid "New Billing Term"
-msgstr "Uvjeti računa"
+msgstr "Novi uvjet napalte"
 
 #: gnucash/gtkbuilder/dialog-billterms.glade:1132
 #: gnucash/gtkbuilder/dialog-report.glade:795
@@ -13959,10 +13797,8 @@ msgstr ""
 "kojima se može trgovati samo cijelim brojevima, upiši 1."
 
 #: gnucash/gtkbuilder/dialog-commodity.glade:215
-#, fuzzy
-#| msgid "<b>Quote Source Information</b>"
 msgid "Quote Source Information"
-msgstr "<b>Podaci izvora tečaja</b>"
+msgstr "Podaci izvora tečaja"
 
 #: gnucash/gtkbuilder/dialog-commodity.glade:299
 msgid ""
@@ -14157,8 +13993,6 @@ msgid "For importing vendor lists."
 msgstr "Za uvoz popisa dobavljača."
 
 #: gnucash/gtkbuilder/dialog-customer-import-gui.glade:192
-#, fuzzy
-#| msgid "2. Select import type"
 msgid "2. Select Import Type"
 msgstr "2. Odaberi vrstu uvoza"
 
@@ -14320,16 +14154,12 @@ msgid "Access Control"
 msgstr "Kontrola pristupa"
 
 #: gnucash/gtkbuilder/dialog-file-access.glade:72
-#, fuzzy
-#| msgid "Date Format"
 msgid "Data Format"
-msgstr "Format datuma"
+msgstr "Format podataka"
 
 #: gnucash/gtkbuilder/dialog-file-access.glade:143
-#, fuzzy
-#| msgid "_File"
 msgid "File"
-msgstr "_Datoteka"
+msgstr "Datoteka"
 
 #: gnucash/gtkbuilder/dialog-file-access.glade:177
 msgid "Host"
@@ -14344,10 +14174,8 @@ msgid "Password"
 msgstr "Lozinka"
 
 #: gnucash/gtkbuilder/dialog-file-access.glade:287
-#, fuzzy
-#| msgid "<b>Database Connection</b>"
 msgid "Database Connection"
-msgstr "<b>Veza baze podataka</b>"
+msgstr "Veza baze podataka"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:12
 #: gnucash/gtkbuilder/dialog-fincalc.glade:53
@@ -14558,10 +14386,8 @@ msgid "_Remove Invalid Mappings"
 msgstr "_Ukloni neispravna mapiranja"
 
 #: gnucash/gtkbuilder/dialog-imap-editor.glade:106
-#, fuzzy
-#| msgid "<b>What type of information to display?</b>"
 msgid "What type of information to display?"
-msgstr "<b>Koju vrstu podataka želiš prikazati?</b>"
+msgstr "Koju vrstu podataka želiš prikazati?"
 
 #: gnucash/gtkbuilder/dialog-imap-editor.glade:142
 msgid "Non-Bayesian"
@@ -15018,10 +14844,8 @@ msgstr ""
 "neće se više prikazivati."
 
 #: gnucash/gtkbuilder/dialog-new-user.glade:213
-#, fuzzy
-#| msgid "Welcome to GnuCash"
 msgid "Welcome to GnuCash!"
-msgstr "Dobro došli u GnuCash"
+msgstr "Dobro došli u GnuCash!"
 
 #: gnucash/gtkbuilder/dialog-new-user.glade:236
 #, fuzzy
@@ -15822,15 +15646,15 @@ msgstr ""
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2626
 msgid "<b>Jump action for multiple splits</b>"
-msgstr ""
+msgstr "<b>Prijelaz na stavke pri višedjelnoj transakciji</b>"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2628
 msgid "Transaction jump action when there are more than two splits."
-msgstr ""
+msgstr "Prijelaz na stavke u transakciji kada postoje više od dvije stavke."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2638
 msgid "Do _nothing"
-msgstr ""
+msgstr "Ne radi _ništa"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2644
 msgid "Do nothing."
@@ -15838,12 +15662,13 @@ msgstr "Ne radi ništa."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2657
 msgid "Go to the first split with the _largest value"
-msgstr ""
+msgstr "Idi na prvu stavku s _najvećom vrijednošću"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2663
 msgid ""
 "Use the first split with the largest value to determine the other account."
 msgstr ""
+"Za određivanje drugog računa koristi prvu stavku s najvećom vrijednošću."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2677
 msgid "Go to the first split with the _smallest value"
@@ -15853,10 +15678,9 @@ msgstr "Idi na prvu _stavku s najmanjom vrijednošću"
 msgid ""
 "Use the first split with the smallest value to determine the other account."
 msgstr ""
+"Za određivanje drugog računa koristi prvu stavku s najmanjom vrijednošću."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2710
-#, fuzzy
-#| msgid "Reconcile"
 msgid "Reconciling"
 msgstr "Usklađivanje"
 
@@ -15955,12 +15779,6 @@ msgid "_Placement of future transactions"
 msgstr "_Smještanje budućih transakcija"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2903
-#, fuzzy
-#| msgid ""
-#| "If checked, transactions with a date in the future will be displayed at "
-#| "the bottom of the register after the blank transaction. If clear, the "
-#| "blank transaction will be at the bottom of the register after all "
-#| "transactions."
 msgid ""
 "If checked, transactions with a date in the future will be displayed at the "
 "bottom of the register after the blank transaction unless in reverse sort "
@@ -15968,29 +15786,28 @@ msgid ""
 "clear, the blank transaction will be at the bottom of the register after all "
 "transactions unless in reverse sort order when it will be at the top."
 msgstr ""
-"Ako je označeno, transakcije u budućnosti će biti prikazane na dnu registra, "
-"ispod prazne transakcije. U protivnom će prazna transakcija biti na dnu "
-"registra, ispod svih transakcija."
+"Ako je označeno, transakcije s datumom u budućnosti će se prikazati na dnu "
+"registra, nakon prazne transakcije, osim ako je uključen obrnuti redoslijed "
+"razvrstavanja, tada će se prikazati na vrhu, ispred prazne transakcije. Ako "
+"nije označeno, prazna transakcija će biti na dnu registra, nakon svih "
+"transakcija, osim ako je uključen obrnuti redoslijed razvrstavanja, tada će "
+"biti na vrhu."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2943
-#, fuzzy
-#| msgid "Default Rate"
 msgid "Default Style"
-msgstr "Standardna satnica"
+msgstr "Standardni stil"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2969
-#, fuzzy
-#| msgid "<b>Other Defaults</b>"
 msgid "Other Defaults"
-msgstr "<b>Ostala standardna svojstva</b>"
+msgstr "Druge standardne postavke"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2982
 msgid "_Basic ledger"
-msgstr "_Glavna knjiga"
+msgstr "_Osnovna glavna knjiga"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:3001
 msgid "_Auto-split ledger"
-msgstr "Podjela _aktivne transakcije"
+msgstr "Glavna knjiga s _automatskim podjelama"
 
 #. Translators: This is a menu item in the View menu
 #: gnucash/gtkbuilder/dialog-preferences.glade:3020
@@ -16739,10 +16556,8 @@ msgid "Number of Occurrences"
 msgstr "Broj pojavljivanja"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:508
-#, fuzzy
-#| msgid "Since Last Run…"
 msgid "Since Last Run"
-msgstr "Od zadnjeg pokretanja …"
+msgstr "Od zadnjeg pokretanja"
 
 #: gnucash/gtkbuilder/dialog-sx.glade:534
 #, fuzzy
@@ -17986,10 +17801,8 @@ msgstr ""
 "Odaberi ovu opciju za otvaranje kartice registra s novo potvrđenim stavkama."
 
 #: gnucash/gtkbuilder/window-reconcile.glade:71
-#, fuzzy
-#| msgid "_Reconcile Information…"
 msgid "Reconcile Information"
-msgstr "_Podaci usklađivanja …"
+msgstr "Podaci usklađivanja"
 
 #: gnucash/gtkbuilder/window-reconcile.glade:96
 msgid "Statement _Date"
@@ -20831,10 +20644,8 @@ msgid "Parsing accounts"
 msgstr "Obrada konta"
 
 #: gnucash/import-export/qif-imp/qif-file.scm:816
-#, fuzzy
-#| msgid "Parsing categories"
 msgid "Parsing prices"
-msgstr "Obrada kategorija"
+msgstr "Obrada cijena"
 
 #: gnucash/import-export/qif-imp/qif-file.scm:849
 msgid "Parsing transactions"
@@ -21876,10 +21687,8 @@ msgid "Enter credit formula for real transaction"
 msgstr "Upiši formulu potraživanja za stvarnu transakciju"
 
 #: gnucash/register/register-gnome/completioncell-gnome.c:76
-#, fuzzy
-#| msgid "Loading completed"
 msgid "Don't autocomplete"
-msgstr "Učitavanje je završeno"
+msgstr "Bez automatskog dovršavanja"
 
 #: gnucash/register/register-gnome/datecell-gnome.c:104
 msgid ""
@@ -25603,10 +25412,8 @@ msgid "Long term gains age (years)"
 msgstr "Dob dugoročnih dobitaka (godine)"
 
 #: gnucash/report/reports/standard/investment-lots.scm:72
-#, fuzzy
-#| msgid "_Show children accounts"
 msgid "Show mnemonic in amounts"
-msgstr "_Prikaži podređena konta"
+msgstr "Prikaži mnemoniku u iznosima"
 
 #: gnucash/report/reports/standard/investment-lots.scm:73
 msgid "Include closed lots"
@@ -25668,30 +25475,24 @@ msgid ""
 msgstr ""
 
 #: gnucash/report/reports/standard/investment-lots.scm:101
-#, fuzzy
-#| msgid "Report Title"
 msgid "Lot Title"
-msgstr "Naslov izvještaja"
+msgstr "Naslov paketa"
 
 #: gnucash/report/reports/standard/investment-lots.scm:104
 msgid "GUID"
 msgstr "Globalan jedinstveni identifikator"
 
 #: gnucash/report/reports/standard/investment-lots.scm:105
-#, fuzzy
-#| msgid "To Amount"
 msgid "Bought Amount"
-msgstr "Do iznosa"
+msgstr "Iznos kupnje"
 
 #: gnucash/report/reports/standard/investment-lots.scm:106
 msgid "Bought Value (Basis)"
-msgstr ""
+msgstr "Vrijednost kupnje (osnovica)"
 
 #: gnucash/report/reports/standard/investment-lots.scm:107
-#, fuzzy
-#| msgid "Weighted Average"
 msgid "Bought Average Price"
-msgstr "Ponderirani prosjek"
+msgstr "Prosječna cijena kupnje"
 
 #: gnucash/report/reports/standard/investment-lots.scm:108
 msgid "Sold Splits"
@@ -25703,99 +25504,79 @@ msgstr "Iznos prodaje"
 
 #: gnucash/report/reports/standard/investment-lots.scm:110
 msgid "Sold Basis"
-msgstr "Osnova prodaje"
+msgstr "Osnovica prodaje"
 
 #: gnucash/report/reports/standard/investment-lots.scm:111
 msgid "Sold Value"
 msgstr "Vrijednost prodaje"
 
 #: gnucash/report/reports/standard/investment-lots.scm:112
-#, fuzzy
-#| msgid "To Amount"
 msgid "ST Sold Amount"
-msgstr "Do iznosa"
+msgstr "Iznos prodaje kratkoročnog ulaganja"
 
 #: gnucash/report/reports/standard/investment-lots.scm:113
 msgid "ST Sold Basis"
-msgstr ""
+msgstr "Osnovica prodaje kratkoročnog ulaganja"
 
 #: gnucash/report/reports/standard/investment-lots.scm:114
 msgid "ST Sold Value"
-msgstr ""
+msgstr "Iznos prodaje kratkoročnog ulaganja"
 
 #: gnucash/report/reports/standard/investment-lots.scm:115
-#, fuzzy
-#| msgid "To Amount"
 msgid "LT Sold Amount"
-msgstr "Do iznosa"
+msgstr "Iznos prodaje dugoročnog ulaganja"
 
 #: gnucash/report/reports/standard/investment-lots.scm:116
 msgid "LT Sold Basis"
-msgstr ""
+msgstr "Osnovica prodaje dugoročnog ulaganja"
 
 #: gnucash/report/reports/standard/investment-lots.scm:117
 msgid "LT Sold Value"
-msgstr ""
+msgstr "Iznos prodaje dugoročnog ulaganja"
 
 #: gnucash/report/reports/standard/investment-lots.scm:118
 msgid "Sold Average Price"
 msgstr "Prosječna cijena prodaje"
 
 #: gnucash/report/reports/standard/investment-lots.scm:119
-#, fuzzy
-#| msgid "Amount"
 msgid "End Amount"
-msgstr "Iznos"
+msgstr "Zaključni znos"
 
 #: gnucash/report/reports/standard/investment-lots.scm:120
-#, fuzzy
-#| msgid "Basis"
 msgid "End Basis"
-msgstr "Osnova"
+msgstr "Zaključna osnovica"
 
 #: gnucash/report/reports/standard/investment-lots.scm:121
-#, fuzzy
-#| msgid "Value"
 msgid "End Value"
-msgstr "Vrijednost"
+msgstr "Zaključna vrijednost"
 
 #: gnucash/report/reports/standard/investment-lots.scm:123
-#, fuzzy
-#| msgid "Realized Gain"
 msgid "ST Realized Gain"
-msgstr "Ostvarena dobit"
+msgstr "Ostvarena dobit kratkoročnog ulaganja"
 
 #: gnucash/report/reports/standard/investment-lots.scm:124
-#, fuzzy
-#| msgid "Realized Gain"
 msgid "LT Realized Gain"
-msgstr "Ostvarena dobit"
+msgstr "Ostvarena dobit dugoročnog ulaganja"
 
 #: gnucash/report/reports/standard/investment-lots.scm:125
 msgid "Realized ROI"
-msgstr "Ostvareni povrat od ulaganja"
+msgstr "Ostvareni povrat na ulaganje"
 
 #: gnucash/report/reports/standard/investment-lots.scm:127
-#, fuzzy
-#| msgid "Unrealized Gain"
 msgid "ST Unrealized Gain"
-msgstr "Neostvarena dobit"
+msgstr "Neostvarena dobit na kratkoročno ulaganje"
 
 #: gnucash/report/reports/standard/investment-lots.scm:128
-#, fuzzy
-#| msgid "Unrealized Gain"
 msgid "LT Unrealized Gain"
-msgstr "Neostvarena dobit"
+msgstr "Neostvarena dobit na dugoročno ulaganje"
 
 #: gnucash/report/reports/standard/investment-lots.scm:129
 msgid "Unrealized ROI"
-msgstr "Neostvareni povrat od ulaganja"
+msgstr "Neostvareni povrat na ulaganje"
 
 #: gnucash/report/reports/standard/investment-lots.scm:131
-#, fuzzy
-#| msgid "Account Notes"
 msgid "Account Lots Total"
-msgstr "Napomene za konto"
+msgstr "Ukupni iznos paketa računa"
 
 #: gnucash/report/reports/standard/investment-lots.scm:171
 msgid "Include a chart that shows lot gains, grouped by account and gain type"
@@ -25805,7 +25586,7 @@ msgstr ""
 
 #: gnucash/report/reports/standard/investment-lots.scm:186
 msgid "What kind of chart to include"
-msgstr "Vrsta dijagrama koji će se dodati"
+msgstr "Vrsta dijagrama koja će se dodati"
 
 #: gnucash/report/reports/standard/investment-lots.scm:189
 msgid "Stacked Bar Chart"
@@ -25817,13 +25598,11 @@ msgstr "Gdje smjestiti dijagram"
 
 #: gnucash/report/reports/standard/investment-lots.scm:214
 msgid "Show the lot GUID table column"
-msgstr "Pokaži stupac tablice globalanog jedinstvenog identifikatora paketa"
+msgstr "Prikaži stupac tablice globalanog jedinstvenog identifikatora paketa"
 
 #: gnucash/report/reports/standard/investment-lots.scm:221
-#, fuzzy
-#| msgid "Show the income and expense accounts"
 msgid "Show the lot open and close table columns"
-msgstr "Prikaži konta prihoda i rashoda"
+msgstr "Prikaži stupce otvaranja i zatvaranja paketa u tablici"
 
 #: gnucash/report/reports/standard/investment-lots.scm:228
 msgid "Show purchase-related table columns"
@@ -25847,7 +25626,7 @@ msgstr "Prikaži stupce tablice neostvarene dobiti za neprodane dionice"
 
 #: gnucash/report/reports/standard/investment-lots.scm:263
 msgid "Group gains (and sales?) by long-term (LT) and short-term (ST)"
-msgstr ""
+msgstr "Grupiraj dobitke (i prodaje?) po dugoročnim i kratkoročnim"
 
 #: gnucash/report/reports/standard/investment-lots.scm:266
 msgid "Gains Only"
@@ -25859,7 +25638,7 @@ msgstr "Dobici i prodaje"
 
 #: gnucash/report/reports/standard/investment-lots.scm:281
 msgid "Commodities held longer than this many years count as long-term (LT)."
-msgstr ""
+msgstr "Roba koja se drži dulje od ovog broja godina računa se kao dugoročno."
 
 #: gnucash/report/reports/standard/investment-lots.scm:293
 msgid "Show long (instead of short) account names"
@@ -25867,7 +25646,7 @@ msgstr "Prikaži duga imena konta umjesto kratkih"
 
 #: gnucash/report/reports/standard/investment-lots.scm:300
 msgid "Show mnemonics with commodity amounts"
-msgstr ""
+msgstr "Prikaži mnemonike s iznosima robe"
 
 #: gnucash/report/reports/standard/investment-lots.scm:307
 msgid "Include closed lots in addition to open lots"
@@ -25993,10 +25772,8 @@ msgid "~a, ~a to ~a"
 msgstr "~a, ~a do ~a"
 
 #: gnucash/report/reports/standard/investment-lots.scm:1989
-#, fuzzy
-#| msgid "Account Notes"
 msgid "Account Lot Gains"
-msgstr "Napomene za konto"
+msgstr "Dobit po lotovima računa"
 
 #: gnucash/report/reports/standard/invoice.scm:101
 #: gnucash/report/reports/standard/invoice.scm:438
@@ -27396,7 +27173,7 @@ msgstr "CSS boja."
 
 #: gnucash/report/reports/standard/taxinvoice.scm:205
 msgid "Invoice number:"
-msgstr "Račun br.:"
+msgstr "Račun broj:"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:208
 msgid "To:"
@@ -27433,16 +27210,12 @@ msgid "Amount Due (inc GST)"
 msgstr "Iznos dospijeća (uklj. PDV)"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:320
-#, fuzzy
-#| msgid "Invoice #: "
 msgid "Invoice #:"
-msgstr "Račun br.: "
+msgstr "Račun br.:"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:322
-#, fuzzy
-#| msgid "Engagement: "
 msgid "Engagement:"
-msgstr "Sudjelovanje: "
+msgstr "Nalog:"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:328
 #: gnucash/report/reports/standard/taxinvoice.scm:330
@@ -28140,10 +27913,8 @@ msgstr "Tablica podzbrojeva"
 #. "Running Totals" is the plural form as it refers to the running total and running subtotals.
 #. To be consistent, also consider how the singular form "Running Total" is translated.
 #: gnucash/report/trep-engine.scm:82
-#, fuzzy
-#| msgid "Running Balance"
 msgid "Running Totals"
-msgstr "Tekući saldo"
+msgstr "Tekući ukupni iznosi"
 
 #: gnucash/report/trep-engine.scm:92 gnucash/report/trep-engine.scm:2314
 msgid "Show Account Description"
@@ -28501,10 +28272,8 @@ msgid "Display the trans number?"
 msgstr "Prikazati broj transakcije?"
 
 #: gnucash/report/trep-engine.scm:950
-#, fuzzy
-#| msgid "Display the invoice notes?"
 msgid "Display invoice details"
-msgstr "Prikazati napomene izlaznog računa?"
+msgstr "Detalji izlaznog računa"
 
 #: gnucash/report/trep-engine.scm:955
 msgid "Display the account name?"
@@ -28544,25 +28313,19 @@ msgstr "Preokreni predznak prikazanih iznosa za određene vrste konta."
 
 #: gnucash/report/trep-engine.scm:1002
 msgid "Display running totals as per report sort order?"
-msgstr ""
+msgstr "Prikazati tekuće zbrojeve po redoslijedu razvrstavanja izvještaja?"
 
 #: gnucash/report/trep-engine.scm:1005
-#, fuzzy
-#| msgid "Grand Total Cell Color"
 msgid "Grand Total and Subtotals"
-msgstr "Boja polja sveukupnog iznosa"
+msgstr "Ukupni iznos i međuzbrojevi"
 
 #: gnucash/report/trep-engine.scm:1006
-#, fuzzy
-#| msgid "Grand Total"
 msgid "Grand Total Only"
-msgstr "Sveukupno"
+msgstr "Samo ukupni iznos"
 
 #: gnucash/report/trep-engine.scm:1007
-#, fuzzy
-#| msgid "Subtotal"
 msgid "Subtotals Only"
-msgstr "Podzbroj"
+msgstr "Samo međuzbrojevi"
 
 #: gnucash/report/trep-engine.scm:1134
 msgid "Num/T-Num"
@@ -28577,49 +28340,39 @@ msgstr "Prijenos iz/u"
 #. pattern as for these other strings: “Running Totals”,
 #. "Secondary Subtotal” and "Running Primary Subtotal"
 #: gnucash/report/trep-engine.scm:1411 gnucash/report/trep-engine.scm:1512
-#, fuzzy
-#| msgid "Secondary Subtotal"
 msgid "Running Secondary Subtotal"
-msgstr "Sekundarni podzbroj"
+msgstr "Tekući sekundarni podzbroj"
 
 #. Translators: this is the running total for the primary subtotal.
 #. For translation to be consistent, make sure it follows the same
 #. pattern as for these other strings: “Running Totals” and
 #. “Primary Subtotal”
 #: gnucash/report/trep-engine.scm:1427 gnucash/report/trep-engine.scm:1525
-#, fuzzy
-#| msgid "Primary Subtotal"
 msgid "Running Primary Subtotal"
-msgstr "Primarni podzbroj"
+msgstr "Tekući primarni podzbroj"
 
 #. Translators: "Running Subtotal" is a shorter version of
 #. "Running Primary Subtotal" used when a running primary subtotal
 #. is displayed without a secondary subtotal.
 #: gnucash/report/trep-engine.scm:1431 gnucash/report/trep-engine.scm:1526
-#, fuzzy
-#| msgid "Running Sum"
 msgid "Running Subtotal"
-msgstr "Tekući zbroj"
+msgstr "Tekući podzbroj"
 
 #. Translators: this is the running total for the grand total.
 #. For translation to be consistent, make sure it follows the same
 #. pattern as for these other strings: “Running Totals” and
 #. "Grand Total”
 #: gnucash/report/trep-engine.scm:1448 gnucash/report/trep-engine.scm:1540
-#, fuzzy
-#| msgid "Grand Total"
 msgid "Running Grand Total"
-msgstr "Sveukupno"
+msgstr "Tekući sveukupni iznos"
 
 #. Translators: "Running Total" is a shorter version of
 #. "Running Grand Total" used when the running grand total is
 #. displayed without subtotals. To be consistent, also consider
 #. how the plural form "Running Totals" is translated.
 #: gnucash/report/trep-engine.scm:1453 gnucash/report/trep-engine.scm:1541
-#, fuzzy
-#| msgid "Running Balance"
 msgid "Running Total"
-msgstr "Tekući saldo"
+msgstr "Tekući ukupni iznos"
 
 #. Translators: Balance b/f stands for "Balance
 #. brought forward".
@@ -30308,22 +30061,16 @@ msgid "Delete the current split."
 msgstr "Izbriši trenutačnu stavku."
 
 #: gnucash/ui/gnc-plugin-page-register.ui:659
-#, fuzzy
-#| msgid "Save the current file"
 msgid "Save the current file."
-msgstr "Spremi trenutačnu datoteku"
+msgstr "Spremi trenutačnu datoteku."
 
 #: gnucash/ui/gnc-plugin-page-register.ui:674
-#, fuzzy
-#| msgid "Close the currently active page"
 msgid "Close the currently active page."
-msgstr "Zatvori trenutačnu aktivnu stranicu"
+msgstr "Zatvori trenutačnu aktivnu stranicu."
 
 #: gnucash/ui/gnc-plugin-page-register.ui:699
-#, fuzzy
-#| msgid "Open the New Invoice dialog"
 msgid "Open the New Invoice dialog."
-msgstr "Otvori dijalog „Novi izlazni račun”"
+msgstr "Otvori dijalog „Novi izlazni račun”."
 
 #: gnucash/ui/gnc-plugin-page-report.ui:6
 #: gnucash/ui/gnc-plugin-page-report.ui:300
@@ -30596,10 +30343,8 @@ msgid "GncQuotes::Report called with no source."
 msgstr ""
 
 #: libgnucash/app-utils/gnc-quotes.cpp:359
-#, fuzzy
-#| msgid "There are no options for this report."
 msgid "There were no commodities for which to retrieve quotes."
-msgstr "Nema opcija za ovaj izvještaj."
+msgstr "Nije bilo robe za dohvaćanje tečajeva."
 
 #: libgnucash/app-utils/gnc-quotes.cpp:374
 msgid "Finance::Quote retrieval failed with error "
@@ -30642,10 +30387,8 @@ msgid ""
 msgstr ""
 
 #: libgnucash/app-utils/gnc-quotes.cpp:416
-#, fuzzy
-#| msgid "There was an error accessing %s."
 msgid "The quote has no error set."
-msgstr "Došlo je do greške prilikom dohvaćanja „%s“."
+msgstr "Za tečaj nije definirana greška."
 
 #: libgnucash/app-utils/gnc-quotes.cpp:425
 msgid "Quotes for the following commodities were unavailable or unusable:\n"
