@@ -36,7 +36,7 @@
 # aleksej0R <omolice@hotmail.fr>, 2024.
 # Over_score <wablate@lorang.net>, 2024.
 # Martin LORANG <wablate@lorang.net>, 2024.
-# Anastasios Ikonomou <anastasios.ikonomou@gmail.com>, 2024.
+# Anastasios Ikonomou <anastasios.ikonomou@gmail.com>, 2024, 2025.
 # Frédéric Mergey <fmergey@yahoo.com>, 2025.
 #
 # Please follow the guidelines you'll find here: https://wiki.gnucash.org/wiki/Translation
@@ -44,11 +44,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.14\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2025-10-05 22:02+0000\n"
-"Last-Translator: Frédéric Mergey <fmergey@yahoo.com>\n"
+"PO-Revision-Date: 2025-12-20 14:00+0000\n"
+"Last-Translator: Anastasios Ikonomou <anastasios.ikonomou@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "fr/>\n"
 "Language: fr\n"
@@ -56,7 +56,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #: bindings/guile/date-utilities.scm:173
 #: gnucash/report/reports/example/daily-reports.scm:260
@@ -13189,6 +13189,8 @@ msgid ""
 "All accounts except Equity and placeholder accounts may have an opening "
 "balance."
 msgstr ""
+"Tous les comptes peuvent avoir un solde initial, à part les comptes de "
+"capitux propres et les comptes virtuels."
 
 # messages-i18n.c:76
 #: gnucash/gtkbuilder/assistant-hierarchy.glade:602
@@ -17804,7 +17806,7 @@ msgstr "Bas"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:3664
 msgid "Tabs"
-msgstr ""
+msgstr "Onglets"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:3677
 msgid "Show close button on _notebook tabs"
@@ -35193,14 +35195,12 @@ msgid "The default tax table to apply to customers."
 msgstr "La table de taxation par défaut à appliquer aux clients."
 
 #: libgnucash/engine/gnc-optiondb.cpp:1343
-#, fuzzy
-#| msgid "Default Vendor TaxTable"
 msgid "Default Vendor Tax Table"
-msgstr "Table de taxation fournisseur par défaut"
+msgstr "Régime fiscal fournisseur par défaut"
 
 #: libgnucash/engine/gnc-optiondb.cpp:1344
 msgid "The default tax table to apply to vendors."
-msgstr "La table de taxation à appliquer par défaut aux fournisseurs."
+msgstr "Le régime fiscal à appliquer par défaut aux fournisseurs."
 
 #: libgnucash/engine/gnc-optiondb.cpp:1349
 msgid "The default date format used for fancy printed dates."
@@ -35382,65 +35382,66 @@ msgstr "Transaction invalidée"
 #. identification (e.g., Form 1040, Schedule A).
 #: libgnucash/tax/gnc-locale-tax.c:93
 msgid "Tax-related but has no tax code"
-msgstr "Taxe liée mais sans code de taxe"
+msgstr ""
+"Fiscalisé mais la référence à la ligne de la déclaration d'impots est "
+"manquante"
 
 #: libgnucash/tax/gnc-locale-tax.c:107
 msgid "Tax entity type not specified"
-msgstr "L'élément type de taxe n'est pas spécifié"
+msgstr "Le type d'entité fiscale n'est pas spécifié"
 
 #: libgnucash/tax/gnc-locale-tax.c:161
 #, c-format
 msgid "Tax type %s: invalid code %s for account type"
-msgstr "Type de taxe %s : code invalide %s pour ce type de compte"
+msgstr "Type d'impôt %s : code invalide %s pour ce type de compte"
 
 #: libgnucash/tax/gnc-locale-tax.c:165
 #, c-format
 msgid "Not tax-related; tax type %s: invalid code %s for account type"
 msgstr ""
-"Non lié à la taxe ; type de taxe %s : code invalide %s pour ce type de compte"
+"Non fiscalisé ; type d'impôt %s : code invalide %s pour ce type de compte"
 
 #: libgnucash/tax/gnc-locale-tax.c:178
 #, c-format
 msgid "Invalid code %s for tax type %s"
-msgstr "Code invalide %s pour ce type de taxe %s"
+msgstr "Code invalide %s pour le type d'impôt %s"
 
 #: libgnucash/tax/gnc-locale-tax.c:182
 #, c-format
 msgid "Not tax-related; invalid code %s for tax type %s"
-msgstr "Nom lié à la taxe ; code invalide %s pour ce type de taxe %s"
+msgstr "Non fiscalisé ; code invalide %s pour le type d'impôt %s"
 
 #: libgnucash/tax/gnc-locale-tax.c:200
 #, c-format
 msgid "No form: code %s, tax type %s"
-msgstr "Pas de formulaire : code %s, type de taxe %s"
+msgstr "Pas de formulaire : code %s, type d'impôt %s"
 
 #: libgnucash/tax/gnc-locale-tax.c:204
 #, c-format
 msgid "Not tax-related; no form: code %s, tax type %s"
-msgstr "Non lié à la taxe ; aucun formulaire : code %s, type de taxe %s"
+msgstr "Non fiscalisé ; aucun formulaire : code %s, type d'impôt %s"
 
 #: libgnucash/tax/gnc-locale-tax.c:221 libgnucash/tax/gnc-locale-tax.c:236
 #, c-format
 msgid "No description: form %s, code %s, tax type %s"
-msgstr "Pas de description : formulaire %s, code %s, type de taxe %s"
+msgstr "Pas de description : formulaire %s, code %s, type d'impôt %s"
 
 #: libgnucash/tax/gnc-locale-tax.c:225 libgnucash/tax/gnc-locale-tax.c:240
 #, c-format
 msgid "Not tax-related; no description: form %s, code %s, tax type %s"
 msgstr ""
-"Non lié à la taxe ; pas de description : formulaire %s, code %s, type de "
-"taxe %s"
+"Non fiscalisé ; pas de description : formulaire %s, code %s, type d'impôt %s"
 
 #: libgnucash/tax/gnc-locale-tax.c:263
 #, c-format
 msgid "Not tax-related; %s%s: %s (code %s, tax type %s)"
-msgstr "Non lié aux taxes ; %s%s : %s (code %s, type de taxe %s)"
+msgstr "Non fiscalisé ; %s%s : %s (code %s, type d'impôt %s)"
 
 # src/gnome/glade-gnc-dialogs.c:564
 #: libgnucash/tax/gnc-locale-tax.c:310
 #, c-format
 msgid "(Tax-related subaccounts: %d)"
-msgstr "(Taxes liées aux sous-comptes : %d)"
+msgstr "(Sous-comptes fiscaux : %d)"
 
 #: libgnucash/tax/us/txf.scm:122
 msgid "No help available."
