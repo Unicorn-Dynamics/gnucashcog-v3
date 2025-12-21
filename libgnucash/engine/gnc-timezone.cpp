@@ -455,9 +455,9 @@ namespace IANAParser
 	    {
                 int64_t transition_time;
                 // Ensure correct alignment for ARM.
-                memcpy(&transition_time,
-                       endian_swap(reinterpret_cast<int64_t*>(&fileblock[fb_index])),
+                memcpy(&transition_time, &fileblock[fb_index],
                        sizeof(int64_t));
+                transition_time = *(endian_swap(&transition_time));
                 auto info = static_cast<uint8_t>(fileblock[info_index]);
                 transitions.push_back({transition_time, info});
 	    }
