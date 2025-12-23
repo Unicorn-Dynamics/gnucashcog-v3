@@ -127,7 +127,7 @@ subset_sum (SplitInfoVec::const_iterator iter,
         if (!solution.splits.empty())
         {
             solution.abort_id = Autoclear::ABORT_MULTI;
-            solution.abort = "Cannot uniquely clear splits. Found multiple possibilities.";
+            solution.abort = N_("Cannot uniquely clear splits. Found multiple possibilities.");
             return;
         }
         else
@@ -146,7 +146,7 @@ subset_sum (SplitInfoVec::const_iterator iter,
     {
         DEBUG ("ABORT: timeout");
         solution.abort_id = Autoclear::ABORT_TIMEOUT;
-        solution.abort = "Auto-clear exceeds allocated time";
+        solution.abort = N_("Auto-clear exceeds allocated time");
         return;
     }
 
@@ -202,7 +202,7 @@ gnc_account_get_autoclear_splits (Account *account, gnc_numeric toclear_value,
     if (target == 0)
     {
         g_set_error (error, autoclear_quark, Autoclear::ABORT_NOP, "%s",
-                     "Account is already at Auto-Clear Balance.");
+                     N_("Account is already at Auto-Clear Balance."));
         return nullptr;
     }
 
@@ -236,7 +236,7 @@ gnc_account_get_autoclear_splits (Account *account, gnc_numeric toclear_value,
     if (solution.splits.empty())
     {
         g_set_error (error, autoclear_quark, Autoclear::ABORT_UNREACHABLE, "%s",
-                     "The selected amount cannot be cleared.");
+                     N_("The selected amount cannot be cleared."));
         return nullptr;
     }
     else if (solution.abort_id)
