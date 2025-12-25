@@ -216,15 +216,25 @@ get_autoclear_icon (GError* error)
     return it == icon_names.end() ? "dialog-information" : it->second;
 }
 
+#define GNC_PREF_ENABLE_AUTOCLEAR "enable-autoclear-in-reconcile"
+
 static void
 calculate_autoclear (RecnWindow *recnData)
 {
     g_return_if_fail (recnData);
 
+    bool enabled = gnc_prefs_get_bool (GNC_PREFS_GROUP_RECONCILE, GNC_PREF_ENABLE_AUTOCLEAR);
+    auto action = g_action_map_lookup_action (G_ACTION_MAP(recnData->simple_action_group),
+                                              "RecnAutoClearAction");
+    g_simple_action_set_enabled (G_SIMPLE_ACTION(action), enabled);
+    gtk_widget_set_visible (recnData->autoclear_button, enabled);
+    if (!enabled)
+        return;
+
     GError* error = nullptr;
     Account* acct = xaccAccountLookup (&recnData->account, gnc_get_current_book ());
 
-#define MAX_AUTOCLEAR_SECONDS 1
+    static const unsigned int MAX_AUTOCLEAR_SECONDS = 1;
 
     GList *splits_to_clear = gnc_account_get_autoclear_splits
         (acct, recnData->new_ending, recnData->statement_date, &error, MAX_AUTOCLEAR_SECONDS);
