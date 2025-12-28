@@ -702,6 +702,9 @@ TimeZoneProvider::parse_file(const std::string& tzname)
         catch(const boost::gregorian::bad_year& err)
         {
             continue;
+        } catch (std::out_of_range &)
+        {
+            continue;
         }
         last_time = this_time;
         last_info = this_info;

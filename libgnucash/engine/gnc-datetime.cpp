@@ -29,6 +29,7 @@
 #include <boost/date_time/local_time/local_time.hpp>
 #include <boost/locale.hpp>
 #include <boost/regex.hpp>
+#include <stdexcept>
 #include <unicode/smpdtfmt.h>
 #include <unicode/locid.h>
 #include <unicode/udat.h>
@@ -36,6 +37,7 @@
 #include <unicode/calendar.h>
 #include <libintl.h>
 #include <locale.h>
+#include<chrono>
 #include <map>
 #include <memory>
 #include <iostream>
@@ -176,6 +178,10 @@ LDT_from_unix_local(const time64 time)
     {
         throw(std::invalid_argument("Time value is outside the supported year range."));
     }
+    catch(std::out_of_range&)
+    {
+        throw(std::invalid_argument("Time value is outside the supported year range."));
+    }
 }
 /* If a date-time falls in a DST transition the LDT constructor will
  * fail because either the date-time doesn't exist (when starting DST
@@ -227,6 +233,10 @@ LDT_from_date_time(const Date& tdate, const Duration& tdur, const TZ_Ptr tz)
     {
         throw(std::invalid_argument("Time value is outside the supported year range."));
     }
+    catch(std::out_of_range&)
+    {
+        throw(std::invalid_argument("Time value is outside the supported year range."));
+    }
 
 }
 
@@ -274,6 +284,10 @@ LDT_from_struct_tm(const struct tm tm)
     {
         throw(std::invalid_argument{"Time value is outside the supported year range."});
     }
+    catch(std::out_of_range&)
+    {
+        throw(std::invalid_argument("Time value is outside the supported year range."));
+    }
 }
 
 void
@@ -291,7 +305,10 @@ _reset_tzp()
 class GncDateTimeImpl
 {
 public:
-    GncDateTimeImpl() : m_time(boost::local_time::local_sec_clock::local_time(tzp->get(boost::gregorian::day_clock::local_day().year()))) {}
+  /* Boost::date_time's localtime function relies on the C library's, so it may
+   * suffer from the 2038 failure. std::chrono is supposed to be immune to that.
+   */
+    GncDateTimeImpl() : m_time(LDT_from_unix_local(std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch()).count())) {}
     GncDateTimeImpl(const time64 time) : m_time(LDT_from_unix_local(time)) {}
     GncDateTimeImpl(const struct tm tm) : m_time(LDT_from_struct_tm(tm)) {}
     GncDateTimeImpl(const GncDateImpl& date, DayPart part = DayPart::neutral);
@@ -448,6 +465,10 @@ GncDateTimeImpl::GncDateTimeImpl(const char* str) :
         m_time = LDT_from_date_time(pdt.date(), pdt.time_of_day(), tzptr);
     }
     catch(boost::gregorian::bad_year&)
+    {
+        throw(std::invalid_argument("The date string was outside of the supported year range."));
+    }
+    catch(std::out_of_range&)
     {
         throw(std::invalid_argument("The date string was outside of the supported year range."));
     }
