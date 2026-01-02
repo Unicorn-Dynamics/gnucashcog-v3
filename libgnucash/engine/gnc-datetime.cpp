@@ -535,11 +535,14 @@ constexpr size_t DATEBUFLEN = 100;
 static std::string
 win_date_format(std::string format, struct tm tm)
 {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     wchar_t buf[DATEBUFLEN];
     memset(buf, 0, DATEBUFLEN);
     std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>, wchar_t> conv;
     auto numchars = wcsftime(buf, DATEBUFLEN - 1, conv.from_bytes(format).c_str(), &tm);
     return conv.to_bytes(buf);
+#pragma GCC diagnostic pop
 }
 
 /* Microsoft's strftime uses the time zone flags differently from
