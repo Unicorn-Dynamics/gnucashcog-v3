@@ -27,7 +27,7 @@
 # ButterflyOfFire <ButterflyOfFire@protonmail.com>, 2022.
 # Laurent Bigonville <bigon@bigon.be>, 2022.
 # Simon Arlott <weblate.simon@arlott.org>, 2022.
-# Philippe Lamare <ph.lamare@free.fr>, 2022, 2023.
+# Philippe Lamare <ph.lamare@free.fr>, 2022, 2023, 2026.
 # Dyf_Tfh <n.zhao@hotmail.fr>, 2023.
 # Gaël CATLLA <gcatlla@free.fr>, 2023.
 # Vincent Dawans <dawansv@gmail.com>, 2023.
@@ -47,8 +47,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2025-12-21 17:00+0000\n"
-"Last-Translator: Anastasios Ikonomou <anastasios.ikonomou@gmail.com>\n"
+"PO-Revision-Date: 2026-01-03 18:01+0000\n"
+"Last-Translator: Philippe Lamare <ph.lamare@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "fr/>\n"
 "Language: fr\n"
@@ -80,38 +80,38 @@ msgid ""
 "Tried to look up an undefined date symbol '~a'. This report was probably "
 "saved by a later version of GnuCash. Defaulting to today."
 msgstr ""
-"Aucune valeur possible pour le symbole de date « ~a ». Ce rapport à "
-"certainement du être enregistré avec une version plus récente de GnuCash. La "
-"date d'aujourd'hui sera donc utilisée."
+"Le symbole de date '~a' est indéfini. Ce rapport a probablement été "
+"enregistré avec une version plus récente de GnuCash. La date d'aujourd'hui "
+"sera utilisée."
 
 #: bindings/guile/date-utilities.scm:715
 #: gnucash/gnome-utils/gnc-period-select.c:70
 #: libgnucash/engine/gnc-option-date.cpp:264
 msgid "Start of this year"
-msgstr "Début de l'année actuelle"
+msgstr "Début de l'année courante"
 
 #: bindings/guile/date-utilities.scm:718
 #: libgnucash/engine/gnc-option-date.cpp:265
 msgid "First day of the current calendar year."
-msgstr "Premier jour de l'année calendaire actuelle."
+msgstr "Premier jour de l'année calendaire courante."
 
 #: bindings/guile/date-utilities.scm:722
 #: gnucash/gnome-utils/gnc-period-select.c:86
 #: libgnucash/engine/gnc-option-date.cpp:272
 msgid "End of this year"
-msgstr "Fin de l'année actuelle"
+msgstr "Fin de l'année courante"
 
 #: bindings/guile/date-utilities.scm:725
 #: libgnucash/engine/gnc-option-date.cpp:273
 msgid "Last day of the current calendar year."
-msgstr "Dernier jour de l'année calendaire actuelle."
+msgstr "Dernier jour de l'année calendaire courante."
 
 # po/guile_strings.txt:107
 #: bindings/guile/date-utilities.scm:729
 #: gnucash/gnome-utils/gnc-period-select.c:71
 #: libgnucash/engine/gnc-option-date.cpp:280
 msgid "Start of previous year"
-msgstr "Début de l'année dernière"
+msgstr "Début de l'année précédente"
 
 #: bindings/guile/date-utilities.scm:732
 #: libgnucash/engine/gnc-option-date.cpp:281
@@ -123,7 +123,7 @@ msgstr "Premier jour de l'année calendaire précédente."
 #: gnucash/gnome-utils/gnc-period-select.c:87
 #: libgnucash/engine/gnc-option-date.cpp:288
 msgid "End of previous year"
-msgstr "Fin de l'année dernière"
+msgstr "Fin de l'année précédente"
 
 #: bindings/guile/date-utilities.scm:739
 #: libgnucash/engine/gnc-option-date.cpp:289
@@ -160,29 +160,29 @@ msgstr ""
 #: gnucash/gnome-utils/gnc-period-select.c:66
 #: libgnucash/engine/gnc-option-date.cpp:168
 msgid "Start of this month"
-msgstr "Début du mois actuel"
+msgstr "Début du mois courant"
 
 #: bindings/guile/date-utilities.scm:760
 #: libgnucash/engine/gnc-option-date.cpp:169
 msgid "First day of the current month."
-msgstr "Premier jour du mois actuel."
+msgstr "Premier jour du mois courant."
 
 #: bindings/guile/date-utilities.scm:764
 #: gnucash/gnome-utils/gnc-period-select.c:82
 #: libgnucash/engine/gnc-option-date.cpp:176
 msgid "End of this month"
-msgstr "Fin du mois actuel"
+msgstr "Fin du mois courant"
 
 #: bindings/guile/date-utilities.scm:767
 #: libgnucash/engine/gnc-option-date.cpp:177
 msgid "Last day of the current month."
-msgstr "Dernier jour du mois actuel."
+msgstr "Dernier jour du mois courant."
 
 #: bindings/guile/date-utilities.scm:771
 #: gnucash/gnome-utils/gnc-period-select.c:67
 #: libgnucash/engine/gnc-option-date.cpp:184
 msgid "Start of previous month"
-msgstr "Début du mois dernier"
+msgstr "Début du mois précédent"
 
 #: bindings/guile/date-utilities.scm:774
 #: libgnucash/engine/gnc-option-date.cpp:185
@@ -193,7 +193,7 @@ msgstr "Premier jour du mois précédent."
 #: gnucash/gnome-utils/gnc-period-select.c:83
 #: libgnucash/engine/gnc-option-date.cpp:192
 msgid "End of previous month"
-msgstr "Fin du mois dernier"
+msgstr "Fin du mois précédent"
 
 #: bindings/guile/date-utilities.scm:781
 #: libgnucash/engine/gnc-option-date.cpp:193
@@ -204,30 +204,30 @@ msgstr "Dernier jour du mois précédent."
 #: bindings/guile/date-utilities.scm:785
 #: libgnucash/engine/gnc-option-date.cpp:216
 msgid "Start of current quarter"
-msgstr "Début du trimestre actuel"
+msgstr "Début du trimestre courant"
 
 #: bindings/guile/date-utilities.scm:788
 #: libgnucash/engine/gnc-option-date.cpp:217
 msgid "First day of the current quarterly accounting period."
-msgstr "Premier jour de la période comptable trimestrielle actuelle."
+msgstr "Premier jour de la période comptable trimestrielle courante."
 
 # po/guile_strings.txt:107
 #: bindings/guile/date-utilities.scm:792
 #: libgnucash/engine/gnc-option-date.cpp:224
 msgid "End of current quarter"
-msgstr "Fin du trimestre actuel"
+msgstr "Fin du trimestre courant"
 
 #: bindings/guile/date-utilities.scm:795
 #: libgnucash/engine/gnc-option-date.cpp:225
 msgid "Last day of the current quarterly accounting period."
-msgstr "Dernier jour de la période comptable trimestrielle actuelle."
+msgstr "Dernier jour de la période comptable trimestrielle courante."
 
 # po/guile_strings.txt:107
 #: bindings/guile/date-utilities.scm:799
 #: gnucash/gnome-utils/gnc-period-select.c:69
 #: libgnucash/engine/gnc-option-date.cpp:232
 msgid "Start of previous quarter"
-msgstr "Début du trimestre dernier"
+msgstr "Début du trimestre précédent"
 
 #: bindings/guile/date-utilities.scm:802
 #: libgnucash/engine/gnc-option-date.cpp:233
@@ -259,7 +259,7 @@ msgstr "Aujourd'hui"
 #: bindings/guile/date-utilities.scm:815
 #: libgnucash/engine/gnc-option-date.cpp:81
 msgid "The current date."
-msgstr "La date actuelle."
+msgstr "La date courante."
 
 #: bindings/guile/options.scm:388 gnucash/gnome/top-level.c:462
 #: libgnucash/engine/gnc-optiondb.cpp:1201 libgnucash/engine/qofbookslots.h:72
