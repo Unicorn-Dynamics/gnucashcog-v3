@@ -2952,7 +2952,8 @@ gnc_account_child_index (const Account *parent, const Account *child)
     g_return_val_if_fail(GNC_IS_ACCOUNT(parent), -1);
     g_return_val_if_fail(GNC_IS_ACCOUNT(child), -1);
     auto& children = GET_PRIVATE(parent)->children;
-    return std::distance (children.begin(), std::find (children.begin(), children.end(), child));
+    auto find_it = std::find (children.begin(), children.end(), child);
+    return find_it == children.end() ? -1 : std::distance (children.begin(), find_it);
 }
 
 Account *

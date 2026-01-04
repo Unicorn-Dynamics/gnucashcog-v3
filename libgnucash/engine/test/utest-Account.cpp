@@ -1854,6 +1854,21 @@ test_gnc_account_append_remove_child (Fixture *fixture, gconstpointer pData)
  * gnc_account_child_index
  * gnc_account_nth_child
  */
+
+static void
+test_gnc_account_child_index (Fixture *fixture, gconstpointer pData)
+{
+    auto root{gnc_account_get_root (fixture->acct)};
+    g_assert_cmpint (gnc_account_child_index (root, fixture->acct), == , -1);
+
+    auto book{gnc_account_get_book (fixture->acct)};
+    auto new_acct{xaccMallocAccount(book)};
+    g_assert_cmpint (gnc_account_child_index (root, new_acct), == , -1);
+
+    gnc_account_append_child (root, new_acct);
+    g_assert_cmpint (gnc_account_child_index (root, new_acct), == , 2);
+}
+
 /* gnc_account_n_descendants
 gint
 gnc_account_n_descendants (const Account *account)// C: 12 in 6 */
@@ -2860,6 +2875,7 @@ test_suite_account (void)
     GNC_TEST_ADD_FUNC (suitename, "xaccAccountOrder", test_xaccAccountOrder );
     GNC_TEST_ADD (suitename, "qofAccountSetParent", Fixture, &some_data, setup, test_qofAccountSetParent,  teardown );
     GNC_TEST_ADD (suitename, "gnc account append/remove child", Fixture, NULL, setup, test_gnc_account_append_remove_child,  teardown );
+    GNC_TEST_ADD (suitename, "test_gnc_account_child_index", Fixture, &some_data, setup, test_gnc_account_child_index,  teardown );
     GNC_TEST_ADD (suitename, "gnc account n descendants", Fixture, &some_data, setup, test_gnc_account_n_descendants,  teardown );
     GNC_TEST_ADD (suitename, "gnc account get current depth", Fixture, &some_data, setup, test_gnc_account_get_current_depth,  teardown );
     GNC_TEST_ADD (suitename, "gnc account get tree depth", Fixture, &complex, setup, test_gnc_account_get_tree_depth,  teardown );
