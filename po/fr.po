@@ -48,7 +48,7 @@ msgstr ""
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
 "PO-Revision-Date: 2025-12-21 09:45+0000\n"
-"Last-Translator: Laurent Aufrere <lecture@cbol.org>\n"
+"Last-Translator: Frédéric Mergey <fmergey@yahoo.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "fr/>\n"
 "Language: fr\n"
@@ -31504,7 +31504,7 @@ msgstr "Répartir la transaction"
 
 #: gnucash/report/trep-engine.scm:2029
 msgid "CSV disabled for double column amounts"
-msgstr "L'option CSV est désactivée pour les comptes avec double colonnes"
+msgstr "CSV désactivé pour les montants à double colonne"
 
 #. Translators: Both ~a's are dates
 #: gnucash/report/trep-engine.scm:2576
@@ -31521,7 +31521,7 @@ msgstr "Co_uper"
 #: gnucash/ui/gnc-embedded-register-window.ui:12
 #: gnucash/ui/gnc-main-window.ui:105
 msgid "Cut the current selection and copy it to clipboard"
-msgstr "Coupe la selection courante et la copie dans le presse-papiers"
+msgstr "Couper la sélection actuelle et la copier dans le presse-papiers"
 
 #: gnucash/ui/gnc-embedded-register-window.ui:15
 #: gnucash/ui/gnc-main-window.ui:108
