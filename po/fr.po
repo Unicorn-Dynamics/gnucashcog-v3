@@ -32,7 +32,7 @@
 # Gaël CATLLA <gcatlla@free.fr>, 2023.
 # Vincent Dawans <dawansv@gmail.com>, 2023.
 # Xavier Gandillot (aka xavier268), 2023.
-# Laurent Aufrere <lecture@cbol.org>, 2024.
+# Laurent Aufrere <lecture@cbol.org>, 2024, 2025.
 # aleksej0R <omolice@hotmail.fr>, 2024.
 # Over_score <wablate@lorang.net>, 2024.
 # Martin LORANG <wablate@lorang.net>, 2024.
@@ -48,7 +48,7 @@ msgstr ""
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
 "PO-Revision-Date: 2025-12-21 09:45+0000\n"
-"Last-Translator: Anastasios Ikonomou <anastasios.ikonomou@gmail.com>\n"
+"Last-Translator: Laurent Aufrere <lecture@cbol.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "fr/>\n"
 "Language: fr\n"
@@ -5046,7 +5046,7 @@ msgstr "Créer une nouvelle facture en dupliquant l'actuelle"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:218
 msgid "_Post Bill"
-msgstr "_Enregistrer la facture"
+msgstr "_Poster une facture"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:218
 msgid "Post this bill to your Chart of Accounts"
