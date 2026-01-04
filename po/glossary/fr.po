@@ -11,7 +11,7 @@
 # Thomas Jungers <thomasjungers@gmail.com>, 2021.
 # Maxime Leroy <lisacintosh@gmail.com>, 2021.
 # Sébastien Ray <sebastien.ray@normalesup.org>, 2022.
-# aleksej0R <omolice@hotmail.fr>, 2022, 2023.
+# aleksej0R <omolice@hotmail.fr>, 2022, 2023, 2025.
 # Vincent Dawans <dawansv@gmail.com>, 2023.
 # Laurent Aufrere <lecture@cbol.org>, 2024.
 # Anastasios Ikonomou <anastasios.ikonomou@gmail.com>, 2024, 2025.
@@ -22,7 +22,7 @@ msgstr ""
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2024-06-22 06:24+0200\n"
 "PO-Revision-Date: 2025-12-21 19:00+0000\n"
-"Last-Translator: Anastasios Ikonomou <anastasios.ikonomou@gmail.com>\n"
+"Last-Translator: aleksej0R <omolice@hotmail.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gnucash/glossary/"
 "fr/>\n"
 "Language: fr\n"
@@ -230,11 +230,11 @@ msgstr "solde"
 
 #. "Balance brought forward - usually the first entry of an account statement containing the 'balance c/f' of the previous billing period or page"
 msgid "balance b/f"
-msgstr "report"
+msgstr "à nouveaux (début d'année)"
 
 #. "Balance carried forward - usually the last entry of an account statement to be used as 'balance b/f' on the next billing period or page"
 msgid "balance c/f"
-msgstr "total à reporter"
+msgstr "à nouveaux (fin d'année)"
 
 #. "A written record of money received and paid out, showing the difference between the two total amounts"
 msgid "balance sheet"
