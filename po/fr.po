@@ -47,8 +47,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2025-12-21 09:45+0000\n"
-"Last-Translator: Frédéric Mergey <fmergey@yahoo.com>\n"
+"PO-Revision-Date: 2025-12-21 17:00+0000\n"
+"Last-Translator: Anastasios Ikonomou <anastasios.ikonomou@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "fr/>\n"
 "Language: fr\n"
@@ -325,7 +325,7 @@ msgstr "personnalisée"
 #: gnucash/report/reports/standard/new-owner-report.scm:55
 #: libgnucash/engine/gnc-optiondb.cpp:1354
 msgid "Tax"
-msgstr "Taxe"
+msgstr "Impôt"
 
 # po/guile_strings.txt:173
 #: bindings/guile/options.scm:400 libgnucash/engine/gnc-optiondb.cpp:1354
@@ -916,9 +916,9 @@ msgid ""
 msgstr ""
 "Saisissez la ou les première(s) lettre(s) d'un nom de compte existant dans "
 "la colonne virement du registre, et GnuCash complétera le nom à partir de "
-"votre liste de comptes. Pour les sous-comptes, saisissez la ou les "
-"première(s) lettre(s) du compte parent, suivie(s) par \":\" et la ou les "
-"première(s) lettre(s) du sous-compte (par exemple A:E pour Avoirs:Espèces)."
+"votre liste de comptes. Pour les sous-comptes, saisissez la ou les première"
+"(s) lettre(s) du compte parent, suivie(s) par \":\" et la ou les première(s) "
+"lettre(s) du sous-compte (par exemple A:E pour Actifs:Espèces)."
 
 #: doc/tip_of_the_day.list.c:71
 msgid ""
@@ -1307,7 +1307,7 @@ msgstr "... payez \"%s\" ?"
 # messages-i18n.c:96
 #: gnucash/gnome/assistant-loan.cpp:776
 msgid "via Escrow account?"
-msgstr "à travers un compte en séquestre ?"
+msgstr "à travers un compte séquestre ?"
 
 # messages-i18n.c:300
 #: gnucash/gnome/assistant-loan.cpp:923
@@ -2684,7 +2684,7 @@ msgstr "Fichier trouvé"
 
 #: gnucash/gnome/dialog-doclink.c:537
 msgid "File Not Found"
-msgstr "Non trouvé"
+msgstr "Fichier non trouvé"
 
 #: gnucash/gnome/dialog-doclink.c:550
 msgid "Address Found"
@@ -2899,7 +2899,7 @@ msgstr "Virtuel"
 #: gnucash/gtkbuilder/dialog-account.glade:323
 #: gnucash/import-export/csv-exp/csv-tree-export.cpp:63
 msgid "Hidden"
-msgstr "C_aché"
+msgstr "Caché"
 
 #: gnucash/gnome/dialog-find-account.c:437
 msgid "Not Used"
@@ -2913,7 +2913,7 @@ msgstr "Solde"
 # messages-i18n.c:211
 #: gnucash/gnome/dialog-find-account.c:459
 msgid "Tax related"
-msgstr "_Imposable"
+msgstr "Imposable"
 
 # messages-i18n.c:166
 #. Translators: %s is a full account name.
@@ -3343,19 +3343,19 @@ msgstr "Afficher la facture à payer"
 #: gnucash/gnome/dialog-invoice.c:2359
 #: gnucash/gnome-search/dialog-search.c:1091
 msgid "New Expense Voucher"
-msgstr "Nouveau bon d'achat"
+msgstr "Nouvelle note de frais"
 
 # messages-i18n.c:284 po/guile_strings.txt:274
 # src/gnome/glade-gnc-dialogs.c:647
 #: gnucash/gnome/dialog-invoice.c:2365
 msgid "Edit Expense Voucher"
-msgstr "Modification du bon d'achat"
+msgstr "Modification de la note de frais"
 
 # messages-i18n.c:284 po/guile_strings.txt:274
 # src/gnome/glade-gnc-dialogs.c:647
 #: gnucash/gnome/dialog-invoice.c:2369
 msgid "View Expense Voucher"
-msgstr "Afficher la fiche de frais"
+msgstr "Afficher la note de frais"
 
 # messages-i18n.c:190
 #: gnucash/gnome/dialog-invoice.c:2691
@@ -3375,12 +3375,12 @@ msgstr "N° de facturation"
 # messages-i18n.c:231
 #: gnucash/gnome/dialog-invoice.c:2811 gnucash/gnome/dialog-invoice.c:3037
 msgid "Voucher Information"
-msgstr "Informations sur le bon d'achat"
+msgstr "Informations sur la note de frais"
 
 #: gnucash/gnome/dialog-invoice.c:2813 gnucash/gnome/dialog-invoice.c:3040
 #: gnucash/gnome/dialog-invoice.c:3648
 msgid "Voucher ID"
-msgstr "N° de fiche de frais"
+msgstr "N° de note de frais"
 
 # messages-i18n.c:280
 #: gnucash/gnome/dialog-invoice.c:3371
@@ -3502,13 +3502,13 @@ msgstr "Notes de la facture"
 # src/gnome/glade-gnc-dialogs.c:644
 #: gnucash/gnome/dialog-invoice.c:3620
 msgid "Voucher Owner"
-msgstr "Destinataire du bon d'achat"
+msgstr "Émetteur de la note de frais"
 
 # messages-i18n.c:294 po/guile_strings.txt:205
 # src/gnome/glade-gnc-dialogs.c:644
 #: gnucash/gnome/dialog-invoice.c:3623
 msgid "Voucher Notes"
-msgstr "Notes du bon d'achat"
+msgstr "Notes de la note de frais"
 
 # messages-i18n.c:345 po/guile_strings.txt:254
 # src/gnome/glade-gnc-dialogs.c:354 src/gnome/glade-gnc-dialogs.c:408
@@ -3582,7 +3582,7 @@ msgstr "Recherche de facture fournisseur"
 # src/gnome/glade-gnc-dialogs.c:647
 #: gnucash/gnome/dialog-invoice.c:3759
 msgid "Find Expense Voucher"
-msgstr "Recherche de fiche de frais"
+msgstr "Recherche de note de frais"
 
 # messages-i18n.c:284 po/guile_strings.txt:274
 # src/gnome/glade-gnc-dialogs.c:647
@@ -4070,7 +4070,7 @@ msgstr "Vous devez choisir une devise."
 #: gnucash/gnome/dialog-price-editor.c:297
 #: gnucash/gnome-utils/dialog-transfer.cpp:1678
 msgid "You must enter a valid amount."
-msgstr "Vous devez saisir un montant brut valide."
+msgstr "Vous devez saisir un montant valide."
 
 #: gnucash/gnome/dialog-print-check.c:862
 msgid "Cannot save check format file."
@@ -4438,7 +4438,7 @@ msgstr "Comptes sélectionnés : %d"
 #: gnucash/gnome/dialog-tax-info.c:1184
 #: gnucash/gtkbuilder/dialog-tax-info.glade:89
 msgid "Income Tax Identity"
-msgstr "Identification des taxes sur le revenu"
+msgstr "Identification des impôts sur le revenu"
 
 #: gnucash/gnome/dialog-tax-info.c:1190
 #: gnucash/gtkbuilder/dialog-options.glade:55
@@ -4586,7 +4586,7 @@ msgstr[1] ""
 # messages-i18n.c:136
 #: gnucash/gnome/gnc-plugin-budget.c:320
 msgid "Select a Budget"
-msgstr "_Selectionner un budget"
+msgstr "Selectionner un budget"
 
 # messages-i18n.c:310
 #: gnucash/gnome/gnc-plugin-page-account-tree.cpp:294
@@ -12956,7 +12956,7 @@ msgstr ""
 "\n"
 "Si c'est votre \"première importation\", il est possible que toutes les "
 "lignes doivent être associées. Lors des importations suivantes, l'outil "
-"essayera d'associer  automatiquement les transactions à partir des "
+"essayera d'associer automatiquement les transactions à partir des "
 "précédentes importations.\n"
 "\n"
 "Le degré de confiance pour cette association automatique est affiché dans "
