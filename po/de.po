@@ -30,7 +30,7 @@
 # Steffen Möller <steffen_moeller@gmx.de>, 2022.
 # Carsten Hütter <Carsten.Huetter@gmx.de>, 2023.
 # "Frank H. Ellenberger" <frank.h.ellenberger@gmail.com>, 2024.
-# Alois Levermann <alois@levermann.xyz>, 2025.
+# Alois Levermann <alois@levermann.xyz>, 2025, 2026.
 # Thomas Kriegel <thomasMapper@bin-wieder-da.de>, 2025.
 # Franko <web.90947@t.sc-ha.net>, 2025.
 #
@@ -45,7 +45,7 @@ msgstr ""
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
 "PO-Revision-Date: 2026-01-01 20:01+0000\n"
-"Last-Translator: Christian Wehling <christian.wehling@web.de>\n"
+"Last-Translator: Alois Levermann <alois@levermann.xyz>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "de/>\n"
 "Language: de\n"
@@ -21750,8 +21750,8 @@ msgid ""
 "This transaction cannot be balanced: The imbalance is a fraction smaller "
 "than the commodity allows."
 msgstr ""
-"Diese Transaktion kann nicht ausgeglichen werden: Das Ungleichgewicht ist um "
-"einen Bruchteil kleiner, als die Aktie erlaubt."
+"Diese Transaktion kann nicht ausgeglichen werden: Die Abweichung ist um "
+"einen Bruchteil kleiner, als erlaubt."
 
 #: gnucash/register/ledger-core/split-register-control.cpp:98
 msgid "Rebalance Transaction"
