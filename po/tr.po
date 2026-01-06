@@ -10,14 +10,15 @@
 # Bora <boratici@gmail.com>, 2021, 2022.
 # Bora Atıcı <boratici.acc@gmail.com>, 2023, 2024, 2025.
 # Gurkan Bebek <gurkanbebek@gmail.com>, 2025.
+# Arda Yılmaz <fijarom@fijarom.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.14\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2025-11-30 05:00+0000\n"
-"Last-Translator: Gurkan Bebek <gurkanbebek@gmail.com>\n"
+"PO-Revision-Date: 2026-01-02 14:01+0000\n"
+"Last-Translator: Arda Yılmaz <fijarom@fijarom.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "tr/>\n"
 "Language: tr\n"
@@ -25,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "X-POOTLE-MTIME: 1497808015.000000\n"
 
@@ -51,6 +52,9 @@ msgid ""
 "Tried to look up an undefined date symbol '~a'. This report was probably "
 "saved by a later version of GnuCash. Defaulting to today."
 msgstr ""
+"Tanımlanmamış bir tarih sembolü \"~a\" aranmaya çalışıldı. Bu rapor "
+"muhtemelen GnuCash'in daha yeni bir sürümü tarafından kaydedilmiş. Bugünün "
+"tarihi kullanılıyor."
 
 #: bindings/guile/date-utilities.scm:715
 #: gnucash/gnome-utils/gnc-period-select.c:70
@@ -5136,7 +5140,7 @@ msgstr "Dondurulmuş"
 #: gnucash/gnome-search/search-reconciled.c:225
 #: gnucash/report/trep-engine.scm:161
 msgid "Voided"
-msgstr ""
+msgstr "Geçersiz"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:3318
 msgid "Show:"

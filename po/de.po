@@ -18,7 +18,7 @@
 # K. Herbert <herbert.ka@mailo.com>, 2020.
 # Milo Ivir <mail@milotype.de>, 2020.
 # Alois Spitzbart <spitz234@hotmail.com>, 2020, 2021.
-# Christian Wehling <christian.wehling@web.de>, 2020-2024, 2025.
+# Christian Wehling <christian.wehling@web.de>, 2020-2024, 2025, 2026.
 # Marco Zietzling <marco.zietzling@gmail.com>, 2020-2021.
 # Christian Stimming <christian@cstimming.de>, 2021, 2023.
 # Julian Heinzel <jeinzi@gmx.de>, 2021.
@@ -30,7 +30,7 @@
 # Steffen Möller <steffen_moeller@gmx.de>, 2022.
 # Carsten Hütter <Carsten.Huetter@gmx.de>, 2023.
 # "Frank H. Ellenberger" <frank.h.ellenberger@gmail.com>, 2024.
-# Alois Levermann <alois@levermann.xyz>, 2025.
+# Alois Levermann <alois@levermann.xyz>, 2025, 2026.
 # Thomas Kriegel <thomasMapper@bin-wieder-da.de>, 2025.
 # Franko <web.90947@t.sc-ha.net>, 2025.
 #
@@ -44,8 +44,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2025-12-18 20:00+0000\n"
-"Last-Translator: Christian Wehling <christian.wehling@web.de>\n"
+"PO-Revision-Date: 2026-01-01 20:01+0000\n"
+"Last-Translator: Alois Levermann <alois@levermann.xyz>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "de/>\n"
 "Language: de\n"
@@ -5364,8 +5364,8 @@ msgid ""
 "This transaction involves more than one other account. Select a specific "
 "split to jump to that account."
 msgstr ""
-"Diese Transaktion betrifft mehr als ein anderes Konto. Wählen Sie einen "
-"bestimmten Split, um zu diesem Konto zu springen."
+"Dieser Buchungssatz betrifft mehr als ein Gegenkonto. Wähle einen einzelnen "
+"Buchungsteil, um zum entsprechenden Gegenkonto zu springen."
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5129
 msgid ""
@@ -21750,8 +21750,8 @@ msgid ""
 "This transaction cannot be balanced: The imbalance is a fraction smaller "
 "than the commodity allows."
 msgstr ""
-"Diese Transaktion kann nicht ausgeglichen werden: Das Ungleichgewicht ist um "
-"einen Bruchteil kleiner, als die Aktie erlaubt."
+"Diese Transaktion kann nicht ausgeglichen werden: Die Abweichung ist um "
+"einen Bruchteil kleiner, als erlaubt."
 
 #: gnucash/register/ledger-core/split-register-control.cpp:98
 msgid "Rebalance Transaction"

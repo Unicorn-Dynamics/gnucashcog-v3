@@ -40,10 +40,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.14\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2025-11-19 20:54+0000\n"
+"PO-Revision-Date: 2025-12-25 00:00+0000\n"
 "Last-Translator: DGDS <dagrinddontstop@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/gnucash/gnucash/zh_Hans/>\n"
@@ -52,7 +52,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 
 #: bindings/guile/date-utilities.scm:173
@@ -745,8 +745,8 @@ msgid ""
 "lists, you can chat to them live on IRC! Join them on #gnucash at irc.gimp."
 "net"
 msgstr ""
-"您可以轻松地与 GnuCash 开发者取得联系。除了各种邮件列表外，您还可以使用 IRC "
-"与他们实时聊天！连接至 irc.gimp.net 服务器，通过 #gnucash 频道加入他们。"
+"GnuCash 开发者团队便于联系。除了各种邮件列表外，您还可通过 IRC 实时与他们聊天"
+"！请加入 irc.gimp.net 服务器上的 #gnucash 频道参与讨论。"
 
 #: doc/tip_of_the_day.list.c:15
 msgid ""
@@ -755,8 +755,9 @@ msgid ""
 "on the sub-menu Import and click on QIF or OFX file, respectively. Then, "
 "follow the instructions provided."
 msgstr ""
-"从 Quicken、MS Money 或其他 QIF/OFX 文件导入现有财务数据。\"文件 -> 导入 -> "
-"QIF 文件 或 OFX/QFX 文件\"。"
+"您可以轻松导入来自 Quicken、MS Money 或其他可导出 QIF 文件或 OFX 文件的程序中"
+"的现有财务数据。在“文件”菜单中，点击子菜单“导入”，然后分别选择 QIF 或 OFX 文"
+"件。随后，请按照提供的说明进行操作。"
 
 #: doc/tip_of_the_day.list.c:20
 msgid ""
@@ -773,15 +774,17 @@ msgid ""
 "For more information on income and expense accounts, please see the GnuCash "
 "online manual."
 msgstr ""
-"和 Quicken 这类软件不同，GnuCash 使用科目而非类别跟踪收入支出；更多信息，请查"
-"看 GnuCash 在线手册。"
+"若您熟悉其他财务软件（如 Quicken），请注意 GnuCash 采用科目而非分类来追踪收支"
+"。有关收支科目的更多信息，请参阅 GnuCash 在线手册。"
 
 #: doc/tip_of_the_day.list.c:29
 msgid ""
 "It is possible to change which columns display in the Chart of Accounts. "
 "Just locate the triangle at the far right of the column headings, and click "
 "it to see the different columns available."
-msgstr "显示主窗格其他标签，标签栏最右下拉三角形，查看并设置。"
+msgstr ""
+"您可以更改会计科目表中显示的列。只需找到列标题最右侧的三角形图标，点击它即可"
+"查看可用的不同列。"
 
 #: doc/tip_of_the_day.list.c:33
 msgid ""
@@ -789,7 +792,9 @@ msgid ""
 "of the main window to bring up the account menu options. Within each "
 "register, clicking the right mouse button brings up the transaction menu "
 "options."
-msgstr "科目或交易，右键查看编辑选项。"
+msgstr ""
+"在主窗口的“科目”选项卡中点击鼠标右键（Mac OS X 系统中为 Control+点击），即可"
+"调出科目菜单选项。在每个账簿内，单击鼠标右键则会显示交易菜单选项。"
 
 #: doc/tip_of_the_day.list.c:38
 msgid ""
@@ -797,7 +802,10 @@ msgid ""
 "This will bring up a dialog box where you can enter account details. For "
 "more information on choosing an account type or setting up a chart of "
 "accounts, please see the GnuCash online manual."
-msgstr "工具栏\"新建\"，新建一个科目；更多相关资料，请见 GnuCash 在线手册。"
+msgstr ""
+"通过点击主窗口工具栏中的“新建”按钮创建新科目。这将弹出一个对话框，供您输入科"
+"目详细信息。有关选择科目类型或设置会计科目表的更多信息，请参阅 GnuCash 在线手"
+"册。"
 
 #: doc/tip_of_the_day.list.c:44
 msgid ""
@@ -808,11 +816,11 @@ msgid ""
 "select \"View\" in the menu bar and check \"Double Line\" or\n"
 "check \"Double Line View\" in Preferences:Register Defaults."
 msgstr ""
-"每笔交易都有\"说明\"字段，您可以在此填写有用的信息。\n"
+"每笔交易都设有“备注”字段，可用于记录有用的信息。\n"
 "\n"
-"要使其可见\n"
-"选择\"查看 -> 双行\"，或\n"
-"\"编辑 -> 首选项 -> 标签页默认选项 -> 其他 -> 双行\"。"
+"若需显示该字段：\n"
+"请在菜单栏选择“视图”并勾选“双行显示”，或\n"
+"在“首选项：登记簿默认设置”中勾选“双行视图”。"
 
 #: doc/tip_of_the_day.list.c:50
 msgid ""
@@ -821,8 +829,8 @@ msgid ""
 "View menu, you can choose the register style Auto-Split Ledger or "
 "Transaction Journal."
 msgstr ""
-"录入拆分的交易，如多次扣款的工资单，工具栏\"分录\"；另外，\"查看\"选择\"自动"
-"分录账簿\"或\"交易日记账\"。"
+"要录入多项拆分交易（例如含多项扣除的工资单），请点击工具栏中的“拆分”按钮。或"
+"者，您也可在“视图”菜单中选择“自动拆分分类账”或“交易日记账”的登记簿样式。"
 
 #: doc/tip_of_the_day.list.c:55
 msgid ""
@@ -830,7 +838,10 @@ msgid ""
 "add, subtract, multiply and divide. Simply type the first value, then select "
 "'+', '-','*', or '/'. Type the second value and press Enter to record the "
 "calculated amount."
-msgstr "标签页借方/贷方字段，支持 \"+、-、*、/\" 运算，注：不需 = 号。"
+msgstr ""
+"在账簿中输入金额时，您可以使用 GnuCash 计算器进行加、减、乘、除运算。只需输入"
+"第一个数值，然后选择'+‘、’-'、‘*'或’/'。输入第二个数值后按 Enter 键即可记录计"
+"算结果。"
 
 #: doc/tip_of_the_day.list.c:60
 msgid ""
@@ -839,8 +850,8 @@ msgid ""
 "GnuCash will automatically complete the remainder of the transaction as it "
 "was last entered."
 msgstr ""
-"快速登记相同的交易：录入描述的第一个文字，然后一直 Tab，将匹配最近的那笔相同"
-"交易。"
+"快速填充功能可轻松录入常用交易。当您输入常用交易描述的首字母后按下 Tab 键，"
+"GnuCash 将自动补全上次录入的交易剩余内容。"
 
 #: doc/tip_of_the_day.list.c:65
 msgid ""
@@ -850,8 +861,9 @@ msgid ""
 "followed by ':' and the first letter(s) of the subaccount (e.g. A:C for "
 "Assets:Cash)."
 msgstr ""
-"转账字段筛选：父科目，直接录入首字；子科目，先父科目首字，跟\":\"（半角），再"
-"子科目首字（例如，Assets:Cash，为 A:C)。"
+"在转账账簿列中输入现有科目名称的首字母，GnuCash 将从您的科目列表中自动补全名"
+"称。对于子科目，请先输入父科目的首字母，接着输入冒号（:），再输入子科目的首字"
+"母（例如：A:C 表示资产:现金）。"
 
 #: doc/tip_of_the_day.list.c:71
 msgid ""
@@ -859,21 +871,23 @@ msgid ""
 "Accounts tab in the main window, highlight the parent account and select "
 "Edit->Open Subaccounts from the menu."
 msgstr ""
-"查看所有子科目交易？选中父科目，\"编辑 -> 打开子科目\"（或右键 -> 打开子科"
-"目）。"
+"想在一本账簿中查看所有子科目的交易记录吗？在主窗口的“账户”选项卡中，选中父科"
+"目，然后从菜单中选择“编辑”→“打开子科目”。"
 
 #: doc/tip_of_the_day.list.c:75
 msgid ""
 "When entering dates, you can type '+' or '-' to increment or decrement the "
 "selected date. You can use '+' and '-' to increment and decrement check "
 "numbers as well."
-msgstr "录入时，'+'/'-'（半角）可以递增/递减日期和编号。"
+msgstr ""
+"输入日期时，可输入“+”或“-”来增加或减少所选日期。同样，也可使用“+”和“-”来增加"
+"或减少支票编号。"
 
 #: doc/tip_of_the_day.list.c:79
 msgid ""
 "To switch between multiple tabs in the main window, press Control+Page Up/"
 "Down."
-msgstr "标签页切换，Control+Alt+Page Up/Down。"
+msgstr "要在主窗口中切换多个标签页，请按 Control+Page Up/Down 组合键。"
 
 #: doc/tip_of_the_day.list.c:82
 msgid ""
@@ -881,8 +895,8 @@ msgid ""
 "reconciled. You can also press Tab and Shift-Tab to move between deposits "
 "and withdrawals."
 msgstr ""
-"对账界面，空格标记交易为已结清。Tab 与 Shift-Tab 在借方与贷方间切换，up/down"
-"（方向键）选中交易。"
+"在对账窗口中，您可以按空格键将交易标记为已对账。您还可以按 Tab 键和 Shift-"
+"Tab 键在存款和取款之间切换。"
 
 #: doc/tip_of_the_day.list.c:86
 msgid ""
@@ -890,7 +904,9 @@ msgid ""
 "Transfer button in the register toolbar, select the accounts, and the "
 "Currency Transfer options for entering the exchange rate or the other "
 "currency's amount will be available."
-msgstr "不同币种科目转账，\"转账\"（或正常录入），设置科目、汇率、数额等。"
+msgstr ""
+"要在不同货币科目之间转账，请点击账簿工具栏中的“转账”按钮，选择相关科目后，即"
+"可使用货币转账选项输入汇率或另一种货币的金额。"
 
 #: doc/tip_of_the_day.list.c:91
 msgid ""
@@ -899,8 +915,8 @@ msgid ""
 "use. Click the triangle at the far right of the column headings to change "
 "the display."
 msgstr ""
-"证券编辑器界面设置报价源，这样可以很轻松地了解价格，点击标题列最右边三角形改"
-"变显示方式。"
+"您可设置证券编辑器界面显示证券的报价来源，从而轻松查看所持证券使用的在线数据"
+"源。点击列标题最右侧的三角形图标即可切换显示方式。"
 
 #: doc/tip_of_the_day.list.c:96
 msgid ""
@@ -908,22 +924,23 @@ msgid ""
 "financial information you want at a glance. To do so, use the Sample & "
 "Custom->\"Custom Multicolumn Report\" report."
 msgstr ""
-"多报表同时显示，直观地了解财务信息，方式：\"报表 -> 多列报表 -> 自定义\"。"
+"您可将多份报表整合至单一窗口，实现财务信息的全面可视化呈现。操作时请选用“示例"
+"与自定义”菜单下的“自定义多列报表”功能。"
 
 #: doc/tip_of_the_day.list.c:101
 msgid ""
 "Style Sheets affect how reports are displayed. Choose a style sheet for your "
 "report as a report option, and use the Edit->Style Sheets menu to customize "
 "style sheets."
-msgstr "报表基于样式表，选择合适的样式表，\"编辑 -> 样式表\"。"
+msgstr ""
+"样式表影响报告的显示方式。请在报告选项中为报告选择样式表，并通过“编辑->样式表"
+"”菜单自定义样式表。"
 
 #: doc/tip_of_the_day.list.c:105
 msgid ""
 "To raise the accounts menu in the transfer field of a register page, press "
 "the Menu key or the Ctrl-Down key combination."
-msgstr ""
-"在交易界面转账字段调出科目菜单，请按菜单键或Ctrl-Down组合键（这功能没测试成"
-"功，不知为何）。"
+msgstr "要在账簿页面的转账区域调出科目菜单，请按菜单键或 Ctrl+向下键组合键。"
 
 #: doc/tip_of_the_day.list.c:108
 msgid ""
@@ -947,7 +964,9 @@ msgid ""
 "If you work overnight, you should close and reopen your working registers "
 "after midnight, to get the new date as default for new transactions. It is "
 "not necessary to restart GnuCash."
-msgstr "通宵工作，应在零时后重启标签页，以更新日期，并不需重启 GnuCash。"
+msgstr ""
+"若需通宵工作，应在午夜后关闭并重新打开工作账簿，以便新交易默认采用新日期。无"
+"需重启 GnuCash。"
 
 #: doc/tip_of_the_day.list.c:121
 msgid ""
@@ -961,15 +980,17 @@ msgid ""
 "To visually compare on screen the contents of 2 tabs, in one of the tabs, "
 "select Window->New Window with Page from the menu to duplicate that tab in a "
 "new window."
-msgstr "主窗口比较2个标签页，\"查看 -> 账簿多开\"。"
+msgstr ""
+"要在屏幕上直观比较两个标签页的内容，请在其中一个标签页中，从菜单中选择“窗口”→"
+"“新建带页面的窗口”，将该标签页复制到新窗口中。"
 
 #: doc/tip_of_the_day.list.c:129
 msgid ""
 "You can assign or modify keyboard shortcuts for many GnuCash actions. See "
 "https://wiki.gnucash.org/wiki/Keyboard_Shortcuts."
 msgstr ""
-"你可以为GnuCash中的许多功能指定或修改快捷键，详见 https://wiki.gnucash.org/"
-"wiki/Keyboard_Shortcuts 。"
+"您可以为许多 GnuCash 操作分配或修改键盘快捷键。请参阅 https://"
+"wiki.gnucash.org/wiki/Keyboard_Shortcuts。"
 
 #: doc/tip_of_the_day.list.c:132
 msgid ""
@@ -984,11 +1005,11 @@ msgstr ""
 "失，取而代之的是更加诡异和莫名其妙的东西。\n"
 "还有一种说法，这事情已经发生了。\n"
 "\n"
-"道格拉斯-亚当斯，《宇宙尽头的餐厅》"
+"道格拉斯·亚当斯，《宇宙尽头的餐厅》"
 
 #: gnucash/gnome/assistant-acct-period.c:188
 msgid "The book was closed successfully."
-msgstr "顺利结账。"
+msgstr "账簿已成功结账。"
 
 #. Translators: %s is a date string. %d is the number of books
 #. that will be created. This is a ngettext(3) message (but
@@ -1001,7 +1022,9 @@ msgid ""
 msgid_plural ""
 "The earliest transaction date found in this book is %s. Based on the "
 "selection made above, this book will be split into %d books."
-msgstr[0] "最早的交易日期是 %s，基于上面的选择，此账簿会拆分成 %d 个。"
+msgstr[0] ""
+"本账簿中发现的最早交易日期为 %s。根据上述选定条件，本账簿将被拆分为 %d 本账册"
+"。"
 
 #. Translators: Run the assistant in your language to see GTK's translation of the button labels.
 #: gnucash/gnome/assistant-acct-period.c:371
@@ -1014,22 +1037,25 @@ msgid ""
 "Amend the Title and Notes or Click on \"Next\" to proceed.\n"
 "Click on \"Back\" to adjust the dates or \"Cancel\"."
 msgstr ""
-"新建一个账簿，将包含截止凌晨%s的所有交易（总共%d笔、分布在%d个科目中），\n"
+"您已要求创建一本账簿。该账簿将包含截至 %s 午夜的所有交易记录（共计 %d 笔交易"
+"，分布于 %d 个科目）。\n"
 "\n"
-"修改标题和注释，或“下一步”，\n"
-"“返回”调整日期或 \"取消\"。"
+"请修改标题和备注，或点击“下一步”继续。\n"
+"点击“返回”调整日期，或选择“取消”。"
 
 #: gnucash/gnome/assistant-acct-period.c:388
 #, c-format
 msgid "Period %s - %s"
-msgstr "从 %s 到 %s 期间"
+msgstr "周期 %s - %s"
 
 #: gnucash/gnome/assistant-acct-period.c:406
 #, c-format
 msgid ""
 "The book will be created with the title %s when you click on \"Apply\". "
 "Click on \"Back\" to adjust, or \"Cancel\" to not create any book."
-msgstr "“应用”，将创建账簿%s，“返回”再次调整，“取消”不创建任何账簿。"
+msgstr ""
+"点击“应用”后，账簿将以%s为标题创建。点击“返回”可调整设置，点击“取消”则不创建"
+"任何账簿。"
 
 #: gnucash/gnome/assistant-acct-period.c:525
 #, c-format
@@ -1038,7 +1064,7 @@ msgid ""
 "Congratulations! You are done closing books!\n"
 msgstr ""
 "%s\n"
-"恭喜！已顺利结账！\n"
+"恭喜！你已经完成结账了！\n"
 
 #: gnucash/gnome/assistant-acct-period.c:594
 #: gnucash/gtkbuilder/dialog-fincalc.glade:659
@@ -1046,7 +1072,7 @@ msgstr ""
 #: gnucash/report/reports/standard/balsheet-pnl.scm:1210
 #: gnucash/report/reports/standard/budget-flow.scm:44
 msgid "Period"
-msgstr "期间"
+msgstr "周期"
 
 #: gnucash/gnome/assistant-acct-period.c:595
 #: gnucash/gtkbuilder/dialog-book-close.glade:86
@@ -1070,11 +1096,11 @@ msgstr "“%s”中的科目"
 
 #: gnucash/gnome/assistant-hierarchy.cpp:881
 msgid "No description provided."
-msgstr "没有描述。"
+msgstr "未提供描述。"
 
 #: gnucash/gnome/assistant-hierarchy.cpp:896
 msgid "Accounts in Category"
-msgstr "模板中包含的科目"
+msgstr "类别中的科目"
 
 #: gnucash/gnome/assistant-hierarchy.cpp:1108
 msgid "zero"
@@ -1082,7 +1108,7 @@ msgstr "零"
 
 #: gnucash/gnome/assistant-hierarchy.cpp:1121
 msgid "existing account"
-msgstr "已存在的科目"
+msgstr "现有科目"
 
 #: gnucash/gnome/assistant-hierarchy.cpp:1259
 #: gnucash/gnome/business-gnome-utils.c:698
