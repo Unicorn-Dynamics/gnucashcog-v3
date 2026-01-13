@@ -49,7 +49,7 @@ template<typename T>
 T*
 endian_swap(T* t)
 {
-#if ! WORDS_BIGENDIAN
+#ifndef WORDS_BIGENDIAN
     auto memp = reinterpret_cast<unsigned char*>(t);
     std::reverse(memp, memp + sizeof(T));
 #endif
