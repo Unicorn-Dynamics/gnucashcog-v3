@@ -292,16 +292,17 @@ sort_by_last_reconcile_date (GtkTreeModel *f_model,
                              gpointer user_data)
 {
     const Account *account1, *account2;
-    time64 account1_date, account2_date;
+    time64 account1_date = 0, account2_date = 0;
 
     sort_cb_setup (f_model, f_iter1, f_iter2, &account1, &account2);
 
-    if (!xaccAccountGetReconcileLastDate (account1, &account1_date))
-        account1_date = 0;
+    gboolean rec1 = xaccAccountGetReconcileLastDate (account1, &account1_date);
+    gboolean rec2 = xaccAccountGetReconcileLastDate (account2, &account2_date);
 
-    if (!xaccAccountGetReconcileLastDate (account2, &account2_date))
-        account2_date = 0;
-
+    if (!rec1)
+        return rec2 ? -1 : xaccAccountOrder (account1, account2);
+    if (!rec2)
+        return 1;
     if (account1_date < account2_date)
         return -1;
     else if (account1_date > account2_date)
