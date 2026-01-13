@@ -368,24 +368,8 @@ GncSqlColumnTableEntry::get_row_value_from_object(QofIdTypeConst obj_name,
         QofAccessFunc getter = get_getter(obj_name);
         if (getter != nullptr)
         {
-            if constexpr (sizeof(T) >= sizeof(void*))
-                result = reinterpret_cast<T>((getter)(const_cast<void*>(pObject),
-                                                  nullptr));
-            else
-            {
-                union converter
-                {
-                    intptr_t whole;
-                    uint32_t upper;
-                    uint32_t lower;
-                };
-                converter conv;
-                conv.whole = reinterpret_cast<intptr_t>((getter)(const_cast<void*>(pObject),
-                                                                        nullptr));
-                if (conv.upper)
-                    throw std::runtime_error("Bits left over when converting pointer"); //crash out
-                result = conv.lower;
-            }
+            result = static_cast<T>(reinterpret_cast<intptr_t>((getter)(const_cast<void*>(pObject),
+                                                                         nullptr)));
         }
     }
     return result;
