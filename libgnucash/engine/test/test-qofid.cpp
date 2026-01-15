@@ -27,11 +27,11 @@
 #include <algorithm>
 #include <vector>
 
-#include "../qofid.h"
-#include "../qofid-p.h"
-#include "../qofbook.h"
-#include "../gncJob.h"
-#include "../qofinstance-p.h"
+#include "qofid.h"
+#include "qofid-p.h"
+#include "qofbook.h"
+#include "gncJob.h"
+#include "qofinstance-p.h"
 
 // This is the error handler that does nothing but count how many times it is
 // called.  The handler_count is incremented every time.
@@ -150,19 +150,17 @@ static gint cb_compare(GncJob* job1, GncJob* job2)
     return g_strcmp0(gncJobGetID(job1), gncJobGetID(job2));
 }
 
-static bool is_in(const char* str, const std::vector<const char*> str_vect)
+static bool is_in(const char* str, const std::vector<const char*>& str_vect)
 {
-    for(auto id : str_vect)
-        if(!g_strcmp0(id, str))
-            return true;
-    return false;
+    return std::find_if(str_vect.begin(), str_vect.end(),
+        [str](auto id)->bool{ return !g_strcmp0(id, str); }) != str_vect.end();
 }
 
 TEST(QofIDTest, collection_foreach)
 {
     auto col = qof_collection_new(GNC_ID_JOB);
     auto book = qof_book_new();
-    auto job_ids = std::vector<const char*>{"zzz", "ggg", "qqq", "aaa"};
+    std::vector<const char*> job_ids{"zzz", "ggg", "qqq", "aaa"};
     std::vector<GncJob*> jobs;
     for(auto id : job_ids)
     {
