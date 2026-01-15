@@ -139,7 +139,7 @@ collection_compare_cb (QofInstance *ent, gpointer user_data)
     QofCollection *target;
     QofInstance *e;
     const GncGUID *guid;
-    gint value;
+    gint* value;
 
     e = NULL;
     target = (QofCollection*)user_data;
@@ -147,28 +147,25 @@ collection_compare_cb (QofInstance *ent, gpointer user_data)
     {
         return;
     }
-    value = *(gint*)qof_collection_get_data(target);
-    if (value != 0)
+    value = (gint*)qof_collection_get_data(target);
+    if (*value != 0)
     {
         return;
     }
     guid = qof_instance_get_guid(ent);
     if (guid_equal(guid, guid_null()))
     {
-        value = -1;
-        qof_collection_set_data(target, &value);
+        *value = -1;
         return;
     }
     g_return_if_fail (target->e_type == ent->e_type);
     e = qof_collection_lookup_entity(target, guid);
     if ( e == NULL )
     {
-        value = 1;
-        qof_collection_set_data(target, &value);
+        *value = 1;
         return;
     }
-    value = 0;
-    qof_collection_set_data(target, &value);
+    *value = 0;
 }
 
 gint
