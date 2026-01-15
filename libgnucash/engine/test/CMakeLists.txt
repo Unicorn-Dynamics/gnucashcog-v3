@@ -242,6 +242,7 @@ set(test_engine_SOURCES_DIST
         test-numeric.cpp
         test-object.c
         test-qof.c
+        test-qofid.cpp
         test-qofbook.c
         test-qofinstance.cpp
         test-qofobject.c
