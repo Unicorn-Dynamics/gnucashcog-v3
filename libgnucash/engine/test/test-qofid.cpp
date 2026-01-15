@@ -134,6 +134,10 @@ TEST(QofIDTest, collection_compare)
     qof_instance_set_guid(QOF_INSTANCE(book4), guid_null());
     EXPECT_EQ(-1, qof_collection_compare(target, merge));
     qof_instance_set_guid(QOF_INSTANCE(book4), old_guid);
+
+    qof_collection_destroy(target);
+    qof_collection_destroy(merge);
+    qof_collection_destroy(incompat);
 }
 
 static void cb_visit(GncJob* job, std::vector<const char*>* results_ptr)
@@ -182,6 +186,8 @@ TEST(QofIDTest, collection_foreach)
     EXPECT_STREQ(results[1], "ggg");
     EXPECT_STREQ(results[2], "qqq");
     EXPECT_STREQ(results[3], "zzz");
+
+    qof_collection_destroy(col);
 }
 
 TEST(QofIDTest, collection_print_dirty)
@@ -202,4 +208,5 @@ TEST(QofIDTest, collection_print_dirty)
     output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output.find("Book collection is dirty."), size_t(0));
     qof_collection_mark_clean(col);
+    qof_collection_destroy(col);
 }
