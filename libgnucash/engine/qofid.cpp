@@ -220,26 +220,6 @@ qof_collection_lookup_entity (const QofCollection *col, const GncGUID * guid)
     return ent;
 }
 
-QofCollection *
-qof_collection_from_glist (QofIdType type, const GList *glist)
-{
-    QofCollection *coll;
-    QofInstance *ent;
-    const GList *list;
-
-    coll = qof_collection_new(type);
-    for (list = glist; list != NULL; list = list->next)
-    {
-        ent = QOF_INSTANCE(list->data);
-        if (FALSE == qof_collection_add_entity(coll, ent))
-        {
-            qof_collection_destroy(coll);
-            return NULL;
-        }
-    }
-    return coll;
-}
-
 guint
 qof_collection_count (const QofCollection *col)
 {
