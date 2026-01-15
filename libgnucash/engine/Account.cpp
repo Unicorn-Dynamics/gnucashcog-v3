@@ -5078,6 +5078,14 @@ gnc_account_tree_staged_transaction_traversal (const Account *acc,
     return 0;
 }
 
+time64
+gnc_account_get_earliest_date (const Account* account)
+{
+    g_return_val_if_fail (GNC_IS_ACCOUNT(account), INT64_MAX);
+    const auto& splits = xaccAccountGetSplits (account);
+    return splits.empty() ? INT64_MAX : xaccTransGetDate (xaccSplitGetParent (splits.front()));
+}
+
 /********************************************************************\
 \********************************************************************/
 

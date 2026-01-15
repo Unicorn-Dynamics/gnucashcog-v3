@@ -195,7 +195,7 @@ date point, a projected minimum balance including scheduled transactions."))
               (fold
                (lambda (a b)
                  (if (zero? (xaccAccountGetSplitsSize a)) b
-                     (let ((date (xaccTransGetDate (xaccSplitGetParent (car (xaccAccountGetSplits a))))))
+                     (let ((date (gnc-account-get-earliest-date a)))
                        (if b (min date b) date))))
                #f accounts))
              (sx-hash (if earliest
