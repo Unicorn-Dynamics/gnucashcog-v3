@@ -50,6 +50,7 @@ qof_collection_new (QofIdType type)
     QofCollection *col;
     col = g_new0(QofCollection, 1);
     col->e_type = static_cast<QofIdType>(CACHE_INSERT (type));
+    col->is_dirty = FALSE;
     col->hash_of_entities = guid_hash_table_new();
     col->data = NULL;
     return col;
