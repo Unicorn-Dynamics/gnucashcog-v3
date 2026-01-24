@@ -2115,34 +2115,35 @@ be excluded from periodic reporting.")
            (gnc:make-gnc-monetary
             currency (gnc-numeric-convert
                       (/ amount divisor) scu GNC-HOW-RND-ROUND)))))
-  (define (row->num-of-commodities row)
-    ;; for a row, find the maximum number of commodities being stored
-    (apply max
-           (map (lambda (col)
-                  (let ((cell (grid-get grid row col)))
-                    (if (null? cell) 0
-                        (length (get-grid-datum (car cell))))))
-                (cons 'col-total list-of-cols))))
-  (define (make-table-cell row col commodity-idx divisor)
+  (define (row->commodities row)
+    (sort! (fold (lambda (cell acc)
+                   (fold (lambda (mon acc2)
+                           (let ((comm (gnc:gnc-monetary-commodity mon)))
+                             (if (member comm acc2) acc2 (cons comm acc2))))
+                         acc (get-grid-datum cell)))
+                 '() (grid-get grid row #f))
+           (lambda (a b) (< (gnc-commodity-compare a b) 0))))
+  (define (make-table-cell row col commodity divisor)
     (let ((cell (grid-get grid row col)))
       (if (null? cell) ""
           (gnc:make-html-table-cell/markup
            "number-cell"
            (monetary-div
-            (list-ref-safe (get-grid-datum (car cell)) commodity-idx)
+            (find (lambda (mon) (equal? commodity (gnc:gnc-monetary-commodity mon)))
+                  (get-grid-datum (car cell)))
             divisor)))))
-  (define (make-row row commodity-idx)
+  (define (make-row row commodity first?)
     (append
      (list (cond
-            ((positive? commodity-idx) "")
+            ((not first?) "")
             ((eq? row 'row-total) (G_ "Grand Total"))
             (else (cdr row))))
-     (map (lambda (col) (make-table-cell row col commodity-idx 1))
+     (map (lambda (col) (make-table-cell row col commodity 1))
           list-of-cols)
-     (list (make-table-cell row 'col-total commodity-idx 1))
+     (list (make-table-cell row 'col-total commodity 1))
      (if row-average-enabled?
          (list (make-table-cell
-                row 'col-total commodity-idx (length list-of-cols)))
+                row 'col-total commodity (length list-of-cols)))
          '())))
   (let ((table (gnc:make-html-table)))
     (gnc:html-table-set-caption! table (G_ optname-grid))
@@ -2156,11 +2157,10 @@ be excluded from periodic reporting.")
      'attribute (list "class" "column-heading-right"))
     (for-each
      (lambda (row)
-       (for-each
-        (lambda (commodity-idx)
-          (gnc:html-table-append-row!
-           table (make-row row commodity-idx)))
-        (iota (row->num-of-commodities row))))
+       (let lp ((commodities (row->commodities row)) (first? #t))
+         (unless (null? commodities)
+           (gnc:html-table-append-row! table (make-row row (car commodities) first?))
+           (lp (cdr commodities) #f))))
      (if (memq 'row-total (grid-rows grid))
          (append list-of-rows '(row-total))
          list-of-rows))
