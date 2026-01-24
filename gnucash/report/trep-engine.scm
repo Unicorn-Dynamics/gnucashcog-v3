@@ -1780,8 +1780,10 @@ be excluded from periodic reporting.")
             (or (and first-column-merge? (retrieve-commodity (cadr columns) commodity))
                 zero))))
 
-        (set! grid
-          (grid-add grid row col (map get-commodity-grid-amount list-of-commodities)))
+        (let ((amounts (map get-commodity-grid-amount list-of-commodities)))
+          (set! grid (grid-add grid row col amounts))
+          (when (eq? level 'secondary)
+            (set! grid (grid-add grid 'row-total col amounts))))
 
         ;; each commodity subtotal gets a separate line in the html-table
         ;; each line comprises: indenting, first-column, data-columns
@@ -2136,7 +2138,7 @@ be excluded from periodic reporting.")
     (append
      (list (cond
             ((not first?) "")
-            ((eq? row 'row-total) (G_ "Grand Total"))
+            ((eq? row 'row-total) (G_ "Total"))
             (else (cdr row))))
      (map (lambda (col) (make-table-cell row col commodity 1))
           list-of-cols)
