@@ -2092,9 +2092,13 @@ be excluded from periodic reporting.")
 (define (grid-cols grid)
   (delete-duplicates (map get-grid-col grid)))
 (define (grid-add grid row col data)
-  ;; we don't need to check for duplicate cells in a row/col because
-  ;; in the trep it should never happen.
-  (cons (make-grid-cell row col data) grid))
+  (let lp ((grid grid) (rv '()) (added? #f))
+    (match grid
+      (() (if added? rv (cons (make-grid-cell row col data) rv)))
+      (((? (cut cell-match? <> row col) this) . rest)
+       (let ((coll (apply gnc:monetaries-add (append (get-grid-datum this) data))))
+         (lp rest (cons (make-grid-cell row col (coll 'format gnc:make-gnc-monetary #f)) rv) #t)))
+      ((this . rest) (lp rest (cons this rv) added?)))))
 (define (grid->html-table grid)
   (define (<? a b)
     (cond ((string? (car a)) (gnc:string-locale<? (car a) (car b)))
