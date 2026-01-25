@@ -56,6 +56,7 @@
              (gnucash report html-text))
 (use-modules (srfi srfi-11))
 (use-modules (srfi srfi-1))
+(use-modules (srfi srfi-2))
 (use-modules (srfi srfi-9))
 (use-modules (srfi srfi-26))
 (use-modules (ice-9 match))
@@ -511,6 +512,17 @@ in the Options panel."))
 
 (define gnc:lists->csv lists->csv)
 
+;; returns a list of hash keys
+(define (hash-keys hash)
+  (hash-fold (lambda (k _ p) (cons k p)) '() hash))
+
+;; mimics c++ std::map::operator[] - return the value corresponding to key,
+;; creating a new value if there's no existing one
+(define (hash-ref! hash key constructor)
+  (or (hash-ref hash key)
+      (let ((new-value (constructor)))
+        (hash-set! hash key new-value)
+        new-value)))
 
 ;;
 ;; Default Transaction Report
@@ -2072,49 +2084,50 @@ be excluded from periodic reporting.")
 
 (define (make-grid)
 
-  (define-record-type :grid-cell
-    (make-grid-cell row col datum)
-    grid-cell?
-    (row get-grid-row)
-    (col get-grid-col)
-    (datum get-grid-datum))
+  ;; cells : row-key → col-key → cell
+  ;; Primary data store. Each cell is a commodity collector.
+  ;;
+  ;; rows  : row-key → commodity → #t
+  ;; Tracks which commodities appear in each row so we know which
+  ;; sub-rows to render (one per commodity).
+  ;;
+  ;; cols  : col-key → #t
+  ;; Set of all columns that have received any data.
 
-  (let ((cells '()))
+  (let ((cells (make-hash-table))
+        (rows (make-hash-table))
+        (cols (make-hash-table)))
 
-    (define (cell-match? cell row col)
-      (and (or (not row) (equal? row (get-grid-row cell)))
-           (or (not col) (equal? col (get-grid-col cell)))))
-
-    (define (grid-get row col)
-      (filter (cut cell-match? <> row col) cells))
+    (define (grid-get row col commodity)
+      (and-let* ((row-ht (hash-ref cells row))
+                 (coll (hash-ref row-ht col)))
+        (coll 'getmonetary-strict commodity #f)))
 
     (define (grid-rows)
-      (delete-duplicates (map get-grid-row cells)))
+      (hash-keys rows))
 
     (define (grid-cols)
-      (delete-duplicates (map get-grid-col cells)))
+      (hash-keys cols))
 
+    ;; Add a list of <gnc:monetary> values into a single grid cell.
+    ;;  - Ensures the row and column exist and have commodity collector
+    ;;  - Merges amounts into the cell’s commodity collector
+    ;;  - Records commodities in this row
     (define (grid-add row col data)
-      (let lp ((rest cells) (rv '()) (added? #f))
-        (match rest
-          (() (set! cells (if added? rv (cons (make-grid-cell row col data) rv))))
-          (((? (cut cell-match? <> row col) this) . more)
-           (let* ((coll (apply gnc:monetaries-add (append (get-grid-datum this) data)))
-                  (new-cell (make-grid-cell row col (coll 'format gnc:make-gnc-monetary #f))))
-             (lp more (cons new-cell rv) #t)))
-          ((this . more) (lp more (cons this rv) added?)))))
+      (hash-set! cols col #t)
+      (let* ((cells-row-ht (hash-ref! cells row make-hash-table))
+             (cells-row-col-data (hash-ref! cells-row-ht col gnc:make-commodity-collector))
+             (rows-ht (hash-ref! rows row make-hash-table)))
+        (for-each
+         (lambda (mon)
+           (let ((comm (gnc:gnc-monetary-commodity mon)) (amt (gnc:gnc-monetary-amount mon)))
+             (cells-row-col-data 'add comm amt)
+             (hash-set! rows-ht comm #t)))
+         data)))
 
     (define (row->commodities row)
-      (sort!
-       (fold (lambda (cell acc)
-               (fold (lambda (mon acc2)
-                       (let ((comm (gnc:gnc-monetary-commodity mon)))
-                         (if (member comm acc2) acc2 (cons comm acc2))))
-                     acc
-                     (get-grid-datum cell)))
-             '()
-             (grid-get row #f))
-       (lambda (a b) (< (gnc-commodity-compare a b) 0))))
+      (sort! (hash-keys (hash-ref rows row (make-hash-table)))
+             (lambda (a b) (< (gnc-commodity-compare a b) 0))))
 
     (define (grid->html-table)
       (define (<? a b)
@@ -2137,14 +2150,8 @@ be excluded from periodic reporting.")
                  (/ amount divisor) scu GNC-HOW-RND-ROUND)))))
 
       (define (make-table-cell row col commodity divisor)
-        (let ((cell (grid-get row col)))
-          (if (null? cell) ""
-              (gnc:make-html-table-cell/markup
-               "number-cell"
-               (monetary-div
-                (find (lambda (mon) (equal? commodity (gnc:gnc-monetary-commodity mon)))
-                      (get-grid-datum (car cell)))
-                divisor)))))
+        (and-let* ((cell (grid-get row col commodity)))
+          (gnc:make-html-table-cell/markup "number-cell" (monetary-div cell divisor))))
 
       (define (make-row row commodity first?)
         (append
@@ -2184,10 +2191,10 @@ be excluded from periodic reporting.")
     (lambda (msg . args)
       (case msg
         ((add)        (apply grid-add args))
-        ;; ((get)        (apply grid-get args))      ;; (grid 'get row col)
+        ;; ((get)        (apply grid-get args))      ;; (grid 'get row col commodity)
         ;; ((rows)       (grid-rows))
         ;; ((cols)       (grid-cols))
-        ;; ((clear)      (set! cells '()))
+        ;; ((clear)      (for-each hash-clear! (list cells rows cols)))
         ((get-html)   (grid->html-table))
         (else (error "Unknown grid operation" msg))))))
 
