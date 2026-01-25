@@ -1780,8 +1780,10 @@ be excluded from periodic reporting.")
             (or (and first-column-merge? (retrieve-commodity (cadr columns) commodity))
                 zero))))
 
-        (set! grid
-          (grid-add grid row col (map get-commodity-grid-amount list-of-commodities)))
+        (let ((amounts (map get-commodity-grid-amount list-of-commodities)))
+          (grid 'add row col amounts)
+          (when (eq? level 'secondary)
+            (grid 'add 'row-total col amounts)))
 
         ;; each commodity subtotal gets a separate line in the html-table
         ;; each line comprises: indenting, first-column, data-columns
@@ -2068,92 +2070,126 @@ be excluded from periodic reporting.")
                       calculated-cells total-collectors)))))
       (values table grid csvlist))))
 
-;; grid data structure
 (define (make-grid)
-  '())
-(define (cell-match? cell row col)
-  (and (or (not row) (equal? row (vector-ref cell 0)))
-       (or (not col) (equal? col (vector-ref cell 1)))))
-(define (grid-get grid row col)
-  ;; grid filter - get all row/col - if #f then retrieve whole row/col
-  (filter
-   (lambda (cell)
-     (cell-match? cell row col))
-   grid))
-(define (grid-rows grid)
-  (delete-duplicates (map (lambda (cell) (vector-ref cell 0)) grid)))
-(define (grid-cols grid)
-  (delete-duplicates (map (lambda (cell) (vector-ref cell 1)) grid)))
-(define (grid-add grid row col data)
-  ;; we don't need to check for duplicate cells in a row/col because
-  ;; in the trep it should never happen.
-  (cons (vector row col data) grid))
-(define (grid->html-table grid)
-  (define (<? a b)
-    (cond ((string? (car a)) (gnc:string-locale<? (car a) (car b)))
-          ((number? (car a)) (< (car a) (car b)))
-          (else (gnc:error "unknown sortvalue"))))
-  (define list-of-rows (sort (delete 'row-total (grid-rows grid)) <?))
-  (define list-of-cols (sort (delete 'col-total (grid-cols grid)) <?))
-  (define row-average-enabled? (and (pair? list-of-cols) (pair? (cdr list-of-cols))))
-  (define (monetary-div monetary divisor)
-    (and monetary
-         (let* ((amount (gnc:gnc-monetary-amount monetary))
-                (currency (gnc:gnc-monetary-commodity monetary))
-                (scu (gnc-commodity-get-fraction currency)))
-           (gnc:make-gnc-monetary
-            currency (gnc-numeric-convert
-                      (/ amount divisor) scu GNC-HOW-RND-ROUND)))))
-  (define (row->num-of-commodities row)
-    ;; for a row, find the maximum number of commodities being stored
-    (apply max
-           (map (lambda (col)
-                  (let ((cell (grid-get grid row col)))
-                    (if (null? cell) 0
-                        (length (vector-ref (car cell) 2)))))
-                (cons 'col-total list-of-cols))))
-  (define (make-table-cell row col commodity-idx divisor)
-    (let ((cell (grid-get grid row col)))
-      (if (null? cell) ""
-          (gnc:make-html-table-cell/markup
-           "number-cell"
-           (monetary-div
-            (list-ref-safe (vector-ref (car cell) 2) commodity-idx)
-            divisor)))))
-  (define (make-row row commodity-idx)
-    (append
-     (list (cond
-            ((positive? commodity-idx) "")
-            ((eq? row 'row-total) (G_ "Grand Total"))
-            (else (cdr row))))
-     (map (lambda (col) (make-table-cell row col commodity-idx 1))
-          list-of-cols)
-     (list (make-table-cell row 'col-total commodity-idx 1))
-     (if row-average-enabled?
-         (list (make-table-cell
-                row 'col-total commodity-idx (length list-of-cols)))
-         '())))
-  (let ((table (gnc:make-html-table)))
-    (gnc:html-table-set-caption! table (G_ optname-grid))
-    (gnc:html-table-set-col-headers!
-     table (append (list "")
-                   (map cdr list-of-cols)
-                   (list (G_ "Total"))
-                   (if row-average-enabled? (list (G_ "Average")) '())))
-    (gnc:html-table-set-style!
-     table "th"
-     'attribute (list "class" "column-heading-right"))
-    (for-each
-     (lambda (row)
-       (for-each
-        (lambda (commodity-idx)
-          (gnc:html-table-append-row!
-           table (make-row row commodity-idx)))
-        (iota (row->num-of-commodities row))))
-     (if (memq 'row-total (grid-rows grid))
-         (append list-of-rows '(row-total))
-         list-of-rows))
-    table))
+
+  (define-record-type :grid-cell
+    (make-grid-cell row col datum)
+    grid-cell?
+    (row get-grid-row)
+    (col get-grid-col)
+    (datum get-grid-datum))
+
+  (let ((cells '()))
+
+    (define (cell-match? cell row col)
+      (and (or (not row) (equal? row (get-grid-row cell)))
+           (or (not col) (equal? col (get-grid-col cell)))))
+
+    (define (grid-get row col)
+      (filter (cut cell-match? <> row col) cells))
+
+    (define (grid-rows)
+      (delete-duplicates (map get-grid-row cells)))
+
+    (define (grid-cols)
+      (delete-duplicates (map get-grid-col cells)))
+
+    (define (grid-add row col data)
+      (let lp ((rest cells) (rv '()) (added? #f))
+        (match rest
+          (() (set! cells (if added? rv (cons (make-grid-cell row col data) rv))))
+          (((? (cut cell-match? <> row col) this) . more)
+           (let* ((coll (apply gnc:monetaries-add (append (get-grid-datum this) data)))
+                  (new-cell (make-grid-cell row col (coll 'format gnc:make-gnc-monetary #f))))
+             (lp more (cons new-cell rv) #t)))
+          ((this . more) (lp more (cons this rv) added?)))))
+
+    (define (row->commodities row)
+      (sort!
+       (fold (lambda (cell acc)
+               (fold (lambda (mon acc2)
+                       (let ((comm (gnc:gnc-monetary-commodity mon)))
+                         (if (member comm acc2) acc2 (cons comm acc2))))
+                     acc
+                     (get-grid-datum cell)))
+             '()
+             (grid-get row #f))
+       (lambda (a b) (< (gnc-commodity-compare a b) 0))))
+
+    (define (grid->html-table)
+      (define (<? a b)
+        (cond ((string? (car a)) (gnc:string-locale<? (car a) (car b)))
+              ((number? (car a)) (< (car a) (car b)))
+              (else (gnc:error "unknown sortvalue"))))
+
+      (define list-of-rows (sort (delete 'row-total (grid-rows)) <?))
+      (define list-of-cols (sort (delete 'col-total (grid-cols)) <?))
+      (define row-average-enabled? (and (pair? list-of-cols) (pair? (cdr list-of-cols))))
+
+      (define (monetary-div monetary divisor)
+        (and monetary
+             (let* ((amount (gnc:gnc-monetary-amount monetary))
+                    (currency (gnc:gnc-monetary-commodity monetary))
+                    (scu (gnc-commodity-get-fraction currency)))
+               (gnc:make-gnc-monetary
+                currency
+                (gnc-numeric-convert
+                 (/ amount divisor) scu GNC-HOW-RND-ROUND)))))
+
+      (define (make-table-cell row col commodity divisor)
+        (let ((cell (grid-get row col)))
+          (if (null? cell) ""
+              (gnc:make-html-table-cell/markup
+               "number-cell"
+               (monetary-div
+                (find (lambda (mon) (equal? commodity (gnc:gnc-monetary-commodity mon)))
+                      (get-grid-datum (car cell)))
+                divisor)))))
+
+      (define (make-row row commodity first?)
+        (append
+         (list (cond
+                ((not first?) "")
+                ((eq? row 'row-total) (G_ "Total"))
+                (else (cdr row))))
+         (map (cut make-table-cell row <> commodity 1) list-of-cols)
+         (list (make-table-cell row 'col-total commodity 1))
+         (if row-average-enabled?
+             (list (make-table-cell row 'col-total commodity (length list-of-cols)))
+             '())))
+
+      (let ((table (gnc:make-html-table)))
+        (gnc:html-table-set-caption! table (G_ optname-grid))
+        (gnc:html-table-set-col-headers!
+         table (append (list "")
+                       (map cdr list-of-cols)
+                       (list (G_ "Total"))
+                       (if row-average-enabled? (list (G_ "Average")) '())))
+        (gnc:html-table-set-style!
+         table "th"
+         'attribute (list "class" "column-heading-right"))
+
+        (for-each
+         (lambda (row)
+           (let lp ((commodities (row->commodities row)) (first? #t))
+             (unless (null? commodities)
+               (gnc:html-table-append-row!
+                table (make-row row (car commodities) first?))
+               (lp (cdr commodities) #f))))
+         (if (memq 'row-total (grid-rows))
+             (append list-of-rows '(row-total))
+             list-of-rows))
+        table))
+
+    (lambda (msg . args)
+      (case msg
+        ((add)        (apply grid-add args))
+        ;; ((get)        (apply grid-get args))      ;; (grid 'get row col)
+        ;; ((rows)       (grid-rows))
+        ;; ((cols)       (grid-cols))
+        ;; ((clear)      (set! cells '()))
+        ((get-html)   (grid->html-table))
+        (else (error "Unknown grid operation" msg))))))
 
 (define* (gnc:trep-renderer
           report-obj #:key custom-calculated-cells empty-report-message
@@ -2615,7 +2651,7 @@ be excluded from periodic reporting.")
              (gnc:html-render-options-changed options)))
 
           (when subtotal-table?
-            (gnc:html-document-add-object! document (grid->html-table grid)))
+            (gnc:html-document-add-object! document (grid 'get-html)))
 
           (unless (and subtotal-table?
                        (opt-val pagename-sorting optname-show-subtotals-only))

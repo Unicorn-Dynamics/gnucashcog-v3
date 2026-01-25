@@ -1502,13 +1502,13 @@ gnc_commodity_equal(const gnc_commodity * a, const gnc_commodity * b)
     return gnc_commodity_compare(a, b) == 0;
 }
 
-// Used as a sorting callback for deleting old prices, so it needs to be
-// stable but doesn't need to be in any particular order sensible to humans.
 int gnc_commodity_compare(const gnc_commodity * a, const gnc_commodity * b)
 {
     if (a == b) return 0;
     if (a && !b) return 1;
     if (b && !a) return -1;
+    if (auto rv = g_strcmp0 (gnc_commodity_get_unique_name (a), gnc_commodity_get_unique_name (b)))
+        return rv;
     return qof_instance_guid_compare(a, b);
 }
 
