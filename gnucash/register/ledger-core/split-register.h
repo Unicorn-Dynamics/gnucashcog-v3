@@ -607,6 +607,7 @@ gboolean gnc_split_register_full_refresh_ok (SplitRegister* reg);
 /** Private function -- outsiders must not use this */
 void gnc_copy_trans_onto_trans (Transaction* from, Transaction* to,
                                 gboolean use_cut_semantics,
+                                Account *template_account,
                                 gboolean do_commit);
 
 #endif
