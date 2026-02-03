@@ -105,6 +105,12 @@ clear_copied_item()
     copied_item.anchor_split_index = 0;
 }
 
+gboolean
+gnc_split_register_has_copied_item (void)
+{
+    return copied_item.ft || copied_item.fs;
+}
+
 static void
 gnc_copy_split_onto_split (Split* from, Split* to,
                            Account *template_account,

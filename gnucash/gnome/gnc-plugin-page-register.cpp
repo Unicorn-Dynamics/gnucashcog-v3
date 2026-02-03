@@ -1028,6 +1028,12 @@ gnc_plugin_page_register_ui_update (gpointer various,
 
     gnc_plugin_business_split_reg_ui_update (GNC_PLUGIN_PAGE(page));
 
+    // Transaction/Split paste action
+    action = gnc_plugin_page_get_action (GNC_PLUGIN_PAGE(page),
+                                         "PasteTransactionAction");
+    g_simple_action_set_enabled (G_SIMPLE_ACTION(action),
+                                 gnc_split_register_has_copied_item());
+
     /* If we are read only, make any modifying action inactive */
     if (read_only_reg)
     {
@@ -3804,6 +3810,12 @@ gnc_plugin_page_register_cmd_cut_transaction (GSimpleAction *simple,
 
     priv = GNC_PLUGIN_PAGE_REGISTER_GET_PRIVATE (page);
     gsr_default_cut_txn_handler (priv->gsr, NULL);
+
+    // Transaction/Split paste action
+    GAction *action = gnc_plugin_page_get_action (GNC_PLUGIN_PAGE(page),
+                                                  "PasteTransactionAction");
+    g_simple_action_set_enabled (G_SIMPLE_ACTION(action),
+                                 gnc_split_register_has_copied_item());
     LEAVE (" ");
 }
 
@@ -3823,6 +3835,12 @@ gnc_plugin_page_register_cmd_copy_transaction (GSimpleAction *simple,
     priv = GNC_PLUGIN_PAGE_REGISTER_GET_PRIVATE (page);
     reg = gnc_ledger_display_get_split_register (priv->ledger);
     gnc_split_register_copy_current (reg);
+
+    // Transaction/Split paste action
+    GAction *action = gnc_plugin_page_get_action (GNC_PLUGIN_PAGE(page),
+                                                  "PasteTransactionAction");
+    g_simple_action_set_enabled (G_SIMPLE_ACTION(action),
+                                 gnc_split_register_has_copied_item());
     LEAVE (" ");
 }
 
