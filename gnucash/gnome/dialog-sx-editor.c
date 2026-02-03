@@ -101,9 +101,9 @@ typedef enum _EndTypeEnum
 
 struct _GncSxEditorDialog
 {
-    GtkWidget *dialog;
-    GtkBuilder *builder;
-    GtkNotebook *notebook;
+    GtkWidget    *dialog;
+    GtkBuilder   *builder;
+    GtkNotebook  *notebook;
     SchedXaction *sx;
     /* If this is a new scheduled transaction or not. */
     int newsxP;
@@ -111,34 +111,33 @@ struct _GncSxEditorDialog
     /* The various widgets in the dialog */
     GNCLedgerDisplay *ledger;
 
-    GncFrequency *gncfreq;
+    GncFrequency     *gncfreq;
     GncDenseCalStore *dense_cal_model;
-    GncDenseCal *example_cal;
+    GncDenseCal      *example_cal;
 
-    GtkEntry *nameEntry;
-
-    GtkLabel *lastOccurLabel;
+    GtkEntry        *nameEntry;
+    GtkLabel        *lastOccurLabel;
 
     GtkToggleButton *enabledOpt;
     GtkToggleButton *autocreateOpt;
     GtkToggleButton *notifyOpt;
     GtkToggleButton *advanceOpt;
-    GtkSpinButton *advanceSpin;
+    GtkSpinButton   *advanceSpin;
     GtkToggleButton *remindOpt;
-    GtkSpinButton *remindSpin;
+    GtkSpinButton   *remindSpin;
 
     GtkToggleButton *optEndDate;
     GtkToggleButton *optEndNone;
     GtkToggleButton *optEndCount;
-    EndType end_type;
-    GtkEntry *endCountSpin;
-    GtkEntry *endRemainSpin;
-    GNCDateEdit *endDateEntry;
+    EndType          end_type;
+    GtkEntry        *endCountSpin;
+    GtkEntry        *endRemainSpin;
+    GNCDateEdit     *endDateEntry;
 
-    char *sxGUIDstr;
+    char            *sxGUIDstr;
 
     GncEmbeddedWindow *embed_window;
-    GncPluginPage *plugin_page;
+    GncPluginPage     *plugin_page;
 };
 
 /** Prototypes **********************************************************/
@@ -436,8 +435,8 @@ gnc_sxed_check_changed (GncSxEditorDialog *sxed)
  ****************************************************************************/
 typedef struct _txnCreditDebitSums
 {
-    gnc_numeric creditSum;
-    gnc_numeric debitSum;
+    gnc_numeric    creditSum;
+    gnc_numeric    debitSum;
 } txnCreditDebitSums;
 
 static txnCreditDebitSums *
