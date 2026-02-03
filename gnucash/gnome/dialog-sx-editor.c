@@ -792,7 +792,7 @@ check_transaction_splits (Transaction *txn, gpointer data)
             return FALSE;
         }
     }
-    return TRUE;
+    return FALSE; // return FALSE to continue to next transaction
 }
 
 /*******************************************************************************
