@@ -640,7 +640,8 @@ gnc_split_register_duplicate_current (SplitRegister* reg)
                    : gnc_get_num_action (trans, NULL));
 
         if (!gnc_dup_trans_dialog (gnc_split_register_get_parent (reg), NULL,
-                                   TRUE, &date, in_num, &out_num, in_tnum, &out_tnum,
+                                   !reg->is_template, &date,
+                                   in_num, &out_num, in_tnum, &out_tnum,
                                    xaccTransGetDocLink (trans), &out_tdoclink))
         {
             gnc_resume_gui_refresh ();
