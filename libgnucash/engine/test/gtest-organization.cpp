@@ -23,6 +23,9 @@
 
 #include <config.h>
 #include <glib.h>
+#include <vector>
+#include <string>
+#include "../qof.h"
 #include "../qofbook.h"
 #include "../qofinstance.h"
 #include "../gncOrganization.h"

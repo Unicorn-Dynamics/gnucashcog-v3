@@ -25,6 +25,8 @@
 
 #include <config.h>
 #include <glib.h>
+#include <vector>
+#include <algorithm>
 #include "../test-core/test-engine-stuff.h"
 #include "../qofid.h"
 #include "../qofinstance.h"
