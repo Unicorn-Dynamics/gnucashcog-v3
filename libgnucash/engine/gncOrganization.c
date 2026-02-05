@@ -415,7 +415,8 @@ static void gncOrganizationOnError (QofInstance *inst, QofBackendError errcode)
 static void gncOrganizationOnDone (QofInstance *inst)
 {
     GncOrganization *organization = (GncOrganization *) inst;
-    gncAddressClearDirty (organization->addr);
+    if (organization->addr)
+        gncAddressClearDirty (organization->addr);
 }
 
 void gncOrganizationCommitEdit (GncOrganization *organization)

@@ -869,6 +869,27 @@ TEST_F(GncOrganizationTest, CommitEditWithNull)
     gncOrganizationCommitEdit(nullptr);
 }
 
+TEST_F(GncOrganizationTest, CommitEditWithoutAddress)
+{
+    // Test commit edit when organization has no address (null addr)
+    GncOrganization* org = gncOrganizationCreate(book);
+    ASSERT_NE(nullptr, org);
+    
+    gncOrganizationSetName(org, "Test Org");
+    
+    // Verify no address
+    EXPECT_EQ(nullptr, gncOrganizationGetAddr(org));
+    
+    // This should not crash despite addr being NULL
+    gncOrganizationBeginEdit(org);
+    gncOrganizationSetActive(org, FALSE);
+    gncOrganizationCommitEdit(org);
+    
+    EXPECT_FALSE(gncOrganizationGetActive(org));
+    
+    gncOrganizationDestroy(org);
+}
+
 // ============================================================
 // Integration with QOF System
 // ============================================================

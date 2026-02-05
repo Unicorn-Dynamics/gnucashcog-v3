@@ -261,6 +261,14 @@ void qof_multi_entity_collection_foreach_sorted (const QofMultiEntityCollection 
                                                   GCompareFunc sort_fn);
 
 /** Get all entity types present in the multi-entity collection */
+/** Get list of entity types present in the multi-entity collection
+ * 
+ * @param multi_coll The multi-entity collection
+ * @return A GList of QofIdType strings representing types present.
+ *         The caller is responsible for freeing the returned list with g_list_free().
+ *         The strings themselves should not be freed as they are owned by the entities.
+ *         Returns NULL if multi_coll is NULL.
+ */
 GList * qof_multi_entity_collection_get_types (const QofMultiEntityCollection *multi_coll);
 
 /** Filter entities and create a new multi-entity collection */
