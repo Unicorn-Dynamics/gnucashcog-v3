@@ -214,6 +214,11 @@ gtest-qof-multi-entity.cpp)
 gnc_add_test(test-qof-multi-entity "${test_qof_multi_entity_SOURCES}"
   gtest_engine_INCLUDES gtest_old_engine_LIBS)
 
+set(test_organization_SOURCES
+gtest-organization.cpp)
+gnc_add_test(test-organization "${test_organization_SOURCES}"
+  gtest_engine_INCLUDES gtest_old_engine_LIBS)
+
 set(test_engine_SOURCES_DIST
         gtest-gnc-euro.cpp
         gtest-gnc-int128.cpp
@@ -227,6 +232,7 @@ set(test_engine_SOURCES_DIST
         gtest-qofquerycore.cpp
         gtest-qofevent.cpp
         gtest-qof-multi-entity.cpp
+        gtest-organization.cpp
         test-account-object.cpp
         test-address.c
         test-business.c
