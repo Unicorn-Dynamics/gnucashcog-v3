@@ -57,7 +57,7 @@
 #include "gnc-guile-utils.h"
 #include "gnc-html-history.h"
 #include "gnc-html.h"
-#include "gnc-html-factory.h"
+#include "gnc-html-factory.hpp"
 #include "gnc-file.h"
 #include "gnc-filepath-utils.h"
 #include "gnc-gtk-utils.h"
