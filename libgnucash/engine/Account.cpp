@@ -2583,6 +2583,13 @@ get_kvp_int64_path (const Account *acc, const Path& path)
     return qof_instance_get_path_kvp<int64_t> (QOF_INSTANCE(acc), path);
 }
 
+static GncGUID*
+get_kvp_guid_path (const Account *acc, const Path& path)
+{
+    auto val{qof_instance_get_path_kvp<GncGUID*> (QOF_INSTANCE(acc), path)};
+    return val ? guid_copy(*val) : nullptr;
+}
+
 void
 xaccAccountSetColor (Account *acc, const char *str)
 {
@@ -5688,6 +5695,13 @@ gnc_account_get_map_entry (Account *acc, const char *head, const char *category)
                      get_kvp_string_path (acc, {head}));
 }
 
+GncGUID *
+gnc_account_get_map_guid_entry (Account *acc, const char *head, const char *category)
+{
+    return category ?
+           get_kvp_guid_path (acc, {head, category}) :
+           get_kvp_guid_path (acc, {head});
+}
 
 void
 gnc_account_delete_map_entry (Account *acc, char *head, char *category,

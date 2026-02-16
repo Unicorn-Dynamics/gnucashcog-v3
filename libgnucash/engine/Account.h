@@ -1648,6 +1648,11 @@ typedef enum
      */
     gchar *gnc_account_get_map_entry (Account *acc, const char *head, const char *category);
 
+    /** Returns the guid pointed to by head and category for the Account, free
+     *  the returned guid
+     */
+    GncGUID *gnc_account_get_map_guid_entry (Account *acc, const char *head, const char *category);
+
     /** Delete the entry for Account pointed to by head,category and match_string,
      *  if empty is TRUE then use delete if empty
      */

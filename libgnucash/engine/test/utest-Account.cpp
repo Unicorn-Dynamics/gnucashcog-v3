@@ -1367,6 +1367,30 @@ test_gnc_account_get_map_entry (Fixture *fixture, gconstpointer pData)
 }
 
 static void
+test_gnc_account_get_map_guid_entry (Fixture *fixture, gconstpointer pData)
+{
+    Account *account = xaccMallocAccount (gnc_account_get_book (fixture->acct));
+    const GncGUID *account_guid = xaccAccountGetGUID (account);
+
+    xaccAccountBeginEdit (fixture->acct);
+    qof_instance_set (QOF_INSTANCE(fixture->acct), "ofx-income-account", account_guid, nullptr);
+    xaccAccountCommitEdit (fixture->acct);
+
+    GncGUID *guid = gnc_account_get_map_guid_entry (fixture->acct, "ofx/associated-income-account", nullptr);
+    g_assert_true (guid_equal (account_guid, guid));
+    guid_free (guid);
+
+    gnc_account_delete_map_entry (fixture->acct, "ofx/associated-income-account", nullptr, nullptr, false);
+
+    guid = gnc_account_get_map_guid_entry (fixture->acct, "ofx/associated-income-account", nullptr);
+    g_assert_true (!guid);
+    guid_free (guid);
+
+    xaccAccountBeginEdit (account);
+    xaccAccountDestroy (account);
+}
+
+static void
 test_gnc_account_insert_remove_split (Fixture *fixture, gconstpointer pData)
 {
     QofBook *book = gnc_account_get_book (fixture->acct);
@@ -2869,6 +2893,7 @@ test_suite_account (void)
 // GNC_TEST_ADD (suitename, "xaccAccountEqual", Fixture, NULL, setup, test_xaccAccountEqual,  teardown );
     GNC_TEST_ADD (suitename, "gnc account kvp getters & setters", Fixture, NULL, setup, test_gnc_account_kvp_setters_getters,  teardown );
     GNC_TEST_ADD (suitename, "test_gnc_account_get_map_entry", Fixture, NULL, setup, test_gnc_account_get_map_entry,  teardown );
+    GNC_TEST_ADD (suitename, "test_gnc_account_get_map_guid_entry", Fixture, NULL, setup, test_gnc_account_get_map_guid_entry,  teardown );
     GNC_TEST_ADD (suitename, "gnc account insert & remove split", Fixture, NULL, setup, test_gnc_account_insert_remove_split,  teardown );
     GNC_TEST_ADD (suitename, "xaccAccount Insert and Remove Lot", Fixture, &good_data, setup, test_xaccAccountInsertRemoveLot,  teardown );
     GNC_TEST_ADD (suitename, "xaccAccountRecomputeBalance", Fixture, &some_data, setup, test_xaccAccountRecomputeBalance,  teardown );
