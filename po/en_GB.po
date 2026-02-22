@@ -8,7 +8,7 @@
 # Adithya K <adithyak04@gmail.com>, 2021.
 # Simon Arlott <weblate.simon@arlott.org>, 2022, 2023, 2024.
 # Andi Chandler <andi@gowling.com>, 2023, 2024, 2026.
-# Simon Arlott <nomis@users.noreply.hosted.weblate.org>, 2024, 2025.
+# Simon Arlott <nomis@users.noreply.hosted.weblate.org>, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.14\n"
@@ -16,7 +16,7 @@ msgstr ""
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
 "PO-Revision-Date: 2026-02-22 00:09+0000\n"
-"Last-Translator: Andi Chandler <andi@gowling.com>\n"
+"Last-Translator: Simon Arlott <nomis@users.noreply.hosted.weblate.org>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "gnucash/gnucash/en_GB/>\n"
 "Language: en_GB\n"
@@ -8769,8 +8769,8 @@ msgid ""
 "This value specifies the predefined check format to use. The number is the "
 "guid of a known check format."
 msgstr ""
-"This value specifies the predefined check format to use. The number is the "
-"GUID of a known check format."
+"This value specifies the predefined cheque format to use. The number is the "
+"GUID of a known cheque format."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.checkprinting.gschema.xml.in:10
 msgid "Which check position to print"
