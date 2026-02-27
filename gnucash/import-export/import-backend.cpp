@@ -593,9 +593,9 @@ void split_find_match (GNCImportTransInfo * trans_info,
     /* Amount heuristics */
     auto downloaded_split_amount =
         gnc_numeric_to_double (xaccSplitGetAmount(new_trans_fsplit));
-    /*DEBUG(" downloaded_split_amount=%f", downloaded_split_amount);*/
+    DEBUG(" downloaded_split_amount=%f", downloaded_split_amount);
     auto match_split_amount = gnc_numeric_to_double(xaccSplitGetAmount(split));
-    /*DEBUG(" match_split_amount=%f", match_split_amount);*/
+    DEBUG(" match_split_amount=%f", match_split_amount);
     if (fabs(downloaded_split_amount - match_split_amount) < 1e-6)
         /* bug#347791: Double type shouldn't be compared for exact
             equality, so we're using fabs() instead. */
@@ -605,7 +605,7 @@ void split_find_match (GNCImportTransInfo * trans_info,
             -- gnc_numeric_equal is an expensive function call */
     {
         prob = prob + 3;
-        /*DEBUG("heuristics:  probability + 3 (amount)");*/
+        DEBUG("heuristics:  probability + 3 (amount)");
     }
     else if (fabs (downloaded_split_amount - match_split_amount) <=
                 fuzzy_amount_difference)
@@ -614,7 +614,7 @@ void split_find_match (GNCImportTransInfo * trans_info,
             So you withdraw 100$ and get charged 101,25$ in the same
             transaction */
         prob = prob + 2;
-        /*DEBUG("heuristics:  probability + 2 (amount)");*/
+        DEBUG("heuristics:  probability + 2 (amount)");
     }
     else
     {
@@ -622,7 +622,7 @@ void split_find_match (GNCImportTransInfo * trans_info,
             threshold, it's very unlikely to be the same transaction
             so we give it an extra -5 penalty */
         prob = prob - 5;
-        /* DEBUG("heuristics:  probability - 1 (amount)"); */
+        DEBUG("heuristics:  probability - 1 (amount)");
     }
 
     /* Date heuristics */
@@ -634,23 +634,28 @@ void split_find_match (GNCImportTransInfo * trans_info,
                 differences. Whatever. On the other hand, the difference
                 calculation itself will work regardless of month/year
                 turnarounds. */
-    /*DEBUG("diff day %d", datediff_day);*/
+    auto download_time_str = qof_print_date(download_time);
+    auto match_time_str = qof_print_date(match_time);
+    DEBUG("Date download: %s vs match: %s", download_time_str, match_time_str);
+    g_free (download_time_str);
+    g_free (match_time_str);
+    DEBUG("diff day %lld", datediff_day);
     if (datediff_day == 0)
     {
         prob = prob + 3;
-        /*DEBUG("heuristics:  probability + 3 (date)");*/
+        DEBUG("heuristics:  probability + 3 (date)");
     }
     else if (datediff_day <= date_threshold)
     {
         prob = prob + 2;
-        /*DEBUG("heuristics:  probability + 2 (date)");*/
+        DEBUG("heuristics:  probability + 2 (date)");
     }
     else if (datediff_day > date_not_threshold)
     {
         /* Extra penalty if that split lies awfully far away from
             the given one. */
         prob = prob - 5;
-        /*DEBUG("heuristics:  probability - 5 (date)"); */
+        DEBUG("heuristics:  probability - 5 (date)");
         /* Changed 2005-02-21: Revert the hard-limiting behaviour
             back to the previous large penalty. (Changed 2004-11-27:
             The penalty is so high that we can forget about this
@@ -684,7 +689,7 @@ void split_find_match (GNCImportTransInfo * trans_info,
         {
             /* An exact match of the Check number gives a +4 */
             prob += 4;
-            /*DEBUG("heuristics:  probability + 4 (Check number)");*/
+            DEBUG("heuristics:  probability + 4 (Check number)");
         }
         else if (strlen(new_trans_str) > 0 && strlen(split_str) > 0)
         {
@@ -702,7 +707,7 @@ void split_find_match (GNCImportTransInfo * trans_info,
         {
             /* An exact match of memo gives a +2 */
             prob = prob + 2;
-            /* DEBUG("heuristics:  probability + 2 (memo)"); */
+            DEBUG("heuristics:  probability + 2 (memo)");
         }
         else if ((strncasecmp(memo, xaccSplitGetMemo(split),
                     strlen(xaccSplitGetMemo(split)) / 2) == 0))
@@ -712,7 +717,7 @@ void split_find_match (GNCImportTransInfo * trans_info,
                             number some banks seem to include in the memo but someone
                             should write something more sophisticated */
             prob = prob + 1;
-            /*DEBUG("heuristics:  probability + 1 (memo)");	*/
+            DEBUG("heuristics:  probability + 1 (memo)");
         }
     }
 
@@ -725,7 +730,7 @@ void split_find_match (GNCImportTransInfo * trans_info,
         {
             /*An exact match of Description gives a +2 */
             prob = prob + 2;
-            /*DEBUG("heuristics:  probability + 2 (description)");*/
+            DEBUG("heuristics:  probability + 2 (description)");
         }
         else if ((strncasecmp(descr,
                     xaccTransGetDescription (xaccSplitGetParent(split)),
@@ -736,13 +741,15 @@ void split_find_match (GNCImportTransInfo * trans_info,
                             number some banks seem to include in the description but someone
                             should write something more sophisticated */
             prob = prob + 1;
-            /*DEBUG("heuristics:  probability + 1 (description)");	*/
+            DEBUG("heuristics:  probability + 1 (description)");	
         }
     }
 
     /* Is the probability high enough? Otherwise do nothing and return. */
-    if (prob < display_threshold)
-        return;
+    if (prob < display_threshold) {
+      DEBUG("below threshold: %d", prob);
+      return;
+    }
 
     /* The probability is high enough, so allocate an object
                 here. Allocating it only when it's actually being used is
@@ -758,6 +765,7 @@ void split_find_match (GNCImportTransInfo * trans_info,
     /* Append that to the list. Do not use g_list_append because
                 it is slow. The list is sorted afterwards anyway. */
     trans_info->match_list = g_list_prepend(trans_info->match_list, match_info);
+    DEBUG("Added to list of possible matches: %d", prob);
 }
 
 /***********************************************************************
@@ -1052,6 +1060,12 @@ gboolean gnc_import_exists_online_id (Transaction *trans, GHashTable* acct_id_ha
     }
 
     auto online_id_exists = g_hash_table_contains (online_id_hash, source_online_id);
+    if (online_id_exists)
+    {
+        auto date_str = qof_print_date(xaccTransGetDate(trans));
+        DEBUG("Transaction with online ID %s already exists, date: %s", source_online_id, date_str);
+        g_free (date_str);
+    }
     g_free (source_online_id);
     return online_id_exists;
 }
@@ -1141,6 +1155,8 @@ gnc_import_TransInfo_init_matches (GNCImportTransInfo *trans_info,
 
     if (trans_info->match_list)
     {
+      DEBUG("Number of matches %d", g_list_length(trans_info->match_list));
+
         trans_info->match_list = g_list_sort(trans_info->match_list,
                                              compare_probability);
         auto best_match = static_cast<GNCImportMatchInfo*>(g_list_nth_data(trans_info->match_list, 0));
