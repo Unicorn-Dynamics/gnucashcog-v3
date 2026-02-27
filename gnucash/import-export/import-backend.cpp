@@ -667,7 +667,9 @@ void split_find_match (GNCImportTransInfo * trans_info,
 
     /* Check number heuristics */
     auto new_trans_str = gnc_get_num_action(new_trans, new_trans_fsplit);
-    if (new_trans_str && *new_trans_str)
+    auto split_str = gnc_get_num_action (xaccSplitGetParent (split), split);
+    DEBUG("number download: '%s' to match: '%s'", new_trans_str, split_str);
+    if (new_trans_str && *new_trans_str && split_str && *split_str)
     {
         char *endptr;
         auto conversion_ok = true;
@@ -679,7 +681,6 @@ void split_find_match (GNCImportTransInfo * trans_info,
                         numbers on string and string empty */
         conversion_ok = !(errno || endptr == new_trans_str);
 
-        auto split_str = gnc_get_num_action (xaccSplitGetParent (split), split);
         errno = 0;
         auto split_number = strtol(split_str, &endptr, 10);
         conversion_ok =  !(errno || endptr == split_str);
@@ -701,9 +702,11 @@ void split_find_match (GNCImportTransInfo * trans_info,
 
     /* Memo heuristics */
     auto memo = xaccSplitGetMemo(new_trans_fsplit);
-    if (memo && *memo)
+    auto match_memo = xaccSplitGetMemo(split);
+    if (memo && *memo && match_memo && *match_memo)
     {
-        if (safe_strcasecmp(memo, xaccSplitGetMemo(split)) == 0)
+        DEBUG("memo download: '%s' to match: '%s'", memo, match_memo);
+        if (safe_strcasecmp(memo, match_memo) == 0)
         {
             /* An exact match of memo gives a +2 */
             prob = prob + 2;
@@ -723,10 +726,11 @@ void split_find_match (GNCImportTransInfo * trans_info,
 
     /* Description heuristics */
     auto descr = xaccTransGetDescription(new_trans);
-    if (descr && *descr)
+    auto match_descr = xaccTransGetDescription(xaccSplitGetParent(split));
+    if (descr && *descr && match_descr && *match_descr)
     {
-        if (safe_strcasecmp(descr,
-                xaccTransGetDescription(xaccSplitGetParent(split))) == 0)
+        DEBUG("description: download: '%s' to match: '%s'", descr, match_descr);
+        if (safe_strcasecmp(descr, match_descr) == 0)
         {
             /*An exact match of Description gives a +2 */
             prob = prob + 2;
