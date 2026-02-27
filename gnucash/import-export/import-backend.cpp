@@ -712,15 +712,21 @@ void split_find_match (GNCImportTransInfo * trans_info,
             prob = prob + 2;
             DEBUG("heuristics:  probability + 2 (memo)");
         }
-        else if ((strncasecmp(memo, xaccSplitGetMemo(split),
-                    strlen(xaccSplitGetMemo(split)) / 2) == 0))
+        else
         {
-            /* Very primitive fuzzy match worth +1.  This matches the
-                            first 50% of the strings to skip annoying transaction
-                            number some banks seem to include in the memo but someone
-                            should write something more sophisticated */
-            prob = prob + 1;
-            DEBUG("heuristics:  probability + 1 (memo)");
+            const size_t match_memo_len = strlen(match_memo);
+            const size_t memo_len = strlen(memo);
+            const size_t max_memo_len = match_memo_len > memo_len ? match_memo_len : memo_len;
+            if (match_memo_len > 1 && memo_len > 1
+                && (strncasecmp(memo, match_memo, max_memo_len / 2) == 0))
+            {
+                /* Very primitive fuzzy match worth +1.  This matches up to the
+                                first 50% of the longest string to skip annoying transaction
+                                number some banks seem to include in the memo but someone
+                                should write something more sophisticated */
+                prob = prob + 1;
+                DEBUG("heuristics:  probability + 1 (memo)");
+            }
         }
     }
 
@@ -736,16 +742,21 @@ void split_find_match (GNCImportTransInfo * trans_info,
             prob = prob + 2;
             DEBUG("heuristics:  probability + 2 (description)");
         }
-        else if ((strncasecmp(descr,
-                    xaccTransGetDescription (xaccSplitGetParent(split)),
-                    strlen(xaccTransGetDescription (new_trans)) / 2) == 0))
+        else
         {
-            /* Very primitive fuzzy match worth +1.  This matches the
-                            first 50% of the strings to skip annoying transaction
-                            number some banks seem to include in the description but someone
-                            should write something more sophisticated */
-            prob = prob + 1;
-            DEBUG("heuristics:  probability + 1 (description)");	
+            const size_t match_descr_len = strlen(match_descr);
+            const size_t descr_len = strlen(descr);
+            const size_t max_descr_len = match_descr_len > descr_len ? match_descr_len : descr_len;
+            if (match_descr_len > 1 && descr_len > 1
+                && (strncasecmp(descr, match_descr, max_descr_len / 2) == 0))
+            {
+                /* Very primitive fuzzy match worth +1.  This matches up to the
+                                first 50% of the longest string to skip annoying transaction
+                                number some banks seem to include in the description but someone
+                                should write something more sophisticated */
+                prob = prob + 1;
+                DEBUG("heuristics:  probability + 1 (description)");
+            }
         }
     }
 
