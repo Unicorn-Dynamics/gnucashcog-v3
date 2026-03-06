@@ -116,8 +116,12 @@
             res = SWIG_ConvertPtr(instance, &argp, $1_descriptor, 0);
             Py_DECREF(instance);
             if (SWIG_IsOK(res)) {
-                /* TODO: Add DeprecationWarning once return-type
-                 * wrapping is fixed (PR 2). */
+                if (PyErr_WarnEx(PyExc_DeprecationWarning,
+                    "Passing " #CType " wrapper objects directly to "
+                    "gnucash_core_c is deprecated; "
+                    "use the Python API or .instance attribute.", 1) < 0) {
+                    SWIG_fail;
+                }
                 $1 = %reinterpret_cast(argp, $1_ltype);
             } else {
                 SWIG_exception_fail(SWIG_TypeError,
