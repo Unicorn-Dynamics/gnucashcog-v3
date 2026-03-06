@@ -1094,6 +1094,8 @@ split_dict =    {
                     'GetReconciledBalance': GncNumeric,
                     'VoidFormerAmount': GncNumeric,
                     'VoidFormerValue': GncNumeric,
+                    'GetNoclosingBalance': GncNumeric,
+                    'GetCapGains': GncNumeric,
                     'GetGUID': GUID
                 }
 methods_return_instance(Split, split_dict)

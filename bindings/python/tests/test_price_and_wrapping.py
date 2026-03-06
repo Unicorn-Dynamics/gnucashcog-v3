@@ -1,152 +1,108 @@
 """Tests for GncPrice / GncPriceDB / GncLot return-type wrapping.
 
-These tests require an XML backend (i.e. build with -DWITH_GNUCASH=ON or at
-least with the XML backend enabled) because they open on-disk GnuCash files.
-
-Test data comes from files already in the repo:
-  - pricedb1.gml2  : 13 commodities, many prices in USD, 1 root account
-  - sample1.gnucash : accounts, transactions, splits, 1 lot
+All tests create data programmatically in in-memory sessions so they run
+without any external data files or XML backend.
 """
 
-import os
-import shutil
-import tempfile
 import warnings
 from datetime import datetime
-from pathlib import Path
-from unittest import TestCase, main, skipUnless
-from urllib.parse import urlunparse
+from unittest import TestCase, main
 
-# Locate test data relative to the source tree.  When running from a build
-# directory the source tree is typically the parent; we walk up until we find
-# the marker directory.
-def _find_source_root():
-    """Walk up from this file looking for the repo root."""
-    d = Path(__file__).resolve().parent
-    for _ in range(10):
-        if (d / "libgnucash").is_dir():
-            return d
-        d = d.parent
-    # Fall back to environment variable set by CMake / CTest
-    builddir = os.environ.get("GNC_BUILDDIR")
-    if builddir:
-        # source tree is often one level up from build dir
-        candidate = Path(builddir).parent
-        if (candidate / "libgnucash").is_dir():
-            return candidate
-    return None
-
-_SRC_ROOT = _find_source_root()
-_PRICEDB_FILE = (
-    _SRC_ROOT / "libgnucash" / "backend" / "xml" / "test" / "test-files"
-    / "xml2" / "pricedb1.gml2"
-) if _SRC_ROOT else None
-_SAMPLE_FILE = (
-    _SRC_ROOT / "libgnucash" / "backend" / "xml" / "test" / "test-files"
-    / "load-save" / "sample1.gnucash"
-) if _SRC_ROOT else None
-
-_HAS_TEST_DATA = _PRICEDB_FILE is not None and _PRICEDB_FILE.exists()
-_HAS_SAMPLE_DATA = _SAMPLE_FILE is not None and _SAMPLE_FILE.exists()
-
-
-def _copy_to_tmp(src_path, tmpdir):
-    """Copy a GnuCash file into a temp dir and return an xml:// URI."""
-    fname = os.path.basename(src_path)
-    dest = os.path.join(tmpdir, fname)
-    shutil.copy2(str(src_path), dest)
-    # URI format: xml://<dir>/<filename>  (matches test_session.py convention)
-    return urlunparse(("xml", tmpdir, fname, "", "", ""))
-
-
-def _can_open_xml():
-    """Return True if the XML backend is available."""
-    try:
-        from gnucash import Session, SessionOpenMode
-        with tempfile.TemporaryDirectory() as tmpdir:
-            uri = urlunparse(("xml", tmpdir, "probe", "", "", ""))
-            with Session(uri, SessionOpenMode.SESSION_NEW_STORE) as ses:
-                pass
-        return True
-    except Exception:
-        return False
+from gnucash import (
+    Account,
+    Book,
+    GncCommodity,
+    GncNumeric,
+    GncPrice,
+    Session,
+    Split,
+    Transaction,
+)
+from gnucash.gnucash_core import GncCommodityNamespace, GncLot, GncPriceDB
 
 
 # ---------------------------------------------------------------------------
-# Test: GncPrice and GncPriceDB wrapping via pricedb1.gml2
+# Helper: set up an in-memory book with a commodity and prices
 # ---------------------------------------------------------------------------
-@skipUnless(_HAS_TEST_DATA, "pricedb1.gml2 not found in source tree")
-class TestGncPriceWrapping(TestCase):
-    """Open pricedb1.gml2 and verify that GncPrice / GncPriceDB methods
-    return properly wrapped Python objects instead of raw SwigPyObjects."""
+class PriceSession(TestCase):
+    """Base class that creates a session with a custom commodity and prices."""
 
-    @classmethod
-    def setUpClass(cls):
-        if not _can_open_xml():
-            raise unittest.SkipTest("XML backend not available")
-        cls._tmpdir = tempfile.mkdtemp(prefix="gnc_test_price_")
-        from gnucash import Session, SessionOpenMode
-        uri = _copy_to_tmp(_PRICEDB_FILE, cls._tmpdir)
-        cls.ses = Session(uri, SessionOpenMode.SESSION_NORMAL_OPEN)
-        cls.book = cls.ses.get_book()
-        cls.table = cls.book.get_table()
-        cls.pricedb = cls.book.get_price_db()
-        # Look up a commodity we know is in the file
-        cls.usd = cls.table.lookup("CURRENCY", "USD")
-        cls.corl = cls.table.lookup("NASDAQ", "CORL")
+    def setUp(self):
+        self.ses = Session()
+        self.book = self.ses.get_book()
+        self.table = self.book.get_table()
+        self.usd = self.table.lookup("CURRENCY", "USD")
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.ses.end()
-        shutil.rmtree(cls._tmpdir, ignore_errors=True)
+        # Create a custom commodity
+        self.test_comm = GncCommodity(
+            self.book, "Test Stock", "NASDAQ", "TSTK", "TSTK", 10000
+        )
+        self.table.insert(self.test_comm)
 
-    # -- basic sanity --
+        # Add prices to the price DB
+        self.pricedb = self.book.get_price_db()
 
-    def test_commodity_lookup(self):
-        """Verify we can find the commodities in the test file."""
-        self.assertIsNotNone(self.usd)
-        self.assertIsNotNone(self.corl)
+        self.price1 = GncPrice(self.book)
+        self.price1.set_commodity(self.test_comm)
+        self.price1.set_currency(self.usd)
+        self.price1.set_time64(datetime(2025, 1, 15))
+        self.price1.set_value(GncNumeric(4200, 100))  # 42.00
+        self.price1.set_typestr("last")
+        self.pricedb.add_price(self.price1)
+
+        self.price2 = GncPrice(self.book)
+        self.price2.set_commodity(self.test_comm)
+        self.price2.set_currency(self.usd)
+        self.price2.set_time64(datetime(2025, 6, 15))
+        self.price2.set_value(GncNumeric(4500, 100))  # 45.00
+        self.price2.set_typestr("last")
+        self.pricedb.add_price(self.price2)
+
+    def tearDown(self):
+        self.ses.end()
+
+
+# ---------------------------------------------------------------------------
+# Test: GncPrice and GncPriceDB wrapping
+# ---------------------------------------------------------------------------
+class TestGncPriceWrapping(PriceSession):
+    """Verify that GncPrice / GncPriceDB methods return properly wrapped
+    Python objects instead of raw SwigPyObjects."""
 
     # -- GncPriceDB single-price lookups --
 
     def test_lookup_latest_returns_gnc_price(self):
-        from gnucash import GncPrice
-        price = self.pricedb.lookup_latest(self.corl, self.usd)
-        self.assertIsNotNone(price, "No price found for CORL/USD")
+        price = self.pricedb.lookup_latest(self.test_comm, self.usd)
+        self.assertIsNotNone(price, "No price found for TSTK/USD")
         self.assertIsInstance(price, GncPrice)
 
     def test_nth_price_returns_gnc_price(self):
-        from gnucash import GncPrice
-        price = self.pricedb.nth_price(self.corl, 0)
-        self.assertIsNotNone(price, "nth_price(CORL, 0) returned None")
+        price = self.pricedb.nth_price(self.test_comm, 0)
+        self.assertIsNotNone(price, "nth_price(TSTK, 0) returned None")
         self.assertIsInstance(price, GncPrice)
 
     # -- GncPrice attribute methods --
 
     def test_get_commodity_returns_gnc_commodity(self):
-        from gnucash import GncPrice, GncCommodity
-        price = self.pricedb.lookup_latest(self.corl, self.usd)
+        price = self.pricedb.lookup_latest(self.test_comm, self.usd)
         self.assertIsNotNone(price)
         comm = price.get_commodity()
         self.assertIsInstance(comm, GncCommodity)
 
     def test_get_currency_returns_gnc_commodity(self):
-        from gnucash import GncPrice, GncCommodity
-        price = self.pricedb.lookup_latest(self.corl, self.usd)
+        price = self.pricedb.lookup_latest(self.test_comm, self.usd)
         self.assertIsNotNone(price)
         curr = price.get_currency()
         self.assertIsInstance(curr, GncCommodity)
 
     def test_get_value_returns_gnc_numeric(self):
-        from gnucash import GncPrice, GncNumeric
-        price = self.pricedb.lookup_latest(self.corl, self.usd)
+        price = self.pricedb.lookup_latest(self.test_comm, self.usd)
         self.assertIsNotNone(price)
         val = price.get_value()
         self.assertIsInstance(val, GncNumeric)
 
     def test_clone_returns_gnc_price(self):
-        from gnucash import GncPrice
-        price = self.pricedb.lookup_latest(self.corl, self.usd)
+        price = self.pricedb.lookup_latest(self.test_comm, self.usd)
         self.assertIsNotNone(price)
         cloned = price.clone(self.book)
         self.assertIsInstance(cloned, GncPrice)
@@ -154,86 +110,114 @@ class TestGncPriceWrapping(TestCase):
     # -- GncPriceDB list methods --
 
     def test_lookup_latest_any_currency_returns_list_of_gnc_price(self):
-        from gnucash import GncPrice
-        prices = self.pricedb.lookup_latest_any_currency(self.corl)
+        prices = self.pricedb.lookup_latest_any_currency(self.test_comm)
         self.assertIsInstance(prices, list)
-        # pricedb1.gml2 has CORL priced in USD so we expect at least 1
         self.assertGreater(len(prices), 0,
-                           "Expected at least one price for CORL")
+                           "Expected at least one price for TSTK")
         for p in prices:
             self.assertIsInstance(p, GncPrice)
 
     def test_get_prices_returns_list_of_gnc_price(self):
-        from gnucash import GncPrice
-        prices = self.pricedb.get_prices(self.corl, self.usd)
+        prices = self.pricedb.get_prices(self.test_comm, self.usd)
         self.assertIsInstance(prices, list)
         self.assertGreater(len(prices), 0)
         for p in prices:
             self.assertIsInstance(p, GncPrice)
 
     def test_lookup_nearest_in_time_any_currency(self):
-        from gnucash import GncPrice
-        # Prices in pricedb1 are from 2001-03-26
-        date = datetime(2001, 3, 26)
+        date = datetime(2025, 1, 20)
         prices = self.pricedb.lookup_nearest_in_time_any_currency_t64(
-            self.corl, date)
+            self.test_comm, date)
         self.assertIsInstance(prices, list)
         for p in prices:
             self.assertIsInstance(p, GncPrice)
 
     def test_lookup_nearest_before_any_currency(self):
-        from gnucash import GncPrice
-        date = datetime(2001, 4, 1)
+        date = datetime(2025, 7, 1)
         prices = self.pricedb.lookup_nearest_before_any_currency_t64(
-            self.corl, date)
+            self.test_comm, date)
         self.assertIsInstance(prices, list)
         for p in prices:
             self.assertIsInstance(p, GncPrice)
 
 
 # ---------------------------------------------------------------------------
-# Test: GncLot.get_split_list via sample1.gnucash
+# Test: GncLot.get_split_list
 # ---------------------------------------------------------------------------
-@skipUnless(_HAS_SAMPLE_DATA, "sample1.gnucash not found in source tree")
 class TestGncLotSplitList(TestCase):
-    """Open sample1.gnucash and verify that GncLot.get_split_list() returns
-    properly wrapped Split objects."""
+    """Verify that GncLot.get_split_list() returns wrapped Split objects.
 
-    @classmethod
-    def setUpClass(cls):
-        if not _can_open_xml():
-            raise unittest.SkipTest("XML backend not available")
-        cls._tmpdir = tempfile.mkdtemp(prefix="gnc_test_lot_")
-        from gnucash import Session, SessionOpenMode
-        uri = _copy_to_tmp(_SAMPLE_FILE, cls._tmpdir)
-        cls.ses = Session(uri, SessionOpenMode.SESSION_NORMAL_OPEN)
-        cls.book = cls.ses.get_book()
+    Creates a buy+sell pair on an account then scrubs lots, matching the
+    pattern in test_account.py's test_assignlots.
+    """
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.ses.end()
-        shutil.rmtree(cls._tmpdir, ignore_errors=True)
+    def setUp(self):
+        self.ses = Session()
+        self.book = self.ses.get_book()
+        table = self.book.get_table()
+        currency = table.lookup("CURRENCY", "USD")
 
-    def _find_lot(self):
-        """Find the first lot in any account."""
+        stock = GncCommodity(self.book, "Lot Test", "COMMODITY", "LTX", "LTX", 100000)
+        table.insert(stock)
+
+        self.stock_acct = Account(self.book)
+        self.stock_acct.SetCommodity(stock)
         root = self.book.get_root_account()
-        for acct in root.get_descendants():
-            lots = acct.GetLotList()
-            if lots:
-                return lots[0]
-        return None
+        root.append_child(self.stock_acct)
+
+        cash_acct = Account(self.book)
+        cash_acct.SetCommodity(currency)
+        root.append_child(cash_acct)
+
+        tx = Transaction(self.book)
+        tx.BeginEdit()
+        tx.SetCurrency(currency)
+        tx.SetDateEnteredSecs(datetime.now())
+        tx.SetDatePostedSecs(datetime.now())
+
+        # Buy 1.3 shares
+        s1 = Split(self.book)
+        s1.SetParent(tx)
+        s1.SetAccount(self.stock_acct)
+        s1.SetAmount(GncNumeric(13, 10))
+        s1.SetValue(GncNumeric(100, 1))
+
+        s2 = Split(self.book)
+        s2.SetParent(tx)
+        s2.SetAccount(cash_acct)
+        s2.SetAmount(GncNumeric(-100, 1))
+        s2.SetValue(GncNumeric(-100, 1))
+
+        # Sell 1.3 shares
+        s3 = Split(self.book)
+        s3.SetParent(tx)
+        s3.SetAccount(self.stock_acct)
+        s3.SetAmount(GncNumeric(-13, 10))
+        s3.SetValue(GncNumeric(-100, 1))
+
+        s4 = Split(self.book)
+        s4.SetParent(tx)
+        s4.SetAccount(cash_acct)
+        s4.SetAmount(GncNumeric(100, 1))
+        s4.SetValue(GncNumeric(100, 1))
+
+        tx.CommitEdit()
+        self.stock_acct.ScrubLots()
+
+    def tearDown(self):
+        self.ses.end()
 
     def test_lot_exists(self):
-        """sample1.gnucash should have at least one lot."""
-        lot = self._find_lot()
-        self.assertIsNotNone(lot, "No lots found in sample1.gnucash")
+        lots = self.stock_acct.GetLotList()
+        self.assertIsInstance(lots, list)
+        self.assertGreater(len(lots), 0, "ScrubLots should have created a lot")
+        for lot in lots:
+            self.assertIsInstance(lot, GncLot)
 
     def test_get_split_list_returns_splits(self):
-        from gnucash import Split
-        lot = self._find_lot()
-        if lot is None:
-            self.skipTest("No lots in sample1.gnucash")
-        splits = lot.get_split_list()
+        lots = self.stock_acct.GetLotList()
+        self.assertGreater(len(lots), 0)
+        splits = lots[0].get_split_list()
         self.assertIsInstance(splits, list)
         self.assertGreater(len(splits), 0, "Lot has no splits")
         for s in splits:
@@ -241,40 +225,82 @@ class TestGncLotSplitList(TestCase):
 
 
 # ---------------------------------------------------------------------------
-# Test: Account.get_currency_or_parent via sample1.gnucash
+# Test: Split.GetNoclosingBalance and Split.GetCapGains return GncNumeric
 # ---------------------------------------------------------------------------
-@skipUnless(_HAS_SAMPLE_DATA, "sample1.gnucash not found in source tree")
+class TestSplitGncNumericReturns(TestCase):
+    """Verify that Split methods returning gnc_numeric by value are wrapped."""
+
+    def setUp(self):
+        self.ses = Session()
+        self.book = self.ses.get_book()
+        table = self.book.get_table()
+        currency = table.lookup("CURRENCY", "USD")
+
+        root = self.book.get_root_account()
+        acct = Account(self.book)
+        acct.SetCommodity(currency)
+        root.append_child(acct)
+
+        other = Account(self.book)
+        other.SetCommodity(currency)
+        root.append_child(other)
+
+        tx = Transaction(self.book)
+        tx.BeginEdit()
+        tx.SetCurrency(currency)
+        tx.SetDateEnteredSecs(datetime.now())
+        tx.SetDatePostedSecs(datetime.now())
+
+        self.split = Split(self.book)
+        self.split.SetParent(tx)
+        self.split.SetAccount(acct)
+        self.split.SetAmount(GncNumeric(100, 1))
+        self.split.SetValue(GncNumeric(100, 1))
+
+        s2 = Split(self.book)
+        s2.SetParent(tx)
+        s2.SetAccount(other)
+        s2.SetAmount(GncNumeric(-100, 1))
+        s2.SetValue(GncNumeric(-100, 1))
+
+        tx.CommitEdit()
+
+    def tearDown(self):
+        self.ses.end()
+
+    def test_get_noclosing_balance_returns_gnc_numeric(self):
+        val = self.split.GetNoclosingBalance()
+        self.assertIsInstance(val, GncNumeric)
+
+    def test_get_cap_gains_returns_gnc_numeric(self):
+        val = self.split.GetCapGains()
+        self.assertIsInstance(val, GncNumeric)
+
+
+# ---------------------------------------------------------------------------
+# Test: Account.get_currency_or_parent
+# ---------------------------------------------------------------------------
 class TestAccountCurrencyOrParent(TestCase):
     """Verify Account.get_currency_or_parent() returns GncCommodity."""
 
-    @classmethod
-    def setUpClass(cls):
-        if not _can_open_xml():
-            raise unittest.SkipTest("XML backend not available")
-        cls._tmpdir = tempfile.mkdtemp(prefix="gnc_test_acct_")
-        from gnucash import Session, SessionOpenMode
-        uri = _copy_to_tmp(_SAMPLE_FILE, cls._tmpdir)
-        cls.ses = Session(uri, SessionOpenMode.SESSION_NORMAL_OPEN)
-        cls.book = cls.ses.get_book()
+    def setUp(self):
+        self.ses = Session()
+        self.book = self.ses.get_book()
+        table = self.book.get_table()
+        self.usd = table.lookup("CURRENCY", "USD")
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.ses.end()
-        shutil.rmtree(cls._tmpdir, ignore_errors=True)
+        root = self.book.get_root_account()
+        self.acct = Account(self.book)
+        self.acct.SetCommodity(self.usd)
+        root.append_child(self.acct)
+
+    def tearDown(self):
+        self.ses.end()
 
     def test_get_currency_or_parent_returns_commodity(self):
-        from gnucash import GncCommodity
-        root = self.book.get_root_account()
-        descendants = root.get_descendants()
-        self.assertGreater(len(descendants), 0)
-        found_one = False
-        for acct in descendants:
-            result = acct.get_currency_or_parent()
-            if result is not None:
-                self.assertIsInstance(result, GncCommodity)
-                found_one = True
-        self.assertTrue(found_one,
-                        "No account returned a non-None commodity")
+        result = self.acct.get_currency_or_parent()
+        self.assertIsNotNone(result)
+        self.assertIsInstance(result, GncCommodity)
 
 
 # ---------------------------------------------------------------------------
@@ -284,7 +310,6 @@ class TestCommodityObtainTwin(TestCase):
     """Verify GncCommodity.obtain_twin(book) returns GncCommodity."""
 
     def test_obtain_twin_same_book(self):
-        from gnucash import Session, GncCommodity
         ses = Session()
         book = ses.get_book()
         table = book.get_table()
@@ -303,8 +328,6 @@ class TestCommodityNamespaceDS(TestCase):
     GncCommodityNamespace."""
 
     def test_get_namespace_ds(self):
-        from gnucash import Session
-        from gnucash.gnucash_core import GncCommodityNamespace
         ses = Session()
         book = ses.get_book()
         table = book.get_table()
@@ -318,37 +341,16 @@ class TestCommodityNamespaceDS(TestCase):
 # ---------------------------------------------------------------------------
 # Test: SWIG typemap compatibility (wrapper → instance unwrap)
 # ---------------------------------------------------------------------------
-@skipUnless(_HAS_TEST_DATA, "pricedb1.gml2 not found in source tree")
-class TestSwigTypemapCompat(TestCase):
+class TestSwigTypemapCompat(PriceSession):
     """Verify that passing a ClassFromFunctions wrapper to a C function
     still works (via the SWIG typemap) and emits a DeprecationWarning."""
-
-    @classmethod
-    def setUpClass(cls):
-        if not _can_open_xml():
-            raise unittest.SkipTest("XML backend not available")
-        cls._tmpdir = tempfile.mkdtemp(prefix="gnc_test_swig_")
-        from gnucash import Session, SessionOpenMode
-        uri = _copy_to_tmp(_PRICEDB_FILE, cls._tmpdir)
-        cls.ses = Session(uri, SessionOpenMode.SESSION_NORMAL_OPEN)
-        cls.book = cls.ses.get_book()
-        cls.table = cls.book.get_table()
-        cls.pricedb = cls.book.get_price_db()
-        cls.usd = cls.table.lookup("CURRENCY", "USD")
-        cls.corl = cls.table.lookup("NASDAQ", "CORL")
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.ses.end()
-        shutil.rmtree(cls._tmpdir, ignore_errors=True)
 
     def test_wrapper_triggers_deprecation_warning(self):
         """Passing a GncPrice wrapper to gnucash_core_c should emit
         DeprecationWarning and still return a valid result."""
-        from gnucash import GncPrice
         from gnucash import gnucash_core_c as gc
 
-        price = self.pricedb.lookup_latest(self.corl, self.usd)
+        price = self.pricedb.lookup_latest(self.test_comm, self.usd)
         if price is None:
             self.skipTest("No price data")
 
@@ -358,7 +360,6 @@ class TestSwigTypemapCompat(TestCase):
             warnings.simplefilter("always")
             # Pass the wrapper object directly — typemap should unwrap it
             comm_instance = gc.gnc_price_get_commodity(price)
-            # Check that a DeprecationWarning was issued
             dep_warnings = [x for x in w
                             if issubclass(x.category, DeprecationWarning)]
             self.assertGreater(len(dep_warnings), 0,
@@ -368,7 +369,7 @@ class TestSwigTypemapCompat(TestCase):
         """Passing price.instance directly should NOT emit a warning."""
         from gnucash import gnucash_core_c as gc
 
-        price = self.pricedb.lookup_latest(self.corl, self.usd)
+        price = self.pricedb.lookup_latest(self.test_comm, self.usd)
         if price is None:
             self.skipTest("No price data")
 
@@ -384,54 +385,31 @@ class TestSwigTypemapCompat(TestCase):
 # ---------------------------------------------------------------------------
 # Test: GncPriceDB.get_*_price returns GncNumeric
 # ---------------------------------------------------------------------------
-@skipUnless(_HAS_TEST_DATA, "pricedb1.gml2 not found in source tree")
-class TestGetPriceReturnsGncNumeric(TestCase):
+class TestGetPriceReturnsGncNumeric(PriceSession):
     """Verify that get_latest_price, get_nearest_price, and
     get_nearest_before_price return GncNumeric instead of raw
     _gnc_numeric."""
 
-    @classmethod
-    def setUpClass(cls):
-        if not _can_open_xml():
-            raise unittest.SkipTest("XML backend not available")
-        cls._tmpdir = tempfile.mkdtemp(prefix="gnc_test_getprice_")
-        from gnucash import Session, SessionOpenMode
-        uri = _copy_to_tmp(_PRICEDB_FILE, cls._tmpdir)
-        cls.ses = Session(uri, SessionOpenMode.SESSION_NORMAL_OPEN)
-        cls.book = cls.ses.get_book()
-        cls.table = cls.book.get_table()
-        cls.pricedb = cls.book.get_price_db()
-        cls.usd = cls.table.lookup("CURRENCY", "USD")
-        cls.corl = cls.table.lookup("NASDAQ", "CORL")
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.ses.end()
-        shutil.rmtree(cls._tmpdir, ignore_errors=True)
-
     def test_get_latest_price_returns_gnc_numeric(self):
-        from gnucash import GncNumeric
-        val = self.pricedb.get_latest_price(self.corl, self.usd)
+        val = self.pricedb.get_latest_price(self.test_comm, self.usd)
         self.assertIsInstance(val, GncNumeric)
         self.assertNotEqual(float(val), 0.0,
-                            "Expected a non-zero price for CORL/USD")
+                            "Expected a non-zero price for TSTK/USD")
 
     def test_get_nearest_price_returns_gnc_numeric(self):
-        from gnucash import GncNumeric
-        date = datetime(2001, 3, 26)
-        val = self.pricedb.get_nearest_price(self.corl, self.usd, date)
+        date = datetime(2025, 1, 20)
+        val = self.pricedb.get_nearest_price(self.test_comm, self.usd, date)
         self.assertIsInstance(val, GncNumeric)
 
     def test_get_nearest_before_price_returns_gnc_numeric(self):
-        from gnucash import GncNumeric
-        date = datetime(2001, 4, 1)
-        val = self.pricedb.get_nearest_before_price(self.corl, self.usd, date)
+        date = datetime(2025, 7, 1)
+        val = self.pricedb.get_nearest_before_price(
+            self.test_comm, self.usd, date)
         self.assertIsInstance(val, GncNumeric)
 
     def test_get_latest_price_arithmetic(self):
         """Verify the returned GncNumeric supports arithmetic."""
-        from gnucash import GncNumeric
-        val = self.pricedb.get_latest_price(self.corl, self.usd)
+        val = self.pricedb.get_latest_price(self.test_comm, self.usd)
         doubled = val + val
         self.assertIsInstance(doubled, GncNumeric)
         self.assertAlmostEqual(float(doubled), float(val) * 2, places=6)
@@ -445,21 +423,18 @@ class TestDoubleWrapProtection(TestCase):
     class constructor unwraps it instead of creating a broken object."""
 
     def test_gnc_numeric_double_wrap(self):
-        from gnucash import GncNumeric
         original = GncNumeric(7, 3)
         double = GncNumeric(instance=original)
         self.assertEqual(double.num(), 7)
         self.assertEqual(double.denom(), 3)
 
     def test_gnc_numeric_double_wrap_arithmetic(self):
-        from gnucash import GncNumeric
         original = GncNumeric(1, 4)
         double = GncNumeric(instance=original)
         result = double + GncNumeric(3, 4)
         self.assertAlmostEqual(float(result), 1.0, places=6)
 
     def test_gnc_commodity_double_wrap(self):
-        from gnucash import Session, GncCommodity
         ses = Session()
         book = ses.get_book()
         table = book.get_table()
@@ -471,7 +446,6 @@ class TestDoubleWrapProtection(TestCase):
 
     def test_raw_instance_still_works(self):
         """Passing a raw SWIG proxy as instance= must still work."""
-        from gnucash import GncNumeric
         from gnucash import gnucash_core_c as gc
         raw = gc.gnc_numeric_create(5, 2)
         val = GncNumeric(instance=raw)
@@ -480,5 +454,4 @@ class TestDoubleWrapProtection(TestCase):
 
 
 if __name__ == '__main__':
-    import unittest
     main()
