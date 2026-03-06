@@ -775,6 +775,9 @@ PriceDB_dict =  {
                 'convert_balance_latest_price' : GncNumeric,
                 'convert_balance_nearest_price_t64' : GncNumeric,
                 'convert_balance_nearest_before_price_t64' : GncNumeric,
+                'get_latest_price' : GncNumeric,
+                'get_nearest_price' : GncNumeric,
+                'get_nearest_before_price' : GncNumeric,
                 }
 methods_return_instance(GncPriceDB,PriceDB_dict)
 methods_return_instance_lists(

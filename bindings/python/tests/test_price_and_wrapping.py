@@ -381,6 +381,104 @@ class TestSwigTypemapCompat(TestCase):
                              "Unexpected DeprecationWarning for .instance")
 
 
+# ---------------------------------------------------------------------------
+# Test: GncPriceDB.get_*_price returns GncNumeric
+# ---------------------------------------------------------------------------
+@skipUnless(_HAS_TEST_DATA, "pricedb1.gml2 not found in source tree")
+class TestGetPriceReturnsGncNumeric(TestCase):
+    """Verify that get_latest_price, get_nearest_price, and
+    get_nearest_before_price return GncNumeric instead of raw
+    _gnc_numeric."""
+
+    @classmethod
+    def setUpClass(cls):
+        if not _can_open_xml():
+            raise unittest.SkipTest("XML backend not available")
+        cls._tmpdir = tempfile.mkdtemp(prefix="gnc_test_getprice_")
+        from gnucash import Session, SessionOpenMode
+        uri = _copy_to_tmp(_PRICEDB_FILE, cls._tmpdir)
+        cls.ses = Session(uri, SessionOpenMode.SESSION_NORMAL_OPEN)
+        cls.book = cls.ses.get_book()
+        cls.table = cls.book.get_table()
+        cls.pricedb = cls.book.get_price_db()
+        cls.usd = cls.table.lookup("CURRENCY", "USD")
+        cls.corl = cls.table.lookup("NASDAQ", "CORL")
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.ses.end()
+        shutil.rmtree(cls._tmpdir, ignore_errors=True)
+
+    def test_get_latest_price_returns_gnc_numeric(self):
+        from gnucash import GncNumeric
+        val = self.pricedb.get_latest_price(self.corl, self.usd)
+        self.assertIsInstance(val, GncNumeric)
+        self.assertNotEqual(float(val), 0.0,
+                            "Expected a non-zero price for CORL/USD")
+
+    def test_get_nearest_price_returns_gnc_numeric(self):
+        from gnucash import GncNumeric
+        date = datetime(2001, 3, 26)
+        val = self.pricedb.get_nearest_price(self.corl, self.usd, date)
+        self.assertIsInstance(val, GncNumeric)
+
+    def test_get_nearest_before_price_returns_gnc_numeric(self):
+        from gnucash import GncNumeric
+        date = datetime(2001, 4, 1)
+        val = self.pricedb.get_nearest_before_price(self.corl, self.usd, date)
+        self.assertIsInstance(val, GncNumeric)
+
+    def test_get_latest_price_arithmetic(self):
+        """Verify the returned GncNumeric supports arithmetic."""
+        from gnucash import GncNumeric
+        val = self.pricedb.get_latest_price(self.corl, self.usd)
+        doubled = val + val
+        self.assertIsInstance(doubled, GncNumeric)
+        self.assertAlmostEqual(float(doubled), float(val) * 2, places=6)
+
+
+# ---------------------------------------------------------------------------
+# Test: ClassFromFunctions double-wrap protection
+# ---------------------------------------------------------------------------
+class TestDoubleWrapProtection(TestCase):
+    """Verify that passing a wrapper object as instance= to a wrapper
+    class constructor unwraps it instead of creating a broken object."""
+
+    def test_gnc_numeric_double_wrap(self):
+        from gnucash import GncNumeric
+        original = GncNumeric(7, 3)
+        double = GncNumeric(instance=original)
+        self.assertEqual(double.num(), 7)
+        self.assertEqual(double.denom(), 3)
+
+    def test_gnc_numeric_double_wrap_arithmetic(self):
+        from gnucash import GncNumeric
+        original = GncNumeric(1, 4)
+        double = GncNumeric(instance=original)
+        result = double + GncNumeric(3, 4)
+        self.assertAlmostEqual(float(result), 1.0, places=6)
+
+    def test_gnc_commodity_double_wrap(self):
+        from gnucash import Session, GncCommodity
+        ses = Session()
+        book = ses.get_book()
+        table = book.get_table()
+        usd = table.lookup("CURRENCY", "USD")
+        double = GncCommodity(instance=usd)
+        self.assertIsInstance(double, GncCommodity)
+        self.assertEqual(double.get_mnemonic(), "USD")
+        ses.end()
+
+    def test_raw_instance_still_works(self):
+        """Passing a raw SWIG proxy as instance= must still work."""
+        from gnucash import GncNumeric
+        from gnucash import gnucash_core_c as gc
+        raw = gc.gnc_numeric_create(5, 2)
+        val = GncNumeric(instance=raw)
+        self.assertEqual(val.num(), 5)
+        self.assertEqual(val.denom(), 2)
+
+
 if __name__ == '__main__':
     import unittest
     main()
