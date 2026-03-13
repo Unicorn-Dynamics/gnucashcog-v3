@@ -276,7 +276,7 @@ static GncInvoice* invoice_from_split (Split* split);
 #define LINK_TRANSACTION_OPEN_LABEL      N_("_Open Linked Document")
 /* Translators: This is a menu item that will open the bill, invoice, or voucher
    that is posted to the current transaction if there is one. */
-#define JUMP_LINKED_INVOICE_LABEL        N_("Jump to Invoice")
+#define JUMP_LINKED_INVOICE_LABEL        N_("Jump to Business item")
 #define CUT_SPLIT_LABEL                  N_("Cu_t Split")
 #define COPY_SPLIT_LABEL                 N_("_Copy Split")
 #define PASTE_SPLIT_LABEL                N_("_Paste Split")
@@ -289,7 +289,7 @@ static GncInvoice* invoice_from_split (Split* split);
 #define DELETE_TRANSACTION_TIP           N_("Delete the current transaction")
 #define LINK_TRANSACTION_TIP             N_("Add, change, or unlink the document linked with the current transaction")
 #define LINK_TRANSACTION_OPEN_TIP        N_("Open the linked document for the current transaction")
-#define JUMP_LINKED_INVOICE_TIP          N_("Jump to the linked bill, invoice, or voucher")
+#define JUMP_LINKED_INVOICE_TIP          N_("Jump to the linked invoice, bill, expense or credit note")
 #define CUT_SPLIT_TIP                    N_("Cut the selected split into clipboard")
 #define COPY_SPLIT_TIP                   N_("Copy the selected split into clipboard")
 #define PASTE_SPLIT_TIP                  N_("Paste the split from the clipboard")
@@ -4722,8 +4722,8 @@ gnc_plugin_page_register_cmd_jump_linked_invoice (GSimpleAction *simple,
             }
             details = g_list_reverse (details);
             choice = gnc_choose_radio_option_dialog
-                (window, _("Select document"),
-                 _("Several documents are linked with this transaction. \
+                (window, _("Select Business Item"),
+                 _("Several business items are linked with this transaction. \
 Please choose one:"), _("Select"), 0, details);
             if ((choice >= 0) && ((size_t)choice < invoices.size()))
                 invoice = invoices[choice];
