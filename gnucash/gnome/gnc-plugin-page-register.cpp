@@ -401,10 +401,6 @@ static GncToolBarShortNames toolbar_labels[] =
     { "ScheduleTransactionAction",          N_ ("Schedule") },
     { "BlankTransactionAction",             N_ ("Blank") },
     { "ActionsReconcileAction",             N_ ("Reconcile") },
-    { "ActionsAutoClearAction",             N_ ("Auto-clear") },
-    { "LinkTransactionAction",              N_ ("Manage Document Link") },
-    { "LinkedTransactionOpenAction",        N_ ("Open Linked Document") },
-    { "JumpLinkedInvoiceAction",            N_ ("Invoice") },
     { "ActionsStockAssistantAction",        N_ ("Stock Assistant") },
     { NULL, NULL },
 };
@@ -805,9 +801,6 @@ static const char* tran_action_labels[] =
     PASTE_TRANSACTION_LABEL,
     DUPLICATE_TRANSACTION_LABEL,
     DELETE_TRANSACTION_LABEL,
-    LINK_TRANSACTION_LABEL,
-    LINK_TRANSACTION_OPEN_LABEL,
-    JUMP_LINKED_INVOICE_LABEL,
     NULL
 };
 
@@ -819,9 +812,6 @@ static const char* tran_action_tips[] =
     PASTE_TRANSACTION_TIP,
     DUPLICATE_TRANSACTION_TIP,
     DELETE_TRANSACTION_TIP,
-    LINK_TRANSACTION_TIP,
-    LINK_TRANSACTION_OPEN_TIP,
-    JUMP_LINKED_INVOICE_TIP,
     NULL
 };
 
