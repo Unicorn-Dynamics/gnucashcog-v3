@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2026-02-22 04:09+0000\n"
+"PO-Revision-Date: 2026-03-03 13:09+0000\n"
 "Last-Translator: Szia Tomi <sziatomi01@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/hu/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: bindings/guile/date-utilities.scm:173
 #: gnucash/report/reports/example/daily-reports.scm:260
@@ -1129,22 +1129,22 @@ msgid ""
 "To schedule a transaction every year you can choose the monthly basic "
 "frequency and then set 'Every 12 months'."
 msgstr ""
-"Az ütemezett tranzakció szerkesztője nagyon rugalmas ismétlődési gyakoriság "
-"beállítását teszi lehetővé. A tranzkciók ütemezésének alapgyakoriságai a "
-"napi, heti, félhavi és havi. Ezekből jól használható ismétlődési "
-"gyakoriságok alakíthatók ki. Néhány példa a számtalan lehetőség közül:\n"
+"Az ütemezett tranzakció szerkesztője nagyon rugalmas ismétlődési időközök "
+"beállítását teszi lehetővé. A tranzkciók ütemezésének alapidőközei a napi, "
+"heti, félhavi és havi. Ezekből jól használható ismétlődési időközök "
+"alakíthatók ki. Néhány példa a számtalan lehetőség közül:\n"
 "\n"
 "Egy háromhetente ismétlődő tranzakció beálításához válassza ki a heti "
-"alapgyakoriságot, majd állítsa be: Ismétlődés 3 hetente, és válassza ki, "
-"hogy a hét melyik napján történjenek a tranzakciók.\n"
+"alapidőközt, majd állítsa be: Ismétlődés 3 hetente, és válassza ki, hogy a "
+"hét melyik napján történjenek a tranzakciók.\n"
 "\n"
 "Egy havonta kétszer ismétlődő tranzakció beállításához válassza ki a félhavi "
-"alapgyakoriságot, és állítsa be, hogy a hónap melyik napján történjen az "
-"első és melyik napján a második tranzakció.\n"
+"alapidőközt, és állítsa be, hogy a hónap melyik napján történjenek az első "
+"és melyik napján a második tranzakciók.\n"
 "\n"
 "Egy évente ismétlődő tranzakció beállításához válassza ki a havi "
-"alapgyakoriságot, majd állítsa be: Ismétlődés 12 havonta, és válassza ki, "
-"hogy a hónap melyik napján történjenek a tranzakciók."
+"alapidőközt, majd állítsa be: Ismétlődés 12 havonta, és válassza ki, hogy a "
+"hónap melyik napján történjenek a tranzakciók."
 
 #: doc/tip_of_the_day.list.c:117
 msgid ""
@@ -7302,7 +7302,7 @@ msgstr "Dátum: "
 #: gnucash/gtkbuilder/dialog-sx.glade:1429
 #: gnucash/gtkbuilder/gnc-frequency.glade:593
 msgid "Frequency"
-msgstr "Gyakoriság"
+msgstr "Időköz"
 
 #: gnucash/gnome-utils/gnc-dense-cal.c:1330
 msgid "(unnamed)"
@@ -12323,15 +12323,15 @@ msgstr "%"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:393
 msgid "Interest Rate Change Frequency"
-msgstr "Kamatlábváltozás gyakorisága"
+msgstr "Kamatlábváltozás időköze"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:439
 msgid "Loan Details"
-msgstr "Kölcsön részletei"
+msgstr "A kölcsön részletei"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:454
 msgid "Do you utilize an escrow account, if so an account must be specified…"
-msgstr "Ha letéti számlát használ, akkor egy számlát meg kell adni…"
+msgstr "Ha letéti számlát használ, akkor meg kell adnia egy számlát…"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:473
 msgid "… utilize an escrow account for payments?"
@@ -12360,7 +12360,7 @@ msgstr "Fizetendő kamat"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:682
 msgid "Repayment Frequency"
-msgstr "Visszafizetés gyakorisága"
+msgstr "Törlesztések időköze"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:717
 msgid "Loan Repayment"
@@ -12394,7 +12394,7 @@ msgstr "Fizetési tranzakció része"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:1009
 msgid "Payment Frequency"
-msgstr "Fizetési gyakoriság"
+msgstr "Fizetési időköz"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:1035
 msgid "Previous Option"
@@ -14175,7 +14175,7 @@ msgstr "Név_tér"
 
 #: gnucash/gtkbuilder/dialog-commodity.glade:503
 msgid "_Symbol/abbreviation"
-msgstr "Jelölé_s/rövidítés"
+msgstr "_Szimbólum/rövidítés"
 
 #: gnucash/gtkbuilder/dialog-commodity.glade:518
 msgid "_Full name"
@@ -14471,23 +14471,23 @@ msgstr "Éves"
 #: gnucash/gtkbuilder/dialog-fincalc.glade:15
 #: gnucash/gtkbuilder/dialog-fincalc.glade:56
 msgid "Semi-annual"
-msgstr "Félévi"
+msgstr "Féléves"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:18
 #: gnucash/gtkbuilder/dialog-fincalc.glade:59
 msgid "Tri-annual"
-msgstr "Háromévi"
+msgstr "Négyhónapos"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:21
 #: gnucash/gtkbuilder/dialog-fincalc.glade:62
 #: gnucash/gtkbuilder/dialog-sx.glade:135 gnucash/report/trep-engine.scm:334
 msgid "Quarterly"
-msgstr "Negyedévi"
+msgstr "Negyedéves"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:24
 #: gnucash/gtkbuilder/dialog-fincalc.glade:65
 msgid "Bi-monthly"
-msgstr "Kéthavi"
+msgstr "Kéthónapos"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:27
 #: gnucash/gtkbuilder/dialog-fincalc.glade:68
@@ -14547,11 +14547,11 @@ msgstr "Számítások"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:210
 msgid "Payment periods"
-msgstr "Törlesztőrészletek száma"
+msgstr "Törlesztési időszakok (törlesztések száma)"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:224
 msgid "Interest rate"
-msgstr "Kamatláb"
+msgstr "Kamatláb (%)"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:237
 msgid "Present value"
@@ -14587,11 +14587,11 @@ msgstr "A fenti, egyedül üres beviteli mező értékének kiszámítása."
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:517
 msgid "Payment Options"
-msgstr "Fizetési beállítások"
+msgstr "Kamat és törlesztés beállítása"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:541
 msgid "Payment Total"
-msgstr "Összes kifizetés"
+msgstr "Visszafizetés teljes összege"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:571
 msgid "Discrete"
@@ -14603,15 +14603,15 @@ msgstr "Folyamatos"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:604
 msgid "Beginning"
-msgstr "Kezdet"
+msgstr "Időszak eleje"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:640
 msgid "Compounding"
-msgstr "Összevonás"
+msgstr "Kamatos kamat"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:789
 msgid "When paid"
-msgstr "Kiegyenlítés dátuma"
+msgstr "Törlesztések ideje"
 
 #: gnucash/gtkbuilder/dialog-find-account.glade:25
 #: gnucash/gtkbuilder/dialog-find-account.glade:96
@@ -28672,7 +28672,7 @@ msgstr "_Kétsoros"
 #: gnucash/ui/gnc-plugin-page-register.ui:872
 #: gnucash/ui/gnc-reconcile-window.ui:43
 msgid "_Transfer…"
-msgstr "_Átutalás…"
+msgstr "Át_utalás…"
 
 #: gnucash/ui/gnc-embedded-register-window.ui:95
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:128
@@ -28689,7 +28689,7 @@ msgstr "Pénz átvezetése egyik számláról a másikra"
 #: gnucash/ui/gnc-plugin-page-register.ui:642
 #: gnucash/ui/gnc-plugin-page-register.ui:802
 msgid "_Blank Transaction"
-msgstr "_Üres tranzakció"
+msgstr "Üres (_blank) tranzakció"
 
 #: gnucash/ui/gnc-embedded-register-window.ui:101
 #: gnucash/ui/gnc-embedded-register-window.ui:142
@@ -29551,7 +29551,7 @@ msgstr "A kiválasztott számla egyeztetése"
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:239
 #: gnucash/ui/gnc-plugin-page-register.ui:242
 msgid "_Auto-clear…"
-msgstr "_Automatikus kiegyenlítés (elszámolás)…"
+msgstr "Automatikus _kiegyenlítés (elszámolás)…"
 
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:140
 msgid ""
@@ -30136,7 +30136,7 @@ msgstr "Ugrás a regiszterben lévő üres tranzakcióra."
 #: gnucash/ui/gnc-plugin-page-register.ui:417
 #: gnucash/ui/gnc-plugin-page-register.ui:529
 msgid "_Go to Date"
-msgstr "_Ugrás dátumhoz"
+msgstr "Ugrás _dátumhoz"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:279
 #: gnucash/ui/gnc-plugin-page-register.ui:419
@@ -30196,7 +30196,7 @@ msgstr ""
 #: gnucash/ui/gnc-plugin-page-register.ui:549
 #: gnucash/ui/gnc-plugin-page-register.ui:832
 msgid "_Jump to the other account"
-msgstr "_Ugrás a másik számlára"
+msgstr "Ugrás a _másik számlára"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:306
 #: gnucash/ui/gnc-plugin-page-register.ui:439
