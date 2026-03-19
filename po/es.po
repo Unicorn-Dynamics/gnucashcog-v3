@@ -20,6 +20,7 @@
 # Deleted User <noreply+48943@weblate.org>, 2025.
 # Jesús Martínez <weblate@jandemor.com>, 2025.
 # apemay <aperezmayol@gmail.com>, 2026.
+# apemay <apemay.dev@gmail.com>, 2026.
 #
 #
 # ###############################################################################
@@ -89,8 +90,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2026-02-28 09:45+0000\n"
-"Last-Translator: apemay <aperezmayol@gmail.com>\n"
+"PO-Revision-Date: 2026-03-05 16:09+0000\n"
+"Last-Translator: apemay <apemay.dev@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "es/>\n"
 "Language: es\n"
@@ -98,7 +99,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: <b>;</b>;<span weight=\"bold\" size=\"larger\">;</"
@@ -415,7 +416,7 @@ msgstr "Imposición"
 
 #: bindings/guile/options.scm:400 libgnucash/engine/gnc-optiondb.cpp:1354
 msgid "Tax Number"
-msgstr "Número Impositivo (CIF)"
+msgstr "Número de identificación fiscal"
 
 #: borrowed/goffice/go-charmap-sel.c:70
 msgid "Arabic"
@@ -19977,7 +19978,8 @@ msgstr "Las transacciones fueron importadas desde el archivo «{1}»."
 #: gnucash/import-export/csv-imp/csv-account-import.c:267
 #, c-format
 msgid "Row %u, path to account %s not found, added as top level\n"
-msgstr "Fila %u, ruta a cuenta %s no encontrada, agregado como nivel techo\n"
+msgstr ""
+"Fila %u, ruta a la cuenta %s no encontrada, añadida como nivel superior\n"
 
 #: gnucash/import-export/csv-imp/csv-account-import.c:319
 #, c-format
@@ -24284,8 +24286,8 @@ msgid ""
 "Exclude non-top-level accounts with zero balance and no non-zero sub-"
 "accounts."
 msgstr ""
-"Excluir cuentas de nivel-inferior-al-techo con balance a cero y ninguna "
-"subcuenta distinta de cero."
+"Excluir las cuentas que no sean de nivel superior con saldo cero y que no "
+"tengan subcuentas con saldo distinto de cero."
 
 #: gnucash/report/reports/standard/balsheet-eg.scm:161
 msgid "Negative amount format"
@@ -28185,7 +28187,7 @@ msgstr "Encabezado"
 #: gnucash/report/stylesheets/head-or-tail.scm:127
 #: gnucash/report/stylesheets/head-or-tail.scm:131
 msgid "Banner for top of report."
-msgstr "Encabezado para el techo del boletín."
+msgstr "Encabezado para la parte superior del informe."
 
 #: gnucash/report/stylesheets/footer.scm:91
 #: gnucash/report/stylesheets/head-or-tail.scm:131
@@ -29186,21 +29188,19 @@ msgstr "_Posición de la pestaña"
 
 #: gnucash/ui/gnc-main-window.ui:198
 msgid "Display the notebook tabs at the top of the window"
-msgstr "Representa las lengüetas de anotaciones en el techo de la ventana"
+msgstr "Mostrar las pestañas en la parte superior de la ventana"
 
 #: gnucash/ui/gnc-main-window.ui:204
 msgid "Display the notebook tabs at the bottom of the window"
-msgstr "Representa las lengüetas de anotaciones al suelo de la ventana"
+msgstr "Mostrar las pestañas en la parte inferior de la ventana"
 
 #: gnucash/ui/gnc-main-window.ui:210
 msgid "Display the notebook tabs at the left of the window"
-msgstr ""
-"Representa las lengüetas de anotaciones en la parte izquierda de la ventana"
+msgstr "Mostrar las pestañas en la parte izquierda de la ventana"
 
 #: gnucash/ui/gnc-main-window.ui:216
 msgid "Display the notebook tabs at the right of the window"
-msgstr ""
-"Representa las lengüetas de anotaciones en la parte derecha de la ventana"
+msgstr "Mostrar las pestañas en la parte derecha de la ventana"
 
 #: gnucash/ui/gnc-main-window.ui:256
 msgid "Tra_nsaction"
@@ -29217,8 +29217,8 @@ msgstr "_Restablecer advertencias…"
 #: gnucash/ui/gnc-main-window.ui:346
 msgid "Reset the state of all warning messages so they will be shown again"
 msgstr ""
-"Restablecer el estado de todos los mensajes de advertencia, de forma que se "
-"vuelvan a mostrar"
+"Restablecer el estado de todos los mensajes de advertencia para que se "
+"muestren de nuevo"
 
 #: gnucash/ui/gnc-main-window.ui:349
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:200
@@ -29267,7 +29267,7 @@ msgstr "_Crear ventana"
 
 #: gnucash/ui/gnc-main-window.ui:468
 msgid "Open a new top-level GnuCash window"
-msgstr "Abre una ventana GnuCash de nivel techo"
+msgstr "Abrir una nueva ventana de nivel superior de GnuCash"
 
 #: gnucash/ui/gnc-main-window.ui:471
 msgid "New Window with _Page"
@@ -29275,7 +29275,7 @@ msgstr "Crear ventana con _página"
 
 #: gnucash/ui/gnc-main-window.ui:473
 msgid "Move the current page to a new top-level GnuCash window"
-msgstr "Mueve la página efectiva a una nueva ventana de nivel-techo de GnuCash"
+msgstr "Mover la página actual a una nueva ventana de nivel superior de GnuCash"
 
 #: gnucash/ui/gnc-main-window.ui:501
 msgid "Tutorial and Concepts _Guide"
@@ -29782,7 +29782,7 @@ msgstr "Inicializar datos de prueba"
 
 #: gnucash/ui/gnc-plugin-csv-export.ui:6
 msgid "Export Account T_ree to CSV…"
-msgstr "Exportar _Plan Contable a CSV…"
+msgstr "Exportar _plan contable a CSV…"
 
 #: gnucash/ui/gnc-plugin-csv-export.ui:8
 msgid "Export the Account Tree to a CSV file"
@@ -29798,7 +29798,7 @@ msgstr "Exporta las Transacciones a un archivo CSV"
 
 #: gnucash/ui/gnc-plugin-csv-export.ui:16
 msgid "Export A_ctive Register to CSV…"
-msgstr "Exportar Registro Activo a _CSV…"
+msgstr "Exportar registro activo a _CSV…"
 
 #: gnucash/ui/gnc-plugin-csv-export.ui:18
 msgid "Export the Active Register to a CSV file"
@@ -29862,7 +29862,7 @@ msgstr "Edita la cuenta seleccionada"
 
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:23
 msgid "_Delete Account"
-msgstr "_Borrar Cuenta"
+msgstr "_Borrar cuenta"
 
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:30
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:227
