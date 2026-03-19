@@ -19,6 +19,7 @@
 # Francisco <fhiegom@outlook.es>, 2023.
 # Deleted User <noreply+48943@weblate.org>, 2025.
 # Jesús Martínez <weblate@jandemor.com>, 2025.
+# apemay <aperezmayol@gmail.com>, 2026.
 #
 #
 # ###############################################################################
@@ -88,8 +89,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2026-02-15 12:09+0000\n"
-"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"PO-Revision-Date: 2026-02-28 09:45+0000\n"
+"Last-Translator: apemay <aperezmayol@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "es/>\n"
 "Language: es\n"
@@ -97,7 +98,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: <b>;</b>;<span weight=\"bold\" size=\"larger\">;</"
@@ -31887,7 +31888,7 @@ msgstr ""
 
 #: libgnucash/engine/gnc-optiondb.cpp:1244
 msgid "Employee number format"
-msgstr "Formato de número del operador"
+msgstr "Formato del número de empleado"
 
 #: libgnucash/engine/gnc-optiondb.cpp:1246
 msgid ""
