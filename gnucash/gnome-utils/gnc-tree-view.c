@@ -325,7 +325,7 @@ gnc_tree_view_init (GncTreeView *view)
  *  @param obj The new object instance created by the object
  *  system.
  */
- static void
+static void
 gnc_tree_view_constructed (GObject *obj)
 {
     gnc_gobject_tracking_remember(obj);
@@ -346,9 +346,16 @@ gnc_tree_view_constructed (GObject *obj)
 static void
 gnc_tree_view_finalize (GObject *object)
 {
+    GncTreeView *view;
+    GncTreeViewPrivate *priv;
+
     ENTER("view %p", object);
     g_return_if_fail (object != NULL);
     g_return_if_fail (GNC_IS_TREE_VIEW(object));
+
+    view = GNC_TREE_VIEW(object);
+    priv = GNC_TREE_VIEW_GET_PRIVATE(view);
+    g_object_unref(priv->column_menu_icon_box);
 
     gnc_gobject_tracking_forget (object);
 
