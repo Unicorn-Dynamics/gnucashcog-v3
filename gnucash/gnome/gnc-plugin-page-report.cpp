@@ -1188,9 +1188,10 @@ gnc_plugin_page_report_destroy(GncPluginPageReportPrivate * priv)
     }
 
     gnc_html_destroy(priv->html);
-
-    priv->container     = nullptr;
     priv->html          = nullptr;
+
+    g_object_unref(priv->container);
+    priv->container     = nullptr;
 
     if (priv->cur_report != SCM_BOOL_F)
         scm_gc_unprotect_object(priv->cur_report);
