@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2026-03-03 13:09+0000\n"
+"PO-Revision-Date: 2026-03-20 19:09+0000\n"
 "Last-Translator: Szia Tomi <sziatomi01@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/hu/>\n"
@@ -14547,7 +14547,7 @@ msgstr "Számítások"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:210
 msgid "Payment periods"
-msgstr "Törlesztési időszakok (törlesztések száma)"
+msgstr "Törlesztési időszakok száma"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:224
 msgid "Interest rate"
@@ -14563,7 +14563,7 @@ msgstr "Törlesztőrészlet összege"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:263
 msgid "Future value"
-msgstr "Jövőbeni érték"
+msgstr "Jövőbeli érték"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:277
 #: gnucash/gtkbuilder/dialog-fincalc.glade:292
@@ -30136,20 +30136,20 @@ msgstr "Ugrás a regiszterben lévő üres tranzakcióra."
 #: gnucash/ui/gnc-plugin-page-register.ui:417
 #: gnucash/ui/gnc-plugin-page-register.ui:529
 msgid "_Go to Date"
-msgstr "Ugrás _dátumhoz"
+msgstr "_Dátumhoz ugrás"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:279
 #: gnucash/ui/gnc-plugin-page-register.ui:419
 #: gnucash/ui/gnc-plugin-page-register.ui:531
 msgid "Move to the split at the specified date."
-msgstr ""
+msgstr "Ugrás a megadott dátumú felosztásra."
 
 #: gnucash/ui/gnc-plugin-page-register.ui:283
 #: gnucash/ui/gnc-plugin-page-register.ui:422
 #: gnucash/ui/gnc-plugin-page-register.ui:534
 #: gnucash/ui/gnc-plugin-page-register.ui:817
 msgid "S_plit Transaction"
-msgstr "Tranzakció _felosztása"
+msgstr "A tranzakció _felosztásai"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:285
 #: gnucash/ui/gnc-plugin-page-register.ui:424
@@ -30175,7 +30175,7 @@ msgstr "A jelen tranzakció árfolyamának szerkesztése."
 #: gnucash/ui/gnc-plugin-page-register.ui:544
 #: gnucash/ui/gnc-plugin-page-register.ui:847
 msgid "Sche_dule…"
-msgstr "Ü_temezés…"
+msgstr "Üteme_zés…"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:297
 #: gnucash/ui/gnc-plugin-page-register.ui:434
@@ -30186,7 +30186,7 @@ msgid ""
 "edit the Scheduled Transaction that current transaction was created by."
 msgstr ""
 "Ütemezett tranzakció létrehozása a jelenlegi tranzakció mintájára, vagy a "
-"jelenlegi tranzakciót létrehozó Ütemezett tranzakció szerkesztése."
+"jelenlegi tranzakciót létrehozó ütemezett tranzakció szerkesztése."
 
 #. Translators: This is a menu item that will open a register tab for the
 #. account of the first other account in the current transaction's split list
@@ -30196,7 +30196,7 @@ msgstr ""
 #: gnucash/ui/gnc-plugin-page-register.ui:549
 #: gnucash/ui/gnc-plugin-page-register.ui:832
 msgid "_Jump to the other account"
-msgstr "Ugrás a _másik számlára"
+msgstr "U_grás az ellenszámlára"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:306
 #: gnucash/ui/gnc-plugin-page-register.ui:439
@@ -30205,7 +30205,7 @@ msgstr "Ugrás a _másik számlára"
 msgid ""
 "Open a new register tab for the other account with focus on this transaction."
 msgstr ""
-"A másik számla megnyitása új regiszterlapon és ugrás erre a tranzakcióra."
+"Az ellenszámla megnyitása új regiszterlapon és ugrás erre a tranzakcióra."
 
 #: gnucash/ui/gnc-plugin-page-register.ui:318
 msgid "All Transactions"
