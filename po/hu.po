@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2026-03-20 19:09+0000\n"
+"PO-Revision-Date: 2026-03-20 21:09+0000\n"
 "Last-Translator: Szia Tomi <sziatomi01@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/hu/>\n"
@@ -21082,7 +21082,9 @@ msgstr "+%"
 #: gnucash/register/ledger-core/split-register-layout.c:737
 msgctxt "sample"
 msgid "Expenses:Automobile:Gasoline"
-msgstr "Költségek:Autó:Üzemanyag"
+msgstr ""
+"Költségek:Igénybevett szolgáltatások költsége:Szállítás és raktározás:Raktár "
+"bérleti díja"
 
 #. Translators: Abbreviation sample for Taxable?
 #: gnucash/register/ledger-core/gncEntryLedgerLayout.c:132
@@ -21709,16 +21711,16 @@ msgstr "Össz. részvény"
 
 #: gnucash/register/ledger-core/split-register-model.c:523
 msgid "Debit Formula"
-msgstr "Tartozás-képlet"
+msgstr "Tartozásképlet"
 
 #: gnucash/register/ledger-core/split-register-model.c:530
 msgid "Credit Formula"
-msgstr "Követelés-képlet"
+msgstr "Követelésképlet"
 
 #: gnucash/register/ledger-core/split-register-model.c:552
 #, c-format
 msgid "Reconciled on %s"
-msgstr "Egyeztetés: %s"
+msgstr "Egyeztetve: %s"
 
 #: gnucash/register/ledger-core/split-register-model.c:1033
 msgid "Scheduled"
@@ -21890,11 +21892,11 @@ msgstr "Tra_nzakció megváltoztatása"
 
 #: gnucash/register/ledger-core/split-register-model.c:2367
 msgid "Enter debit formula for real transaction"
-msgstr "Tartozás-képlet megadása valós tranzakcióhoz"
+msgstr "Tartozásképlet megadása valós tranzakcióhoz"
 
 #: gnucash/register/ledger-core/split-register-model.c:2403
 msgid "Enter credit formula for real transaction"
-msgstr "Követelés-képlet megadása valós tranzakcióhoz"
+msgstr "Követelésképlet megadása valós tranzakcióhoz"
 
 #: gnucash/register/register-gnome/completioncell-gnome.c:76
 msgid "Don't autocomplete"
@@ -29596,12 +29598,12 @@ msgstr "A tétel néző/szerkesztő ablak megnyitása"
 #: gnucash/ui/gnc-plugin-page-register.ui:314
 #: gnucash/ui/gnc-reconcile-window.ui:49
 msgid "_Check & Repair"
-msgstr "_Ellenőrzés és javítás"
+msgstr "Ellenőrzés és _javítás"
 
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:169
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:281
 msgid "Check & Repair A_ccount"
-msgstr "S_zámla ellenőrzése és javítása"
+msgstr "_Számla ellenőrzése és javítása"
 
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:171
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:283
@@ -30807,7 +30809,7 @@ msgstr "Ezenkívül:"
 #, c++-format
 msgid "The following file has been copied to {1} instead:"
 msgid_plural "The following files have been copied to {1} instead:"
-msgstr[0] ""
+msgstr[0] "A következő fájlok a {1} mappába lettek másolva:"
 
 #: libgnucash/core-utils/gnc-filepath-utils.cpp:701
 #, c++-format
@@ -30818,14 +30820,13 @@ msgstr "A {1} mappában a következő fájl át lett nevezve:"
 msgid "The following file has become obsolete and will be ignored:"
 msgid_plural "The following files have become obsolete and will be ignored:"
 msgstr[0] ""
-"A következő fájl(ok) elavulttá vált(ak), ezért figyelmen kívül lesz(nek) "
-"hagyva:"
+"A következő fájlok elavulttá váltak, ezért figyelmen kívül lesznek hagyva:"
 
 #: libgnucash/core-utils/gnc-filepath-utils.cpp:721
 #, c++-format
 msgid "The following file could not be moved to {1}:"
 msgid_plural "The following files could not be moved to {1}:"
-msgstr[0] "A következő fájl(ok) nem helyezhető(k) át a {1} mappába:"
+msgstr[0] "A következő fájlok nem helyezhetők át a {1} mappába:"
 
 #: libgnucash/engine/Account.cpp:150
 msgid "Deposit"
