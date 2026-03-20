@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2026-03-20 21:09+0000\n"
+"PO-Revision-Date: 2026-03-21 00:09+0000\n"
 "Last-Translator: Szia Tomi <sziatomi01@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/hu/>\n"
@@ -4171,7 +4171,7 @@ msgstr "Soha"
 
 #: gnucash/gnome/dialog-sx-since-last-run.c:522
 msgid "(Need Value)"
-msgstr "(Érték)"
+msgstr "(Érték szükséges)"
 
 #: gnucash/gnome/dialog-sx-since-last-run.c:895
 msgid "Invalid Transactions"
@@ -4254,8 +4254,8 @@ msgid ""
 "CAUTION: If you set TXF categories, and later change 'Type', you will need "
 "to manually reset those categories one at a time"
 msgstr ""
-"FIGYELEM: Ha TXF kategóriákat állít be, és később megváltoztatja a 'Típus'-"
-"t, akkor ezeket a kategóriákat egyesével, kézzel kell visszaállítania."
+"FIGYELEM: Ha TXF kategóriákat állít be, és később megváltoztatja a TÍPUST, "
+"akkor ezeket a kategóriákat egyesével, kézzel kell visszaállítania."
 
 #: gnucash/gnome/dialog-tax-info.c:1392
 msgid "Form"
@@ -4451,7 +4451,7 @@ msgid ""
 msgstr ""
 "%s célszámlának nem ugyanaz az a pénzneme, mint ahonnan tranzakciót "
 "mozgatnád.\n"
-"Biztos, hogy meg akarod tenni?"
+"Biztos, hogy ezt akarod csinálni?"
 
 #: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1312
 msgid "_Pick another account"
@@ -5443,7 +5443,7 @@ msgstr "Ugrás a dátumra"
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5097
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5126
 msgid "Unable to jump to other account"
-msgstr "Nem lehet a másik számlára ugrani"
+msgstr "Nem lehet az ellenszámlára ugrani"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5100
 msgid ""
@@ -21083,8 +21083,9 @@ msgstr "+%"
 msgctxt "sample"
 msgid "Expenses:Automobile:Gasoline"
 msgstr ""
-"Költségek:Igénybevett szolgáltatások költsége:Szállítás és raktározás:Raktár "
-"bérleti díja"
+"Befektetett eszközök:Egyéb berendezések, felszerelések, járművek:Műszaki "
+"berendezések, gépek, járművek terven felüli értékcsökkenése, és annak "
+"visszaírása"
 
 #. Translators: Abbreviation sample for Taxable?
 #: gnucash/register/ledger-core/gncEntryLedgerLayout.c:132
