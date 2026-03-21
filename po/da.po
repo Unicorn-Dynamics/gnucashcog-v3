@@ -8,6 +8,7 @@
 # Ole Laursen <olau@hardworking.dk>, 2001.
 # Joe Hansen <joedalton2@yahoo.dk>, 2009, 2010, 2012, 2013, 2014, 2015, 2016, 2018.
 # Allan Olsen <allan@hamann-olsen.dk>, 2025.
+# Sune Kibsgaard <sune@kibs.dk>, 2026.
 #
 # konventioner:
 # account code -> kontonummer (ikke kontokode)
@@ -106,11 +107,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.14\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2025-10-05 19:02+0000\n"
-"Last-Translator: Allan Olsen <allan@hamann-olsen.dk>\n"
+"PO-Revision-Date: 2026-02-25 22:09+0000\n"
+"Last-Translator: Sune Kibsgaard <sune@kibs.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "da/>\n"
 "Language: da\n"
@@ -118,7 +119,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 
 #: bindings/guile/date-utilities.scm:173
@@ -4489,7 +4490,7 @@ msgstr "Er du sikker på, du ønsker dette?"
 #: gnucash/gtkbuilder/dialog-print-check.glade:641
 #: gnucash/gtkbuilder/dialog-sx.glade:938
 msgid "Options"
-msgstr "Alternativer"
+msgstr "Muligheder"
 
 #: gnucash/gnome/gnc-plugin-page-budget.cpp:180
 msgid "Estimate"
@@ -20935,7 +20936,7 @@ msgstr "Kapitalgevinst (kort sigt)"
 #: gnucash/report/reports/standard/budget-balance-sheet.scm:685
 #: libgnucash/app-utils/gnc-ui-util.cpp:637 libgnucash/engine/Account.cpp:4294
 msgid "Equity"
-msgstr "Udligning"
+msgstr "Egenkapital"
 
 #: gnucash/import-export/qif-imp/qif-dialog-utils.scm:110
 #: gnucash/import-export/qif-imp/qif-dialog-utils.scm:114
@@ -23138,7 +23139,7 @@ msgstr "Eksempelrapport"
 
 #: gnucash/report/reports/example/sample-report.scm:457
 msgid "An options example report."
-msgstr "Eksempel rapport om alternativer."
+msgstr "Eksempel rapport om muligheder."
 
 #: gnucash/report/reports/locale-specific/de_DE/taxtxf.scm:79
 msgid "Tax Report / TXF Export"
@@ -24194,7 +24195,7 @@ msgstr "Urealiserede tab"
 #: gnucash/report/reports/standard/balance-sheet.scm:490
 #: gnucash/report/reports/standard/budget-balance-sheet.scm:741
 msgid "Total Equity"
-msgstr "Total udligning"
+msgstr "Total Egenkapital"
 
 #: gnucash/report/reports/standard/balance-sheet.scm:500
 #: gnucash/report/reports/standard/budget-balance-sheet.scm:747
@@ -24509,7 +24510,7 @@ msgstr "Passiv"
 
 #: gnucash/report/reports/standard/balsheet-pnl.scm:1070
 msgid "Liability and Equity"
-msgstr "Ansvar og egenkapital"
+msgstr "Passiv og Egenkapital"
 
 #: gnucash/report/reports/standard/balsheet-pnl.scm:1088
 #: gnucash/report/reports/standard/balsheet-pnl.scm:1231
@@ -27953,7 +27954,7 @@ msgstr "Valutaer"
 
 #: gnucash/report/report-utilities.scm:212
 msgid "Equities"
-msgstr "Udligninger"
+msgstr "Egenkapital"
 
 #: gnucash/report/report-utilities.scm:213
 msgid "Checking"

@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2025-12-14 10:54-0800\n"
-"PO-Revision-Date: 2026-02-22 04:09+0000\n"
+"PO-Revision-Date: 2026-03-21 00:09+0000\n"
 "Last-Translator: Szia Tomi <sziatomi01@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/hu/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: bindings/guile/date-utilities.scm:173
 #: gnucash/report/reports/example/daily-reports.scm:260
@@ -1129,22 +1129,22 @@ msgid ""
 "To schedule a transaction every year you can choose the monthly basic "
 "frequency and then set 'Every 12 months'."
 msgstr ""
-"Az ütemezett tranzakció szerkesztője nagyon rugalmas ismétlődési gyakoriság "
-"beállítását teszi lehetővé. A tranzkciók ütemezésének alapgyakoriságai a "
-"napi, heti, félhavi és havi. Ezekből jól használható ismétlődési "
-"gyakoriságok alakíthatók ki. Néhány példa a számtalan lehetőség közül:\n"
+"Az ütemezett tranzakció szerkesztője nagyon rugalmas ismétlődési időközök "
+"beállítását teszi lehetővé. A tranzkciók ütemezésének alapidőközei a napi, "
+"heti, félhavi és havi. Ezekből jól használható ismétlődési időközök "
+"alakíthatók ki. Néhány példa a számtalan lehetőség közül:\n"
 "\n"
 "Egy háromhetente ismétlődő tranzakció beálításához válassza ki a heti "
-"alapgyakoriságot, majd állítsa be: Ismétlődés 3 hetente, és válassza ki, "
-"hogy a hét melyik napján történjenek a tranzakciók.\n"
+"alapidőközt, majd állítsa be: Ismétlődés 3 hetente, és válassza ki, hogy a "
+"hét melyik napján történjenek a tranzakciók.\n"
 "\n"
 "Egy havonta kétszer ismétlődő tranzakció beállításához válassza ki a félhavi "
-"alapgyakoriságot, és állítsa be, hogy a hónap melyik napján történjen az "
-"első és melyik napján a második tranzakció.\n"
+"alapidőközt, és állítsa be, hogy a hónap melyik napján történjenek az első "
+"és melyik napján a második tranzakciók.\n"
 "\n"
 "Egy évente ismétlődő tranzakció beállításához válassza ki a havi "
-"alapgyakoriságot, majd állítsa be: Ismétlődés 12 havonta, és válassza ki, "
-"hogy a hónap melyik napján történjenek a tranzakciók."
+"alapidőközt, majd állítsa be: Ismétlődés 12 havonta, és válassza ki, hogy a "
+"hónap melyik napján történjenek a tranzakciók."
 
 #: doc/tip_of_the_day.list.c:117
 msgid ""
@@ -4171,7 +4171,7 @@ msgstr "Soha"
 
 #: gnucash/gnome/dialog-sx-since-last-run.c:522
 msgid "(Need Value)"
-msgstr "(Érték)"
+msgstr "(Érték szükséges)"
 
 #: gnucash/gnome/dialog-sx-since-last-run.c:895
 msgid "Invalid Transactions"
@@ -4254,8 +4254,8 @@ msgid ""
 "CAUTION: If you set TXF categories, and later change 'Type', you will need "
 "to manually reset those categories one at a time"
 msgstr ""
-"FIGYELEM: Ha TXF kategóriákat állít be, és később megváltoztatja a 'Típus'-"
-"t, akkor ezeket a kategóriákat egyesével, kézzel kell visszaállítania."
+"FIGYELEM: Ha TXF kategóriákat állít be, és később megváltoztatja a TÍPUST, "
+"akkor ezeket a kategóriákat egyesével, kézzel kell visszaállítania."
 
 #: gnucash/gnome/dialog-tax-info.c:1392
 msgid "Form"
@@ -4451,7 +4451,7 @@ msgid ""
 msgstr ""
 "%s célszámlának nem ugyanaz az a pénzneme, mint ahonnan tranzakciót "
 "mozgatnád.\n"
-"Biztos, hogy meg akarod tenni?"
+"Biztos, hogy ezt akarod csinálni?"
 
 #: gnucash/gnome/gnc-plugin-page-account-tree.cpp:1312
 msgid "_Pick another account"
@@ -5443,7 +5443,7 @@ msgstr "Ugrás a dátumra"
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5097
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5126
 msgid "Unable to jump to other account"
-msgstr "Nem lehet a másik számlára ugrani"
+msgstr "Nem lehet az ellenszámlára ugrani"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:5100
 msgid ""
@@ -7302,7 +7302,7 @@ msgstr "Dátum: "
 #: gnucash/gtkbuilder/dialog-sx.glade:1429
 #: gnucash/gtkbuilder/gnc-frequency.glade:593
 msgid "Frequency"
-msgstr "Gyakoriság"
+msgstr "Időköz"
 
 #: gnucash/gnome-utils/gnc-dense-cal.c:1330
 msgid "(unnamed)"
@@ -12323,15 +12323,15 @@ msgstr "%"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:393
 msgid "Interest Rate Change Frequency"
-msgstr "Kamatlábváltozás gyakorisága"
+msgstr "Kamatlábváltozás időköze"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:439
 msgid "Loan Details"
-msgstr "Kölcsön részletei"
+msgstr "A kölcsön részletei"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:454
 msgid "Do you utilize an escrow account, if so an account must be specified…"
-msgstr "Ha letéti számlát használ, akkor egy számlát meg kell adni…"
+msgstr "Ha letéti számlát használ, akkor meg kell adnia egy számlát…"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:473
 msgid "… utilize an escrow account for payments?"
@@ -12360,7 +12360,7 @@ msgstr "Fizetendő kamat"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:682
 msgid "Repayment Frequency"
-msgstr "Visszafizetés gyakorisága"
+msgstr "Törlesztések időköze"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:717
 msgid "Loan Repayment"
@@ -12394,7 +12394,7 @@ msgstr "Fizetési tranzakció része"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:1009
 msgid "Payment Frequency"
-msgstr "Fizetési gyakoriság"
+msgstr "Fizetési időköz"
 
 #: gnucash/gtkbuilder/assistant-loan.glade:1035
 msgid "Previous Option"
@@ -14175,7 +14175,7 @@ msgstr "Név_tér"
 
 #: gnucash/gtkbuilder/dialog-commodity.glade:503
 msgid "_Symbol/abbreviation"
-msgstr "Jelölé_s/rövidítés"
+msgstr "_Szimbólum/rövidítés"
 
 #: gnucash/gtkbuilder/dialog-commodity.glade:518
 msgid "_Full name"
@@ -14471,23 +14471,23 @@ msgstr "Éves"
 #: gnucash/gtkbuilder/dialog-fincalc.glade:15
 #: gnucash/gtkbuilder/dialog-fincalc.glade:56
 msgid "Semi-annual"
-msgstr "Félévi"
+msgstr "Féléves"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:18
 #: gnucash/gtkbuilder/dialog-fincalc.glade:59
 msgid "Tri-annual"
-msgstr "Háromévi"
+msgstr "Négyhónapos"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:21
 #: gnucash/gtkbuilder/dialog-fincalc.glade:62
 #: gnucash/gtkbuilder/dialog-sx.glade:135 gnucash/report/trep-engine.scm:334
 msgid "Quarterly"
-msgstr "Negyedévi"
+msgstr "Negyedéves"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:24
 #: gnucash/gtkbuilder/dialog-fincalc.glade:65
 msgid "Bi-monthly"
-msgstr "Kéthavi"
+msgstr "Kéthónapos"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:27
 #: gnucash/gtkbuilder/dialog-fincalc.glade:68
@@ -14547,11 +14547,11 @@ msgstr "Számítások"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:210
 msgid "Payment periods"
-msgstr "Törlesztőrészletek száma"
+msgstr "Törlesztési időszakok száma"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:224
 msgid "Interest rate"
-msgstr "Kamatláb"
+msgstr "Kamatláb (%)"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:237
 msgid "Present value"
@@ -14563,7 +14563,7 @@ msgstr "Törlesztőrészlet összege"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:263
 msgid "Future value"
-msgstr "Jövőbeni érték"
+msgstr "Jövőbeli érték"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:277
 #: gnucash/gtkbuilder/dialog-fincalc.glade:292
@@ -14587,11 +14587,11 @@ msgstr "A fenti, egyedül üres beviteli mező értékének kiszámítása."
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:517
 msgid "Payment Options"
-msgstr "Fizetési beállítások"
+msgstr "Kamat és törlesztés beállítása"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:541
 msgid "Payment Total"
-msgstr "Összes kifizetés"
+msgstr "Visszafizetés teljes összege"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:571
 msgid "Discrete"
@@ -14603,15 +14603,15 @@ msgstr "Folyamatos"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:604
 msgid "Beginning"
-msgstr "Kezdet"
+msgstr "Időszak eleje"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:640
 msgid "Compounding"
-msgstr "Összevonás"
+msgstr "Kamatos kamat"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:789
 msgid "When paid"
-msgstr "Kiegyenlítés dátuma"
+msgstr "Törlesztések ideje"
 
 #: gnucash/gtkbuilder/dialog-find-account.glade:25
 #: gnucash/gtkbuilder/dialog-find-account.glade:96
@@ -21082,7 +21082,10 @@ msgstr "+%"
 #: gnucash/register/ledger-core/split-register-layout.c:737
 msgctxt "sample"
 msgid "Expenses:Automobile:Gasoline"
-msgstr "Költségek:Autó:Üzemanyag"
+msgstr ""
+"Befektetett eszközök:Egyéb berendezések, felszerelések, járművek:Műszaki "
+"berendezések, gépek, járművek terven felüli értékcsökkenése, és annak "
+"visszaírása"
 
 #. Translators: Abbreviation sample for Taxable?
 #: gnucash/register/ledger-core/gncEntryLedgerLayout.c:132
@@ -21709,16 +21712,16 @@ msgstr "Össz. részvény"
 
 #: gnucash/register/ledger-core/split-register-model.c:523
 msgid "Debit Formula"
-msgstr "Tartozás-képlet"
+msgstr "Tartozásképlet"
 
 #: gnucash/register/ledger-core/split-register-model.c:530
 msgid "Credit Formula"
-msgstr "Követelés-képlet"
+msgstr "Követelésképlet"
 
 #: gnucash/register/ledger-core/split-register-model.c:552
 #, c-format
 msgid "Reconciled on %s"
-msgstr "Egyeztetés: %s"
+msgstr "Egyeztetve: %s"
 
 #: gnucash/register/ledger-core/split-register-model.c:1033
 msgid "Scheduled"
@@ -21890,11 +21893,11 @@ msgstr "Tra_nzakció megváltoztatása"
 
 #: gnucash/register/ledger-core/split-register-model.c:2367
 msgid "Enter debit formula for real transaction"
-msgstr "Tartozás-képlet megadása valós tranzakcióhoz"
+msgstr "Tartozásképlet megadása valós tranzakcióhoz"
 
 #: gnucash/register/ledger-core/split-register-model.c:2403
 msgid "Enter credit formula for real transaction"
-msgstr "Követelés-képlet megadása valós tranzakcióhoz"
+msgstr "Követelésképlet megadása valós tranzakcióhoz"
 
 #: gnucash/register/register-gnome/completioncell-gnome.c:76
 msgid "Don't autocomplete"
@@ -28672,7 +28675,7 @@ msgstr "_Kétsoros"
 #: gnucash/ui/gnc-plugin-page-register.ui:872
 #: gnucash/ui/gnc-reconcile-window.ui:43
 msgid "_Transfer…"
-msgstr "_Átutalás…"
+msgstr "Át_utalás…"
 
 #: gnucash/ui/gnc-embedded-register-window.ui:95
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:128
@@ -28689,7 +28692,7 @@ msgstr "Pénz átvezetése egyik számláról a másikra"
 #: gnucash/ui/gnc-plugin-page-register.ui:642
 #: gnucash/ui/gnc-plugin-page-register.ui:802
 msgid "_Blank Transaction"
-msgstr "_Üres tranzakció"
+msgstr "Üres (_blank) tranzakció"
 
 #: gnucash/ui/gnc-embedded-register-window.ui:101
 #: gnucash/ui/gnc-embedded-register-window.ui:142
@@ -29551,7 +29554,7 @@ msgstr "A kiválasztott számla egyeztetése"
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:239
 #: gnucash/ui/gnc-plugin-page-register.ui:242
 msgid "_Auto-clear…"
-msgstr "_Automatikus kiegyenlítés (elszámolás)…"
+msgstr "Automatikus _kiegyenlítés (elszámolás)…"
 
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:140
 msgid ""
@@ -29596,12 +29599,12 @@ msgstr "A tétel néző/szerkesztő ablak megnyitása"
 #: gnucash/ui/gnc-plugin-page-register.ui:314
 #: gnucash/ui/gnc-reconcile-window.ui:49
 msgid "_Check & Repair"
-msgstr "_Ellenőrzés és javítás"
+msgstr "Ellenőrzés és _javítás"
 
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:169
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:281
 msgid "Check & Repair A_ccount"
-msgstr "S_zámla ellenőrzése és javítása"
+msgstr "_Számla ellenőrzése és javítása"
 
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:171
 #: gnucash/ui/gnc-plugin-page-account-tree.ui:283
@@ -30136,20 +30139,20 @@ msgstr "Ugrás a regiszterben lévő üres tranzakcióra."
 #: gnucash/ui/gnc-plugin-page-register.ui:417
 #: gnucash/ui/gnc-plugin-page-register.ui:529
 msgid "_Go to Date"
-msgstr "_Ugrás dátumhoz"
+msgstr "_Dátumhoz ugrás"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:279
 #: gnucash/ui/gnc-plugin-page-register.ui:419
 #: gnucash/ui/gnc-plugin-page-register.ui:531
 msgid "Move to the split at the specified date."
-msgstr ""
+msgstr "Ugrás a megadott dátumú felosztásra."
 
 #: gnucash/ui/gnc-plugin-page-register.ui:283
 #: gnucash/ui/gnc-plugin-page-register.ui:422
 #: gnucash/ui/gnc-plugin-page-register.ui:534
 #: gnucash/ui/gnc-plugin-page-register.ui:817
 msgid "S_plit Transaction"
-msgstr "Tranzakció _felosztása"
+msgstr "A tranzakció _felosztásai"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:285
 #: gnucash/ui/gnc-plugin-page-register.ui:424
@@ -30175,7 +30178,7 @@ msgstr "A jelen tranzakció árfolyamának szerkesztése."
 #: gnucash/ui/gnc-plugin-page-register.ui:544
 #: gnucash/ui/gnc-plugin-page-register.ui:847
 msgid "Sche_dule…"
-msgstr "Ü_temezés…"
+msgstr "Üteme_zés…"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:297
 #: gnucash/ui/gnc-plugin-page-register.ui:434
@@ -30186,7 +30189,7 @@ msgid ""
 "edit the Scheduled Transaction that current transaction was created by."
 msgstr ""
 "Ütemezett tranzakció létrehozása a jelenlegi tranzakció mintájára, vagy a "
-"jelenlegi tranzakciót létrehozó Ütemezett tranzakció szerkesztése."
+"jelenlegi tranzakciót létrehozó ütemezett tranzakció szerkesztése."
 
 #. Translators: This is a menu item that will open a register tab for the
 #. account of the first other account in the current transaction's split list
@@ -30196,7 +30199,7 @@ msgstr ""
 #: gnucash/ui/gnc-plugin-page-register.ui:549
 #: gnucash/ui/gnc-plugin-page-register.ui:832
 msgid "_Jump to the other account"
-msgstr "_Ugrás a másik számlára"
+msgstr "U_grás az ellenszámlára"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:306
 #: gnucash/ui/gnc-plugin-page-register.ui:439
@@ -30205,7 +30208,7 @@ msgstr "_Ugrás a másik számlára"
 msgid ""
 "Open a new register tab for the other account with focus on this transaction."
 msgstr ""
-"A másik számla megnyitása új regiszterlapon és ugrás erre a tranzakcióra."
+"Az ellenszámla megnyitása új regiszterlapon és ugrás erre a tranzakcióra."
 
 #: gnucash/ui/gnc-plugin-page-register.ui:318
 msgid "All Transactions"
@@ -30807,7 +30810,7 @@ msgstr "Ezenkívül:"
 #, c++-format
 msgid "The following file has been copied to {1} instead:"
 msgid_plural "The following files have been copied to {1} instead:"
-msgstr[0] ""
+msgstr[0] "A következő fájlok a {1} mappába lettek másolva:"
 
 #: libgnucash/core-utils/gnc-filepath-utils.cpp:701
 #, c++-format
@@ -30818,14 +30821,13 @@ msgstr "A {1} mappában a következő fájl át lett nevezve:"
 msgid "The following file has become obsolete and will be ignored:"
 msgid_plural "The following files have become obsolete and will be ignored:"
 msgstr[0] ""
-"A következő fájl(ok) elavulttá vált(ak), ezért figyelmen kívül lesz(nek) "
-"hagyva:"
+"A következő fájlok elavulttá váltak, ezért figyelmen kívül lesznek hagyva:"
 
 #: libgnucash/core-utils/gnc-filepath-utils.cpp:721
 #, c++-format
 msgid "The following file could not be moved to {1}:"
 msgid_plural "The following files could not be moved to {1}:"
-msgstr[0] "A következő fájl(ok) nem helyezhető(k) át a {1} mappába:"
+msgstr[0] "A következő fájlok nem helyezhetők át a {1} mappába:"
 
 #: libgnucash/engine/Account.cpp:150
 msgid "Deposit"
