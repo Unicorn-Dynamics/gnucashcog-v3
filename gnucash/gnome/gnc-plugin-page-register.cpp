@@ -1254,6 +1254,7 @@ gnc_plugin_page_register_create_widget (GncPluginPage* plugin_page)
                              gnc_window_get_gtk_window (gnc_window),
                              numRows, priv->read_only);
     priv->gsr = (GNCSplitReg *)gsr;
+    g_object_ref(gsr);
 
     gtk_widget_show (gsr);
     gtk_box_pack_start (GTK_BOX (priv->widget), gsr, TRUE, TRUE, 0);
@@ -1506,11 +1507,12 @@ gnc_plugin_page_register_destroy_widget (GncPluginPage* plugin_page)
 
     gtk_widget_hide (priv->widget);
 
-    if (GTK_IS_WIDGET(priv->gsr))
-        gtk_widget_destroy(GTK_WIDGET(priv->gsr));
+    g_object_unref(priv->widget);
+    priv->widget = NULL;
 
     gnc_ledger_display_close (priv->ledger);
     priv->ledger = NULL;
+
     LEAVE (" ");
 }
 
