@@ -90,7 +90,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2026-03-24 15:10+0000\n"
+"PO-Revision-Date: 2026-03-24 17:09+0000\n"
 "Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "es/>\n"
@@ -25342,11 +25342,11 @@ msgstr "~a y subcuentas seleccionadas"
 
 #: gnucash/report/reports/standard/cash-flow.scm:262
 msgid "Money into selected accounts comes from"
-msgstr "El dinero entrante a las cuentas seleccionadas viene de"
+msgstr "La entrada del dinero en cuentas seleccionadas proviene de"
 
 #: gnucash/report/reports/standard/cash-flow.scm:283
 msgid "Money out of selected accounts goes to"
-msgstr "El dinero saliente de las cuentas seleccionadas van a"
+msgstr "La salida del dinero de las cuentas seleccionadas va a"
 
 #: gnucash/report/reports/standard/category-barchart.scm:45
 #: gnucash/report/reports/standard/net-charts.scm:345
@@ -26004,7 +26004,7 @@ msgstr "Incluir el total de cuentas mercantiles"
 msgid ""
 "Whether or not to include a line indicating total trading accounts balance."
 msgstr ""
-"Si se debe o no incluir una línea indicando el saldo de cuentas bursátiles "
+"Si se debe o no incluir una línea indicando el saldo de cuentas comerciales "
 "totales."
 
 #: gnucash/report/reports/standard/income-statement.scm:477
@@ -26092,7 +26092,7 @@ msgstr "Mostrar columna(s) de ganancias no realizadas"
 
 #: gnucash/report/reports/standard/investment-lots.scm:67
 msgid "Group gains by age (short term and long term)"
-msgstr "Agrupar ganancias según plazo (corto plazo y largo plazo)"
+msgstr "Agrupar ganancias según plazo (término corto y largo)"
 
 #: gnucash/report/reports/standard/investment-lots.scm:68
 msgid "Long term gains age (years)"
@@ -26108,16 +26108,15 @@ msgstr "Incluir lotes cerrados"
 
 #: gnucash/report/reports/standard/investment-lots.scm:75
 msgid "Show blanks instead of zeros in table cells"
-msgstr ""
-"Mostrar espacios en blanco en lugar de ceros en las casillas de la tabla"
+msgstr "Mostrar espacios en blanco en lugar de ceros en las celdas de la tabla"
 
 #: gnucash/report/reports/standard/investment-lots.scm:76
 msgid "Show lot split rows"
-msgstr "Mostrar filas de anotación de lote"
+msgstr "Mostrar filas de desglose de lote"
 
 #: gnucash/report/reports/standard/investment-lots.scm:79
 msgid "Investment Lots"
-msgstr "Lotes de inversión"
+msgstr "Lotes de Inversión"
 
 #: gnucash/report/reports/standard/investment-lots.scm:80
 msgid "Start date"
@@ -26137,27 +26136,27 @@ msgstr "Incluir solamente cuentas sin advertencias"
 
 #: gnucash/report/reports/standard/investment-lots.scm:89
 msgid "Warn if a lot has more than one bought split"
-msgstr "Avisar si un lote tiene más de una anotación de compra"
+msgstr "Avisar si un lote tiene más de un desglose de compra"
 
 #: gnucash/report/reports/standard/investment-lots.scm:91
 msgid "Warn if a lot's balance drops below zero"
-msgstr "Avisar si el balance de un lote cae por debajo de cero"
+msgstr "Avisar si el balance del lote cae por debajo de cero"
 
 #: gnucash/report/reports/standard/investment-lots.scm:93
 msgid "Warn if a lot has a blank title"
-msgstr "Avisar si un lote tiene un título vacío"
+msgstr "Avisar si un lote tiene un título en blanco"
 
 #: gnucash/report/reports/standard/investment-lots.scm:95
 msgid ""
 "Warn if the 'Realized Gain/Loss' split(s) sum does not match the computed "
 "gains"
 msgstr ""
-"Avisar si la suma de los asientos de ganancias/pérdidas realizadas no "
+"Avisar si la suma de los desgloses de ganancias/pérdidas realizadas no "
 "coincide con las ganancias calculadas"
 
 #: gnucash/report/reports/standard/investment-lots.scm:97
 msgid "Warn if a split is not assigned to a lot"
-msgstr "Avisar si un asiento no está asignado a un lote"
+msgstr "Avisar si un desglose no está asignado a un lote"
 
 #: gnucash/report/reports/standard/investment-lots.scm:99
 msgid ""
@@ -26180,7 +26179,7 @@ msgstr "Cantidad comprada"
 
 #: gnucash/report/reports/standard/investment-lots.scm:106
 msgid "Bought Value (Basis)"
-msgstr "Valor comprado ( Base)"
+msgstr "Valor comprado (Base)"
 
 #: gnucash/report/reports/standard/investment-lots.scm:107
 msgid "Bought Average Price"
@@ -26188,23 +26187,23 @@ msgstr "Precio medio de compra"
 
 #: gnucash/report/reports/standard/investment-lots.scm:108
 msgid "Sold Splits"
-msgstr "Anotaciones vendidas"
+msgstr "Desgloses Vendidos"
 
 #: gnucash/report/reports/standard/investment-lots.scm:109
 msgid "Sold Amount"
-msgstr "Cantidad vendida"
+msgstr "Cantidad Vendida"
 
 #: gnucash/report/reports/standard/investment-lots.scm:110
 msgid "Sold Basis"
-msgstr "Base vendida"
+msgstr "Base Vendida"
 
 #: gnucash/report/reports/standard/investment-lots.scm:111
 msgid "Sold Value"
-msgstr "Valor vendido"
+msgstr "Valor Vendido"
 
 #: gnucash/report/reports/standard/investment-lots.scm:112
 msgid "ST Sold Amount"
-msgstr "CP Cantidad vendida"
+msgstr "CP Cantidad Vendida"
 
 #: gnucash/report/reports/standard/investment-lots.scm:113
 msgid "ST Sold Basis"
@@ -26248,7 +26247,7 @@ msgstr "CP Ganancias Realizadas"
 
 #: gnucash/report/reports/standard/investment-lots.scm:124
 msgid "LT Realized Gain"
-msgstr "LP Ganancias Realizadas"
+msgstr "Ganancias Realizadas LP"
 
 #: gnucash/report/reports/standard/investment-lots.scm:125
 msgid "Realized ROI"
@@ -26256,11 +26255,11 @@ msgstr "Retorno de inversión (ROI) realizado"
 
 #: gnucash/report/reports/standard/investment-lots.scm:127
 msgid "ST Unrealized Gain"
-msgstr "CP Ganancia No Realizada"
+msgstr "Ganancia No Realizada CP"
 
 #: gnucash/report/reports/standard/investment-lots.scm:128
 msgid "LT Unrealized Gain"
-msgstr "LP Ganancia No Realizada"
+msgstr "Ganancia No Realizada LP"
 
 #: gnucash/report/reports/standard/investment-lots.scm:129
 msgid "Unrealized ROI"
@@ -26268,7 +26267,7 @@ msgstr "Retorno de inversión (ROI) no realizado"
 
 #: gnucash/report/reports/standard/investment-lots.scm:131
 msgid "Account Lots Total"
-msgstr "Total de Lotes de la cuenta"
+msgstr "Total de Lotes de la Cuenta"
 
 #: gnucash/report/reports/standard/investment-lots.scm:171
 msgid "Include a chart that shows lot gains, grouped by account and gain type"
@@ -26290,7 +26289,7 @@ msgstr "Dónde ubicar el gráfico"
 
 #: gnucash/report/reports/standard/investment-lots.scm:214
 msgid "Show the lot GUID table column"
-msgstr "Mostrar la columna del GUID del lote"
+msgstr "Mostrar la columna del tabla GUID del lote"
 
 #: gnucash/report/reports/standard/investment-lots.scm:221
 msgid "Show the lot open and close table columns"
@@ -26302,11 +26301,11 @@ msgstr "Mostrar las columnas de la tabla relacionadas con la compra"
 
 #: gnucash/report/reports/standard/investment-lots.scm:235
 msgid "Show sale-related table columns"
-msgstr "Mostrar columnas relacionadas con las ventas"
+msgstr "Mostrar tabla de columnas relacionadas con las ventas"
 
 #: gnucash/report/reports/standard/investment-lots.scm:242
 msgid "Show end date amount and value table columns"
-msgstr "Mostrar columnas de cantidad y valor en la fecha final"
+msgstr "Mostrar columnas de cantidad y valor de tabla en la fecha final"
 
 #: gnucash/report/reports/standard/investment-lots.scm:249
 msgid "Show realized gain table column(s) for sold shares"
