@@ -18,14 +18,16 @@
 # Leandro Conca <lluccia@gmail.com>, 2025.
 # David <davidgmartins98@gmail.com>, 2026.
 # delvani <del.cidrak@users.noreply.hosted.weblate.org>, 2026.
+# Jonathan Santos Fernandes <jonathansantosfernandes@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.15\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2026-02-19 07:09+0000\n"
-"Last-Translator: delvani <del.cidrak@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-03-23 11:09+0000\n"
+"Last-Translator: Jonathan Santos Fernandes "
+"<jonathansantosfernandes@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "gnucash/gnucash/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -33,7 +35,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: bindings/guile/date-utilities.scm:519
 #, scheme-format
@@ -2271,7 +2273,7 @@ msgstr "E_xcluir"
 
 #: gnucash/gnome/dialog-commodities.cpp:329
 msgid "Rename failed, possibly new name exists"
-msgstr ""
+msgstr "Renomeação falhou, possivelmente o novo nome existe"
 
 #: gnucash/gnome/dialog-commodities.cpp:332
 #, fuzzy
