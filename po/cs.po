@@ -6,22 +6,23 @@
 # Tomáš Václavík <t3vaclavik@gmail.com>, 2022.
 # Kryštof Černý <cleverline1mc@gmail.com>, 2023.
 # Mirek Špaňko <mirekspanko@hotmail.cz>, 2026.
+# Jerry <nezbeda@protonmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.15\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2026-01-10 15:09+0000\n"
-"Last-Translator: Mirek Špaňko <mirekspanko@hotmail.cz>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/gnucash/gnucash/cs/"
-">\n"
+"PO-Revision-Date: 2026-03-23 21:09+0000\n"
+"Last-Translator: Jerry <nezbeda@protonmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gnucash/gnucash/"
+"cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 5.17-dev\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 
 #: bindings/guile/date-utilities.scm:519
@@ -53,9 +54,8 @@ msgstr "Konec tohoto roku"
 
 #: bindings/guile/date-utilities.scm:725
 #: libgnucash/engine/gnc-option-date.cpp:273
-#, fuzzy
 msgid "Last day of the current calendar year."
-msgstr "Začátek současného kalendářního roku"
+msgstr "Začátek současného kalendářního roku."
 
 #: bindings/guile/date-utilities.scm:729
 #: gnucash/gnome-utils/gnc-period-select.c:71
@@ -65,9 +65,8 @@ msgstr "Začátek předchozího roku"
 
 #: bindings/guile/date-utilities.scm:732
 #: libgnucash/engine/gnc-option-date.cpp:281
-#, fuzzy
 msgid "First day of the previous calendar year."
-msgstr "Začátek předchozího kalendářního roku"
+msgstr "Začátek předchozího kalendářního roku."
 
 #: bindings/guile/date-utilities.scm:736
 #: gnucash/gnome-utils/gnc-period-select.c:87
