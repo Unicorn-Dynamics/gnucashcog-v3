@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2026-03-23 17:09+0000\n"
+"PO-Revision-Date: 2026-03-24 15:09+0000\n"
 "Last-Translator: Szia Tomi <sziatomi01@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/hu/>\n"
@@ -4105,17 +4105,14 @@ msgstr ""
 "tartalmaz."
 
 #: gnucash/gnome/dialog-sx-editor.c:892
-#, fuzzy
-#| msgid ""
-#| "The Scheduled Transaction Editor cannot automatically balance this "
-#| "transaction. Should it still be entered?"
 msgid ""
 "The Scheduled Transaction Editor cannot automatically balance all of the "
 "transactions in this this Scheduled Transaction.\n"
 "Should it still be entered?"
 msgstr ""
-"Az ütemezett-tranzakció-szerkesztő nem tudja automatikusan kiegyenlíteni a "
-"tranzakciót. Mindenképpen folytatja?"
+"Az ütemezett-tranzakció-szerkesztő nem tudja automatikusan kiegyenlíteni az "
+"ütemezett tranzakció összes tételét.\n"
+"Mindenképpen folytatja?"
 
 #: gnucash/gnome/dialog-sx-editor.c:1454
 msgid "(never)"
@@ -4747,24 +4744,20 @@ msgid "Open Linked Document"
 msgstr "A kapcsolódó dokumentum megnyitása"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:206
-#, fuzzy
-#| msgid "_Use as Default Layout for Customer Documents"
 msgid "_Use as Default Layout for Customer Business items"
-msgstr "_Használja alapértelmezett elrendezésként az ügyféldokumentumokhoz"
+msgstr "_Használja alapértelmezett elrendezésként az ügyfél üzleti tételeihez"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:207
 #: gnucash/ui/gnc-plugin-page-invoice.ui:66
 msgid ""
 "Use the current layout as default for all customer invoices and credit notes"
 msgstr ""
-"Alapértelmezett elrendezésként használja az összes ügyféldokumentumhoz és "
+"Alapértelmezett elrendezésként használja az összes ügyfélszámlához és "
 "jóváíráshoz"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:208
-#, fuzzy
-#| msgid "_Reset Default Layout for Customer Documents"
 msgid "_Reset Default Layout for Customer business items"
-msgstr "Az ügyféldokumentumok alapértelmezett elrendezésének _visszaállítása"
+msgstr "Az ügyfél üzleti tételei alapértelmezett elrendezésének _visszaállítása"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:209
 #: gnucash/ui/gnc-plugin-page-invoice.ui:72
@@ -4842,11 +4835,9 @@ msgid "Open a vendor report window for the owner of this bill"
 msgstr "Beszállítójelentés-ablak megnyitása a bejövőszámla tulajdonosának"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:231
-#, fuzzy
-#| msgid "_Use as Default Layout for Vendor Documents"
 msgid "_Use as Default Layout for Vendor Business items"
 msgstr ""
-"_Használja alapértelmezett elrendezésként a beszállítói dokumentumokhoz"
+"_Használja alapértelmezett elrendezésként a beszállítói üzleti tételekhez"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:232
 msgid "Use the current layout as default for all vendor bills and credit notes"
@@ -4855,11 +4846,9 @@ msgstr ""
 "jóváíráshoz"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:233
-#, fuzzy
-#| msgid "_Reset Default Layout for Vendor Documents"
 msgid "_Reset Default Layout for Vendor Business items"
 msgstr ""
-"A beszállítói dokumentumok alapértelmezett elrendezésének _visszaállítása"
+"A beszállítói üzleti tételek alapértelmezett elrendezésének _visszaállítása"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:234
 msgid ""
@@ -4936,11 +4925,9 @@ msgstr ""
 "Alkalmazottjelentés megnyitása ennek a bizonlyatnak a tulajdonosa számára"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:256
-#, fuzzy
-#| msgid "_Use as Default Layout for Employee Documents"
 msgid "_Use as Default Layout for Employee Business items"
 msgstr ""
-"_Használja alapértelmezett elrendezésként az alkalmazotti dokumentumokhoz"
+"_Használja alapértelmezett elrendezésként az alkalmazotti üzleti tételekhez"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:257
 msgid ""
@@ -4950,11 +4937,9 @@ msgstr ""
 "költségbizonylatokhoz és jóváírásokhoz"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:258
-#, fuzzy
-#| msgid "_Reset Default Layout for Employee Documents"
 msgid "_Reset Default Layout for Employee Business items"
 msgstr ""
-"Az alkalmazotti dokumentumok alapértelmezett elrendezésének _visszaállítása"
+"Az alkalmazotti üzleti tételek alapértelmezett elrendezésének _visszaállítása"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:259
 msgid ""
@@ -5142,10 +5127,8 @@ msgstr "Tranzakció _törlése"
 #: gnucash/ui/gnc-plugin-page-register.ui:220
 #: gnucash/ui/gnc-plugin-page-register.ui:405
 #: gnucash/ui/gnc-plugin-page-register.ui:517
-#, fuzzy
-#| msgid "Jump to Invoice"
 msgid "Jump to Business item"
-msgstr "Ugrás a számlára"
+msgstr "Ugrás az üzleti tételre"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:280
 msgid "Cu_t Split"
@@ -5212,11 +5195,10 @@ msgid "Open the linked document for the current transaction"
 msgstr "A jelenlegi tranzakcióhoz kapcsolódó dokumentum megnyitása"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:292
-#, fuzzy
-#| msgid "Jump to the linked bill, invoice, or voucher"
 msgid "Jump to the linked invoice, bill, expense or credit note"
 msgstr ""
-"Ugrás a kapcsolódó bejövő vagy kimenő számlára, vagy költségbizonylatra"
+"Ugrás a kapcsolódó bejövő- vagy kimenőszámlára, költségbizonylatra vagy "
+"jóváírási bizonylatra"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:293
 msgid "Cut the selected split into clipboard"
@@ -5455,19 +5437,15 @@ msgstr ""
 "összeg: %s"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:4733
-#, fuzzy
-#| msgid "Select a Budget"
 msgid "Select Business Item"
-msgstr "Költségvetés kiválasztása"
+msgstr "Üzleti tétel kiválasztása"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:4734
-#, fuzzy
-#| msgid ""
-#| "Several documents are linked with this transaction. Please choose one:"
 msgid ""
 "Several business items are linked with this transaction. Please choose one:"
 msgstr ""
-"Számos dokumentum kapcsolódik ehhez a tranzakcióhoz. Kérem, válasszon egyet:"
+"Számos üzleti tétel kapcsolódik ehhez a tranzakcióhoz. Kérem, válasszon "
+"egyet:"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:4735
 #: gnucash/gnome-search/dialog-search.c:323
@@ -30056,10 +30034,8 @@ msgid "Create a new invoice"
 msgstr "Új kimenőszámla létrehozása"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:164
-#, fuzzy
-#| msgid "Customer's Invoices"
 msgid "Find Customer Invoices…"
-msgstr "Ügyfél számlái"
+msgstr "Ügyfélszámlák keresése…"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:166
 msgid ""
