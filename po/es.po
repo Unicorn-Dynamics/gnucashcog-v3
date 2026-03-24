@@ -90,8 +90,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2026-03-24 15:09+0000\n"
-"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"PO-Revision-Date: 2026-03-24 15:10+0000\n"
+"Last-Translator: apemay <apemay.dev@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "es/>\n"
 "Language: es\n"
@@ -11478,7 +11478,7 @@ msgstr ""
 
 #: gnucash/gtkbuilder/assistant-csv-account-import.glade:51
 msgid "Import Account Assistant"
-msgstr "Asistente de Importación de Cuentas"
+msgstr "Asistente de importación de cuentas"
 
 #: gnucash/gtkbuilder/assistant-csv-account-import.glade:66
 msgid "Enter file name and location for the Import…"
@@ -11750,7 +11750,7 @@ msgstr ""
 
 #: gnucash/gtkbuilder/assistant-csv-price-import.glade:72
 msgid "Price Import Assistant"
-msgstr "Asistente de Importación de Precio"
+msgstr "Asistente de importación de precios"
 
 #: gnucash/gtkbuilder/assistant-csv-price-import.glade:87
 #: gnucash/gtkbuilder/assistant-csv-trans-import.glade:77
@@ -13460,8 +13460,7 @@ msgid ""
 "clear, the invoice will be opened in the current window."
 msgstr ""
 "Si está marcado, cada factura se abrirá en su propia ventana de nivel "
-"superior. Si no lo está, la factura será abierta dentro de la ventana "
-"efectiva."
+"superior. Si no lo está, la factura se abrirá en la ventana actual."
 
 #: gnucash/gtkbuilder/business-prefs.glade:84
 msgid "_Accumulate splits on post"
