@@ -3,15 +3,15 @@
 # Copyright (C) 2008 - 2020 by the respective translator
 # Avi Markovitz <avi.markovitz@gmail.com, 2019 - 2020
 # Ori Hoch <ori@uumpa.com>, 2008 http://www.uumpa.com/gnucash-he/
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2020, 2021, 2022, 2023, 2024, 2025.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2020, 2021, 2022, 2023, 2024, 2025, 2026.
 # Avi Markovitz <avi.markovitz@gmail.com>, 2020, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.15\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2025-09-24 13:02+0000\n"
+"PO-Revision-Date: 2026-03-22 09:45+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "he/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 "X-Poedit-Basepath: .\n"
 
 #: bindings/guile/date-utilities.scm:519
@@ -693,19 +693,14 @@ msgstr ""
 "Mailing_Lists"
 
 #: doc/tip_of_the_day.list.c:11
-#, fuzzy
-#| msgid ""
-#| "The GnuCash developers are easy to contact. As well as several mailing "
-#| "lists, you can chat to them live on IRC! Join them on #gnucash at irc."
-#| "gnome.org"
 msgid ""
 "The GnuCash developers are easy to contact. As well as several mailing "
 "lists, you can chat to them live on IRC! Join them on #gnucash at irc.gimp."
 "net"
 msgstr ""
-"יצירת קשר עם מפתחי גנוקאש היא קלה מאוד. נוסף על מספר לא מבוטל של "
-"רשימות־דיוור, ניתן גם לשוחח באופן מקוון דרך IRC! ההצטרפות דרך ערוץ ‎#gnucash "
-"ב־irc.gnome.org"
+"יצירת קשר עם מפתחי גנוקאש היא קלה מאוד. נוסף על מספר לא מבוטל של רשימות־"
+"דיוור, ניתן גם לשוחח באופן מקוון דרך IRC! ההצטרפות דרך ערוץ ‎#gnucash ב־"
+"irc.gimp.net"
 
 #: doc/tip_of_the_day.list.c:15
 msgid ""
@@ -1498,15 +1493,6 @@ msgid "Stock split"
 msgstr "פיצול נייר ערך"
 
 #: gnucash/gnome/assistant-stock-transaction.cpp:271
-#, fuzzy
-#| msgid ""
-#| "Company issues additional units, thereby reducing the stock price by a "
-#| "divisor , while keeping the total monetary value of the overall "
-#| "investment constant. \n"
-#| "\n"
-#| "If the split results in a cash in lieu for remainder units, please record "
-#| "the sale using the Stock Transaction Assistant first, then record the "
-#| "split."
 msgid ""
 "Company issues additional units, thereby reducing the stock price by a "
 "divisor, while keeping the total monetary value of the overall investment "
@@ -1561,12 +1547,6 @@ msgid "Buy to cover short"
 msgstr "קניה לכיסוי מכירה בחסר"
 
 #: gnucash/gnome/assistant-stock-transaction.cpp:313
-#, fuzzy
-#| msgid ""
-#| "Buy back stock to cover short position, and record capital gain/loss. \n"
-#| "\n"
-#| "If you are unable to calculate capital gains you can enter a placeholder "
-#| "amount and correct it in the transaction later."
 msgid ""
 "Buy back stock to cover short position, and record capital gain/loss.\n"
 "\n"
@@ -1613,14 +1593,6 @@ msgid "Compensatory return of capital (reclassification)"
 msgstr "פיצוי החזר הון (סיווג מחדש)"
 
 #: gnucash/gnome/assistant-stock-transaction.cpp:352
-#, fuzzy
-#| msgid ""
-#| "Company returns capital, and the short stock holder must make a "
-#| "compensatory payment for the returned capital. This reduces the cost "
-#| "basis (less negative, towards 0.00 value) without affecting # units. A "
-#| "distribution previously recorded as a compensatory dividend is "
-#| "reclassified to compensatory return of capital,often due to end-of-year "
-#| "tax information."
 msgid ""
 "Company returns capital, and the short stock holder must make a compensatory "
 "payment for the returned capital. This reduces the cost basis (less "
@@ -1670,15 +1642,6 @@ msgstr ""
 "0.00) מבלי להשפיע על מספר היחידות."
 
 #: gnucash/gnome/assistant-stock-transaction.cpp:397
-#, fuzzy
-#| msgid ""
-#| "Company issues additional units, thereby reducing the stock price by a "
-#| "divisor, while keeping the total monetary value of the overall investment "
-#| "constant. \n"
-#| "\n"
-#| "If the split results in a cash in lieu for remainder units, please record "
-#| "the cover buy using the Stock Transaction Assistant first, then record "
-#| "the split."
 msgid ""
 "Company issues additional units, thereby reducing the stock price by a "
 "divisor, while keeping the total monetary value of the overall investment "
@@ -2222,13 +2185,11 @@ msgstr "_מחיקה"
 
 #: gnucash/gnome/dialog-commodities.cpp:329
 msgid "Rename failed, possibly new name exists"
-msgstr ""
+msgstr "שינוי השם נכשל, כנראה שהשם החדש קיים"
 
 #: gnucash/gnome/dialog-commodities.cpp:332
-#, fuzzy
-#| msgid "<No name>"
 msgid "No new name"
-msgstr "<ללא שם>"
+msgstr "אין שם חדש"
 
 #: gnucash/gnome/dialog-customer.c:314 gnucash/gnome/dialog-vendor.c:205
 msgid ""
@@ -2899,10 +2860,8 @@ msgid "Online HBCI"
 msgstr "HBCI מקוון"
 
 #: gnucash/gnome/dialog-imap-editor.c:791
-#, fuzzy
-#| msgid "Income Account"
 msgid "OFX Income Account"
-msgstr "חשבון הכנסות"
+msgstr "חשבון הכנסות OFX"
 
 #. Translators: In this context,
 #. 'Billing information' maps to the
@@ -2911,7 +2870,7 @@ msgstr "חשבון הכנסות"
 #. invoiced.
 #: gnucash/gnome/dialog-invoice.c:471 gnucash/gnome/dialog-order.c:180
 msgid "You need to supply Billing Information."
-msgstr "נא לספק פרטי חשבונית ספק."
+msgstr "נא לספק פרטי חיוב."
 
 #: gnucash/gnome/dialog-invoice.c:727
 msgid "Are you sure you want to delete the selected entry?"
@@ -3318,13 +3277,11 @@ msgstr "תזכורת לתשלום חיובים שמועד פרעונם חל"
 #. Translators: %d is the number of invoices/credit notes due. This is a
 #. ngettext(3) message.
 #: gnucash/gnome/dialog-invoice.c:3914
-#, fuzzy, c-format
-#| msgid "The following customer document is due:"
-#| msgid_plural "The following %d customer documents are due:"
+#, c-format
 msgid "The following customer business item is due:"
 msgid_plural "The following %d customer business items are due:"
-msgstr[0] "תאריך החיוב למסמך הלקוח הבא הגיע:"
-msgstr[1] "תאריך החיוב ל%d מסמכי הלקוחות הבאים הגיע:"
+msgstr[0] "תאריך פריט הלקוח העסקי הגיע:"
+msgstr[1] "תאריך %d פריטי הלקוח עסקיהגיע:"
 
 #: gnucash/gnome/dialog-invoice.c:3918
 msgid "Due Invoices Reminder"
@@ -30961,10 +30918,9 @@ msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
 #: libgnucash/engine/gnc-date.cpp:677
-#, fuzzy, c-format
-#| msgid " to "
+#, c-format
 msgid "%s to %s"
-msgstr " עד "
+msgstr "%s עד %s"
 
 #: libgnucash/engine/gnc-datetime.cpp:97
 msgid "y-m-d"
@@ -31418,10 +31374,8 @@ msgid " (closed)"
 msgstr " (סגור)"
 
 #: libgnucash/engine/gncOwner.c:1012
-#, fuzzy
-#| msgid "Offset between documents: "
 msgid "Offset between business items: "
-msgstr "קיזוז בין מסמכים: "
+msgstr "קיזוז בין פריטים עסקיים: "
 
 #: libgnucash/engine/gncOwner.c:1124
 msgid "Lot Link"
@@ -31542,16 +31496,14 @@ msgid "Checking business splits in account %s: %u of %u"
 msgstr "בדיקת פיצולים עסקיים בחשבון %s: %u מ %u"
 
 #: libgnucash/engine/Scrub.cpp:146
-#, fuzzy, c-format
-#| msgid "Looking for orphans in transaction: %u of %u"
+#, c-format
 msgid "Looking for orphans in transaction: %u of %zu"
-msgstr "חיפוש יתומים בתנועה: %u מ־%u"
+msgstr "חיפוש יתומים בתנועה: %u מ־%zu"
 
 #: libgnucash/engine/Scrub.cpp:357
-#, fuzzy, c-format
-#| msgid "Looking for imbalances in transaction date %s: %u of %u"
+#, c-format
 msgid "Looking for imbalances in transaction date %s: %u of %zu"
-msgstr "חיפוש חוסר איזון בתנועה %s:‏ %u מ־%u"
+msgstr "חיפוש חוסר איזון בתנועה %s:‏ %u מ־%zu"
 
 #: libgnucash/engine/Split.cpp:1643
 msgctxt ""
