@@ -41,11 +41,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.15\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2026-01-01 20:01+0000\n"
-"Last-Translator: Alois Levermann <alois@levermann.xyz>\n"
+"PO-Revision-Date: 2026-03-22 16:09+0000\n"
+"Last-Translator: Christian Wehling <christian.wehling@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "de/>\n"
 "Language: de\n"
@@ -53,7 +53,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: bindings/guile/date-utilities.scm:519
 #, scheme-format
@@ -4018,17 +4018,14 @@ msgstr ""
 "unverständliche Soll-Formel."
 
 #: gnucash/gnome/dialog-sx-editor.c:892
-#, fuzzy
-#| msgid ""
-#| "The Scheduled Transaction Editor cannot automatically balance this "
-#| "transaction. Should it still be entered?"
 msgid ""
 "The Scheduled Transaction Editor cannot automatically balance all of the "
 "transactions in this this Scheduled Transaction.\n"
 "Should it still be entered?"
 msgstr ""
-"Der Editor für geplante Buchungen kann diese Buchung nicht automatisch "
-"ausgeglichen erstellen. Soll sie trotzdem erstellt werden?"
+"Der Editor für geplante Buchungen kann nicht automatisch alle Buchungen in "
+"dieser terminierten Buchung ausgeglichen erstellen.\n"
+"Soll sie trotzdem erstellt werden?"
 
 #: gnucash/gnome/dialog-sx-editor.c:1454
 msgid "(never)"
@@ -6061,18 +6058,14 @@ msgid "Cleared Transactions"
 msgstr "Bestätigte Buchungen"
 
 #: gnucash/gnome/window-reconcile.cpp:262
-#, fuzzy, c-format
-#| msgid ""
-#| "Automatically clear individual transactions, so as to reach a certain "
-#| "cleared amount"
+#, c-format
 msgid "Automatically select %u transaction up to %s that clears to %s"
 msgid_plural "Automatically select %u transactions up to %s that clear to %s"
 msgstr[0] ""
-"Automatisch diejenigen Buchungen abgleichen, deren Summe einem vorgegebenen "
-"Betrag entspricht"
+"Wähle automatisch die Buchung %u bis zu %s aus, die auf %s verrechnet wird"
 msgstr[1] ""
-"Automatisch diejenigen Buchungen abgleichen, deren Summe einem vorgegebenen "
-"Betrag entspricht"
+"Wähle automatisch die Buchungen %u bis zu %s aus, die auf %s verrechnet "
+"werden"
 
 #. Translators: %d is the number of days in the future
 #: gnucash/gnome/window-reconcile.cpp:474
@@ -26494,10 +26487,9 @@ msgstr ""
 
 # Todo: Bedeutung?
 #: gnucash/report/reports/standard/investment-lots.scm:1963
-#, fuzzy, scheme-format
-#| msgid "~a, ~a to ~a"
+#, scheme-format
 msgid "~a, ~a"
-msgstr "~a, ~a bis ~a"
+msgstr "~a, ~a"
 
 #: gnucash/report/reports/standard/investment-lots.scm:1988
 msgid "Account Lot Gains"
@@ -30500,10 +30492,8 @@ msgid "Create a new invoice"
 msgstr "Eine neue Kundenrechnung erstellen"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:164
-#, fuzzy
-#| msgid "Customer's Invoices"
 msgid "Find Customer Invoices…"
-msgstr "Rechnungen des Kunden"
+msgstr "Rechnungen eines Kunden suchen…"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:166
 msgid ""
@@ -31861,10 +31851,9 @@ msgid "%B %e, %Y"
 msgstr "%e. %B %Y"
 
 #: libgnucash/engine/gnc-date.cpp:677
-#, fuzzy, c-format
-#| msgid " to "
+#, c-format
 msgid "%s to %s"
-msgstr " bis "
+msgstr "%s bis %s"
 
 #: libgnucash/engine/gnc-datetime.cpp:97
 msgid "y-m-d"
