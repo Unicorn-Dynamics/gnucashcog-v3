@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2026-03-24 17:09+0000\n"
+"PO-Revision-Date: 2026-03-25 01:09+0000\n"
 "Last-Translator: Szia Tomi <sziatomi01@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/hu/>\n"
@@ -8882,14 +8882,6 @@ msgstr "Automatikus kifizetés a könyveléskor."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.business.gschema.xml.in:113
 #: gnucash/gtkbuilder/business-prefs.glade:170
-#, fuzzy
-#| msgid ""
-#| "At post time, automatically attempt to pay customer documents with "
-#| "outstanding pre-payments and counter documents. The pre-payments and "
-#| "documents obviously have to be against the same customer. Counter "
-#| "documents are documents with opposite sign. For example for an invoice, "
-#| "customer credit notes and negative invoices are considered counter "
-#| "documents."
 msgid ""
 "At post time, automatically attempt to pay customer items with outstanding "
 "pre-payments and counter items. The pre-payments and items obviously have to "
@@ -8897,12 +8889,12 @@ msgid ""
 "For example for an invoice, customer credit notes and negative invoices are "
 "considered counter items."
 msgstr ""
-"A könyveléskor automatikusan megkísérli kifizetni az ügyféldokumentumokat a "
-"fennálló előlegekkel és ellenbizonylatokkal. Az előlegeknek és az "
-"ellenbizonylatoknak természetesen ugyanazon ügyféllel szemben kell "
-"fennálniuk. Az ellenbizonylatok ellentétes előjelű bizonylatok. Például egy "
-"kimenőszámla esetében az ügyféljóváírások és a negatív kimenőszámlák "
-"ellenbizonylatoknak minősülnek."
+"A könyveléskor megkísérli automatikusan kifizetni az ügyfél tételeit a "
+"fennálló előlegekkel és ellentétes tételekkel. Az előlegeknek és az "
+"ellentétes tételeknek természetesen ugyanazon ügyféllel szemben kell "
+"fennálniuk. Az ellentétes tételek azok a tételek, amelyek előjele negatív. "
+"Például egy kimenőszámla esetében az ügyféljóváírások és a negatív "
+"kimenőszámlák ellentétes tételeknek minősülnek."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.business.gschema.xml.in:117
 msgid "Show invoices due reminder at startup"
@@ -8985,13 +8977,6 @@ msgstr ""
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.business.gschema.xml.in:155
 #: gnucash/gtkbuilder/business-prefs.glade:250
-#, fuzzy
-#| msgid ""
-#| "At post time, automatically attempt to pay vendor documents with "
-#| "outstanding pre-payments and counter documents. The pre-payments and "
-#| "documents obviously have to be against the same vendor. Counter documents "
-#| "are documents with opposite sign. For example for a bill, vendor credit "
-#| "notes and negative bills are considered counter documents."
 msgid ""
 "At post time, automatically attempt to pay vendor items with outstanding pre-"
 "payments and counter items. The pre-payments and items obviously have to be "
@@ -8999,12 +8984,12 @@ msgid ""
 "example for a bill, vendor credit notes and negative bills are considered "
 "counter items."
 msgstr ""
-"A könyveléskor automatikusan megkísérli kifizetni a beszállítódokumentumokat "
-"a fennálló előlegekkel és ellenbizonylatokkal. Az előlegeknek és az "
-"ellenbizonylatoknak természetesen ugyanazon beszállítóval szemben kell "
-"fennállniuk. Az ellenbizonylatok ellentétes előjelű bizonylatok. Például egy "
-"bejövőszámla esetében a beszállítójóváírások és a negatív bejövőszámlák "
-"ellenbizonylatoknak minősülnek."
+"A könyveléskor megkísérli automatikusan kifizetni a beszállító tételeit a "
+"fennálló előlegekkel és ellentétes tételekkel. Az előlegeknek és az "
+"ellentétes tételeknek természetesen ugyanazon beszállítóval szemben kell "
+"fennálniuk. Az ellentétes tételek azok a tételek, amelyek előjele negatív. "
+"Például egy bejövőszámla esetében a beszállítójóváírások és a negatív "
+"bejövőszámlák ellentétes tételeknek minősülnek."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.business.gschema.xml.in:159
 msgid "Show bills due reminder at startup"
@@ -10609,15 +10594,16 @@ msgstr ""
 "olyan számlái, melyeknek ugyanaz a neve)."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:322
-#, fuzzy
 msgid "Show the entered and reconcile dates"
-msgstr "Alkalmazott árfolyamok megjelenítése"
+msgstr "A bevitel és az egyeztetés dátumának megjelenítése"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:323
 msgid ""
 "Show the date when the transaction was entered below the posted date and "
 "reconciled date on split row."
 msgstr ""
+"Megjeleníti a tranzakció bevtelének dátumát a könyvelési dátum és az "
+"egyeztetési dátum alatt egy külön sorban."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:327
 msgid "Show entered and reconciled dates on selection"
