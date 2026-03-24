@@ -26072,11 +26072,11 @@ msgstr "Mostrar columnas de fecha"
 
 #: gnucash/report/reports/standard/investment-lots.scm:59
 msgid "Show bought columns"
-msgstr "Mostrar columnas de compras"
+msgstr "Mostrar columnas compradas"
 
 #: gnucash/report/reports/standard/investment-lots.scm:60
 msgid "Show sold columns"
-msgstr "Mostrar columnas de ventas"
+msgstr "Mostrar columnas vendidas"
 
 #: gnucash/report/reports/standard/investment-lots.scm:61
 msgid "Show end columns"
