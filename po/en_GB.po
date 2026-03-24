@@ -12,10 +12,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.15\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2026-02-22 00:09+0000\n"
+"PO-Revision-Date: 2026-03-22 21:09+0000\n"
 "Last-Translator: Simon Arlott <nomis@users.noreply.hosted.weblate.org>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "gnucash/gnucash/en_GB/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: bindings/guile/date-utilities.scm:519
 #, scheme-format
@@ -2226,13 +2226,11 @@ msgstr "_Delete"
 
 #: gnucash/gnome/dialog-commodities.cpp:329
 msgid "Rename failed, possibly new name exists"
-msgstr ""
+msgstr "Rename failed, possibly new name exists"
 
 #: gnucash/gnome/dialog-commodities.cpp:332
-#, fuzzy
-#| msgid "<No name>"
 msgid "No new name"
-msgstr "<No name>"
+msgstr "No new name"
 
 #: gnucash/gnome/dialog-customer.c:314 gnucash/gnome/dialog-vendor.c:205
 msgid ""
@@ -2910,10 +2908,8 @@ msgid "Online HBCI"
 msgstr "Online HBCI"
 
 #: gnucash/gnome/dialog-imap-editor.c:791
-#, fuzzy
-#| msgid "Income Account"
 msgid "OFX Income Account"
-msgstr "Income Account"
+msgstr "OFX Income Account"
 
 #. Translators: In this context,
 #. 'Billing information' maps to the
@@ -3316,13 +3312,11 @@ msgstr "Amount"
 #. Translators: %d is the number of bills/credit notes due. This is a
 #. ngettext(3) message.
 #: gnucash/gnome/dialog-invoice.c:3902
-#, fuzzy, c-format
-#| msgid "The following vendor document is due:"
-#| msgid_plural "The following %d vendor documents are due:"
+#, c-format
 msgid "The following vendor business item is due:"
 msgid_plural "The following %d vendor business items are due:"
-msgstr[0] "The following vendor document is due:"
-msgstr[1] "The following %d vendor documents are due:"
+msgstr[0] "The following vendor business item is due:"
+msgstr[1] "The following %d vendor business items are due:"
 
 #: gnucash/gnome/dialog-invoice.c:3906
 msgid "Due Bills Reminder"
@@ -3331,13 +3325,11 @@ msgstr "Due Bills Reminder"
 #. Translators: %d is the number of invoices/credit notes due. This is a
 #. ngettext(3) message.
 #: gnucash/gnome/dialog-invoice.c:3914
-#, fuzzy, c-format
-#| msgid "The following customer document is due:"
-#| msgid_plural "The following %d customer documents are due:"
+#, c-format
 msgid "The following customer business item is due:"
 msgid_plural "The following %d customer business items are due:"
-msgstr[0] "The following customer document is due:"
-msgstr[1] "The following %d customer documents are due:"
+msgstr[0] "The following customer business item is due:"
+msgstr[1] "The following %d customer business items are due:"
 
 #: gnucash/gnome/dialog-invoice.c:3918
 msgid "Due Invoices Reminder"
@@ -3519,16 +3511,12 @@ msgid "You must select a transfer account from the account tree."
 msgstr "You must select a transfer account from the account tree."
 
 #: gnucash/gnome/dialog-payment.c:293
-#, fuzzy
-#| msgid ""
-#| "No documents were selected to assign this payment to. This may create an "
-#| "unattached payment."
 msgid ""
 "No business items were selected to assign this payment to. This may create "
 "an unattached payment."
 msgstr ""
-"No documents were selected to assign this payment to. This may create an "
-"unattached payment."
+"No business items were selected to assign this payment to. This may create "
+"an unattached payment."
 
 #: gnucash/gnome/dialog-payment.c:543 gnucash/gnome/dialog-payment.c:1368
 #: gnucash/report/reports/standard/new-aging.scm:177
@@ -3830,6 +3818,8 @@ msgid ""
 "Transaction with description '%s' can not be balanced.\n"
 "The difference is %s"
 msgstr ""
+"Transaction with description '%s' can not be balanced.\n"
+"The difference is %s"
 
 #: gnucash/gnome/dialog-sx-editor.c:512
 msgid "Please name the Scheduled Transaction."
@@ -3914,17 +3904,14 @@ msgid "Split with memo %s has an unparsable Debit Formula."
 msgstr "Split with memo %s has an unparsable Debit Formula."
 
 #: gnucash/gnome/dialog-sx-editor.c:892
-#, fuzzy
-#| msgid ""
-#| "The Scheduled Transaction Editor cannot automatically balance this "
-#| "transaction. Should it still be entered?"
 msgid ""
 "The Scheduled Transaction Editor cannot automatically balance all of the "
 "transactions in this this Scheduled Transaction.\n"
 "Should it still be entered?"
 msgstr ""
-"The Scheduled Transaction Editor cannot automatically balance this "
-"transaction. Should it still be entered?"
+"The Scheduled Transaction Editor cannot automatically balance all of the "
+"transactions in this Scheduled Transaction.\n"
+"Should it still be entered?"
 
 #: gnucash/gnome/dialog-sx-editor.c:1454
 msgid "(never)"
@@ -4560,10 +4547,8 @@ msgid "Open Linked Document"
 msgstr "Open Linked Document"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:206
-#, fuzzy
-#| msgid "_Use as Default Layout for Customer Documents"
 msgid "_Use as Default Layout for Customer Business items"
-msgstr "_Use as Default Layout for Customer Documents"
+msgstr "_Use as Default Layout for Customer Business items"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:207
 #: gnucash/ui/gnc-plugin-page-invoice.ui:66
@@ -4573,10 +4558,8 @@ msgstr ""
 "Use the current layout as default for all customer invoices and credit notes"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:208
-#, fuzzy
-#| msgid "_Reset Default Layout for Customer Documents"
 msgid "_Reset Default Layout for Customer business items"
-msgstr "_Reset Default Layout for Customer Documents"
+msgstr "_Reset Default Layout for Customer Business items"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:209
 #: gnucash/ui/gnc-plugin-page-invoice.ui:72
@@ -4652,10 +4635,8 @@ msgid "Open a vendor report window for the owner of this bill"
 msgstr "Open a vendor report window for the owner of this bill"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:231
-#, fuzzy
-#| msgid "_Use as Default Layout for Vendor Documents"
 msgid "_Use as Default Layout for Vendor Business items"
-msgstr "_Use as Default Layout for Vendor Documents"
+msgstr "_Use as Default Layout for Vendor Business items"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:232
 msgid "Use the current layout as default for all vendor bills and credit notes"
@@ -4663,10 +4644,8 @@ msgstr ""
 "Use the current layout as default for all vendor bills and credit notes"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:233
-#, fuzzy
-#| msgid "_Reset Default Layout for Vendor Documents"
 msgid "_Reset Default Layout for Vendor Business items"
-msgstr "_Reset Default Layout for Vendor Documents"
+msgstr "_Reset Default Layout for Vendor Business items"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:234
 msgid ""
@@ -4741,10 +4720,8 @@ msgid "Open a employee report window for the owner of this voucher"
 msgstr "Open a employee report window for the owner of this voucher"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:256
-#, fuzzy
-#| msgid "_Use as Default Layout for Employee Documents"
 msgid "_Use as Default Layout for Employee Business items"
-msgstr "_Use as Default Layout for Employee Documents"
+msgstr "_Use as Default Layout for Employee Business items"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:257
 msgid ""
@@ -4753,10 +4730,8 @@ msgstr ""
 "Use the current layout as default for all employee vouchers and credit notes"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:258
-#, fuzzy
-#| msgid "_Reset Default Layout for Employee Documents"
 msgid "_Reset Default Layout for Employee Business items"
-msgstr "_Reset Default Layout for Employee Documents"
+msgstr "_Reset Default Layout for Employee Business items"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:259
 msgid ""
@@ -4943,10 +4918,8 @@ msgstr "_Delete Transaction"
 #: gnucash/ui/gnc-plugin-page-register.ui:220
 #: gnucash/ui/gnc-plugin-page-register.ui:405
 #: gnucash/ui/gnc-plugin-page-register.ui:517
-#, fuzzy
-#| msgid "Jump to Invoice"
 msgid "Jump to Business item"
-msgstr "Jump to Invoice"
+msgstr "Jump to Business item"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:280
 msgid "Cu_t Split"
@@ -5012,10 +4985,8 @@ msgid "Open the linked document for the current transaction"
 msgstr "Open the linked document for the current transaction"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:292
-#, fuzzy
-#| msgid "Jump to the linked bill, invoice, or voucher"
 msgid "Jump to the linked invoice, bill, expense or credit note"
-msgstr "Jump to the linked bill, invoice, or voucher"
+msgstr "Jump to the linked invoice, bill, expense or credit note"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:293
 msgid "Cut the selected split into clipboard"
@@ -5247,18 +5218,14 @@ msgid "%s %s from %s, posted %s, amount %s"
 msgstr "%s %s from %s, posted %s, amount %s"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:4733
-#, fuzzy
-#| msgid "Select a Budget"
 msgid "Select Business Item"
-msgstr "Select a Budget"
+msgstr "Select Business Item"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:4734
-#, fuzzy
-#| msgid ""
-#| "Several documents are linked with this transaction. Please choose one:"
 msgid ""
 "Several business items are linked with this transaction. Please choose one:"
-msgstr "Several documents are linked with this transaction. Please choose one:"
+msgstr ""
+"Several business items are linked with this transaction. Please choose one:"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:4735
 #: gnucash/gnome-search/dialog-search.c:323
@@ -5911,18 +5878,11 @@ msgid "Cleared Transactions"
 msgstr "Cleared Transactions"
 
 #: gnucash/gnome/window-reconcile.cpp:262
-#, fuzzy, c-format
-#| msgid ""
-#| "Automatically clear individual transactions, so as to reach a certain "
-#| "cleared amount"
+#, c-format
 msgid "Automatically select %u transaction up to %s that clears to %s"
 msgid_plural "Automatically select %u transactions up to %s that clear to %s"
-msgstr[0] ""
-"Automatically clear individual transactions, so as to reach a certain "
-"cleared amount"
-msgstr[1] ""
-"Automatically clear individual transactions, so as to reach a certain "
-"cleared amount"
+msgstr[0] "Automatically select %u transaction up to %s that clears to %s"
+msgstr[1] "Automatically select %u transactions up to %s that clear to %s"
 
 #. Translators: %d is the number of days in the future
 #: gnucash/gnome/window-reconcile.cpp:474
@@ -7773,7 +7733,7 @@ msgstr ""
 "Mike Evans: 2010, 2013.\n"
 "Neil Williams: 2006.\n"
 "Nigel Titley: 2002-2007.\n"
-"Simon Arlott: 2022-2025.\n"
+"Simon Arlott: 2022-2026.\n"
 
 #: gnucash/gnome-utils/gnc-main-window.cpp:5563
 msgid "Visit the GnuCash website."
@@ -7971,10 +7931,8 @@ msgid "Reconciled (Report)"
 msgstr "Reconciled (Report)"
 
 #: gnucash/gnome-utils/gnc-tree-view-account.c:901
-#, fuzzy
-#| msgid "_Earliest"
 msgid "Earliest Date"
-msgstr "_Earliest"
+msgstr "Earliest Date"
 
 #: gnucash/gnome-utils/gnc-tree-view-account.c:907
 msgid "Last Reconcile Date"
@@ -8696,14 +8654,6 @@ msgstr "Auto pay when posting."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.business.gschema.xml.in:113
 #: gnucash/gtkbuilder/business-prefs.glade:170
-#, fuzzy
-#| msgid ""
-#| "At post time, automatically attempt to pay customer documents with "
-#| "outstanding pre-payments and counter documents. The pre-payments and "
-#| "documents obviously have to be against the same customer. Counter "
-#| "documents are documents with opposite sign. For example for an invoice, "
-#| "customer credit notes and negative invoices are considered counter "
-#| "documents."
 msgid ""
 "At post time, automatically attempt to pay customer items with outstanding "
 "pre-payments and counter items. The pre-payments and items obviously have to "
@@ -8711,11 +8661,11 @@ msgid ""
 "For example for an invoice, customer credit notes and negative invoices are "
 "considered counter items."
 msgstr ""
-"At post time, automatically attempt to pay customer documents with "
-"outstanding pre-payments and counter documents. The pre-payments and "
-"documents obviously have to be against the same customer. Counter documents "
-"are documents with opposite sign. For example for an invoice, customer "
-"credit notes and negative invoices are considered counter documents."
+"At post time, automatically attempt to pay customer items with outstanding "
+"pre-payments and counter items. The pre-payments and items obviously have to "
+"be against the same customer. Counter items are items with opposite sign. "
+"For example for an invoice, customer credit notes and negative invoices are "
+"considered counter items."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.business.gschema.xml.in:117
 msgid "Show invoices due reminder at startup"
@@ -8797,13 +8747,6 @@ msgstr ""
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.business.gschema.xml.in:155
 #: gnucash/gtkbuilder/business-prefs.glade:250
-#, fuzzy
-#| msgid ""
-#| "At post time, automatically attempt to pay vendor documents with "
-#| "outstanding pre-payments and counter documents. The pre-payments and "
-#| "documents obviously have to be against the same vendor. Counter documents "
-#| "are documents with opposite sign. For example for a bill, vendor credit "
-#| "notes and negative bills are considered counter documents."
 msgid ""
 "At post time, automatically attempt to pay vendor items with outstanding pre-"
 "payments and counter items. The pre-payments and items obviously have to be "
@@ -8811,11 +8754,11 @@ msgid ""
 "example for a bill, vendor credit notes and negative bills are considered "
 "counter items."
 msgstr ""
-"At post time, automatically attempt to pay vendor documents with outstanding "
-"pre-payments and counter documents. The pre-payments and documents obviously "
-"have to be against the same vendor. Counter documents are documents with "
-"opposite sign. For example for a bill, vendor credit notes and negative "
-"bills are considered counter documents."
+"At post time, automatically attempt to pay vendor items with outstanding pre-"
+"payments and counter items. The pre-payments and items obviously have to be "
+"against the same vendor. Counter items are items with opposite sign. For "
+"example for a bill, vendor credit notes and negative bills are considered "
+"counter items."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.business.gschema.xml.in:159
 msgid "Show bills due reminder at startup"
@@ -9441,16 +9384,16 @@ msgstr ""
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.reconcile.gschema.xml.in:25
 #: gnucash/gtkbuilder/dialog-preferences.glade:2777
-#, fuzzy
-#| msgid "Balancing entry from reconciliation"
 msgid "Enable autoclear tools in reconciliation"
-msgstr "Balancing entry from reconciliation"
+msgstr "Enable autoclear tools in reconciliation"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.reconcile.gschema.xml.in:26
 msgid ""
 "If active, suggests transactions to clear based on amounts summing to the "
 "statement balance"
 msgstr ""
+"If active, suggests transactions to clear based on amounts summing to the "
+"statement balance"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:17
 msgid "Run \"since last run\" dialog when a file is opened."
@@ -11772,6 +11715,10 @@ msgid ""
 "Choices are displayed with a Hyphen (-) separator, but will also match Dot "
 "(.) and Slash (/) as separator."
 msgstr ""
+"Choose the order of day, month and year, to match the formatting in the "
+"imported file.\n"
+"Choices are displayed with a Hyphen (-) separator, but will also match Dot "
+"(.) and Slash (/) as separator."
 
 #: gnucash/gtkbuilder/assistant-csv-trans-import.glade:756
 msgid ""
@@ -13717,22 +13664,16 @@ msgid "4. Preview"
 msgstr "4. Preview"
 
 #: gnucash/gtkbuilder/dialog-bi-import-gui.glade:374
-#, fuzzy
-#| msgid "Open imported documents in tabs"
 msgid "Open imported business items in tabs"
-msgstr "Open imported documents in tabs"
+msgstr "Open imported business items in tabs"
 
 #: gnucash/gtkbuilder/dialog-bi-import-gui.glade:392
-#, fuzzy
-#| msgid "Open not yet posted documents in tabs"
 msgid "Open not yet posted business items in tabs"
-msgstr "Open not yet posted documents in tabs"
+msgstr "Open not yet posted business items in tabs"
 
 #: gnucash/gtkbuilder/dialog-bi-import-gui.glade:410
-#, fuzzy
-#| msgid "Don't open imported documents in tabs"
 msgid "Don't open imported business items in tabs"
-msgstr "Don't open imported documents in tabs"
+msgstr "Don't open imported business items in tabs"
 
 #: gnucash/gtkbuilder/dialog-bi-import-gui.glade:432
 msgid "5. Afterwards"
@@ -13921,10 +13862,8 @@ msgid "Choose Owner Dialog"
 msgstr "Choose Owner Dialogue"
 
 #: gnucash/gtkbuilder/dialog-commodities.glade:64
-#, fuzzy
-#| msgid "From Namespace"
 msgid "Rename Namespace"
-msgstr "From Namespace"
+msgstr "Rename Namespace"
 
 #: gnucash/gtkbuilder/dialog-commodities.glade:114
 #: gnucash/gtkbuilder/dialog-commodities.glade:133
@@ -13937,16 +13876,12 @@ msgid "Show National Currencies"
 msgstr "Show National Currencies"
 
 #: gnucash/gtkbuilder/dialog-commodities.glade:227
-#, fuzzy
-#| msgid "From Namespace"
 msgid "Rename _Namespace"
-msgstr "From Namespace"
+msgstr "Rename _Namespace"
 
 #: gnucash/gtkbuilder/dialog-commodities.glade:231
-#, fuzzy
-#| msgid "Remove the current price."
 msgid "Rename the current namespace."
-msgstr "Remove the current price."
+msgstr "Rename the current namespace."
 
 #: gnucash/gtkbuilder/dialog-commodities.glade:249
 msgid "Add a new commodity."
@@ -15109,10 +15044,8 @@ msgid "Post To"
 msgstr "Post To"
 
 #: gnucash/gtkbuilder/dialog-payment.glade:335
-#, fuzzy
-#| msgid "Business"
 msgid "Business items"
-msgstr "Business"
+msgstr "Business items"
 
 #: gnucash/gtkbuilder/dialog-payment.glade:412
 #: gnucash/gtkbuilder/dialog-payment.glade:439
@@ -15856,6 +15789,14 @@ msgid ""
 "combinations are possible, auto-clear is not offered and the icon and its "
 "tooltip reflects the outcome."
 msgstr ""
+"Provides automatic clearing tools in the reconciliation window. Auto-clear "
+"scans unreconciled splits and looks for a unique combination whose cleared "
+"balance matches the reconciliation balance entered. The auto-clear tests all "
+"combinations of splits, therefore its runtime is potentially high; but "
+"limited in reconciliation to 1 second. When a unique match is not available, "
+"because the balance cannot be reached, or due to timeout, or multiple "
+"combinations are possible, auto-clear is not offered and the icon and its "
+"tooltip reflects the outcome."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2807
 msgid "<b>Graphics</b>"
@@ -16153,10 +16094,8 @@ msgstr "Price Editor"
 
 #: gnucash/gtkbuilder/dialog-price.glade:139
 #: gnucash/gtkbuilder/dialog-price.glade:814
-#, fuzzy
-#| msgid "Namespace"
 msgid "_Namespace"
-msgstr "Namespace"
+msgstr "_Namespace"
 
 #: gnucash/gtkbuilder/dialog-price.glade:196
 msgid "S_ource"
@@ -16264,10 +16203,8 @@ msgid "If activated, include manually entered prices."
 msgstr "If activated, include manually entered prices."
 
 #: gnucash/gtkbuilder/dialog-price.glade:736
-#, fuzzy
-#| msgid "_Added by the application"
 msgid "Added _by the application"
-msgstr "_Added by the application"
+msgstr "Added _by the application"
 
 #: gnucash/gtkbuilder/dialog-price.glade:740
 msgid ""
@@ -21260,10 +21197,8 @@ msgstr ""
 "do that?"
 
 #: gnucash/register/ledger-core/split-register.c:1081
-#, fuzzy
-#| msgid "Set up scheduled transactions to avoid repeated data entry"
 msgid "Scheduled transactions can only be pasted to the General Journal"
-msgstr "Set up scheduled transactions to avoid repeated data entry"
+msgstr "Scheduled transactions can only be pasted to the General Journal"
 
 #: gnucash/register/ledger-core/split-register.c:2159
 msgid "Recalculate Transaction"
@@ -24872,10 +24807,9 @@ msgid "Daily Average"
 msgstr "Daily Average"
 
 #: gnucash/report/reports/standard/category-barchart.scm:521
-#, fuzzy, scheme-format
-#| msgid "Balance at ~a"
+#, scheme-format
 msgid "Balances ~a"
-msgstr "Balance at ~a"
+msgstr "Balances ~a"
 
 #: gnucash/report/reports/standard/category-barchart.scm:650
 #: gnucash/report/reports/standard/category-barchart.scm:670
@@ -25881,10 +25815,9 @@ msgstr ""
 "Difference: ~a. Do lots need to be scrubbed?"
 
 #: gnucash/report/reports/standard/investment-lots.scm:1963
-#, fuzzy, scheme-format
-#| msgid "~a, ~a to ~a"
+#, scheme-format
 msgid "~a, ~a"
-msgstr "~a, ~a to ~a"
+msgstr "~a, ~a"
 
 #: gnucash/report/reports/standard/investment-lots.scm:1988
 msgid "Account Lot Gains"
@@ -26607,10 +26540,8 @@ msgid "Display the transaction date?"
 msgstr "Display the transaction date?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:894
-#, fuzzy
-#| msgid "Display the invoice notes?"
 msgid "Display the invoice due date?"
-msgstr "Display the invoice notes?"
+msgstr "Display the invoice due date?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:898
 msgid "Display the transaction reference?"
@@ -29811,16 +29742,16 @@ msgid "Create a new invoice"
 msgstr "Create a new invoice"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:164
-#, fuzzy
-#| msgid "Customer's Invoices"
 msgid "Find Customer Invoices…"
-msgstr "Customer's Invoices"
+msgstr "Find Customer Invoices…"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:166
 msgid ""
 "Open the Find Invoice Dialog with the invoices already filtered for this "
 "customer"
 msgstr ""
+"Open the Find Invoice Dialogue with the invoices already filtered for this "
+"customer"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:200
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:529
@@ -29828,15 +29759,14 @@ msgid "Create a new bill"
 msgstr "Create a new bill"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:203
-#, fuzzy
-#| msgid "_Find Vendor…"
 msgid "Find Vendor Bills…"
-msgstr "_Find Vendor…"
+msgstr "Find Vendor Bills…"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:205
 msgid ""
 "Open the Find Bill Dialog with the bills already filtered for this vendor"
 msgstr ""
+"Open the Find Bill Dialogue with the bills already filtered for this vendor"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:237
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:682
@@ -29849,16 +29779,16 @@ msgid "Create a new voucher"
 msgstr "Create a new voucher"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:242
-#, fuzzy
-#| msgid "Find Expense _Voucher…"
 msgid "Find Employee Vouchers…"
-msgstr "Find Expense _Voucher…"
+msgstr "Find Employee Vouchers…"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:244
 msgid ""
 "Open the Find Employee Voucher Dialog with the vouchers already filtered for "
 "this employee"
 msgstr ""
+"Open the Find Employee Voucher Dialogue with the vouchers already filtered "
+"for this employee"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:6
 msgid "_Print Checks…"
@@ -30032,10 +29962,8 @@ msgstr "Open the linked document for the current transaction."
 #: gnucash/ui/gnc-plugin-page-register.ui:222
 #: gnucash/ui/gnc-plugin-page-register.ui:407
 #: gnucash/ui/gnc-plugin-page-register.ui:519
-#, fuzzy
-#| msgid "Jump to the linked bill, invoice, or voucher."
 msgid "Jump to the linked invoice, bill, expense or credit note."
-msgstr "Jump to the linked bill, invoice, or voucher."
+msgstr "Jump to the linked invoice, bill, expense or credit note."
 
 #: gnucash/ui/gnc-plugin-page-register.ui:232
 #: gnucash/ui/gnc-plugin-page-register.ui:874
@@ -30347,10 +30275,8 @@ msgid "_Postpone"
 msgstr "_Postpone"
 
 #: gnucash/ui/gnc-reconcile-window.ui:24
-#, fuzzy
-#| msgid "Auto-clear"
 msgid "_Autoclear"
-msgstr "Auto-clear"
+msgstr "_Autoclear"
 
 #: gnucash/ui/gnc-reconcile-window.ui:38
 msgid "_Open Account"
@@ -30371,10 +30297,8 @@ msgid "_Unreconcile Selection"
 msgstr "_Unreconcile Selection"
 
 #: gnucash/ui/gnc-reconcile-window.ui:134
-#, fuzzy
-#| msgid "Auto-clear"
 msgid "Auto Clear"
-msgstr "Auto-clear"
+msgstr "Auto Clear"
 
 #: gnucash/ui/gnc-reconcile-window.ui:144
 msgid "Add a new balancing entry to the account"
@@ -30422,21 +30346,19 @@ msgstr "Cancel the reconciliation of this account"
 
 #: libgnucash/app-utils/gnc-autoclear.cpp:130
 msgid "Cannot uniquely clear splits. Found multiple possibilities."
-msgstr ""
+msgstr "Cannot uniquely clear splits. Found multiple possibilities."
 
 #: libgnucash/app-utils/gnc-autoclear.cpp:149
 msgid "Auto-clear exceeds allocated time"
-msgstr ""
+msgstr "Auto-clear exceeds allocated time"
 
 #: libgnucash/app-utils/gnc-autoclear.cpp:205
 msgid "Account is already at Auto-Clear Balance."
-msgstr ""
+msgstr "Account is already at Auto-Clear Balance."
 
 #: libgnucash/app-utils/gnc-autoclear.cpp:239
-#, fuzzy
-#| msgid "The interest rate cannot be zero."
 msgid "The selected amount cannot be cleared."
-msgstr "The interest rate cannot be zero."
+msgstr "The selected amount cannot be cleared."
 
 #: libgnucash/app-utils/gnc-exp-parser.c:615
 msgid "Illegal variable in expression."
@@ -31071,7 +30993,7 @@ msgstr "Union Investment, DE"
 #: libgnucash/engine/gnc-commodity.cpp:229
 msgctxt "FQ Source"
 msgid "US Savings Bonds, US"
-msgstr ""
+msgstr "US Savings Bonds, US"
 
 #: libgnucash/engine/gnc-commodity.cpp:230
 msgctxt "FQ Source"
@@ -31153,10 +31075,9 @@ msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
 #: libgnucash/engine/gnc-date.cpp:677
-#, fuzzy, c-format
-#| msgid " to "
+#, c-format
 msgid "%s to %s"
-msgstr " to "
+msgstr "%s to %s"
 
 #: libgnucash/engine/gnc-datetime.cpp:97
 msgid "y-m-d"
@@ -31639,10 +31560,8 @@ msgid " (closed)"
 msgstr " (closed)"
 
 #: libgnucash/engine/gncOwner.c:1012
-#, fuzzy
-#| msgid "Offset between documents: "
 msgid "Offset between business items: "
-msgstr "Offset between documents: "
+msgstr "Offset between business items: "
 
 #: libgnucash/engine/gncOwner.c:1124
 msgid "Lot Link"
