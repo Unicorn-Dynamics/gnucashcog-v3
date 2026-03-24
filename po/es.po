@@ -91,7 +91,7 @@ msgstr ""
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
 "PO-Revision-Date: 2026-03-24 15:09+0000\n"
-"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"Last-Translator: apemay <apemay.dev@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "es/>\n"
 "Language: es\n"
@@ -8337,7 +8337,7 @@ msgstr "Número del Proveedor"
 #: gnucash/gnome-utils/gnc-tree-view-owner.c:349
 #: gnucash/gtkbuilder/dialog-employee.glade:109
 msgid "Employee Number"
-msgstr "Número del Empleado"
+msgstr "Número del empleado"
 
 #: gnucash/gnome-utils/gnc-tree-view-owner.c:399
 #: gnucash/report/reports/standard/new-aging.scm:49
@@ -8849,7 +8849,7 @@ msgid ""
 "the window followed by the width and height of the window."
 msgstr ""
 "Este ajuste describe el tamaño y posición de la ventana cuando se cerró la "
-"última vez. Los números son las coordenadas X e Y de la esquina techo "
+"última vez. Los números son las coordenadas X e Y de la esquina superior "
 "izquierda de la ventana, seguidas por el ancho y alto de la ventana."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.business.gschema.xml.in:24
