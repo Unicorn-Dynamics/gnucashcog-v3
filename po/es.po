@@ -91,7 +91,7 @@ msgstr ""
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
 "PO-Revision-Date: 2026-03-24 15:09+0000\n"
-"Last-Translator: apemay <apemay.dev@gmail.com>\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "es/>\n"
 "Language: es\n"
@@ -10354,9 +10354,9 @@ msgid ""
 "notebooks are drawn. Possible values are \"top\", \"left\", \"bottom\" and "
 "\"right\". It defaults to \"top\"."
 msgstr ""
-"Este ajuste determina en qué borde se muestran las pestañas para cambiar de "
-"página. Los valores posibles son «superior», «izquierda», «inferior» y «"
-"derecha». El valor predeterminado es «superior»."
+"Este ajuste determina el borde en el cual se elaboran las etiquetas para el "
+"cambio de las páginas de las anotaciones. Los valores posibles son «superior"
+"», «izquierda», «inferior» y «derecho». Por defecto es «superior»."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:200
 #: gnucash/gtkbuilder/dialog-preferences.glade:3563
@@ -10378,7 +10378,7 @@ msgstr ""
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:215
 #: gnucash/gtkbuilder/dialog-preferences.glade:3636
 msgid "Display the summary bar at the top of the page."
-msgstr "Representa la barra de resumen en la parte techo de la página."
+msgstr "Exhibe la barra de resumen en la parte superior de la página."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:216
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:221
@@ -10387,9 +10387,9 @@ msgid ""
 "is drawn. Possible values are \"top\" and \"bottom\". It defaults to "
 "\"bottom\"."
 msgstr ""
-"Este parámetro determina el borde en el cual la barra de resumen para varias "
-"páginas está dibujada. Los posibles valores son «techo» y «suelo». Por "
-"defecto es «fondo»."
+"Este ajuste determina el borde en cual la barra de resumen para distintas "
+"páginas está dibujada. Los valores posibles son «superior» e «inferior». Por "
+"defecto es «inferior»."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:220
 #: gnucash/gtkbuilder/dialog-preferences.glade:3655
