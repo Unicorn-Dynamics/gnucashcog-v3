@@ -91,7 +91,7 @@ msgstr ""
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
 "PO-Revision-Date: 2026-03-24 15:10+0000\n"
-"Last-Translator: apemay <apemay.dev@gmail.com>\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "es/>\n"
 "Language: es\n"
@@ -9059,7 +9059,7 @@ msgid ""
 "specifies which check position to print. The possible values are 0, 1 and 2, "
 "corresponding to the top, middle and bottom checks on the page."
 msgstr ""
-"En cheques preimpresos que contienen varios cheques por página, este ajuste "
+"En cheques pre‐impresos que contienen varios cheques por página, este ajuste "
 "especifica qué posición de cheque imprimir. Los valores posibles son 0, 1 y "
 "2, que corresponden a los cheques situados en la parte superior, central e "
 "inferior de la página."
@@ -11441,7 +11441,7 @@ msgstr "Página de Totales"
 
 #: gnucash/gtkbuilder/assistant-csv-account-import.glade:13
 msgid "CSV Import Assistant"
-msgstr "Asistente de importación de CSV"
+msgstr "Asistente de Importación de CSV"
 
 #. Run the assistant in your language to see GTK's translation of the button labels.
 #: gnucash/gtkbuilder/assistant-csv-account-import.glade:30
@@ -11478,7 +11478,7 @@ msgstr ""
 
 #: gnucash/gtkbuilder/assistant-csv-account-import.glade:51
 msgid "Import Account Assistant"
-msgstr "Asistente de importación de cuentas"
+msgstr "Asistente de Importación de Cuentas"
 
 #: gnucash/gtkbuilder/assistant-csv-account-import.glade:66
 msgid "Enter file name and location for the Import…"
@@ -25245,7 +25245,7 @@ msgstr "Pto"
 #. Translators: Abbreviation for "Actual" amount
 #: gnucash/report/reports/standard/budget.scm:497
 msgid "Act"
-msgstr "Fun"
+msgstr "Act"
 
 #. Translators: Abbreviation for "Difference" amount
 #: gnucash/report/reports/standard/budget.scm:502
@@ -25283,7 +25283,7 @@ msgstr "Mostrar Flujo Neto"
 
 #: gnucash/report/reports/standard/cashflow-barchart.scm:51
 msgid "Show Table"
-msgstr "Mostrar Lengüeta"
+msgstr "Mostrar Tabla"
 
 #: gnucash/report/reports/standard/cashflow-barchart.scm:92
 #: gnucash/report/reports/standard/cash-flow.scm:96
@@ -25434,12 +25434,12 @@ msgid ""
 "Display account contributions as a percentage of the total value for the "
 "period."
 msgstr ""
-"Mostrar las contribuciones de la cuenta como porcentaje del valor total para "
+"Exhibe las contribuciones de la cuenta como porcentaje del valor total para "
 "el período."
 
 #: gnucash/report/reports/standard/category-barchart.scm:275
 msgid "Invalid dates"
-msgstr "Fechas inválidas"
+msgstr "Fechas no válidas"
 
 #: gnucash/report/reports/standard/category-barchart.scm:276
 msgid "Start date must be earlier than End date"
@@ -25447,7 +25447,7 @@ msgstr "La fecha de inicio debe ser anterior a la fecha de fin"
 
 #: gnucash/report/reports/standard/category-barchart.scm:314
 msgid "Daily Average"
-msgstr "Promedia diaria"
+msgstr "Promedio Diario"
 
 #: gnucash/report/reports/standard/category-barchart.scm:521
 #, scheme-format
@@ -25468,8 +25468,7 @@ msgstr "Sin datos exportables"
 
 #: gnucash/report/reports/standard/customer-summary.scm:51
 msgid "The income accounts where the sales and income was recorded."
-msgstr ""
-"Las cuentas de ingresos donde las ventas e ingresos fueron registrados."
+msgstr "Las cuentas de ingresos donde las ventas e ingresos fueron registrados."
 
 #: gnucash/report/reports/standard/customer-summary.scm:61
 msgid ""
@@ -25489,11 +25488,11 @@ msgstr "Muestra la columna con los gastos por cliente."
 
 #: gnucash/report/reports/standard/customer-summary.scm:65
 msgid "Show Company Address"
-msgstr "Mostrar la dirección de la sociedad"
+msgstr "Mostrar dirección de sociedad"
 
 #: gnucash/report/reports/standard/customer-summary.scm:66
 msgid "Show your own company's address and the date of printing."
-msgstr "Muestra su propia dirección de sociedad y la fecha para escribir."
+msgstr "Muestra su propia dirección de sociedad y la fecha para declarar."
 
 #: gnucash/report/reports/standard/customer-summary.scm:70
 msgid "Show Lines with All Zeros"
@@ -25536,7 +25535,7 @@ msgstr "Escoja la ordenación de la columna corta."
 
 #: gnucash/report/reports/standard/customer-summary.scm:106
 msgid "Customer Name"
-msgstr "Nombre del cliente"
+msgstr "Nombre del Cliente"
 
 #: gnucash/report/reports/standard/customer-summary.scm:108
 msgid "Markup (which is profit amount divided by sales)"
@@ -25563,7 +25562,7 @@ msgstr "Margen beneficiario"
 
 #: gnucash/report/reports/standard/customer-summary.scm:362
 msgid "No Customer"
-msgstr "Ningún cliente"
+msgstr "Ningún Cliente"
 
 #: gnucash/report/reports/standard/customer-summary.scm:476
 msgid "Customer Summary"
@@ -25589,7 +25588,7 @@ msgstr "Patrón de Asientos de Cierre"
 #: gnucash/report/reports/standard/trial-balance.scm:100
 msgid "Any text in the Description column which identifies closing entries."
 msgstr ""
-"Cualquier texto en la columna Descripción la cual identifica apuntes de "
+"Cualquier texto en la columna Descripción la cual identifica asientos de "
 "cierre."
 
 #: gnucash/report/reports/standard/equity-statement.scm:88
@@ -25860,7 +25859,7 @@ msgstr "Columnas de compras individuales"
 
 #: gnucash/report/reports/standard/income-gst-statement.scm:113
 msgid "Display individual purchases columns rather than their sum"
-msgstr "Representa columnas de compras individuales en vez de su sumatorio"
+msgstr "Exhibe columnas de compras individuales en vez de su sumatorio"
 
 #: gnucash/report/reports/standard/income-gst-statement.scm:114
 msgid "Individual tax columns"
@@ -25868,16 +25867,16 @@ msgstr "Columnas de imposiciones individuales"
 
 #: gnucash/report/reports/standard/income-gst-statement.scm:115
 msgid "Display individual tax columns rather than their sum"
-msgstr "Representa columnas impositivas individuales en vez de su sumatorio"
+msgstr "Exhibe columnas impositivas individuales en vez de su sumatorio"
 
 #: gnucash/report/reports/standard/income-gst-statement.scm:116
 #: gnucash/report/reports/standard/income-gst-statement.scm:345
 msgid "Gross Balance"
-msgstr "Balance Grueso"
+msgstr "Balance Bruto"
 
 #: gnucash/report/reports/standard/income-gst-statement.scm:117
 msgid "Display the gross balance (gross sales - gross purchases)"
-msgstr "Representa el balance grueso (ventas gruesas - compras gruesas)"
+msgstr "Exhibe el balance bruto (ventas brutas - compras brutas)"
 
 #: gnucash/report/reports/standard/income-gst-statement.scm:118
 #: gnucash/report/reports/standard/income-gst-statement.scm:353
@@ -25932,7 +25931,7 @@ msgstr "Formato del informe"
 #: gnucash/report/reports/standard/income-gst-statement.scm:156
 #: gnucash/report/reports/standard/income-gst-statement.scm:165
 msgid "Default Format"
-msgstr "Formato predeterminado"
+msgstr "Formato Predeterminado"
 
 #: gnucash/report/reports/standard/income-gst-statement.scm:157
 msgid ""
@@ -25964,7 +25963,7 @@ msgstr "Devolución IVA RU"
 #. Translators: "Gross Sales" refer to Net Sales + GST/VAT on Sales
 #: gnucash/report/reports/standard/income-gst-statement.scm:305
 msgid "Gross Sales"
-msgstr "Ventas Gruesas"
+msgstr "Ventas En Bruto"
 
 #: gnucash/report/reports/standard/income-gst-statement.scm:312
 msgid "Net Sales"
@@ -25978,7 +25977,7 @@ msgstr "Imposición sobre Ventas"
 #. GST/VAT on Purchase
 #: gnucash/report/reports/standard/income-gst-statement.scm:323
 msgid "Gross Purchases"
-msgstr "Compras Comunes"
+msgstr "Compras En Bruto"
 
 #: gnucash/report/reports/standard/income-gst-statement.scm:331
 msgid "Net Purchases"
@@ -25999,7 +25998,7 @@ msgstr ""
 
 #: gnucash/report/reports/standard/income-statement.scm:91
 msgid "Include trading accounts total"
-msgstr "Incluir las cuentas con saldos totales a cero"
+msgstr "Incluir el total de cuentas mercantiles"
 
 #: gnucash/report/reports/standard/income-statement.scm:93
 msgid ""
@@ -26020,7 +26019,7 @@ msgstr "Total Comercial"
 #: gnucash/report/reports/standard/income-statement.scm:552
 #: gnucash/report/reports/standard/trial-balance.scm:535
 msgid "Income Statement"
-msgstr "Declaración Ingresante"
+msgstr "Declaración de Ingresos"
 
 #: gnucash/report/reports/standard/income-statement.scm:553
 msgid "Profit & Loss"
