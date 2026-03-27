@@ -90,7 +90,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2026-03-24 17:09+0000\n"
+"PO-Revision-Date: 2026-03-27 19:10+0000\n"
 "Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "es/>\n"
@@ -6011,7 +6011,7 @@ msgstr "Gestión Financiera"
 #: gnucash/register/ledger-core/split-register-model.c:321
 msgctxt "Column header for 'Reconciled'"
 msgid "R"
-msgstr "C"
+msgstr "R"
 
 #: gnucash/gnome/report-menus.scm:57
 #, scheme-format
@@ -8337,7 +8337,7 @@ msgstr "Número del Proveedor"
 #: gnucash/gnome-utils/gnc-tree-view-owner.c:349
 #: gnucash/gtkbuilder/dialog-employee.glade:109
 msgid "Employee Number"
-msgstr "Número del empleado"
+msgstr "Número del Empleado"
 
 #: gnucash/gnome-utils/gnc-tree-view-owner.c:399
 #: gnucash/report/reports/standard/new-aging.scm:49
@@ -10693,7 +10693,7 @@ msgid ""
 "This will move the selection to the blank split when the transaction is "
 "expanded."
 msgstr ""
-"Esto moverá la selección al desglose vacío cuando la transacción esté "
+"Esto moverá la selección al desglose en blanco cuando la transacción esté "
 "expandida."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:342
@@ -14335,8 +14335,8 @@ msgid ""
 "ticker symbol or the currency ISO code will be used."
 msgstr ""
 "Introduzca un símbolo para exhibir. Esto con seguridad puede dejarse en "
-"blanco, en cuyo caso el símbolo del cuenta o el código ISO de la moneda "
-"serán utilizados."
+"blanco, en cuyo caso el símbolo bursátil o el código ISO de la moneda serán "
+"utilizados."
 
 #: gnucash/gtkbuilder/dialog-commodity.glade:338
 msgid "Type of quote source"
@@ -17426,8 +17426,8 @@ msgid ""
 "The vendor ID number. If left blank a reasonable number will be chosen for "
 "you"
 msgstr ""
-"El código de proveedor. Si se deja vacío se elegirá un número razonable por "
-"usted"
+"El código de proveedor. Si se deja en blanco se elegirá un número razonable "
+"por usted"
 
 #: gnucash/gtkbuilder/gnc-date-format.glade:12
 msgid "US (12/31/2001)"
@@ -22958,7 +22958,7 @@ msgstr "Promedio"
 #: gnucash/report/reports/standard/customer-summary.scm:107
 #: gnucash/report/reports/standard/customer-summary.scm:282
 msgid "Profit"
-msgstr "Ganancia"
+msgstr "Beneficio"
 
 #: gnucash/report/reports/example/average-balance.scm:136
 msgid "Period start"
@@ -26314,8 +26314,7 @@ msgstr ""
 
 #: gnucash/report/reports/standard/investment-lots.scm:256
 msgid "Show unrealized gain table column(s) for unsold shares"
-msgstr ""
-"Mostrar columna(s) de ganancias no realizadas para acciones no vendidas"
+msgstr "Mostrar columna(s) de ganancias no realizadas para acciones no vendidas"
 
 #: gnucash/report/reports/standard/investment-lots.scm:263
 msgid "Group gains (and sales?) by long-term (LT) and short-term (ST)"
@@ -26352,7 +26351,7 @@ msgid ""
 "Show blank text instead of zero values for inner table cells. Does not apply "
 "to footer rows."
 msgstr ""
-"Mostrar texto vacío en lugar de ceros para las celdas interiores de la "
+"Mostrar texto en blanco en lugar de ceros para las celdas interiores de la "
 "tabla. No es aplicable a las filas de pié de tabla."
 
 #: gnucash/report/reports/standard/investment-lots.scm:321
@@ -26374,7 +26373,7 @@ msgid ""
 "Lots with more than one purchase split are not well formed. It may make "
 "ambiguous the capital gains age"
 msgstr ""
-"Los lotes con más de una división de compra no están bien formados. Puede "
+"Los lotes con más de un desglose de compra no están bien formados. Puede "
 "hacer que la edad de las ganancias del capital sea ambigua"
 
 #: gnucash/report/reports/standard/investment-lots.scm:361
@@ -26386,20 +26385,20 @@ msgid ""
 "Lot titles are optional. This warning applies to titles that are empty or "
 "only whitespace."
 msgstr ""
-"Los títulos de lote son opcionales. Este aviso solo es aplicable a títulos "
-"que están vacíos o solo contienen espacios."
+"Los títulos del lote son opcionales. Este aviso solo es aplicable a títulos "
+"que están vacíos o solo contienen espacios en blanco."
 
 #: gnucash/report/reports/standard/investment-lots.scm:375
 msgid ""
 "Detect possible errors in 'Realized Gain/Loss' splits that are created when "
 "adding a sale split to a lot"
 msgstr ""
-"Detectar posibles errores en las anotaciones 'Ganancias/Pérdidas realizadas' "
-"que son creadas al añadir una anotación de venta a un lote"
+"Detectar posibles errores en los desgloses 'Ganancias/Pérdidas Realizadas' "
+"que son creadas al añadir un desglose de venta a un lote"
 
 #: gnucash/report/reports/standard/investment-lots.scm:381
 msgid "Detect splits that have not been assigned to a lot."
-msgstr "Detectar asientos que no han sido asignados a ningún lote."
+msgstr "Detectar desgloses que no han sido asignados a ningún lote."
 
 #: gnucash/report/reports/standard/investment-lots.scm:383
 msgid "Count"
@@ -26409,8 +26408,8 @@ msgstr "Contador"
 msgid ""
 "Balance mismatches may indicate a split that is not yet included in a lot"
 msgstr ""
-"Balances no coincidentes podrían indicar una anotación que todavía no ha "
-"sido incluida en un lote"
+"Balances no coincidentes podrían indicar un desglose que todavía no ha sido "
+"incluida en un lote"
 
 #: gnucash/report/reports/standard/investment-lots.scm:799
 #, scheme-format
@@ -26431,7 +26430,7 @@ msgid ""
 "Warning: Above lot has ~a bought splits. Consider separating them into their "
 "own lots."
 msgstr ""
-"Aviso: el lote de arriba contiene ~a anotaciones de compra. Considere "
+"Aviso: el lote de arriba contiene ~a desgloses de compra. Considere "
 "separarlas en sus propios lotes."
 
 #: gnucash/report/reports/standard/investment-lots.scm:1360
@@ -26440,12 +26439,12 @@ msgid ""
 "Warning: Above lot's balance is negative on ~a. Consider removing the "
 "responsible sale split from the lot and then scrubbing."
 msgstr ""
-"Aviso: El balance del lote anterior es negativo el ~a. Considere eliminar "
-"del lote la anotación de venta responsable y depurar después."
+"Aviso: El balance del lote anterior es negativo el ~a. Considere eliminar el "
+"desglose de venta responsable desde el lote, comprobando y reparando después."
 
 #: gnucash/report/reports/standard/investment-lots.scm:1369
 msgid "Warning: Above lot's title is blank."
-msgstr "Aviso: el título del lote de arriba está vacío."
+msgstr "Aviso: el título del lote de arriba está en blanco."
 
 #: gnucash/report/reports/standard/investment-lots.scm:1384
 #, scheme-format
@@ -26453,16 +26452,16 @@ msgid ""
 "Warning: Above lot's computed gain ~a is not equal to the \"Realized Gain/"
 "Loss\" split(s) sum ~a. Difference: ~a"
 msgstr ""
-"Aviso: La ganancia calculada de los lotes anteriores ~a no es igual a la "
-"suma de anotación(es) \"Ganancias/Pérdidas realizadas\" ~a. Diferencia: ~a"
+"Aviso: arriba la ganancia calculada del lote anterior ~a no es igual a la "
+"suma de desglose(s) «Ganancias/Pérdidas realizadas» ~a. Diferencia: ~a"
 
 #: gnucash/report/reports/standard/investment-lots.scm:1403
 #, scheme-format
 msgid ""
 "Warning: ~a split(s) are not assigned to a lot. Do lots need to be scrubbed?"
 msgstr ""
-"Aviso: ~a anotación(es) no están asignadas a ningún lote. ¿Necesita depurar "
-"los lotes?"
+"Aviso: ~a anotación(es) no están asignadas a ningún lote. ¿Necesita "
+"comprobar y reparar los lotes?"
 
 #: gnucash/report/reports/standard/investment-lots.scm:1408
 #, scheme-format
@@ -26470,8 +26469,8 @@ msgid ""
 "Warning: The following ~a split(s) are not assigned to a lot. Do lots need "
 "to be scrubbed?"
 msgstr ""
-"Aviso: Las siguientes ~a anotación(es) no están asignadas a ningún lote. "
-"¿Necesita depurar los lotes?"
+"Aviso: Las siguientes ~a desglose(s) no están asignadas a ningún lote. ¿"
+"Necesita depurar los lotes?"
 
 #: gnucash/report/reports/standard/investment-lots.scm:1425
 #, scheme-format
@@ -26484,8 +26483,8 @@ msgid ""
 "Warning: End amount ~a is not equal to actual account balance ~a. "
 "Difference: ~a. Do lots need to be scrubbed?"
 msgstr ""
-"Aviso: La cantidad final ~a no es igual al balance actual de la cuenta ~a. "
-"Diferencia: ~a. ¿Necesita depurar los lotes?"
+"Aviso: la cantidad final ~a no es igual al balance actual de la cuenta ~a. "
+"Diferencia: ~a. ¿Necesita comprobar y reparar los lotes?"
 
 #: gnucash/report/reports/standard/investment-lots.scm:1963
 #, scheme-format
@@ -26494,7 +26493,7 @@ msgstr "~a, ~a"
 
 #: gnucash/report/reports/standard/investment-lots.scm:1988
 msgid "Account Lot Gains"
-msgstr "Ganancias de lote de la cuenta"
+msgstr "Cuenta de Ganancias por Lote"
 
 #: gnucash/report/reports/standard/invoice.scm:101
 #: gnucash/report/reports/standard/invoice.scm:438
@@ -26507,7 +26506,7 @@ msgstr "Cantidad Impositiva"
 
 #: gnucash/report/reports/standard/invoice.scm:157
 msgid "REF"
-msgstr "REF."
+msgstr "REF"
 
 #: gnucash/report/reports/standard/invoice.scm:258
 #: gnucash/report/reports/support/taxinvoice.eguile.scm:225
@@ -26526,7 +26525,7 @@ msgstr "Condiciones:"
 #: gnucash/report/reports/standard/invoice.scm:288
 #: gnucash/report/reports/standard/taxinvoice.scm:214
 msgid "Job number:"
-msgstr "Núm. de ejercicio:"
+msgstr "Nº ejercicio:"
 
 #: gnucash/report/reports/standard/invoice.scm:293
 #: gnucash/report/reports/standard/taxinvoice.scm:217
@@ -26560,7 +26559,7 @@ msgstr "Espacio vacío"
 
 #: gnucash/report/reports/standard/invoice.scm:396
 msgid "Custom Title"
-msgstr "Título personalizado"
+msgstr "Título Personalizado"
 
 #: gnucash/report/reports/standard/invoice.scm:397
 msgid "A custom string to replace Invoice, Bill or Expense Voucher."
@@ -26585,11 +26584,11 @@ msgstr ""
 
 #: gnucash/report/reports/standard/invoice.scm:406
 msgid "Picture Location"
-msgstr "Dibujo Ubicativo"
+msgstr "Lugar de Imagen"
 
 #: gnucash/report/reports/standard/invoice.scm:406
 msgid "Location for Picture"
-msgstr "Ubicación para Imagen"
+msgstr "Lugar para Imagen"
 
 #: gnucash/report/reports/standard/invoice.scm:410
 #: gnucash/report/reports/standard/invoice.scm:414
@@ -26614,32 +26613,32 @@ msgstr "Ubicación para Imagen"
 #: gnucash/report/reports/standard/new-owner-report.scm:934
 #: gnucash/report/reports/standard/new-owner-report.scm:949
 msgid "Display Columns"
-msgstr "Representar columnas"
+msgstr "Exhibir Columnas"
 
 #: gnucash/report/reports/standard/invoice.scm:411
 #: gnucash/report/reports/standard/register.scm:347
 #: gnucash/report/reports/standard/taxinvoice.scm:124
 #: gnucash/report/trep-engine.scm:927
 msgid "Display the date?"
-msgstr "¿Representar la fecha?"
+msgstr "¿Exhibir la fecha?"
 
 #: gnucash/report/reports/standard/invoice.scm:415
 #: gnucash/report/reports/standard/register.scm:359
 #: gnucash/report/trep-engine.scm:933
 msgid "Display the description?"
-msgstr "¿Representar la descripción?"
+msgstr "¿Exhibir la descripción?"
 
 #: gnucash/report/reports/standard/invoice.scm:419
 msgid "Display the action?"
-msgstr "¿Representar la operación?"
+msgstr "¿Exhibir la operación?"
 
 #: gnucash/report/reports/standard/invoice.scm:423
 msgid "Display the quantity of items?"
-msgstr "¿Representar el inventario de objetos?"
+msgstr "¿Exhibir el inventario de objetos?"
 
 #: gnucash/report/reports/standard/invoice.scm:427
 msgid "Display the price per item?"
-msgstr "¿Representar el precio por elemento?"
+msgstr "¿Exhibir el precio por elemento?"
 
 #: gnucash/report/reports/standard/invoice.scm:431
 msgid "Display the entry's discount?"
@@ -26659,11 +26658,11 @@ msgstr "¿Exhibir el valor del asiento?"
 
 #: gnucash/report/reports/standard/invoice.scm:447
 msgid "Display due date?"
-msgstr "¿Representar fecha de vencimiento?"
+msgstr "¿Exhibir fecha de vencimiento?"
 
 #: gnucash/report/reports/standard/invoice.scm:451
 msgid "Display the subtotals?"
-msgstr "¿Representar los subtotales?"
+msgstr "¿Exhibir los subtotales?"
 
 #: gnucash/report/reports/standard/invoice.scm:454
 msgid "Payable to"
@@ -26693,7 +26692,7 @@ msgstr "Contacto en la sociedad"
 
 #: gnucash/report/reports/standard/invoice.scm:467
 msgid "Display the Company contact information."
-msgstr "Representa la información del contacto en la sociedad."
+msgstr "Exhibir la información del contacto en la sociedad."
 
 #: gnucash/report/reports/standard/invoice.scm:472
 msgid "Company contact string"
@@ -26705,15 +26704,15 @@ msgstr "La frase empleada para introducir el contacto de la sociedad."
 
 #: gnucash/report/reports/standard/invoice.scm:474
 msgid "Please direct all enquiries to"
-msgstr "Dirija todas las sugenrencias a"
+msgstr "Dirija todas las consultas a"
 
 #: gnucash/report/reports/standard/invoice.scm:477
 msgid "Minimum # of entries"
-msgstr "Núm. mínimo de apuntes"
+msgstr "Nº. mínimo de apuntes"
 
 #: gnucash/report/reports/standard/invoice.scm:478
 msgid "The minimum number of invoice entries to display."
-msgstr "El número mínimo de apuntes recibos para representar."
+msgstr "El número mínimo de apuntes de factura para exhibir."
 
 #: gnucash/report/reports/standard/invoice.scm:482
 msgid "Use Detailed Tax Summary"
@@ -26733,7 +26732,7 @@ msgstr "Referencias"
 
 #: gnucash/report/reports/standard/invoice.scm:487
 msgid "Display the invoice references?"
-msgstr "¿Representar las referencias de la cuenta?"
+msgstr "¿Exhibir las referencias de la factura?"
 
 #: gnucash/report/reports/standard/invoice.scm:490
 msgid "Billing Terms"
@@ -26741,7 +26740,7 @@ msgstr "Condiciones de Cargo Pendiente"
 
 #: gnucash/report/reports/standard/invoice.scm:491
 msgid "Display the invoice billing terms?"
-msgstr "¿Representar la factura con términos de cargo pendiente?"
+msgstr "¿Exhibir la factura con términos de cargo pendiente?"
 
 #: gnucash/report/reports/standard/invoice.scm:495
 msgid "Display the billing id?"
@@ -26749,7 +26748,7 @@ msgstr "¿Representar el ID del cargo pendiente?"
 
 #: gnucash/report/reports/standard/invoice.scm:498
 msgid "Invoice owner ID"
-msgstr "ID de Titular Facturante"
+msgstr "ID de titular Facturante"
 
 #: gnucash/report/reports/standard/invoice.scm:499
 msgid "Display the customer/vendor id?"
@@ -26757,7 +26756,7 @@ msgstr "¿Representar el ID de cliente/proveedor?"
 
 #: gnucash/report/reports/standard/invoice.scm:503
 msgid "Display the invoice notes?"
-msgstr "¿Representar las anotaciones de factura?"
+msgstr "¿Exhibir las anotaciones de factura?"
 
 #: gnucash/report/reports/standard/invoice.scm:506
 msgid "Payments"
@@ -26815,7 +26814,7 @@ msgstr "Liquidado, ¡gracias!"
 #. Translators: This "T" is displayed in the taxable column, if this entry contains tax
 #: gnucash/report/reports/standard/invoice.scm:656
 msgid "T"
-msgstr "A"
+msgstr "I"
 
 #: gnucash/report/reports/standard/invoice.scm:703
 #: gnucash/report/reports/standard/receipt.scm:57
@@ -26861,7 +26860,7 @@ msgstr "~a Nº~a"
 
 #: gnucash/report/reports/standard/lot-viewer.scm:56
 msgid "The account to search for lots."
-msgstr "La cuenta para búsqueda de lotes."
+msgstr "La cuenta para búsqueda por lotes."
 
 #: gnucash/report/reports/standard/net-charts.scm:48
 msgid "Show Net Profit"
@@ -26873,7 +26872,7 @@ msgstr "Mostrar Activo y Pasivo"
 
 #: gnucash/report/reports/standard/net-charts.scm:51
 msgid "Show Net Worth"
-msgstr "Mostrar Valor Neto"
+msgstr "Mostrar Patrimonio Neto"
 
 #: gnucash/report/reports/standard/net-charts.scm:56
 msgid "Line Width"
@@ -26889,7 +26888,7 @@ msgstr "Rejilla"
 
 #: gnucash/report/reports/standard/net-charts.scm:103
 msgid "Show Income and Expenses?"
-msgstr "¿Muestro ingresos y gastos?"
+msgstr "¿Mostrar Ingresos y Gastos?"
 
 #: gnucash/report/reports/standard/net-charts.scm:104
 msgid "Show the Asset and the Liability bars?"
@@ -26901,7 +26900,7 @@ msgstr "¿Muestro el ganancia neta?"
 
 #: gnucash/report/reports/standard/net-charts.scm:113
 msgid "Show a Net Worth bar?"
-msgstr "¿Muestro una barra de Valor Neto?"
+msgstr "¿Muestro una barra de Patrimonio Neto?"
 
 #: gnucash/report/reports/standard/net-charts.scm:136
 msgid "Add grid lines."
@@ -26915,7 +26914,7 @@ msgstr "Ganancia Neta"
 #: gnucash/report/reports/standard/net-charts.scm:372
 #: gnucash/report/reports/standard/net-charts.scm:404
 msgid "Net Worth"
-msgstr "Valor Neto"
+msgstr "Patrimonio Neto"
 
 #: gnucash/report/reports/standard/net-charts.scm:468
 msgid "Net Worth Barchart"
@@ -26944,7 +26943,7 @@ msgstr "Ordenar por"
 
 #: gnucash/report/reports/standard/new-aging.scm:42
 msgid "Show zero balance items"
-msgstr "Muestra los ítemes de balances a cero"
+msgstr "Mostrar ítemes de saldo cero"
 
 #: gnucash/report/reports/standard/new-aging.scm:43
 #: gnucash/report/reports/standard/new-owner-report.scm:46
@@ -26966,19 +26965,19 @@ msgstr ""
 
 #: gnucash/report/reports/standard/new-aging.scm:52
 msgid "Display Address 1."
-msgstr "Representar dirección 1."
+msgstr "Exhibe dirección 1."
 
 #: gnucash/report/reports/standard/new-aging.scm:53
 msgid "Display Address 2."
-msgstr "Representar dirección 2."
+msgstr "Exhibe dirección 2."
 
 #: gnucash/report/reports/standard/new-aging.scm:54
 msgid "Display Address 3."
-msgstr "Representar dirección 3."
+msgstr "Exhibe dirección 3."
 
 #: gnucash/report/reports/standard/new-aging.scm:55
 msgid "Display Address 4."
-msgstr "Representar dirección 4."
+msgstr "Exhibe dirección 4."
 
 #: gnucash/report/reports/standard/new-aging.scm:56
 msgid "Address Phone"
@@ -26986,7 +26985,7 @@ msgstr "Dirección Telefónica"
 
 #: gnucash/report/reports/standard/new-aging.scm:56
 msgid "Display Phone."
-msgstr "Representar teléfono."
+msgstr "Exhibir teléfono."
 
 #: gnucash/report/reports/standard/new-aging.scm:57
 msgid "Address Fax"
@@ -26994,7 +26993,7 @@ msgstr "Dirección Fax"
 
 #: gnucash/report/reports/standard/new-aging.scm:57
 msgid "Display Fax."
-msgstr "Representar fax."
+msgstr "Exhibir fax."
 
 #: gnucash/report/reports/standard/new-aging.scm:58
 msgid "Address Email"
@@ -27002,11 +27001,11 @@ msgstr "Dirección Correo-e"
 
 #: gnucash/report/reports/standard/new-aging.scm:58
 msgid "Display Email."
-msgstr "Representar correo-e."
+msgstr "Exhibir correo-e."
 
 #: gnucash/report/reports/standard/new-aging.scm:59
 msgid "Display Active status."
-msgstr "Representar estado Activo."
+msgstr "Exhibir estado Activo."
 
 #: gnucash/report/reports/standard/new-aging.scm:61
 msgid ""
@@ -27207,11 +27206,11 @@ msgstr ""
 
 #: gnucash/report/reports/standard/new-owner-report.scm:528
 msgid "Total Credit"
-msgstr "Total Crédito"
+msgstr "Crédito Total"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:529
 msgid "Total Due"
-msgstr "Total Vencida"
+msgstr "Vencimiento Total"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:877
 msgid "The company for this report."
@@ -27219,7 +27218,7 @@ msgstr "La sociedad para este informe."
 
 #: gnucash/report/reports/standard/new-owner-report.scm:890
 msgid "Display the transaction date?"
-msgstr "¿Representar la fecha de la transacción?"
+msgstr "¿Exhibir la fecha de la transacción?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:894
 msgid "Display the invoice due date?"
@@ -27227,11 +27226,11 @@ msgstr "¿Exhibir las fecha de vencimiento de la factura?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:898
 msgid "Display the transaction reference?"
-msgstr "¿Representar la referencia de la transacción?"
+msgstr "¿Exhibir la referencia de la transacción?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:902
 msgid "Display the transaction type?"
-msgstr "¿Representar la familia transaccional?"
+msgstr "¿Exhibir el tipo de la transacción?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:907
 msgid "Display the associated job?"
@@ -27239,28 +27238,28 @@ msgstr "¿Exhibir el ejercicio asociado?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:911
 msgid "Display the transaction description?"
-msgstr "¿Representar la descripción de la transacción?"
+msgstr "¿Exhibir la descripción de la transacción?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:915
 msgid "Display the sale amount column?"
-msgstr "¿Representar la columna de cantidad de venta?"
+msgstr "¿Exhibir la columna de cantidad de venta?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:919
 msgid "Display the tax column?"
-msgstr "¿Representa la columna impositiva?"
+msgstr "¿Exhibir la columna impositiva?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:923
 msgid "Display the period debits column?"
-msgstr "¿Representar la columna de los periodos debiticios?"
+msgstr "¿Exhibir la columna de los periodos debiticios?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:927
 msgid "Display the period credits column?"
-msgstr "¿Representar una columna para los guión del presupuesto?"
+msgstr "¿Exhibir una columna para los guión del presupuesto?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:931
 #: gnucash/report/reports/standard/register.scm:395
 msgid "Display a running balance?"
-msgstr "¿Representar un balance efectivo?"
+msgstr "¿Exhibir un balance efectivo?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:938
 msgid "Show linked transactions"
@@ -27292,7 +27291,7 @@ msgstr "Detallado"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:950
 msgid "Display document link?"
-msgstr "¿Representar enlace a documento?"
+msgstr "¿Exhibir enlace a documento?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:1065
 msgid "No valid account found"
@@ -27419,7 +27418,7 @@ msgid ""
 "selected time period. This doesn't give a useful plot."
 msgstr ""
 "Hubo solo un único precio encontrado para las materias primas seleccionadas "
-"dentro del periodo del tiempo seleccionado. Esto no da un trazo útil."
+"dentro del vencimineto seleccionado. Esto no da un trazo útil."
 
 #: gnucash/report/reports/standard/price-scatter.scm:259
 msgid "All Prices equal"
@@ -27575,7 +27574,7 @@ msgid ""
 "accordingly."
 msgstr ""
 "Anchura del logotipo de la cabecera en el formato CSS, ej.: 10% o 32px. "
-"Déjelo en blanco para visualizar el logotipo en su anchura natural. En "
+"Déjalo en blanco para visualizar el logotipo en su anchura natural. En "
 "consecuencia la altura del logotipo será escalada."
 
 #: gnucash/report/reports/standard/receipt.scm:97
@@ -27590,7 +27589,7 @@ msgid ""
 "display the logo at its natural width. The height of the logo will be scaled "
 "accordingly."
 msgstr ""
-"Anchura del logotipo del pie en el formato CSS, ej.: 10% o 32px. Déjelo en "
+"Anchura del logotipo del pie en el formato CSS, ej.: 10% o 32px. Déjalo en "
 "blanco para representar el logotipo en su anchura natural. En consecuencia "
 "la altura del logotipo será escalada."
 
@@ -27611,12 +27610,11 @@ msgstr "Remuneración recibida, ¡muchas gracias!"
 
 #: gnucash/report/reports/standard/receipt.scm:141
 msgid "Notes added at end of invoice -- may contain HTML markup"
-msgstr ""
-"Anotaciones añadidas al final de la cuenta -- quizá contenga marco HTML"
+msgstr "Anotaciones añadidas al final de la cuenta —quizá contenga marco HTML"
 
 #: gnucash/report/reports/standard/receipt.scm:204
 msgid "Display a customer invoice as receipt, cash voucher"
-msgstr "Representa una factura de cliente como factura, efectivo contable"
+msgstr "Exhibe una factura de cliente como factura, efectivo contable"
 
 #: gnucash/report/reports/standard/reconcile-report.scm:62
 msgid ""
@@ -27667,45 +27665,45 @@ msgstr "Informe de Registro"
 
 #: gnucash/report/reports/standard/register.scm:352
 msgid "Display the check number/action?"
-msgstr "¿Representar la número comprobante/operación?"
+msgstr "¿Exhibir el número comprobante/operación?"
 
 #: gnucash/report/reports/standard/register.scm:355
 #: gnucash/report/trep-engine.scm:931 gnucash/report/trep-engine.scm:932
 msgid "Display the check number?"
-msgstr "¿Representar el número comprobante?"
+msgstr "¿Exhibir el número comprobante?"
 
 #: gnucash/report/reports/standard/register.scm:363
 #: gnucash/report/trep-engine.scm:959
 msgid "Display the memo?"
-msgstr "¿Representar el memorándum?"
+msgstr "¿Exhibir el memorándum?"
 
 #: gnucash/report/reports/standard/register.scm:367
 msgid "Display the account?"
-msgstr "¿Representar la cuenta?"
+msgstr "¿Exhibir la cuenta?"
 
 #: gnucash/report/reports/standard/register.scm:371
 #: gnucash/report/trep-engine.scm:942
 msgid "Display the number of shares?"
-msgstr "¿Representar el número de acciones?"
+msgstr "¿Exhibir el número de acciones?"
 
 #: gnucash/report/reports/standard/register.scm:375
 msgid "Display the name of lot the shares are in?"
-msgstr "¿Representar el nombre del lote de acciones que posea?"
+msgstr "¿Exhibir el nombre del lote de acciones que posea?"
 
 #: gnucash/report/reports/standard/register.scm:379
 #: gnucash/report/trep-engine.scm:944
 msgid "Display the shares price?"
-msgstr "¿Representar el precio de acciones?"
+msgstr "¿Exhibir el precio de acciones?"
 
 #: gnucash/report/reports/standard/register.scm:383
 #: gnucash/report/trep-engine.scm:996
 msgid "Display the amount?"
-msgstr "¿Representar la cantidad?"
+msgstr "¿Exhibir la cantidad?"
 
 #: gnucash/report/reports/standard/register.scm:386
 #: gnucash/report/trep-engine.scm:1000
 msgid "Single Column"
-msgstr "Columna Única"
+msgstr "Una Columna"
 
 #: gnucash/report/reports/standard/register.scm:387
 #: gnucash/report/trep-engine.scm:1001
@@ -27814,7 +27812,7 @@ msgstr "Mostrar precio neto"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:88
 msgid "Invoice number next to title"
-msgstr "Número factura siguiente al título"
+msgstr "Número de factura siguiente al título"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:89
 msgid "table-border-collapse"
@@ -27842,7 +27840,7 @@ msgstr "Anchura del logotipo"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:126
 msgid "Display the Tax Rate?"
-msgstr "¿Representar el Tipo Impositivo?"
+msgstr "¿Exhibir el Tipo Impositivo?"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:128
 msgid "Display the Units?"
@@ -27850,19 +27848,19 @@ msgstr "¿Representar las participaciones?"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:130
 msgid "Display the contact?"
-msgstr "¿Representar el contacto?"
+msgstr "¿Exhibir el contacto?"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:132
 msgid "Display the address?"
-msgstr "¿Representar la dirección?"
+msgstr "¿Exhibir la dirección?"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:134
 msgid "Display the Invoice Number?"
-msgstr "¿Representar el número de factura?"
+msgstr "¿Exhibir el número de factura?"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:136
 msgid "Display the Company Name?"
-msgstr "¿Representar el nombre de la sociedad?"
+msgstr "¿Exhibir el nombre de la sociedad?"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:138
 msgid "Invoice Number next to title?"
@@ -27891,7 +27889,7 @@ msgid ""
 "the logo at its natural width. The height of the logo will be scaled "
 "accordingly."
 msgstr ""
-"Anchura del logotipo en el formato CSS, ej.: 10% o 32px. Déjelo en blanco "
+"Anchura del logotipo en el formato CSS, ej.: 10% o 32px. Déjalo en blanco "
 "para desplegar el logotipo en su anchura natural. En consecuencia la altura "
 "del logotipo será escalada."
 
@@ -27923,8 +27921,8 @@ msgstr "CSS embebido."
 #: gnucash/report/reports/standard/taxinvoice.scm:304
 msgid "Display a customer invoice with tax columns (using eguile template)"
 msgstr ""
-"Representa una factura de cliente con columnas impositivas (usando plantilla "
-"de eguile)"
+"Exhibe una factura de cliente con columnas impositivas (usando plantilla de "
+"eguile)"
 
 #: gnucash/report/reports/standard/taxinvoice.scm:316
 msgid "Unit"
@@ -30744,7 +30742,7 @@ msgstr "Abra la ventana del visor/editor de lotes."
 #: gnucash/ui/gnc-plugin-page-register.ui:644
 #: gnucash/ui/gnc-plugin-page-register.ui:804
 msgid "Move to the blank transaction in the register."
-msgstr "Mover a la transacción vacía en el registro."
+msgstr "Mover a la transacción en blanco dentro del registro."
 
 #: gnucash/ui/gnc-plugin-page-register.ui:276
 #: gnucash/ui/gnc-plugin-page-register.ui:417
@@ -32404,7 +32402,7 @@ msgstr " + "
 #: libgnucash/engine/Recurrence.cpp:779 libgnucash/engine/Recurrence.cpp:791
 #, c-format
 msgid " (x%u)"
-msgstr " (x%u)"
+msgstr " (×%u)"
 
 #. Translators: %s is an already-localized form of the day of the week.
 #: libgnucash/engine/Recurrence.cpp:660
@@ -32445,7 +32443,7 @@ msgstr ""
 #: libgnucash/engine/ScrubBusiness.c:626
 #, c-format
 msgid "Checking business lots in account %s: %u of %u"
-msgstr "Comprobando negociaciones de hipotecas en cuanta %s: %u de %u"
+msgstr "Comprobando negociaciones de hipotecas en cuenta %s: %u de %u"
 
 #: libgnucash/engine/ScrubBusiness.c:680
 #, c-format
@@ -32491,7 +32489,7 @@ msgstr "Imposición relativa pero sin código impositivo"
 
 #: libgnucash/tax/gnc-locale-tax.c:107
 msgid "Tax entity type not specified"
-msgstr "Tipo no especificado de entidad impositiva"
+msgstr "Tipo impositivo de entidad no especificada"
 
 #: libgnucash/tax/gnc-locale-tax.c:161
 #, c-format
@@ -32513,13 +32511,12 @@ msgstr "Código %s no válido para el tipo impositivo %s"
 #: libgnucash/tax/gnc-locale-tax.c:182
 #, c-format
 msgid "Not tax-related; invalid code %s for tax type %s"
-msgstr ""
-"Sin imposición relativa; código %s no válido para el tipo impositivo %s"
+msgstr "Sin imposición relativa; código %s no válido para el tipo impositivo %s"
 
 #: libgnucash/tax/gnc-locale-tax.c:200
 #, c-format
 msgid "No form: code %s, tax type %s"
-msgstr "Sin clase: código %s, tipo impositivo %s"
+msgstr "Sin formulario: código %s, tipo impositivo %s"
 
 #: libgnucash/tax/gnc-locale-tax.c:204
 #, c-format
