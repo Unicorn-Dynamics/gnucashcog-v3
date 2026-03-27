@@ -90,7 +90,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2026-03-27 19:11+0000\n"
+"PO-Revision-Date: 2026-03-27 21:09+0000\n"
 "Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "es/>\n"
@@ -28015,17 +28015,17 @@ msgstr ""
 
 #: gnucash/report/reports/standard/trial-balance.scm:86
 msgid "Adjusting Entries pattern"
-msgstr "Patrón de Ajuste de Apuntes"
+msgstr "Ajuste de Patrón de Asientos"
 
 #: gnucash/report/reports/standard/trial-balance.scm:88
 msgid "Any text in the Description column which identifies adjusting entries."
 msgstr ""
-"Cualquier texto en la columna Descripción el cual identifica apuntes de "
+"Cualquier texto en la columna Descripción el cual identifica asientos de "
 "ajuste."
 
 #: gnucash/report/reports/standard/trial-balance.scm:90
 msgid "Adjusting Entries pattern is case-sensitive"
-msgstr "Patrón de Ajuste de Apuntes distingue mayúsculas"
+msgstr "Patrón de Ajuste de Asientos distingue mayúsculas"
 
 #: gnucash/report/reports/standard/trial-balance.scm:92
 msgid "Causes the Adjusting Entries Pattern match to be case-sensitive."
@@ -28035,7 +28035,7 @@ msgstr ""
 
 #: gnucash/report/reports/standard/trial-balance.scm:94
 msgid "Adjusting Entries Pattern is regular expression"
-msgstr "Patrón de Ajuste de Apuntes es expresión regular"
+msgstr "Ajuste de Patrón de Asientos es expresión regular"
 
 #: gnucash/report/reports/standard/trial-balance.scm:96
 msgid ""
