@@ -16,7 +16,7 @@
 # Rene Lambers <jbh.lambers@gmail.com>, 2023.
 # Leo Moons <Leo.Moons@proximus.be>, 2025.
 # BlueRains <lu@schoevaars.eu>, 2025.
-# Ceaus <github@pohw.nl>, 2025.
+# Ceaus <github@pohw.nl>, 2025, 2026.
 # hamaryns <hendrik@hendrikmaryns.name>, 2026.
 msgid ""
 msgstr ""
@@ -24,8 +24,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2026-03-23 21:09+0000\n"
-"Last-Translator: hamaryns <hendrik@hendrikmaryns.name>\n"
+"PO-Revision-Date: 2026-03-28 14:11+0000\n"
+"Last-Translator: Ceaus <github@pohw.nl>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "nl/>\n"
 "Language: nl\n"
@@ -2271,10 +2271,8 @@ msgid "Rename failed, possibly new name exists"
 msgstr ""
 
 #: gnucash/gnome/dialog-commodities.cpp:332
-#, fuzzy
-#| msgid "<No name>"
 msgid "No new name"
-msgstr "<geen naam>"
+msgstr "<geen nieuwe naam>"
 
 #: gnucash/gnome/dialog-customer.c:314 gnucash/gnome/dialog-vendor.c:205
 msgid ""
@@ -2955,10 +2953,8 @@ msgid "Online HBCI"
 msgstr "Online Bankieren"
 
 #: gnucash/gnome/dialog-imap-editor.c:791
-#, fuzzy
-#| msgid "Income Account"
 msgid "OFX Income Account"
-msgstr "Opbrengstenrekening"
+msgstr "OFX Opbrengstenrekening"
 
 #. Translators: In this context,
 #. 'Billing information' maps to the
@@ -5464,10 +5460,8 @@ msgid "The file %s already exists. Are you sure you want to overwrite it?"
 msgstr "Het bestand %s bestaat al. Weet u zeker dat u het wilt overschrijven?"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1732
-#, fuzzy
-#| msgid "Overview"
 msgid "_Overwrite"
-msgstr "Overzicht"
+msgstr "Overschrijven"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1732
 #, c-format
