@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2026-03-28 14:11+0000\n"
+"PO-Revision-Date: 2026-03-28 16:09+0000\n"
 "Last-Translator: Szia Tomi <sziatomi01@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/hu/>\n"
@@ -10608,22 +10608,21 @@ msgstr ""
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:327
 msgid "Show entered and reconciled dates on selection"
-msgstr ""
+msgstr "A bevitel és az egyeztetés dátumának megjelenítése a kiválasztásnál"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:328
 msgid "Show the entered date and reconciled date on transaction selection."
 msgstr ""
-"Megjeleníti a beviteli dátumot és az egyeztetési dátumot a tranzakció "
-"kiválasztásánál."
+"Megjeleníti a beviteli dátumot és az egyeztetési dátumot a tranzakció-"
+"kiválasztásnál."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:332
-#, fuzzy
 msgid "Show the calendar buttons"
-msgstr "Név oszlop megjelenítése"
+msgstr "A naptár gombjainak megjelenítése"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:333
 msgid "Show the calendar buttons Cancel, Today and Select."
-msgstr ""
+msgstr "A naptár gombjainak megjelenítése: Mégsem, Ma és Kiválasztás."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:337
 msgid "Move the selection to the blank split on expand"
