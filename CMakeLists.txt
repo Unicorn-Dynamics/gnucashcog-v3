@@ -21,7 +21,7 @@ if (POLICY CMP0177)
 endif()
 
 project (gnucash
-    VERSION 5.14
+    VERSION 5.15
 )
 
 enable_testing()
@@ -605,7 +605,11 @@ if (Boost_FOUND)
  if (Boost_VERSION VERSION_LESS "1.89.0")
   find_package(Boost 1.67.0  COMPONENTS date_time filesystem locale program_options regex system)
  else()
-  find_package(Boost 1.67.0  COMPONENTS date_time filesystem locale program_options regex)
+  if (Boost_VERSION VERSION_LESS "1.90.0")
+    find_package(Boost 1.67.0  COMPONENTS date_time filesystem locale program_options regex)
+  else()
+    find_package(Boost 1.67.0  COMPONENTS date_time locale program_options regex)
+  endif()
  endif()
 endif()
 
@@ -763,6 +767,7 @@ set(gnucash_DOCS
     ChangeLog.2022
     ChangeLog.2023
     ChangeLog.2024
+    ChangeLog.2025
     DOCUMENTERS
     HACKING
     LICENSE
@@ -920,7 +925,7 @@ add_subdirectory(cmake)
 
 if (BUILDING_FROM_VCS)
     add_custom_target(ChangeLog ALL
-        COMMAND ${GIT_EXECUTABLE} log --format=\"%ad %aN %n%n%x09* %s%d%n\" --date=short --since=2025-01-01 > ${CMAKE_BINARY_DIR}/ChangeLog
+        COMMAND ${GIT_EXECUTABLE} log --format=\"%ad %aN %n%n%x09* %s%d%n\" --date=short --since=2026-01-01 > ${CMAKE_BINARY_DIR}/ChangeLog
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
     install(FILES ${CMAKE_BINARY_DIR}/ChangeLog DESTINATION ${CMAKE_INSTALL_DOCDIR})
