@@ -1,14 +1,15 @@
 # Taehun Yun <yooontehoon@naver.com>, 2022.
 # 이정희 <daemul72@gmail.com>, 2022.
 # Minjae Isaac Kwon <minjae.isaac.kwon@gmail.com>, 2022.
+# Subin Song <subin@subinsong.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.15\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2022-10-23 08:02+0000\n"
-"Last-Translator: 이정희 <daemul72@gmail.com>\n"
+"PO-Revision-Date: 2026-03-28 16:09+0000\n"
+"Last-Translator: Subin Song <subin@subinsong.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "ko/>\n"
 "Language: ko\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 "X-Poedit-Language: Korean\n"
 "X-Poedit-Country: KOREA, REPUBLIC OF\n"
 
@@ -14073,9 +14074,8 @@ msgid "Host"
 msgstr "포스트"
 
 #: gnucash/gtkbuilder/dialog-file-access.glade:190
-#, fuzzy
 msgid "Database"
-msgstr "가격 데이타베이스"
+msgstr "데이터베이스"
 
 #: gnucash/gtkbuilder/dialog-file-access.glade:216
 msgid "Password"

@@ -9,16 +9,16 @@
 # Christian Rose <menthos@menthos.com>, 2001, 2002.
 # Jonas Norling <norling@lysator.liu.se>, 2004, 2006.
 # Erik Johansson <erik@ejohansson.se>, 2014, 2016.
-# Arve Eriksson <031299870@telia.com>, 2021, 2022, 2023, 2024, 2025.
+# Arve Eriksson <031299870@telia.com>, 2021, 2022, 2023, 2024, 2025, 2026.
 # Luna Jernberg <droidbittin@gmail.com>, 2022, 2023.
 # bittin1ddc447d824349b2 <bittin@reimu.nl>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.15\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2025-12-15 02:00+0000\n"
+"PO-Revision-Date: 2026-03-22 04:09+0000\n"
 "Last-Translator: Arve Eriksson <031299870@telia.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gnucash/gnucash/"
 "sv/>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 
 #: bindings/guile/date-utilities.scm:519
@@ -37,7 +37,7 @@ msgid ""
 "saved by a later version of GnuCash. Defaulting to today."
 msgstr ""
 "Försökte slå upp en odefinierad datumsymbol '~a'. Rapporten sparades "
-"antagligen i en senare version av GnuCash. Använder idag som förval."
+"antagligen i en senare version av GnuCash. Använder idag som standard."
 
 #: bindings/guile/date-utilities.scm:715
 #: gnucash/gnome-utils/gnc-period-select.c:70
@@ -792,7 +792,7 @@ msgstr ""
 "\n"
 "För att göra den synlig\n"
 "välj ”Visa” i menyfältet och kryssa för ”Dubbla rader” eller\n"
-"markera ”Vy med dubbla rader” i Inställningar:Registerförval."
+"markera ”Vy med dubbla rader” i Inställningar:Registerstandarder."
 
 #: doc/tip_of_the_day.list.c:50
 msgid ""
@@ -962,7 +962,7 @@ msgid ""
 "not necessary to restart GnuCash."
 msgstr ""
 "Om du arbetar nattetid bör du stänga och öppna dina arbetsregister på nytt "
-"efter midnatt för att få det nya datumet som förval för nya transaktioner. "
+"efter midnatt för att få det nya datumet som standard för nya transaktioner. "
 "Du behöver inte starta om GnuCash."
 
 #: doc/tip_of_the_day.list.c:121
@@ -2231,13 +2231,11 @@ msgstr "_Ta bort"
 
 #: gnucash/gnome/dialog-commodities.cpp:329
 msgid "Rename failed, possibly new name exists"
-msgstr ""
+msgstr "Kunde inte döpa om, möjligt att nya namnet redan finns"
 
 #: gnucash/gnome/dialog-commodities.cpp:332
-#, fuzzy
-#| msgid "<No name>"
 msgid "No new name"
-msgstr "<Inget namn>"
+msgstr "Inget nytt namn"
 
 #: gnucash/gnome/dialog-customer.c:314 gnucash/gnome/dialog-vendor.c:205
 msgid ""
@@ -2915,10 +2913,8 @@ msgid "Online HBCI"
 msgstr "Online HBCI"
 
 #: gnucash/gnome/dialog-imap-editor.c:791
-#, fuzzy
-#| msgid "Income Account"
 msgid "OFX Income Account"
-msgstr "Inkomstkonto"
+msgstr "OFX Inkomstkonto"
 
 #. Translators: In this context,
 #. 'Billing information' maps to the
@@ -3321,13 +3317,11 @@ msgstr "Belopp"
 #. Translators: %d is the number of bills/credit notes due. This is a
 #. ngettext(3) message.
 #: gnucash/gnome/dialog-invoice.c:3902
-#, fuzzy, c-format
-#| msgid "The following vendor document is due:"
-#| msgid_plural "The following %d vendor documents are due:"
+#, c-format
 msgid "The following vendor business item is due:"
 msgid_plural "The following %d vendor business items are due:"
-msgstr[0] "Följande leverantörsdokument förfaller snart:"
-msgstr[1] "Följande %d leverantörsdokument förfaller snart:"
+msgstr[0] "Följande leverantörsobjekt förfaller snart:"
+msgstr[1] "Följande %d leverantörsobjekt förfaller snart:"
 
 #: gnucash/gnome/dialog-invoice.c:3906
 msgid "Due Bills Reminder"
@@ -3336,13 +3330,11 @@ msgstr "Påminnelse om räkningars förfallodagar"
 #. Translators: %d is the number of invoices/credit notes due. This is a
 #. ngettext(3) message.
 #: gnucash/gnome/dialog-invoice.c:3914
-#, fuzzy, c-format
-#| msgid "The following customer document is due:"
-#| msgid_plural "The following %d customer documents are due:"
+#, c-format
 msgid "The following customer business item is due:"
 msgid_plural "The following %d customer business items are due:"
-msgstr[0] "Följande kunddokument förfaller snart:"
-msgstr[1] "Följande %d kunddokument förfaller snart:"
+msgstr[0] "Följande kundobjekt förfaller snart:"
+msgstr[1] "Följande %d kundobjekt förfaller snart:"
 
 #: gnucash/gnome/dialog-invoice.c:3918
 msgid "Due Invoices Reminder"
@@ -3524,15 +3516,11 @@ msgid "You must select a transfer account from the account tree."
 msgstr "Du måste välja ett överföringskonto från kontoträdet."
 
 #: gnucash/gnome/dialog-payment.c:293
-#, fuzzy
-#| msgid ""
-#| "No documents were selected to assign this payment to. This may create an "
-#| "unattached payment."
 msgid ""
 "No business items were selected to assign this payment to. This may create "
 "an unattached payment."
 msgstr ""
-"Inga dokument valdes för att tilldela betalningen till. Detta kan skapa en "
+"Inga objekt valdes för att tilldela betalningen till. Detta kan skapa en "
 "betalning utan tillhörighet."
 
 #: gnucash/gnome/dialog-payment.c:543 gnucash/gnome/dialog-payment.c:1368
@@ -3836,6 +3824,8 @@ msgid ""
 "Transaction with description '%s' can not be balanced.\n"
 "The difference is %s"
 msgstr ""
+"Transaktionen med beskrivningen '%s' kan inte balanseras.\n"
+"Differensen är %s"
 
 #: gnucash/gnome/dialog-sx-editor.c:512
 msgid "Please name the Scheduled Transaction."
@@ -3922,17 +3912,14 @@ msgstr ""
 "Delning med minnesanteckning %s har en debetformel som inte kan tolkas."
 
 #: gnucash/gnome/dialog-sx-editor.c:892
-#, fuzzy
-#| msgid ""
-#| "The Scheduled Transaction Editor cannot automatically balance this "
-#| "transaction. Should it still be entered?"
 msgid ""
 "The Scheduled Transaction Editor cannot automatically balance all of the "
 "transactions in this this Scheduled Transaction.\n"
 "Should it still be entered?"
 msgstr ""
-"Editorn för schemalagda transaktioner kan inte automatiskt balansera "
-"transaktionen. Ska den fortfarande registreras?"
+"Editorn för schemalagda transaktioner kan inte automatiskt balansera alla "
+"transaktioner i denna schemalagda transaktionen.\n"
+"Ska den fortfarande registreras?"
 
 #: gnucash/gnome/dialog-sx-editor.c:1454
 msgid "(never)"
@@ -4564,23 +4551,20 @@ msgid "Open Linked Document"
 msgstr "Öppna länkat dokument"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:206
-#, fuzzy
-#| msgid "_Use as Default Layout for Customer Documents"
 msgid "_Use as Default Layout for Customer Business items"
-msgstr "Använd som förvald layo_ut för kunddokument"
+msgstr "Använd som standardlayo_ut för kundobjekt"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:207
 #: gnucash/ui/gnc-plugin-page-invoice.ui:66
 msgid ""
 "Use the current layout as default for all customer invoices and credit notes"
 msgstr ""
-"Använd nuvarande layout som förval för alla kundfakturor och kreditnoteringar"
+"Använd nuvarande layout som standard för alla kundfakturor och "
+"kreditnoteringar"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:208
-#, fuzzy
-#| msgid "_Reset Default Layout for Customer Documents"
 msgid "_Reset Default Layout for Customer business items"
-msgstr "Åte_rställ förvald layout för kunddokument"
+msgstr "Åte_rställ standardlayout för kundobjekt"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:209
 #: gnucash/ui/gnc-plugin-page-invoice.ui:72
@@ -4588,8 +4572,8 @@ msgid ""
 "Reset default layout for all customer invoices and credit notes back to "
 "built-in defaults and update the current page accordingly"
 msgstr ""
-"Återställ förvald layout för alla kundfakturor och kreditnoteringar till "
-"inbyggt förval och uppdatera aktuell sida med dessa inställningar"
+"Återställ standardlayout för alla kundfakturor och kreditnoteringar till "
+"inbyggda standarder, och uppdatera aktuell sida med dessa inställningar"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:215
 msgid "_Print Bill"
@@ -4656,30 +4640,27 @@ msgid "Open a vendor report window for the owner of this bill"
 msgstr "Öppna ett leverantörsrapportfönster för räkningens ägare"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:231
-#, fuzzy
-#| msgid "_Use as Default Layout for Vendor Documents"
 msgid "_Use as Default Layout for Vendor Business items"
-msgstr "An_vänd som förvald layout för leverantörsdokument"
+msgstr "An_vänd som standardlayout för leverantörsobjekt"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:232
 msgid "Use the current layout as default for all vendor bills and credit notes"
 msgstr ""
-"Använd nuvarande layout som förval för alla leverantörsräkningar och "
+"Använd nuvarande layout som standard för alla leverantörsräkningar och "
 "kreditnoteringar"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:233
-#, fuzzy
-#| msgid "_Reset Default Layout for Vendor Documents"
 msgid "_Reset Default Layout for Vendor Business items"
-msgstr "Åte_rställ förvald layout för leverantörsdokument"
+msgstr "Åte_rställ standardlayout för leverantörsobjekt"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:234
 msgid ""
 "Reset default layout for all vendor bills and credit notes back to built-in "
 "defaults and update the current page accordingly"
 msgstr ""
-"Återställ förvald layout för alla leverantörsräkningar och kreditnotering "
-"till inbyggt förval och uppdatera nuvarande sida med dessa inställningar"
+"Återställ standardlayout för alla leverantörsräkningar och kreditnotering "
+"till inbyggda standarder, och uppdatera nuvarande sida med dessa "
+"inställningar"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:240
 msgid "_Print Voucher"
@@ -4746,31 +4727,28 @@ msgid "Open a employee report window for the owner of this voucher"
 msgstr "Öppna ett personalrapportfönster för traktamentets ägare"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:256
-#, fuzzy
-#| msgid "_Use as Default Layout for Employee Documents"
 msgid "_Use as Default Layout for Employee Business items"
-msgstr "An_vänd som förvald layout för personaldokument"
+msgstr "An_vänd som standardlayout för personalobjekt"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:257
 msgid ""
 "Use the current layout as default for all employee vouchers and credit notes"
 msgstr ""
-"Använd nuvarande layout som förval för alla personaltraktamenten och "
+"Använd nuvarande layout som standard för alla personaltraktamenten och "
 "kreditnoteringar"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:258
-#, fuzzy
-#| msgid "_Reset Default Layout for Employee Documents"
 msgid "_Reset Default Layout for Employee Business items"
-msgstr "Åte_rställ förvald layout för personaldokument"
+msgstr "Åte_rställ standardlayout för personalobjekt"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:259
 msgid ""
 "Reset default layout for all employee vouchers and credit notes back to "
 "built-in defaults and update the current page accordingly"
 msgstr ""
-"Återställ förvald layout för alla personaltraktamenten och kreditnoteringar "
-"till inbyggt förval och uppdatera nuvarande sida med dessa inställningar"
+"Återställ standardlayout för alla personaltraktamenten och kreditnoteringar "
+"till inbyggda standarder, och uppdatera nuvarande sida med dessa "
+"inställningar"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:265
 msgid "_Print Credit Note"
@@ -4950,10 +4928,8 @@ msgstr "_Ta bort transaktion"
 #: gnucash/ui/gnc-plugin-page-register.ui:220
 #: gnucash/ui/gnc-plugin-page-register.ui:405
 #: gnucash/ui/gnc-plugin-page-register.ui:517
-#, fuzzy
-#| msgid "Jump to Invoice"
 msgid "Jump to Business item"
-msgstr "Hoppa till faktura"
+msgstr "Hoppa till objekt"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:280
 msgid "Cu_t Split"
@@ -5020,10 +4996,10 @@ msgid "Open the linked document for the current transaction"
 msgstr "Öppna länkat dokument för aktuell transaktion"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:292
-#, fuzzy
-#| msgid "Jump to the linked bill, invoice, or voucher"
 msgid "Jump to the linked invoice, bill, expense or credit note"
-msgstr "Hoppa till den länkade räkningen, fakturan, eller traktamentet"
+msgstr ""
+"Hoppa till den länkade fakturan, räkningen, traktamentet eller "
+"kreditnoteringen"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:293
 msgid "Cut the selected split into clipboard"
@@ -5256,18 +5232,13 @@ msgid "%s %s from %s, posted %s, amount %s"
 msgstr "%s %s från %s, registrerad %s, belopp %s"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:4733
-#, fuzzy
-#| msgid "Select a Budget"
 msgid "Select Business Item"
-msgstr "Välj en budget"
+msgstr "Välj ett objekt"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:4734
-#, fuzzy
-#| msgid ""
-#| "Several documents are linked with this transaction. Please choose one:"
 msgid ""
 "Several business items are linked with this transaction. Please choose one:"
-msgstr "Flera dokument är länkade med den här transaktionen. Välj ett av dem:"
+msgstr "Flera objekt är länkade med den här transaktionen. Välj ett av dem:"
 
 #: gnucash/gnome/gnc-plugin-page-register.cpp:4735
 #: gnucash/gnome-search/dialog-search.c:323
@@ -5925,18 +5896,11 @@ msgid "Cleared Transactions"
 msgstr "Clearade transaktioner"
 
 #: gnucash/gnome/window-reconcile.cpp:262
-#, fuzzy, c-format
-#| msgid ""
-#| "Automatically clear individual transactions, so as to reach a certain "
-#| "cleared amount"
+#, c-format
 msgid "Automatically select %u transaction up to %s that clears to %s"
 msgid_plural "Automatically select %u transactions up to %s that clear to %s"
-msgstr[0] ""
-"Cleara automatiskt individuella transaktioner för att nå ett bestämt clearat "
-"belopp"
-msgstr[1] ""
-"Cleara automatiskt individuella transaktioner för att nå ett bestämt clearat "
-"belopp"
+msgstr[0] "Välj automatiskt %u transaktion upp till %s som clearas till %s"
+msgstr[1] "Välj automatiskt %u transaktioner upp till %s som clearas till %s"
 
 #. Translators: %d is the number of days in the future
 #: gnucash/gnome/window-reconcile.cpp:474
@@ -6827,7 +6791,7 @@ msgstr "Återställ standardalternativen"
 
 #: gnucash/gnome-utils/dialog-options.cpp:309
 msgid "Reset all values to their defaults."
-msgstr "Återställ alla värden till deras förval."
+msgstr "Återställ alla värden till deras standarder."
 
 #: gnucash/gnome-utils/dialog-options.cpp:561
 msgid "Page"
@@ -7832,11 +7796,11 @@ msgstr "Välj alla avkommor av markerat konto."
 #: gnucash/gnome-utils/gnc-option-gtk-ui.cpp:1016
 #: gnucash/gnome-utils/gnc-option-gtk-ui.cpp:1252
 msgid "Select Default"
-msgstr "Välj förval"
+msgstr "Välj standard"
 
 #: gnucash/gnome-utils/gnc-option-gtk-ui.cpp:1018
 msgid "Select the default account selection."
-msgstr "Välj förvald kontomarkering."
+msgstr "Välj standard för kontomarkering."
 
 #: gnucash/gnome-utils/gnc-option-gtk-ui.cpp:1035
 msgid "Show Hidden Accounts"
@@ -7857,7 +7821,7 @@ msgstr "Rensa markering av avmarkera alla poster."
 
 #: gnucash/gnome-utils/gnc-option-gtk-ui.cpp:1254
 msgid "Select the default selection."
-msgstr "Välj förvald markering."
+msgstr "Välj standard för markering."
 
 #: gnucash/gnome-utils/gnc-option-gtk-ui.cpp:1536
 msgid "Clear any selected image file."
@@ -7995,10 +7959,8 @@ msgid "Reconciled (Report)"
 msgstr "Avstämda (rapport)"
 
 #: gnucash/gnome-utils/gnc-tree-view-account.c:901
-#, fuzzy
-#| msgid "_Earliest"
 msgid "Earliest Date"
-msgstr "_Tidigast"
+msgstr "_Tidigast datum"
 
 #: gnucash/gnome-utils/gnc-tree-view-account.c:907
 msgid "Last Reconcile Date"
@@ -8530,8 +8492,8 @@ msgid ""
 "File to log into; defaults to \"/tmp/gnucash.trace\"; can be \"stderr\" or "
 "\"stdout\"."
 msgstr ""
-"Fil att logga till; förval är ”/tmp/gnucash.trace”; kan vara ”stderr” eller "
-"”stdout”."
+"Fil att logga till; standard är ”/tmp/gnucash.trace”; kan vara ”stderr” "
+"eller ”stdout”."
 
 #: gnucash/gnucash-core-app.cpp:292
 msgid "Hidden Options"
@@ -8720,14 +8682,6 @@ msgstr "Autobetala vid flytt."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.business.gschema.xml.in:113
 #: gnucash/gtkbuilder/business-prefs.glade:170
-#, fuzzy
-#| msgid ""
-#| "At post time, automatically attempt to pay customer documents with "
-#| "outstanding pre-payments and counter documents. The pre-payments and "
-#| "documents obviously have to be against the same customer. Counter "
-#| "documents are documents with opposite sign. For example for an invoice, "
-#| "customer credit notes and negative invoices are considered counter "
-#| "documents."
 msgid ""
 "At post time, automatically attempt to pay customer items with outstanding "
 "pre-payments and counter items. The pre-payments and items obviously have to "
@@ -8735,11 +8689,11 @@ msgid ""
 "For example for an invoice, customer credit notes and negative invoices are "
 "considered counter items."
 msgstr ""
-"Försök automatiskt att betala kunddokument med utestående "
-"förskottsbetalningar och konteringsdokument vid registrering. "
-"Förskottsbetalningarna och dokumenten måste förstås gälla samma kund. "
-"Konteringsdokument är dokument med motsatt tecken. Som exempel betraktas "
-"fakturor, kundkreditnoteringar och negativa fakturor som konteringsdokument."
+"Försök automatiskt att betala kundobjekt med utestående förskottsbetalningar "
+"och konteringsobjekt vid registrering. Förskottsbetalningarna och objekten "
+"måste förstås gälla samma kund. Konteringsobjekt är objekt med motsatt "
+"tecken. Som exempel betraktas fakturor, kundkreditnoteringar och negativa "
+"fakturor som konteringsobjekt."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.business.gschema.xml.in:117
 msgid "Show invoices due reminder at startup"
@@ -8823,13 +8777,6 @@ msgstr ""
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.business.gschema.xml.in:155
 #: gnucash/gtkbuilder/business-prefs.glade:250
-#, fuzzy
-#| msgid ""
-#| "At post time, automatically attempt to pay vendor documents with "
-#| "outstanding pre-payments and counter documents. The pre-payments and "
-#| "documents obviously have to be against the same vendor. Counter documents "
-#| "are documents with opposite sign. For example for a bill, vendor credit "
-#| "notes and negative bills are considered counter documents."
 msgid ""
 "At post time, automatically attempt to pay vendor items with outstanding pre-"
 "payments and counter items. The pre-payments and items obviously have to be "
@@ -8837,11 +8784,11 @@ msgid ""
 "example for a bill, vendor credit notes and negative bills are considered "
 "counter items."
 msgstr ""
-"Försök automatiskt vid registrering att betala leverantörsdokument med "
-"utestående förskottsbetalningar och konteringsdokument. Förskottsbetalningar "
-"och dokument måste förstås gälla samma leverantör. Konteringsdokument är "
-"dokument med motsatt tecken. Exempelvis räkningar, leverantörers "
-"kreditnoteringar och negativa räkningar betraktas som konteringsdokument."
+"Försök automatiskt vid registrering att betala leverantörsobjekt med "
+"utestående förskottsbetalningar och konteringsobjekt. Förskottsbetalningar "
+"och objekt måste förstås gälla samma leverantör. Konteringsobjekt är objekt "
+"med motsatt tecken. Exempelvis räkningar, leverantörers kreditnoteringar och "
+"negativa räkningar betraktas som konteringsobjekt."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.business.gschema.xml.in:159
 msgid "Show bills due reminder at startup"
@@ -9113,14 +9060,14 @@ msgstr ""
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.checkprinting.gschema.xml.in:100
 msgid "The default check printing font"
-msgstr "Förvalt teckensnitt för checkutskrift"
+msgstr "Standardteckensnitt för checkutskrift"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.checkprinting.gschema.xml.in:101
 msgid ""
 "The default font to use when printing checks. This value will be overridden "
 "by any font specified in a check description file."
 msgstr ""
-"Förvalt teckensnitt att använda vid utskrift av checkar. Värdet åsidosätts "
+"Standardteckensnitt att använda vid utskrift av checkar. Värdet åsidosätts "
 "om teckensnitt specificeras i en checks beskrivningsfil."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.checkprinting.gschema.xml.in:105
@@ -9393,13 +9340,13 @@ msgstr ""
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.import.qif.gschema.xml.in:5
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.import.qif.gschema.xml.in:10
 msgid "Default QIF transaction status"
-msgstr "Förvald QIF-transaktionsstatus"
+msgstr "Standard för QIF-transaktionsstatus"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.import.qif.gschema.xml.in:6
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.import.qif.gschema.xml.in:11
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.import.qif.gschema.xml.in:16
 msgid "Default status for QIF transaction when not specified in QIF file."
-msgstr "Förvald status för QIF-transaktion när det inte anges i QIF-filen."
+msgstr "Standardstatus för QIF-transaktion när det inte anges i QIF-filen."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.import.qif.gschema.xml.in:15
 #: gnucash/gtkbuilder/dialog-account-picker.glade:59
@@ -9478,16 +9425,16 @@ msgstr ""
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.reconcile.gschema.xml.in:25
 #: gnucash/gtkbuilder/dialog-preferences.glade:2777
-#, fuzzy
-#| msgid "Balancing entry from reconciliation"
 msgid "Enable autoclear tools in reconciliation"
-msgstr "Balanserande post från avstämning"
+msgstr "Aktivera autoclearingverktyg vid avstämning"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.reconcile.gschema.xml.in:26
 msgid ""
 "If active, suggests transactions to clear based on amounts summing to the "
 "statement balance"
 msgstr ""
+"Om det är aktivt föreslås transaktioner att clearas baserat på belopp som "
+"summeras till kontoutdragets saldo"
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:17
 msgid "Run \"since last run\" dialog when a file is opened."
@@ -9529,7 +9476,7 @@ msgid ""
 "Set \"Review Created Transactions\" as the default for the \"since last "
 "run\" dialog."
 msgstr ""
-"Sätt ”Granska skapade transaktioner” som förval för dialogrutan ”sedan "
+"Sätt ”Granska skapade transaktioner” som standard för dialogrutan ”sedan "
 "senaste körningen”."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:28
@@ -9538,7 +9485,7 @@ msgid ""
 "is set for the \"since last run\" dialog."
 msgstr ""
 "Inställningen styr huruvida ”granska skapade transaktioner” ska sättas som "
-"förval för dialogrutan ”sedan senaste körningen”."
+"standard för dialogrutan ”sedan senaste körningen”."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.dialogs.sxs.gschema.xml.in:32
 msgid "Set the sort column in the \"since last run\" dialog."
@@ -10010,8 +9957,8 @@ msgid ""
 "the user's locale setting. If set to \"other\", GnuCash will use the setting "
 "specified by the currency-other key."
 msgstr ""
-"Inställningen styr källan av förvald valuta för nya konton. Om den sätts "
-"till ”lokal” kommer GnuCash att hämta förvald valuta från användarens "
+"Inställningen styr källan av standardvaluta för nya konton. Om den sätts "
+"till ”lokal” kommer GnuCash att hämta standardvaluta från användarens "
 "lokalinställning. Om den sätts till ”annat” kommer GnuCash att använda "
 "inställningen som specificeras av nyckeln ’currency-other’."
 
@@ -10151,7 +10098,7 @@ msgid ""
 msgstr ""
 "Inställningen bestämmer på vilken kant flikar för att byta sidor i "
 "anteckningsblock visas. Möjliga värden är ”överst”, ”vänster”, ”nederst” och "
-"”höger”. Förval är ”överst”."
+"”höger”. Standard är ”överst”."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:200
 #: gnucash/gtkbuilder/dialog-preferences.glade:3563
@@ -10181,7 +10128,7 @@ msgid ""
 "\"bottom\"."
 msgstr ""
 "Inställningen bestämmer vilken kant sammanfattningsfältet för olika sidor "
-"visas på. Möjliga värden är ”överst” och ”nederst”. Förval är ”nederst”."
+"visas på. Möjliga värden är ”överst” och ”nederst”. Standard är ”nederst”."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:220
 #: gnucash/gtkbuilder/dialog-preferences.glade:3655
@@ -10220,12 +10167,12 @@ msgid ""
 "is set so that the 'Num' cell on registers shows/updates the transaction "
 "'num' field."
 msgstr ""
-"Om det väljs kommer förvalda bokalternativ för nya filer att ställas in så "
+"Om det väljs kommer standardbokalternativ för nya filer att ställas in så "
 "att 'Nr'-cellen på register visar/uppdaterar delningsåtgärdsfältet och så "
 "att transaktionens 'nr'-fält visas på den andra raden i dubbelbokföringsvyn "
-"(och är osynligt om det inte väljs). Annars ställs förvalda bokalternativ "
-"för nya filer in så att 'Nr'-cellen på register visar/uppdaterar "
-"transaktionens 'nr'-fält."
+"(och är osynligt om det inte väljs). Annars ställs standardbokalternativ för "
+"nya filer in så att 'Nr'-cellen på register visar/uppdaterar transaktionens "
+"'nr'-fält."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:247
 msgid "Color the register using a gnucash specific color theme"
@@ -10375,13 +10322,14 @@ msgid ""
 "the current transaction to show all splits. The \"Transaction journal\" "
 "setting shows all transactions in expanded form."
 msgstr ""
-"Detta fält specificerar förvald visningsstil när ett nytt registerfönster "
-"öppnas. Möjliga värden är ”Standardliggare”, ”Autodelningsliggare” och "
-"”Transaktionsjournal”. Inställningen ”Standardliggare” gör att varje "
-"transaktion visas på en eller två rader beroende på om dubbelbokföringsvyn "
-"är aktiverad. Inställningen ”Autodelningsliggare” gör detsamma, men "
-"expanderar endast aktuell transaktion för att visa alla delar. Inställningen "
-"”Transaktionsjournal” visar alla transaktioner i expanderad form."
+"Detta fält specificerar standardstil för visning när ett nytt "
+"registerfönster öppnas. Möjliga värden är ”Standardliggare”, ”"
+"Autodelningsliggare” och ”Transaktionsjournal”. Inställningen ”"
+"Standardliggare” gör att varje transaktion visas på en eller två rader "
+"beroende på om dubbelbokföringsvyn är aktiverad. Inställningen ”"
+"Autodelningsliggare” gör detsamma, men expanderar endast aktuell transaktion "
+"för att visa alla delar. Inställningen ”Transaktionsjournal” visar alla "
+"transaktioner i expanderad form."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:302
 #: gnucash/gtkbuilder/dialog-preferences.glade:3024
@@ -10431,7 +10379,7 @@ msgid ""
 "you use unique leaf names."
 msgstr ""
 "Visa endast namnen på lövkonton i registret och i popup-rutan för kontoval. "
-"Förvalt beteende är att visa det fullständiga namnet, inklusive sökvägen i "
+"Standardbeteende är att visa det fullständiga namnet, inklusive sökvägen i "
 "kontoträdet. Att aktivera alternativet antyder att du använder unika lövnamn."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:322
@@ -10524,8 +10472,8 @@ msgid ""
 "locale setting. If set to \"other\", GnuCash will use the setting specified "
 "by the currency-other key."
 msgstr ""
-"Inställningen styr förvald valuta för rapporter. Om den sätts till ”lokal” "
-"kommer GnuCash att hämta förvald valuta från användarens lokalinställning. "
+"Inställningen styr standardvaluta för rapporter. Om den sätts till ”lokal” "
+"kommer GnuCash att hämta standardvaluta från användarens lokalinställning. "
 "Om den sätts till ”annan” kommer GnuCash att använda inställningen som "
 "specificeras av nyckeln ’currency-other’."
 
@@ -11827,6 +11775,10 @@ msgid ""
 "Choices are displayed with a Hyphen (-) separator, but will also match Dot "
 "(.) and Slash (/) as separator."
 msgstr ""
+"Välj ordning för dag, månad och år för att matcha formateringen i den "
+"importerade filen.\n"
+"Valen visas med bindestrecksavdelare (-), men matchar även punkt (.) och "
+"snedstreck (/) som avdelare."
 
 #: gnucash/gtkbuilder/assistant-csv-trans-import.glade:756
 msgid ""
@@ -12839,7 +12791,7 @@ msgstr ""
 "Ange datum och antal aktier som du fick eller förlorade vid aktiespliten "
 "eller sammanslagningen. För aktiesammanslagningar (omvänd split) använd ett "
 "negativt värde för aktiedistributionen. Du kan också ange en beskrivning av "
-"transaktionen eller godkänna den föreslagna."
+"transaktionen eller godkänna standardbeskrivningen."
 
 #: gnucash/gtkbuilder/assistant-stock-split.glade:115
 #: gnucash/gtkbuilder/dialog-account.glade:1863
@@ -13117,7 +13069,7 @@ msgstr "_Redigera lista med teckenkodningar"
 
 #: gnucash/gtkbuilder/assistant-xml-encoding.glade:69
 msgid "Default encoding"
-msgstr "Förvald teckenkodning"
+msgstr "Standardteckenkodning"
 
 #: gnucash/gtkbuilder/assistant-xml-encoding.glade:136
 msgid "Convert the file"
@@ -13717,7 +13669,7 @@ msgstr ""
 msgid ""
 "Default transaction status (overridden by the status given by the QIF file)"
 msgstr ""
-"Förvald transaktionsstatus (åsidosätts av eventuell status i QIF-filen)"
+"Standardstatus för transaktion (åsidosätts av eventuell status i QIF-filen)"
 
 #: gnucash/gtkbuilder/dialog-account-picker.glade:159
 #: gnucash/gtkbuilder/dialog-import.glade:12
@@ -13780,22 +13732,16 @@ msgid "4. Preview"
 msgstr "4. Förhandsgranska"
 
 #: gnucash/gtkbuilder/dialog-bi-import-gui.glade:374
-#, fuzzy
-#| msgid "Open imported documents in tabs"
 msgid "Open imported business items in tabs"
-msgstr "Öppna importerade dokument i flikar"
+msgstr "Öppna importerade objekt i flikar"
 
 #: gnucash/gtkbuilder/dialog-bi-import-gui.glade:392
-#, fuzzy
-#| msgid "Open not yet posted documents in tabs"
 msgid "Open not yet posted business items in tabs"
-msgstr "Öppna, ej ännu registrerade dokument i flikar"
+msgstr "Öppna ej ännu registrerade objekt i flikar"
 
 #: gnucash/gtkbuilder/dialog-bi-import-gui.glade:410
-#, fuzzy
-#| msgid "Don't open imported documents in tabs"
 msgid "Don't open imported business items in tabs"
-msgstr "Öppna inte importerade dokument i flikar"
+msgstr "Öppna inte importerade objekt i flikar"
 
 #: gnucash/gtkbuilder/dialog-bi-import-gui.glade:432
 msgid "5. Afterwards"
@@ -13984,10 +13930,8 @@ msgid "Choose Owner Dialog"
 msgstr "Dialogrutan Välj ägare"
 
 #: gnucash/gtkbuilder/dialog-commodities.glade:64
-#, fuzzy
-#| msgid "From Namespace"
 msgid "Rename Namespace"
-msgstr "Från namnrymd"
+msgstr "Döp om namnrymd"
 
 #: gnucash/gtkbuilder/dialog-commodities.glade:114
 #: gnucash/gtkbuilder/dialog-commodities.glade:133
@@ -14000,16 +13944,12 @@ msgid "Show National Currencies"
 msgstr "Visa nationella valutor"
 
 #: gnucash/gtkbuilder/dialog-commodities.glade:227
-#, fuzzy
-#| msgid "From Namespace"
 msgid "Rename _Namespace"
-msgstr "Från namnrymd"
+msgstr "Döp om _namnrymd"
 
 #: gnucash/gtkbuilder/dialog-commodities.glade:231
-#, fuzzy
-#| msgid "Remove the current price."
 msgid "Rename the current namespace."
-msgstr "Ta bort det nuvarande priset."
+msgstr "Döp om aktuell namnrymd."
 
 #: gnucash/gtkbuilder/dialog-commodities.glade:249
 msgid "Add a new commodity."
@@ -14401,11 +14341,11 @@ msgstr "Gränssnitt"
 
 #: gnucash/gtkbuilder/dialog-employee.glade:579
 msgid "Default Hours per Day"
-msgstr "Förvalt timmar per dag"
+msgstr "Standard för timmar per dag"
 
 #: gnucash/gtkbuilder/dialog-employee.glade:592
 msgid "Default Rate"
-msgstr "Förvald timkostnad"
+msgstr "Standardtimkostnad"
 
 #: gnucash/gtkbuilder/dialog-employee.glade:700
 msgid "Access Control List"
@@ -14936,7 +14876,7 @@ msgstr "Öppna dokumentlänk"
 #: gnucash/gtkbuilder/dialog-invoice.glade:529
 #: gnucash/gtkbuilder/dialog-invoice.glade:1234
 msgid "Default Chargeback Project"
-msgstr "Förvalt chargeback-projekt"
+msgstr "Standard för chargeback-projekt"
 
 #: gnucash/gtkbuilder/dialog-invoice.glade:556
 msgid "Additional to Card"
@@ -15181,10 +15121,8 @@ msgid "Post To"
 msgstr "Skicka till"
 
 #: gnucash/gtkbuilder/dialog-payment.glade:335
-#, fuzzy
-#| msgid "Business"
 msgid "Business items"
-msgstr "Företag"
+msgstr "Ekonomiska objekt"
 
 #: gnucash/gtkbuilder/dialog-payment.glade:412
 #: gnucash/gtkbuilder/dialog-payment.glade:439
@@ -15770,7 +15708,7 @@ msgid ""
 "Default is 4 days."
 msgstr ""
 "En transaktion vars datum ligger inom tröskeln är sannolikt en matchning. "
-"Förval är 4 dagar."
+"Standard är 4 dagar."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2384
 msgid ""
@@ -15778,7 +15716,7 @@ msgid ""
 "Default is 14 days."
 msgstr ""
 "En transaktion vars datum ligger utanför tröskeln är osannolikt en "
-"matchning. Förval är 14 dagar."
+"matchning. Standard är 14 dagar."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2430
 msgid "Checks"
@@ -15786,7 +15724,7 @@ msgstr "Checkar"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2448
 msgid "The default check printing font."
-msgstr "Förvalt teckensnitt för checkutskrift."
+msgstr "Standardteckensnitt för checkutskrift."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2458
 msgid "Print _date format"
@@ -15807,7 +15745,7 @@ msgstr "Skriv ut '***' före och efter varje textfält på checken."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2497
 msgid "Default _font"
-msgstr "_Förvalt teckensnitt"
+msgstr "Standa_rdteckensnitt"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2526
 msgid "Printing"
@@ -15927,6 +15865,14 @@ msgid ""
 "combinations are possible, auto-clear is not offered and the icon and its "
 "tooltip reflects the outcome."
 msgstr ""
+"Visar autoclearingsverktyg i avstämningsfönstret. Autoclearing söker av ej "
+"avstämda splittar och letar efter en unik kombination vars clearade saldo "
+"matchar angivet avstämningssaldo. Autoclearingen testar alla kombinationer "
+"av splittar, och därför kan det ta lång tid att utföra; är dock begränsad "
+"till 1 sekund vid avstämning. När ingen unik matchning hittas, eftersom "
+"saldot inte kan nås, eller på grund av passerad tidsgräns, eller om flera "
+"kombinationer är möjliga, erbjuds inte autoclearing, och dess ikon och "
+"tooltip visar resultatet."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2807
 msgid "<b>Graphics</b>"
@@ -15941,8 +15887,8 @@ msgid ""
 "GnuCash uses a yellow/green theme by default for register windows. Uncheck "
 "this if you want to use the system color theme instead."
 msgstr ""
-"GnuCash använder ett gult/grönt tema som förval för registerfönster. Kryssa "
-"bort detta om du hellre vill använda systemets färgtema."
+"GnuCash använder ett gult/grönt tema som standard för registerfönster. "
+"Kryssa bort detta om du hellre vill använda systemets färgtema."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2835
 msgid "Double _mode colors alternate with transactions"
@@ -16005,11 +15951,11 @@ msgstr ""
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2960
 msgid "Default Style"
-msgstr "Förvald stil"
+msgstr "Standardstil"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2986
 msgid "Other Defaults"
-msgstr "Övriga förval"
+msgstr "Övriga standardinställningar"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:2999
 msgid "_Basic ledger"
@@ -16068,13 +16014,13 @@ msgid ""
 "option implies that you use unique leaf names."
 msgstr ""
 "Om det är ikryssat visas endast namnen på lövkontona i registret och i "
-"kontovalsrutan. Förvalt beteende är att visa det fullständiga namnet, "
+"kontovalsrutan. Standardbeteende är att visa det fullständiga namnet, "
 "inklusive sökvägen i kontoträdet. Att kryssa i alternativet antyder att du "
 "använder unika lövnamn."
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:3211
 msgid "Register Defaults"
-msgstr "Registerförval"
+msgstr "Registerstandarder"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:3243
 msgid "Default Report Currency"
@@ -16100,7 +16046,7 @@ msgstr ""
 #: gnucash/gtkbuilder/dialog-preferences.glade:3316
 #: gnucash/gtkbuilder/dialog-preferences.glade:3396
 msgid "Default zoom level"
-msgstr "Förvald förstoring"
+msgstr "Standardförstoring"
 
 #: gnucash/gtkbuilder/dialog-preferences.glade:3431
 msgid "Reports"
@@ -16227,10 +16173,8 @@ msgstr "Prisredigerare"
 
 #: gnucash/gtkbuilder/dialog-price.glade:139
 #: gnucash/gtkbuilder/dialog-price.glade:814
-#, fuzzy
-#| msgid "Namespace"
 msgid "_Namespace"
-msgstr "Namnrymd"
+msgstr "_Namnrymd"
 
 #: gnucash/gtkbuilder/dialog-price.glade:196
 msgid "S_ource"
@@ -16342,10 +16286,8 @@ msgid "If activated, include manually entered prices."
 msgstr "Om det är aktiverat kommer manuellt inmatade priser att inkluderas."
 
 #: gnucash/gtkbuilder/dialog-price.glade:736
-#, fuzzy
-#| msgid "_Added by the application"
 msgid "Added _by the application"
-msgstr "Till_agda av programmet"
+msgstr "Tillagda _av programmet"
 
 #: gnucash/gtkbuilder/dialog-price.glade:740
 msgid ""
@@ -16829,7 +16771,7 @@ msgid ""
 "Set 'Review created transactions' as the default in the \"since last run\" "
 "dialog."
 msgstr ""
-"Sätt ”Granska skapade transaktioner” som förval för dialogrutan ”sedan "
+"Sätt ”Granska skapade transaktioner” som standard för dialogrutan ”sedan "
 "senaste körningen”."
 
 #: gnucash/gtkbuilder/dialog-sx.glade:794
@@ -21340,10 +21282,8 @@ msgstr ""
 "du vill göra det?"
 
 #: gnucash/register/ledger-core/split-register.c:1081
-#, fuzzy
-#| msgid "Set up scheduled transactions to avoid repeated data entry"
 msgid "Scheduled transactions can only be pasted to the General Journal"
-msgstr "Ställa in schemalagda transaktioner för att undvika upprepad inmatning"
+msgstr "Schemalagda transaktioner kan endast klistras in i Allmän journal"
 
 #: gnucash/register/ledger-core/split-register.c:2159
 msgid "Recalculate Transaction"
@@ -21647,7 +21587,7 @@ msgid ""
 "Could not determine the account currency. Using the default currency "
 "provided by your system."
 msgstr ""
-"Kunde inte bestämma kontots valuta. Använder förvald valuta enligt ditt "
+"Kunde inte bestämma kontots valuta. Använder standardvaluta enligt ditt "
 "system."
 
 #. Translators: Ref is the column header in Accounts Payable and
@@ -22690,7 +22630,7 @@ msgstr "Detta är ett strängalternativ."
 
 #: gnucash/report/reports/example/sample-report.scm:86
 msgid "String Option Default"
-msgstr "Strängalternativ, förval"
+msgstr "Strängalternativ, standard"
 
 #: gnucash/report/reports/example/sample-report.scm:99
 msgid "Just a Date Option"
@@ -22774,7 +22714,7 @@ msgstr "Testar"
 
 #: gnucash/report/reports/example/sample-report.scm:169
 msgid "Report Title Default"
-msgstr "Rapporttitel, förval"
+msgstr "Rapporttitel, standard"
 
 #: gnucash/report/reports/example/sample-report.scm:285
 #, scheme-format
@@ -24961,10 +24901,9 @@ msgid "Daily Average"
 msgstr "Dagligt medelvärde"
 
 #: gnucash/report/reports/standard/category-barchart.scm:521
-#, fuzzy, scheme-format
-#| msgid "Balance at ~a"
+#, scheme-format
 msgid "Balances ~a"
-msgstr "Saldo vid ~a"
+msgstr "Saldon ~a"
 
 #: gnucash/report/reports/standard/category-barchart.scm:650
 #: gnucash/report/reports/standard/category-barchart.scm:670
@@ -25430,7 +25369,7 @@ msgstr "Rapportformat"
 #: gnucash/report/reports/standard/income-gst-statement.scm:156
 #: gnucash/report/reports/standard/income-gst-statement.scm:165
 msgid "Default Format"
-msgstr "Förvalt format"
+msgstr "Standardformat"
 
 #: gnucash/report/reports/standard/income-gst-statement.scm:157
 msgid ""
@@ -25978,10 +25917,9 @@ msgstr ""
 "~a. Behöver partier städas upp?"
 
 #: gnucash/report/reports/standard/investment-lots.scm:1963
-#, fuzzy, scheme-format
-#| msgid "~a, ~a to ~a"
+#, scheme-format
 msgid "~a, ~a"
-msgstr "~a, ~a till ~a"
+msgstr "~a, ~a"
 
 #: gnucash/report/reports/standard/investment-lots.scm:1988
 msgid "Account Lot Gains"
@@ -26706,10 +26644,8 @@ msgid "Display the transaction date?"
 msgstr "Visa transaktionsdatum?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:894
-#, fuzzy
-#| msgid "Display the invoice notes?"
 msgid "Display the invoice due date?"
-msgstr "Visa fakturans anteckningar?"
+msgstr "Visa fakturans förfallodatum?"
 
 #: gnucash/report/reports/standard/new-owner-report.scm:898
 msgid "Display the transaction reference?"
@@ -27722,7 +27658,7 @@ msgstr ""
 
 #: gnucash/report/stylesheets/css.scm:209
 msgid "&lt;/style is disallowed in CSS. Using default CSS."
-msgstr "&lt;/style tillåts inte i CSS. Använder förvald CSS."
+msgstr "&lt;/style tillåts inte i CSS. Använder standard-CSS."
 
 #: gnucash/report/stylesheets/css.scm:228
 msgid "CSS-based stylesheet (experimental)"
@@ -29926,16 +29862,14 @@ msgid "Create a new invoice"
 msgstr "Skapa en ny faktura"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:164
-#, fuzzy
-#| msgid "Customer's Invoices"
 msgid "Find Customer Invoices…"
-msgstr "Kundens fakturor"
+msgstr "Sök kundfakturor…"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:166
 msgid ""
 "Open the Find Invoice Dialog with the invoices already filtered for this "
 "customer"
-msgstr ""
+msgstr "Öppna dialogrutan Sök faktura med fakturor redan filtrerade för kunden"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:200
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:529
@@ -29943,15 +29877,14 @@ msgid "Create a new bill"
 msgstr "Skapa en ny räkning"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:203
-#, fuzzy
-#| msgid "_Find Vendor…"
 msgid "Find Vendor Bills…"
-msgstr "_Sök leverantör…"
+msgstr "Sök leverantörens räkningar…"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:205
 msgid ""
 "Open the Find Bill Dialog with the bills already filtered for this vendor"
 msgstr ""
+"Öppna dialogrutan Sök räkning med räkningar redan filtrerade för leverantören"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:237
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:682
@@ -29964,16 +29897,16 @@ msgid "Create a new voucher"
 msgstr "Skapa ett nytt traktamente"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:242
-#, fuzzy
-#| msgid "Find Expense _Voucher…"
 msgid "Find Employee Vouchers…"
-msgstr "Sök _traktamente…"
+msgstr "Sök personaltraktamenten…"
 
 #: gnucash/ui/gnc-plugin-page-owner-tree.ui:244
 msgid ""
 "Open the Find Employee Voucher Dialog with the vouchers already filtered for "
 "this employee"
 msgstr ""
+"Öppnar dialogrutan Sök personaltraktamenten med traktamenten redan "
+"filtrerade för den anställda"
 
 #: gnucash/ui/gnc-plugin-page-register.ui:6
 msgid "_Print Checks…"
@@ -30147,10 +30080,10 @@ msgstr "Öppna länkat dokument för aktuell transaktion."
 #: gnucash/ui/gnc-plugin-page-register.ui:222
 #: gnucash/ui/gnc-plugin-page-register.ui:407
 #: gnucash/ui/gnc-plugin-page-register.ui:519
-#, fuzzy
-#| msgid "Jump to the linked bill, invoice, or voucher."
 msgid "Jump to the linked invoice, bill, expense or credit note."
-msgstr "Hoppa till den länkade räkningen, fakturan, eller traktamentet."
+msgstr ""
+"Hoppa till den länkade fakturan, räkningen, traktamentet eller "
+"kreditnoteringen."
 
 #: gnucash/ui/gnc-plugin-page-register.ui:232
 #: gnucash/ui/gnc-plugin-page-register.ui:874
@@ -30405,11 +30338,11 @@ msgstr "Exportera _rapport"
 
 #: gnucash/ui/gnc-plugin-page-sx-list.ui:37
 msgid "_Save layout as default"
-msgstr "_Spara layout som förval"
+msgstr "_Spara layout som standard"
 
 #: gnucash/ui/gnc-plugin-page-sx-list.ui:39
 msgid "Save current layout as default"
-msgstr "Spara aktuell layout som förval"
+msgstr "Spara aktuell layout som standard"
 
 #: gnucash/ui/gnc-plugin-page-sx-list.ui:55
 #: gnucash/ui/gnc-plugin-page-sx-list.ui:155
@@ -30463,10 +30396,8 @@ msgid "_Postpone"
 msgstr "_Skjut upp"
 
 #: gnucash/ui/gnc-reconcile-window.ui:24
-#, fuzzy
-#| msgid "Auto-clear"
 msgid "_Autoclear"
-msgstr "Auto-cleara"
+msgstr "_Autocleara"
 
 #: gnucash/ui/gnc-reconcile-window.ui:38
 msgid "_Open Account"
@@ -30487,10 +30418,8 @@ msgid "_Unreconcile Selection"
 msgstr "_Ta bort avstämning från markerade"
 
 #: gnucash/ui/gnc-reconcile-window.ui:134
-#, fuzzy
-#| msgid "Auto-clear"
 msgid "Auto Clear"
-msgstr "Auto-cleara"
+msgstr "Autocleara"
 
 #: gnucash/ui/gnc-reconcile-window.ui:144
 msgid "Add a new balancing entry to the account"
@@ -30538,21 +30467,19 @@ msgstr "Avbryt avstämning av detta kontot"
 
 #: libgnucash/app-utils/gnc-autoclear.cpp:130
 msgid "Cannot uniquely clear splits. Found multiple possibilities."
-msgstr ""
+msgstr "Kan inte unikt cleara splittar. Hittade flera möjligheter."
 
 #: libgnucash/app-utils/gnc-autoclear.cpp:149
 msgid "Auto-clear exceeds allocated time"
-msgstr ""
+msgstr "Auto-clear överskrider tilldelad tid"
 
 #: libgnucash/app-utils/gnc-autoclear.cpp:205
 msgid "Account is already at Auto-Clear Balance."
-msgstr ""
+msgstr "Kontot är redan vid autoclearingssaldot."
 
 #: libgnucash/app-utils/gnc-autoclear.cpp:239
-#, fuzzy
-#| msgid "The interest rate cannot be zero."
 msgid "The selected amount cannot be cleared."
-msgstr "Räntan kan inte vara noll."
+msgstr "Det valda beloppet kan inte clearas."
 
 #: libgnucash/app-utils/gnc-exp-parser.c:615
 msgid "Illegal variable in expression."
@@ -31190,7 +31117,7 @@ msgstr "Union Investment, DE"
 #: libgnucash/engine/gnc-commodity.cpp:229
 msgctxt "FQ Source"
 msgid "US Savings Bonds, US"
-msgstr ""
+msgstr "Amerikanska sparobligationer, US"
 
 #: libgnucash/engine/gnc-commodity.cpp:230
 msgctxt "FQ Source"
@@ -31272,10 +31199,9 @@ msgid "%B %e, %Y"
 msgstr "%B %e, %Y"
 
 #: libgnucash/engine/gnc-date.cpp:677
-#, fuzzy, c-format
-#| msgid " to "
+#, c-format
 msgid "%s to %s"
-msgstr " till "
+msgstr "%s till %s"
 
 #: libgnucash/engine/gnc-datetime.cpp:97
 msgid "y-m-d"
@@ -31730,23 +31656,23 @@ msgstr ""
 
 #: libgnucash/engine/gnc-optiondb.cpp:1339
 msgid "Default Customer Tax Table"
-msgstr "Förvald kundskattetabell"
+msgstr "Standardkundskattetabell"
 
 #: libgnucash/engine/gnc-optiondb.cpp:1340
 msgid "The default tax table to apply to customers."
-msgstr "Förvald skattetabell att tillämpa på kunder."
+msgstr "Standardskattetabell att tillämpa på kunder."
 
 #: libgnucash/engine/gnc-optiondb.cpp:1343
 msgid "Default Vendor Tax Table"
-msgstr "Förvald leverantörsskattetabell"
+msgstr "Standardleverantörsskattetabell"
 
 #: libgnucash/engine/gnc-optiondb.cpp:1344
 msgid "The default tax table to apply to vendors."
-msgstr "Förvald skattetabell att tillämpa på leverantörer."
+msgstr "Standardskattetabell att tillämpa på leverantörer."
 
 #: libgnucash/engine/gnc-optiondb.cpp:1349
 msgid "The default date format used for fancy printed dates."
-msgstr "Förvalt datumformat att använda för vackra utskrivna datum."
+msgstr "Standarddatumformat att använda för vackra utskrivna datum."
 
 #: libgnucash/engine/gnc-optiondb.cpp:1355
 msgid "The electronic tax number of your business"
@@ -31757,10 +31683,8 @@ msgid " (closed)"
 msgstr " (avslutad)"
 
 #: libgnucash/engine/gncOwner.c:1012
-#, fuzzy
-#| msgid "Offset between documents: "
 msgid "Offset between business items: "
-msgstr "Förskjutning mellan dokument: "
+msgstr "Förskjutning mellan objekt: "
 
 #: libgnucash/engine/gncOwner.c:1124
 msgid "Lot Link"
@@ -31808,15 +31732,15 @@ msgstr "Budgetering"
 
 #: libgnucash/engine/qofbookslots.h:70
 msgid "Default Budget"
-msgstr "Förvald budget"
+msgstr "Standardbudget"
 
 #: libgnucash/engine/qofbookslots.h:74
 msgid "Default Invoice Report"
-msgstr "Detaljerad fakturarapport"
+msgstr "Standard för fakturarapport"
 
 #: libgnucash/engine/qofbookslots.h:75
 msgid "Default Invoice Report Timeout"
-msgstr "Förvald tidsgräns för fakturarapport"
+msgstr "Standardtidsgräns för fakturarapport"
 
 #. Translators: " + " is an separator in a list of string-representations of recurrence frequencies
 #: libgnucash/engine/Recurrence.cpp:511

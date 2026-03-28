@@ -10,14 +10,15 @@
 # Tor Berg <tob@samfundet.no>, 2024.
 # Morten Cools <morten@cools.no>, 2024.
 # Magnus Røkke <mrokke@gmail.com>, 2025.
+# Kevin Unhammer <unhammer+dill@mm.st>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: GnuCash 5.15\n"
-"Report-Msgid-Bugs-To: https://bugs.gnucash.org/enter_bug.cgi?"
-"product=GnuCash&component=Translations\n"
+"Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
+"enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2025-03-06 09:45+0000\n"
-"Last-Translator: Magnus Røkke <mrokke@gmail.com>\n"
+"PO-Revision-Date: 2026-03-22 09:45+0000\n"
+"Last-Translator: Kevin Unhammer <unhammer+dill@mm.st>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/nb_NO/>\n"
 "Language: nb\n"
@@ -25,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: bindings/guile/date-utilities.scm:519
 #, scheme-format
@@ -3007,11 +3008,11 @@ msgstr "Posteringsdato"
 
 #: gnucash/gnome/dialog-invoice.c:1040
 msgid "Post to Account"
-msgstr "Postér til konto"
+msgstr "Poster til konto"
 
 #: gnucash/gnome/dialog-invoice.c:1041
 msgid "Accumulate Splits?"
-msgstr "Akkumulér splitter?"
+msgstr "Akkumuler splitter?"
 
 #: gnucash/gnome/dialog-invoice.c:1133
 msgid "The Invoice must have at least one Entry."
@@ -3635,9 +3636,9 @@ msgid ""
 "\"%s\" before you continue to process this payment. Perhaps you want to "
 "create an Invoice or Bill first?"
 msgstr ""
-"Du har ingen gyldig \"postér til\"-konto. Vennligst lag en konto av typen "
-"\"%s\" før du fortsetter å behandle denne betalingen. Kanskje du vil "
-"opprettet en faktura eller regning først?"
+"Du har ingen gyldig «poster til»-konto. Vennligst lag en konto av typen «%s» "
+"før du fortsetter å behandle denne betalingen. Kanskje du vil opprettet en "
+"faktura eller regning først?"
 
 #: gnucash/gnome/dialog-payment.c:1593
 #: gnucash/gnome/gnc-plugin-page-register.cpp:3298
@@ -4492,7 +4493,7 @@ msgstr "Rediger denne fakturaen"
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:192
 #: gnucash/ui/gnc-plugin-page-invoice.ui:382
 msgid "_Duplicate Invoice"
-msgstr "Duplisert faktura"
+msgstr "Dupliser faktura"
 
 #: gnucash/gnome/gnc-plugin-page-invoice.cpp:192
 #: gnucash/ui/gnc-plugin-page-invoice.ui:24
@@ -13364,7 +13365,7 @@ msgstr ""
 
 #: gnucash/gtkbuilder/business-prefs.glade:84
 msgid "_Accumulate splits on post"
-msgstr "_Akkumulér splitter ved postering"
+msgstr "_Akkumuler splitter ved postering"
 
 #: gnucash/gtkbuilder/business-prefs.glade:90
 msgid ""
@@ -13825,7 +13826,7 @@ msgstr "_Velg motkonto"
 
 #: gnucash/gtkbuilder/dialog-account.glade:1999
 msgid "Renumber sub-accounts"
-msgstr "Omnummerér underkontoer"
+msgstr "Omnummerer underkontoer"
 
 #: gnucash/gtkbuilder/dialog-account.glade:2032
 msgid "_Renumber"
@@ -15391,7 +15392,7 @@ msgstr "Partner"
 
 #: gnucash/gtkbuilder/dialog-payment.glade:207
 msgid "Post To"
-msgstr "Postér til"
+msgstr "Poster til"
 
 #: gnucash/gtkbuilder/dialog-payment.glade:335
 #, fuzzy
