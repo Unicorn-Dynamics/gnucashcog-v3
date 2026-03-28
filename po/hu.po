@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.gnucash.org/"
 "enter_bug.cgi?product=GnuCash&component=Translations\n"
 "POT-Creation-Date: 2026-03-21 13:18-0700\n"
-"PO-Revision-Date: 2026-03-25 01:09+0000\n"
+"PO-Revision-Date: 2026-03-28 14:11+0000\n"
 "Last-Translator: Szia Tomi <sziatomi01@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gnucash/"
 "gnucash/hu/>\n"
@@ -5519,8 +5519,8 @@ msgid ""
 "Update the current report's saved configuration. The report configuration "
 "will be saved in the file %s."
 msgstr ""
-"A jelenlegi jelentés metett beállításainak frissítése. A jelentés "
-"beállításai a következő fájlba lesznek elmentve: %s."
+"A jelenlegi jelentés metett konfigurációjának frissítése. A "
+"jelentéskonfiguráció a következő fájlba lesz elmentve: %s."
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1268
 #, c-format
@@ -5528,20 +5528,21 @@ msgid ""
 "Add the current report's configuration to the 'Reports->Saved Report "
 "Configurations' menu. The report configuration will be saved in the file %s."
 msgstr ""
-"A jelentés beállításainak hozzáadása a „Jelentések -> Mentett jelentések” "
-"menühöz. A beállítások a következő fájlba lesznek elmentve: %s."
+"A jelentéskonfiguráció hozzáadása a „Jelentések -> Mentett "
+"jelentéskonfigurációk” menühöz. A jelentéskonfiguráció a következő fájlba "
+"lesz elmentve: %s."
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1276
 #: gnucash/ui/gnc-plugin-page-report.ui:74
 #: gnucash/ui/gnc-plugin-page-report.ui:255
 msgid "Save _Report Configuration"
-msgstr "_Jelentésbeállítások mentése"
+msgstr "_Jelentéskonfiguráció mentése"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1277
 #: gnucash/ui/gnc-plugin-page-report.ui:81
 #: gnucash/ui/gnc-plugin-page-report.ui:270
 msgid "Save Report Configuration As…"
-msgstr "Jelentésbeállítások mentése másként…"
+msgstr "Jelentéskonfiguráció mentése másként…"
 
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1557
 #: gnucash/gnome/gnc-plugin-page-report.cpp:1590
@@ -10602,7 +10603,7 @@ msgid ""
 "Show the date when the transaction was entered below the posted date and "
 "reconciled date on split row."
 msgstr ""
-"Megjeleníti a tranzakció bevtelének dátumát a könyvelési dátum és az "
+"Megjeleníti a tranzakció bevitelének dátumát a könyvelési dátum és az "
 "egyeztetési dátum alatt egy külön sorban."
 
 #: gnucash/gschemas/org.gnucash.GnuCash.gschema.xml.in:327
@@ -14021,7 +14022,7 @@ msgstr "Fizetési feltétel meghatározása"
 #: gnucash/gtkbuilder/dialog-billterms.glade:915
 #: gnucash/gtkbuilder/dialog-billterms.glade:1147
 msgid "De_scription"
-msgstr "L_eírás"
+msgstr "_Leírás"
 
 #: gnucash/gtkbuilder/dialog-billterms.glade:592
 #: gnucash/gtkbuilder/dialog-billterms.glade:930
@@ -14048,7 +14049,7 @@ msgstr "A számlákra nyomtatott fizetési feltétel leírása"
 #: gnucash/ui/gnc-reconcile-window.ui:68 gnucash/ui/gnc-reconcile-window.ui:107
 #: gnucash/ui/gnc-reconcile-window.ui:162
 msgid "_Edit"
-msgstr "Sz_erkesztés"
+msgstr "_Szerkesztés"
 
 #: gnucash/gtkbuilder/dialog-billterms.glade:688
 msgid "Edit the current Billing Term"
@@ -14386,9 +14387,9 @@ msgstr ""
 "Mentett jelentéskonfigurációk létrehozása:\n"
 "1. Nyisson meg egy jelentést a Jelentések menüből.\n"
 "2. Módosítsa a jelentés beállításait a saját ízlése szerint.\n"
-"3. Kattintson a Jelentések menüben a Jelentéskonfiguráció mentése [mint…] "
+"3. Kattintson a Jelentések menüben a Jelentéskonfiguráció mentése [másként…] "
 "menüpontra,\n"
-" vagy a Jelentéskonfiguráció mentése [mint…] gombra az eszköztáron."
+" vagy a Jelentéskonfiguráció mentése [másként…] gombra az eszköztáron."
 
 #: gnucash/gtkbuilder/dialog-date-close.glade:7
 #: gnucash/gtkbuilder/dialog-date-close.glade:260
@@ -14668,7 +14669,7 @@ msgstr "Számítás"
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:388
 msgid "Recalculate the (single) blank entry in the above fields."
-msgstr "A fenti, egyedül üres beviteli mező értékének kiszámítása."
+msgstr "Az egyetlen üres beviteli mező értékének kiszámítása."
 
 #: gnucash/gtkbuilder/dialog-fincalc.glade:517
 msgid "Payment Options"
@@ -28905,7 +28906,7 @@ msgstr "Lapok füleinek megjelenítése az ablak jobb oldalán"
 
 #: gnucash/ui/gnc-main-window.ui:256
 msgid "Tra_nsaction"
-msgstr "Tra_nzakciók"
+msgstr "_Tranzakciók"
 
 #: gnucash/ui/gnc-main-window.ui:297
 msgid "_Actions"
@@ -28950,7 +28951,7 @@ msgstr "_Jelentések"
 
 #: gnucash/ui/gnc-main-window.ui:422
 msgid "_Tools"
-msgstr "E_szközök"
+msgstr "_Eszközök"
 
 #: gnucash/ui/gnc-main-window.ui:444
 msgid "E_xtensions"
