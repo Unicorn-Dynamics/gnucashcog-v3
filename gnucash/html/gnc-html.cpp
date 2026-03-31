@@ -723,7 +723,7 @@ gnc_html_encode_string(const char * str_in) noexcept
     if (!str_in) return nullptr;
 
     constexpr gchar safe[] = "$-._!*(),"; /* RFC 1738 */
-    GString *encoded  = g_string_new ("");
+    std::string encoded;
     constexpr size_t BUF_SIZE = 5;
     gchar buffer[BUF_SIZE];
     guchar c;
@@ -737,24 +737,24 @@ gnc_html_encode_string(const char * str_in) noexcept
                 (( c >= '0') && ( c <= '9')) ||
                 (std::strchr(safe, c)))
         {
-            encoded = g_string_append_c (encoded, c);
+            encoded.push_back(c);
         }
         else if ( c == ' ' )
         {
-            encoded = g_string_append_c (encoded, '+');
+            encoded.push_back(' ');
         }
         else if ( c == '\n' )
         {
-            encoded = g_string_append (encoded, "%0D%0A");
+            encoded.append("%0D%0A");
         }
         else if ( c != '\r' )
         {
             std::snprintf( buffer, BUF_SIZE, "%%%02X", static_cast<int>(c) );
-            encoded = g_string_append (encoded, buffer);
+            encoded.append(buffer, BUF_SIZE);
         }
     }
 
-    return g_string_free (encoded, FALSE);
+    return strdup(encoded.c_str());
 }
 
 
@@ -764,7 +764,7 @@ gnc_html_decode_string(const char * str) noexcept
     if (!str) return nullptr;
 
     constexpr gchar safe[] = "$-._!*(),"; /* RFC 1738 */
-    GString * decoded  = g_string_new ("");
+    std::string decoded;
     guchar  c;
     guint   hexval;
     std::string_view sv = str;
@@ -777,29 +777,29 @@ gnc_html_decode_string(const char * str) noexcept
                 (( c >= '0') && ( c <= '9')) ||
                 (std::strchr(safe, c)))
         {
-            decoded = g_string_append_c (decoded, c);
+            decoded.push_back(c);
         }
         else if ( c == '+' )
         {
-            decoded = g_string_append_c (decoded, ' ');
+            decoded.push_back(' ');
         }
         else if (sv.substr(i,5).compare("%0D0A") == 0)
         {
-            decoded = g_string_append (decoded, "\n");
+            decoded.push_back('\n');
             i += 4;
         }
         else if (c == '%')
         {
             // this logic preassumes that the number after '%' is a single character ?
             if (1 == std::sscanf(sv.substr(i+1).data(), "%02X", &hexval))
-                decoded = g_string_append_c(decoded, static_cast<char>(hexval));
+                decoded.push_back(static_cast<char>(hexval));
             else
-                decoded = g_string_append_c(decoded, ' ');
+                decoded.push_back(' ');
             i += 2;
         }
     }
 
-    return g_string_free (decoded, FALSE);
+    return strdup(decoded.c_str());
 }
 
 /********************************************************************
@@ -810,46 +810,43 @@ gnc_html_decode_string(const char * str) noexcept
 char *
 gnc_html_unescape_newlines(const gchar * in) noexcept
 {
-    GString * rv = g_string_new("");
+    std::string rv;
     std::string_view sv = in;
 
     for (size_t i = 0; i < sv.size(); i++)
     {
         if (sv.substr(i,2).compare("\\n") == 0)
         {
-            g_string_append(rv, "\n");
+            rv.push_back('\n');
             i++;
         }
         else
         {
-            g_string_append_c(rv, sv[i]);
+            rv.push_back(sv[i]);
         }
     }
 
-    g_string_append_c(rv, 0);
-    return g_string_free (rv, FALSE);
+    return strdup(rv.c_str());
 }
 
 char *
 gnc_html_escape_newlines(const gchar * in) noexcept
 {
-    GString * escaped = g_string_new("");
-
+    std::string escaped;
     std::string_view sv = in;
 
     for (const char c : sv)
     {
         if (c == '\012')
         {
-            g_string_append(escaped, "\\n");
+            escaped.append("\\n");
         }
         else
         {
-            g_string_append_c(escaped, c);
+            escaped.push_back(c);
         }
     }
-    g_string_append_c(escaped, 0);
-    return g_string_free (escaped, FALSE);
+    return strdup(escaped.c_str());
 }
 
 void
