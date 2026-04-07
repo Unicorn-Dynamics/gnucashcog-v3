@@ -31,6 +31,7 @@
 #include <gnc-gnome-utils.h>
 #include <gnc-gui-query.h>
 #include <gnc-html.h>
+#include <cstdio>
 %}
 #if defined(SWIGGUILE)
 
