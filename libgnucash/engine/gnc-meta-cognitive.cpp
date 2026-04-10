@@ -177,6 +177,11 @@ void gnc_meta_cognitive_session_destroy(GncMetaCognitiveSession *session)
 {
     if (!session) return;
     
+    // Stop the combined meta-cognition + ontogenesis loop if it holds
+    // a reference to this session.  Must happen before freeing session
+    // memory to avoid a use-after-free in the background thread.
+    gnc_ontogenesis_bridge_stop_combined_loop();
+    
     // Stop any active improvement cycle
     gnc_meta_cognitive_stop_improvement_cycle(session);
     
@@ -374,6 +379,41 @@ gboolean gnc_meta_cognitive_update_metrics(
     g_debug("Updated metrics for process type %d: accuracy=%.3f, efficiency=%.3f", 
             process_type, metrics->accuracy, metrics->efficiency);
     
+    return TRUE;
+}
+
+gboolean gnc_meta_cognitive_apply_improvement(
+    GncMetaCognitiveProcessType process_type,
+    gdouble achieved_improvement,
+    gdouble stability_delta,
+    gdouble latency_delta_ms,
+    guint   kernels_accepted)
+{
+    if (!meta_cognitive_initialized) return FALSE;
+
+    std::lock_guard<std::mutex> lock(global_state_mutex);
+
+    GncCognitiveMetrics *m;
+    auto it = global_metrics.find(process_type);
+    if (it != global_metrics.end()) {
+        m = &it->second;
+    } else {
+        /* Initialise a default entry if none exists yet */
+        initialize_default_metrics(&global_metrics[process_type]);
+        m = &global_metrics[process_type];
+    }
+
+    m->accuracy = std::min(1.0, m->accuracy * (1.0 + achieved_improvement));
+    m->efficiency = std::min(1.0, m->efficiency * (1.0 + achieved_improvement * 0.5));
+    m->stability_index = std::max(0.0, std::min(1.0, m->stability_index + stability_delta));
+    m->latency_ms = std::max(0.1, m->latency_ms + latency_delta_ms);
+    m->innovation_score = std::min(1.0, m->innovation_score + 0.02 * kernels_accepted);
+    m->last_update = time(NULL);
+
+    g_debug("Applied ontogenesis improvement for process %d: "
+            "improvement=%.3f, new_accuracy=%.3f",
+            process_type, achieved_improvement, m->accuracy);
+
     return TRUE;
 }
 

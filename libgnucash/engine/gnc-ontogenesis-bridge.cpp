@@ -341,40 +341,24 @@ gboolean gnc_ontogenesis_bridge_integrate_result(
     default:                             process = GNC_METACOG_PROCESS_ALL;        break;
     }
 
-    /* Read current metrics, apply deltas from ontogenesis result,
-       then write them back so the next meta-cognitive cycle sees
-       the improvement. */
-    GncCognitiveMetrics metrics;
-    if (!gnc_meta_cognitive_get_metrics(process, &metrics)) {
-        /* No existing metrics; start from scratch */
-        memset(&metrics, 0, sizeof(metrics));
-        metrics.accuracy        = 0.75;
-        metrics.efficiency      = 0.70;
-        metrics.stability_index = 0.80;
-        metrics.latency_ms      = 10.0;
-        metrics.throughput      = 100.0;
-    }
-
+    gboolean ok;
     if (result->success) {
-        /* Apply the improvement, clamped to [0, 1] where applicable */
-        metrics.accuracy = std::min(1.0, metrics.accuracy *
-                                   (1.0 + result->achieved_improvement));
-        metrics.efficiency = std::min(1.0, metrics.efficiency *
-                                     (1.0 + result->achieved_improvement * 0.5));
-        metrics.stability_index = std::max(0.0, std::min(1.0,
-            metrics.stability_index + result->stability_delta));
-        metrics.latency_ms = std::max(0.1,
-            metrics.latency_ms + result->latency_delta_ms);
-        metrics.innovation_score = std::min(1.0,
-            metrics.innovation_score + 0.02 * result->kernels_accepted);
+        /* Use the atomic apply_improvement to avoid the TOCTOU race
+         * that a separate get_metrics / update_metrics pair would have. */
+        ok = gnc_meta_cognitive_apply_improvement(
+                 process,
+                 result->achieved_improvement,
+                 result->stability_delta,
+                 result->latency_delta_ms,
+                 result->kernels_accepted);
+    } else {
+        ok = TRUE;  /* Nothing to update for a failed result */
     }
-
-    gboolean ok = gnc_meta_cognitive_update_metrics(process, &metrics);
 
     g_debug("Integrated ontogenesis result for process %d: success=%s, "
-            "improvement=%.3f, new_accuracy=%.3f",
+            "improvement=%.3f",
             process, result->success ? "yes" : "no",
-            result->achieved_improvement, metrics.accuracy);
+            result->achieved_improvement);
 
     return ok;
 }
