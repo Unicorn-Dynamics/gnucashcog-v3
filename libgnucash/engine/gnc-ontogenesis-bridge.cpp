@@ -478,10 +478,9 @@ gboolean gnc_ontogenesis_bridge_start_combined_loop(
     return TRUE;
 }
 
-gboolean gnc_ontogenesis_bridge_stop_combined_loop(void)
+/* Private helper: performs the actual stop under an already-held loop_mutex. */
+static gboolean stop_combined_loop_locked(void)
 {
-    std::lock_guard<std::mutex> lock(loop_mutex);
-
     gboolean was_active = combined_loop_active.load();
     combined_loop_active.store(false);
 
@@ -500,15 +499,18 @@ gboolean gnc_ontogenesis_bridge_stop_combined_loop(void)
     return TRUE;
 }
 
+gboolean gnc_ontogenesis_bridge_stop_combined_loop(void)
+{
+    std::lock_guard<std::mutex> lock(loop_mutex);
+    return stop_combined_loop_locked();
+}
+
 gboolean gnc_ontogenesis_bridge_stop_combined_loop_for_session(
     GncMetaCognitiveSession *session)
 {
-    {
-        std::lock_guard<std::mutex> lock(loop_mutex);
-        if (combined_loop_session != session) return FALSE;
-    }
-    /* Session matches — stop the loop (acquires loop_mutex itself). */
-    return gnc_ontogenesis_bridge_stop_combined_loop();
+    std::lock_guard<std::mutex> lock(loop_mutex);
+    if (combined_loop_session != session) return FALSE;
+    return stop_combined_loop_locked();
 }
 
 gboolean gnc_ontogenesis_bridge_is_combined_loop_active(void)
