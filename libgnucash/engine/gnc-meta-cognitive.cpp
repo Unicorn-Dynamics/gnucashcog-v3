@@ -75,35 +75,38 @@ static gchar** generate_optimization_suggestions(const GncCognitiveMetrics &curr
 
 gboolean gnc_meta_cognitive_init(void)
 {
-    std::lock_guard<std::mutex> lock(global_state_mutex);
-    
-    if (meta_cognitive_initialized) {
-        g_warning("Meta-cognitive engine already initialized");
-        return TRUE;
+    {
+        std::lock_guard<std::mutex> lock(global_state_mutex);
+
+        if (meta_cognitive_initialized) {
+            g_warning("Meta-cognitive engine already initialized");
+            return TRUE;
+        }
+
+        g_message("Initializing recursive meta-cognitive analysis engine...");
+
+        // Initialize default metrics for all process types
+        for (int i = GNC_METACOG_PROCESS_ATTENTION; i <= GNC_METACOG_PROCESS_ALL; i++) {
+            GncMetaCognitiveProcessType process_type = static_cast<GncMetaCognitiveProcessType>(i);
+            initialize_default_metrics(&global_metrics[process_type]);
+        }
+
+        // Initialize default configuration
+        current_global_config = create_default_config();
+        config_history.push_back(current_global_config);
+
+        // Initialize safety parameters
+        safety_bounds_enabled = TRUE;
+        min_performance_threshold = 0.5;
+        max_deviation_threshold = 0.3;
+        human_override_enabled = FALSE;
+
+        meta_cognitive_initialized = TRUE;
     }
-    
-    g_message("Initializing recursive meta-cognitive analysis engine...");
-    
-    // Initialize default metrics for all process types
-    for (int i = GNC_METACOG_PROCESS_ATTENTION; i <= GNC_METACOG_PROCESS_ALL; i++) {
-        GncMetaCognitiveProcessType process_type = static_cast<GncMetaCognitiveProcessType>(i);
-        initialize_default_metrics(&global_metrics[process_type]);
-    }
-    
-    // Initialize default configuration
-    current_global_config = create_default_config();
-    config_history.push_back(current_global_config);
-    
-    // Initialize safety parameters
-    safety_bounds_enabled = TRUE;
-    min_performance_threshold = 0.5;
-    max_deviation_threshold = 0.3;
-    human_override_enabled = FALSE;
-    
-    meta_cognitive_initialized = TRUE;
-    
-    // Initialize the ontogenesis bridge so the meta-cognitive loop
-    // can route directives to the kernel when one is registered.
+    /* global_state_mutex released here — call bridge_init outside the
+     * lock to maintain the same ordering as shutdown (bridge operations
+     * before global_state_mutex). */
+
     if (!gnc_ontogenesis_bridge_init()) {
         g_warning("Failed to initialize ontogenesis bridge");
     }
