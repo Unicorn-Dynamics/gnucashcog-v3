@@ -104,7 +104,9 @@ gboolean gnc_meta_cognitive_init(void)
     
     // Initialize the ontogenesis bridge so the meta-cognitive loop
     // can route directives to the kernel when one is registered.
-    gnc_ontogenesis_bridge_init();
+    if (!gnc_ontogenesis_bridge_init()) {
+        g_warning("Failed to initialize ontogenesis bridge");
+    }
     
     g_message("✓ Meta-cognitive engine initialized successfully");
     g_message("✓ Recursive self-analysis capabilities active");
