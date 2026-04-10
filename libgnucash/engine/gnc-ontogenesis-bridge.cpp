@@ -496,8 +496,7 @@ gboolean gnc_ontogenesis_bridge_stop_combined_loop(void)
 {
     std::lock_guard<std::mutex> lock(loop_mutex);
 
-    if (!combined_loop_active.load()) return FALSE;
-
+    gboolean was_active = combined_loop_active.load();
     combined_loop_active.store(false);
 
     if (combined_loop_thread) {
@@ -506,6 +505,8 @@ gboolean gnc_ontogenesis_bridge_stop_combined_loop(void)
         delete combined_loop_thread;
         combined_loop_thread = nullptr;
     }
+
+    if (!was_active) return FALSE;
 
     g_message("Combined loop stopped");
     return TRUE;
