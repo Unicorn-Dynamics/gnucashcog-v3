@@ -403,8 +403,8 @@ gboolean gnc_meta_cognitive_apply_improvement(
         m = &global_metrics[process_type];
     }
 
-    m->accuracy = std::min(1.0, m->accuracy * (1.0 + achieved_improvement));
-    m->efficiency = std::min(1.0, m->efficiency * (1.0 + achieved_improvement * 0.5));
+    m->accuracy = std::max(0.0, std::min(1.0, m->accuracy * (1.0 + achieved_improvement)));
+    m->efficiency = std::max(0.0, std::min(1.0, m->efficiency * (1.0 + achieved_improvement * 0.5)));
     m->stability_index = std::max(0.0, std::min(1.0, m->stability_index + stability_delta));
     m->latency_ms = std::max(0.1, m->latency_ms + latency_delta_ms);
     m->innovation_score = std::min(1.0, m->innovation_score + 0.02 * kernels_accepted);
