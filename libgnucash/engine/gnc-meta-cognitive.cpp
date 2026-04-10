@@ -180,10 +180,10 @@ void gnc_meta_cognitive_session_destroy(GncMetaCognitiveSession *session)
 {
     if (!session) return;
     
-    // Stop the combined meta-cognition + ontogenesis loop if it holds
-    // a reference to this session.  Must happen before freeing session
-    // memory to avoid a use-after-free in the background thread.
-    gnc_ontogenesis_bridge_stop_combined_loop();
+    // Stop the combined meta-cognition + ontogenesis loop only if it
+    // is running for this specific session, so we don't break loops
+    // owned by other sessions.
+    gnc_ontogenesis_bridge_stop_combined_loop_for_session(session);
     
     // Stop any active improvement cycle
     gnc_meta_cognitive_stop_improvement_cycle(session);

@@ -81,6 +81,7 @@ static std::mutex                          result_mutex;
 static std::atomic<bool>  combined_loop_active{false};
 static std::thread       *combined_loop_thread = nullptr;
 static std::mutex         loop_mutex;
+static GncMetaCognitiveSession *combined_loop_session = nullptr;
 
 /* Forward declarations */
 static GncOntogenesisResult* stub_process_directive(
@@ -469,6 +470,7 @@ gboolean gnc_ontogenesis_bridge_start_combined_loop(
         delete combined_loop_thread;
     }
 
+    combined_loop_session = session;
     combined_loop_thread = new std::thread(
         combined_loop_worker, session, max_iterations, improvement_threshold);
 
@@ -490,10 +492,23 @@ gboolean gnc_ontogenesis_bridge_stop_combined_loop(void)
         combined_loop_thread = nullptr;
     }
 
+    combined_loop_session = nullptr;
+
     if (!was_active) return FALSE;
 
     g_message("Combined loop stopped");
     return TRUE;
+}
+
+gboolean gnc_ontogenesis_bridge_stop_combined_loop_for_session(
+    GncMetaCognitiveSession *session)
+{
+    {
+        std::lock_guard<std::mutex> lock(loop_mutex);
+        if (combined_loop_session != session) return FALSE;
+    }
+    /* Session matches — stop the loop (acquires loop_mutex itself). */
+    return gnc_ontogenesis_bridge_stop_combined_loop();
 }
 
 gboolean gnc_ontogenesis_bridge_is_combined_loop_active(void)

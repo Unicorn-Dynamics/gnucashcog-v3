@@ -208,6 +208,14 @@ gboolean gnc_ontogenesis_bridge_start_combined_loop(
  *  @return TRUE if stopped, FALSE if no loop was running */
 gboolean gnc_ontogenesis_bridge_stop_combined_loop(void);
 
+/** Stop the combined loop only if it is running for the given session.
+ *  Safe to call when destroying a session without affecting loops
+ *  owned by other sessions.
+ *  @param session  Session being destroyed
+ *  @return TRUE if stopped, FALSE if loop was not using this session */
+gboolean gnc_ontogenesis_bridge_stop_combined_loop_for_session(
+    GncMetaCognitiveSession *session);
+
 /** Check if the combined loop is running.
  *  @return TRUE if the combined loop is active */
 gboolean gnc_ontogenesis_bridge_is_combined_loop_active(void);
