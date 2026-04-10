@@ -117,6 +117,12 @@ gboolean gnc_meta_cognitive_init(void)
 
 void gnc_meta_cognitive_shutdown(void)
 {
+    // Shut down ontogenesis bridge BEFORE acquiring global_state_mutex.
+    // The bridge shutdown joins the combined_loop_thread, which calls
+    // gnc_meta_cognitive_get_metrics / update_metrics that also acquire
+    // global_state_mutex.  Holding it here would deadlock.
+    gnc_ontogenesis_bridge_shutdown();
+
     std::lock_guard<std::mutex> lock(global_state_mutex);
     
     if (!meta_cognitive_initialized) {
@@ -124,9 +130,6 @@ void gnc_meta_cognitive_shutdown(void)
     }
     
     g_message("Shutting down meta-cognitive analysis engine...");
-    
-    // Shut down ontogenesis bridge before clearing meta-cognitive state
-    gnc_ontogenesis_bridge_shutdown();
     
     // Clear global state
     global_metrics.clear();

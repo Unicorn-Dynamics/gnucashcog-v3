@@ -208,12 +208,7 @@ static void test_kernel_replacement(void)
     g_assert_true(gnc_ontogenesis_bridge_is_ready());
 
     /* Register a new (still stub) kernel to simulate OZC-272 landing */
-    GncOntogenesisKernel *new_kernel = (GncOntogenesisKernel*)g_new0(
-        GncOntogenesisKernel, 1);
-    /* We only set the first two fields that are always present:
-       kernel_id and status. The rest are zero-initialized. */
-    *((guint*)new_kernel) = 42;  /* kernel_id */
-    *(((guint*)new_kernel) + 1) = GNC_ONTOGENESIS_STATUS_READY;
+    GncOntogenesisKernel *new_kernel = gnc_ontogenesis_kernel_new_stub(42);
 
     g_assert_true(gnc_ontogenesis_bridge_register_kernel(new_kernel));
     g_assert_true(gnc_ontogenesis_bridge_is_ready());

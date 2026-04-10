@@ -35,8 +35,6 @@
 
 #include "gnc-ontogenesis-bridge.h"
 #include <glib.h>
-#include <string>
-#include <vector>
 #include <queue>
 #include <mutex>
 #include <thread>
@@ -204,6 +202,18 @@ GncOntogenesisStatus gnc_ontogenesis_bridge_get_kernel_status(void)
     return registered_kernel->status;
 }
 
+GncOntogenesisKernel* gnc_ontogenesis_kernel_new_stub(guint kernel_id)
+{
+    GncOntogenesisKernel *kernel = g_new0(GncOntogenesisKernel, 1);
+    kernel->kernel_id              = kernel_id;
+    kernel->status                 = GNC_ONTOGENESIS_STATUS_READY;
+    kernel->is_stub                = TRUE;
+    kernel->mutations_performed    = 0;
+    kernel->kernels_generated      = 0;
+    kernel->cumulative_improvement = 0.0;
+    return kernel;
+}
+
 /* =================================================================
  * Meta-Cognition -> Ontogenesis  (top-down directives)
  * ================================================================= */
@@ -213,29 +223,32 @@ gboolean gnc_ontogenesis_bridge_submit_directive(
 {
     if (!directive || !bridge_initialized) return FALSE;
 
-    std::lock_guard<std::mutex> lock(directive_mutex);
-
     /* Deep-copy the directive (config pointers are not owned by us) */
     GncOntogenesisDirective copy = *directive;
     copy.suggested_config = NULL;  /* Don't keep dangling pointers */
     copy.evo_params       = NULL;
 
-    directive_queue.push(copy);
+    {
+        std::lock_guard<std::mutex> dl(directive_mutex);
+        directive_queue.push(copy);
+    }
 
     g_debug("Queued ontogenesis directive: mutation_type=%d, priority=%.2f",
             directive->mutation_type, directive->priority);
 
-    /* In stub mode, immediately process the directive */
-    {
-        std::lock_guard<std::mutex> bl(bridge_mutex);
-        if (registered_kernel && registered_kernel->is_stub) {
-            GncOntogenesisResult *result = stub_process_directive(directive);
-            if (result) {
-                std::lock_guard<std::mutex> rl(result_mutex);
-                result_queue.push(result);
-            }
-            /* Remove the directive we just processed */
-            directive_queue.pop();
+    /* In stub mode, immediately process the directive.
+     * Lock ordering: bridge_mutex -> directive_mutex -> result_mutex
+     * (consistent with shutdown to avoid ABBA deadlock). */
+    std::lock_guard<std::mutex> bl(bridge_mutex);
+    if (registered_kernel && registered_kernel->is_stub) {
+        GncOntogenesisResult *result = stub_process_directive(directive);
+        {
+            std::lock_guard<std::mutex> dl(directive_mutex);
+            if (!directive_queue.empty()) directive_queue.pop();
+        }
+        if (result) {
+            std::lock_guard<std::mutex> rl(result_mutex);
+            result_queue.push(result);
         }
     }
 

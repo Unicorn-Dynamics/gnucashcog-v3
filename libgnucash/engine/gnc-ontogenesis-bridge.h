@@ -128,6 +128,12 @@ gboolean gnc_ontogenesis_bridge_register_kernel(GncOntogenesisKernel *kernel);
  *  @return Kernel status, or GNC_ONTOGENESIS_STATUS_UNINITIALIZED if none */
 GncOntogenesisStatus gnc_ontogenesis_bridge_get_kernel_status(void);
 
+/** Create a new stub ontogenesis kernel for testing or as a placeholder.
+ *  The returned handle can be passed to gnc_ontogenesis_bridge_register_kernel().
+ *  @param kernel_id  Unique kernel identifier
+ *  @return New kernel handle (caller owns; bridge takes ownership after register) */
+GncOntogenesisKernel* gnc_ontogenesis_kernel_new_stub(guint kernel_id);
+
 /* ================================================================
  * Meta-Cognition -> Ontogenesis  (top-down directives)
  * ================================================================ */
