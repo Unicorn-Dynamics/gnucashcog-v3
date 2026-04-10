@@ -14,6 +14,7 @@
  ********************************************************************/
 
 #include "gnc-meta-cognitive.h"
+#include "gnc-ontogenesis-bridge.h"
 #include <glib.h>
 #include <string>
 #include <vector>
@@ -101,9 +102,14 @@ gboolean gnc_meta_cognitive_init(void)
     
     meta_cognitive_initialized = TRUE;
     
+    // Initialize the ontogenesis bridge so the meta-cognitive loop
+    // can route directives to the kernel when one is registered.
+    gnc_ontogenesis_bridge_init();
+    
     g_message("✓ Meta-cognitive engine initialized successfully");
     g_message("✓ Recursive self-analysis capabilities active");
     g_message("✓ Evolutionary optimization framework ready");
+    g_message("✓ Ontogenesis bridge wired (stub kernel until OZC-272)");
     g_message("✓ Safety mechanisms and rollback system operational");
     
     return TRUE;
@@ -118,6 +124,9 @@ void gnc_meta_cognitive_shutdown(void)
     }
     
     g_message("Shutting down meta-cognitive analysis engine...");
+    
+    // Shut down ontogenesis bridge before clearing meta-cognitive state
+    gnc_ontogenesis_bridge_shutdown();
     
     // Clear global state
     global_metrics.clear();
@@ -655,6 +664,28 @@ static void improvement_cycle_worker(GncMetaCognitiveSession *session,
                     g_warning("Failed to apply evolved configuration at iteration %u", iteration);
                 }
                 g_free(evolved_config);
+            }
+
+            // Route through ontogenesis bridge when available.
+            // The bridge translates meta-cognitive directives into
+            // low-level kernel mutations and feeds results back.
+            if (gnc_ontogenesis_bridge_is_ready()) {
+                gint n_directives = gnc_ontogenesis_bridge_submit_from_analysis(analysis);
+                if (n_directives > 0) {
+                    g_debug("Submitted %d ontogenesis directives at iteration %u",
+                            n_directives, iteration);
+                }
+
+                // Poll and integrate any completed ontogenesis results
+                GncOntogenesisResult *onto_result;
+                while ((onto_result = gnc_ontogenesis_bridge_poll_result()) != NULL) {
+                    gnc_ontogenesis_bridge_integrate_result(onto_result);
+                    if (onto_result->success) {
+                        g_debug("Ontogenesis kernel improvement: %.3f at iteration %u",
+                                onto_result->achieved_improvement, iteration);
+                    }
+                    gnc_ontogenesis_result_free(onto_result);
+                }
             }
         }
         

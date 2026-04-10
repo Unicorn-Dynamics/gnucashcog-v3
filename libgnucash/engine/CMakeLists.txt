@@ -60,6 +60,7 @@ set (engine_HEADERS
   gnc-cognitive-comms.h
   gnc-tensor-network.h
   gnc-meta-cognitive.h
+  gnc-ontogenesis-bridge.h
   gnc-cognitive-unification.h
   gnc-cognitive-api.h
   gnc-cognitive-graphql.h
@@ -170,6 +171,7 @@ set (engine_SOURCES
   gnc-cognitive-comms.cpp
   gnc-tensor-network.cpp
   gnc-meta-cognitive.cpp
+  gnc-ontogenesis-bridge.cpp
   gnc-cognitive-unification.cpp
   gnc-cognitive-api.c
   gnc-cognitive-graphql.c
