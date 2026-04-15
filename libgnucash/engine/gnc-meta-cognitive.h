@@ -173,6 +173,23 @@ gboolean gnc_meta_cognitive_update_metrics(
     GncMetaCognitiveProcessType process_type,
     const GncCognitiveMetrics *metrics);
 
+/** Atomically apply an ontogenesis improvement to global metrics.
+ *  Performs the read-modify-write under a single lock acquisition,
+ *  avoiding the TOCTOU race that would occur with separate
+ *  get_metrics / update_metrics calls.
+ *  @param process_type  Process type whose metrics to update
+ *  @param achieved_improvement  Fractional improvement (e.g. 0.05 = 5 %)
+ *  @param stability_delta  Additive delta for stability index
+ *  @param latency_delta_ms  Additive delta for latency in milliseconds
+ *  @param kernels_accepted  Number of accepted kernels (for innovation score)
+ *  @return TRUE on success */
+gboolean gnc_meta_cognitive_apply_improvement(
+    GncMetaCognitiveProcessType process_type,
+    gdouble achieved_improvement,
+    gdouble stability_delta,
+    gdouble latency_delta_ms,
+    guint   kernels_accepted);
+
 /** Free self-analysis result structure
  * @param result Result to free */
 void gnc_self_analysis_result_free(GncSelfAnalysisResult *result);

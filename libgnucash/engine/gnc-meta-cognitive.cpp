@@ -14,6 +14,7 @@
  ********************************************************************/
 
 #include "gnc-meta-cognitive.h"
+#include "gnc-ontogenesis-bridge.h"
 #include <glib.h>
 #include <string>
 #include <vector>
@@ -74,36 +75,46 @@ static gchar** generate_optimization_suggestions(const GncCognitiveMetrics &curr
 
 gboolean gnc_meta_cognitive_init(void)
 {
-    std::lock_guard<std::mutex> lock(global_state_mutex);
-    
-    if (meta_cognitive_initialized) {
-        g_warning("Meta-cognitive engine already initialized");
-        return TRUE;
+    {
+        std::lock_guard<std::mutex> lock(global_state_mutex);
+
+        if (meta_cognitive_initialized) {
+            g_warning("Meta-cognitive engine already initialized");
+            return TRUE;
+        }
+
+        g_message("Initializing recursive meta-cognitive analysis engine...");
+
+        // Initialize default metrics for all process types
+        for (int i = GNC_METACOG_PROCESS_ATTENTION; i <= GNC_METACOG_PROCESS_ALL; i++) {
+            GncMetaCognitiveProcessType process_type = static_cast<GncMetaCognitiveProcessType>(i);
+            initialize_default_metrics(&global_metrics[process_type]);
+        }
+
+        // Initialize default configuration
+        current_global_config = create_default_config();
+        config_history.push_back(current_global_config);
+
+        // Initialize safety parameters
+        safety_bounds_enabled = TRUE;
+        min_performance_threshold = 0.5;
+        max_deviation_threshold = 0.3;
+        human_override_enabled = FALSE;
+
+        meta_cognitive_initialized = TRUE;
     }
-    
-    g_message("Initializing recursive meta-cognitive analysis engine...");
-    
-    // Initialize default metrics for all process types
-    for (int i = GNC_METACOG_PROCESS_ATTENTION; i <= GNC_METACOG_PROCESS_ALL; i++) {
-        GncMetaCognitiveProcessType process_type = static_cast<GncMetaCognitiveProcessType>(i);
-        initialize_default_metrics(&global_metrics[process_type]);
+    /* global_state_mutex released here — call bridge_init outside the
+     * lock to maintain the same ordering as shutdown (bridge operations
+     * before global_state_mutex). */
+
+    if (!gnc_ontogenesis_bridge_init()) {
+        g_warning("Failed to initialize ontogenesis bridge");
     }
-    
-    // Initialize default configuration
-    current_global_config = create_default_config();
-    config_history.push_back(current_global_config);
-    
-    // Initialize safety parameters
-    safety_bounds_enabled = TRUE;
-    min_performance_threshold = 0.5;
-    max_deviation_threshold = 0.3;
-    human_override_enabled = FALSE;
-    
-    meta_cognitive_initialized = TRUE;
     
     g_message("✓ Meta-cognitive engine initialized successfully");
     g_message("✓ Recursive self-analysis capabilities active");
     g_message("✓ Evolutionary optimization framework ready");
+    g_message("✓ Ontogenesis bridge wired (stub kernel until OZC-272)");
     g_message("✓ Safety mechanisms and rollback system operational");
     
     return TRUE;
@@ -111,6 +122,12 @@ gboolean gnc_meta_cognitive_init(void)
 
 void gnc_meta_cognitive_shutdown(void)
 {
+    // Shut down ontogenesis bridge BEFORE acquiring global_state_mutex.
+    // The bridge shutdown joins the combined_loop_thread, which calls
+    // gnc_meta_cognitive_get_metrics / update_metrics that also acquire
+    // global_state_mutex.  Holding it here would deadlock.
+    gnc_ontogenesis_bridge_shutdown();
+
     std::lock_guard<std::mutex> lock(global_state_mutex);
     
     if (!meta_cognitive_initialized) {
@@ -162,6 +179,11 @@ GncMetaCognitiveSession* gnc_meta_cognitive_session_new(void)
 void gnc_meta_cognitive_session_destroy(GncMetaCognitiveSession *session)
 {
     if (!session) return;
+    
+    // Stop the combined meta-cognition + ontogenesis loop only if it
+    // is running for this specific session, so we don't break loops
+    // owned by other sessions.
+    gnc_ontogenesis_bridge_stop_combined_loop_for_session(session);
     
     // Stop any active improvement cycle
     gnc_meta_cognitive_stop_improvement_cycle(session);
@@ -360,6 +382,41 @@ gboolean gnc_meta_cognitive_update_metrics(
     g_debug("Updated metrics for process type %d: accuracy=%.3f, efficiency=%.3f", 
             process_type, metrics->accuracy, metrics->efficiency);
     
+    return TRUE;
+}
+
+gboolean gnc_meta_cognitive_apply_improvement(
+    GncMetaCognitiveProcessType process_type,
+    gdouble achieved_improvement,
+    gdouble stability_delta,
+    gdouble latency_delta_ms,
+    guint   kernels_accepted)
+{
+    if (!meta_cognitive_initialized) return FALSE;
+
+    std::lock_guard<std::mutex> lock(global_state_mutex);
+
+    GncCognitiveMetrics *m;
+    auto it = global_metrics.find(process_type);
+    if (it != global_metrics.end()) {
+        m = &it->second;
+    } else {
+        /* Initialise a default entry if none exists yet */
+        initialize_default_metrics(&global_metrics[process_type]);
+        m = &global_metrics[process_type];
+    }
+
+    m->accuracy = std::max(0.0, std::min(1.0, m->accuracy * (1.0 + achieved_improvement)));
+    m->efficiency = std::max(0.0, std::min(1.0, m->efficiency * (1.0 + achieved_improvement * 0.5)));
+    m->stability_index = std::max(0.0, std::min(1.0, m->stability_index + stability_delta));
+    m->latency_ms = std::max(0.1, m->latency_ms + latency_delta_ms);
+    m->innovation_score = std::min(1.0, m->innovation_score + 0.02 * kernels_accepted);
+    m->last_update = time(NULL);
+
+    g_debug("Applied ontogenesis improvement for process %d: "
+            "improvement=%.3f, new_accuracy=%.3f",
+            process_type, achieved_improvement, m->accuracy);
+
     return TRUE;
 }
 
@@ -655,6 +712,28 @@ static void improvement_cycle_worker(GncMetaCognitiveSession *session,
                     g_warning("Failed to apply evolved configuration at iteration %u", iteration);
                 }
                 g_free(evolved_config);
+            }
+
+            // Route through ontogenesis bridge when available.
+            // The bridge translates meta-cognitive directives into
+            // low-level kernel mutations and feeds results back.
+            if (gnc_ontogenesis_bridge_is_ready()) {
+                gint n_directives = gnc_ontogenesis_bridge_submit_from_analysis(analysis);
+                if (n_directives > 0) {
+                    g_debug("Submitted %d ontogenesis directives at iteration %u",
+                            n_directives, iteration);
+                }
+
+                // Poll and integrate any completed ontogenesis results
+                GncOntogenesisResult *onto_result;
+                while ((onto_result = gnc_ontogenesis_bridge_poll_result()) != NULL) {
+                    gnc_ontogenesis_bridge_integrate_result(onto_result);
+                    if (onto_result->success) {
+                        g_debug("Ontogenesis kernel improvement: %.3f at iteration %u",
+                                onto_result->achieved_improvement, iteration);
+                    }
+                    gnc_ontogenesis_result_free(onto_result);
+                }
             }
         }
         
